@@ -317,6 +317,21 @@ var data = m.prop({
   "title": "new file",
   "categories": ["1", "2"],
   // "time": 1464226633054,
+  "description" : "abc",
+  "link": [
+    {
+        "url": "===url===",
+        "shortUrl": "===ShortUrl===",
+        "filename": "name url",
+        "filesize" : 56465454
+  ***REMOVED***,
+    {
+      "url": "===url===2",
+      "shortUrl": "===ShortUrl===2",
+      "filename": "name url 2",
+      "filesize" : 56465454
+  ***REMOVED***
+***REMOVED***
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -336,8 +351,8 @@ var NewProduct = function(ctrl){
                         {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title"***REMOVED******REMOVED***
                     ):(
                         {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title", 
-                        config:function(){
-                          
+                        onchange:function(el){
+                          data().title = $(el.target).val()
                       ***REMOVED***, 
                         value:data().title***REMOVED***
                       ***REMOVED***
@@ -385,25 +400,83 @@ var NewProduct = function(ctrl){
               ***REMOVED******REMOVED***, 
                 
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"textarea13", className:"col-sm-2 control-label"***REMOVED***, children: ["Description"]***REMOVED***, 
+                  {tag: "label", attrs: {for:"textarea", className:"col-sm-2 control-label"***REMOVED***, children: ["Description"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "textarea", attrs: {name:"textarea13", id:"textarea13", className:"form-control", rows:"3", placeholder:""***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                    {tag: "textarea", attrs: {name:"textarea", id:"textarea", className:"form-control", rows:"3", placeholder:"", 
+                      config:function(el, isInit, ctx){
+                        if(!isInit) {
+                          $(el).val(data().description)
+                      ***REMOVED***
+                    ***REMOVED***, 
+                      onkeypress:function(el){
+                        data().description = $(el).val();
+                    ***REMOVED***
+                  ***REMOVED******REMOVED***, 
+                    
+                    {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
   
-                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["File"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"URL"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"File name"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
-                    {tag: "input", attrs: {disabled:true,type:"text", className:"form-control", id:"regular13", placeholder:"File size"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                (data().link === undefined)?[
+                  {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                    {tag: "label", attrs: {for:"url", className:"col-sm-2 control-label"***REMOVED***, children: ["File 1"]***REMOVED***, 
+                    {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
+                      {tag: "input", attrs: {type:"text", className:"form-control", id:"url", name:"url", placeholder:"URL"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                  ***REMOVED******REMOVED***, 
+                    {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
+                      {tag: "input", attrs: {type:"text", className:"form-control", id:"", placeholder:"File name"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                  ***REMOVED******REMOVED***, 
+                    {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
+                      {tag: "input", attrs: {disabled:true,type:"text", className:"form-control", id:"", placeholder:"File size"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                  ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
-                
+              ***REMOVED***:[
+                    data().link.map(function(el, index){
+                      return (
+                          {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                            {tag: "label", attrs: {for:"url" + (index+1), className:"col-sm-2 control-label"***REMOVED***, children: ["File ", index + 1]***REMOVED***, 
+                            {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
+                              {tag: "input", attrs: {type:"text", className:"form-control", id:"url" + (index+1), name:"url" + (index+1), placeholder:"URL", 
+                                     onchange:function(item){
+                                       data().link[index].url = $(item.target).val();
+                                   ***REMOVED***, 
+                                     value:el.url***REMOVED***
+                            ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                          ***REMOVED******REMOVED***, 
+                            {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
+                              {tag: "input", attrs: {type:"text", className:"form-control", id:"", placeholder:"File name", 
+                                     onchange:function(item){
+                                       data().link[index].filename = $(item.target).val();
+                                   ***REMOVED***, 
+                                     value:el.filename***REMOVED***
+                            ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                          ***REMOVED******REMOVED***, 
+                            {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
+                              {tag: "input", attrs: {disabled:true,type:"number", className:"form-control", id:"", placeholder:"File size", 
+                                     onchange:function(item){
+                                       data().link[index].filesize = $(item.target).val();
+                                   ***REMOVED***, 
+                                     value:(el.filesize>0)?(el.filesize):""***REMOVED***
+                            ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                          ***REMOVED******REMOVED***
+                        ***REMOVED******REMOVED***
+                      )
+                  ***REMOVED***)
+                  
+              ***REMOVED***, 
+  
+                {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-flat btn-primary btn-loading-state", style:"float: right", 
+                  onclick:function(el){
+                    data().link.push(
+                        {
+                          "url": "",
+                          "shortUrl": "",
+                          "filename": "",
+                          "filesize" : 0
+                      ***REMOVED***
+                    )
+                ***REMOVED***
+              ***REMOVED***, children: ["Add new file"]***REMOVED***
                 
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***

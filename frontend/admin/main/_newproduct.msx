@@ -5,6 +5,21 @@ var data = m.prop({
   "title": "new file",
   "categories": ["1", "2"],
   // "time": 1464226633054,
+  "description" : "abc",
+  "link": [
+    {
+        "url": "===url===",
+        "shortUrl": "===ShortUrl===",
+        "filename": "name url",
+        "filesize" : 56465454
+  ***REMOVED***,
+    {
+      "url": "===url===2",
+      "shortUrl": "===ShortUrl===2",
+      "filename": "name url 2",
+      "filesize" : 56465454
+  ***REMOVED***
+***REMOVED***
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -24,8 +39,8 @@ var NewProduct = function(ctrl){
                         <input type="text" className="form-control" id="title" name="title"/>
                     ):(
                         <input type="text" className="form-control" id="title" name="title"
-                        config={function(){
-                          
+                        onchange={function(el){
+                          data().title = $(el.target).val()
                       ***REMOVED******REMOVED***
                         value={data().title***REMOVED***
                         />
@@ -73,25 +88,83 @@ var NewProduct = function(ctrl){
                 </div>
                 
                 <div className="form-group">
-                  <label for="textarea13" className="col-sm-2 control-label">Description</label>
+                  <label for="textarea" className="col-sm-2 control-label">Description</label>
                   <div className="col-sm-10">
-                    <textarea name="textarea13" id="textarea13" className="form-control" rows="3" placeholder=""></textarea><div className="form-control-line"></div>
+                    <textarea name="textarea" id="textarea" className="form-control" rows="3" placeholder=""
+                      config={function(el, isInit, ctx){
+                        if(!isInit) {
+                          $(el).val(data().description)
+                      ***REMOVED***
+                    ***REMOVED******REMOVED***
+                      onkeypress={function(el){
+                        data().description = $(el).val();
+                    ***REMOVED******REMOVED***
+                    ></textarea>
+                    
+                    <div className="form-control-line"></div>
                   </div>
                 </div>
   
-                <div className="form-group">
-                  <label for="regular13" className="col-sm-2 control-label">File</label>
-                  <div className="col-sm-3">
-                    <input type="text" className="form-control" id="regular13" placeholder="URL"/><div className="form-control-line"></div>
+                {(data().link === undefined)?[
+                  <div className="form-group">
+                    <label for="url" className="col-sm-2 control-label">File 1</label>
+                    <div className="col-sm-3">
+                      <input type="text" className="form-control" id="url" name="url" placeholder="URL"/><div className="form-control-line"></div>
+                    </div>
+                    <div className="col-sm-5">
+                      <input type="text" className="form-control" id="" placeholder="File name"/><div className="form-control-line"></div>
+                    </div>
+                    <div className="col-sm-2">
+                      <input disabled type="text" className="form-control" id="" placeholder="File size"/><div className="form-control-line"></div>
+                    </div>
                   </div>
-                  <div className="col-sm-5">
-                    <input type="text" className="form-control" id="regular13" placeholder="File name"/><div className="form-control-line"></div>
-                  </div>
-                  <div className="col-sm-2">
-                    <input disabled type="text" className="form-control" id="regular13" placeholder="File size"/><div className="form-control-line"></div>
-                  </div>
-                </div>
-                
+              ***REMOVED***:[
+                    data().link.map(function(el, index){
+                      return (
+                          <div className="form-group">
+                            <label for={"url" + (index+1)***REMOVED*** className="col-sm-2 control-label">File {index + 1***REMOVED***</label>
+                            <div className="col-sm-3">
+                              <input type="text" className="form-control" id={"url" + (index+1)***REMOVED*** name={"url" + (index+1)***REMOVED*** placeholder="URL"
+                                     onchange={function(item){
+                                       data().link[index].url = $(item.target).val();
+                                   ***REMOVED******REMOVED***
+                                     value={el.url***REMOVED***
+                              /><div className="form-control-line"></div>
+                            </div>
+                            <div className="col-sm-5">
+                              <input type="text" className="form-control" id="" placeholder="File name"
+                                     onchange={function(item){
+                                       data().link[index].filename = $(item.target).val();
+                                   ***REMOVED******REMOVED***
+                                     value={el.filename***REMOVED***
+                              /><div className="form-control-line"></div>
+                            </div>
+                            <div className="col-sm-2">
+                              <input disabled type="number" className="form-control" id="" placeholder="File size"
+                                     onchange={function(item){
+                                       data().link[index].filesize = $(item.target).val();
+                                   ***REMOVED******REMOVED***
+                                     value={(el.filesize>0)?(el.filesize):""***REMOVED***
+                              /><div className="form-control-line"></div>
+                            </div>
+                          </div>
+                      )
+                  ***REMOVED***)
+                  
+              ***REMOVED******REMOVED***
+  
+                <button type="button" className="btn ink-reaction btn-flat btn-primary btn-loading-state" style="float: right"
+                  onclick={function(el){
+                    data().link.push(
+                        {
+                          "url": "",
+                          "shortUrl": "",
+                          "filename": "",
+                          "filesize" : 0
+                      ***REMOVED***
+                    )
+                ***REMOVED******REMOVED***
+                >Add new file</button>
                 
               </form>
             </div>
