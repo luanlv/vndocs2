@@ -1,0 +1,28 @@
+var NewProduct = {***REMOVED***;
+var Header = require('./_header.msx');
+var Menu = require('./_menu.msx');
+var NewProduct = require('./_newproduct.msx');
+var Right = require('./_right.msx');
+
+NewProduct.controller = function(){
+  
+***REMOVED***;
+
+NewProduct.view = function(ctrl){
+  return  [
+    Header(ctrl),
+    <div id="base">
+      <div className="offcanvas"></div>
+      
+      {NewProduct(ctrl)***REMOVED***
+      
+      {Menu(ctrl)***REMOVED***
+      
+      {Right(ctrl)***REMOVED***
+    
+    </div>
+***REMOVED***
+***REMOVED***;
+
+
+module.exports = NewProduct;

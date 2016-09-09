@@ -3,6 +3,7 @@
 var Main = Main || {***REMOVED***;
 
 Main.Home = require('./main/home.msx');
+Main.NewProduct = require('./main/newproduct.msx');
 //Main.Dashboard = require('./main/_dashboard.msx');
 // Main.Product = require('./main/_product.msx');
 // Main.Category = require('./main/_category.msx');
@@ -10,13 +11,13 @@ Main.Home = require('./main/home.msx');
 
 
 m.route(document.querySelector('#app'), "/", {
-  "/": Main.Home
+  "/": Main.NewProduct
 ***REMOVED***);
 
 
 
 module.exports = Main;
-***REMOVED***,{"./main/home.msx":7***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./main/home.msx":8,"./main/newproduct.msx":9***REMOVED***],2:[function(require,module,exports){
 "use strict";
 
 
@@ -38,62 +39,63 @@ window.isMobile = window.mobilecheck();
 ***REMOVED***,{"./_main.msx":1***REMOVED***],3:[function(require,module,exports){
 var Content = function(ctrl){
   return [
-      {tag: "div", attrs: {className:"content"***REMOVED***, children: [
+    {tag: "hr", attrs: {className:"ruler-xxl"***REMOVED******REMOVED***,
+    {tag: "div", attrs: {className:"content"***REMOVED***, children: [
         {tag: "section", attrs: {***REMOVED***, children: [
           {tag: "div", attrs: {className:"section-body"***REMOVED***, children: [
-            {tag: "div", attrs: {class:"row"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"row"***REMOVED***, children: [
       
-              {tag: "div", attrs: {class:"col-md-3 col-sm-6"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"card"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"card-body no-padding"***REMOVED***, children: [
-                    {tag: "div", attrs: {class:"alert alert-callout alert-info no-margin"***REMOVED***, children: [
-                      {tag: "strong", attrs: {class:"pull-right text-success text-lg"***REMOVED***, children: ["0,38% ", {tag: "i", attrs: {class:"md md-trending-up"***REMOVED******REMOVED***]***REMOVED***, 
-                      {tag: "strong", attrs: {class:"text-xl"***REMOVED***, children: ["$ 32,829"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                      {tag: "span", attrs: {class:"opacity-50"***REMOVED***, children: ["Revenue"]***REMOVED***, 
-                      {tag: "div", attrs: {class:"stick-bottom-left-right"***REMOVED***, children: [
-                        {tag: "div", attrs: {class:"height-2 sparkline-revenue", "data-line-color":"#bdc1c1"***REMOVED******REMOVED***
+              {tag: "div", attrs: {className:"col-md-3 col-sm-6"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"card-body no-padding"***REMOVED***, children: [
+                    {tag: "div", attrs: {className:"alert alert-callout alert-info no-margin"***REMOVED***, children: [
+                      {tag: "strong", attrs: {className:"pull-right text-success text-lg"***REMOVED***, children: ["0,38% ", {tag: "i", attrs: {className:"md md-trending-up"***REMOVED******REMOVED***]***REMOVED***, 
+                      {tag: "strong", attrs: {className:"text-xl"***REMOVED***, children: ["$ 32,829"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                      {tag: "span", attrs: {className:"opacity-50"***REMOVED***, children: ["Revenue"]***REMOVED***, 
+                      {tag: "div", attrs: {className:"stick-bottom-left-right"***REMOVED***, children: [
+                        {tag: "div", attrs: {className:"height-2 sparkline-revenue", "data-line-color":"#bdc1c1"***REMOVED******REMOVED***
                     ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {class:"col-md-3 col-sm-6"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"card"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"card-body no-padding"***REMOVED***, children: [
-                    {tag: "div", attrs: {class:"alert alert-callout alert-warning no-margin"***REMOVED***, children: [
-                      {tag: "strong", attrs: {class:"pull-right text-warning text-lg"***REMOVED***, children: ["0,01% ", {tag: "i", attrs: {class:"md md-swap-vert"***REMOVED******REMOVED***]***REMOVED***, 
-                      {tag: "strong", attrs: {class:"text-xl"***REMOVED***, children: ["432,901"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                      {tag: "span", attrs: {class:"opacity-50"***REMOVED***, children: ["Visits"]***REMOVED***, 
-                      {tag: "div", attrs: {class:"stick-bottom-right"***REMOVED***, children: [
-                        {tag: "div", attrs: {class:"height-1 sparkline-visits", "data-bar-color":"#e5e6e6"***REMOVED******REMOVED***
+              {tag: "div", attrs: {className:"col-md-3 col-sm-6"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"card-body no-padding"***REMOVED***, children: [
+                    {tag: "div", attrs: {className:"alert alert-callout alert-warning no-margin"***REMOVED***, children: [
+                      {tag: "strong", attrs: {className:"pull-right text-warning text-lg"***REMOVED***, children: ["0,01% ", {tag: "i", attrs: {className:"md md-swap-vert"***REMOVED******REMOVED***]***REMOVED***, 
+                      {tag: "strong", attrs: {className:"text-xl"***REMOVED***, children: ["432,901"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                      {tag: "span", attrs: {className:"opacity-50"***REMOVED***, children: ["Visits"]***REMOVED***, 
+                      {tag: "div", attrs: {className:"stick-bottom-right"***REMOVED***, children: [
+                        {tag: "div", attrs: {className:"height-1 sparkline-visits", "data-bar-color":"#e5e6e6"***REMOVED******REMOVED***
                     ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {class:"col-md-3 col-sm-6"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"card"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"card-body no-padding"***REMOVED***, children: [
-                    {tag: "div", attrs: {class:"alert alert-callout alert-danger no-margin"***REMOVED***, children: [
-                      {tag: "strong", attrs: {class:"pull-right text-danger text-lg"***REMOVED***, children: ["0,18% ", {tag: "i", attrs: {class:"md md-trending-down"***REMOVED******REMOVED***]***REMOVED***, 
-                      {tag: "strong", attrs: {class:"text-xl"***REMOVED***, children: ["42.90%"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                      {tag: "span", attrs: {class:"opacity-50"***REMOVED***, children: ["Bounce rate"]***REMOVED***, 
-                      {tag: "div", attrs: {class:"stick-bottom-left-right"***REMOVED***, children: [
-                        {tag: "div", attrs: {class:"progress progress-hairline no-margin"***REMOVED***, children: [
-                          {tag: "div", attrs: {class:"progress-bar progress-bar-danger", style:"width:43%"***REMOVED******REMOVED***
+              {tag: "div", attrs: {className:"col-md-3 col-sm-6"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"card-body no-padding"***REMOVED***, children: [
+                    {tag: "div", attrs: {className:"alert alert-callout alert-danger no-margin"***REMOVED***, children: [
+                      {tag: "strong", attrs: {className:"pull-right text-danger text-lg"***REMOVED***, children: ["0,18% ", {tag: "i", attrs: {className:"md md-trending-down"***REMOVED******REMOVED***]***REMOVED***, 
+                      {tag: "strong", attrs: {className:"text-xl"***REMOVED***, children: ["42.90%"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                      {tag: "span", attrs: {className:"opacity-50"***REMOVED***, children: ["Bounce rate"]***REMOVED***, 
+                      {tag: "div", attrs: {className:"stick-bottom-left-right"***REMOVED***, children: [
+                        {tag: "div", attrs: {className:"progress progress-hairline no-margin"***REMOVED***, children: [
+                          {tag: "div", attrs: {className:"progress-bar progress-bar-danger", style:"width:43%"***REMOVED******REMOVED***
                       ***REMOVED******REMOVED***
                     ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {class:"col-md-3 col-sm-6"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"card"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"card-body no-padding"***REMOVED***, children: [
-                    {tag: "div", attrs: {class:"alert alert-callout alert-success no-margin"***REMOVED***, children: [
-                      {tag: "h1", attrs: {class:"pull-right text-success"***REMOVED***, children: [{tag: "i", attrs: {class:"md md-timer"***REMOVED******REMOVED***]***REMOVED***, 
-                      {tag: "strong", attrs: {class:"text-xl"***REMOVED***, children: ["54 sec."]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                      {tag: "span", attrs: {class:"opacity-50"***REMOVED***, children: ["Avg. time on site"]***REMOVED***
+              {tag: "div", attrs: {className:"col-md-3 col-sm-6"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"card-body no-padding"***REMOVED***, children: [
+                    {tag: "div", attrs: {className:"alert alert-callout alert-success no-margin"***REMOVED***, children: [
+                      {tag: "h1", attrs: {className:"pull-right text-success"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-timer"***REMOVED******REMOVED***]***REMOVED***, 
+                      {tag: "strong", attrs: {className:"text-xl"***REMOVED***, children: ["54 sec."]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                      {tag: "span", attrs: {className:"opacity-50"***REMOVED***, children: ["Avg. time on site"]***REMOVED***
                   ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
@@ -115,18 +117,18 @@ var Header = function(ctrl){
   {tag: "header", attrs: {id:"header"***REMOVED***, children: [
     {tag: "div", attrs: {className:"headerbar"***REMOVED***, children: [
       
-      {tag: "div", attrs: {class:"headerbar-left"***REMOVED***, children: [
-        {tag: "ul", attrs: {class:"header-nav header-nav-options"***REMOVED***, children: [
-          {tag: "li", attrs: {class:"header-nav-brand"***REMOVED***, children: [
-            {tag: "div", attrs: {class:"brand-holder"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"headerbar-left"***REMOVED***, children: [
+        {tag: "ul", attrs: {className:"header-nav header-nav-options"***REMOVED***, children: [
+          {tag: "li", attrs: {className:"header-nav-brand"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"brand-holder"***REMOVED***, children: [
               {tag: "a", attrs: {href:"../../html/dashboards/dashboard.html"***REMOVED***, children: [
-                {tag: "span", attrs: {class:"text-lg text-bold text-primary"***REMOVED***, children: ["MATERIAL ADMIN"]***REMOVED***
+                {tag: "span", attrs: {className:"text-lg text-bold text-primary"***REMOVED***, children: ["MATERIAL ADMIN"]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
           {tag: "li", attrs: {***REMOVED***, children: [
-            {tag: "a", attrs: {class:"btn btn-icon-toggle menubar-toggle", "data-toggle":"menubar", href:"javascript:void(0);"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"fa fa-bars"***REMOVED******REMOVED***
+            {tag: "a", attrs: {className:"btn btn-icon-toggle menubar-toggle", "data-toggle":"menubar", href:"javascript:void(0);"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"fa fa-bars"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
@@ -136,69 +138,69 @@ var Header = function(ctrl){
       {tag: "div", attrs: {className:"headerbar-right"***REMOVED***, children: [
         {tag: "div", attrs: {className:"header-nav header-nav-options"***REMOVED***, children: [
           {tag: "li", attrs: {***REMOVED***, children: [
-            {tag: "form", attrs: {class:"navbar-search", role:"search"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"form-group"***REMOVED***, children: [
-                {tag: "input", attrs: {type:"text", class:"form-control", name:"headerSearch", placeholder:"Enter your keyword"***REMOVED******REMOVED***
+            {tag: "form", attrs: {className:"navbar-search", role:"search"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                {tag: "input", attrs: {type:"text", className:"form-control", name:"headerSearch", placeholder:"Enter your keyword"***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "button", attrs: {type:"submit", class:"btn btn-icon-toggle ink-reaction"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-search"***REMOVED******REMOVED***]***REMOVED***
+              {tag: "button", attrs: {type:"submit", className:"btn btn-icon-toggle ink-reaction"***REMOVED***, children: [{tag: "i", attrs: {className:"fa fa-search"***REMOVED******REMOVED***]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "li", attrs: {class:"dropdown hidden-xs"***REMOVED***, children: [
-            {tag: "a", attrs: {href:"javascript:void(0);", class:"btn btn-icon-toggle btn-default", "data-toggle":"dropdown"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"fa fa-bell"***REMOVED******REMOVED***, {tag: "sup", attrs: {class:"badge style-danger"***REMOVED***, children: ["4"]***REMOVED***
+          {tag: "li", attrs: {className:"dropdown hidden-xs"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"javascript:void(0);", className:"btn btn-icon-toggle btn-default", "data-toggle":"dropdown"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"fa fa-bell"***REMOVED******REMOVED***, {tag: "sup", attrs: {className:"badge style-danger"***REMOVED***, children: ["4"]***REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "ul", attrs: {class:"dropdown-menu animation-expand"***REMOVED***, children: [
-              {tag: "li", attrs: {class:"dropdown-header"***REMOVED***, children: ["Today's messages"]***REMOVED***, 
+            {tag: "ul", attrs: {className:"dropdown-menu animation-expand"***REMOVED***, children: [
+              {tag: "li", attrs: {className:"dropdown-header"***REMOVED***, children: ["Today's messages"]***REMOVED***, 
               {tag: "li", attrs: {***REMOVED***, children: [
-                {tag: "a", attrs: {class:"alert alert-callout alert-warning", href:"javascript:void(0);"***REMOVED***, children: [
-                  {tag: "img", attrs: {class:"pull-right img-circle dropdown-avatar", src:"/assets/admin/img/avatar2.jpg?1404026449", alt:""***REMOVED******REMOVED***, 
+                {tag: "a", attrs: {className:"alert alert-callout alert-warning", href:"javascript:void(0);"***REMOVED***, children: [
+                  {tag: "img", attrs: {className:"pull-right img-circle dropdown-avatar", src:"/assets/admin/img/avatar2.jpg?1404026449", alt:""***REMOVED******REMOVED***, 
                   {tag: "strong", attrs: {***REMOVED***, children: ["Alex Anistor"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
                   {tag: "small", attrs: {***REMOVED***, children: ["Testing functionality..."]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
               {tag: "li", attrs: {***REMOVED***, children: [
-                {tag: "a", attrs: {class:"alert alert-callout alert-info", href:"javascript:void(0);"***REMOVED***, children: [
-                  {tag: "img", attrs: {class:"pull-right img-circle dropdown-avatar", src:"/assets/admin/img/avatar3.jpg?1404026799", alt:""***REMOVED******REMOVED***, 
+                {tag: "a", attrs: {className:"alert alert-callout alert-info", href:"javascript:void(0);"***REMOVED***, children: [
+                  {tag: "img", attrs: {className:"pull-right img-circle dropdown-avatar", src:"/assets/admin/img/avatar3.jpg?1404026799", alt:""***REMOVED******REMOVED***, 
                   {tag: "strong", attrs: {***REMOVED***, children: ["Alicia Adell"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, 
                   {tag: "small", attrs: {***REMOVED***, children: ["Reviewing last changes..."]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "li", attrs: {class:"dropdown-header"***REMOVED***, children: ["Options"]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/login.html"***REMOVED***, children: ["View all messages ", {tag: "span", attrs: {class:"pull-right"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-arrow-right"***REMOVED******REMOVED***]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/login.html"***REMOVED***, children: ["Mark as read ", {tag: "span", attrs: {class:"pull-right"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-arrow-right"***REMOVED******REMOVED***]***REMOVED***]***REMOVED***]***REMOVED***
+              {tag: "li", attrs: {className:"dropdown-header"***REMOVED***, children: ["Options"]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/login.html"***REMOVED***, children: ["View all messages ", {tag: "span", attrs: {className:"pull-right"***REMOVED***, children: [{tag: "i", attrs: {className:"fa fa-arrow-right"***REMOVED******REMOVED***]***REMOVED***]***REMOVED***]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/login.html"***REMOVED***, children: ["Mark as read ", {tag: "span", attrs: {className:"pull-right"***REMOVED***, children: [{tag: "i", attrs: {className:"fa fa-arrow-right"***REMOVED******REMOVED***]***REMOVED***]***REMOVED***]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "li", attrs: {class:"dropdown hidden-xs"***REMOVED***, children: [
-            {tag: "a", attrs: {href:"javascript:void(0);", class:"btn btn-icon-toggle btn-default", "data-toggle":"dropdown"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"fa fa-area-chart"***REMOVED******REMOVED***
+          {tag: "li", attrs: {className:"dropdown hidden-xs"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"javascript:void(0);", className:"btn btn-icon-toggle btn-default", "data-toggle":"dropdown"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"fa fa-area-chart"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "ul", attrs: {class:"dropdown-menu animation-expand"***REMOVED***, children: [
-              {tag: "li", attrs: {class:"dropdown-header"***REMOVED***, children: ["Server load"]***REMOVED***, 
-              {tag: "li", attrs: {class:"dropdown-progress"***REMOVED***, children: [
+            {tag: "ul", attrs: {className:"dropdown-menu animation-expand"***REMOVED***, children: [
+              {tag: "li", attrs: {className:"dropdown-header"***REMOVED***, children: ["Server load"]***REMOVED***, 
+              {tag: "li", attrs: {className:"dropdown-progress"***REMOVED***, children: [
                 {tag: "a", attrs: {href:"javascript:void(0);"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"dropdown-label"***REMOVED***, children: [
-                    {tag: "span", attrs: {class:"text-light"***REMOVED***, children: ["Server load ", {tag: "strong", attrs: {***REMOVED***, children: ["Today"]***REMOVED***]***REMOVED***, 
-                    {tag: "strong", attrs: {class:"pull-right"***REMOVED***, children: ["93%"]***REMOVED***
+                  {tag: "div", attrs: {className:"dropdown-label"***REMOVED***, children: [
+                    {tag: "span", attrs: {className:"text-light"***REMOVED***, children: ["Server load ", {tag: "strong", attrs: {***REMOVED***, children: ["Today"]***REMOVED***]***REMOVED***, 
+                    {tag: "strong", attrs: {className:"pull-right"***REMOVED***, children: ["93%"]***REMOVED***
                 ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"progress"***REMOVED***, children: [{tag: "div", attrs: {class:"progress-bar progress-bar-danger", style:"width: 93%"***REMOVED******REMOVED***]***REMOVED***
+                  {tag: "div", attrs: {className:"progress"***REMOVED***, children: [{tag: "div", attrs: {className:"progress-bar progress-bar-danger", style:"width: 93%"***REMOVED******REMOVED***]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "li", attrs: {class:"dropdown-progress"***REMOVED***, children: [
+              {tag: "li", attrs: {className:"dropdown-progress"***REMOVED***, children: [
                 {tag: "a", attrs: {href:"javascript:void(0);"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"dropdown-label"***REMOVED***, children: [
-                    {tag: "span", attrs: {class:"text-light"***REMOVED***, children: ["Server load ", {tag: "strong", attrs: {***REMOVED***, children: ["Yesterday"]***REMOVED***]***REMOVED***, 
-                    {tag: "strong", attrs: {class:"pull-right"***REMOVED***, children: ["30%"]***REMOVED***
+                  {tag: "div", attrs: {className:"dropdown-label"***REMOVED***, children: [
+                    {tag: "span", attrs: {className:"text-light"***REMOVED***, children: ["Server load ", {tag: "strong", attrs: {***REMOVED***, children: ["Yesterday"]***REMOVED***]***REMOVED***, 
+                    {tag: "strong", attrs: {className:"pull-right"***REMOVED***, children: ["30%"]***REMOVED***
                 ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"progress"***REMOVED***, children: [{tag: "div", attrs: {class:"progress-bar progress-bar-success", style:"width: 30%"***REMOVED******REMOVED***]***REMOVED***
+                  {tag: "div", attrs: {className:"progress"***REMOVED***, children: [{tag: "div", attrs: {className:"progress-bar progress-bar-success", style:"width: 30%"***REMOVED******REMOVED***]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
-              {tag: "li", attrs: {class:"dropdown-progress"***REMOVED***, children: [
+              {tag: "li", attrs: {className:"dropdown-progress"***REMOVED***, children: [
                 {tag: "a", attrs: {href:"javascript:void(0);"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"dropdown-label"***REMOVED***, children: [
-                    {tag: "span", attrs: {class:"text-light"***REMOVED***, children: ["Server load ", {tag: "strong", attrs: {***REMOVED***, children: ["Lastweek"]***REMOVED***]***REMOVED***, 
-                    {tag: "strong", attrs: {class:"pull-right"***REMOVED***, children: ["74%"]***REMOVED***
+                  {tag: "div", attrs: {className:"dropdown-label"***REMOVED***, children: [
+                    {tag: "span", attrs: {className:"text-light"***REMOVED***, children: ["Server load ", {tag: "strong", attrs: {***REMOVED***, children: ["Lastweek"]***REMOVED***]***REMOVED***, 
+                    {tag: "strong", attrs: {className:"pull-right"***REMOVED***, children: ["74%"]***REMOVED***
                 ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"progress"***REMOVED***, children: [{tag: "div", attrs: {class:"progress-bar progress-bar-warning", style:"width: 74%"***REMOVED******REMOVED***]***REMOVED***
+                  {tag: "div", attrs: {className:"progress"***REMOVED***, children: [{tag: "div", attrs: {className:"progress-bar progress-bar-warning", style:"width: 74%"***REMOVED******REMOVED***]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
@@ -206,32 +208,32 @@ var Header = function(ctrl){
       ***REMOVED******REMOVED***, 
         
         
-        {tag: "ul", attrs: {class:"header-nav header-nav-profile"***REMOVED***, children: [
-          {tag: "li", attrs: {class:"dropdown"***REMOVED***, children: [
-            {tag: "a", attrs: {href:"javascript:void(0);", class:"dropdown-toggle ink-reaction", "data-toggle":"dropdown"***REMOVED***, children: [
+        {tag: "ul", attrs: {className:"header-nav header-nav-profile"***REMOVED***, children: [
+          {tag: "li", attrs: {className:"dropdown"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"javascript:void(0);", className:"dropdown-toggle ink-reaction", "data-toggle":"dropdown"***REMOVED***, children: [
               {tag: "img", attrs: {src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***, 
-              {tag: "span", attrs: {class:"profile-info"***REMOVED***, children: [
+              {tag: "span", attrs: {className:"profile-info"***REMOVED***, children: [
                   "Daniel Johnson", 
                   {tag: "small", attrs: {***REMOVED***, children: ["Administrator"]***REMOVED***
               ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "ul", attrs: {class:"dropdown-menu animation-dock"***REMOVED***, children: [
-              {tag: "li", attrs: {class:"dropdown-header"***REMOVED***, children: ["Config"]***REMOVED***, 
+            {tag: "ul", attrs: {className:"dropdown-menu animation-dock"***REMOVED***, children: [
+              {tag: "li", attrs: {className:"dropdown-header"***REMOVED***, children: ["Config"]***REMOVED***, 
               {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/profile.html"***REMOVED***, children: ["My profile"]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/blog/post.html"***REMOVED***, children: ["My blog ", {tag: "span", attrs: {class:"badge style-danger pull-right"***REMOVED***, children: ["16"]***REMOVED***]***REMOVED***]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/blog/post.html"***REMOVED***, children: ["My blog ", {tag: "span", attrs: {className:"badge style-danger pull-right"***REMOVED***, children: ["16"]***REMOVED***]***REMOVED***]***REMOVED***, 
               {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/calendar.html"***REMOVED***, children: ["My appointments"]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {class:"divider"***REMOVED******REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/locked.html"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-fw fa-lock"***REMOVED******REMOVED***, " Lock"]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/login.html"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-fw fa-power-off text-danger"***REMOVED******REMOVED***, " Logout"]***REMOVED***]***REMOVED***
+              {tag: "li", attrs: {className:"divider"***REMOVED******REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/locked.html"***REMOVED***, children: [{tag: "i", attrs: {className:"fa fa-fw fa-lock"***REMOVED******REMOVED***, " Lock"]***REMOVED***]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/pages/login.html"***REMOVED***, children: [{tag: "i", attrs: {className:"fa fa-fw fa-power-off text-danger"***REMOVED******REMOVED***, " Logout"]***REMOVED***]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
   
   
-        {tag: "ul", attrs: {class:"header-nav header-nav-toggle"***REMOVED***, children: [
+        {tag: "ul", attrs: {className:"header-nav header-nav-toggle"***REMOVED***, children: [
           {tag: "li", attrs: {***REMOVED***, children: [
-            {tag: "a", attrs: {class:"btn btn-icon-toggle btn-default", href:"#offcanvas-search", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"fa fa-ellipsis-v"***REMOVED******REMOVED***
+            {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default", href:"#offcanvas-search", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"fa fa-ellipsis-v"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
@@ -246,16 +248,16 @@ module.exports = Header;
 ***REMOVED***,{***REMOVED***],5:[function(require,module,exports){
 var Menu = function(ctrl){
   return [
-    {tag: "div", attrs: {id:"menubar", class:"menubar-inverse "***REMOVED***, children: [
-      {tag: "div", attrs: {class:"menubar-fixed-panel"***REMOVED***, children: [
+    {tag: "div", attrs: {id:"menubar", className:"menubar-inverse "***REMOVED***, children: [
+      {tag: "div", attrs: {className:"menubar-fixed-panel"***REMOVED***, children: [
         {tag: "div", attrs: {***REMOVED***, children: [
-          {tag: "a", attrs: {class:"btn btn-icon-toggle btn-default menubar-toggle", "data-toggle":"menubar", href:"javascript:void(0);"***REMOVED***, children: [
-            {tag: "i", attrs: {class:"fa fa-bars"***REMOVED******REMOVED***
+          {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default menubar-toggle", "data-toggle":"menubar", href:"javascript:void(0);"***REMOVED***, children: [
+            {tag: "i", attrs: {className:"fa fa-bars"***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {class:"expanded"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"expanded"***REMOVED***, children: [
           {tag: "a", attrs: {href:"../../html/dashboards/dashboard.html"***REMOVED***, children: [
-            {tag: "span", attrs: {class:"text-lg text-bold text-primary "***REMOVED***, children: ["MATERIAL ADMIN"]***REMOVED***
+            {tag: "span", attrs: {className:"text-lg text-bold text-primary "***REMOVED***, children: ["MATERIAL ADMIN"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***, 
@@ -266,28 +268,28 @@ var Menu = function(ctrl){
         
         {tag: "div", attrs: {className:"gui-controls", id:"main-menu"***REMOVED***, children: [
           {tag: "li", attrs: {***REMOVED***, children: [
-            {tag: "a", attrs: {href:"../../html/dashboards/dashboard.html", class:"active"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {class:"md md-home"***REMOVED******REMOVED***]***REMOVED***, 
-              {tag: "span", attrs: {class:"title"***REMOVED***, children: ["Dashboard"]***REMOVED***
+            {tag: "a", attrs: {href:"../../html/dashboards/dashboard.html", className:"active"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-home"***REMOVED******REMOVED***]***REMOVED***, 
+              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Dashboard"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "li", attrs: {class:"gui-folder"***REMOVED***, children: [
+          {tag: "li", attrs: {className:"gui-folder"***REMOVED***, children: [
             {tag: "a", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {class:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {class:"md md-email"***REMOVED******REMOVED***]***REMOVED***, 
-              {tag: "span", attrs: {class:"title"***REMOVED***, children: ["Email"]***REMOVED***
+              {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-email"***REMOVED******REMOVED***]***REMOVED***, 
+              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Email"]***REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "ul", attrs: {***REMOVED***, children: [
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/inbox.html"***REMOVED***, children: [{tag: "span", attrs: {class:"title"***REMOVED***, children: ["Inbox"]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/compose.html"***REMOVED***, children: [{tag: "span", attrs: {class:"title"***REMOVED***, children: ["Compose"]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/reply.html"***REMOVED***, children: [{tag: "span", attrs: {class:"title"***REMOVED***, children: ["Reply"]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/message.html"***REMOVED***, children: [{tag: "span", attrs: {class:"title"***REMOVED***, children: ["View message"]***REMOVED***]***REMOVED***]***REMOVED***
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/inbox.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["Inbox"]***REMOVED***]***REMOVED***]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/compose.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["Compose"]***REMOVED***]***REMOVED***]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/reply.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["Reply"]***REMOVED***]***REMOVED***]***REMOVED***, 
+              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/message.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["View message"]***REMOVED***]***REMOVED***]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
   
           {tag: "li", attrs: {***REMOVED***, children: [
             {tag: "a", attrs: {href:"../../html/layouts/builder.html"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {class:"md md-web"***REMOVED******REMOVED***]***REMOVED***, 
-              {tag: "span", attrs: {class:"title"***REMOVED***, children: ["Layouts"]***REMOVED***
+              {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-web"***REMOVED******REMOVED***]***REMOVED***, 
+              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Layouts"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
           
@@ -295,9 +297,9 @@ var Menu = function(ctrl){
       ***REMOVED******REMOVED***, 
         
         
-        {tag: "div", attrs: {class:"menubar-foot-panel"***REMOVED***, children: [
-          {tag: "small", attrs: {class:"no-linebreak hidden-folded"***REMOVED***, children: [
-            {tag: "span", attrs: {class:"opacity-75"***REMOVED***, children: ["Copyright © 2014"]***REMOVED***, " ", {tag: "strong", attrs: {***REMOVED***, children: ["CodeCovers"]***REMOVED***
+        {tag: "div", attrs: {className:"menubar-foot-panel"***REMOVED***, children: [
+          {tag: "small", attrs: {className:"no-linebreak hidden-folded"***REMOVED***, children: [
+            {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["Copyright © 2014"]***REMOVED***, " ", {tag: "strong", attrs: {***REMOVED***, children: ["CodeCovers"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
         
@@ -308,156 +310,258 @@ var Menu = function(ctrl){
 
 module.exports = Menu;
 ***REMOVED***,{***REMOVED***],6:[function(require,module,exports){
+var NewProduct = function(ctrl){
+  return [
+    {tag: "hr", attrs: {className:"ruler-xxl"***REMOVED******REMOVED***,
+    {tag: "div", attrs: {className:"content"***REMOVED***, children: [
+      {tag: "section", attrs: {***REMOVED***, children: [
+        {tag: "div", attrs: {className:"section-body"***REMOVED***, children: [
+          {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+              {tag: "form", attrs: {className:"form-horizontal", role:"form"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Regular input"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"password13", className:"col-sm-2 control-label"***REMOVED***, children: ["Password"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"password", className:"form-control", id:"password13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"placeholder13", className:"col-sm-2 control-label"***REMOVED***, children: ["Placeholder"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"placeholder13", placeholder:"Placeholder"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {className:"col-sm-2 control-label"***REMOVED***, children: ["Static control"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "p", attrs: {className:"form-control-static"***REMOVED***, children: ["email@example.com"]***REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"help13", className:"col-sm-2 control-label"***REMOVED***, children: ["Input with help text"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"help13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***, 
+                      {tag: "p", attrs: {className:"help-block"***REMOVED***, children: ["Example block-level help text here"]***REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"help13", className:"col-sm-2 control-label"***REMOVED***, children: ["Input with tooltip"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"tooltip13", placeholder:"Hover me", "data-toggle":"tooltip", "data-placement":"bottom", "data-trigger":"hover", "data-original-title":"Example input tooltip text here"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"select13", className:"col-sm-2 control-label"***REMOVED***, children: ["Select"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "select", attrs: {id:"select13", name:"select13", className:"form-control"***REMOVED***, children: [
+                      {tag: "option", attrs: {value:""***REMOVED***, children: [" "]***REMOVED***, 
+                      {tag: "option", attrs: {value:"30"***REMOVED***, children: ["30"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"40"***REMOVED***, children: ["40"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"50"***REMOVED***, children: ["50"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"60"***REMOVED***, children: ["60"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"70"***REMOVED***, children: ["70"]***REMOVED***
+                  ***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"textarea13", className:"col-sm-2 control-label"***REMOVED***, children: ["Textarea"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "textarea", attrs: {name:"textarea13", id:"textarea13", className:"form-control", rows:"3", placeholder:""***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          
+          {tag: "div", attrs: {className:"row"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"col-md-6"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+                  "left"
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+              
+          ***REMOVED******REMOVED***, 
+  
+  
+            {tag: "div", attrs: {className:"col-md-6"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+                  "right"
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+  
+          ***REMOVED******REMOVED***
+            
+        ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {className:"row"***REMOVED***
+            
+        ***REMOVED***
+        
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***
+***REMOVED***
+***REMOVED***
+
+module.exports = NewProduct;
+***REMOVED***,{***REMOVED***],7:[function(require,module,exports){
 var Right = function(ctrl){
   return [
-    {tag: "div", attrs: {class:"offcanvas"***REMOVED***, children: [
+    {tag: "div", attrs: {className:"offcanvas"***REMOVED***, children: [
     
-      {tag: "div", attrs: {id:"offcanvas-search", class:"offcanvas-pane width-8"***REMOVED***, children: [
-        {tag: "div", attrs: {class:"offcanvas-head"***REMOVED***, children: [
-          {tag: "header", attrs: {class:"text-primary"***REMOVED***, children: ["Search"]***REMOVED***, 
-          {tag: "div", attrs: {class:"offcanvas-tools"***REMOVED***, children: [
-            {tag: "a", attrs: {class:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"md md-close"***REMOVED******REMOVED***
+      {tag: "div", attrs: {id:"offcanvas-search", className:"offcanvas-pane width-8"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"offcanvas-head"***REMOVED***, children: [
+          {tag: "header", attrs: {className:"text-primary"***REMOVED***, children: ["Search"]***REMOVED***, 
+          {tag: "div", attrs: {className:"offcanvas-tools"***REMOVED***, children: [
+            {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"md md-close"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {class:"offcanvas-body no-padding"***REMOVED***, children: [
-          {tag: "ul", attrs: {class:"list "***REMOVED***, children: [
-            {tag: "li", attrs: {class:"tile divider-full-bleed"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"tile-content"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["A"]***REMOVED***]***REMOVED***
+        {tag: "div", attrs: {className:"offcanvas-body no-padding"***REMOVED***, children: [
+          {tag: "ul", attrs: {className:"list "***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile divider-full-bleed"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"tile-content"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["A"]***REMOVED***]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar4.jpg?1404026791", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Alex Nelson", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar9.jpg?1404026744", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Ann Laurens", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile divider-full-bleed"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"tile-content"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["J"]***REMOVED***]***REMOVED***
+            {tag: "li", attrs: {className:"tile divider-full-bleed"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"tile-content"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["J"]***REMOVED***]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar2.jpg?1404026449", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Jessica Cruise", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar8.jpg?1404026729", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Jim Peters", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile divider-full-bleed"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"tile-content"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["M"]***REMOVED***]***REMOVED***
+            {tag: "li", attrs: {className:"tile divider-full-bleed"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"tile-content"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["M"]***REMOVED***]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar5.jpg?1404026513", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Mabel Logan", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar11.jpg?1404026774", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Mary Peterson", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar3.jpg?1404026799", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Mike Alba", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile divider-full-bleed"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"tile-content"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["N"]***REMOVED***]***REMOVED***
+            {tag: "li", attrs: {className:"tile divider-full-bleed"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"tile-content"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["N"]***REMOVED***]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar6.jpg?1404026572", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Nathan Peterson", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile divider-full-bleed"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"tile-content"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["P"]***REMOVED***]***REMOVED***
+            {tag: "li", attrs: {className:"tile divider-full-bleed"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"tile-content"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["P"]***REMOVED***]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar7.jpg?1404026721", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Philip Ericsson", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile divider-full-bleed"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"tile-content"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["S"]***REMOVED***]***REMOVED***
+            {tag: "li", attrs: {className:"tile divider-full-bleed"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"tile-content"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["S"]***REMOVED***]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"tile"***REMOVED***, children: [
-              {tag: "a", attrs: {class:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"tile-icon"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"tile"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"tile-content ink-reaction", href:"#offcanvas-chat", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-icon"***REMOVED***, children: [
                   {tag: "img", attrs: {src:"/assets/admin/img/avatar10.jpg?1404026762", alt:""***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"tile-text"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"tile-text"***REMOVED***, children: [
                   "Samuel Parsons", 
                   {tag: "small", attrs: {***REMOVED***, children: ["123-123-3210"]***REMOVED***
               ***REMOVED******REMOVED***
@@ -466,64 +570,64 @@ var Right = function(ctrl){
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***, 
-      {tag: "div", attrs: {id:"offcanvas-chat", class:"offcanvas-pane style-default-light width-12"***REMOVED***, children: [
-        {tag: "div", attrs: {class:"offcanvas-head style-default-bright"***REMOVED***, children: [
-          {tag: "header", attrs: {class:"text-primary"***REMOVED***, children: ["Chat with Ann Laurens"]***REMOVED***, 
-          {tag: "div", attrs: {class:"offcanvas-tools"***REMOVED***, children: [
-            {tag: "a", attrs: {class:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"md md-close"***REMOVED******REMOVED***
+      {tag: "div", attrs: {id:"offcanvas-chat", className:"offcanvas-pane style-default-light width-12"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"offcanvas-head style-default-bright"***REMOVED***, children: [
+          {tag: "header", attrs: {className:"text-primary"***REMOVED***, children: ["Chat with Ann Laurens"]***REMOVED***, 
+          {tag: "div", attrs: {className:"offcanvas-tools"***REMOVED***, children: [
+            {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"md md-close"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "a", attrs: {class:"btn btn-icon-toggle btn-default-light pull-right", href:"#offcanvas-search", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
-              {tag: "i", attrs: {class:"md md-arrow-back"***REMOVED******REMOVED***
+            {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default-light pull-right", href:"#offcanvas-search", "data-toggle":"offcanvas", "data-backdrop":"false"***REMOVED***, children: [
+              {tag: "i", attrs: {className:"md md-arrow-back"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "form", attrs: {class:"form"***REMOVED***, children: [
-            {tag: "div", attrs: {class:"form-group floating-label"***REMOVED***, children: [
-              {tag: "textarea", attrs: {name:"sidebarChatMessage", id:"sidebarChatMessage", class:"form-control autosize", rows:"1"***REMOVED******REMOVED***, 
+          {tag: "form", attrs: {className:"form"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"form-group floating-label"***REMOVED***, children: [
+              {tag: "textarea", attrs: {name:"sidebarChatMessage", id:"sidebarChatMessage", className:"form-control autosize", rows:"1"***REMOVED******REMOVED***, 
               {tag: "label", attrs: {for:"sidebarChatMessage"***REMOVED***, children: ["Leave a message"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {class:"offcanvas-body"***REMOVED***, children: [
-          {tag: "ul", attrs: {class:"list-chats"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
+          {tag: "ul", attrs: {className:"list-chats"***REMOVED***, children: [
             {tag: "li", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {class:"chat"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {class:"img-circle", src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***]***REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"chat"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {className:"img-circle", src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***]***REMOVED***, 
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "Yes, it is indeed very beautiful.", 
                   {tag: "small", attrs: {***REMOVED***, children: ["10:03 pm"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"chat-left"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"chat"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {class:"img-circle", src:"/assets/admin/img/avatar9.jpg?1404026744", alt:""***REMOVED******REMOVED***]***REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"chat-left"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"chat"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {className:"img-circle", src:"/assets/admin/img/avatar9.jpg?1404026744", alt:""***REMOVED******REMOVED***]***REMOVED***, 
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "Did you see the changes?", 
                   {tag: "small", attrs: {***REMOVED***, children: ["10:02 pm"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "li", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {class:"chat"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {class:"img-circle", src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***]***REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"chat"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {className:"img-circle", src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***]***REMOVED***, 
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "I just arrived at work, it was quite busy.", 
                   {tag: "small", attrs: {***REMOVED***, children: ["06:44pm"]***REMOVED***
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "I will take look in a minute.", 
                   {tag: "small", attrs: {***REMOVED***, children: ["06:45pm"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "li", attrs: {class:"chat-left"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"chat"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {class:"img-circle", src:"/assets/admin/img/avatar9.jpg?1404026744", alt:""***REMOVED******REMOVED***]***REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+            {tag: "li", attrs: {className:"chat-left"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"chat"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {className:"img-circle", src:"/assets/admin/img/avatar9.jpg?1404026744", alt:""***REMOVED******REMOVED***]***REMOVED***, 
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "The colors are much better now."
               ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "The colors are brighter than before." + ' ' +
                   "I have already sent an example." + ' ' +
                   "This will make it look sharper.", 
@@ -532,9 +636,9 @@ var Right = function(ctrl){
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "li", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {class:"chat"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {class:"img-circle", src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***]***REMOVED***, 
-                {tag: "div", attrs: {class:"chat-body"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"chat"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"chat-avatar"***REMOVED***, children: [{tag: "img", attrs: {className:"img-circle", src:"/assets/admin/img/avatar1.jpg?1403934956", alt:""***REMOVED******REMOVED***]***REMOVED***, 
+                {tag: "div", attrs: {className:"chat-body"***REMOVED***, children: [
                   "Are the colors of the logo already adapted?", 
                   {tag: "small", attrs: {***REMOVED***, children: ["Last week"]***REMOVED***
               ***REMOVED******REMOVED***
@@ -548,7 +652,7 @@ var Right = function(ctrl){
 ***REMOVED***;
 
 module.exports = Right;
-***REMOVED***,{***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],8:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
@@ -576,4 +680,33 @@ Home.view = function(ctrl){
 
 
 module.exports = Home;
-***REMOVED***,{"./_content.msx":3,"./_header.msx":4,"./_menu.msx":5,"./_right.msx":6***REMOVED***]***REMOVED***,{***REMOVED***,[2])
+***REMOVED***,{"./_content.msx":3,"./_header.msx":4,"./_menu.msx":5,"./_right.msx":7***REMOVED***],9:[function(require,module,exports){
+var NewProduct = {***REMOVED***;
+var Header = require('./_header.msx');
+var Menu = require('./_menu.msx');
+var NewProduct = require('./_newproduct.msx');
+var Right = require('./_right.msx');
+
+NewProduct.controller = function(){
+  
+***REMOVED***;
+
+NewProduct.view = function(ctrl){
+  return  [
+    Header(ctrl),
+    {tag: "div", attrs: {id:"base"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"offcanvas"***REMOVED******REMOVED***, 
+      
+      NewProduct(ctrl), 
+      
+      Menu(ctrl), 
+      
+      Right(ctrl)
+    
+  ***REMOVED******REMOVED***
+***REMOVED***
+***REMOVED***;
+
+
+module.exports = NewProduct;
+***REMOVED***,{"./_header.msx":4,"./_menu.msx":5,"./_newproduct.msx":6,"./_right.msx":7***REMOVED***]***REMOVED***,{***REMOVED***,[2])
