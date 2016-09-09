@@ -315,7 +315,8 @@ var fn = require('./fn.msx');
 var input = m.prop("");
 var data = m.prop({
   "title": "new file",
-  "categories": ["1", "2"]
+  "categories": ["1", "2"],
+  // "time": 1464226633054,
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -335,7 +336,9 @@ var NewProduct = function(ctrl){
                         {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title"***REMOVED******REMOVED***
                     ):(
                         {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title", 
-                        config:function(){***REMOVED***, 
+                        config:function(){
+                          
+                      ***REMOVED***, 
                         value:data().title***REMOVED***
                       ***REMOVED***
                     ), 
@@ -344,9 +347,12 @@ var NewProduct = function(ctrl){
               ***REMOVED******REMOVED***, 
   
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Upload Date"]***REMOVED***, 
+                  {tag: "label", attrs: {for:"date", className:"col-sm-2 control-label"***REMOVED***, children: ["Upload Date"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"date", className:"form-control", id:"regular13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                    {tag: "input", attrs: {type:"date", className:"form-control", id:"date", disabled:true,
+                       value:(data().time !== undefined)?(moment.unix(data().time/1000).format("YYYY-MM-DD")):(moment().format("YYYY-MM-DD"))***REMOVED***
+                  ***REMOVED***, 
+                    {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
   
