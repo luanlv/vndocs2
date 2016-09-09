@@ -331,7 +331,8 @@ var data = m.prop({
       "filename": "name url 2",
       "filesize" : 56465454
   ***REMOVED***
-***REMOVED***
+***REMOVED***,
+  "content": "## Noi dung"
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -435,7 +436,7 @@ var NewProduct = function(ctrl){
                       return (
                           {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
                             {tag: "label", attrs: {for:"url" + (index+1), className:"col-sm-2 control-label"***REMOVED***, children: ["File ", index + 1]***REMOVED***, 
-                            {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
+                            {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
                               {tag: "input", attrs: {type:"text", className:"form-control", id:"url" + (index+1), name:"url" + (index+1), placeholder:"URL", 
                                      onchange:function(item){
                                        data().link[index].url = $(item.target).val();
@@ -443,7 +444,15 @@ var NewProduct = function(ctrl){
                                      value:el.url***REMOVED***
                             ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                           ***REMOVED******REMOVED***, 
-                            {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
+                            {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
+                              {tag: "input", attrs: {type:"text", className:"form-control", placeholder:"Short Url", 
+                                     onchange:function(item){
+                                       data().link[index].shortUrl = $(item.target).val();
+                                   ***REMOVED***, 
+                                     value:el.shortUrl***REMOVED***
+                            ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                          ***REMOVED******REMOVED***, 
+                            {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
                               {tag: "input", attrs: {type:"text", className:"form-control", id:"", placeholder:"File name", 
                                      onchange:function(item){
                                        data().link[index].filename = $(item.target).val();
@@ -458,6 +467,13 @@ var NewProduct = function(ctrl){
                                    ***REMOVED***, 
                                      value:(el.filesize>0)?(el.filesize):""***REMOVED***
                             ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                          ***REMOVED******REMOVED***, 
+                            {tag: "div", attrs: {className:"col-sm-1"***REMOVED***, children: [
+                              {tag: "button", attrs: {type:"button", class:"btn btn-floating-action", 
+                                onclick:function(){
+                                  data().link.splice(index, 1);
+                              ***REMOVED***
+                            ***REMOVED***, children: [{tag: "i", attrs: {class:"glyphicon glyphicon-remove"***REMOVED******REMOVED***]***REMOVED***
                           ***REMOVED******REMOVED***
                         ***REMOVED******REMOVED***
                       )
@@ -493,10 +509,11 @@ var NewProduct = function(ctrl){
                          if(!initOK) {
                            var editor = ace.edit("editor");
                            editor.getSession().on('change', function () {
-                             input(editor.getSession().getValue());
+                             data().content = editor.getSession().getValue();
                              m.redraw();
                          ***REMOVED***);
-                           input(editor.getSession().getValue());
+                           {/*input(editor.getSession().getValue());*/***REMOVED***
+                           data().content = editor.getSession().getValue()
                            m.redraw();
                            editor.$blockScrolling = Infinity;
                            editor.setOptions({
@@ -514,8 +531,9 @@ var NewProduct = function(ctrl){
                     ***REMOVED***
                     
                        
-                ***REMOVED***
-                ***REMOVED***
+                ***REMOVED***, children: [
+                    data().content
+                ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
               
@@ -526,7 +544,7 @@ var NewProduct = function(ctrl){
               {tag: "div", attrs: {className:"card"***REMOVED***, children: [
                 {tag: "div", attrs: {id:"render", className:"card-body"***REMOVED***, children: [
                   
-                    m("div", m.trust(marked(input())))
+                    m("div", m.trust(marked(data().content)))
                   
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
