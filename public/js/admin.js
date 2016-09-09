@@ -321,62 +321,61 @@ var NewProduct = function(ctrl){
           {tag: "div", attrs: {className:"card"***REMOVED***, children: [
             {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
               {tag: "form", attrs: {className:"form-horizontal", role:"form"***REMOVED***, children: [
+  
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Regular input"]***REMOVED***, 
+                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Title"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
                     {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
+                
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"password13", className:"col-sm-2 control-label"***REMOVED***, children: ["Password"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"password", className:"form-control", id:"password13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["File"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"URL"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"File name"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
+                    {tag: "input", attrs: {disabled:true,type:"text", className:"form-control", id:"regular13", placeholder:"File size"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
+  
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"placeholder13", className:"col-sm-2 control-label"***REMOVED***, children: ["Placeholder"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"placeholder13", placeholder:"Placeholder"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Upload Date"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"date", className:"form-control", id:"regular13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
+  
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {className:"col-sm-2 control-label"***REMOVED***, children: ["Static control"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "p", attrs: {className:"form-control-static"***REMOVED***, children: ["email@example.com"]***REMOVED***
+                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Category"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10 control-label"***REMOVED***, children: [
+                    /*<input type="date" className="form-control" id="regular13"/><div className="form-control-line"></div>*/
+                    {tag: "select", attrs: {multiple:true,className:"form-control", size:"7"***REMOVED***, children: [
+                      {tag: "option", attrs: {value:"volvo"***REMOVED***, children: ["Volvo"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"saab"***REMOVED***, children: ["Saab"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"opel"***REMOVED***, children: ["Opel"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi2"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi3"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi4"]***REMOVED***, 
+                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi5"]***REMOVED***
+                  ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
+                
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"help13", className:"col-sm-2 control-label"***REMOVED***, children: ["Input with help text"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"help13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***, 
-                      {tag: "p", attrs: {className:"help-block"***REMOVED***, children: ["Example block-level help text here"]***REMOVED***
-                ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"help13", className:"col-sm-2 control-label"***REMOVED***, children: ["Input with tooltip"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"tooltip13", placeholder:"Hover me", "data-toggle":"tooltip", "data-placement":"bottom", "data-trigger":"hover", "data-original-title":"Example input tooltip text here"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"select13", className:"col-sm-2 control-label"***REMOVED***, children: ["Select"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "select", attrs: {id:"select13", name:"select13", className:"form-control"***REMOVED***, children: [
-                      {tag: "option", attrs: {value:""***REMOVED***, children: [" "]***REMOVED***, 
-                      {tag: "option", attrs: {value:"30"***REMOVED***, children: ["30"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"40"***REMOVED***, children: ["40"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"50"***REMOVED***, children: ["50"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"60"***REMOVED***, children: ["60"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"70"***REMOVED***, children: ["70"]***REMOVED***
-                  ***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"textarea13", className:"col-sm-2 control-label"***REMOVED***, children: ["Textarea"]***REMOVED***, 
+                  {tag: "label", attrs: {for:"textarea13", className:"col-sm-2 control-label"***REMOVED***, children: ["Description"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
                     {tag: "textarea", attrs: {name:"textarea13", id:"textarea13", className:"form-control", rows:"3", placeholder:""***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
+  
+                
+                
+                
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
@@ -430,7 +429,7 @@ var NewProduct = function(ctrl){
   
             {tag: "div", attrs: {className:"col-md-6"***REMOVED***, children: [
               {tag: "div", attrs: {className:"card"***REMOVED***, children: [
-                {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+                {tag: "div", attrs: {id:"render", className:"card-body"***REMOVED***, children: [
                   
                     m("div", m.trust(marked(data())))
                   
