@@ -17,7 +17,7 @@ m.route(document.querySelector('#app'), "/", {
 
 
 module.exports = Main;
-***REMOVED***,{"./main/home.msx":8,"./main/newproduct.msx":9***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./main/home.msx":9,"./main/newproduct.msx":10***REMOVED***],2:[function(require,module,exports){
 "use strict";
 
 
@@ -310,7 +310,13 @@ var Menu = function(ctrl){
 
 module.exports = Menu;
 ***REMOVED***,{***REMOVED***],6:[function(require,module,exports){
-var data = m.prop("");
+var fn = require('./fn.msx');
+
+var input = m.prop("");
+var data = m.prop({
+  "title": "new file",
+  "categories": ["1", "2"]
+***REMOVED***);
 
 var NewProduct = function(ctrl){
   return [
@@ -323,22 +329,17 @@ var NewProduct = function(ctrl){
               {tag: "form", attrs: {className:"form-horizontal", role:"form"***REMOVED***, children: [
   
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Title"]***REMOVED***, 
+                  {tag: "label", attrs: {for:"title", className:"col-sm-2 control-label"***REMOVED***, children: ["Title"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***, 
-                
-                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["File"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"URL"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"File name"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
-                    {tag: "input", attrs: {disabled:true,type:"text", className:"form-control", id:"regular13", placeholder:"File size"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                    (data().title === undefined)?(
+                        {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title"***REMOVED******REMOVED***
+                    ):(
+                        {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title", 
+                        config:function(){***REMOVED***, 
+                        value:data().title***REMOVED***
+                      ***REMOVED***
+                    ), 
+                    {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
   
@@ -350,18 +351,29 @@ var NewProduct = function(ctrl){
               ***REMOVED******REMOVED***, 
   
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["Category"]***REMOVED***, 
+                  {tag: "label", attrs: {for:"categories", className:"col-sm-2 control-label"***REMOVED***, children: ["Category"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10 control-label"***REMOVED***, children: [
-                    /*<input type="date" className="form-control" id="regular13"/><div className="form-control-line"></div>*/
-                    {tag: "select", attrs: {multiple:true,className:"form-control", size:"7"***REMOVED***, children: [
-                      {tag: "option", attrs: {value:"volvo"***REMOVED***, children: ["Volvo"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"saab"***REMOVED***, children: ["Saab"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"opel"***REMOVED***, children: ["Opel"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi2"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi3"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi4"]***REMOVED***, 
-                      {tag: "option", attrs: {value:"audi"***REMOVED***, children: ["Audi5"]***REMOVED***
+                    {tag: "select", attrs: {multiple:true,className:"form-control", size:"7", id:"categories", name:"categories", 
+                      onchange:function(el){
+                        data().categories = $(el.target).val();
+                    ***REMOVED***
+                  ***REMOVED***, children: [
+                      (data().categories === undefined)?[
+                          categories.map(function(el){
+                            return {tag: "option", attrs: {
+                                value:el._id
+                          ***REMOVED***, children: [" ", el.name, " "]***REMOVED***
+                        ***REMOVED***)
+                    ***REMOVED***:[
+                        categories.map(function(el){
+                          return {tag: "option", attrs: {
+                              value:el._id, 
+                              selected:
+                                (data().categories.indexOf(el._id) >= 0)?"true":""
+                              
+                        ***REMOVED***, children: [" ", el.name, " "]***REMOVED***
+                      ***REMOVED***)
+                    ***REMOVED***
                   ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
@@ -371,9 +383,20 @@ var NewProduct = function(ctrl){
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
                     {tag: "textarea", attrs: {name:"textarea13", id:"textarea13", className:"form-control", rows:"3", placeholder:""***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
   
-                
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {for:"regular13", className:"col-sm-2 control-label"***REMOVED***, children: ["File"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"URL"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-5"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", className:"form-control", id:"regular13", placeholder:"File name"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
+                    {tag: "input", attrs: {disabled:true,type:"text", className:"form-control", id:"regular13", placeholder:"File size"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
                 
                 
             ***REMOVED******REMOVED***
@@ -385,14 +408,16 @@ var NewProduct = function(ctrl){
               {tag: "div", attrs: {className:"card"***REMOVED***, children: [
                 {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
                   {tag: "div", attrs: {id:"editor", 
-                   config:function(el, initOK ){
+                       
+                   config:
+                     function(el, initOK ){
                          if(!initOK) {
                            var editor = ace.edit("editor");
                            editor.getSession().on('change', function () {
-                             data(editor.getSession().getValue());
+                             input(editor.getSession().getValue());
                              m.redraw();
                          ***REMOVED***);
-                           data(editor.getSession().getValue());
+                           input(editor.getSession().getValue());
                            m.redraw();
                            editor.$blockScrolling = Infinity;
                            editor.setOptions({
@@ -404,22 +429,13 @@ var NewProduct = function(ctrl){
                            document.getElementById('editor').style.fontSize='14px';
                            document.getElementById('editor').style.lineHeight='20px';
   
-                           editor.renderer.setShowGutter(false);
-                           editor.setShowPrintMargin(false);
-  
-                           editor.commands.addCommand({
-                             name: 'myCommand2',
-                             bindKey: {win: 'Alt-A',  mac: 'Alt-A'***REMOVED***,
-                             exec: function(editor) {
-                               editor.selection.selectWord()
-                           ***REMOVED***
-                         ***REMOVED***);
+                           fn.setupAce(editor);
                            
                        ***REMOVED***
                     ***REMOVED***
                     
+                       
                 ***REMOVED***
-                    
                 ***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
@@ -431,7 +447,7 @@ var NewProduct = function(ctrl){
               {tag: "div", attrs: {className:"card"***REMOVED***, children: [
                 {tag: "div", attrs: {id:"render", className:"card-body"***REMOVED***, children: [
                   
-                    m("div", m.trust(marked(data())))
+                    m("div", m.trust(marked(input())))
                   
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
@@ -449,8 +465,45 @@ var NewProduct = function(ctrl){
 ***REMOVED***
 ***REMOVED***
 
+
+var categories = [
+  {
+    "_id" : "1",
+    "slug" : "sp-phan-cung",
+    "name" : "SẢN PHẨM PHẦN CỨNG",
+    "description" : "",
+    "sku" : {
+      "parent_id" : "NONE",
+      "name" : "Category ??",
+      "slug" : "NONE"
+  ***REMOVED***
+***REMOVED***,
+  {
+    "_id" : "2",
+    "slug" : "stmicroelectronics",
+    "name" : "STMicroelectronics",
+    "description" : "",
+    "sku" : {
+      "parent_id" : "vi-dieu-khien",
+      "name" : "Category ??",
+      "slug" : "vi-dieu-khien"
+  ***REMOVED***
+***REMOVED***,
+  {
+    "_id" : "3",
+    "slug" : "power-supply",
+    "name" : "Power Supply",
+    "description" : "",
+    "sku" : {
+      "parent_id" : "module",
+      "name" : "Category ??",
+      "slug" : "module"
+  ***REMOVED***
+***REMOVED***
+];
+
 module.exports = NewProduct;
-***REMOVED***,{***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{"./fn.msx":8***REMOVED***],7:[function(require,module,exports){
 var Right = function(ctrl){
   return [
     {tag: "div", attrs: {className:"offcanvas"***REMOVED***, children: [
@@ -692,6 +745,79 @@ var Right = function(ctrl){
 
 module.exports = Right;
 ***REMOVED***,{***REMOVED***],8:[function(require,module,exports){
+var Fn = {***REMOVED***;
+
+
+Fn.setupAce = function(editor){
+  editor.renderer.setShowGutter(false);
+  editor.setShowPrintMargin(false);
+  
+  editor.commands.addCommand({
+    name: 'Ctrl_B',
+    bindKey: {win: 'Ctrl-B',  mac: 'Command-B'***REMOVED***,
+    exec: function(editor) {
+      var selectedText = editor.getSelectedText() + "";
+      var Range = ace.require('ace/range').Range;
+      var row = editor.selection.getRange().start.row;
+      var column = editor.selection.getRange().start.column;
+      var columnEnd = editor.selection.getRange().end.column;
+      var rangeBefore = new Range(row, column - 2, row, column);
+      var rangeAfter = new Range(row, columnEnd, row, columnEnd + 2);
+      var before = editor.getSession().doc.getTextRange(rangeBefore);
+      var after = editor.getSession().doc.getTextRange(rangeAfter);
+      if(before === "**" && after === '**') {
+        editor.session.replace(rangeAfter, "");
+        editor.session.replace(rangeBefore, "");
+    ***REMOVED*** else {
+        var x = "**" + selectedText +"**";
+        editor.session.replace(editor.selection.getRange(), x);
+        var length = x.length;
+        //editor.selection.moveCursorToPosition({row: row, column: column - length***REMOVED***) ;
+        var range = new Range(row, column + 2, row, columnEnd + 2);
+        editor.selection.setSelectionRange(range, true);
+    ***REMOVED***
+  ***REMOVED***
+***REMOVED***);
+  
+  editor.commands.addCommand({
+    name: 'Ctrl_I',
+    bindKey: {win: 'Ctrl-I',  mac: 'Command-I'***REMOVED***,
+    exec: function(editor) {
+      var selectedText = editor.getSelectedText() + "";
+      var Range = ace.require('ace/range').Range;
+      var row = editor.selection.getRange().start.row;
+      var column = editor.selection.getRange().start.column;
+      var columnEnd = editor.selection.getRange().end.column;
+      var rangeBefore = new Range(row, column - 1, row, column);
+      var rangeAfter = new Range(row, columnEnd, row, columnEnd + 1);
+      var before = editor.getSession().doc.getTextRange(rangeBefore);
+      var after = editor.getSession().doc.getTextRange(rangeAfter);
+      if(before === "*" && after === '*') {
+        editor.session.replace(rangeAfter, "");
+        editor.session.replace(rangeBefore, "");
+    ***REMOVED*** else {
+        var x = "*" + selectedText +"*";
+        editor.session.replace(editor.selection.getRange(), x);
+        var length = x.length;
+        //editor.selection.moveCursorToPosition({row: row, column: column - length***REMOVED***) ;
+        var range = new Range(row, column + 1, row, columnEnd + 1);
+        editor.selection.setSelectionRange(range, true);
+    ***REMOVED***
+  ***REMOVED***
+***REMOVED***);
+  
+  editor.commands.addCommand({
+    name: 'Alt_A',
+    bindKey: {win: 'Alt-A',  mac: 'Alt-A'***REMOVED***,
+    exec: function(editor) {
+      editor.selection.selectWord()
+  ***REMOVED***
+***REMOVED***);
+***REMOVED***;
+
+
+module.exports = Fn;
+***REMOVED***,{***REMOVED***],9:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
@@ -719,7 +845,7 @@ Home.view = function(ctrl){
 
 
 module.exports = Home;
-***REMOVED***,{"./_content.msx":3,"./_header.msx":4,"./_menu.msx":5,"./_right.msx":7***REMOVED***],9:[function(require,module,exports){
+***REMOVED***,{"./_content.msx":3,"./_header.msx":4,"./_menu.msx":5,"./_right.msx":7***REMOVED***],10:[function(require,module,exports){
 var NewProduct = {***REMOVED***;
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');

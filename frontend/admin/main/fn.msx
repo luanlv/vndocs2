@@ -1,0 +1,72 @@
+var Fn = {***REMOVED***;
+
+
+Fn.setupAce = function(editor){
+  editor.renderer.setShowGutter(false);
+  editor.setShowPrintMargin(false);
+  
+  editor.commands.addCommand({
+    name: 'Ctrl_B',
+    bindKey: {win: 'Ctrl-B',  mac: 'Command-B'***REMOVED***,
+    exec: function(editor) {
+      var selectedText = editor.getSelectedText() + "";
+      var Range = ace.require('ace/range').Range;
+      var row = editor.selection.getRange().start.row;
+      var column = editor.selection.getRange().start.column;
+      var columnEnd = editor.selection.getRange().end.column;
+      var rangeBefore = new Range(row, column - 2, row, column);
+      var rangeAfter = new Range(row, columnEnd, row, columnEnd + 2);
+      var before = editor.getSession().doc.getTextRange(rangeBefore);
+      var after = editor.getSession().doc.getTextRange(rangeAfter);
+      if(before === "**" && after === '**') {
+        editor.session.replace(rangeAfter, "");
+        editor.session.replace(rangeBefore, "");
+    ***REMOVED*** else {
+        var x = "**" + selectedText +"**";
+        editor.session.replace(editor.selection.getRange(), x);
+        var length = x.length;
+        //editor.selection.moveCursorToPosition({row: row, column: column - length***REMOVED***) ;
+        var range = new Range(row, column + 2, row, columnEnd + 2);
+        editor.selection.setSelectionRange(range, true);
+    ***REMOVED***
+  ***REMOVED***
+***REMOVED***);
+  
+  editor.commands.addCommand({
+    name: 'Ctrl_I',
+    bindKey: {win: 'Ctrl-I',  mac: 'Command-I'***REMOVED***,
+    exec: function(editor) {
+      var selectedText = editor.getSelectedText() + "";
+      var Range = ace.require('ace/range').Range;
+      var row = editor.selection.getRange().start.row;
+      var column = editor.selection.getRange().start.column;
+      var columnEnd = editor.selection.getRange().end.column;
+      var rangeBefore = new Range(row, column - 1, row, column);
+      var rangeAfter = new Range(row, columnEnd, row, columnEnd + 1);
+      var before = editor.getSession().doc.getTextRange(rangeBefore);
+      var after = editor.getSession().doc.getTextRange(rangeAfter);
+      if(before === "*" && after === '*') {
+        editor.session.replace(rangeAfter, "");
+        editor.session.replace(rangeBefore, "");
+    ***REMOVED*** else {
+        var x = "*" + selectedText +"*";
+        editor.session.replace(editor.selection.getRange(), x);
+        var length = x.length;
+        //editor.selection.moveCursorToPosition({row: row, column: column - length***REMOVED***) ;
+        var range = new Range(row, column + 1, row, columnEnd + 1);
+        editor.selection.setSelectionRange(range, true);
+    ***REMOVED***
+  ***REMOVED***
+***REMOVED***);
+  
+  editor.commands.addCommand({
+    name: 'Alt_A',
+    bindKey: {win: 'Alt-A',  mac: 'Alt-A'***REMOVED***,
+    exec: function(editor) {
+      editor.selection.selectWord()
+  ***REMOVED***
+***REMOVED***);
+***REMOVED***;
+
+
+module.exports = Fn;
