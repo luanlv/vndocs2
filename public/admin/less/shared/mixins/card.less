@@ -1,0 +1,43 @@
+// Card mixins
+// --------------------------------------------------
+
+
+// Card variant
+// -------------------------
+
+.card-variant(@name; @color) {
+	section,
+	.offcanvas-pane,
+	.card {
+		.@{name***REMOVED***,
+		&.@{name***REMOVED*** {
+			background-color: @color;
+			border-color: @color;
+			color: contrast(@color,@text-color,@white, @color-threshold);
+
+			.btn-icon-toggle,
+			.btn-flat {
+				&:hover { 
+					background-color: fade(contrast(@color, @text-color,@white, @color-threshold), 30);
+				***REMOVED***
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+	.card-body-darken {
+		.@{name***REMOVED***,
+		&.@{name***REMOVED*** {
+			background-color: darken(@color, 2%);
+			border-color: darken(@color, 2%);
+			color: contrast(darken(@color, 2%), @text-color, @white, @color-threshold);
+		***REMOVED***
+	***REMOVED***
+	
+	// Badge variants
+	.badge {
+		&.@{name***REMOVED*** {
+			background-color: @color;
+			border-color: @color;
+			color: contrast(@color,@text-color,@white, @color-threshold);
+		***REMOVED***
+	***REMOVED***
+***REMOVED***

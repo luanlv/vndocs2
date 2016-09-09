@@ -4,6 +4,12 @@
 
 # Home page
 GET         /                                controllers.ApplicationController.index
+
+
+GET /admin  controllers.Admin.index
+
+
+
 GET         /signOut                         controllers.ApplicationController.signOut
 GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)
 

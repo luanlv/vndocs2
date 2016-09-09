@@ -1,0 +1,205 @@
+//
+// GUI controls inverse
+// --------------------------------------------------
+
+
+// General GUI elements
+// -------------------------
+
+.menubar-inverse .gui-controls { 
+	// GUI header
+	small {
+		.menubar-visible &,
+		.menubar-pin & {
+			color: @menubar-inverse-color;
+		***REMOVED***
+	***REMOVED***
+
+	// Tree badge markup
+	.badge {
+	***REMOVED***
+***REMOVED***
+
+
+// GUI items
+// -------------------------
+
+.menubar-inverse .gui-controls { 
+	> li {
+		// General menu link markup
+		ul {
+			> li {
+				// Tree subitems
+				> a {
+					&:active, &.active {
+						background-color: @menubar-inverse-link-active;
+					***REMOVED***
+					&:hover, &:focus {
+						background-color: @menubar-inverse-link-hover;
+					***REMOVED***
+				***REMOVED***
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+// Markup for a first level item when it is selected and the menu is opened
+.expanded-menu-item-markup {
+	.menubar-inverse .gui-controls { 
+		> li {
+			// First level menu item hover style 
+			&:not(.gui-folder) > a:hover {
+				background-color: @menubar-inverse-link-hover;
+			***REMOVED***
+
+			// First level menu item active style 
+			&.active:not(.gui-folder) > a {
+				background-color: @menubar-inverse-link-active;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+.menubar-visible {
+	.expanded-menu-item-markup();
+***REMOVED***
+
+
+// Dashed menu lines
+// -------------------------
+
+.menubar-inverse .gui-controls {
+	> li { 
+		ul {
+			> li {
+				// Dashed lines on tree
+				&:before {
+					border-left: 1px dashed @menubar-inverse-tree-border-color;
+				***REMOVED***
+				> a:before {
+					border-bottom: 1px dashed @menubar-inverse-tree-border-color; 
+				***REMOVED***
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Titles
+// -------------------------
+
+.menubar-inverse .gui-controls { 
+	li { 
+		// General title markup
+		.title {
+			color: @menubar-inverse-color;
+			.textshadowguard(@menubar-inverse-color);
+		***REMOVED***
+		> a:hover {
+			.title { 
+				color: @menubar-inverse-link-hover-color; 
+			***REMOVED***
+		***REMOVED***
+		&.active > a {
+			.title { 
+				color: @menubar-inverse-link-active-color; 
+			***REMOVED***
+		***REMOVED***
+
+		// Folder title markup 
+		&.gui-folder > a {
+			.title {
+				color: @menubar-inverse-folder-color;
+			***REMOVED***
+		***REMOVED***
+
+		// Folder title markup when expanded/active
+		&.gui-folder.expanded > a .title,
+		&.gui-folder.active > a .title {
+			color: @menubar-inverse-color;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Folder - Collapse/Expand sign
+// --------------------------------------------------
+
+.menubar-inverse .gui-folder {
+	> a:after {
+		color: fade(@menubar-inverse-color, 50%);
+	***REMOVED***
+***REMOVED***
+
+// Main level collapse/Expand signs
+.menubar-inverse .gui-controls { 
+	> .gui-folder {
+		&.expanding > a:after, &.expanded > a:after {
+			color: fade(@menubar-inverse-color, 40%);
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// GUI icon
+// --------------------------------------------------
+
+.menubar-inverse .gui-icon {
+	color: @menubar-inverse-icon-color;
+
+	&:hover {
+		background-color: @menubar-inverse-icon-bg-hover;
+		color: @menubar-inverse-icon-color-hover;
+	***REMOVED***
+***REMOVED***
+
+.menubar-inverse .gui-controls { 
+	a.expanded .gui-icon,
+	li.active .gui-icon,
+	li.active .gui-icon:hover {
+		.gui-icon-active();
+	***REMOVED***
+***REMOVED***
+
+.menubar-inverse .gui-icon-active {
+	background-color: @menubar-inverse-icon-bg-active;
+	border-color: @white;
+	color: @menubar-inverse-icon-color-active;
+***REMOVED***
+
+// Markup for icons when the menu is expanded
+.expanded-menu-icon {
+	// Change the look of the gui-icons when the menu is expanded
+	.menubar-inverse .gui-folder:hover:not(.active) .gui-icon {
+		background-color: @menubar-inverse-icon-bg-hover;
+		color: @menubar-inverse-icon-color-hover;
+	***REMOVED***
+	.menubar-inverse .gui-controls {
+		> li:not(.gui-folder) {
+			.gui-icon:hover {
+				background: inherit;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+	.menubar-inverse .gui-icon:hover {
+		background: inherit;
+	***REMOVED***
+***REMOVED***
+.menubar-visible {
+	.expanded-menu-icon();
+***REMOVED***
+
+
+// Responsive classes
+// --------------------------------------------------
+
+// Medium Devices
+// -------------------------
+
+@media (min-width: @screen-lg-min) { 
+	.menubar-pin {
+		.expanded-menu-item-markup();
+		.expanded-menu-icon();
+	***REMOVED***
+***REMOVED***
+

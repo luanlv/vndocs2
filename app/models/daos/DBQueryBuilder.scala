@@ -8,6 +8,8 @@ object DBQueryBuilder {
 
   def id(objectId: String): JsObject = id(BSONObjectID(objectId))
 
+  def userId(userId: String): JsObject = Json.obj("userID" -> userId)
+
   def id(objectId: BSONObjectID): JsObject = Json.obj("_id" -> objectId)
 
   def set(field: String, data: JsObject): JsObject = set(Json.obj(field -> data))

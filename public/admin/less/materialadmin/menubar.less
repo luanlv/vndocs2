@@ -1,0 +1,200 @@
+//
+// Menubar
+// --------------------------------------------------
+
+
+// Menubar
+// -------------------------
+
+#menubar {
+	position: fixed;
+	z-index: @zindex-menubar;
+	left: 0; 
+	top: @headerbar-height; 
+	bottom: 0;
+	width: @menubar-width-collapsed;
+	color: @menubar-color;
+
+	.menubar-first & {
+		z-index: @zindex-menubar-first;
+	***REMOVED***
+
+	// Back panel
+	&:before {
+		content:'';
+		position: absolute;
+		left: 0; top: 0; bottom:0;
+		width: 100%;
+		background: @menubar-bg;
+		.box-shadow(@z-height-1);
+	***REMOVED***
+
+	// Scroller
+	.nano,
+	.nano-content {
+		&:focus {
+			outline: none;
+		***REMOVED***
+	***REMOVED***
+	.nano-pane {
+		z-index: 2;
+		width:5px;
+		background: transparent;
+		
+		
+	***REMOVED***
+	.nano-slider {
+		background: fade(@black, 20);
+	***REMOVED***
+
+	// Menu panels
+	.menubar-scroll-panel {
+		position: relative;
+		padding-top: 16px;
+		z-index: 2;
+		min-height: 100%;
+	***REMOVED***
+	.menubar-foot-panel {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		border-top: 1px solid fade(@black, 7);
+		padding: 16px;
+	***REMOVED***
+
+	// Show menu
+	.menubar-visible & {
+		width: @menubar-width;
+	***REMOVED***
+***REMOVED***
+// Animate the menubar
+#menubar.animate {
+	.transition(width @menubar-collapse-speed @menubar-collapse-ease);
+***REMOVED***
+
+
+// Menubar withoit a fixed header
+// --------------------------------------------------
+
+body:not(.header-fixed),
+.menubar-first {
+	#menubar {
+		top: 0;
+	***REMOVED***
+***REMOVED***
+
+
+// Fixed panel
+// --------------------------------------------------
+
+.menubar-fixed-panel {
+	position: relative;
+	display: inline-table;
+	width: 100%;
+	height: @headerbar-height;
+	z-index: 10;
+	border-bottom: 1px solid fade(@black, 7);
+
+	> div {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 0 0 @menubar-gap;
+		
+		&:first-child {
+			max-width: 26px;
+		***REMOVED***
+	***REMOVED***
+
+	a {
+		text-decoration: none;
+	***REMOVED***
+
+	img {
+		max-height: (@headerbar-height - (@gutter-size * 4));
+	***REMOVED***
+
+	.expanded {
+		display: none;
+		.menubar-visible &,
+		.menubar-pin & {
+			display: table-cell;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+// Hide .menubar-fixed-panel when the menubar is not first
+body:not(.menubar-first) {
+	.menubar-fixed-panel {
+		display: none;
+	***REMOVED***
+***REMOVED***
+
+
+// Inversed menubar
+// -------------------------
+
+#menubar.menubar-inverse {
+	color: @menubar-inverse-color;
+
+	&:before {
+		background: @menubar-inverse-bg;
+	***REMOVED***
+	
+	.nano-slider {
+		background: fade(@white, 40);
+	***REMOVED***
+***REMOVED***
+
+
+// Utils
+// --------------------------------------------------
+
+.hidden-folded {
+	display: none;
+***REMOVED***
+.menubar-visible {
+	.hidden-folded {
+		display: inherit;
+	***REMOVED***
+***REMOVED***
+
+
+// Responsive classes
+// --------------------------------------------------
+
+// Medium Devices
+// -------------------------
+
+@media (min-width: @screen-lg-min) {
+	.menubar-pin {
+		#menubar {
+			width: @menubar-width;
+		***REMOVED***
+		.brand-holder {
+			display: table-cell;
+		***REMOVED***
+		.hidden-folded {
+			display: inherit;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+// From Medium Devices
+// -------------------------
+
+@media (max-width: @screen-xs-max) {
+	#menubar {
+		width: @menubar-width;
+		z-index: @zindex-menubar-mobile;
+		.translate((-@menubar-width - 10), 0);
+		.transition-vendor(transform, @menubar-collapse-speed ease-in);
+	***REMOVED***
+
+	.menubar-visible {
+		#menubar {
+			.translate(0, 0);
+			.transition-vendor(transform, @menubar-collapse-speed @menubar-collapse-ease);
+		***REMOVED***
+	***REMOVED***
+***REMOVED***

@@ -1,0 +1,61 @@
+/**********************************
+
+Use: Reset Styles for all browsers
+
+***********************************/
+	
+body, p, blockquote {
+	margin: 0;
+	padding: 0;
+***REMOVED***
+
+a img, iframe { border: none; ***REMOVED***
+	
+/* Headers
+------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+***REMOVED***
+	
+/* Lists
+------------------------------*/
+	
+ul, ol, dl, li, dt, dd {
+	margin: 0;
+	padding: 0;
+***REMOVED***
+	
+/* Links
+------------------------------*/
+
+a, a:link {***REMOVED***
+a:visited {***REMOVED***
+a:hover {***REMOVED***
+a:active {***REMOVED***
+
+/* Forms
+------------------------------*/
+
+form, fieldset {
+	margin: 0;
+	padding: 0;
+***REMOVED***
+	
+fieldset { border: 1px solid #000; ***REMOVED***
+
+legend {
+	padding: 0;
+	color: #000;
+***REMOVED***
+
+input, textarea, select {
+	margin: 0;
+	padding: 1px;
+	font-size: 100%;
+	font-family: inherit;
+***REMOVED***
+	
+select { padding: 0; ***REMOVED***

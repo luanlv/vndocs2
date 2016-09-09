@@ -1,17 +1,18 @@
 package models.daos
 
 import javax.inject.{ Inject, Singleton ***REMOVED***
-import scala.util.Try
 
+import scala.util.Try
 import java.util.UUID
 
 import com.mohiva.play.silhouette.api.LoginInfo
 import models.User
 import models.daos.UserDAOImpl._
+import play.api.libs.json.{ JsObject, Json ***REMOVED***
 
 import scala.collection.mutable
 import scala.concurrent.Future
-
+import scala.concurrent.ExecutionContext.Implicits.global
 /**
  * Give access to the user object.
  */
@@ -25,9 +26,8 @@ class UserDAOImpl @Inject() (repository: UserRepository) extends UserDAO {
    * @param loginInfo The login info of the user to find.
    * @return The found user or None if no user for the given login info could be found.
    */
-  def find(loginInfo: LoginInfo) = Future.successful(
-    users.find { case (id, user) => user.loginInfo == loginInfo ***REMOVED***.map(_._2)
-  )
+  def find(loginInfo: LoginInfo) =
+    repository.findOne(Json.obj("loginInfo" -> loginInfo))
 
   /**
    * Finds a user by its user ID.
@@ -35,7 +35,7 @@ class UserDAOImpl @Inject() (repository: UserRepository) extends UserDAO {
    * @param userID The ID of the user to find.
    * @return The found user or None if no user for the given ID could be found.
    */
-  def find(userID: UUID) = Future.successful(users.get(userID))
+  def find(userID: UUID) = repository.findOne(Json.obj("userID" -> userID))
 
   /**
    * Saves a user.
@@ -44,8 +44,12 @@ class UserDAOImpl @Inject() (repository: UserRepository) extends UserDAO {
    * @return The saved user.
    */
   def save(user: User) = {
-    users += (user.userID -> user)
     repository.insert(user)
+    Future.successful(user)
+***REMOVED***
+
+  def updateUser(user: User) = {
+    repository.updateUser(user.userID.toString, Json.toJson(user).asOpt[JsObject].getOrElse(Json.obj()))
     Future.successful(user)
 ***REMOVED***
 ***REMOVED***
@@ -58,5 +62,5 @@ object UserDAOImpl {
   /**
    * The list of users.
    */
-  val users: mutable.HashMap[UUID, User] = mutable.HashMap()
+  //  val users: mutable.HashMap[UUID, User] = mutable.HashMap()
 ***REMOVED***

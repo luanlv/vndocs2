@@ -8,6 +8,11 @@ version := "4.0.0"
 
 scalaVersion := "2.11.8"
 
+play.twirl.sbt.Import.TwirlKeys.templateFormats ++= Map("stream" -> "com.ybrikman.ping.scalaapi.bigpipe.HtmlStreamFormat")
+
+play.twirl.sbt.Import.TwirlKeys.templateImports ++= Vector("com.ybrikman.ping.scalaapi.bigpipe.HtmlStream",
+  "com.ybrikman.ping.scalaapi.bigpipe._")
+
 resolvers += Resolver.jcenterRepo
 
 libraryDependencies ++= Seq(
@@ -24,9 +29,11 @@ libraryDependencies ++= Seq(
   "com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test",
   "org.reactivemongo" %% "play2-reactivemongo" % "0.11.13",
   "org.reactivemongo" %% "reactivemongo-play-json" % "0.11.14",
+  "com.ybrikman.ping" %% "big-pipe" % "0.0.12",
   specs2 % Test,
   cache,
-  filters
+  filters,
+  ws
 )
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)

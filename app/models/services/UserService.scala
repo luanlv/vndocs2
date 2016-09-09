@@ -38,4 +38,6 @@ trait UserService extends IdentityService[User] {
    * @return The user for whom the profile was saved.
    */
   def save(profile: CommonSocialProfile): Future[User]
+
+  //  def upsert(profile: CommonSocialProfile): Future[User]
 ***REMOVED***

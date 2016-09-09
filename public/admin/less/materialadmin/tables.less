@@ -1,0 +1,130 @@
+//
+// Tables
+// --------------------------------------------------
+
+// Baseline styles
+// -------------------------
+
+.table {
+	// Cells
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				vertical-align: baseline;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+	
+	thead {
+		opacity: 0.75;
+		
+		> tr > th {
+			color: inherit;
+			font-weight: @weight-medium;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Bordered version
+// -------------------------
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+	border-color: darken(@table-border-color, 10%);
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				border-color: darken(@table-border-color, 10%);
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Zebra-striping
+// -------------------------
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+	> tbody > tr:nth-child(odd) {
+		> td,
+		> th {
+			background-color: @table-bg-accent;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Banded-striping
+// -------------------------
+// Default Banded-stripe styles (alternating gray and transparent backgrounds)
+
+.table-banded {
+	> tbody {
+		> tr {
+			> td:nth-child(odd),
+				> th:nth-child(odd) {
+				background-color: @table-bg-accent;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// No border
+// -------------------------
+
+.table-no-border {
+	border-color: transparent;
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				border-color: transparent;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Condensed table
+// -------------------------
+
+.table-condensed > tbody > tr > td {
+	vertical-align: middle;
+***REMOVED***
+
+
+// Hover effect
+// -------------------------
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+	> tbody {
+		> tr:hover {
+			> td,
+			> th {
+				background-color: @table-bg-hover ;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Table buttons
+// -------------------------
+
+.table > tbody td {
+	.btn-xs {
+		//margin: -5px 0 -2px 0;
+	***REMOVED***
+***REMOVED***

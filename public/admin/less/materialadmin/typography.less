@@ -1,0 +1,267 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Weights
+// -------------------------
+
+.text-light				{ font-weight: @weight-light; ***REMOVED***
+.text-normal			{ font-weight: @weight-normal; ***REMOVED***
+.text-medium, strong	{ font-weight: @weight-medium; ***REMOVED***
+.text-bold				{ font-weight: @weight-bold; ***REMOVED***
+.text-ultra-bold		{ font-weight: @weight-ultra-bold; ***REMOVED***
+
+h1 > strong, h2 > strong, h3 > strong, h4 > strong, h5 > strong, h6 > strong {
+	font-weight: @weight-bold;
+***REMOVED***
+
+h3, h4, h5, h6 {
+	font-weight: @weight-medium;
+***REMOVED***
+
+.text-display-lines {
+	line-height: 1.1;
+
+
+	span, p, h1, h2, h3, h4, h5, h6 {
+		position: relative;
+		&:before,
+			&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			height: 1px;
+			width: 100%;
+			background: #ff00cc;
+		***REMOVED***
+		&:before {
+			top: 0;
+		***REMOVED***
+		&:after {
+			bottom: 0;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Sizes
+// -------------------------
+
+.text-xs {		font-size: 75%; ***REMOVED***
+.text-sm {		font-size: 85%; ***REMOVED***
+.text-lg {		font-size: 125%; ***REMOVED***
+.text-xl {		font-size: 180%; ***REMOVED***
+.text-xxl {		font-size: 225%; ***REMOVED***
+.text-xxxl {	font-size: 330%; ***REMOVED***
+.text-xxxxl {	font-size: 500%; ***REMOVED***
+
+
+// Body text
+// -------------------------
+
+p {
+	letter-spacing: 0.1px;
+***REMOVED***
+
+
+// Text columns
+// -------------------------
+
+.text-columns-2 {
+	.content-columns(2);
+***REMOVED***
+.text-columns-3 {
+	.content-columns(3);
+***REMOVED***
+.text-columns-4 {
+	.content-columns(4);
+***REMOVED***
+
+.text-columns-sm {	.content-columns(4); ***REMOVED***
+.text-columns {		.content-columns(3); ***REMOVED***
+.text-columns-lg {	.content-columns(2); ***REMOVED***
+
+@media (max-width: @screen-md-min) {
+	.text-columns-sm {	.content-columns(3); ***REMOVED***
+	.text-columns {		.content-columns(2); ***REMOVED***
+	.text-columns-lg {	.content-columns(1); ***REMOVED***
+***REMOVED***
+@media (max-width: @screen-sm-min) {
+	.text-columns-sm {	.content-columns(2); ***REMOVED***
+	.text-columns {		.content-columns(1); ***REMOVED***
+	.text-columns-lg {	.content-columns(1); ***REMOVED***
+***REMOVED***
+@media (max-width: @screen-xs-min) {
+	.text-columns-sm {	.content-columns(1); ***REMOVED***
+	.text-columns {		.content-columns(1); ***REMOVED***
+	.text-columns-lg {	.content-columns(1); ***REMOVED***
+***REMOVED***
+
+
+// Line heights
+// -------------------------
+
+.line-height-normal { line-height: @line-height-base; ***REMOVED***
+.line-height-lg { line-height: (@line-height-base + 0.3); ***REMOVED***
+.line-height-xl { line-height: (@line-height-base + 0.55); ***REMOVED***
+.line-height-xxl { line-height: (@line-height-base + 0.9); ***REMOVED***
+
+
+// Caption
+// -------------------------
+
+.text-caption {
+	display: block;
+	margin-bottom: @grid-gutter-width + 5px;
+	font-size: @caption-size;
+***REMOVED***
+.card ~ .text-caption,
+.panel-group ~ .text-caption {
+	margin-top: -15px;
+***REMOVED***
+
+// Misc
+// -------------------------
+
+.no-linebreak { white-space: nowrap; ***REMOVED***
+
+.text-shadow {
+	text-shadow: 0 1px 2px #000000;
+***REMOVED***
+
+
+// Blockquote override
+// -------------------------
+
+blockquote small { 
+	color: inherit;
+	opacity: .7;
+***REMOVED***
+
+
+// Article
+// -------------------------
+
+article,
+p {
+	img.pull-right { 
+		margin-left: 10px;
+		margin-bottom: 2px;
+	***REMOVED***
+	img.pull-left { 
+		margin-right: 10px;
+		margin-bottom: 2px;
+	***REMOVED***
+***REMOVED***
+
+
+// List
+// -------------------------
+
+ul, ol {
+	padding-left: 16px;
+
+	&.list-divided  {
+		li {
+			margin-top: 16px;
+
+			&:first-child {
+				margin-top: 0;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+ol {
+	list-style-position: inside;
+	padding-left: 0;
+***REMOVED***
+
+
+// Pageheader
+// -------------------------
+
+.page-header {
+	border-bottom-color: rgba(0,0,0,.3);
+***REMOVED***
+.page-header.no-border {
+	border: none;
+	margin-bottom: 10px;
+	padding-bottom: 0;
+***REMOVED***
+
+
+// Text divider
+// -------------------------
+
+.text-divider {
+	display: table;
+	width: 100%;
+	margin: 13px 0 20px 0;
+	opacity: 0.5;
+
+	span {
+		display: table-cell;
+		padding: 0 10px;
+		position: relative;
+		bottom: -7px;
+		white-space: nowrap;
+	***REMOVED***
+	&:before,
+		&:after {
+		content: '';
+		width: 50%;
+		display: table-cell;
+		border-bottom: 1px solid fade(@black, 30);
+	***REMOVED***
+***REMOVED***
+
+
+// Horizontal description lists
+// -------------------------
+
+.dl-horizontal.dl-icon {
+	dd {
+		margin-bottom: 15px;
+	***REMOVED***
+	@media (min-width: @grid-float-breakpoint) {
+		dt {
+			width: 30px;
+			text-align: left;
+			padding-top: 5px;
+		***REMOVED***
+		dd {
+			margin-left: 35px;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+.dl-horizontal {
+	dd.full-width {
+		margin-left: 0;
+	***REMOVED***
+***REMOVED***
+
+
+// Variants
+// -------------------------
+
+// Contextual emphasis
+.text-default-bright	{ .text-emphasis-variant(@brand-default-bright); ***REMOVED***
+.text-default-light		{ .text-emphasis-variant(@gray-light); ***REMOVED***
+.text-default			{ .text-emphasis-variant(@text-color); ***REMOVED***
+.text-default-dark		{ .text-emphasis-variant(@brand-default-dark); ***REMOVED***
+
+.text-primary-bright	{ .text-emphasis-variant(@brand-primary-bright); ***REMOVED***
+.text-primary-light		{ .text-emphasis-variant(@brand-primary-light); ***REMOVED***
+.text-primary			{ .text-emphasis-variant(@brand-primary); ***REMOVED***
+.text-primary-dark		{ .text-emphasis-variant(@brand-primary-dark); ***REMOVED***
+
+.text-accent-bright		{ .text-emphasis-variant(@brand-accent-bright); ***REMOVED***
+.text-accent-light		{ .text-emphasis-variant(@brand-accent-light); ***REMOVED***
+.text-accent			{ .text-emphasis-variant(@brand-accent); ***REMOVED***
+.text-accent-dark		{ .text-emphasis-variant(@brand-accent-dark); ***REMOVED***
+
+.text-info				{ .text-emphasis-variant(@brand-info); ***REMOVED***
+.text-warning			{ .text-emphasis-variant(@brand-warning); ***REMOVED***
+.text-danger			{ .text-emphasis-variant(@brand-danger); ***REMOVED***
+.text-success			{ .text-emphasis-variant(@brand-success); ***REMOVED***

@@ -23,7 +23,6 @@ import reactivemongo.bson.BSONObjectID
  * @param activated Indicates that the user has activated its registration.
  */
 case class User(
-  //  _id: Option[BSONObjectID],
   userID: UUID,
   loginInfo: LoginInfo,
   firstName: Option[String],

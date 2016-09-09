@@ -79,9 +79,9 @@ class SignUpController @Inject() (
             Future.successful(result)
           case None =>
             val authInfo = passwordHasherRegistry.current.hash(data.password)
+            val uuid = UUID.randomUUID()
             val user = User(
-              //              _id = Option(BSONObjectID.generate),
-              userID = UUID.randomUUID(),
+              userID = uuid,
               loginInfo = loginInfo,
               firstName = Some(data.firstName),
               lastName = Some(data.lastName),

@@ -1,0 +1,27 @@
+var Home = {***REMOVED***;
+var Header = require('./_header.msx');
+var Menu = require('./_menu.msx');
+var Content = require('./_content.msx');
+var Right = require('./_right.msx');
+Home.controller = function(){
+  
+***REMOVED***;
+
+Home.view = function(ctrl){
+  return  [
+      Header(ctrl),
+      <div id="base">
+        <div className="offcanvas"></div>
+
+        {Content(ctrl)***REMOVED***
+        
+        {Menu(ctrl)***REMOVED***
+  
+        {Right(ctrl)***REMOVED***
+        
+      </div>
+***REMOVED***
+***REMOVED***;
+
+
+module.exports = Home;

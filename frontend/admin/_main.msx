@@ -1,0 +1,17 @@
+
+var Main = Main || {***REMOVED***;
+
+Main.Home = require('./main/home.msx');
+//Main.Dashboard = require('./main/_dashboard.msx');
+// Main.Product = require('./main/_product.msx');
+// Main.Category = require('./main/_category.msx');
+// Main.Search = require('./main/_search.msx');
+
+
+m.route(document.querySelector('#app'), "/", {
+  "/": Main.Home
+***REMOVED***);
+
+
+
+module.exports = Main;

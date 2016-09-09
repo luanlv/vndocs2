@@ -1,0 +1,236 @@
+/* GENERAL ELEMENTS */
+
+* { margin: 0; padding: 0; ***REMOVED***
+
+body, input, select, textarea { font-family: verdana, arial, helvetica, sans-serif; font-size: 11px; ***REMOVED***
+body { color: #333;  background-color: #fff; text-align: center; ***REMOVED***
+
+a:link { color:#0060BF; text-decoration: underline; ***REMOVED***
+a:visited { color:#0060BF; text-decoration: underline; ***REMOVED***
+a:active { color:#0060BF; text-decoration: underline; ***REMOVED***
+a:hover { color:#000000; text-decoration: underline; ***REMOVED***
+	
+h1, h2, h3, h4, h5, h6 { font-family: "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, arial, helvetica, sans-serif; font-weight: bold; color: #666; ***REMOVED***
+h1 { font-size: 1.8em; margin: 0em 0em 0.6em 0em; color: #EC5800; ***REMOVED***
+h2 { font-size: 1.5em; margin: 1.2em 0em 0.4em 0em; ***REMOVED***
+h3 { font-size: 1.4em; margin: 1.2em 0em 0.4em 0em; color: #EC5800; ***REMOVED***
+h4 { font-size: 1.2em; margin: 1.2em 0em 0.4em 0em; ***REMOVED***
+h5 { font-size: 1.0em; margin: 1.2em 0em 0.4em 0em; ***REMOVED***
+h6 { font-size: 0.8em; margin: 1.2em 0em 0.4em 0em; ***REMOVED***
+
+img { border: 0px; ***REMOVED***
+
+p { font-size: 1.0em; line-height: 1.3em; margin: 1.2em 0em 1.2em 0em; ***REMOVED***
+li > p { margin-top: 0.2em; ***REMOVED***
+pre { font-family: monospace; font-size: 1.0em; ***REMOVED***
+strong, b { font-weight: bold; ***REMOVED***
+
+/* PAGE ELEMENTS */
+
+/* Content */
+
+#content { margin: 0em auto; width: 765px; padding: 10px 0 10px 0; text-align: left; /* Win IE5 */ ***REMOVED***
+.content { margin-left: 4.5em; margin-right: 4.5em; ***REMOVED***
+.content ol, .content ul, .content li { font-size: 1.0em; line-height: 1.3em; margin: 0.2em 0 0.1em 1.5em; ***REMOVED***
+.content ol.terms li { margin-bottom: 1em; ***REMOVED***
+
+/* Header */
+
+#header { padding-bottom: 10em; ***REMOVED***
+#headerlogo { float: left; ***REMOVED***
+#headerlogo img { width: 188px; height: 83px;***REMOVED***
+#headernav { float: right; ***REMOVED***
+
+label { font-weight: bold; ***REMOVED***
+#reminders label { font-weight: normal; ***REMOVED***
+
+table.tabbedtable { padding-left: 3em; ***REMOVED***
+table.tabbedtable td { padding-bottom: 5px; ***REMOVED***
+table.tabbedtable label { text-align: right; padding-right: 9px; ***REMOVED***
+.hiddenlabel { visibility: hidden; ***REMOVED***
+.largelink { border: 1px solid #cacaca; padding: 10px; background-color: #E8EEF7; font-size: 1.2em; font-weight: bold; ***REMOVED***
+.largelinkwrap { padding-top: 10px; padding-bottom: 10px; ***REMOVED***
+
+
+
+#signuptab {
+  float:left;
+  width:100%;
+  background:#fff url("bg.gif") repeat-x bottom;
+  font-size: 1.0em;
+  line-height: normal;
+***REMOVED***
+#signuptab ul {
+  margin:0;
+  padding: 0px 10px 0px 10px;
+  list-style:none;
+***REMOVED***
+#signuptab li {
+  float:left;
+  background:url("left_white.png") no-repeat left top;
+  margin:0;
+  padding:0 3px 0 9px;
+  border-bottom:1px solid #CACACA;
+***REMOVED***
+#signuptab a {
+  float:left;
+  display:block;
+  width:.1em;
+  background:url("right_white.png") no-repeat right top;
+  padding:2px 15px 0px 6px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#fff;
+  white-space: nowrap;
+***REMOVED***
+#signuptab > ul a {width:auto;***REMOVED***
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#signuptab a {float:none;***REMOVED***
+/* End IE5-Mac hack */
+#signuptab a:hover {
+  color:#333;
+***REMOVED***
+#signuptab #signupcurrent {
+  background-position:0 -150px;
+  border-width:0;
+***REMOVED***
+#signuptab #signupcurrent a {
+  background-position:100% -150px;
+  padding-bottom:1px;
+  color:#000;
+***REMOVED***
+#signuptab li:hover, #signuptab li:hover a {
+  background-position:0% -150px;
+  color:#000;
+***REMOVED***
+#signuptab li:hover a {
+  background-position:100% -150px;
+***REMOVED***
+
+/* Signup box */
+
+#signupbox {
+  width: 100%;
+  text-align: center;
+  margin: 0em auto;
+***REMOVED***
+
+#signupwrap {
+  border: 1px solid #CACACA;
+  border-top: 0;
+  text-align: left;
+  padding: 35px 10px 20px 30px;
+  clear: both;
+***REMOVED***
+
+/* Unsupported browsers */
+
+.orange_rbcontent { padding: 0.4em; ***REMOVED***
+.orange_rbroundbox { width: 100%; ***REMOVED***
+
+#unsupported {
+  font-weight: bold;
+  text-align: left;
+***REMOVED***
+
+/*#content {
+  padding-top: 15px;
+***REMOVED****/
+
+/* Signup form */
+
+#signupform table {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  empty-cells: show;
+***REMOVED***
+
+#signupform .label {
+  padding-top: 2px;
+  padding-right: 8px;
+  vertical-align: top;
+  text-align: right;
+  width: 125px;
+  white-space: nowrap;
+***REMOVED***
+
+#signupform .field {
+  padding-bottom: 10px;
+  white-space: nowrap;
+***REMOVED***
+
+#signupform .status {
+  padding-top: 2px;
+  padding-left: 8px;
+  vertical-align: top;
+  width: 246px;
+  white-space: nowrap;
+***REMOVED***
+
+#signupform .textfield {
+  width: 150px;
+***REMOVED***
+
+#signupform label.error {
+  background:url("../images/unchecked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  color: #EA5200;
+***REMOVED***
+
+#signupform label.checked {
+  background:url("../images/checked.gif") no-repeat 0px 0px;
+***REMOVED***
+
+#signupform .success_msg {
+  font-weight: bold;
+  color: #0060BF;
+  margin-left: 19px;
+***REMOVED***
+
+#signupform #dateformatStatus, #signupform #termsStatus {
+  margin-left: 6px;
+***REMOVED***
+
+#signupform #dateformat_eu {
+ vertical-align: middle;
+***REMOVED***
+
+#signupform #ldateformat_eu {
+  font-weight: normal;
+  vertical-align: middle;
+***REMOVED***
+
+#signupform #dateformat_am {
+  vertical-align: middle;
+***REMOVED***
+
+#signupform #ldateformat_am {
+  font-weight: normal;
+  vertical-align: middle;
+***REMOVED***
+
+#signupform #termswrap {
+  float: left;
+***REMOVED***
+
+#signupform #terms {
+  vertical-align: middle;
+  float: left;
+  display: block;
+  margin-right: 5px;
+***REMOVED***
+
+#signupform #lterms {
+  font-weight: normal;
+  vertical-align: middle;
+  float: left;
+  display: block;
+  width: 350px;
+  white-space: normal;
+***REMOVED***
+
+#signupform #lsignupsubmit {
+  visibility: hidden;
+***REMOVED***

@@ -1,0 +1,24 @@
+#menubar,
+#header,
+#content .section-header,
+.offcanvas-holder {
+	display: none;
+***REMOVED***
+
+#content,
+#content .section-body {
+	padding: 0;
+***REMOVED***
+
+.card-printable {
+	display: block;
+***REMOVED***
+.card-printable .card-head {
+	display: none;
+***REMOVED***
+
+body,
+#content > section {
+	background-color: #ffffff;
+	border: 0;
+***REMOVED***

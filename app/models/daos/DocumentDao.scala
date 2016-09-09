@@ -59,6 +59,14 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
   ***REMOVED***
 ***REMOVED***
 
+  def updateUser(userId: String, query: JsObject): Future[Try[JsObject]] = {
+    val data = updated(query)
+    Logger.debug(s"Updating by query: [collection=$collectionName, UserId=$userId, query=$data]")
+    recover(collection.flatMap(_.update(DBQueryBuilder.userId(userId), data))) {
+      data
+  ***REMOVED***
+***REMOVED***
+
   def updated(data: JsObject) = {
     data.validate((__ \ '$set).json.update(
       __.read[JsObject].map { o => o ++ Json.obj("updated" -> DateTime.now) ***REMOVED***

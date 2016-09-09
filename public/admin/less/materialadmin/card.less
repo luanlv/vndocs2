@@ -1,0 +1,418 @@
+//
+// Card
+// --------------------------------------------------
+
+// Common
+// -------------------------
+
+.card {
+	position: relative;
+	margin-bottom: @card-gutter-width;
+	background-color: @white;
+	color: @text-color;
+	border-radius: @card-radius;
+
+	.clearfix();
+	.box-shadow(@z-height-1);
+
+	.btn-icon-toggle,
+	.btn-flat {
+		&:hover { 
+			background-color: fade(@black, 7%);
+		***REMOVED***
+	***REMOVED***
+
+	// When a scroller is needed, add a border-radius bottom to it.
+	> .nano:last-child {
+		border-radius: 0 0 @card-radius @card-radius;
+	***REMOVED***
+
+	&.no-shadow {
+		.box-shadow(@z-height-0);
+	***REMOVED***
+***REMOVED***
+
+
+// Card head
+// -------------------------
+
+.card-head {
+	position: relative;
+	line-height: @card-header - 4px;
+	min-height: @card-header;
+	vertical-align: middle;
+	border-radius: @card-radius @card-radius 0 0;
+	.clearfix();
+
+	header {
+		display: inline-block;
+		padding: 11px @card-gutter-width;
+		vertical-align: middle;
+		line-height: 17px;
+		font-size: @title-size;
+
+		> h1, > h2, > h3, > h4, > h5, > h6 {
+			vertical-align: middle;
+			margin: 0;
+			line-height: 1;
+		***REMOVED***
+		small {
+			color: inherit;
+			opacity: 0.6;
+			font-size: 75%;
+		***REMOVED***
+	***REMOVED***
+	> div {
+		display: inline-block;
+	***REMOVED***
+
+	.tools {
+		padding-right: @card-gutter-width-sm;
+		float: right;
+
+		form {
+			margin-top: 7px;
+			margin-bottom: 7px;
+			margin-left: @card-gutter-width;
+			line-height: normal;
+			vertical-align: middle;
+		***REMOVED***
+
+		.btn-floating-action {
+			margin-left: 8px;
+		***REMOVED***
+		
+		> .btn-group { margin-right: 4px; ***REMOVED***
+		> .btn-group-xs { margin-right: 10px; ***REMOVED***
+		> .btn-group-sm { margin-right: 4px; ***REMOVED***
+		> .btn-group-lg { margin-right: 0; ***REMOVED***
+
+		&.pull-left {
+			> .btn-group { margin-left: 4px; ***REMOVED***
+			> .btn-group-xs { margin-left: 10px; ***REMOVED***
+			> .btn-group-sm { margin-left: 4px; ***REMOVED***
+			> .btn-group-lg { margin-left: 0; ***REMOVED***
+		***REMOVED***
+	***REMOVED***
+
+	&.card-head-xs {
+		line-height: @card-header-xs - 4;
+		min-height: @card-header-xs;
+
+		header {
+			font-size: @subhead-size;
+			padding: 8px @card-gutter-width;
+		***REMOVED***
+	***REMOVED***
+	&.card-head-sm {
+		line-height: @card-header-sm - 4;
+		min-height: @card-header-sm;
+		header {
+			font-size: @subhead-size;
+		***REMOVED***
+	***REMOVED***
+	&.card-head-lg {
+		line-height: @card-header-lg - 4;
+		min-height: @card-header-lg;
+		header {
+			font-size: @headline-size;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Card body
+// -------------------------
+
+.card-body {
+	padding: @card-gutter-width;
+	position: relative;
+	.clearfix();
+
+	&:last-child {
+		border-radius: 0 0 @card-radius @card-radius;
+	***REMOVED***
+	&.table-responsive {
+		margin: 0;
+	***REMOVED***
+***REMOVED***
+
+// Card actionbar
+// -------------------------
+
+.card-actionbar {
+	padding-bottom: @card-gutter-width-sm / 2;
+	position: relative;
+	.clearfix();
+
+	&:last-child {
+		border-radius: 0 0 @card-radius @card-radius;
+	***REMOVED***
+***REMOVED***
+
+.card-actionbar-row {
+	padding: 6px @card-gutter-width-sm;
+	text-align: right;
+***REMOVED***
+
+// Card tiles & Card masonry
+// -------------------------
+// Removes padding & margin
+
+.card-tiles,
+.card-type-blog-masonry {
+	> .row {
+		margin: 0;
+		> [class^="col-"] {
+			padding: 0;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Card underline
+// -------------------------
+
+.card-underline {
+	.card-head {
+		border-bottom: 1px solid fade(@gray-light, 40);
+	***REMOVED***
+	.card-foot {
+		border-top: 1px solid fade(@gray-light, 40);
+	***REMOVED***
+***REMOVED***
+
+
+// Card bordered & outlined
+// -------------------------
+
+.card-bordered,
+.card-outlined {
+	border: 2px solid @card-default-border;
+***REMOVED***
+
+
+// Card variants
+// -------------------------
+
+.card-variant(style-default-dark,	@brand-default-dark);
+.card-variant(style-default,		@brand-default);
+.card-variant(style-default-light,	@brand-default-light);
+.card-variant(style-default-bright,	@brand-default-bright);
+
+.card-variant(style-gray-dark,		@gray-dark);
+.card-variant(style-gray,			@gray);
+.card-variant(style-gray-light,		@gray-light);
+.card-variant(style-gray-bright,	@gray-light2);
+
+.card-variant(style-primary,		@brand-primary);
+.card-variant(style-primary-light,	@brand-primary-light);
+.card-variant(style-primary-dark,	@brand-primary-dark);
+.card-variant(style-primary-bright,	@brand-primary-bright);
+
+.card-variant(style-accent,			@brand-accent);
+.card-variant(style-accent-light,	@brand-accent-light);
+.card-variant(style-accent-dark,	@brand-accent-dark);
+.card-variant(style-accent-bright,	@brand-accent-bright);
+
+.card-variant(style-success,		@brand-success);
+.card-variant(style-warning,		@brand-warning);
+.card-variant(style-danger,			@brand-danger);
+.card-variant(style-info,			@brand-info);
+
+
+.card.style-transparent,
+.card .style-transparent { 
+	background-color: transparent;
+	.box-shadow(@z-height-0);
+	color: inherit;
+***REMOVED***
+
+.style-image {
+	background-image: url('graphics/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	.saturate(200%);
+***REMOVED***
+
+
+// Card transparent
+// -------------------------
+
+.card-transparent { 
+	background-color: transparent;
+	.box-shadow(@z-height-0);
+	color: inherit;
+	
+	.card-head {
+		header,
+		.tools {
+			padding-left: 4px;
+			padding-right: 4px;
+		***REMOVED***
+	***REMOVED***
+	.card-body {
+		.box-shadow(@z-height-1);
+	***REMOVED***
+***REMOVED***
+
+
+// Outlined
+// -------------------------
+
+.card.card-outlined {
+	background-color: @white;
+	background-image: none;
+	color: @text-color;
+
+	.btn-icon-toggle,
+	.btn-flat {
+		&:hover { 
+			background-color: fade(@black, 7%);
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// ADD-ONS
+// --------------------------------------------------
+
+// Loader
+// -------------------------
+// Add an card overlay for the loader
+
+.card-loader {
+	display: block;
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+	background-color: @white;
+	background-color: rgba(255,255,255,0.6);
+	z-index: 999;
+***REMOVED***
+
+
+// Collapsed
+// -------------------------
+// Add animation to the '.btn-collapse'
+
+.card {
+	.btn-collapse {
+		.transition(all .1s ease-out);
+	***REMOVED***
+***REMOVED***
+.card-collapsed {
+	.btn-collapse {
+		.rotate(180deg);
+		.transition(all .3s ease-in);
+	***REMOVED***
+***REMOVED***
+
+
+// Prettyprint style inside a card
+// -------------------------
+.card .prettyprint {
+	margin: 0;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+***REMOVED***
+
+
+
+// Card TYPES
+// --------------------------------------------------
+
+// Pricing
+// -------------------------
+
+.card-type-pricing {
+	.list-unstyled {
+		margin: 0;
+		li {
+			padding: 15px 30px;
+			border-top: 1px solid @gray-lighter;
+		***REMOVED***
+		li:first-child {
+			border-top: none;
+		***REMOVED***
+	***REMOVED***
+
+	.price {
+		h1, h2, h3, h4, h5, h6 {
+			display: inline-block;
+			margin: 0;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Blog Masonry
+// -------------------------
+
+.card-type-blog-masonry {
+	article .blog-image {
+		img {
+			width: 100%; 
+		***REMOVED***
+	***REMOVED***
+
+	article .blog-text {
+		position: relative;
+	***REMOVED***
+	article > div + div.blog-text:before {
+		position: absolute;
+		margin: auto;
+		top: -20px; left: 0; right: 0;
+		#triangle > .t(@white, 20px, 20px);
+		z-index: 1;
+	***REMOVED***
+	article .blog-text:first-child:before {
+		position: absolute;
+		margin: auto;
+		bottom: -20px; left: 0; right: 0;
+		#triangle > .b(@white, 20px, 20px);
+		z-index: 1;
+	***REMOVED***
+***REMOVED***
+
+
+
+// Responsive classes
+// --------------------------------------------------
+
+// Small Devices
+// -------------------------
+
+@media (max-width: @screen-xs-max) {
+	.card {
+		margin-bottom: @card-gutter-width-sm;
+	***REMOVED***
+
+	.card-head {
+		header {
+			padding: 11px @card-gutter-width-sm;
+		***REMOVED***
+		&.card-head-xs {
+			header {
+				padding: 8px @card-gutter-width-sm;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+
+	.card-body {
+		padding: @card-gutter-width-sm;
+	***REMOVED***
+
+	.card .force-padding {
+		padding: @card-gutter-width-sm;
+	***REMOVED***
+	.card .small-padding {
+		padding: (@card-gutter-width-sm/2);
+	***REMOVED***
+	.card .form-padding {
+		padding: 0 @card-gutter-width-sm;
+	***REMOVED***
+	.card .no-side-padding {
+		padding: @card-gutter-width-sm 0;
+	***REMOVED***
+***REMOVED***

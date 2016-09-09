@@ -1,0 +1,253 @@
+//
+// Sections
+// --------------------------------------------------
+
+
+// Base
+// -------------------------
+
+section {
+	position: relative;
+	padding: @section-gutter-width;
+
+	&:first-child {
+		padding-top: 0;
+	***REMOVED***
+	
+	.row & {
+		margin-bottom: 0;
+	***REMOVED***
+
+	&.full-bleed {
+		padding: 0 !important;
+	***REMOVED***
+***REMOVED***
+
+
+// Section body
+// -------------------------
+
+.section-body {
+
+	&:first-child {
+		margin-top: @section-gutter-width;
+		
+		.full-bleed & {
+			margin-top: 0;
+		***REMOVED***
+	***REMOVED***
+	
+	&.full-bleed {
+		margin: 0 -@section-gutter-width;
+	***REMOVED***
+***REMOVED***
+
+
+// Page header
+// -------------------------
+
+.section-header {
+	height: @menubar-width-collapsed;
+	padding: 14px 0;
+
+	h1, h2, h3, h4, h5, h6 {
+		.textshadowguard(@body-color);
+		line-height: @line-height-base;
+		margin: 0;
+	***REMOVED***
+	h1 {	margin-top: -9px; margin-bottom: -6px; ***REMOVED***
+	h2 {	margin-top: -3px; margin-bottom: -6px; ***REMOVED***
+	h3 {	margin-top: 0px; ***REMOVED***
+	h4 {	margin-top: 5px; ***REMOVED***
+	h5 {	margin-top: 9px; ***REMOVED***
+	h6 {	margin-top: 8px; ***REMOVED***
+***REMOVED***
+
+
+// Section action
+// -------------------------
+
+.section-action {
+	position: relative;
+	height: @headerbar-height;
+	padding-bottom: @card-gutter-width-sm / 2;
+	padding-top: @card-gutter-width-sm / 2;
+
+	.clearfix();
+***REMOVED***
+.full-content {
+	.section-action {
+		position: fixed;
+		z-index: @zindex-section-action;
+		bottom: 0;
+		left: @menubar-width-collapsed; 
+		right: 0;
+		.box-shadow(@z-height-1-inverse);
+	***REMOVED***
+***REMOVED***
+
+.section-action-row {
+	padding: 6px @card-gutter-width-sm;
+***REMOVED***
+.section-floating-action-row{
+	position: absolute;
+	right: @grid-gutter-width;
+	top: 0;
+
+	.btn {
+		top: -20px;
+	***REMOVED***
+	.btn-lg {
+		top: -28px;
+	***REMOVED***
+	.btn-sm {
+		top: -18px;
+	***REMOVED***
+	.btn-xs {	
+		top: -15px;
+	***REMOVED***
+***REMOVED***
+
+
+// Login
+// -------------------------
+
+section.section-account {
+	.img-backdrop {
+		background-position: center;
+		height: 0;
+	***REMOVED***
+
+	.spacer {
+		position: relative;
+		display: block;
+		position: relative;
+	***REMOVED***
+
+	.img-circle {
+		float: left;
+		right: 0;
+		border: 5px solid @white;
+		margin-right: 20px;
+		width: 120px;
+		height: 120px;
+	***REMOVED***
+***REMOVED***
+
+@media (min-height: 500px) and (max-height: 700px) {
+	section.section-account {
+		.img-backdrop,
+		.spacer {
+			height: 150px;
+		***REMOVED***
+		.img-circle {
+			position: absolute;
+			top: -80px;
+			margin-right: 0;
+		***REMOVED***
+		.img-backdrop {
+			.animation(backdrop-animation 0.8s ease-out);
+		***REMOVED***
+		.card-body {
+			.animation(box-animation 1s ease-out);
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+@media (min-height: 700px) {
+	section.section-account {
+		.img-backdrop,
+		.spacer {
+			height: 300px;
+		***REMOVED***
+		.img-circle {
+			position: absolute;
+			top: -80px;
+			margin-right: 0;
+		***REMOVED***
+		.img-backdrop {
+			.animation(backdrop-animation 0.8s ease-out);
+		***REMOVED***
+		.card-body {
+			.animation(box-animation 1s ease-out);
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+// Animations
+
+@-webkit-keyframes backdrop-animation {
+	from  { margin-top: -10px; ***REMOVED***
+	to    { margin-top: 0; ***REMOVED***
+***REMOVED***
+@keyframes backdrop-animation {
+	from  { margin-top: -10px; ***REMOVED***
+	to    { margin-top: 0; ***REMOVED***
+***REMOVED***
+@-webkit-keyframes box-animation {
+	from  { opacity: 0; margin-top: -20px;***REMOVED***
+	to    { opacity: 1; margin-top: 0;***REMOVED***
+***REMOVED***
+@keyframes box-animation {
+	from  { opacity: 0; margin-top: -20px;***REMOVED***
+	to    { opacity: 1; margin-top: 0;***REMOVED***
+***REMOVED***
+
+
+
+// Responsive classes
+// --------------------------------------------------
+
+
+// Large Devices
+// -------------------------
+
+@media (min-width: @screen-lg-min) { 
+	.menubar-pin.full-content {
+		.section-action {
+			left: @menubar-width;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// From Medium Devices and up
+// -------------------------
+
+@media (min-width: @screen-sm-min) { 
+	.full-content  {
+		section {
+			position: absolute;
+			top: @headerbar-height;
+			bottom: 0;
+			left: 0; 
+			right: 0;
+			overflow: auto;
+
+			&.has-actions {
+				bottom: @headerbar-height;
+			***REMOVED***
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
+
+
+// Small Devices
+// -------------------------
+
+@media (max-width: @screen-xs-max) {
+	section {
+		padding: @section-gutter-width-sm;
+
+	***REMOVED***
+
+	.full-content  {
+		section {
+			&.has-actions {
+				padding-bottom: @headerbar-height;
+			***REMOVED***
+		***REMOVED***
+		.section-action {
+			left: 0;
+		***REMOVED***
+	***REMOVED***
+***REMOVED***
