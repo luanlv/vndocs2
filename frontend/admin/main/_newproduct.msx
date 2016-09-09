@@ -1,3 +1,5 @@
+var data = m.prop("");
+
 var NewProduct = function(ctrl){
   return [
     <hr className="ruler-xxl"/>,
@@ -71,7 +73,43 @@ var NewProduct = function(ctrl){
             <div className="col-md-6">
               <div className="card">
                 <div className="card-body">
-                  left
+                  <div id="editor"
+                   config ={function(el, initOK ){
+                         if(!initOK) {
+                           var editor = ace.edit("editor");
+                           editor.getSession().on('change', function () {
+                             data(editor.getSession().getValue());
+                             m.redraw();
+                         ***REMOVED***);
+                           data(editor.getSession().getValue());
+                           m.redraw();
+                           editor.$blockScrolling = Infinity;
+                           editor.setOptions({
+                             maxLines: Infinity,
+                             wrap: true
+                         ***REMOVED***);
+                           editor.focus();
+  
+                           document.getElementById('editor').style.fontSize='14px';
+                           document.getElementById('editor').style.lineHeight='20px';
+  
+                           editor.renderer.setShowGutter(false);
+                           editor.setShowPrintMargin(false);
+  
+                           editor.commands.addCommand({
+                             name: 'myCommand2',
+                             bindKey: {win: 'Alt-A',  mac: 'Alt-A'***REMOVED***,
+                             exec: function(editor) {
+                               editor.selection.selectWord()
+                           ***REMOVED***
+                         ***REMOVED***);
+                           
+                       ***REMOVED***
+                    ***REMOVED***
+                  ***REMOVED***
+                  >
+                    
+                  </div>
                 </div>
               </div>
               
@@ -81,7 +119,9 @@ var NewProduct = function(ctrl){
             <div className="col-md-6">
               <div className="card">
                 <div className="card-body">
-                  right
+                  {
+                    m("div", m.trust(marked(data())))
+                ***REMOVED***
                 </div>
               </div>
   

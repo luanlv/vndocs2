@@ -310,6 +310,8 @@ var Menu = function(ctrl){
 
 module.exports = Menu;
 ***REMOVED***,{***REMOVED***],6:[function(require,module,exports){
+var data = m.prop("");
+
 var NewProduct = function(ctrl){
   return [
     {tag: "hr", attrs: {className:"ruler-xxl"***REMOVED******REMOVED***,
@@ -383,7 +385,43 @@ var NewProduct = function(ctrl){
             {tag: "div", attrs: {className:"col-md-6"***REMOVED***, children: [
               {tag: "div", attrs: {className:"card"***REMOVED***, children: [
                 {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
-                  "left"
+                  {tag: "div", attrs: {id:"editor", 
+                   config:function(el, initOK ){
+                         if(!initOK) {
+                           var editor = ace.edit("editor");
+                           editor.getSession().on('change', function () {
+                             data(editor.getSession().getValue());
+                             m.redraw();
+                         ***REMOVED***);
+                           data(editor.getSession().getValue());
+                           m.redraw();
+                           editor.$blockScrolling = Infinity;
+                           editor.setOptions({
+                             maxLines: Infinity,
+                             wrap: true
+                         ***REMOVED***);
+                           editor.focus();
+  
+                           document.getElementById('editor').style.fontSize='14px';
+                           document.getElementById('editor').style.lineHeight='20px';
+  
+                           editor.renderer.setShowGutter(false);
+                           editor.setShowPrintMargin(false);
+  
+                           editor.commands.addCommand({
+                             name: 'myCommand2',
+                             bindKey: {win: 'Alt-A',  mac: 'Alt-A'***REMOVED***,
+                             exec: function(editor) {
+                               editor.selection.selectWord()
+                           ***REMOVED***
+                         ***REMOVED***);
+                           
+                       ***REMOVED***
+                    ***REMOVED***
+                    
+                ***REMOVED***
+                    
+                ***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
               
@@ -393,7 +431,9 @@ var NewProduct = function(ctrl){
             {tag: "div", attrs: {className:"col-md-6"***REMOVED***, children: [
               {tag: "div", attrs: {className:"card"***REMOVED***, children: [
                 {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
-                  "right"
+                  
+                    m("div", m.trust(marked(data())))
+                  
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
   
