@@ -48,9 +48,9 @@
 		***REMOVED***);$('[data-dismiss="offcanvas"]').on('click', function (e) {
 			o._handleOffcanvasClose();
 		***REMOVED***);
-		$('#base').on('click', '> .backdrop', function (e) {
-			o._handleOffcanvasClose();
-		***REMOVED***);
+		// $('#base').on('click', '> .backdrop', function (e) {
+		// 	o._handleOffcanvasClose();
+		// ***REMOVED***);
 
 		// Open active offcanvas buttons
 		$('[data-toggle="offcanvas-left"].active').each(function () {

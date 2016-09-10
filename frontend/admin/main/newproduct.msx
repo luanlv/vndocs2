@@ -4,15 +4,19 @@ var Menu = require('./_menu.msx');
 var NewProduct = require('./_newproduct.msx');
 var Right = require('./_right.msx');
 
+var postData = {"ok": "data"***REMOVED***
 NewProduct.controller = function(){
+  var ctrl = this;
+  ctrl.showImgList = false;
   
 ***REMOVED***;
+
+
 
 NewProduct.view = function(ctrl){
   return  [
     Header(ctrl),
     <div id="base">
-      <div className="offcanvas"></div>
       
       {NewProduct(ctrl)***REMOVED***
       

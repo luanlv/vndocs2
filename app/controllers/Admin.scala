@@ -6,8 +6,9 @@ import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import play.api.i18n.{ I18nSupport, MessagesApi ***REMOVED***
 import play.api.libs.ws.{ WS, WSClient ***REMOVED***
-import play.api.mvc.Controller
+import play.api.mvc.{ Action, Controller ***REMOVED***
 import utils.auth.DefaultEnv
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
 import scala.language.postfixOps
@@ -34,7 +35,7 @@ class Admin @Inject() (
    *
    * @return The result to display.
    */
-  def index = silhouette.UnsecuredAction.async { implicit request =>
+  def index = Action.async { implicit request =>
 
     Future.successful(Ok(views.html.admin.index("Trang chu")))
 ***REMOVED***

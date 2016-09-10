@@ -8,6 +8,7 @@ GET         /                                controllers.ApplicationController.i
 
 GET /admin  controllers.Admin.index
 
+POST /post  controllers.ApplicationController.index2
 
 
 GET         /signOut                         controllers.ApplicationController.signOut

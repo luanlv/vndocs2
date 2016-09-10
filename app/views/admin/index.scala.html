@@ -34,7 +34,7 @@
   </head>
   <body class="menubar-hoverable header-fixed ">
     <div id="app"></div>
-
+    @helper.CSRF.formField
     <style>
       .content {
         margin-bottom: 100px;
@@ -47,6 +47,7 @@
         min-height: 500px;
     ***REMOVED***
     </style>
+
 
     <!-- BEGIN JAVASCRIPT -->
     <script src="/assets/admin/js/libs/jquery/jquery-1.11.2.min.js"></script>

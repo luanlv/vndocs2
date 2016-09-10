@@ -3,6 +3,15 @@
 
 m.route.mode = "hash";
 
+window.token = $(document.getElementsByName("csrfToken")).val();
+// alert($(token).val());
+$(document).ajaxSend(function(elm, xhr, s){
+  if (s.type == "POST") {
+    xhr.setRequestHeader('Csrf-Token', window.token);
+***REMOVED***
+***REMOVED***);
+
+
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
 //window.Footer = require('./_footer.msx');
@@ -16,3 +25,6 @@ window.mobilecheck = function() {
 ***REMOVED***;
 
 window.isMobile = window.mobilecheck();
+
+
+

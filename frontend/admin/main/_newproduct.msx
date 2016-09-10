@@ -4,7 +4,7 @@ var input = m.prop("");
 var data = m.prop({
   "title": "new file",
   "categories": ["1", "2"],
-  // "time": 1464226633054,
+  "time": 1464226633054,
   "description" : "abc",
   "link": [
     {
@@ -32,9 +32,27 @@ var NewProduct = function(ctrl){
           <div className="card">
             <div className="card-body">
               <form className="form-horizontal" role="form">
-  
+                
+                <button type="button" className="btn ink-reaction btn-raised btn-primary" style="float: right"
+                  onclick={function(){
+                    {/*console.log(data());*/***REMOVED***
+                    $.ajax({
+                      type: "POST",
+                      url: "/post",
+                      data: JSON.stringify(data()),
+                      contentType: "application/json",
+                      dataType: "json",
+                      success: function(data){
+                    ***REMOVED***
+                  ***REMOVED***);
+                    
+                ***REMOVED******REMOVED***
+                >Publish</button>
+                <button type="button" className="btn ink-reaction btn-raised" style="float: right; margin-right: 20px;">Save</button>
+                <br/>
+                
                 <div className="form-group">
-                  <label for="title" className="col-sm-2 control-label">Title</label>
+                  <label htmlFor="title" className="col-sm-2 control-label">Title</label>
                   <div className="col-sm-10">
                     {(data().title === undefined)?(
                         <input type="text" className="form-control" id="title" name="title"/>
@@ -51,7 +69,7 @@ var NewProduct = function(ctrl){
                 </div>
   
                 <div className="form-group">
-                  <label for="date" className="col-sm-2 control-label">Upload Date</label>
+                  <label htmlFor="date" className="col-sm-2 control-label">Upload Date</label>
                   <div className="col-sm-2">
                     <input type="date" className="form-control" id="date" disabled
                        value={(data().time !== undefined)?(moment.unix(data().time/1000).format("YYYY-MM-DD")):(moment().format("YYYY-MM-DD"))***REMOVED***
@@ -61,8 +79,8 @@ var NewProduct = function(ctrl){
                 </div>
   
                 <div className="form-group">
-                  <label for="categories" className="col-sm-2 control-label">Category</label>
-                  <div className="col-sm-10 control-label">
+                  <label htmlFor="categories" className="col-sm-2 control-label">Category</label>
+                  <div className="col-sm-5 control-label">
                     <select multiple className="form-control" size="7" id="categories" name="categories"
                       onchange={function(el){
                         data().categories = $(el.target).val();
@@ -86,10 +104,22 @@ var NewProduct = function(ctrl){
                     ***REMOVED******REMOVED***
                     </select>
                   </div>
+                  {/*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/***REMOVED***
+                  <div className="col-sm-2 control-label">
+                    <img src="http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg" alt=""
+                      style="cursor: pointer"
+                      onclick={function(){
+                        ctrl.showImgList = true;
+                    ***REMOVED******REMOVED***
+                    />
+                    {ctrl.showImgList?(<div className="img-list">
+                      img list
+                    </div>):("")***REMOVED***
+                  </div>
                 </div>
                 
                 <div className="form-group">
-                  <label for="textarea" className="col-sm-2 control-label">Description</label>
+                  <label htmlFor="textarea" className="col-sm-2 control-label">Description</label>
                   <div className="col-sm-10">
                     <textarea name="textarea" id="textarea" className="form-control" rows="3" placeholder=""
                       config={function(el, isInit, ctx){
@@ -108,7 +138,7 @@ var NewProduct = function(ctrl){
   
                 {(data().link === undefined)?[
                   <div className="form-group">
-                    <label for="url" className="col-sm-2 control-label">File 1</label>
+                    <label htmlFor="url" className="col-sm-2 control-label">File 1</label>
                     <div className="col-sm-3">
                       <input type="text" className="form-control" id="url" name="url" placeholder="URL"/><div className="form-control-line"></div>
                     </div>
@@ -123,7 +153,7 @@ var NewProduct = function(ctrl){
                     data().link.map(function(el, index){
                       return (
                           <div className="form-group">
-                            <label for={"url" + (index+1)***REMOVED*** className="col-sm-2 control-label">File {index + 1***REMOVED***</label>
+                            <label htmlFor={"url" + (index+1)***REMOVED*** className="col-sm-2 control-label">File {index + 1***REMOVED***</label>
                             <div className="col-sm-2">
                               <input type="text" className="form-control" id={"url" + (index+1)***REMOVED*** name={"url" + (index+1)***REMOVED*** placeholder="URL"
                                      onchange={function(item){
@@ -157,11 +187,11 @@ var NewProduct = function(ctrl){
                               /><div className="form-control-line"></div>
                             </div>
                             <div className="col-sm-1">
-                              <button type="button" class="btn btn-floating-action"
+                              <button type="button" className="btn btn-floating-action"
                                 onclick={function(){
                                   data().link.splice(index, 1);
                               ***REMOVED******REMOVED***
-                              ><i class="glyphicon glyphicon-remove"></i></button>
+                              ><i className="glyphicon glyphicon-remove"></i></button>
                             </div>
                           </div>
                       )
@@ -243,10 +273,54 @@ var NewProduct = function(ctrl){
           <div className="row">
             
           </div>
+  
+          <div className="offcanvas">
+            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
+            <div className="offcanvas-head">
+              <header>Size 4</header>
+              <div className="offcanvas-tools">
+                <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
+                  onclick={function(){
+                    ctrl.showImgList = false;
+                ***REMOVED******REMOVED***
+                >
+                  <i className="md md-close"></i>
+                </a>
+              </div>
+            </div>
+            <div className="nano has-scrollbar" style="height: 253px;"><div className="nano-content" tabindex="0" style="right: -15px;"><div className="offcanvas-body">
+              <p>
+                An off-canvas can hold any content you want.
+              </p>
+              <p>
+                Close this off-canvas by clicking on the backdrop or press the close button in the upper right corner.
+              </p>
+              <p>&nbsp;</p>
+              <h4>Some details</h4>
+              <ul className="list-divided">
+                <li><strong>Width</strong><br/><span className="opacity-75">800px</span></li>
+                <li><strong>Height</strong><br/><span className="opacity-75">100%</span></li>
+                <li><strong>Body scroll</strong><br/><span className="opacity-75">disabled</span></li>
+                <li><strong>Background color</strong><br/><span className="opacity-75">Default</span></li>
+              </ul>
+            </div></div><div className="nano-pane" style="display: block;"><div className="nano-slider" style="height: 147px; transform: translate(0px, 0px);"></div></div></div>
+            <div className="force-padding stick-bottom-right">
+              <a className="btn btn-floating-action btn-accent" href="#offcanvas-demo-size3" data-toggle="offcanvas">
+                <i className="md md-arrow-back"></i>
+              </a>
+            </div>
+            </div>
+          </div>
         
+          
         </div>
       </section>
-    </div>
+    </div>,
+    ctrl.showImgList?(<div class="backdrop"
+      onclick={function(){
+        ctrl.showImgList = false;
+    ***REMOVED******REMOVED***
+    ></div>):""
 ***REMOVED***
 ***REMOVED***
 

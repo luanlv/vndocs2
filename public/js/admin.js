@@ -23,6 +23,15 @@ module.exports = Main;
 
 m.route.mode = "hash";
 
+window.token = $(document.getElementsByName("csrfToken")).val();
+// alert($(token).val());
+$(document).ajaxSend(function(elm, xhr, s){
+  if (s.type == "POST") {
+    xhr.setRequestHeader('Csrf-Token', window.token);
+***REMOVED***
+***REMOVED***);
+
+
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
 //window.Footer = require('./_footer.msx');
@@ -36,6 +45,10 @@ window.mobilecheck = function() {
 ***REMOVED***;
 
 window.isMobile = window.mobilecheck();
+
+
+
+
 ***REMOVED***,{"./_main.msx":1***REMOVED***],3:[function(require,module,exports){
 var Content = function(ctrl){
   return [
@@ -264,7 +277,14 @@ var Menu = function(ctrl){
       
       
       
-      {tag: "div", attrs: {className:"menubar-scroll-panel"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"menubar-scroll-panel", 
+        onmouseleave:function(){
+          $('body').removeClass('menubar-visible');
+      ***REMOVED***, 
+       onmouseenter:function(){
+         $('body').addClass('menubar-visible');
+     ***REMOVED***
+    ***REMOVED***, children: [
         
         {tag: "div", attrs: {className:"gui-controls", id:"main-menu"***REMOVED***, children: [
           {tag: "li", attrs: {***REMOVED***, children: [
@@ -316,7 +336,7 @@ var input = m.prop("");
 var data = m.prop({
   "title": "new file",
   "categories": ["1", "2"],
-  // "time": 1464226633054,
+  "time": 1464226633054,
   "description" : "abc",
   "link": [
     {
@@ -344,9 +364,27 @@ var NewProduct = function(ctrl){
           {tag: "div", attrs: {className:"card"***REMOVED***, children: [
             {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
               {tag: "form", attrs: {className:"form-horizontal", role:"form"***REMOVED***, children: [
-  
+                
+                {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised btn-primary", style:"float: right", 
+                  onclick:function(){
+                    {/*console.log(data());*/***REMOVED***
+                    $.ajax({
+                      type: "POST",
+                      url: "/post",
+                      data: JSON.stringify(data()),
+                      contentType: "application/json",
+                      dataType: "json",
+                      success: function(data){
+                    ***REMOVED***
+                  ***REMOVED***);
+                    
+                ***REMOVED***
+              ***REMOVED***, children: ["Publish"]***REMOVED***, 
+                {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised", style:"float: right; margin-right: 20px;"***REMOVED***, children: ["Save"]***REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"title", className:"col-sm-2 control-label"***REMOVED***, children: ["Title"]***REMOVED***, 
+                  {tag: "label", attrs: {htmlFor:"title", className:"col-sm-2 control-label"***REMOVED***, children: ["Title"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
                     (data().title === undefined)?(
                         {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title"***REMOVED******REMOVED***
@@ -363,7 +401,7 @@ var NewProduct = function(ctrl){
               ***REMOVED******REMOVED***, 
   
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"date", className:"col-sm-2 control-label"***REMOVED***, children: ["Upload Date"]***REMOVED***, 
+                  {tag: "label", attrs: {htmlFor:"date", className:"col-sm-2 control-label"***REMOVED***, children: ["Upload Date"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
                     {tag: "input", attrs: {type:"date", className:"form-control", id:"date", disabled:true,
                        value:(data().time !== undefined)?(moment.unix(data().time/1000).format("YYYY-MM-DD")):(moment().format("YYYY-MM-DD"))***REMOVED***
@@ -373,8 +411,8 @@ var NewProduct = function(ctrl){
               ***REMOVED******REMOVED***, 
   
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"categories", className:"col-sm-2 control-label"***REMOVED***, children: ["Category"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10 control-label"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"categories", className:"col-sm-2 control-label"***REMOVED***, children: ["Category"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-5 control-label"***REMOVED***, children: [
                     {tag: "select", attrs: {multiple:true,className:"form-control", size:"7", id:"categories", name:"categories", 
                       onchange:function(el){
                         data().categories = $(el.target).val();
@@ -397,11 +435,23 @@ var NewProduct = function(ctrl){
                       ***REMOVED***)
                     ***REMOVED***
                   ***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***, 
+                  /*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/
+                  {tag: "div", attrs: {className:"col-sm-2 control-label"***REMOVED***, children: [
+                    {tag: "img", attrs: {src:"http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg", alt:"", 
+                      style:"cursor: pointer", 
+                      onclick:function(){
+                        ctrl.showImgList = true;
+                    ***REMOVED******REMOVED***
+                  ***REMOVED***, 
+                    ctrl.showImgList?({tag: "div", attrs: {className:"img-list"***REMOVED***, children: [
+                      "img list"
+                  ***REMOVED******REMOVED***):("")
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
                 
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                  {tag: "label", attrs: {for:"textarea", className:"col-sm-2 control-label"***REMOVED***, children: ["Description"]***REMOVED***, 
+                  {tag: "label", attrs: {htmlFor:"textarea", className:"col-sm-2 control-label"***REMOVED***, children: ["Description"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
                     {tag: "textarea", attrs: {name:"textarea", id:"textarea", className:"form-control", rows:"3", placeholder:"", 
                       config:function(el, isInit, ctx){
@@ -420,7 +470,7 @@ var NewProduct = function(ctrl){
   
                 (data().link === undefined)?[
                   {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                    {tag: "label", attrs: {for:"url", className:"col-sm-2 control-label"***REMOVED***, children: ["File 1"]***REMOVED***, 
+                    {tag: "label", attrs: {htmlFor:"url", className:"col-sm-2 control-label"***REMOVED***, children: ["File 1"]***REMOVED***, 
                     {tag: "div", attrs: {className:"col-sm-3"***REMOVED***, children: [
                       {tag: "input", attrs: {type:"text", className:"form-control", id:"url", name:"url", placeholder:"URL"***REMOVED******REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***, 
@@ -435,7 +485,7 @@ var NewProduct = function(ctrl){
                     data().link.map(function(el, index){
                       return (
                           {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
-                            {tag: "label", attrs: {for:"url" + (index+1), className:"col-sm-2 control-label"***REMOVED***, children: ["File ", index + 1]***REMOVED***, 
+                            {tag: "label", attrs: {htmlFor:"url" + (index+1), className:"col-sm-2 control-label"***REMOVED***, children: ["File ", index + 1]***REMOVED***, 
                             {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
                               {tag: "input", attrs: {type:"text", className:"form-control", id:"url" + (index+1), name:"url" + (index+1), placeholder:"URL", 
                                      onchange:function(item){
@@ -469,11 +519,11 @@ var NewProduct = function(ctrl){
                             ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                           ***REMOVED******REMOVED***, 
                             {tag: "div", attrs: {className:"col-sm-1"***REMOVED***, children: [
-                              {tag: "button", attrs: {type:"button", class:"btn btn-floating-action", 
+                              {tag: "button", attrs: {type:"button", className:"btn btn-floating-action", 
                                 onclick:function(){
                                   data().link.splice(index, 1);
                               ***REMOVED***
-                            ***REMOVED***, children: [{tag: "i", attrs: {class:"glyphicon glyphicon-remove"***REMOVED******REMOVED***]***REMOVED***
+                            ***REMOVED***, children: [{tag: "i", attrs: {className:"glyphicon glyphicon-remove"***REMOVED******REMOVED***]***REMOVED***
                           ***REMOVED******REMOVED***
                         ***REMOVED******REMOVED***
                       )
@@ -554,11 +604,55 @@ var NewProduct = function(ctrl){
         ***REMOVED******REMOVED***, 
           {tag: "div", attrs: {className:"row"***REMOVED***
             
-        ***REMOVED***
+        ***REMOVED***, 
+  
+          {tag: "div", attrs: {className:"offcanvas"***REMOVED***, children: [
+            {tag: "div", attrs: {id:"offcanvas-demo-size4", className:"offcanvas-pane width-12 " + (ctrl.showImgList?"active":""), style:"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***, children: [
+            {tag: "div", attrs: {className:"offcanvas-head"***REMOVED***, children: [
+              {tag: "header", attrs: {***REMOVED***, children: ["Size 4"]***REMOVED***, 
+              {tag: "div", attrs: {className:"offcanvas-tools"***REMOVED***, children: [
+                {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas", 
+                  onclick:function(){
+                    ctrl.showImgList = false;
+                ***REMOVED***
+              ***REMOVED***, children: [
+                  {tag: "i", attrs: {className:"md md-close"***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {className:"nano has-scrollbar", style:"height: 253px;"***REMOVED***, children: [{tag: "div", attrs: {className:"nano-content", tabindex:"0", style:"right: -15px;"***REMOVED***, children: [{tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
+              {tag: "p", attrs: {***REMOVED***, children: [
+                "An off-canvas can hold any content you want."
+            ***REMOVED******REMOVED***, 
+              {tag: "p", attrs: {***REMOVED***, children: [
+                "Close this off-canvas by clicking on the backdrop or press the close button in the upper right corner."
+            ***REMOVED******REMOVED***, 
+              {tag: "p", attrs: {***REMOVED***, children: [" "]***REMOVED***, 
+              {tag: "h4", attrs: {***REMOVED***, children: ["Some details"]***REMOVED***, 
+              {tag: "ul", attrs: {className:"list-divided"***REMOVED***, children: [
+                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Width"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["800px"]***REMOVED***]***REMOVED***, 
+                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Height"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["100%"]***REMOVED***]***REMOVED***, 
+                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Body scroll"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["disabled"]***REMOVED***]***REMOVED***, 
+                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Background color"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["Default"]***REMOVED***]***REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***]***REMOVED***, {tag: "div", attrs: {className:"nano-pane", style:"display: block;"***REMOVED***, children: [{tag: "div", attrs: {className:"nano-slider", style:"height: 147px; transform: translate(0px, 0px);"***REMOVED******REMOVED***]***REMOVED***]***REMOVED***, 
+            {tag: "div", attrs: {className:"force-padding stick-bottom-right"***REMOVED***, children: [
+              {tag: "a", attrs: {className:"btn btn-floating-action btn-accent", href:"#offcanvas-demo-size3", "data-toggle":"offcanvas"***REMOVED***, children: [
+                {tag: "i", attrs: {className:"md md-arrow-back"***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***
         
+          
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***,
+    ctrl.showImgList?({tag: "div", attrs: {class:"backdrop", 
+      onclick:function(){
+        ctrl.showImgList = false;
+    ***REMOVED***
+  ***REMOVED******REMOVED***):""
 ***REMOVED***
 ***REMOVED***
 
@@ -949,15 +1043,19 @@ var Menu = require('./_menu.msx');
 var NewProduct = require('./_newproduct.msx');
 var Right = require('./_right.msx');
 
+var postData = {"ok": "data"***REMOVED***
 NewProduct.controller = function(){
+  var ctrl = this;
+  ctrl.showImgList = false;
   
 ***REMOVED***;
+
+
 
 NewProduct.view = function(ctrl){
   return  [
     Header(ctrl),
     {tag: "div", attrs: {id:"base"***REMOVED***, children: [
-      {tag: "div", attrs: {className:"offcanvas"***REMOVED******REMOVED***, 
       
       NewProduct(ctrl), 
       

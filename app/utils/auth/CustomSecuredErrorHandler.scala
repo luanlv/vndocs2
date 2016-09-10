@@ -3,7 +3,8 @@ package utils.auth
 import javax.inject.Inject
 
 import com.mohiva.play.silhouette.api.actions.SecuredErrorHandler
-import play.api.i18n.{ MessagesApi, I18nSupport, Messages ***REMOVED***
+import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
+import play.api.libs.json.Json
 import play.api.mvc.RequestHeader
 import play.api.mvc.Results._
 
@@ -25,7 +26,11 @@ class CustomSecuredErrorHandler @Inject() (val messagesApi: MessagesApi) extends
    * @return The result to send to the client.
    */
   override def onNotAuthenticated(implicit request: RequestHeader) = {
-    Future.successful(Redirect(controllers.routes.SignInController.view()))
+    if (request.contentType.getOrElse("") == "application/json") {
+      Future.successful(BadRequest(Json.obj({ "status" -> false ***REMOVED***)))
+  ***REMOVED*** else {
+      Future.successful(Redirect(controllers.routes.SignInController.view()))
+  ***REMOVED***
 ***REMOVED***
 
   /**

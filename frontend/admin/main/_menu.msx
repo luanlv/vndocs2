@@ -16,7 +16,14 @@ var Menu = function(ctrl){
       
       
       
-      <div className="menubar-scroll-panel">
+      <div className="menubar-scroll-panel"
+        onmouseleave={function(){
+          $('body').removeClass('menubar-visible');
+      ***REMOVED******REMOVED***
+       onmouseenter={function(){
+         $('body').addClass('menubar-visible');
+     ***REMOVED******REMOVED***
+      >
         
         <div className="gui-controls" id="main-menu">
           <li>
