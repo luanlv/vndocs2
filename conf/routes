@@ -10,6 +10,7 @@ GET /admin  controllers.Admin.index
 
 POST /post  controllers.ApplicationController.index2
 
+POST  /upload/image controllers.Admin.uploadImage
 
 GET         /signOut                         controllers.ApplicationController.signOut
 GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)

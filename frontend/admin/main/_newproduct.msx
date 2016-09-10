@@ -20,7 +20,8 @@ var data = m.prop({
       "filesize" : 56465454
   ***REMOVED***
 ***REMOVED***,
-  "content": "## Noi dung"
+  "content": "## Noi dung",
+  "cover" : "http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg"
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -106,7 +107,7 @@ var NewProduct = function(ctrl){
                   </div>
                   {/*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/***REMOVED***
                   <div className="col-sm-2 control-label">
-                    <img src="http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg" alt=""
+                    <img src={data().cover***REMOVED*** alt=""
                       style="cursor: pointer"
                       onclick={function(){
                         ctrl.showImgList = true;
@@ -277,7 +278,7 @@ var NewProduct = function(ctrl){
           <div className="offcanvas">
             <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
             <div className="offcanvas-head">
-              <header>Size 4</header>
+              <header>Images controller </header>
               <div className="offcanvas-tools">
                 <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
                   onclick={function(){
@@ -288,26 +289,60 @@ var NewProduct = function(ctrl){
                 </a>
               </div>
             </div>
-            <div className="nano has-scrollbar" style="height: 253px;"><div className="nano-content" tabindex="0" style="right: -15px;"><div className="offcanvas-body">
-              <p>
-                An off-canvas can hold any content you want.
-              </p>
-              <p>
-                Close this off-canvas by clicking on the backdrop or press the close button in the upper right corner.
-              </p>
-              <p>&nbsp;</p>
-              <h4>Some details</h4>
-              <ul className="list-divided">
-                <li><strong>Width</strong><br/><span className="opacity-75">800px</span></li>
-                <li><strong>Height</strong><br/><span className="opacity-75">100%</span></li>
-                <li><strong>Body scroll</strong><br/><span className="opacity-75">disabled</span></li>
-                <li><strong>Background color</strong><br/><span className="opacity-75">Default</span></li>
-              </ul>
-            </div></div><div className="nano-pane" style="display: block;"><div className="nano-slider" style="height: 147px; transform: translate(0px, 0px);"></div></div></div>
-            <div className="force-padding stick-bottom-right">
-              <a className="btn btn-floating-action btn-accent" href="#offcanvas-demo-size3" data-toggle="offcanvas">
-                <i className="md md-arrow-back"></i>
-              </a>
+            <div className="nano has-scrollbar" style="height: 90vh;">
+              <div className="nano-content" tabindex="0" style="right: -15px;">
+                <div className="offcanvas-body">
+                  <div className="card-body">
+                    {listImgs.map(function(el){
+                      return <a href="#"
+                        onclick={function(){
+                          data().cover=el;
+                      ***REMOVED***
+                      ***REMOVED***
+                      ><img  src={el***REMOVED*** alt=""/></a>
+                  ***REMOVED***)***REMOVED***
+                  </div>
+                  
+                  
+                  
+                  <div className="card-body">
+                    <div className="btn-group">
+                      <button type="button" className="btn ink-reaction btn-default-bright">1</button>
+                      <button type="button" className="btn ink-reaction btn-default-bright">2</button>
+                      <button type="button" className="btn ink-reaction btn-default-bright">3</button>
+                      <button type="button" className="btn ink-reaction btn-default-bright">4</button>
+                      <button type="button" className="btn ink-reaction btn-default-bright">5</button>
+                      <button type="button" className="btn ink-reaction btn-default-bright">6</button>
+                      <input className="btn ink-reaction btn-default-bright" name="file" id="file" type="file" accept="image/*"
+                        onchange={function(){
+                          var file = $('#file').get(0).files[0];
+                          var formData = new FormData();
+                          formData.append('file', file);
+                          $.ajax({
+                            url: '/upload/image',
+                            data: formData,
+                            type: 'POST',
+                            contentType: false,
+                            processData: false,
+                            beforeSend: function (data) {
+                              alert('Are you sure you want to upload image?');
+                          ***REMOVED***,
+                            success: function (data) {
+                              //call your jQuery action here
+                              {/*alert('Upload completed: ' + data);*/***REMOVED***
+                          ***REMOVED***,
+                            error: function (jqXHR, textStatus, errorThrown) {
+                              alert(textStatus + ': ' + errorThrown);
+                          ***REMOVED***
+                        ***REMOVED***);
+                      ***REMOVED******REMOVED***
+                      />
+                  
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
             </div>
             </div>
           </div>
@@ -316,7 +351,7 @@ var NewProduct = function(ctrl){
         </div>
       </section>
     </div>,
-    ctrl.showImgList?(<div class="backdrop"
+    ctrl.showImgList?(<div className="backdrop"
       onclick={function(){
         ctrl.showImgList = false;
     ***REMOVED******REMOVED***
@@ -360,5 +395,29 @@ var categories = [
   ***REMOVED***
 ***REMOVED***
 ];
+
+
+var listImgs = [
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+]
 
 module.exports = NewProduct;

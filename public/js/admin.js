@@ -352,7 +352,8 @@ var data = m.prop({
       "filesize" : 56465454
   ***REMOVED***
 ***REMOVED***,
-  "content": "## Noi dung"
+  "content": "## Noi dung",
+  "cover" : "http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg"
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -438,7 +439,7 @@ var NewProduct = function(ctrl){
                 ***REMOVED******REMOVED***, 
                   /*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/
                   {tag: "div", attrs: {className:"col-sm-2 control-label"***REMOVED***, children: [
-                    {tag: "img", attrs: {src:"http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg", alt:"", 
+                    {tag: "img", attrs: {src:data().cover, alt:"", 
                       style:"cursor: pointer", 
                       onclick:function(){
                         ctrl.showImgList = true;
@@ -609,7 +610,7 @@ var NewProduct = function(ctrl){
           {tag: "div", attrs: {className:"offcanvas"***REMOVED***, children: [
             {tag: "div", attrs: {id:"offcanvas-demo-size4", className:"offcanvas-pane width-12 " + (ctrl.showImgList?"active":""), style:"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***, children: [
             {tag: "div", attrs: {className:"offcanvas-head"***REMOVED***, children: [
-              {tag: "header", attrs: {***REMOVED***, children: ["Size 4"]***REMOVED***, 
+              {tag: "header", attrs: {***REMOVED***, children: ["Images controller "]***REMOVED***, 
               {tag: "div", attrs: {className:"offcanvas-tools"***REMOVED***, children: [
                 {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas", 
                   onclick:function(){
@@ -620,25 +621,59 @@ var NewProduct = function(ctrl){
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {className:"nano has-scrollbar", style:"height: 253px;"***REMOVED***, children: [{tag: "div", attrs: {className:"nano-content", tabindex:"0", style:"right: -15px;"***REMOVED***, children: [{tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
-              {tag: "p", attrs: {***REMOVED***, children: [
-                "An off-canvas can hold any content you want."
-            ***REMOVED******REMOVED***, 
-              {tag: "p", attrs: {***REMOVED***, children: [
-                "Close this off-canvas by clicking on the backdrop or press the close button in the upper right corner."
-            ***REMOVED******REMOVED***, 
-              {tag: "p", attrs: {***REMOVED***, children: [" "]***REMOVED***, 
-              {tag: "h4", attrs: {***REMOVED***, children: ["Some details"]***REMOVED***, 
-              {tag: "ul", attrs: {className:"list-divided"***REMOVED***, children: [
-                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Width"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["800px"]***REMOVED***]***REMOVED***, 
-                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Height"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["100%"]***REMOVED***]***REMOVED***, 
-                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Body scroll"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["disabled"]***REMOVED***]***REMOVED***, 
-                {tag: "li", attrs: {***REMOVED***, children: [{tag: "strong", attrs: {***REMOVED***, children: ["Background color"]***REMOVED***, {tag: "br", attrs: {***REMOVED******REMOVED***, {tag: "span", attrs: {className:"opacity-75"***REMOVED***, children: ["Default"]***REMOVED***]***REMOVED***
-            ***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***]***REMOVED***, {tag: "div", attrs: {className:"nano-pane", style:"display: block;"***REMOVED***, children: [{tag: "div", attrs: {className:"nano-slider", style:"height: 147px; transform: translate(0px, 0px);"***REMOVED******REMOVED***]***REMOVED***]***REMOVED***, 
-            {tag: "div", attrs: {className:"force-padding stick-bottom-right"***REMOVED***, children: [
-              {tag: "a", attrs: {className:"btn btn-floating-action btn-accent", href:"#offcanvas-demo-size3", "data-toggle":"offcanvas"***REMOVED***, children: [
-                {tag: "i", attrs: {className:"md md-arrow-back"***REMOVED******REMOVED***
+            {tag: "div", attrs: {className:"nano has-scrollbar", style:"height: 90vh;"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"nano-content", tabindex:"0", style:"right: -15px;"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+                    listImgs.map(function(el){
+                      return {tag: "a", attrs: {href:"#", 
+                        onclick:function(){
+                          data().cover=el;
+                      ***REMOVED***
+                        
+                    ***REMOVED***, children: [{tag: "img", attrs: {src:el, alt:""***REMOVED******REMOVED***]***REMOVED***
+                  ***REMOVED***)
+                ***REMOVED******REMOVED***, 
+                  
+                  
+                  
+                  {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+                    {tag: "div", attrs: {className:"btn-group"***REMOVED***, children: [
+                      {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["1"]***REMOVED***, 
+                      {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["2"]***REMOVED***, 
+                      {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["3"]***REMOVED***, 
+                      {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["4"]***REMOVED***, 
+                      {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["5"]***REMOVED***, 
+                      {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["6"]***REMOVED***, 
+                      {tag: "input", attrs: {className:"btn ink-reaction btn-default-bright", name:"file", id:"file", type:"file", accept:"image/*", 
+                        onchange:function(){
+                          var file = $('#file').get(0).files[0];
+                          var formData = new FormData();
+                          formData.append('file', file);
+                          $.ajax({
+                            url: '/upload/image',
+                            data: formData,
+                            type: 'POST',
+                            contentType: false,
+                            processData: false,
+                            beforeSend: function (data) {
+                              alert('Are you sure you want to upload image?');
+                          ***REMOVED***,
+                            success: function (data) {
+                              //call your jQuery action here
+                              {/*alert('Upload completed: ' + data);*/***REMOVED***
+                          ***REMOVED***,
+                            error: function (jqXHR, textStatus, errorThrown) {
+                              alert(textStatus + ': ' + errorThrown);
+                          ***REMOVED***
+                        ***REMOVED***);
+                      ***REMOVED******REMOVED***
+                    ***REMOVED***
+                  
+                  ***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+                
+              ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
@@ -648,7 +683,7 @@ var NewProduct = function(ctrl){
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
-    ctrl.showImgList?({tag: "div", attrs: {class:"backdrop", 
+    ctrl.showImgList?({tag: "div", attrs: {className:"backdrop", 
       onclick:function(){
         ctrl.showImgList = false;
     ***REMOVED***
@@ -692,6 +727,30 @@ var categories = [
   ***REMOVED***
 ***REMOVED***
 ];
+
+
+var listImgs = [
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
+]
 
 module.exports = NewProduct;
 ***REMOVED***,{"./fn.msx":8***REMOVED***],7:[function(require,module,exports){
