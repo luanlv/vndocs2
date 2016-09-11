@@ -4,6 +4,7 @@ var input = m.prop("");
 
 var data = m.prop({
   "slug": "abc",
+  "name" : "ten goi",
   "description": "def"
 ***REMOVED***);
 
@@ -81,6 +82,34 @@ var NewCategory = function(ctrl){
                     <div className="form-control-line"></div>
                   </div>
                 </div>
+  
+  
+                <div className="form-group">
+                  <label htmlFor="categories" className="col-sm-2 control-label">Category</label>
+                  <div className="col-sm-5 control-label">
+                    <select className="form-control" size="7" id="categories" name="categories"
+                            onchange={function(el){
+                              
+                          ***REMOVED******REMOVED***
+                    >
+                      {
+                        categories.map(function(el){
+                          return <option
+                              value={el._id***REMOVED***
+                              onselect = {function(){
+                                data().sku = {
+                                  "parent_id": el._id,
+                                  "name": el.name,
+                                  "slug": el.slug
+                              ***REMOVED***;
+                            ***REMOVED******REMOVED***
+                          > {el.name***REMOVED*** </option>
+                      ***REMOVED***)
+                    ***REMOVED***
+                    </select>
+                  </div>
+                 
+                </div>
                 
                 
               </form>
@@ -129,7 +158,25 @@ var NewCategory = function(ctrl){
     ***REMOVED******REMOVED***
     ></div>):""
 ***REMOVED***
+***REMOVED***;
+
+var categories = [
+  {
+    "slug": "1",
+    "name": "mot",
+    "description": "abc",
+***REMOVED***,
+  {
+    "slug": "2",
+    "name": "hai",
+    "description": "abc",
+***REMOVED***,
+  {
+    "slug": "3",
+    "name": "ba",
+    "description": "abc",
 ***REMOVED***
+]
 
 
 module.exports = NewCategory;

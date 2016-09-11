@@ -339,6 +339,7 @@ var input = m.prop("");
 
 var data = m.prop({
   "slug": "abc",
+  "name" : "ten goi",
   "description": "def"
 ***REMOVED***);
 
@@ -415,6 +416,34 @@ var NewCategory = function(ctrl){
       
                     {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+  
+  
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"categories", className:"col-sm-2 control-label"***REMOVED***, children: ["Category"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-5 control-label"***REMOVED***, children: [
+                    {tag: "select", attrs: {className:"form-control", size:"7", id:"categories", name:"categories", 
+                            onchange:function(el){
+                              
+                          ***REMOVED***
+                  ***REMOVED***, children: [
+                      
+                        categories.map(function(el){
+                          return {tag: "option", attrs: {
+                              value:el._id, 
+                              onselect:function(){
+                                data().sku = {
+                                  "parent_id": el._id,
+                                  "name": el.name,
+                                  "slug": el.slug
+                              ***REMOVED***;
+                            ***REMOVED***
+                        ***REMOVED***, children: [" ", el.name, " "]***REMOVED***
+                      ***REMOVED***)
+                      
+                  ***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+                 
               ***REMOVED******REMOVED***
                 
                 
@@ -464,7 +493,25 @@ var NewCategory = function(ctrl){
     ***REMOVED***
   ***REMOVED******REMOVED***):""
 ***REMOVED***
+***REMOVED***;
+
+var categories = [
+  {
+    "slug": "1",
+    "name": "mot",
+    "description": "abc",
+***REMOVED***,
+  {
+    "slug": "2",
+    "name": "hai",
+    "description": "abc",
+***REMOVED***,
+  {
+    "slug": "3",
+    "name": "ba",
+    "description": "abc",
 ***REMOVED***
+]
 
 
 module.exports = NewCategory;
