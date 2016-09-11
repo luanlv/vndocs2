@@ -1,0 +1,39 @@
+var NewProduct = {***REMOVED***;
+var Header = require('./_header.msx');
+var Menu = require('./_menu.msx');
+var NewCategory = require('./_newcategory.msx');
+var Right = require('./_right.msx');
+var fn = require('./fn.msx');
+
+var postData = {"ok": "data"***REMOVED***
+
+NewProduct.controller = function(){
+  var ctrl = this;
+  ctrl.showImgList = false;
+  ctrl.imgList = m.prop([]);
+  ctrl.setup = function(){
+    // ctrl.imgList(ctrl.request.data());
+    // ctrl.showImgList = true;
+    m.redraw();
+***REMOVED***;
+***REMOVED***;
+
+
+
+NewProduct.view = function(ctrl){
+  return  [
+    Header(ctrl),
+    <div id="base">
+      
+      {NewCategory(ctrl)***REMOVED***
+      
+      {Menu(ctrl)***REMOVED***
+      
+      {Right(ctrl)***REMOVED***
+    
+    </div>
+***REMOVED***
+***REMOVED***;
+
+
+module.exports = NewProduct;

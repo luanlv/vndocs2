@@ -20,12 +20,6 @@ case class Post(
   cover: Option[Cover],
   time: DateTime = DateTime.now()
 ) extends Identity with TemporalModel {
-  /**
-   * Tries to construct a name.
-   *
-   * @return Maybe a name.
-   */
-
 ***REMOVED***
 
 object Post {

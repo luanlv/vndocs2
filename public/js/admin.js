@@ -4,6 +4,7 @@ var Main = Main || {***REMOVED***;
 
 Main.Home = require('./main/home.msx');
 Main.NewProduct = require('./main/newproduct.msx');
+Main.NewCategory = require('./main/newcategory.msx');
 //Main.Dashboard = require('./main/_dashboard.msx');
 // Main.Product = require('./main/_product.msx');
 // Main.Category = require('./main/_category.msx');
@@ -11,13 +12,15 @@ Main.NewProduct = require('./main/newproduct.msx');
 
 
 m.route(document.querySelector('#app'), "/", {
-  "/": Main.NewProduct
+  "/": Main.NewProduct,
+  "/category/create": Main.NewCategory
 ***REMOVED***);
 
+m.route('/category/create');
 
 
 module.exports = Main;
-***REMOVED***,{"./main/home.msx":9,"./main/newproduct.msx":10***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./main/home.msx":10,"./main/newcategory.msx":11,"./main/newproduct.msx":12***REMOVED***],2:[function(require,module,exports){
 "use strict";
 
 
@@ -333,6 +336,142 @@ module.exports = Menu;
 var fn = require('./fn.msx');
 
 var input = m.prop("");
+
+var data = m.prop({
+  "slug": "abc",
+  "description": "def"
+***REMOVED***);
+
+var NewCategory = function(ctrl){
+  return [
+    {tag: "hr", attrs: {className:"ruler-xxl"***REMOVED******REMOVED***,
+    {tag: "div", attrs: {className:"content"***REMOVED***, children: [
+      {tag: "section", attrs: {***REMOVED***, children: [
+        {tag: "div", attrs: {className:"section-body"***REMOVED***, children: [
+          {tag: "div", attrs: {className:"card"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+              {tag: "form", attrs: {className:"form-horizontal", role:"form"***REMOVED***, children: [
+                
+                {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised btn-primary", style:"float: right", 
+                  onclick:function(){
+                    console.log(data());
+                    {/*delete data().time;*/***REMOVED***
+                    {/*$.ajax({*/***REMOVED***
+                      {/*type: "POST",*/***REMOVED***
+                      {/*url: "/admin/post",*/***REMOVED***
+                      {/*data: JSON.stringify(data()),*/***REMOVED***
+                      {/*contentType: "application/json",*/***REMOVED***
+                      {/*dataType: "json",*/***REMOVED***
+                      {/*success: function(data){*/***REMOVED***
+                      {/****REMOVED****/***REMOVED***
+                    {/****REMOVED***);*/***REMOVED***
+                    
+                ***REMOVED***
+              ***REMOVED***, children: ["Publish"]***REMOVED***, 
+                {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised", style:"float: right; margin-right: 20px;"***REMOVED***, children: ["Save"]***REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+  
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"url", className:"col-sm-2 control-label"***REMOVED***, children: ["Url"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                      {tag: "input", attrs: {type:"text", className:"form-control", id:"url", name:"title", 
+                             onchange:function(el){
+                               data().slug = $(el.target).val()
+                           ***REMOVED***, 
+                             value:data().slug***REMOVED***
+                    ***REMOVED***, 
+                  {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+  
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"url", className:"col-sm-2 control-label"***REMOVED***, children: ["Name"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                      {tag: "input", attrs: {type:"text", className:"form-control", id:"url", name:"title", 
+                             onchange:function(el){
+                               data().name = $(el.target).val();
+                               data().slug = fn.slug(data().name);
+                           ***REMOVED***, 
+                             value:(data().name === undefined)?"":(data().name)***REMOVED***
+                    ***REMOVED***, 
+                    {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+  
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"textarea", className:"col-sm-2 control-label"***REMOVED***, children: ["Description"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    {tag: "textarea", attrs: {name:"textarea", id:"textarea", className:"form-control", rows:"3", placeholder:"", 
+                              config:function(el, isInit, ctx){
+                                if(!isInit) {
+                                  $(el).val(data().description)
+                              ***REMOVED***
+                            ***REMOVED***, 
+                              onkeydown:function(el){
+                                data().description = $(el.target).val();
+                            ***REMOVED***
+                  ***REMOVED******REMOVED***, 
+      
+                    {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+                
+                
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          
+          {tag: "div", attrs: {className:"row"***REMOVED***
+            
+        ***REMOVED***, 
+  
+          {tag: "div", attrs: {className:"offcanvas"***REMOVED***, children: [
+            {tag: "div", attrs: {id:"offcanvas-demo-size4", className:"offcanvas-pane width-12 " + (ctrl.showImgList?"active":""), style:"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***, children: [
+            {tag: "div", attrs: {className:"offcanvas-head"***REMOVED***, children: [
+              {tag: "header", attrs: {***REMOVED***, children: ["Images controller "]***REMOVED***, 
+              {tag: "div", attrs: {className:"offcanvas-tools"***REMOVED***, children: [
+                {tag: "a", attrs: {className:"btn btn-icon-toggle btn-default-light pull-right", "data-dismiss":"offcanvas", 
+                  onclick:function(){
+                    {/*ctrl.showImgList = false;*/***REMOVED***
+                ***REMOVED***
+              ***REMOVED***, children: [
+                  {tag: "i", attrs: {className:"md md-close"***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {className:"nano has-scrollbar", style:"height: 90vh;"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"nano-content", tabindex:"0", style:"right: -15px;"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
+                    "test"
+                ***REMOVED******REMOVED***
+                  
+                
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***
+        
+          
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***,
+    ctrl.showImgList?({tag: "div", attrs: {className:"backdrop", 
+      onclick:function(){
+        ctrl.showImgList = false;
+    ***REMOVED***
+  ***REMOVED******REMOVED***):""
+***REMOVED***
+***REMOVED***
+
+
+module.exports = NewCategory;
+***REMOVED***,{"./fn.msx":9***REMOVED***],7:[function(require,module,exports){
+var fn = require('./fn.msx');
+
+var input = m.prop("");
 var data = m.prop({
   "id" : "",
   "title": "new file",
@@ -477,8 +616,8 @@ var NewProduct = function(ctrl){
                           $(el).val(data().description)
                       ***REMOVED***
                     ***REMOVED***, 
-                      onkeypress:function(el){
-                        data().description = $(el).val();
+                      onkeydown:function(el){
+                        data().description = $(el.target).val();
                     ***REMOVED***
                   ***REMOVED******REMOVED***, 
                     
@@ -779,7 +918,7 @@ var listImgs = [
 ]
 
 module.exports = NewProduct;
-***REMOVED***,{"./fn.msx":8***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{"./fn.msx":9***REMOVED***],8:[function(require,module,exports){
 var Right = function(ctrl){
   return [
     {tag: "div", attrs: {className:"offcanvas"***REMOVED***, children: [
@@ -1020,7 +1159,7 @@ var Right = function(ctrl){
 ***REMOVED***;
 
 module.exports = Right;
-***REMOVED***,{***REMOVED***],8:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],9:[function(require,module,exports){
 var Fn = {***REMOVED***;
 
 
@@ -1143,7 +1282,7 @@ Fn.slug = function(str) {
 ***REMOVED***;
 
 module.exports = Fn;
-***REMOVED***,{***REMOVED***],9:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],10:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
@@ -1171,7 +1310,47 @@ Home.view = function(ctrl){
 
 
 module.exports = Home;
-***REMOVED***,{"./_content.msx":3,"./_header.msx":4,"./_menu.msx":5,"./_right.msx":7***REMOVED***],10:[function(require,module,exports){
+***REMOVED***,{"./_content.msx":3,"./_header.msx":4,"./_menu.msx":5,"./_right.msx":8***REMOVED***],11:[function(require,module,exports){
+var NewProduct = {***REMOVED***;
+var Header = require('./_header.msx');
+var Menu = require('./_menu.msx');
+var NewCategory = require('./_newcategory.msx');
+var Right = require('./_right.msx');
+var fn = require('./fn.msx');
+
+var postData = {"ok": "data"***REMOVED***
+
+NewProduct.controller = function(){
+  var ctrl = this;
+  ctrl.showImgList = false;
+  ctrl.imgList = m.prop([]);
+  ctrl.setup = function(){
+    // ctrl.imgList(ctrl.request.data());
+    // ctrl.showImgList = true;
+    m.redraw();
+***REMOVED***;
+***REMOVED***;
+
+
+
+NewProduct.view = function(ctrl){
+  return  [
+    Header(ctrl),
+    {tag: "div", attrs: {id:"base"***REMOVED***, children: [
+      
+      NewCategory(ctrl), 
+      
+      Menu(ctrl), 
+      
+      Right(ctrl)
+    
+  ***REMOVED******REMOVED***
+***REMOVED***
+***REMOVED***;
+
+
+module.exports = NewProduct;
+***REMOVED***,{"./_header.msx":4,"./_menu.msx":5,"./_newcategory.msx":6,"./_right.msx":8,"./fn.msx":9***REMOVED***],12:[function(require,module,exports){
 var NewProduct = {***REMOVED***;
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
@@ -1211,4 +1390,4 @@ NewProduct.view = function(ctrl){
 
 
 module.exports = NewProduct;
-***REMOVED***,{"./_header.msx":4,"./_menu.msx":5,"./_newproduct.msx":6,"./_right.msx":7,"./fn.msx":8***REMOVED***]***REMOVED***,{***REMOVED***,[2])
+***REMOVED***,{"./_header.msx":4,"./_menu.msx":5,"./_newproduct.msx":7,"./_right.msx":8,"./fn.msx":9***REMOVED***]***REMOVED***,{***REMOVED***,[2])

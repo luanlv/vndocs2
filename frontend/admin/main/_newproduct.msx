@@ -145,8 +145,8 @@ var NewProduct = function(ctrl){
                           $(el).val(data().description)
                       ***REMOVED***
                     ***REMOVED******REMOVED***
-                      onkeypress={function(el){
-                        data().description = $(el).val();
+                      onkeydown={function(el){
+                        data().description = $(el.target).val();
                     ***REMOVED******REMOVED***
                     ></textarea>
                     
