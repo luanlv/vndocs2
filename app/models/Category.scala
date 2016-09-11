@@ -8,7 +8,8 @@ import reactivemongo.bson.{ BSONArray, BSONHandler, BSONString, Macros ***REMOVE
 import scala.concurrent.duration._
 import org.joda.time.DateTime
 
-case class Category(id: Option[String], slug: String, sku: Sku, name: String, description: String) extends Identity with TemporalModel {
+case class Category(
+  _id: Option[String], slug: String, sku: Option[Sku], name: String, description: String) extends Identity with TemporalModel {
 ***REMOVED***
 
 object Category {

@@ -13,6 +13,6 @@ trait CategoryService {
 
   def save(category: Category): Future[Category]
 
-  //  def getList(page: Int): Future[List[Image]]
+  def listParent: Future[List[Category]]
 
 ***REMOVED***

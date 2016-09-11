@@ -23,6 +23,9 @@ class CategoryDAOImpl @Inject() (repository: CategoryRepository) extends Categor
   def find(id: String) =
     repository.findOne(Json.obj("_id" -> id))
 
+  def listParent =
+    repository.listParent()
+
   def save(category: Category) = {
     repository.insert(category)
     Future.successful(category)

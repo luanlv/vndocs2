@@ -11,6 +11,8 @@ trait CategoryDAO {
 
   def find(id: String): Future[Option[Category]]
 
+  def listParent: Future[List[Category]]
+
   def save(category: Category): Future[Category]
 
 ***REMOVED***

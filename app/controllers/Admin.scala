@@ -9,8 +9,8 @@ import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import com.sksamuel.scrimage.nio.JpegWriter
-import models.{ Cover, Image, Link, Post ***REMOVED***
-import models.services.{ ImageService, PostService ***REMOVED***
+import models._
+import models.services.{ CategoryService, ImageService, PostService ***REMOVED***
 import org.apache.commons.io.FilenameUtils
 import org.joda.time.DateTime
 import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
@@ -42,6 +42,7 @@ class Admin @Inject() (
   silhouette: Silhouette[DefaultEnv],
   imageService: ImageService,
   postService: PostService,
+  categoryService: CategoryService,
   socialProviderRegistry: SocialProviderRegistry,
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
@@ -68,6 +69,22 @@ class Admin @Inject() (
         cover = (post \ "cover").asOpt[Cover]
       )
       postService.save(newPost)
+      Ok("ok")
+  ***REMOVED***.getOrElse {
+      BadRequest("not json")
+  ***REMOVED***
+***REMOVED***
+
+  def doCategory = Action(parse.json) { implicit request =>
+    request.body.asOpt[JsObject].map { category =>
+      val newCategory = Category(
+        _id = (category \ "slug").get.asOpt[String],
+        slug = (category \ "slug").get.as[String],
+        name = (category \ "name").get.as[String],
+        sku = (category \ "sku").asOpt[Sku],
+        description = (category \ "description").get.as[String]
+      )
+      categoryService.save(newCategory)
       Ok("ok")
   ***REMOVED***.getOrElse {
       BadRequest("not json")

@@ -3,9 +3,14 @@ var fn = require('./fn.msx');
 var input = m.prop("");
 
 var data = m.prop({
-  "slug": "abc",
-  "name" : "ten goi",
-  "description": "def"
+  "slug": "",
+  "name" : "",
+  "description": "",
+  "sku": {
+    "parent_id" : "NONE",
+    "name" : "NONE",
+    "slug" : "NONE"
+***REMOVED***
 ***REMOVED***);
 
 var NewCategory = function(ctrl){
@@ -22,15 +27,15 @@ var NewCategory = function(ctrl){
                   onclick={function(){
                     console.log(data());
                     {/*delete data().time;*/***REMOVED***
-                    {/*$.ajax({*/***REMOVED***
-                      {/*type: "POST",*/***REMOVED***
-                      {/*url: "/admin/post",*/***REMOVED***
-                      {/*data: JSON.stringify(data()),*/***REMOVED***
-                      {/*contentType: "application/json",*/***REMOVED***
-                      {/*dataType: "json",*/***REMOVED***
-                      {/*success: function(data){*/***REMOVED***
-                      {/****REMOVED****/***REMOVED***
-                    {/****REMOVED***);*/***REMOVED***
+                    $.ajax({
+                      type: "POST",
+                      url: "/admin/newCategory",
+                      data: JSON.stringify(data()),
+                      contentType: "application/json",
+                      dataType: "json",
+                      success: function(data){
+                    ***REMOVED***
+                  ***REMOVED***);
                     
                 ***REMOVED******REMOVED***
                 >Publish</button>
@@ -93,12 +98,12 @@ var NewCategory = function(ctrl){
                           ***REMOVED******REMOVED***
                     >
                       {
-                        categories.map(function(el){
+                        ctrl.categories().map(function(el){
                           return <option
                               value={el._id***REMOVED***
-                              onselect = {function(){
+                              onclick = {function(){
                                 data().sku = {
-                                  "parent_id": el._id,
+                                  "parent_id": el.slug,
                                   "name": el.name,
                                   "slug": el.slug
                               ***REMOVED***;

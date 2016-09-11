@@ -39,6 +39,11 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
     collection.flatMap(_.find(query).sort(sort).options(QueryOpts((page - 1) * num)).cursor[T](ReadPreference.nearest).collect[List]())
 ***REMOVED***
 
+  def listParent()(implicit reader: Reads[T]): Future[List[T]] = {
+    Logger.debug(s"Finding parrent category: [collection=$collectionName]")
+    collection.flatMap(_.find(Json.obj("sku.parent_id" -> "NONE")).cursor[T](ReadPreference.nearest).collect[List]())
+***REMOVED***
+
   def findOne(query: JsObject)(implicit reader: Reads[T]): Future[Option[T]] = {
     Logger.debug(s"Finding one: [collection=$collectionName, query=$query]")
     collection.flatMap(_.find(query).one[T])

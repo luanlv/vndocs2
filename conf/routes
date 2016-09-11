@@ -10,6 +10,10 @@ GET /admin  controllers.Admin.index
 
 
 POST  /admin/post controllers.Admin.doPost
+POST  /admin/newCategory controllers.Admin.doCategory
+
+GET /admin/category/listParent controllers.CategoryController.listParent
+
 POST /post  controllers.ApplicationController.index2
 
 GET   /image/get/:id  controllers.ImageController.getImage(id: String)

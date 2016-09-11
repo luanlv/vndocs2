@@ -12,10 +12,12 @@ NewProduct.controller = function(){
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
   ctrl.setup = function(){
-    // ctrl.imgList(ctrl.request.data());
+    ctrl.categories(ctrl.request.data());
     // ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
+  ctrl.categories = m.prop([]);
+  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
 ***REMOVED***;
 
 

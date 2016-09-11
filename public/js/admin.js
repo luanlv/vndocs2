@@ -338,9 +338,14 @@ var fn = require('./fn.msx');
 var input = m.prop("");
 
 var data = m.prop({
-  "slug": "abc",
-  "name" : "ten goi",
-  "description": "def"
+  "slug": "",
+  "name" : "",
+  "description": "",
+  "sku": {
+    "parent_id" : "NONE",
+    "name" : "NONE",
+    "slug" : "NONE"
+***REMOVED***
 ***REMOVED***);
 
 var NewCategory = function(ctrl){
@@ -357,15 +362,15 @@ var NewCategory = function(ctrl){
                   onclick:function(){
                     console.log(data());
                     {/*delete data().time;*/***REMOVED***
-                    {/*$.ajax({*/***REMOVED***
-                      {/*type: "POST",*/***REMOVED***
-                      {/*url: "/admin/post",*/***REMOVED***
-                      {/*data: JSON.stringify(data()),*/***REMOVED***
-                      {/*contentType: "application/json",*/***REMOVED***
-                      {/*dataType: "json",*/***REMOVED***
-                      {/*success: function(data){*/***REMOVED***
-                      {/****REMOVED****/***REMOVED***
-                    {/****REMOVED***);*/***REMOVED***
+                    $.ajax({
+                      type: "POST",
+                      url: "/admin/newCategory",
+                      data: JSON.stringify(data()),
+                      contentType: "application/json",
+                      dataType: "json",
+                      success: function(data){
+                    ***REMOVED***
+                  ***REMOVED***);
                     
                 ***REMOVED***
               ***REMOVED***, children: ["Publish"]***REMOVED***, 
@@ -428,12 +433,12 @@ var NewCategory = function(ctrl){
                           ***REMOVED***
                   ***REMOVED***, children: [
                       
-                        categories.map(function(el){
+                        ctrl.categories().map(function(el){
                           return {tag: "option", attrs: {
                               value:el._id, 
-                              onselect:function(){
+                              onclick:function(){
                                 data().sku = {
-                                  "parent_id": el._id,
+                                  "parent_id": el.slug,
                                   "name": el.name,
                                   "slug": el.slug
                               ***REMOVED***;
@@ -1372,10 +1377,12 @@ NewProduct.controller = function(){
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
   ctrl.setup = function(){
-    // ctrl.imgList(ctrl.request.data());
+    ctrl.categories(ctrl.request.data());
     // ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
+  ctrl.categories = m.prop([]);
+  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
 ***REMOVED***;
 
 
