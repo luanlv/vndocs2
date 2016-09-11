@@ -24,7 +24,7 @@ import com.mohiva.play.silhouette.password.BCryptPasswordHasher
 import com.mohiva.play.silhouette.persistence.daos.{ DelegableAuthInfoDAO, InMemoryAuthInfoDAO ***REMOVED***
 import com.mohiva.play.silhouette.persistence.repositories.DelegableAuthInfoRepository
 import models.daos._
-import models.services.{ ImageService, ImageServiceImpl, UserService, UserServiceImpl ***REMOVED***
+import models.services._
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
 import net.codingwell.scalaguice.ScalaModule
@@ -48,8 +48,10 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
     bind[SecuredErrorHandler].to[CustomSecuredErrorHandler]
     bind[UserService].to[UserServiceImpl]
     bind[ImageService].to[ImageServiceImpl]
+    bind[PostService].to[PostServiceImpl]
     bind[UserDAO].to[UserDAOImpl]
     bind[ImageDAO].to[ImageDAOImpl]
+    bind[PostDAO].to[PostDAOImpl]
     bind[CacheLayer].to[PlayCacheLayer]
     bind[IDGenerator].toInstance(new SecureRandomIDGenerator())
     bind[PasswordHasher].toInstance(new BCryptPasswordHasher)

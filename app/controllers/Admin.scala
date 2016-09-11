@@ -9,10 +9,11 @@ import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import com.sksamuel.scrimage.nio.JpegWriter
-import models.Image
-import models.services.ImageService
+import models.{ Cover, Image, Link, Post ***REMOVED***
+import models.services.{ ImageService, PostService ***REMOVED***
 import org.apache.commons.io.FilenameUtils
-import play.api.libs.json.Json
+import org.joda.time.DateTime
+import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
 //import com.sksamuel.scrimage.nio.JpegWriter
@@ -40,6 +41,7 @@ class Admin @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[DefaultEnv],
   imageService: ImageService,
+  postService: PostService,
   socialProviderRegistry: SocialProviderRegistry,
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
@@ -52,6 +54,24 @@ class Admin @Inject() (
   def index = Action.async { implicit request =>
 
     Future.successful(Ok(views.html.admin.index("Trang chu")))
+***REMOVED***
+
+  def doPost = Action(parse.json) { implicit request =>
+    request.body.asOpt[JsObject].map { post =>
+      val newPost = Post(
+        _id = (post \ "id").get.as[String],
+        title = (post \ "title").get.as[String],
+        categories = (post \ "categories").get.as[List[String]],
+        description = (post \ "description").get.as[String],
+        content = (post \ "content").get.as[String],
+        link = (post \ "link").asOpt[List[Link]].getOrElse(List()),
+        cover = (post \ "cover").asOpt[Cover]
+      )
+      postService.save(newPost)
+      Ok("ok")
+  ***REMOVED***.getOrElse {
+      BadRequest("not json")
+  ***REMOVED***
 ***REMOVED***
 
   def uploadImage = Action.async(parse.multipartFormData) { implicit request =>

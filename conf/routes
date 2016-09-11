@@ -8,6 +8,8 @@ GET         /                                controllers.ApplicationController.i
 
 GET /admin  controllers.Admin.index
 
+
+POST  /admin/post controllers.Admin.doPost
 POST /post  controllers.ApplicationController.index2
 
 GET   /image/get/:id  controllers.ImageController.getImage(id: String)

@@ -334,6 +334,7 @@ var fn = require('./fn.msx');
 
 var input = m.prop("");
 var data = m.prop({
+  "id" : "",
   "title": "new file",
   "categories": ["1", "2"],
   "time": 1464226633054,
@@ -366,9 +367,10 @@ var NewProduct = function(ctrl){
                 {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised btn-primary", style:"float: right", 
                   onclick:function(){
                     {/*console.log(data());*/***REMOVED***
+                    delete data().time;
                     $.ajax({
                       type: "POST",
-                      url: "/post",
+                      url: "/admin/post",
                       data: JSON.stringify(data()),
                       contentType: "application/json",
                       dataType: "json",
@@ -380,6 +382,24 @@ var NewProduct = function(ctrl){
               ***REMOVED***, children: ["Publish"]***REMOVED***, 
                 {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised", style:"float: right; margin-right: 20px;"***REMOVED***, children: ["Save"]***REMOVED***, 
                 {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+  
+                {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"url", className:"col-sm-2 control-label"***REMOVED***, children: ["Url"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
+                    (data().id === undefined)?(
+                        {tag: "input", attrs: {type:"text", className:"form-control", id:"url", name:"title"***REMOVED******REMOVED***
+                    ):(
+                        {tag: "input", attrs: {type:"text", className:"form-control", id:"url", name:"title", 
+                               onchange:function(el){
+                                 data().id = $(el.target).val()
+                             ***REMOVED***, 
+                               value:data().id***REMOVED***
+                      ***REMOVED***
+                    ), 
+                    {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
                 
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
                   {tag: "label", attrs: {htmlFor:"title", className:"col-sm-2 control-label"***REMOVED***, children: ["Title"]***REMOVED***, 
@@ -389,7 +409,8 @@ var NewProduct = function(ctrl){
                     ):(
                         {tag: "input", attrs: {type:"text", className:"form-control", id:"title", name:"title", 
                         onchange:function(el){
-                          data().title = $(el.target).val()
+                          data().title = $(el.target).val();
+                          data().id = fn.slug(data().title);
                       ***REMOVED***, 
                         value:data().title***REMOVED***
                       ***REMOVED***
@@ -1095,6 +1116,30 @@ Fn.requestWithFeedback = function(args, bind, fn) {
     data: data,
     ready: completed
 ***REMOVED***
+***REMOVED***;
+
+Fn.slug = function(str) {
+  str = str.replace(/^\s+|\s+$/g, ''); // trim
+  str = str.toLowerCase();
+  str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
+  str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, 'e');
+  str = str.replace(/ì|í|ị|ỉ|ĩ/g, 'i');
+  str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, 'o');
+  str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, 'u');
+  str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, 'y');
+  str = str.replace(/đ/g, 'd');
+  // remove accents, swap ñ for n, etc
+  var from = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;";
+  var to   = "aaaaaeeeeeiiiiooooouuuunc------";
+  for (var i=0, l=from.length ; i<l ; i++) {
+    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+***REMOVED***
+  
+  str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+      .replace(/\s+/g, '-') // collapse whitespace and replace by -
+      .replace(/-+/g, '-'); // collapse dashes
+  
+  return str;
 ***REMOVED***;
 
 module.exports = Fn;

@@ -2,6 +2,7 @@ var fn = require('./fn.msx');
 
 var input = m.prop("");
 var data = m.prop({
+  "id" : "",
   "title": "new file",
   "categories": ["1", "2"],
   "time": 1464226633054,
@@ -34,9 +35,10 @@ var NewProduct = function(ctrl){
                 <button type="button" className="btn ink-reaction btn-raised btn-primary" style="float: right"
                   onclick={function(){
                     {/*console.log(data());*/***REMOVED***
+                    delete data().time;
                     $.ajax({
                       type: "POST",
-                      url: "/post",
+                      url: "/admin/post",
                       data: JSON.stringify(data()),
                       contentType: "application/json",
                       dataType: "json",
@@ -48,6 +50,24 @@ var NewProduct = function(ctrl){
                 >Publish</button>
                 <button type="button" className="btn ink-reaction btn-raised" style="float: right; margin-right: 20px;">Save</button>
                 <br/>
+                <br/>
+  
+                <div className="form-group">
+                  <label htmlFor="url" className="col-sm-2 control-label">Url</label>
+                  <div className="col-sm-10">
+                    {(data().id === undefined)?(
+                        <input type="text" className="form-control" id="url" name="title"/>
+                    ):(
+                        <input type="text" className="form-control" id="url" name="title"
+                               onchange={function(el){
+                                 data().id = $(el.target).val()
+                             ***REMOVED******REMOVED***
+                               value={data().id***REMOVED***
+                        />
+                    )***REMOVED***
+                    <div className="form-control-line"></div>
+                  </div>
+                </div>
                 
                 <div className="form-group">
                   <label htmlFor="title" className="col-sm-2 control-label">Title</label>
@@ -57,7 +77,8 @@ var NewProduct = function(ctrl){
                     ):(
                         <input type="text" className="form-control" id="title" name="title"
                         onchange={function(el){
-                          data().title = $(el.target).val()
+                          data().title = $(el.target).val();
+                          data().id = fn.slug(data().title);
                       ***REMOVED******REMOVED***
                         value={data().title***REMOVED***
                         />
