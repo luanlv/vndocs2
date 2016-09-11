@@ -8,20 +8,17 @@ var data = m.prop({
   "description" : "abc",
   "link": [
     {
-        "url": "===url===",
-        "shortUrl": "===ShortUrl===",
-        "filename": "name url",
-        "filesize" : 56465454
-  ***REMOVED***,
-    {
-      "url": "===url===2",
-      "shortUrl": "===ShortUrl===2",
-      "filename": "name url 2",
-      "filesize" : 56465454
+        "url": "",
+        "shortUrl": "",
+        "filename": "",
+        "filesize" : 0
   ***REMOVED***
 ***REMOVED***,
   "content": "## Noi dung",
-  "cover" : "http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg"
+  "cover" : {
+    "id" : "2658af83-e844-469d-893c-203bf4aa9b83",
+    "alt" : "anh dai dien"
+***REMOVED***
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -107,15 +104,14 @@ var NewProduct = function(ctrl){
                   </div>
                   {/*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/***REMOVED***
                   <div className="col-sm-2 control-label">
-                    <img src={data().cover***REMOVED*** alt=""
+                    <img src={"image/get/" + data().cover.id***REMOVED*** alt={data().cover.alt***REMOVED***
                       style="cursor: pointer"
                       onclick={function(){
+                        ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
                         ctrl.showImgList = true;
+                        
                     ***REMOVED******REMOVED***
                     />
-                    {ctrl.showImgList?(<div className="img-list">
-                      img list
-                    </div>):("")***REMOVED***
                   </div>
                 </div>
                 
@@ -159,6 +155,18 @@ var NewProduct = function(ctrl){
                               <input type="text" className="form-control" id={"url" + (index+1)***REMOVED*** name={"url" + (index+1)***REMOVED*** placeholder="URL"
                                      onchange={function(item){
                                        data().link[index].url = $(item.target).val();
+                                       $.ajax({
+                                         type: "POST",
+                                         url: "/file/getSize",
+                                         data: JSON.stringify({"url" : data().link[index].url***REMOVED***),
+                                         contentType: "application/json",
+                                         dataType: "json",
+                                         success: function(res){
+                                           data().link[index].filesize = res.size;
+                                           console.log(data().link[index])
+                                           m.redraw();
+                                       ***REMOVED***
+                                     ***REMOVED***);
                                    ***REMOVED******REMOVED***
                                      value={el.url***REMOVED***
                               /><div className="form-control-line"></div>
@@ -181,9 +189,6 @@ var NewProduct = function(ctrl){
                             </div>
                             <div className="col-sm-2">
                               <input disabled type="number" className="form-control" id="" placeholder="File size"
-                                     onchange={function(item){
-                                       data().link[index].filesize = $(item.target).val();
-                                   ***REMOVED******REMOVED***
                                      value={(el.filesize>0)?(el.filesize):""***REMOVED***
                               /><div className="form-control-line"></div>
                             </div>
@@ -293,13 +298,14 @@ var NewProduct = function(ctrl){
               <div className="nano-content" tabindex="0" style="right: -15px;">
                 <div className="offcanvas-body">
                   <div className="card-body">
-                    {listImgs.map(function(el){
+                    {ctrl.imgList().map(function(el){
                       return <a href="#"
                         onclick={function(){
-                          data().cover=el;
+                          data().cover.id=el.id;
+                          data().cover.alt=el.filename;
                       ***REMOVED***
                       ***REMOVED***
-                      ><img  src={el***REMOVED*** alt=""/></a>
+                      ><img  src={"image/get/" + el.id***REMOVED*** alt={el.filename***REMOVED***/></a>
                   ***REMOVED***)***REMOVED***
                   </div>
                   
@@ -328,8 +334,7 @@ var NewProduct = function(ctrl){
                               alert('Are you sure you want to upload image?');
                           ***REMOVED***,
                             success: function (data) {
-                              //call your jQuery action here
-                              {/*alert('Upload completed: ' + data);*/***REMOVED***
+                              ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
                           ***REMOVED***,
                             error: function (jqXHR, textStatus, errorThrown) {
                               alert(textStatus + ': ' + errorThrown);

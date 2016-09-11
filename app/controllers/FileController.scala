@@ -8,10 +8,8 @@ import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
-import com.sksamuel.scrimage.nio.JpegWriter
 import models.Image
 import models.services.ImageService
-import org.apache.commons.io.FilenameUtils
 import play.api.libs.json.Json
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
@@ -35,7 +33,7 @@ import scala.concurrent.Future
  * @param socialProviderRegistry The social provider registry.
  * @param webJarAssets The webjar assets implementation.
  */
-class Admin @Inject() (
+class FileController @Inject() (
   ws: WSClient,
   val messagesApi: MessagesApi,
   silhouette: Silhouette[DefaultEnv],
@@ -44,48 +42,35 @@ class Admin @Inject() (
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
 
-  /**
-   * Handles the index action.
-   *
-   * @return The result to display.
-   */
-  def index = Action.async { implicit request =>
-
-    Future.successful(Ok(views.html.admin.index("Trang chu")))
-***REMOVED***
-
-  def uploadImage = Action.async(parse.multipartFormData) { implicit request =>
-    val uuid = UUID.randomUUID().toString
-    request.body.file("file").map { picture =>
-      import java.io.File
-      val filename = picture.filename
-      val contentType = picture.contentType
-      val path = s"/tmp/$uuid.jpg"
-      resize(picture.ref.moveTo(new File(path)))
-      val image = models.Image(
-        id = uuid,
-        filename = filename,
-        contentType = contentType,
-        path = path
-      )
-      imageService.save(image)
-      Future.successful(Ok("File uploaded"))
+  def getSize = Action(parse.json) { implicit request =>
+    (request.body \ "url").asOpt[String].map { url =>
+      Ok(Json.obj("size" -> getSizeImpl(url)))
   ***REMOVED***.getOrElse {
-      Future.successful(BadRequest("error"))
+      BadRequest("Missing parameter [url]")
   ***REMOVED***
 ***REMOVED***
 
-  def listImage(page: Int) = Action.async { implicit request =>
-    imageService.getList(page).map { images =>
-      Ok(Json.toJson(images))
+  def getSizeImpl(url: String): Long = {
+    run(List(
+      "curl -X HEAD -I  " + url,
+      "grep Content-Length"
+    )).toString.filter(_.isDigit).toLong
+***REMOVED***
+
+  def run(cmd: List[String]) = {
+    try {
+      commandBuilder(cmd.tail.reverse, cmd.head) !!
+      //            "find . -name *.txt" #| "grep ftp" !!
+  ***REMOVED*** catch {
+      case e: Exception => Stream()
   ***REMOVED***
 ***REMOVED***
 
-  private def resize(file: File) = {
-
-    import com.sksamuel.scrimage._
-    implicit val writer = JpegWriter().withCompression(80).withProgressive(true)
-    scrimage.Image.fromFile(file).scaleTo(94, 128, Bicubic).output(file)
+  def commandBuilder(cmd: List[String], result: ProcessBuilder): ProcessBuilder = {
+    if (cmd.isEmpty)
+      result
+    else
+      commandBuilder(cmd.tail, result #| cmd.head)
 ***REMOVED***
 
 ***REMOVED***

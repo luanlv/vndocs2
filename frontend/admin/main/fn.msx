@@ -69,4 +69,30 @@ Fn.setupAce = function(editor){
 ***REMOVED***;
 
 
+Fn.requestWithFeedback = function(args, bind, fn) {
+  var data = m.prop();
+  var completed = m.prop(false);
+  var complete = function() {
+    completed(true)
+***REMOVED***;
+  args.background = true;
+  args.config = function(xhr) {
+    xhr.timeout = 4000;
+    xhr.ontimeout = function() {
+      complete();
+      m.redraw();
+  ***REMOVED***
+***REMOVED***;
+  return {
+    request: m.request(args).then(data).then(function(data){
+      if(bind !== undefined) bind(data);
+      if(fn !== undefined) fn();
+      complete();
+      m.redraw();
+  ***REMOVED***),
+    data: data,
+    ready: completed
+***REMOVED***
+***REMOVED***;
+
 module.exports = Fn;

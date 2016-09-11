@@ -18,4 +18,6 @@ class ImageServiceImpl @Inject() (imageDAO: ImageDAO) extends ImageService {
 
   def save(image: Image) = imageDAO.save(image)
 
+  def getList(page: Int) = imageDAO.getList(page)
+
 ***REMOVED***

@@ -10,7 +10,11 @@ GET /admin  controllers.Admin.index
 
 POST /post  controllers.ApplicationController.index2
 
+GET   /image/get/:id  controllers.ImageController.getImage(id: String)
+GET   /image/list/:page   controllers.Admin.listImage(page: Int)
 POST  /upload/image controllers.Admin.uploadImage
+
+POST  /file/getSize   controllers.FileController.getSize
 
 GET         /signOut                         controllers.ApplicationController.signOut
 GET         /authenticate/:provider          controllers.SocialAuthController.authenticate(provider)

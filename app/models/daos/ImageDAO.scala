@@ -16,4 +16,6 @@ trait ImageDAO {
 
   def save(image: Image): Future[Image]
 
+  def getList(page: Int): Future[List[Image]]
+
 ***REMOVED***

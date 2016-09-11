@@ -56,27 +56,4 @@ class ApplicationController @Inject() (
     silhouette.env.authenticatorService.discard(request.authenticator, result)
 ***REMOVED***
 
-  def getSize(url: String) = {
-    run(List(
-      "curl -X HEAD -I  " + url,
-      "grep Content-Length"
-    )).toString.filter(_.isDigit).toLong
-***REMOVED***
-
-  def run(cmd: List[String]) = {
-    try {
-      commandBuilder(cmd.tail.reverse, cmd.head) !!
-      //            "find . -name *.txt" #| "grep ftp" !!
-  ***REMOVED*** catch {
-      case e: Exception => Stream()
-  ***REMOVED***
-***REMOVED***
-
-  def commandBuilder(cmd: List[String], result: ProcessBuilder): ProcessBuilder = {
-    if (cmd.isEmpty)
-      result
-    else
-      commandBuilder(cmd.tail, result #| cmd.head)
-***REMOVED***
-
 ***REMOVED***

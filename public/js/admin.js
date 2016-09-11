@@ -340,20 +340,17 @@ var data = m.prop({
   "description" : "abc",
   "link": [
     {
-        "url": "===url===",
-        "shortUrl": "===ShortUrl===",
-        "filename": "name url",
-        "filesize" : 56465454
-  ***REMOVED***,
-    {
-      "url": "===url===2",
-      "shortUrl": "===ShortUrl===2",
-      "filename": "name url 2",
-      "filesize" : 56465454
+        "url": "",
+        "shortUrl": "",
+        "filename": "",
+        "filesize" : 0
   ***REMOVED***
 ***REMOVED***,
   "content": "## Noi dung",
-  "cover" : "http://englishtips.org/uploads/posts/2016-09/thumbs/1473447970_20130619174131_l.jpg"
+  "cover" : {
+    "id" : "2658af83-e844-469d-893c-203bf4aa9b83",
+    "alt" : "anh dai dien"
+***REMOVED***
 ***REMOVED***);
 
 var NewProduct = function(ctrl){
@@ -439,15 +436,14 @@ var NewProduct = function(ctrl){
                 ***REMOVED******REMOVED***, 
                   /*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/
                   {tag: "div", attrs: {className:"col-sm-2 control-label"***REMOVED***, children: [
-                    {tag: "img", attrs: {src:data().cover, alt:"", 
+                    {tag: "img", attrs: {src:"image/get/" + data().cover.id, alt:data().cover.alt, 
                       style:"cursor: pointer", 
                       onclick:function(){
+                        ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
                         ctrl.showImgList = true;
+                        
                     ***REMOVED******REMOVED***
-                  ***REMOVED***, 
-                    ctrl.showImgList?({tag: "div", attrs: {className:"img-list"***REMOVED***, children: [
-                      "img list"
-                  ***REMOVED******REMOVED***):("")
+                  ***REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
                 
@@ -491,6 +487,18 @@ var NewProduct = function(ctrl){
                               {tag: "input", attrs: {type:"text", className:"form-control", id:"url" + (index+1), name:"url" + (index+1), placeholder:"URL", 
                                      onchange:function(item){
                                        data().link[index].url = $(item.target).val();
+                                       $.ajax({
+                                         type: "POST",
+                                         url: "/file/getSize",
+                                         data: JSON.stringify({"url" : data().link[index].url***REMOVED***),
+                                         contentType: "application/json",
+                                         dataType: "json",
+                                         success: function(res){
+                                           data().link[index].filesize = res.size;
+                                           console.log(data().link[index])
+                                           m.redraw();
+                                       ***REMOVED***
+                                     ***REMOVED***);
                                    ***REMOVED***, 
                                      value:el.url***REMOVED***
                             ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
@@ -513,9 +521,6 @@ var NewProduct = function(ctrl){
                           ***REMOVED******REMOVED***, 
                             {tag: "div", attrs: {className:"col-sm-2"***REMOVED***, children: [
                               {tag: "input", attrs: {disabled:true,type:"number", className:"form-control", id:"", placeholder:"File size", 
-                                     onchange:function(item){
-                                       data().link[index].filesize = $(item.target).val();
-                                   ***REMOVED***, 
                                      value:(el.filesize>0)?(el.filesize):""***REMOVED***
                             ***REMOVED***, {tag: "div", attrs: {className:"form-control-line"***REMOVED******REMOVED***
                           ***REMOVED******REMOVED***, 
@@ -625,13 +630,14 @@ var NewProduct = function(ctrl){
               {tag: "div", attrs: {className:"nano-content", tabindex:"0", style:"right: -15px;"***REMOVED***, children: [
                 {tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
                   {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
-                    listImgs.map(function(el){
+                    ctrl.imgList().map(function(el){
                       return {tag: "a", attrs: {href:"#", 
                         onclick:function(){
-                          data().cover=el;
+                          data().cover.id=el.id;
+                          data().cover.alt=el.filename;
                       ***REMOVED***
                         
-                    ***REMOVED***, children: [{tag: "img", attrs: {src:el, alt:""***REMOVED******REMOVED***]***REMOVED***
+                    ***REMOVED***, children: [{tag: "img", attrs: {src:"image/get/" + el.id, alt:el.filename***REMOVED******REMOVED***]***REMOVED***
                   ***REMOVED***)
                 ***REMOVED******REMOVED***, 
                   
@@ -660,8 +666,7 @@ var NewProduct = function(ctrl){
                               alert('Are you sure you want to upload image?');
                           ***REMOVED***,
                             success: function (data) {
-                              //call your jQuery action here
-                              {/*alert('Upload completed: ' + data);*/***REMOVED***
+                              ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
                           ***REMOVED***,
                             error: function (jqXHR, textStatus, errorThrown) {
                               alert(textStatus + ': ' + errorThrown);
@@ -1066,6 +1071,32 @@ Fn.setupAce = function(editor){
 ***REMOVED***;
 
 
+Fn.requestWithFeedback = function(args, bind, fn) {
+  var data = m.prop();
+  var completed = m.prop(false);
+  var complete = function() {
+    completed(true)
+***REMOVED***;
+  args.background = true;
+  args.config = function(xhr) {
+    xhr.timeout = 4000;
+    xhr.ontimeout = function() {
+      complete();
+      m.redraw();
+  ***REMOVED***
+***REMOVED***;
+  return {
+    request: m.request(args).then(data).then(function(data){
+      if(bind !== undefined) bind(data);
+      if(fn !== undefined) fn();
+      complete();
+      m.redraw();
+  ***REMOVED***),
+    data: data,
+    ready: completed
+***REMOVED***
+***REMOVED***;
+
 module.exports = Fn;
 ***REMOVED***,{***REMOVED***],9:[function(require,module,exports){
 var Home = {***REMOVED***;
@@ -1101,12 +1132,19 @@ var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
 var NewProduct = require('./_newproduct.msx');
 var Right = require('./_right.msx');
+var fn = require('./fn.msx');
 
 var postData = {"ok": "data"***REMOVED***
+
 NewProduct.controller = function(){
   var ctrl = this;
   ctrl.showImgList = false;
-  
+  ctrl.imgList = m.prop([]);
+  ctrl.setup = function(){
+    ctrl.imgList(ctrl.request.data());
+    ctrl.showImgList = true;
+    m.redraw();
+***REMOVED***;
 ***REMOVED***;
 
 
@@ -1128,4 +1166,4 @@ NewProduct.view = function(ctrl){
 
 
 module.exports = NewProduct;
-***REMOVED***,{"./_header.msx":4,"./_menu.msx":5,"./_newproduct.msx":6,"./_right.msx":7***REMOVED***]***REMOVED***,{***REMOVED***,[2])
+***REMOVED***,{"./_header.msx":4,"./_menu.msx":5,"./_newproduct.msx":6,"./_right.msx":7,"./fn.msx":8***REMOVED***]***REMOVED***,{***REMOVED***,[2])

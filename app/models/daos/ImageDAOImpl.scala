@@ -28,6 +28,10 @@ class ImageDAOImpl @Inject() (repository: ImageRepository) extends ImageDAO {
     Future.successful(image)
 ***REMOVED***
 
+  def getList(page: Int) = {
+    repository.findImage(sort = Json.obj("createAt" -> -1), page = page, num = 20)
+***REMOVED***
+
 ***REMOVED***
 
 /**

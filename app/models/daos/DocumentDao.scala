@@ -5,7 +5,7 @@ import play.api.Logger
 import play.api.libs.json._
 import play.modules.reactivemongo.ReactiveMongoApi
 import play.modules.reactivemongo.json._
-import reactivemongo.api.ReadPreference
+import reactivemongo.api.{ QueryOpts, ReadPreference ***REMOVED***
 import reactivemongo.api.indexes.{ Index, IndexType ***REMOVED***
 import reactivemongo.bson.{ BSONDocument, BSONObjectID ***REMOVED***
 import reactivemongo.play.json.collection.JSONCollection
@@ -32,6 +32,11 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
   def find(query: JsObject = Json.obj())(implicit reader: Reads[T]): Future[List[T]] = {
     Logger.debug(s"Finding documents: [collection=$collectionName, query=$query]")
     collection.flatMap(_.find(query).cursor[T](ReadPreference.nearest).collect[List]())
+***REMOVED***
+
+  def findImage(query: JsObject = Json.obj(), sort: JsObject = Json.obj(), page: Int, num: Int)(implicit reader: Reads[T]): Future[List[T]] = {
+    Logger.debug(s"Finding documents: [collection=$collectionName, query=$query]")
+    collection.flatMap(_.find(query).sort(sort).options(QueryOpts((page - 1) * num)).cursor[T](ReadPreference.nearest).collect[List]())
 ***REMOVED***
 
   def findOne(query: JsObject)(implicit reader: Reads[T]): Future[Option[T]] = {

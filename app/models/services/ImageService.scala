@@ -17,4 +17,6 @@ trait ImageService {
 
   def save(image: Image): Future[Image]
 
+  def getList(page: Int): Future[List[Image]]
+
 ***REMOVED***
