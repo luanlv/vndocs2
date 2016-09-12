@@ -13,7 +13,8 @@ Main.MenuController = require('./main/menucontroller.msx');
 
 
 m.route(document.querySelector('#app'), "/", {
-  "/": Main.NewProduct,
+  "/": Main.Home,
+  "/newProduct": Main.NewProduct,
   "/category/create": Main.NewCategory,
   "/menu": Main.MenuController
 ***REMOVED***);
@@ -277,7 +278,7 @@ var Header = function(ctrl){
         {tag: "ul", attrs: {className:"header-nav header-nav-options"***REMOVED***, children: [
           {tag: "li", attrs: {className:"header-nav-brand"***REMOVED***, children: [
             {tag: "div", attrs: {className:"brand-holder"***REMOVED***, children: [
-              {tag: "a", attrs: {href:"../../html/dashboards/dashboard.html"***REMOVED***, children: [
+              {tag: "a", attrs: {href:"/admin#/"***REMOVED***, children: [
                 {tag: "span", attrs: {className:"text-lg text-bold text-primary"***REMOVED***, children: ["MATERIAL ADMIN"]***REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
@@ -431,28 +432,32 @@ var Menu = function(ctrl){
         
         {tag: "div", attrs: {className:"gui-controls", id:"main-menu"***REMOVED***, children: [
           {tag: "li", attrs: {***REMOVED***, children: [
-            {tag: "a", attrs: {href:"../../html/dashboards/dashboard.html", className:"active"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"#/", className:"active"***REMOVED***, children: [
               {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-home"***REMOVED******REMOVED***]***REMOVED***, 
               {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Dashboard"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
           {tag: "li", attrs: {className:"gui-folder"***REMOVED***, children: [
-            {tag: "a", attrs: {***REMOVED***, children: [
+            {tag: "a", attrs: {href:"/admin#/newProduct"
+          ***REMOVED***, children: [
               {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-email"***REMOVED******REMOVED***]***REMOVED***, 
-              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Email"]***REMOVED***
-          ***REMOVED******REMOVED***, 
-            {tag: "ul", attrs: {***REMOVED***, children: [
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/inbox.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["Inbox"]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/compose.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["Compose"]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/reply.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["Reply"]***REMOVED***]***REMOVED***]***REMOVED***, 
-              {tag: "li", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"../../html/mail/message.html"***REMOVED***, children: [{tag: "span", attrs: {className:"title"***REMOVED***, children: ["View message"]***REMOVED***]***REMOVED***]***REMOVED***
+              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Post"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
   
           {tag: "li", attrs: {***REMOVED***, children: [
-            {tag: "a", attrs: {href:"../../html/layouts/builder.html"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"/admin#/category/create"
+          ***REMOVED***, children: [
               {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-web"***REMOVED******REMOVED***]***REMOVED***, 
-              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Layouts"]***REMOVED***
+              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["New Category"]***REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+  
+          {tag: "li", attrs: {***REMOVED***, children: [
+            {tag: "a", attrs: {href:"/admin#/menu"
+          ***REMOVED***, children: [
+              {tag: "div", attrs: {className:"gui-icon"***REMOVED***, children: [{tag: "i", attrs: {className:"md md-web"***REMOVED******REMOVED***]***REMOVED***, 
+              {tag: "span", attrs: {className:"title"***REMOVED***, children: ["Menu"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
           

@@ -12,7 +12,8 @@ Main.MenuController = require('./main/menucontroller.msx');
 
 
 m.route(document.querySelector('#app'), "/", {
-  "/": Main.NewProduct,
+  "/": Main.Home,
+  "/newProduct": Main.NewProduct,
   "/category/create": Main.NewCategory,
   "/menu": Main.MenuController
 ***REMOVED***);

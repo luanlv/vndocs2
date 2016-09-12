@@ -9,7 +9,7 @@ var Header = function(ctrl){
         <ul className="header-nav header-nav-options">
           <li className="header-nav-brand" >
             <div className="brand-holder">
-              <a href="../../html/dashboards/dashboard.html">
+              <a href="/admin#/">
                 <span className="text-lg text-bold text-primary">MATERIAL ADMIN</span>
               </a>
             </div>
