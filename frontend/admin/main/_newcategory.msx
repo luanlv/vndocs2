@@ -22,7 +22,6 @@ var NewCategory = function(ctrl){
           <div className="card">
             <div className="card-body">
               <form className="form-horizontal" role="form">
-                
                 <button type="button" className="btn ink-reaction btn-raised btn-primary" style="float: right"
                   onclick={function(){
                     console.log(data());

@@ -1,0 +1,163 @@
+var fn = require('./fn.msx');
+
+var input = m.prop("");
+
+var data = m.prop({
+  "slug": "",
+  "name" : "",
+  "description": "",
+  "sku": {
+    "parent_id" : "NONE",
+    "name" : "NONE",
+    "slug" : "NONE"
+***REMOVED***
+***REMOVED***);
+
+
+var CreateMenu = function(ctrl){
+  return [
+    <hr className="ruler-xxl"/>,
+    <div className="content">
+      <section>
+        <div className="section-body">
+          <div className="card">
+            <div className="card-body">
+              <div class="row"
+              >
+                <div class="box box-primary">
+                  <div class="box-body">
+                    <div class="dd" id="domenu"
+                      config={function(el, isInited){
+                        if(!isInited){
+                          ctrl.domenu = $('#domenu').domenu({
+                            onDomenuInitialized: [function() {
+                              console.log('event: onDomenuInitialized', 'arguments:', arguments, 'context:', this);
+                          ***REMOVED***],
+                            data: JSON.stringify(ctrl.menu)
+                        ***REMOVED***).parseJson()
+                      ***REMOVED***
+                    ***REMOVED******REMOVED***
+                    >
+          
+                      <button id="domenu-add-item-btn" class="dd-new-item">+</button>
+          
+                      <li class="dd-item-blueprint">
+                        <div class="dd-handle dd3-handle">Drag</div>
+                        <div class="dd3-content">
+                          <span>[item_name]</span>
+                          <div class="button-container">
+                            <button class="item-add">+</button>
+                            <button class="item-remove" data-confirm-class="item-remove-confirm">&times;</button>
+                          </div>
+                          <div class="dd-edit-box" style="display: none;">
+                            <input type="text" name="title" id="title" autocomplete="off" placeholder="Item" data-placeholder="Any nice idea for the title?" data-default-value="List Item. {?numeric.increment***REMOVED***"/>
+                            <input type="text" name="http" id="http" placeholder="" data-placeholder="Link" data-default-value="/{?numeric.increment***REMOVED***/{?numeric.increment***REMOVED***"/>
+                            <i class="end-edit">&#x270e;</i>
+                          </div>
+                        </div>
+                      </li>
+          
+                      <ol class="dd-list"></ol>
+                    </div>
+        
+        
+                    <button id="update"
+                      onclick={function(el){
+                        $(document).on('click', '#update', function(){
+                          var json = ctrl.domenu.toJson();
+                          console.log(json)
+                          var request = $.ajax({
+                            type: "POST",
+                            url: "",
+                            data: json,
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "text"
+                        ***REMOVED***);
+                          request.done(function( msg ) {
+                            alert( msg );
+                        ***REMOVED***).then(function(){
+                            location.reload();
+                        ***REMOVED***);
+                          request.fail(function( jqXHR, textStatus ) {
+                            alert( "Request failed: " + textStatus );
+                        ***REMOVED***);
+                      ***REMOVED***);
+                    ***REMOVED******REMOVED***
+                    >Update</button>
+                    <button id="preview"
+                            onclick={function(){
+                              console.log("click")
+                          ***REMOVED******REMOVED***
+                    >PreView</button>
+                  </div>
+                </div>
+    
+                <div id="view"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="row">
+          
+          </div>
+          
+          <div className="offcanvas">
+            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
+              <div className="offcanvas-head">
+                <header>Images controller </header>
+                <div className="offcanvas-tools">
+                  <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
+                     onclick={function(){
+                       {/*ctrl.showImgList = false;*/***REMOVED***
+                   ***REMOVED******REMOVED***
+                  >
+                    <i className="md md-close"></i>
+                  </a>
+                </div>
+              </div>
+              <div className="nano has-scrollbar" style="height: 90vh;">
+                <div className="nano-content" tabindex="0" style="right: -15px;">
+                  <div className="offcanvas-body">
+                    <div className="card-body">
+                      test
+                    </div>
+                  
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        </div>
+      </section>
+    </div>,
+    ctrl.showImgList?(<div className="backdrop"
+                           onclick={function(){
+                             ctrl.showImgList = false;
+                         ***REMOVED******REMOVED***
+    ></div>):""
+***REMOVED***
+***REMOVED***;
+
+var categories = [
+  {
+    "slug": "1",
+    "name": "mot",
+    "description": "abc",
+***REMOVED***,
+  {
+    "slug": "2",
+    "name": "hai",
+    "description": "abc",
+***REMOVED***,
+  {
+    "slug": "3",
+    "name": "ba",
+    "description": "abc",
+***REMOVED***
+]
+
+
+module.exports = CreateMenu;

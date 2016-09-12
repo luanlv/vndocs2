@@ -119,4 +119,17 @@ Fn.slug = function(str) {
   return str;
 ***REMOVED***;
 
+Fn.bindOnce = (function() {
+  console.log("run bindOnce")
+  var cache = {***REMOVED***
+  return function(view) {
+    if (!cache[view.toString()]) {
+      console.log("view")
+      cache[view.toString()] = true
+      return view()
+  ***REMOVED***
+    else return {subtree: "retain"***REMOVED***
+***REMOVED***
+***REMOVED***())
+
 module.exports = Fn;
