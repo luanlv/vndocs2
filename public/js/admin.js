@@ -18,7 +18,7 @@ m.route(document.querySelector('#app'), "/", {
   "/menu": Main.MenuController
 ***REMOVED***);
 
-m.route('/menu');
+// m.route('/menu');
 
 
 module.exports = Main;
@@ -158,62 +158,52 @@ var CreateMenu = function(ctrl){
             ***REMOVED***, children: [
                 {tag: "div", attrs: {class:"box box-primary"***REMOVED***, children: [
                   {tag: "div", attrs: {class:"box-body"***REMOVED***, children: [
-                    {tag: "div", attrs: {class:"dd", id:"domenu", 
-                      config:function(el, isInited){
-                        if(!isInited){
-                          ctrl.domenu = $('#domenu').domenu({
-                            onDomenuInitialized: [function() {
-                              console.log('event: onDomenuInitialized', 'arguments:', arguments, 'context:', this);
-                          ***REMOVED***],
-                            data: JSON.stringify(ctrl.menu)
-                        ***REMOVED***).parseJson()
-                      ***REMOVED***
-                    ***REMOVED***
-                  ***REMOVED***, children: [
-          
-                      {tag: "button", attrs: {id:"domenu-add-item-btn", class:"dd-new-item"***REMOVED***, children: ["+"]***REMOVED***, 
-          
+                    {tag: "div", attrs: {class:"dd", id:"domenu-0"***REMOVED***, children: [
+                      {tag: "button", attrs: {class:"dd-new-item"***REMOVED***, children: ["+"]***REMOVED***, 
                       {tag: "li", attrs: {class:"dd-item-blueprint"***REMOVED***, children: [
+                        {tag: "button", attrs: {class:"collapse", "data-action":"collapse", type:"button", style:"display: none;"***REMOVED***, children: ["–"]***REMOVED***, 
+                        {tag: "button", attrs: {class:"expand", "data-action":"expand", type:"button", style:"display: none;"***REMOVED***, children: ["+"]***REMOVED***, 
                         {tag: "div", attrs: {class:"dd-handle dd3-handle"***REMOVED***, children: ["Drag"]***REMOVED***, 
                         {tag: "div", attrs: {class:"dd3-content"***REMOVED***, children: [
-                          {tag: "span", attrs: {***REMOVED***, children: ["[item_name]"]***REMOVED***, 
-                          {tag: "div", attrs: {class:"button-container"***REMOVED***, children: [
+                          {tag: "span", attrs: {class:"item-name"***REMOVED***, children: ["[item_name]"]***REMOVED***, 
+                          {tag: "div", attrs: {class:"dd-button-container"***REMOVED***, children: [
                             {tag: "button", attrs: {class:"item-add"***REMOVED***, children: ["+"]***REMOVED***, 
                             {tag: "button", attrs: {class:"item-remove", "data-confirm-class":"item-remove-confirm"***REMOVED***, children: ["×"]***REMOVED***
                         ***REMOVED******REMOVED***, 
+                          
                           {tag: "div", attrs: {class:"dd-edit-box", style:"display: none;"***REMOVED***, children: [
-                            {tag: "input", attrs: {type:"text", name:"title", id:"title", autocomplete:"off", placeholder:"Item", "data-placeholder":"Any nice idea for the title?", "data-default-value":"List Item. {?numeric.increment***REMOVED***"***REMOVED******REMOVED***, 
-                            {tag: "input", attrs: {type:"text", name:"http", id:"http", placeholder:"", "data-placeholder":"Link", "data-default-value":"/{?numeric.increment***REMOVED***/{?numeric.increment***REMOVED***"***REMOVED******REMOVED***, 
-                            {tag: "i", attrs: {class:"end-edit"***REMOVED***, children: ["✎"]***REMOVED***
+                            {tag: "input", attrs: {type:"text", name:"title", autocomplete:"off", placeholder:"Item", 
+                                   "data-placeholder":"title?", 
+                                   "data-default-value":"name {?numeric.increment***REMOVED***"***REMOVED******REMOVED***, 
+                            {tag: "input", attrs: {type:"text", name:"http", id:"http", autocomplete:"off", placeholder:"link"***REMOVED******REMOVED***, 
+                              {tag: "i", attrs: {class:"end-edit"***REMOVED***, children: ["save"]***REMOVED***
                         ***REMOVED******REMOVED***
                       ***REMOVED******REMOVED***
                     ***REMOVED******REMOVED***, 
-          
                       {tag: "ol", attrs: {class:"dd-list"***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***, 
-        
-        
+  
+                    {tag: "br", attrs: {***REMOVED******REMOVED***, 
                     {tag: "button", attrs: {id:"update", 
                       onclick:function(el){
                         $(document).on('click', '#update', function(){
-                          var json = ctrl.domenu.toJson();
                           var request = $.ajax({
                             type: "POST",
                             url: "/admin/menu",
-                            data: json,
+                            data: ctrl.domenu.toJson(),
                             contentType: "application/json; charset=utf-8",
                             dataType: "text"
                         ***REMOVED***);
                           request.done(function( msg ) {
-                            alert( msg );
                         ***REMOVED***).then(function(){
-                            location.reload();
                         ***REMOVED***);
                           request.fail(function( jqXHR, textStatus ) {
                             alert( "Request failed: " + textStatus );
                         ***REMOVED***);
                       ***REMOVED***);
+                        console.log(ctrl.domenu.toJson());
                     ***REMOVED***
+                          
                   ***REMOVED***, children: ["Update"]***REMOVED***, 
                     {tag: "button", attrs: {id:"preview", 
                             onclick:function(){
@@ -272,23 +262,6 @@ var CreateMenu = function(ctrl){
 ***REMOVED***
 ***REMOVED***;
 
-var categories = [
-  {
-    "slug": "1",
-    "name": "mot",
-    "description": "abc",
-***REMOVED***,
-  {
-    "slug": "2",
-    "name": "hai",
-    "description": "abc",
-***REMOVED***,
-  {
-    "slug": "3",
-    "name": "ba",
-    "description": "abc",
-***REMOVED***
-]
 
 
 module.exports = CreateMenu;
@@ -1520,7 +1493,7 @@ var Menu = require('./_menu.msx');
 var Content = require('./_content.msx');
 var Right = require('./_right.msx');
 Home.controller = function(){
-  
+  console.log("run home")
 ***REMOVED***;
 
 Home.view = function(ctrl){
@@ -1553,15 +1526,26 @@ var postData = {"ok": "data"***REMOVED***;
 
 
 MenuController.controller = function(){
+  console.log("run menu")
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
+  ctrl.menu = m.prop([]);
+  
   ctrl.setup = function(){
-    ctrl.categories(ctrl.request.data());
-    m.redraw();
+    ctrl.menu(ctrl.request.data());
+    console.log(ctrl.menu())
+    ctrl.domenu = $('#domenu-0').domenu({
+      onDomenuInitialized: [function() {
+        console.log('event: onDomenuInitialized', 'arguments:', arguments, 'context:', this);
+    ***REMOVED***],
+      data: JSON.stringify(ctrl.menu())
+  ***REMOVED***).parseJson();
+    
 ***REMOVED***;
-  ctrl.categories = m.prop([]);
-  ctrl.menu = [{"title":"SẢN PHẨM PHẦN CỨNG","http":"/c/sp-phan-cung","parent":"NONE","children":[{"title":"CBUS","http":"/c/sp-phan-cung/cbus","parent":"sp-phan-cung","children":[{"title":"CBUS HOST","http":"/c/sp-phan-cung/cbus/cbus-host","parent":"CBUS"***REMOVED***,{"title":"cBUS AddOn","http":"/c/sp-phan-cung/cbus/cbus-addon","parent":"cbus"***REMOVED***]***REMOVED***]***REMOVED***,{"title":"Development Board","http":"/c/sp-phan-cung/development-board","parent":"sp-phan-cung","children":[{"title":"Microcontroller","http":"/c/sp-phan-cung/development-board/microcontroller","parent":"development-board"***REMOVED***,{"title":"Arduino","http":"/c/sp-phan-cung/development-board/arduino","parent":"development-board"***REMOVED***,{"title":"ARM","http":"/c/sp-phan-cung/development-board/arm","parent":"development-board"***REMOVED***]***REMOVED***]
+  
+  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, ctrl.menu, ctrl.setup);
+  // ctrl.menu = [{"title":"SẢN PHẨM PHẦN CỨNG","http":"/c/sp-phan-cung","parent":"NONE","children":[{"title":"CBUS","http":"/c/sp-phan-cung/cbus","parent":"sp-phan-cung","children":[{"title":"CBUS HOST","http":"/c/sp-phan-cung/cbus/cbus-host","parent":"CBUS"***REMOVED***,{"title":"cBUS AddOn","http":"/c/sp-phan-cung/cbus/cbus-addon","parent":"cbus"***REMOVED***]***REMOVED***]***REMOVED***,{"title":"Development Board","http":"/c/sp-phan-cung/development-board","parent":"sp-phan-cung","children":[{"title":"Microcontroller","http":"/c/sp-phan-cung/development-board/microcontroller","parent":"development-board"***REMOVED***,{"title":"Arduino","http":"/c/sp-phan-cung/development-board/arduino","parent":"development-board"***REMOVED***,{"title":"ARM","http":"/c/sp-phan-cung/development-board/arm","parent":"development-board"***REMOVED***]***REMOVED***]
   // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
   
   
@@ -1597,6 +1581,7 @@ var fn = require('./fn.msx');
 var postData = {"ok": "data"***REMOVED***
 
 NewProduct.controller = function(){
+  console.log("category")
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
@@ -1639,6 +1624,7 @@ var fn = require('./fn.msx');
 var postData = {"ok": "data"***REMOVED***
 
 NewProduct.controller = function(){
+  console.log("new product");
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);

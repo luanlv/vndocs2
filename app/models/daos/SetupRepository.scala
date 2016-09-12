@@ -17,7 +17,7 @@ class SetupRepository @Inject() (reactiveMongoApi: ReactiveMongoApi) extends Doc
 
   override def collectionName = "setup"
 
-  override def ensureIndexes: Future[Boolean] = ensureIndex(List("kind" -> IndexType.Ascending), unique = true)
+  override def ensureIndexes: Future[Boolean] = ensureIndex(List("name" -> IndexType.Ascending), unique = true)
 
   ensureIndexes
 ***REMOVED***

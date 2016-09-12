@@ -9,6 +9,7 @@ import com.mohiva.play.silhouette.api.LoginInfo
 import models.{ Image, Setup, User ***REMOVED***
 import models.daos.UserDAOImpl._
 import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
+import reactivemongo.bson.BSONObjectID
 
 import scala.collection.mutable
 import scala.concurrent.Future
@@ -20,12 +21,12 @@ import scala.concurrent.ExecutionContext.Implicits.global
 @Singleton
 class SetupDAOImpl @Inject() (repository: SetupRepository) extends SetupDAO {
 
-  def find(kind: String) =
-    repository.findByKind(kind)
+  def find(id: String) =
+    repository.findByKind(id)
 
   def save(data: Setup) = {
-    repository.insert(data)
-    Future.successful(data)
+    repository.upsert(data._id, data)
+    //    Future.successful(data)
 ***REMOVED***
 
 ***REMOVED***

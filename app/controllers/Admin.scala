@@ -95,11 +95,10 @@ class Admin @Inject() (
   def doMenu = Action(parse.json) { implicit request =>
     request.body.asOpt[JsValue].map { menu =>
       var newMenu = Setup(
-        kind = "menu",
-        value = menu.toString()
+        _id = "menu",
+        value = menu.toString().replaceAll("\\\"", "\"")
       )
       setupService.save(newMenu)
-      println(setupService.retrieve("menu"))
       Ok("ok")
   ***REMOVED***.getOrElse {
       BadRequest("not json")

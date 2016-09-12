@@ -8,6 +8,7 @@ var fn = require('./fn.msx');
 var postData = {"ok": "data"***REMOVED***
 
 NewProduct.controller = function(){
+  console.log("new product");
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);

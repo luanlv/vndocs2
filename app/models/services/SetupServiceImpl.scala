@@ -15,7 +15,7 @@ import scala.concurrent.Future
 
 class SetupServiceImpl @Inject() (setupDAO: SetupDAO) extends SetupService {
 
-  def retrieve(kind: String) = setupDAO.find(kind)
+  def retrieve(name: String) = setupDAO.find(name)
 
   def save(data: Setup) = setupDAO.save(data)
 

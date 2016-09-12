@@ -4,7 +4,7 @@ var Menu = require('./_menu.msx');
 var Content = require('./_content.msx');
 var Right = require('./_right.msx');
 Home.controller = function(){
-  
+  console.log("run home")
 ***REMOVED***;
 
 Home.view = function(ctrl){

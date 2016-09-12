@@ -54,14 +54,21 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
   def findById(id: BSONObjectID)(implicit reader: Reads[T]): Future[Option[T]] = findOne(DBQueryBuilder.id(id))
 
   def findByKind(kind: String)(implicit reader: Reads[T]): Future[Option[T]] = {
-    println(" = ====================FINDING ONE !!!!!!!!!!!!!!!!!!!!!!")
-    findOne(Json.obj("kind" -> kind))
+    findOne(Json.obj("_id" -> kind))
 ***REMOVED***
 
   def update(id: String, document: T)(implicit writer: OWrites[T]): Future[Try[T]] = {
     //    document.updated = Some(new DateTime())
     Logger.debug(s"Updating document: [collection=$collectionName, id=$id, document=$document]")
     recover(collection.flatMap(_.update(DBQueryBuilder.id(id), DBQueryBuilder.set(document)))) {
+      document
+  ***REMOVED***
+***REMOVED***
+
+  def upsert(id: String, document: T)(implicit writer: OWrites[T]): Future[Try[T]] = {
+    //    document.updated = Some(new DateTime())
+    Logger.debug(s"Updating document: [collection=$collectionName, id=$id, document=$document]")
+    recover(collection.flatMap(_.update(Json.obj("_id" -> id), DBQueryBuilder.set(document), upsert = true))) {
       document
   ***REMOVED***
 ***REMOVED***

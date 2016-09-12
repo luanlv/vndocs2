@@ -17,7 +17,7 @@ m.route(document.querySelector('#app'), "/", {
   "/menu": Main.MenuController
 ***REMOVED***);
 
-m.route('/menu');
+// m.route('/menu');
 
 
 module.exports = Main;
