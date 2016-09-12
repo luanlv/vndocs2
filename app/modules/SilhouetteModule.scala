@@ -50,10 +50,12 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
     bind[ImageService].to[ImageServiceImpl]
     bind[PostService].to[PostServiceImpl]
     bind[CategoryService].to[CategoryServiceImpl]
+    bind[SetupService].to[SetupServiceImpl]
     bind[UserDAO].to[UserDAOImpl]
     bind[ImageDAO].to[ImageDAOImpl]
     bind[PostDAO].to[PostDAOImpl]
     bind[CategoryDAO].to[CategoryDAOImpl]
+    bind[SetupDAO].to[SetupDAOImpl]
     bind[CacheLayer].to[PlayCacheLayer]
     bind[IDGenerator].toInstance(new SecureRandomIDGenerator())
     bind[PasswordHasher].toInstance(new BCryptPasswordHasher)

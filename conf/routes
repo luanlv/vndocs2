@@ -11,6 +11,7 @@ GET /admin  controllers.Admin.index
 
 POST  /admin/post controllers.Admin.doPost
 POST  /admin/newCategory controllers.Admin.doCategory
+POST  /admin/menu controllers.Admin.doMenu
 
 GET /admin/category/listParent controllers.CategoryController.listParent
 

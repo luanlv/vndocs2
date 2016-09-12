@@ -10,7 +10,7 @@ import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import com.sksamuel.scrimage.nio.JpegWriter
 import models._
-import models.services.{ CategoryService, ImageService, PostService ***REMOVED***
+import models.services.{ CategoryService, ImageService, PostService, SetupService ***REMOVED***
 import org.apache.commons.io.FilenameUtils
 import org.joda.time.DateTime
 import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
@@ -43,6 +43,7 @@ class Admin @Inject() (
   imageService: ImageService,
   postService: PostService,
   categoryService: CategoryService,
+  setupService: SetupService,
   socialProviderRegistry: SocialProviderRegistry,
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
@@ -85,6 +86,20 @@ class Admin @Inject() (
         description = (category \ "description").get.as[String]
       )
       categoryService.save(newCategory)
+      Ok("ok")
+  ***REMOVED***.getOrElse {
+      BadRequest("not json")
+  ***REMOVED***
+***REMOVED***
+
+  def doMenu = Action(parse.json) { implicit request =>
+    request.body.asOpt[JsValue].map { menu =>
+      var newMenu = Setup(
+        kind = "menu",
+        value = menu.toString()
+      )
+      setupService.save(newMenu)
+      println(setupService.retrieve("menu"))
       Ok("ok")
   ***REMOVED***.getOrElse {
       BadRequest("not json")

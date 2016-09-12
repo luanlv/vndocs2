@@ -197,10 +197,9 @@ var CreateMenu = function(ctrl){
                       onclick:function(el){
                         $(document).on('click', '#update', function(){
                           var json = ctrl.domenu.toJson();
-                          console.log(json)
                           var request = $.ajax({
                             type: "POST",
-                            url: "",
+                            url: "/admin/menu",
                             data: json,
                             contentType: "application/json; charset=utf-8",
                             dataType: "text"
