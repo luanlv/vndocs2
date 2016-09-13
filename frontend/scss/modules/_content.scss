@@ -1,0 +1,89 @@
+.block {
+  margin-top: 15px;
+  min-height: 230px;
+  border-bottom:dashed 1px $border-light-blue;
+***REMOVED***
+
+
+.main-item .title {
+  color: $title-color;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-decoration: none;
+  margin-bottom: 7px;
+***REMOVED***
+
+.meta-data{
+  margin-bottom: 7px;
+  & > span::after {
+    content: ' |';
+    margin-right: 3px;
+***REMOVED***
+  & > span:last-child::after {
+    content: '';
+***REMOVED***
+  *::before {
+    font-size: 11px;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.4);
+***REMOVED***
+  * {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6)
+***REMOVED***
+  .upload::before {
+    content: "Đăng bởi: "
+***REMOVED***
+  .category::before {
+    content: "Thuộc: "
+***REMOVED***
+  .time::before {
+    content: "Thời gian: "
+***REMOVED***
+
+  .category {
+    span::after {
+      content: ', ';
+  ***REMOVED***
+    span:last-child::after {
+      content: '';
+  ***REMOVED***
+***REMOVED***
+***REMOVED***
+
+.info img {
+  float: left;
+  margin: 5px;
+***REMOVED***
+.info .description {
+  font-size: 1em;
+  line-height: 1.5em;
+***REMOVED***
+
+.sort {
+  a {
+    text-decoration: none;
+***REMOVED***
+  a::after {
+    content: " | "
+***REMOVED***
+  a:last-child::after {
+    content: ""
+***REMOVED***
+  padding: 5px;
+***REMOVED***
+
+.roundbox {
+  border-radius: 10px 0 10px 0;
+  background: rgba(0, 0, 0, 0.07);
+***REMOVED***
+
+.main {
+  @include min-breakpoint($mobile){
+    border-left: 1px solid $border-light-blue;
+    border-right: 1px solid $border-light-blue;
+    box-shadow: inset 0px -3px 7px 0px rgba(43,38,43,0.1);
+***REMOVED***
+  padding: 0 15px 0 15px;
+***REMOVED***

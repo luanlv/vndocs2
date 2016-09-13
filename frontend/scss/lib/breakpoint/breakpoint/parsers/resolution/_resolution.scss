@@ -1,0 +1,60 @@
+@function breakpoint-make-resolutions($resolution) {
+  $length: length($resolution);
+
+  $output: ();
+
+  @if $length == 2 {
+    $feature: '';
+    $value: '';
+
+    // Find which is number
+    @if type-of(nth($resolution, 1)) == 'number' {
+      $value: nth($resolution, 1);
+  ***REMOVED***
+    @else {
+      $value: nth($resolution, 2);
+  ***REMOVED***
+
+    // Determine min/max/standard
+    @if index($resolution, 'min-resolution') {
+      $feature: 'min-';
+  ***REMOVED***
+    @else if index($resolution, 'max-resolution') {
+      $feature: 'max-';
+  ***REMOVED***
+
+    $standard: '(#{$feature***REMOVED***resolution: #{$value***REMOVED***)';
+
+    // If we're not dealing with dppx,
+    @if unit($value) != 'dppx' {
+      $base: 96dpi;
+      @if unit($value) == 'dpcm' {
+        $base: 243.84dpcm;
+    ***REMOVED***
+      // Write out feature tests
+      $webkit: '';
+      $moz: '';
+      $webkit: '(-webkit-#{$feature***REMOVED***device-pixel-ratio: #{$value / $base***REMOVED***)';
+      $moz: '(#{$feature***REMOVED***-moz-device-pixel-ratio: #{$value / $base***REMOVED***)';
+      // Append to output
+      $output: append($output, $standard, space);
+      $output: append($output, $webkit, space);
+      $output: append($output, $moz, space);
+  ***REMOVED***
+    @else {
+      $webkit: '';
+      $moz: '';
+      $webkit: '(-webkit-#{$feature***REMOVED***device-pixel-ratio: #{$value / 1dppx***REMOVED***)';
+      $moz: '(#{$feature***REMOVED***-moz-device-pixel-ratio: #{$value / 1dppx***REMOVED***)';
+      $fallback: '(#{$feature***REMOVED***resolution: #{$value / 1dppx * 96dpi***REMOVED***)';
+      // Append to output
+      $output: append($output, $standard, space);
+      $output: append($output, $webkit, space);
+      $output: append($output, $moz, space);
+      $output: append($output, $fallback, space);
+  ***REMOVED***
+
+***REMOVED***
+
+  @return $output;
+***REMOVED***

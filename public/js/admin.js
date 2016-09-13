@@ -987,10 +987,11 @@ var NewProduct = function(ctrl){
                 {tag: "div", attrs: {className:"offcanvas-body"***REMOVED***, children: [
                   {tag: "div", attrs: {className:"card-body"***REMOVED***, children: [
                     ctrl.imgList().map(function(el){
-                      return {tag: "a", attrs: {href:"#", 
+                      return {tag: "a", attrs: {href:"javascript:void(0)", 
                         onclick:function(){
                           data().cover.id=el.id;
                           data().cover.alt=el.filename;
+                          ctrl.showImgList = false;
                       ***REMOVED***
                         
                     ***REMOVED***, children: [{tag: "img", attrs: {src:"image/get/" + el.id, alt:el.filename***REMOVED******REMOVED***]***REMOVED***

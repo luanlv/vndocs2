@@ -320,10 +320,11 @@ var NewProduct = function(ctrl){
                 <div className="offcanvas-body">
                   <div className="card-body">
                     {ctrl.imgList().map(function(el){
-                      return <a href="#"
+                      return <a href="javascript:void(0)"
                         onclick={function(){
                           data().cover.id=el.id;
                           data().cover.alt=el.filename;
+                          ctrl.showImgList = false;
                       ***REMOVED***
                       ***REMOVED***
                       ><img  src={"image/get/" + el.id***REMOVED*** alt={el.filename***REMOVED***/></a>

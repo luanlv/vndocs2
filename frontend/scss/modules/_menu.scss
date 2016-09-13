@@ -1,0 +1,84 @@
+.menu-icon {
+  background: #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 999;
+  @include min-breakpoint($mobile){
+    display: none;
+***REMOVED***
+***REMOVED***
+
+
+.menu.menu-active {
+  @include breakpoint($mobile) {
+    transition: all 300ms;
+    transform: translateX(200px);
+    border: none;
+    box-shadow: none;
+***REMOVED***
+***REMOVED***
+
+.content {
+  width: 100%;
+  transition: all 300ms;
+  @include breakpoint($mobile){
+    border-left: 1px solid $border-light-blue;
+    position: relative;
+    right: 0;
+    transition: all 300ms;
+    top: 50px;
+***REMOVED***
+***REMOVED***
+
+.content.menu-active {
+  transition: all 300ms;
+  @include breakpoint($mobile) {
+    transition: all 300ms;
+    transform: translateX(200px);
+***REMOVED***
+***REMOVED***
+
+.menu{
+  padding: 5px 0 5px 2px;
+  //border-radius: 5px;
+  //border-top: 1px solid $border-light-blue;
+  //border-right: 1px solid $border-light-blue;
+  //border-bottom: 1px solid $border-light-blue;
+
+  @include breakpoint($mobile) {
+
+***REMOVED***
+
+  a {
+    color: $menu-link-color;
+    padding: 0px 5px 5px 5px;
+    display: inline-block;
+***REMOVED***
+  .level1 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Verdana, Arial, sans-serif;
+***REMOVED***
+  .level2, .level3 {
+    font-size: 11px;
+    font-weight: normal;
+    font-family: Verdana, Arial, sans-serif;
+***REMOVED***
+  .level2 a::before, .level3 a::before{
+    content: "» ";
+    color: black;
+    font-weight: bold;
+***REMOVED***
+
+***REMOVED***
+
+.menu .norm {
+  display: inline-block;
+  font-size: 7px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5)
+***REMOVED***

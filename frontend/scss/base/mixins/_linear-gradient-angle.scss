@@ -1,0 +1,18 @@
+// ----------------------------------------------------------------------
+
+  // Linear Gradient angle
+
+// ----------------------------------------------------------------------
+
+ // example: @include linear-gradient(-10, #cccccc, #333333);
+
+@mixin linear-gradient($angle, $colorStart, $colorStop){
+    background: #{$colorStart***REMOVED***; /* Old browsers */
+    background:    -moz-linear-gradient($angle,  #{$colorStart***REMOVED*** 0%, #{$colorStop***REMOVED*** 100%); /* FF3.6+ */
+    background:        -webkit-gradient(linear, left bottom, right top, color-stop(0%,#{$colorStart***REMOVED***), color-stop(100%,#{$colorStop***REMOVED***)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  #{$colorStart***REMOVED*** 0%,#{$colorStop***REMOVED*** 100%); /* Chrome10+,Safari5.1+ */
+    background:      -o-linear-gradient(45deg,  #{$colorStart***REMOVED*** 0%,#{$colorStop***REMOVED*** 100%); /* Opera 11.10+ */
+    background:     -ms-linear-gradient(45deg,  #{$colorStart***REMOVED*** 0%,#{$colorStop***REMOVED*** 100%); /* IE10+ */
+    background:         linear-gradient(45deg,  #{$colorStart***REMOVED*** 0%,#{$colorStop***REMOVED*** 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$colorStart***REMOVED***', endColorstr='#{$colorStop***REMOVED***',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+***REMOVED***

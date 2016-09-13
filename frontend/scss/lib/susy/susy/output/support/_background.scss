@@ -1,0 +1,58 @@
+// Background Properties
+// =====================
+
+// Susy Background Image
+// ---------------------
+// Check for an existing support mixin, or provide a simple fallback.
+// - $image: <background-image>
+@mixin susy-background-image(
+  $image
+) {
+  @if susy-support(background-image, (mixin: background-image), $warn: false) {
+    @include background-image($image...);
+***REMOVED*** @else {
+    background-image: $image;
+***REMOVED***
+***REMOVED***
+
+// Susy Background Size
+// ---------------------
+// Check for an existing support mixin, or provide a simple fallback.
+// - $image: <background-size>
+@mixin susy-background-size(
+  $size
+) {
+  @if susy-support(background-options, (mixin: background-size)) {
+    @include background-size($size);
+***REMOVED*** @else {
+    background-size: $size;
+***REMOVED***
+***REMOVED***
+
+// Susy Background Origin
+// ----------------------
+// Check for an existing support mixin, or provide a simple fallback.
+// - $image: <background-origin>
+@mixin susy-background-origin(
+  $origin
+) {
+  @if susy-support(background-options, (mixin: background-origin)) {
+    @include background-origin($origin);
+***REMOVED*** @else {
+    background-origin: $origin;
+***REMOVED***
+***REMOVED***
+
+// Susy Background Clip
+// --------------------
+// Check for an existing support mixin, or provide a simple fallback.
+// - $image: <background-clip>
+@mixin susy-background-clip(
+  $clip
+) {
+  @if susy-support(background-options, (mixin: background-clip)) {
+    @include background-clip($clip);
+***REMOVED*** @else {
+    background-clip: $clip;
+***REMOVED***
+***REMOVED***

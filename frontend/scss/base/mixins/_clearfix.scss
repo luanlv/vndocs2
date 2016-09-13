@@ -1,0 +1,21 @@
+// ----------------------------------------------------------------------
+
+  // Clearfix after element
+
+// ----------------------------------------------------------------------
+
+// example: @include clearfix();
+
+@mixin clearfix() {
+  & {
+    *zoom: 1;
+***REMOVED***
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+***REMOVED***
+  &:after {
+    clear: both;
+***REMOVED***
+***REMOVED***

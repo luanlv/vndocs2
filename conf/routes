@@ -15,6 +15,7 @@ POST  /admin/menu controllers.Admin.doMenu
 GET  /setup/menu controllers.SetupController.getMenu
 GET /admin/category/listParent controllers.CategoryController.listParent
 
+GET /post/:page controllers.PostController.getPost(page: Int)
 POST /post  controllers.ApplicationController.index2
 
 GET   /image/get/:id  controllers.ImageController.getImage(id: String)

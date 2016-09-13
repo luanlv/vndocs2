@@ -1,0 +1,7 @@
+var Side = function(ctrl){
+    return <div className="side mh1000">
+        Side
+    </div>
+***REMOVED***
+
+module.exports = Side;

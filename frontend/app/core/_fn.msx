@@ -1,0 +1,88 @@
+var fn ={***REMOVED***;
+
+
+fn.cache = undefined;
+fn.url = m.route();
+
+fn.checkMenu = function(link){
+    console.log(m.route());
+    var partRoute = m.route().split('/');
+    var result = true;
+    var partLink = link.replace('https://', '').replace('http://', '').split('/');
+    if(!(partLink[1] === "c" || partLink[1] === "p")){
+        return false;
+  ***REMOVED***
+    for(var i = 2; i < partLink.length; i++){
+        if(partLink[i] != partRoute[i]){
+            result = false;
+      ***REMOVED***
+  ***REMOVED***
+    return result;
+***REMOVED***;
+
+fn.createMenu = function(menuJson, level){
+    return m('ul.level' + level, [
+        menuJson.map(function(child){
+            return m('li',  [
+                m('a', {title: child.title, href: child.http, config: m.route***REMOVED*** ,m('span', child.title)),
+                (level > 1 )?<sup className="norm">6431</sup>:"",
+                (child.children !== undefined)?fn.createMenu(child.children, level + 1):''
+          ***REMOVED***)
+      ***REMOVED***)
+  ***REMOVED***)
+***REMOVED***;
+
+fn.runCreateMenu = function(menuJson, level){
+
+    if(fn.cache !== undefined){
+        return fn.cache;
+  ***REMOVED*** else {
+        if(menuJson !== undefined) {
+            fn.cache = fn.createMenu(menuJson, level);
+            return fn.cache;
+      ***REMOVED***
+  ***REMOVED***
+***REMOVED***;
+
+
+fn.toggleClass =  function(el, className){
+    if(el.classList){
+        if(el.classList.contains(className)) {
+            el.classList.remove(className);
+      ***REMOVED*** else {
+            el.classList.add(className);
+      ***REMOVED***
+
+  ***REMOVED*** else {
+        el.className += ' ' + className;
+  ***REMOVED***
+***REMOVED***;
+
+fn.requestWithFeedback = function(args, bind, fn) {
+    console.log("get menu!");
+    var data = m.prop();
+    var completed = m.prop(false);
+    var complete = function() {
+        completed(true)
+  ***REMOVED***;
+    args.background = true;
+    args.config = function(xhr) {
+        xhr.timeout = 4000;
+        xhr.ontimeout = function() {
+            complete();
+            m.redraw();
+      ***REMOVED***
+  ***REMOVED***;
+    return {
+        request: m.request(args).then(data).then(function(data){
+            if(bind !== undefined) bind(data);
+            if(fn !== undefined) fn();
+            complete();
+            m.redraw();
+      ***REMOVED***),
+        data: data,
+        ready: completed
+  ***REMOVED***
+***REMOVED***;
+
+module.exports = fn;

@@ -28,9 +28,9 @@ class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
     Future.successful(post)
 ***REMOVED***
 
-  //  def getList(page: Int) = {
-  //    repository.findImage(sort = Json.obj("createAt" -> -1), page = page, num = 20)
-  //***REMOVED***
+  def getList(page: Int) = {
+    repository.getList(sort = Json.obj("time" -> -1), page = page, num = 10)
+***REMOVED***
 
 ***REMOVED***
 

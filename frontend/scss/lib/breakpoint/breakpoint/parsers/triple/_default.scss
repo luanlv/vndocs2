@@ -1,0 +1,18 @@
+@function breakpoint-parse-triple-default($feature, $first, $second) {
+
+  // Sort into min and max
+  $min: min($first, $second);
+  $max: max($first, $second);
+
+  // Set Context
+  $context-setter: private-breakpoint-set-context(min-#{$feature***REMOVED***, $min);
+  $context-setter: private-breakpoint-set-context(max-#{$feature***REMOVED***, $max);
+
+  // Make them EMs if need be
+  @if (breakpoint-get('to ems') == true) {
+    $min: breakpoint-to-base-em($min);
+    $max: breakpoint-to-base-em($max);
+***REMOVED***
+
+  @return '(min-#{$feature***REMOVED***: #{$min***REMOVED***) and (max-#{$feature***REMOVED***: #{$max***REMOVED***)';
+***REMOVED***

@@ -1,10 +1,26 @@
-
 var Main = Main || {***REMOVED***;
+var fn = require('./core/_fn.msx');
+Main.Home = require('./main/home.msx');
 
-// Main.Home = require('./main/_home.msx');
-//Main.Dashboard = require('./main/_dashboard.msx');
-// Main.Product = require('./main/_product.msx');
-// Main.Category = require('./main/_category.msx');
-// Main.Search = require('./main/_search.msx');
+
+Window.menu = m.prop();
+
+Window.setup = function(){
+  m.redraw();
+***REMOVED***;
+
+Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
+
+
+m.route(document.querySelector('#app'), "/", {
+  "/": Main.Home
+***REMOVED***);
+
+
+
+
+
+
+
 
 module.exports = Main;

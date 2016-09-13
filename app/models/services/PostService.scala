@@ -13,6 +13,7 @@ trait PostService {
 
   def save(post: Post): Future[Post]
 
+  def getList(page: Int): Future[List[Post]]
   //  def getList(page: Int): Future[List[Image]]
 
 ***REMOVED***

@@ -35,10 +35,10 @@ class ApplicationController @Inject() (
    *
    * @return The result to display.
    */
-  def index = silhouette.SecuredAction.async { implicit request =>
+  def index = silhouette.UnsecuredAction.async { implicit request =>
     //    println("-__________________________________________----------------------________")
     //    println("====" + getSize("http://linuxarea.com/new/HUGE%20COLLECTION%20IELTS%20MATERIALS/IELTS%20PRACTICE%20TEST/ACHIEVE%202%20IELTS%20%20%282006%20Marshall%20Cavendish%29.rar"))
-    Future.successful(Ok(views.html.index(request.identity)))
+    Future.successful(Ok(views.html.home()))
 ***REMOVED***
 
   def index2 = silhouette.SecuredAction.async(parse.json) { implicit request =>
