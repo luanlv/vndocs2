@@ -4,13 +4,13 @@ var fn = require('./core/_fn.msx');
 Main.Home = require('./main/home.msx');
 
 
-Window.menu = m.prop();
+// Window.menu = m.prop();
+//
+// Window.setup = function(){
+//   m.redraw();
+// ***REMOVED***;
 
-Window.setup = function(){
-  m.redraw();
-***REMOVED***;
-
-Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
+// Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
 
 
 m.route(document.querySelector('#app'), "/", {
@@ -40,7 +40,7 @@ var Content = function(ctrl){
           ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
         
-          ctrl.post().map(function(el){
+          Window.posts.map(function(el){
           return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
                     {tag: "a", attrs: {href:"#", className:"title"***REMOVED***, children: [el.title]***REMOVED***, 
                     {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
@@ -50,7 +50,7 @@ var Content = function(ctrl){
                         return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
-                      {tag: "span", attrs: {className:"time"***REMOVED***, children: [el.time]***REMOVED***
+                      {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
                   ***REMOVED******REMOVED***, 
                     {tag: "div", attrs: {className:"info"***REMOVED***, children: [
                       {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/image/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
@@ -114,7 +114,7 @@ var fn = require('../core/_fn.msx');
 var Menu = function(ctrl){
     return [
         {tag: "div", attrs: {className:"menu"***REMOVED***, children: [
-            fn.runCreateMenu(Window.menu(), 1)
+            fn.runCreateMenu(JSON.parse(Window.menu), 1)
       ***REMOVED******REMOVED***
   ***REMOVED***;
 ***REMOVED***;
@@ -262,8 +262,8 @@ Home.controller = function(){
   ctrl.setup = function(){
     m.redraw();
 ***REMOVED***;
-  ctrl.post = m.prop([]);
-  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+  // ctrl.post = m.prop([]);
+  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
 ***REMOVED***;
 
 Home.view = function(ctrl){

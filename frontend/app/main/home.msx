@@ -10,8 +10,8 @@ Home.controller = function(){
   ctrl.setup = function(){
     m.redraw();
 ***REMOVED***;
-  ctrl.post = m.prop([]);
-  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+  // ctrl.post = m.prop([]);
+  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
 ***REMOVED***;
 
 Home.view = function(ctrl){

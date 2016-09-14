@@ -3,13 +3,13 @@ var fn = require('./core/_fn.msx');
 Main.Home = require('./main/home.msx');
 
 
-Window.menu = m.prop();
+// Window.menu = m.prop();
+//
+// Window.setup = function(){
+//   m.redraw();
+// ***REMOVED***;
 
-Window.setup = function(){
-  m.redraw();
-***REMOVED***;
-
-Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
+// Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
 
 
 m.route(document.querySelector('#app'), "/", {

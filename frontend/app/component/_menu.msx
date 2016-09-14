@@ -3,7 +3,7 @@ var fn = require('../core/_fn.msx');
 var Menu = function(ctrl){
     return [
         <div className="menu">
-            {fn.runCreateMenu(Window.menu(), 1)***REMOVED***
+            {fn.runCreateMenu(JSON.parse(Window.menu), 1)***REMOVED***
         </div>
   ***REMOVED***;
 ***REMOVED***;

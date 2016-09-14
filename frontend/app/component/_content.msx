@@ -11,7 +11,7 @@ var Content = function(ctrl){
             </form>
         </div>
         {
-          ctrl.post().map(function(el){
+          Window.posts.map(function(el){
           return <div className="block main-item">
                     <a href="#" className="title">{el.title***REMOVED***</a>
                     <div className="meta-data">
@@ -21,7 +21,7 @@ var Content = function(ctrl){
                         return <span>{item***REMOVED***</span>
                     ***REMOVED***)***REMOVED***
                       </span>
-                      <span className="time">{el.time***REMOVED***</span>
+                      <span className="time">{moment(el.time).format('L')***REMOVED***</span>
                     </div>
                     <div className="info">
                       <a href="#"><img src={"/image/get/" + el.cover.id***REMOVED*** alt={el.cover.alt***REMOVED***/></a>

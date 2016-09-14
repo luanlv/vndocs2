@@ -4,7 +4,10 @@ import javax.inject.Inject
 
 import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
+import models.Setup
+import models.services.{ CategoryService, PostService, SetupService ***REMOVED***
 import play.api.i18n.{ I18nSupport, MessagesApi ***REMOVED***
+import play.api.libs.json.Json
 import play.api.libs.ws.{ WS, WSClient ***REMOVED***
 import play.api.mvc.{ Action, BodyParsers, Controller ***REMOVED***
 import utils.auth.DefaultEnv
@@ -25,6 +28,9 @@ import scala.concurrent.Future
 class ApplicationController @Inject() (
   ws: WSClient,
   val messagesApi: MessagesApi,
+  setupService: SetupService,
+  categoryService: CategoryService,
+  postService: PostService,
   silhouette: Silhouette[DefaultEnv],
   socialProviderRegistry: SocialProviderRegistry,
   implicit val webJarAssets: WebJarAssets)
@@ -36,9 +42,17 @@ class ApplicationController @Inject() (
    * @return The result to display.
    */
   def index = silhouette.UnsecuredAction.async { implicit request =>
-    //    println("-__________________________________________----------------------________")
-    //    println("====" + getSize("http://linuxarea.com/new/HUGE%20COLLECTION%20IELTS%20MATERIALS/IELTS%20PRACTICE%20TEST/ACHIEVE%202%20IELTS%20%20%282006%20Marshall%20Cavendish%29.rar"))
-    Future.successful(Ok(views.html.home()))
+    val data = for {
+      menu <- setupService.retrieve("menu")
+      categories <- categoryService.listParent
+      posts <- postService.getList(1)
+  ***REMOVED*** yield (menu, categories, posts)
+    data.map { data =>
+      Ok(views.html.home(
+        Json.toJson(data._1.get.value).toString,
+        Json.toJson(data._2).toString,
+        Json.toJson(data._3).toString))
+  ***REMOVED***
 ***REMOVED***
 
   def index2 = silhouette.SecuredAction.async(parse.json) { implicit request =>

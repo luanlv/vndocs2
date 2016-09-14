@@ -1,4 +1,4 @@
-@()(implicit request: RequestHeader, messages: Messages, webJarAssets: WebJarAssets)
+@(menu: String, categories: String, posts: String)(implicit request: RequestHeader, messages: Messages, webJarAssets: WebJarAssets)
 
 <!doctype html>
 <html lang="en">
@@ -11,7 +11,15 @@
 
     </head>
     <body>
+        <script >
+            Window.menu = @Html(menu);
+            Window.categories = @Html(categories);
+            Window.posts = @Html(posts);
+            console.log(Window.menu);
+            console.log(Window.categories);
+        </script>
         <div id="app"></div>
+        <script src="/assets/admin/js/libs/moment/moment.min.js"></script>
         <script src="/assets/lib/mithril.min.js"></script>
         <script src="/assets/js/app.js"></script>
     </body>
