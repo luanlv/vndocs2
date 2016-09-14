@@ -1,6 +1,13 @@
 var Side = function(ctrl){
     return <div className="side mh1000">
-        Side
+        <div className="login">
+            <div class="login-box">
+                <div><a href=""><span>Đăng nhập</span></a> / <a href=""><span>Đăng ký</span></a></div>
+                <a href="#" class="social-button" id="facebook-connect"> <span> Facebook</span></a>
+                <a href="#" class="social-button" id="google-connect"> <span> Google</span></a>
+            </div>
+        </div>
+        <hr className="style1"/>
     </div>
 ***REMOVED***
 

@@ -13,11 +13,15 @@ import reactivemongo.bson.BSONObjectID
 case class Post(
   _id: String,
   title: String,
+  author: String = "admin",
   categories: List[String],
   description: String,
   content: String,
   link: List[Link],
   cover: Option[Cover],
+  //  nView: Int = 0,
+  nLike: Int = 0,
+  liker: List[String] = List(),
   time: DateTime = DateTime.now()
 ) extends Identity with TemporalModel {
 ***REMOVED***

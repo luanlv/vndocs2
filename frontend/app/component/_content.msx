@@ -13,7 +13,15 @@ var Content = function(ctrl){
         {
           Window.posts.map(function(el){
           return <div className="block main-item">
-                    <a href="#" className="title">{el.title***REMOVED***</a>
+                    <div className="title">
+                      <div className="t-left">
+                        <a href="#" className="title">{el.title***REMOVED***</a>
+                      </div>
+                      <div className="t-right">
+                        <div className="rate-nav">RATING</div>
+                        <div className="rate-num"></div>
+                      </div>
+                    </div>
                     <div className="meta-data">
                       <span className="upload">{el.upload***REMOVED***</span>
                       <span className="category">
@@ -36,46 +44,5 @@ var Content = function(ctrl){
 ***REMOVED***;
 
 
-var data = [
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473108834_extra.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,{
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***
-];
 
 module.exports = Content;

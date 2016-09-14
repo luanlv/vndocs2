@@ -16,6 +16,9 @@ Home.controller = function(){
 
 Home.view = function(ctrl){
   return [
+    <div className="headWr ">
+      head
+    </div>,
     <div className="container mh1000">
             <span className="menu-icon"
                   onclick={function(){
@@ -25,9 +28,6 @@ Home.view = function(ctrl){
                     fn.toggleClass(el2, "menu-active");
                 ***REMOVED******REMOVED***
             >Menu</span>
-      <div className="headWr ">
-        head
-      </div>
       <div className="bodyWr">
         {Menu(ctrl)***REMOVED***
         <div className="content mh1000 ">

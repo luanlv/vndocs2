@@ -28,14 +28,20 @@
   @include clearfix();
 ***REMOVED***
 
+body {
+  background: #f6f8f9;
+***REMOVED***
+
 .container {
   @include container(100%);
   max-width: 1000px;
   position: relative;
+  background: white;
 ***REMOVED***
 
 .headWr {
-  min-height: 50px;
+  background: $teal;
+  min-height: 80px;
   margin-bottom: 10px;
 ***REMOVED***
 .bodyWr{
@@ -77,15 +83,16 @@
   @include min-breakpoint($table) {
     display: block;
     position: absolute;
-    top: 60px;
+    top: 0;
     right: 0;
 ***REMOVED***
 ***REMOVED***
 
 .container {
   @include min-breakpoint($mobile){
+    border-radius: 10px 10px 0 0;
     border: 1px solid $border-light-blue;
-    box-shadow: 0px 0px 5px 0px rgba(23,22,23,0.6);
+    box-shadow: 0px 5px 5px 0px rgba(23,22,23,0.3);
 ***REMOVED***
   @include clearfix();
 ***REMOVED***

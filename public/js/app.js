@@ -42,7 +42,15 @@ var Content = function(ctrl){
         
           Window.posts.map(function(el){
           return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
-                    {tag: "a", attrs: {href:"#", className:"title"***REMOVED***, children: [el.title]***REMOVED***, 
+                    {tag: "div", attrs: {className:"title"***REMOVED***, children: [
+                      {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
+                        {tag: "a", attrs: {href:"#", className:"title"***REMOVED***, children: [el.title]***REMOVED***
+                    ***REMOVED******REMOVED***, 
+                      {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
+                        {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
+                        {tag: "div", attrs: {className:"rate-num"***REMOVED******REMOVED***
+                    ***REMOVED******REMOVED***
+                  ***REMOVED******REMOVED***, 
                     {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
                       {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
                       {tag: "span", attrs: {className:"category"***REMOVED***, children: [
@@ -65,47 +73,6 @@ var Content = function(ctrl){
 ***REMOVED***;
 
 
-var data = [
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473108834_extra.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,
-    {
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***,{
-        "title": "Speakout 2E Upper Intermediate: Listening and Reading Extra",
-        "upload": "Anonymous",
-        "category" : ["Coursebooks", "Audio"],
-        "time" : "today",
-        "cover": "http://englishtips.org/uploads/posts/2016-09/thumbs/1473109042_448953.jpg",
-        "description": "Discover the new edition of the award-winning course for teaching English as it is spoken. Using content from the BBC, Speakout 2nd Edition builds the skills and knowledge students need to communicate confidently. Speakout is the English language course that includes video content from the BBC to engage students and make teaching easier. It follows a balanced approach to topics, language development and skills work. Speaking activities are prominent, but not at the expense of the other core skills of reading, writing and listening, which are developed systematically throughout."
-  ***REMOVED***
-];
 
 module.exports = Content;
 ***REMOVED***,{***REMOVED***],3:[function(require,module,exports){
@@ -126,7 +93,14 @@ module.exports = Menu;
 ***REMOVED***,{"../core/_fn.msx":5***REMOVED***],4:[function(require,module,exports){
 var Side = function(ctrl){
     return {tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
-        "Side"
+        {tag: "div", attrs: {className:"login"***REMOVED***, children: [
+            {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
+                {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " / ", {tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
+                {tag: "a", attrs: {href:"#", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
+                {tag: "a", attrs: {href:"#", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
+          ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***, 
+        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***
   ***REMOVED******REMOVED***
 ***REMOVED***
 
@@ -268,6 +242,9 @@ Home.controller = function(){
 
 Home.view = function(ctrl){
   return [
+    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+      "head"
+  ***REMOVED******REMOVED***,
     {tag: "div", attrs: {className:"container mh1000"***REMOVED***, children: [
             {tag: "span", attrs: {className:"menu-icon", 
                   onclick:function(){
@@ -277,9 +254,6 @@ Home.view = function(ctrl){
                     fn.toggleClass(el2, "menu-active");
                 ***REMOVED***
           ***REMOVED***, children: ["Menu"]***REMOVED***, 
-      {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
-        "head"
-    ***REMOVED******REMOVED***, 
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
         {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [

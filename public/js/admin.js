@@ -812,7 +812,7 @@ var NewProduct = function(ctrl){
                           $(el).val(data().description)
                       ***REMOVED***
                     ***REMOVED***, 
-                      onkeydown:function(el){
+                      onchange:function(el){
                         data().description = $(el.target).val();
                     ***REMOVED***
                   ***REMOVED******REMOVED***, 
