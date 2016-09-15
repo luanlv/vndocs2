@@ -19,7 +19,7 @@ case class Post(
   content: String,
   link: List[Link],
   cover: Option[Cover],
-  //  nView: Int = 0,
+  nView: Int = 0,
   nLike: Int = 0,
   liker: List[String] = List(),
   time: DateTime = DateTime.now()

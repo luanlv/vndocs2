@@ -8,6 +8,10 @@ var Side = function(ctrl){
             </div>
         </div>
         <hr className="style1"/>
+        
+        <div className="hot">
+            
+        </div>
     </div>
 ***REMOVED***
 

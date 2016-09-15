@@ -100,7 +100,11 @@ var Side = function(ctrl){
                 {tag: "a", attrs: {href:"#", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
           ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***
+        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
+        
+        {tag: "div", attrs: {className:"hot"***REMOVED***
+            
+      ***REMOVED***
   ***REMOVED******REMOVED***
 ***REMOVED***
 

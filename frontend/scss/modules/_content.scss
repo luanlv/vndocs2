@@ -80,10 +80,11 @@
 ***REMOVED***
 
 .main {
+
   @include min-breakpoint($mobile){
     border-left: 1px solid $border-light-blue;
     border-right: 1px solid $border-light-blue;
     box-shadow: inset 0px -3px 7px 0px rgba(43,38,43,0.1);
 ***REMOVED***
-  padding: 0 15px 0 15px;
+  padding: 10px 15px 0 15px;
 ***REMOVED***
