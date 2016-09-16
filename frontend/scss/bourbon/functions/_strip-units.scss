@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/// Strips the unit from a number.
+///
+/// @param {Number (With Unit)***REMOVED*** $value
+///
+/// @example scss - Usage
+///   $dimension: strip-units(10em);
+///
+/// @example css - CSS Output
+///   $dimension: 10;
+///
+/// @return {Number (Unitless)***REMOVED***
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+***REMOVED***

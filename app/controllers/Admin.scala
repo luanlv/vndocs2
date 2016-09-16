@@ -53,7 +53,7 @@ class Admin @Inject() (
    *
    * @return The result to display.
    */
-  def index = Action.async { implicit request =>
+  def index = silhouette.SecuredAction.async { implicit request =>
 
     Future.successful(Ok(views.html.admin.index("Trang chu")))
 ***REMOVED***

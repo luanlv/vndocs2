@@ -3,6 +3,7 @@
 # ~~~~
 
 # Home page
+GET         /identifying                                controllers.ApplicationController.indexLogged
 GET         /                                controllers.ApplicationController.index
 
 

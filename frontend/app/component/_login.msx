@@ -1,0 +1,30 @@
+
+
+
+var Login = function(ctrl){
+  return [
+    <div className="login-popup" style="display: none">
+      <div class="wrapper">
+        <div class="wrapper-content">
+          <button type="button"><i class="fa fa-facebook"></i></button>
+          <button type="button"><i class="fa fa-twitter"></i></button>
+          
+          <div class="or-email"><span>Or  via  email</span></div>
+          <form>
+            <input type="text" class="user-email" id="email" placeholder="Email" autocomplete="off"/>
+            <input type="password" class="user-pasword" id="password" placeholder="Password" autocomplete="off"/>
+          </form>
+          <div class="logout">
+            <input type="submit" value="Đăng nhập"/>
+          </div>
+          <div class="logout">
+            <input type="submit" value="Đăng ký"/>
+          </div>
+          <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+        </div>
+      </div>
+    </div>
+***REMOVED***
+***REMOVED***;
+
+module.exports = Login;

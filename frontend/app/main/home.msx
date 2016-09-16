@@ -3,6 +3,7 @@ var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
+var Login = require('../component/_login.msx');
 
 
 Home.controller = function(){
@@ -36,7 +37,8 @@ Home.view = function(ctrl){
         </div>
       </div>
     
-    </div>
+    </div>,
+    Login(ctrl)
 ***REMOVED***
 ***REMOVED***;
 

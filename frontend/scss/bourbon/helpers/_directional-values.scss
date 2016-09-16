@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/// Directional-property mixins are shorthands for writing properties like the following
+///
+/// @ignore You can also use `false` instead of `null`.
+///
+/// @param {List***REMOVED*** $vals
+///   List of directional values
+///
+/// @example scss - Usage
+///   .element {
+///     @include border-style(dotted null);
+///     @include margin(null 0 10px);
+/// ***REMOVED***
+///
+/// @example css - CSS Output
+///   .element {
+///     border-bottom-style: dotted;
+///     border-top-style: dotted;
+///     margin-bottom: 10px;
+///     margin-left: 0;
+///     margin-right: 0;
+/// ***REMOVED***
+///
+/// @require {function***REMOVED*** contains-falsy
+///
+/// @return {List***REMOVED***
+
+@function collapse-directionals($vals) {
+  $output: null;
+
+  $a: nth($vals, 1);
+  $b: if(length($vals) < 2, $a, nth($vals, 2));
+  $c: if(length($vals) < 3, $a, nth($vals, 3));
+  $d: if(length($vals) < 2, $a, nth($vals, if(length($vals) < 4, 2, 4)));
+
+  @if $a == 0 { $a: 0; ***REMOVED***
+  @if $b == 0 { $b: 0; ***REMOVED***
+  @if $c == 0 { $c: 0; ***REMOVED***
+  @if $d == 0 { $d: 0; ***REMOVED***
+
+  @if $a == $b and $a == $c and $a == $d { $output: $a;        ***REMOVED***
+  @else if $a == $c and $b == $d         { $output: $a $b;     ***REMOVED***
+  @else if $b == $d                      { $output: $a $b $c;  ***REMOVED***
+  @else                                  { $output: $a $b $c $d; ***REMOVED***
+
+  @return $output;
+***REMOVED***
+
+/// Output directional properties, for instance `margin`.
+///
+/// @access private
+///
+/// @param {String***REMOVED*** $pre
+///   Prefix to use
+/// @param {String***REMOVED*** $suf
+///   Suffix to use
+/// @param {List***REMOVED*** $vals
+///   List of values
+///
+/// @require {function***REMOVED*** collapse-directionals
+/// @require {function***REMOVED*** contains-falsy
+
+@mixin directional-property($pre, $suf, $vals) {
+  // Property Names
+  $top:    $pre + "-top"    + if($suf, "-#{$suf***REMOVED***", "");
+  $bottom: $pre + "-bottom" + if($suf, "-#{$suf***REMOVED***", "");
+  $left:   $pre + "-left"   + if($suf, "-#{$suf***REMOVED***", "");
+  $right:  $pre + "-right"  + if($suf, "-#{$suf***REMOVED***", "");
+  $all:    $pre +             if($suf, "-#{$suf***REMOVED***", "");
+
+  $vals: collapse-directionals($vals);
+
+  @if contains-falsy($vals) {
+    @if nth($vals, 1) { #{$top***REMOVED***: nth($vals, 1); ***REMOVED***
+
+    @if length($vals) == 1 {
+      @if nth($vals, 1) { #{$right***REMOVED***: nth($vals, 1); ***REMOVED***
+  ***REMOVED*** @else {
+      @if nth($vals, 2) { #{$right***REMOVED***: nth($vals, 2); ***REMOVED***
+  ***REMOVED***
+
+    @if length($vals) == 2 {
+      @if nth($vals, 1) { #{$bottom***REMOVED***: nth($vals, 1); ***REMOVED***
+      @if nth($vals, 2) { #{$left***REMOVED***:   nth($vals, 2); ***REMOVED***
+  ***REMOVED*** @else if length($vals) == 3 {
+      @if nth($vals, 3) { #{$bottom***REMOVED***: nth($vals, 3); ***REMOVED***
+      @if nth($vals, 2) { #{$left***REMOVED***:   nth($vals, 2); ***REMOVED***
+  ***REMOVED*** @else if length($vals) == 4 {
+      @if nth($vals, 3) { #{$bottom***REMOVED***: nth($vals, 3); ***REMOVED***
+      @if nth($vals, 4) { #{$left***REMOVED***:   nth($vals, 4); ***REMOVED***
+  ***REMOVED***
+***REMOVED*** @else {
+    #{$all***REMOVED***: $vals;
+***REMOVED***
+***REMOVED***

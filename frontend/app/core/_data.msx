@@ -1,0 +1,8 @@
+var Data = {***REMOVED***;
+
+if(Window.user !== undefined) {
+  Data.user = Window.user;
+  console.log(Data.user)
+***REMOVED***
+
+module.exports = Data;

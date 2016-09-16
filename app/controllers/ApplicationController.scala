@@ -55,6 +55,21 @@ class ApplicationController @Inject() (
   ***REMOVED***
 ***REMOVED***
 
+  def indexLogged = silhouette.SecuredAction.async { implicit request =>
+    val data = for {
+      menu <- setupService.retrieve("menu")
+      categories <- categoryService.listParent
+      posts <- postService.getList(1)
+  ***REMOVED*** yield (menu, categories, posts)
+    data.map { data =>
+      Ok(views.html.home2(
+        request.identity,
+        Json.toJson(data._1.get.value).toString,
+        Json.toJson(data._2).toString,
+        Json.toJson(data._3).toString))
+  ***REMOVED***
+***REMOVED***
+
   def index2 = silhouette.SecuredAction.async(parse.json) { implicit request =>
     Future.successful(Ok("ok"))
 ***REMOVED***

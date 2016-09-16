@@ -26,7 +26,7 @@ m.route(document.querySelector('#app'), "/", {
 
 module.exports = Main;
 
-***REMOVED***,{"./core/_fn.msx":5,"./main/home.msx":7***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./core/_fn.msx":7,"./main/home.msx":9***REMOVED***],2:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
         {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
@@ -76,6 +76,37 @@ var Content = function(ctrl){
 
 module.exports = Content;
 ***REMOVED***,{***REMOVED***],3:[function(require,module,exports){
+
+
+
+var Login = function(ctrl){
+  return [
+    {tag: "div", attrs: {className:"login-popup", style:"display: none"***REMOVED***, children: [
+      {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
+        {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
+          {tag: "button", attrs: {type:"button"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-facebook"***REMOVED******REMOVED***]***REMOVED***, 
+          {tag: "button", attrs: {type:"button"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-twitter"***REMOVED******REMOVED***]***REMOVED***, 
+          
+          {tag: "div", attrs: {class:"or-email"***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Or  via  email"]***REMOVED***]***REMOVED***, 
+          {tag: "form", attrs: {***REMOVED***, children: [
+            {tag: "input", attrs: {type:"text", class:"user-email", id:"email", placeholder:"Email", autocomplete:"off"***REMOVED******REMOVED***, 
+            {tag: "input", attrs: {type:"password", class:"user-pasword", id:"password", placeholder:"Password", autocomplete:"off"***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
+            {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
+            {tag: "input", attrs: {type:"submit", value:"Đăng ký"***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***
+***REMOVED***
+***REMOVED***;
+
+module.exports = Login;
+***REMOVED***,{***REMOVED***],4:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 
 var Menu = function(ctrl){
@@ -90,26 +121,51 @@ var Menu = function(ctrl){
 
 
 module.exports = Menu;
-***REMOVED***,{"../core/_fn.msx":5***REMOVED***],4:[function(require,module,exports){
+***REMOVED***,{"../core/_fn.msx":7***REMOVED***],5:[function(require,module,exports){
+var data = require('../core/_data.msx');
+
 var Side = function(ctrl){
-    return {tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
+    return [{tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
         {tag: "div", attrs: {className:"login"***REMOVED***, children: [
-            {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
-                {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " / ", {tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
-                {tag: "a", attrs: {href:"#", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
-                {tag: "a", attrs: {href:"#", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
-          ***REMOVED******REMOVED***
+            (data.user !== undefined)?(
+                {tag: "div", attrs: {***REMOVED***, children: [
+                    data.user.fullName, 
+                    {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                    {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"***REMOVED******REMOVED***, 
+                    {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                    {tag: "a", attrs: {href:"/signOut"***REMOVED***, children: ["Logout"]***REMOVED***, 
+                    {tag: "br", attrs: {***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+            ):(
+                {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
+                    {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " / ", {tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
+                    {tag: "a", attrs: {href:"/authenticate/facebook", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
+                    {tag: "a", attrs: {href:"/authenticate/google", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
+              ***REMOVED******REMOVED***
+            )
+            
       ***REMOVED******REMOVED***, 
         {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
         
         {tag: "div", attrs: {className:"hot"***REMOVED***
             
       ***REMOVED***
-  ***REMOVED******REMOVED***
-***REMOVED***
+  ***REMOVED******REMOVED***,
+    
+  ***REMOVED***
+***REMOVED***;
 
 module.exports = Side;
-***REMOVED***,{***REMOVED***],5:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":6***REMOVED***],6:[function(require,module,exports){
+var Data = {***REMOVED***;
+
+if(Window.user !== undefined) {
+  Data.user = Window.user;
+  console.log(Data.user)
+***REMOVED***
+
+module.exports = Data;
+***REMOVED***,{***REMOVED***],7:[function(require,module,exports){
 var fn ={***REMOVED***;
 
 
@@ -198,7 +254,7 @@ fn.requestWithFeedback = function(args, bind, fn) {
 ***REMOVED***;
 
 module.exports = fn;
-***REMOVED***,{***REMOVED***],6:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],8:[function(require,module,exports){
 "use strict";
 
 window.mobilecheck = function() {
@@ -227,12 +283,13 @@ window.Main = require('./_main.msx');
 
 
 
-***REMOVED***,{"./_main.msx":1***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{"./_main.msx":1***REMOVED***],9:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
+var Login = require('../component/_login.msx');
 
 
 Home.controller = function(){
@@ -266,9 +323,10 @@ Home.view = function(ctrl){
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
     
-  ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***,
+    Login(ctrl)
 ***REMOVED***
 ***REMOVED***;
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":2,"../component/_menu.msx":3,"../component/_side.msx":4,"../core/_fn.msx":5***REMOVED***]***REMOVED***,{***REMOVED***,[6])
+***REMOVED***,{"../component/_content.msx":2,"../component/_login.msx":3,"../component/_menu.msx":4,"../component/_side.msx":5,"../core/_fn.msx":7***REMOVED***]***REMOVED***,{***REMOVED***,[8])
