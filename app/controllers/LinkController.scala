@@ -9,8 +9,8 @@ import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import models.Image
-import models.services.ImageService
-import play.api.libs.json.Json
+import models.services.{ ImageService, LinkService, PostService, SetupService ***REMOVED***
+import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
 //import com.sksamuel.scrimage.nio.JpegWriter
@@ -33,45 +33,23 @@ import scala.concurrent.Future
  * @param socialProviderRegistry The social provider registry.
  * @param webJarAssets The webjar assets implementation.
  */
-class FileController @Inject() (
+class LinkController @Inject() (
   ws: WSClient,
   val messagesApi: MessagesApi,
   silhouette: Silhouette[DefaultEnv],
-  imageService: ImageService,
+  linkService: LinkService,
   socialProviderRegistry: SocialProviderRegistry,
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
 
-  def getSize = Action(parse.json) { implicit request =>
-    println(request.body)
-    (request.body \ "url").asOpt[String].map { url =>
-      Ok(Json.obj("size" -> getSizeImpl(url)))
-  ***REMOVED***.getOrElse {
-      BadRequest("Missing parameter [url]")
+  def getRealUrl(url: String) = silhouette.SecuredAction.async { implicit request =>
+    linkService.retrieve(url).map { linkOp =>
+      linkOp match {
+        case None => BadRequest
+        case Some(link) => {
+          Redirect(link.url)
+      ***REMOVED***
+    ***REMOVED***
   ***REMOVED***
 ***REMOVED***
-
-  def getSizeImpl(url: String): Long = {
-    run(List(
-      "curl -X HEAD -I  " + url,
-      "grep Content-Length"
-    )).toString.filter(_.isDigit).toLong
-***REMOVED***
-
-  def run(cmd: List[String]) = {
-    try {
-      commandBuilder(cmd.tail.reverse, cmd.head) !!
-      //            "find . -name *.txt" #| "grep ftp" !!
-  ***REMOVED*** catch {
-      case e: Exception => Stream()
-  ***REMOVED***
-***REMOVED***
-
-  def commandBuilder(cmd: List[String], result: ProcessBuilder): ProcessBuilder = {
-    if (cmd.isEmpty)
-      result
-    else
-      commandBuilder(cmd.tail, result #| cmd.head)
-***REMOVED***
-
 ***REMOVED***

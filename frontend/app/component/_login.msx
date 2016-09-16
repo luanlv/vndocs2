@@ -3,13 +3,19 @@ var data = require('../core/_data.msx');
 
 var Login = function(ctrl){
   return [
-    <div className="login-popup" style={(!data.showLogin)?"display: none":""***REMOVED***>
+    <div className="login-popup" style={(!data.showSignin)?"display: none":""***REMOVED***>
       <div class="wrapper">
         <div class="wrapper-content">
           <form action="/signIn" method="POST">
-            <input type="text" class="user-email" id="email" name="email" />
-            <input type="password" class="user-password" id="password" name="password" />
-            <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true"/>
+            <div>
+              <input type="text" class="user-email" id="email" name="email" />
+            </div>
+            <div>
+              <input type="password" class="user-password" id="password" name="password" />
+            </div>
+            <div>
+              <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true"/>
+            </div>
             <input type="hidden" name="csrfToken" value={data.token***REMOVED***/>
           
             <div class="logout">

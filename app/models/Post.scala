@@ -17,7 +17,7 @@ case class Post(
   categories: List[String],
   description: String,
   content: String,
-  link: List[Link],
+  link: List[LinkInfo],
   cover: Option[Cover],
   nView: Int = 0,
   nLike: Int = 0,
@@ -28,12 +28,12 @@ case class Post(
 
 object Post {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
-  implicit val LinkFormat = Json.format[Link]
+  implicit val LinkinfoFormat = Json.format[LinkInfo]
   implicit val coverFormat = Json.format[Cover]
   implicit val PostFormat = Json.format[Post]
 ***REMOVED***
 
-case class Link(
+case class LinkInfo(
   url: String,
   shortUrl: Option[String],
   filename: String,
@@ -42,10 +42,10 @@ case class Link(
 
 ***REMOVED***
 
-object Link {
+object LinkInfo {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
-  implicit val LinkFormat = Json.format[Link]
+  implicit val LinkinfoFormat = Json.format[LinkInfo]
 ***REMOVED***
 
 case class Cover(

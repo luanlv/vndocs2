@@ -74,13 +74,19 @@ var data = require('../core/_data.msx');
 
 var Login = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"login-popup", style:(!data.showLogin)?"display: none":""***REMOVED***, children: [
+    {tag: "div", attrs: {className:"login-popup", style:(!data.showSignin)?"display: none":""***REMOVED***, children: [
       {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
           {tag: "form", attrs: {action:"/signIn", method:"POST"***REMOVED***, children: [
-            {tag: "input", attrs: {type:"text", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***, 
-            {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"***REMOVED******REMOVED***, 
-            {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {***REMOVED***, children: [
+              {tag: "input", attrs: {type:"text", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {***REMOVED***, children: [
+              {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {***REMOVED***, children: [
+              {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***, 
             {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
           
             {tag: "div", attrs: {class:"logout"***REMOVED***, children: [

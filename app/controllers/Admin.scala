@@ -9,8 +9,9 @@ import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import com.sksamuel.scrimage.nio.JpegWriter
+import models.Link
 import models._
-import models.services.{ CategoryService, ImageService, PostService, SetupService ***REMOVED***
+import models.services._
 import org.apache.commons.io.FilenameUtils
 import org.joda.time.DateTime
 import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
@@ -44,6 +45,7 @@ class Admin @Inject() (
   postService: PostService,
   categoryService: CategoryService,
   setupService: SetupService,
+  linkService: LinkService,
   socialProviderRegistry: SocialProviderRegistry,
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
@@ -59,14 +61,29 @@ class Admin @Inject() (
 ***REMOVED***
 
   def doPost = Action(parse.json) { implicit request =>
+
     request.body.asOpt[JsObject].map { post =>
+      val postID = (post \ "id").get.as[String]
+      val link = (post \ "link").asOpt[List[LinkInfo]].getOrElse(List()).map {
+        el =>
+          {
+            val uuid = UUID.randomUUID().toString
+            val securityLink = models.Link(
+              _id = uuid,
+              url = el.url,
+              postID = postID
+            )
+            linkService.save(securityLink)
+            el.copy(url = uuid)
+        ***REMOVED***
+    ***REMOVED***
       val newPost = Post(
-        _id = (post \ "id").get.as[String],
+        _id = postID,
         title = (post \ "title").get.as[String],
         categories = (post \ "categories").get.as[List[String]],
         description = (post \ "description").get.as[String],
         content = (post \ "content").get.as[String],
-        link = (post \ "link").asOpt[List[Link]].getOrElse(List()),
+        link = link,
         cover = (post \ "cover").asOpt[Cover]
       )
       postService.save(newPost)

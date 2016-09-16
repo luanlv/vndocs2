@@ -588,98 +588,10 @@ body {
       position: relative;
       width: 30%;
       margin: 100px auto;
-      background: #35394a;
-      /* Old browsers */
-      /* FF3.6+ */
-      /* Chrome,Safari4+ */
-      /* Chrome10+,Safari5.1+ */
-      /* Opera 11.10+ */
-      /* IE10+ */
-      background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
-      /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35394a', endColorstr='#1f222e',GradientType=1 );
-      /* IE6-9 fallback on horizontal gradient */
-      padding: 20px 30px; ***REMOVED***
-      .login-popup .wrapper-content button {
-        width: 45%;
-        padding: 11px 0 24px;
-        outline: initial;
-        background-color: #1da1f2;
-        border-radius: 10px;
-        color: #fff;
-        border: 1px solid rgba(46, 46, 47, 0.72); ***REMOVED***
-        .login-popup .wrapper-content button:first-child {
-          background: #45619D; ***REMOVED***
-        .login-popup .wrapper-content button i {
-          position: absolute; ***REMOVED***
-    .login-popup .wrapper .hed-fb {
-      display: inline;
-      position: relative; ***REMOVED***
-    .login-popup .wrapper h3 {
-      padding: 10px 0 0;
-      text-align: center;
-      font-size: .9rem;
-      letter-spacing: .1rem; ***REMOVED***
-  .login-popup .or-email {
-    text-align: center;
-    color: #fff;
-    line-height: 5rem; ***REMOVED***
-    .login-popup .or-email span {
-      font-size: .9rem;
-      letter-spacing: .1rem;
-      font-weight: 400; ***REMOVED***
-  .login-popup form {
-    border: 0;
-    display: block;
-    width: 100%; ***REMOVED***
-  .login-popup input[type="text"], .login-popup input[type="password"] {
-    font-size: 1em;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    padding: 0 5px;
-    outline: none; ***REMOVED***
-  .login-popup .user-name, .login-popup .user-pasword, .login-popup .user-email {
-    border-bottom: 1px solid #4d4d4d; ***REMOVED***
-  .login-popup .user-pasword:hover {
-    background-color: #272a2c; ***REMOVED***
-  .login-popup .user-email:hover {
-    background-color: #272a2c; ***REMOVED***
-  .login-popup input {
-    border: 0;
-    width: 100%;
-    height: 68px;
-    background-color: transparent; ***REMOVED***
-    .login-popup input:focus {
-      outline: initial; ***REMOVED***
-  .login-popup .logout {
-    display: inline-block;
-    width: 30%;
-    text-align: center;
-    background-color: rgba(39, 42, 44, 0.23);
-    padding: 2px;
-    margin: 10px 0;
-    border-radius: 50px;
-    border: 2px solid #DC6180;
-    color: #DC6180; ***REMOVED***
-  .login-popup input[type="submit"] {
-    height: 30px;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 100;
-    letter-spacing: .1rem; ***REMOVED***
-    .login-popup input[type="submit"]:hover {
-      background-color: #1a1c1d; ***REMOVED***
-  .login-popup .forgot-pass {
-    font-size: .9rem;
-    padding: 0 5px 0 5px;
-    color: #606479; ***REMOVED***
-  @media (max-width: 1170px) {
-    .login-popup .wrapper-content {
-      width: 70%; ***REMOVED*** ***REMOVED***
+      background: #0074D9; ***REMOVED***
+      @media (max-width: 1170px) {
+        .login-popup .wrapper-content .wrapper-content {
+          width: 70%; ***REMOVED*** ***REMOVED***
 
 .block {
   margin-top: 15px;

@@ -7,9 +7,9 @@ GET         /identifying                                controllers.ApplicationC
 GET         /                                controllers.ApplicationController.index
 
 
+GET /download/:id controllers.LinkController.getRealUrl(id)
+
 GET /admin  controllers.Admin.index
-
-
 POST  /admin/post controllers.Admin.doPost
 POST  /admin/newCategory controllers.Admin.doCategory
 POST  /admin/menu controllers.Admin.doMenu
