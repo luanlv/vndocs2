@@ -56,8 +56,12 @@ class Admin @Inject() (
    * @return The result to display.
    */
   def index = silhouette.SecuredAction.async { implicit request =>
-
-    Future.successful(Ok(views.html.admin.index("Trang chu")))
+    println("==========================" + request.identity.email)
+    if (request.identity.email.getOrElse("") == "admin@vndocs.com") {
+      Future.successful(Redirect(routes.ApplicationController.index()))
+  ***REMOVED*** else {
+      Future.successful(Ok(views.html.admin.index("Trang chu")))
+  ***REMOVED***
 ***REMOVED***
 
   def doPost = Action(parse.json) { implicit request =>

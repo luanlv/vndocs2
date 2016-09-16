@@ -1,0 +1,13 @@
+var PostView = function(ctrl){
+    return <div className="main mh500">
+      <span id="dle-speedbar"><a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » Gogo Loves English 3: Workbook</span>
+      <hr className="style3"/>
+      <div className="postWr">
+        {ctrl.post.title***REMOVED***
+      </div>
+    </div>
+***REMOVED***;
+
+
+
+module.exports = PostView;

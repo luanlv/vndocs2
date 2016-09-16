@@ -15,11 +15,14 @@ var Content = function(ctrl){
           return <div className="block main-item">
                     <div className="title">
                       <div className="t-left">
-                        <a href="#" className="title">{el.title***REMOVED***</a>
+                        <a href={"/post/" + el._id***REMOVED***
+                         className="title"
+                         config={m.route***REMOVED***
+                        >{el.title***REMOVED***</a>
                       </div>
                       <div className="t-right">
                         <div className="rate-nav">RATING</div>
-                        <div className="rate-num"></div>
+                        <div className="rate-num">0</div>
                       </div>
                     </div>
                     <div className="meta-data">

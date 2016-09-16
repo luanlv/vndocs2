@@ -575,24 +575,6 @@ body {
   color: #FFF;
   transition: all .3s ease; ***REMOVED***
 
-.login-popup {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(90, 90, 90, 0.5); ***REMOVED***
-  .login-popup .wrapper {
-    width: 100%; ***REMOVED***
-    .login-popup .wrapper-content {
-      position: relative;
-      width: 30%;
-      margin: 100px auto;
-      background: #0074D9; ***REMOVED***
-      @media (max-width: 1170px) {
-        .login-popup .wrapper-content .wrapper-content {
-          width: 70%; ***REMOVED*** ***REMOVED***
-
 .block {
   margin-top: 15px;
   min-height: 230px;
@@ -659,6 +641,26 @@ body {
       border-left: 1px solid #d2e5f3;
       border-right: 1px solid #d2e5f3;
       box-shadow: inset 0px -3px 7px 0px rgba(43, 38, 43, 0.1); ***REMOVED*** ***REMOVED***
+
+.main-item .title {
+  position: relative; ***REMOVED***
+  .main-item .title .t-left {
+    padding-right: 70px; ***REMOVED***
+  .main-item .title .t-right {
+    border-radius: 10px 10px 0 0;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    text-align: center; ***REMOVED***
+    .main-item .title .t-right .rate-nav {
+      background-color: #FF851B;
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      font-size: 12px; ***REMOVED***
+    .main-item .title .t-right .rate-num {
+      color: #FF851B; ***REMOVED***
 
 hr.style1 {
   border-top: 1px solid #ddd; ***REMOVED***
@@ -782,3 +784,26 @@ hr.style18:before {
   border-color: #8c8b8b;
   border-width: 0 0 1px 0;
   border-radius: 20px; ***REMOVED***
+
+.login-popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(90, 90, 90, 0.8); ***REMOVED***
+  .login-popup .wrapper {
+    width: 100%; ***REMOVED***
+    .login-popup .wrapper-content {
+      position: relative;
+      width: 450px;
+      margin: 100px auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px; ***REMOVED***
+      @media (max-width: 400px) {
+        .login-popup .wrapper-content .wrapper-content {
+          width: 95%; ***REMOVED*** ***REMOVED***
+    .login-popup .wrapper label {
+      width: 150px !important; ***REMOVED***

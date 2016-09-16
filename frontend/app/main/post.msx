@@ -1,0 +1,52 @@
+var Post = {***REMOVED***;
+var Menu = require('../component/_menu.msx');
+var fn = require('../core/_fn.msx');
+var PostView = require('../component/_post.msx');
+var Side = require('../component/_side.msx');
+var Login = require('../component/_login.msx');
+
+
+Post.controller = function(){
+  var ctrl = this;
+  ctrl.setup = function(){
+    m.redraw();
+***REMOVED***;
+  ctrl.postID =  m.route.param("postID");
+  console.log(ctrl.postID);
+  if(Window.post !== undefined){
+    ctrl.post = Window.post;
+***REMOVED*** else {
+    ctrl.post = {***REMOVED***
+***REMOVED***
+  // ctrl.post = m.prop([]);
+  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+***REMOVED***;
+
+Post.view = function(ctrl){
+  return [
+    <div className="headWr ">
+      head
+    </div>,
+    <div className="container mh1000">
+            <span className="menu-icon"
+                  onclick={function(){
+                    var el = document.querySelectorAll('.menu')[0];
+                    var el2 = document.querySelectorAll('.content')[0];
+                    fn.toggleClass(el, "menu-active");
+                    fn.toggleClass(el2, "menu-active");
+                ***REMOVED******REMOVED***
+            >Menu</span>
+      <div className="bodyWr">
+        {Menu(ctrl)***REMOVED***
+        <div className="content mh1000 ">
+          {PostView(ctrl)***REMOVED***
+          {Side(ctrl)***REMOVED***
+        </div>
+      </div>
+    
+    </div>,
+    Login(ctrl)
+***REMOVED***
+***REMOVED***;
+
+module.exports =  Post;

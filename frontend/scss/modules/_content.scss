@@ -88,3 +88,33 @@
 ***REMOVED***
   padding: 10px 15px 0 15px;
 ***REMOVED***
+
+.main-item {
+  .title {
+    position: relative;
+
+    .t-left {
+      padding-right: 70px;
+  ***REMOVED***
+    .t-right {
+      border-radius: 10px 10px 0 0;
+      border: 1px solid rgba(100, 100, 100, 0.3);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      text-align: center;
+      .rate-nav{
+        background-color: $orange;
+        color: $white;
+        border-radius: 10px 10px 0 0;
+        font-size: 12px;
+    ***REMOVED***
+      .rate-num {
+        color: $orange;
+    ***REMOVED***
+  ***REMOVED***
+***REMOVED***
+
+
+***REMOVED***

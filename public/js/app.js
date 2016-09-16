@@ -3,6 +3,7 @@ var Main = Main || {***REMOVED***;
 var fn = require('./core/_fn.msx');
 var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
+Main.Post = require('./main/post.msx');
 
 data.token = $(document.getElementsByName("csrfToken")).val();
 // alert($(token).val());
@@ -13,13 +14,14 @@ $(document).ajaxSend(function(elm, xhr, s){
 ***REMOVED***);
 
 m.route(document.querySelector('#app'), "/", {
-  "/": Main.Home
+  "/": Main.Home,
+  "/post/:postID": Main.Post
 ***REMOVED***);
 
 
 module.exports = Main;
 
-***REMOVED***,{"./core/_data.msx":6,"./core/_fn.msx":7,"./main/home.msx":9***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./core/_data.msx":7,"./core/_fn.msx":8,"./main/home.msx":10,"./main/post.msx":11***REMOVED***],2:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
         {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
@@ -37,11 +39,14 @@ var Content = function(ctrl){
           return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
                     {tag: "div", attrs: {className:"title"***REMOVED***, children: [
                       {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-                        {tag: "a", attrs: {href:"#", className:"title"***REMOVED***, children: [el.title]***REMOVED***
+                        {tag: "a", attrs: {href:"/post/" + el._id, 
+                         className:"title", 
+                         config:m.route
+                      ***REMOVED***, children: [el.title]***REMOVED***
                     ***REMOVED******REMOVED***, 
                       {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
                         {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                        {tag: "div", attrs: {className:"rate-num"***REMOVED******REMOVED***
+                        {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
                     ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***, 
                     {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
@@ -79,12 +84,15 @@ var Login = function(ctrl){
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
           {tag: "form", attrs: {action:"/signIn", method:"POST"***REMOVED***, children: [
             {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "input", attrs: {type:"text", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***
+              {tag: "label", attrs: {htmlFor:"email"***REMOVED***, children: ["Email : "]***REMOVED***, 
+              {tag: "input", attrs: {type:"email", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {***REMOVED***, children: [
+              {tag: "label", attrs: {htmlFor:"password"***REMOVED***, children: ["Password : "]***REMOVED***, 
               {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {***REMOVED***, children: [
+              {tag: "label", attrs: {htmlFor:"rememberMe"***REMOVED***, children: ["Remember me"]***REMOVED***, 
               {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
@@ -138,12 +146,44 @@ var Login = function(ctrl){
 ***REMOVED***;
 
 module.exports = Login;
-***REMOVED***,{"../core/_data.msx":6***REMOVED***],4:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":7***REMOVED***],4:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 
 var Menu = function(ctrl){
     return [
         {tag: "div", attrs: {className:"menu"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"login"***REMOVED***, children: [
+                (data.user !== undefined)?(
+                    {tag: "div", attrs: {***REMOVED***, children: [
+                        data.user.fullName, 
+                        {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                        {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"***REMOVED******REMOVED***, 
+                        {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                        {tag: "a", attrs: {href:"/signOut"***REMOVED***, children: ["Logout"]***REMOVED***, 
+                        {tag: "br", attrs: {***REMOVED******REMOVED***
+                  ***REMOVED******REMOVED***
+                ):(
+                    {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
+                        {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"#", 
+                                onclick:function(){
+                                    data.showSignin = true;
+                                    data.showSignup = false;
+                              ***REMOVED***
+                      ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " /", 
+                            {tag: "a", attrs: {href:"#", 
+                               onclick:function(){
+                                   data.showSignin = false;
+                                   data.showSignup = true;
+                             ***REMOVED***
+                          ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
+                        {tag: "a", attrs: {href:"/authenticate/facebook", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
+                        {tag: "a", attrs: {href:"/authenticate/google", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
+                  ***REMOVED******REMOVED***
+                )
+    
+          ***REMOVED******REMOVED***, 
+            {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
             fn.runCreateMenu(JSON.parse(Window.menu), 1)
       ***REMOVED******REMOVED***
   ***REMOVED***;
@@ -153,42 +193,26 @@ var Menu = function(ctrl){
 
 
 module.exports = Menu;
-***REMOVED***,{"../core/_fn.msx":7***REMOVED***],5:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":7,"../core/_fn.msx":8***REMOVED***],5:[function(require,module,exports){
+var PostView = function(ctrl){
+    return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
+      {tag: "span", attrs: {id:"dle-speedbar"***REMOVED***, children: [{tag: "a", attrs: {href:"/"***REMOVED***, children: ["Main page"]***REMOVED***, " » ", {tag: "a", attrs: {href:"/coursebooks/"***REMOVED***, children: ["Coursebooks"]***REMOVED***, " » Gogo Loves English 3: Workbook"]***REMOVED***, 
+      {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+      {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
+        ctrl.post.title
+    ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***
+***REMOVED***;
+
+
+
+module.exports = PostView;
+***REMOVED***,{***REMOVED***],6:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
     return [{tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
-        {tag: "div", attrs: {className:"login"***REMOVED***, children: [
-            (data.user !== undefined)?(
-                {tag: "div", attrs: {***REMOVED***, children: [
-                    data.user.fullName, 
-                    {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                    {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"***REMOVED******REMOVED***, 
-                    {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                    {tag: "a", attrs: {href:"/signOut"***REMOVED***, children: ["Logout"]***REMOVED***, 
-                    {tag: "br", attrs: {***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
-            ):(
-                {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
-                    {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"#", 
-                        onclick:function(){
-                            data.showSignin = true;
-                            data.showSignup = false;
-                      ***REMOVED***
-                  ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " /", 
-                    {tag: "a", attrs: {href:"#", 
-                       onclick:function(){
-                           data.showSignin = false;
-                           data.showSignup = true;
-                     ***REMOVED***
-                  ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
-                    {tag: "a", attrs: {href:"/authenticate/facebook", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
-                    {tag: "a", attrs: {href:"/authenticate/google", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
-              ***REMOVED******REMOVED***
-            )
-            
-      ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
+        
         
         {tag: "div", attrs: {className:"hot"***REMOVED***
             
@@ -199,7 +223,7 @@ var Side = function(ctrl){
 ***REMOVED***;
 
 module.exports = Side;
-***REMOVED***,{"../core/_data.msx":6***REMOVED***],6:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":7***REMOVED***],7:[function(require,module,exports){
 var Data = {***REMOVED***;
 
 Data.showSignin = false;
@@ -211,7 +235,7 @@ if(Window.user !== undefined) {
 ***REMOVED***
 
 module.exports = Data;
-***REMOVED***,{***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],8:[function(require,module,exports){
 var fn ={***REMOVED***;
 
 
@@ -300,7 +324,7 @@ fn.requestWithFeedback = function(args, bind, fn) {
 ***REMOVED***;
 
 module.exports = fn;
-***REMOVED***,{***REMOVED***],8:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],9:[function(require,module,exports){
 "use strict";
 
 window.mobilecheck = function() {
@@ -329,7 +353,7 @@ window.Main = require('./_main.msx');
 
 
 
-***REMOVED***,{"./_main.msx":1***REMOVED***],9:[function(require,module,exports){
+***REMOVED***,{"./_main.msx":1***REMOVED***],10:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -375,4 +399,57 @@ Home.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":2,"../component/_login.msx":3,"../component/_menu.msx":4,"../component/_side.msx":5,"../core/_fn.msx":7***REMOVED***]***REMOVED***,{***REMOVED***,[8])
+***REMOVED***,{"../component/_content.msx":2,"../component/_login.msx":3,"../component/_menu.msx":4,"../component/_side.msx":6,"../core/_fn.msx":8***REMOVED***],11:[function(require,module,exports){
+var Post = {***REMOVED***;
+var Menu = require('../component/_menu.msx');
+var fn = require('../core/_fn.msx');
+var PostView = require('../component/_post.msx');
+var Side = require('../component/_side.msx');
+var Login = require('../component/_login.msx');
+
+
+Post.controller = function(){
+  var ctrl = this;
+  ctrl.setup = function(){
+    m.redraw();
+***REMOVED***;
+  ctrl.postID =  m.route.param("postID");
+  console.log(ctrl.postID);
+  if(Window.post !== undefined){
+    ctrl.post = Window.post;
+***REMOVED*** else {
+    ctrl.post = {***REMOVED***
+***REMOVED***
+  // ctrl.post = m.prop([]);
+  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+***REMOVED***;
+
+Post.view = function(ctrl){
+  return [
+    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+      "head"
+  ***REMOVED******REMOVED***,
+    {tag: "div", attrs: {className:"container mh1000"***REMOVED***, children: [
+            {tag: "span", attrs: {className:"menu-icon", 
+                  onclick:function(){
+                    var el = document.querySelectorAll('.menu')[0];
+                    var el2 = document.querySelectorAll('.content')[0];
+                    fn.toggleClass(el, "menu-active");
+                    fn.toggleClass(el2, "menu-active");
+                ***REMOVED***
+          ***REMOVED***, children: ["Menu"]***REMOVED***, 
+      {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
+        Menu(ctrl), 
+        {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
+          PostView(ctrl), 
+          Side(ctrl)
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+    
+  ***REMOVED******REMOVED***,
+    Login(ctrl)
+***REMOVED***
+***REMOVED***;
+
+module.exports =  Post;
+***REMOVED***,{"../component/_login.msx":3,"../component/_menu.msx":4,"../component/_post.msx":5,"../component/_side.msx":6,"../core/_fn.msx":8***REMOVED***]***REMOVED***,{***REMOVED***,[9])

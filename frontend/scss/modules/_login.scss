@@ -1,0 +1,30 @@
+.login-popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(90, 90, 90, 0.8);
+  .wrapper {
+    width: 100%;
+    &-content {
+      position: relative;
+      width: 450px;
+      margin: 100px auto;
+      background: $white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      @media (max-width: 400px) {
+        .wrapper-content {
+          width: 95%;
+      ***REMOVED***
+    ***REMOVED***
+
+
+  ***REMOVED***
+    label {
+      width: 150px !important;
+  ***REMOVED***
+***REMOVED***
+***REMOVED***

@@ -1,8 +1,40 @@
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 
 var Menu = function(ctrl){
     return [
         <div className="menu">
+            <div className="login">
+                {(data.user !== undefined)?(
+                    <div>
+                        {data.user.fullName***REMOVED***
+                        <br/>
+                        <img src={data.user.avatarURL***REMOVED*** alt="avatar"/>
+                        <br/>
+                        <a href="/signOut">Logout</a>
+                        <br/>
+                    </div>
+                ):(
+                    <div class="login-box">
+                        <div><a href="#"
+                                onclick={function(){
+                                    data.showSignin = true;
+                                    data.showSignup = false;
+                              ***REMOVED******REMOVED***
+                        ><span>Đăng nhập</span></a> /
+                            <a href="#"
+                               onclick={function(){
+                                   data.showSignin = false;
+                                   data.showSignup = true;
+                             ***REMOVED******REMOVED***
+                            ><span>Đăng ký</span></a></div>
+                        <a href="/authenticate/facebook" class="social-button" id="facebook-connect"> <span> Facebook</span></a>
+                        <a href="/authenticate/google" class="social-button" id="google-connect"> <span> Google</span></a>
+                    </div>
+                )***REMOVED***
+    
+            </div>
+            <hr className="style1"/>
             {fn.runCreateMenu(JSON.parse(Window.menu), 1)***REMOVED***
         </div>
   ***REMOVED***;

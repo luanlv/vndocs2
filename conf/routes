@@ -6,6 +6,8 @@
 GET         /identifying                                controllers.ApplicationController.indexLogged
 GET         /                                controllers.ApplicationController.index
 
+GET /post/:postID     controllers.PostController.indexLogged(postID: String)
+GET /post/:postID     controllers.PostController.index(postID: String)
 
 GET /download/:id controllers.LinkController.getRealUrl(id)
 

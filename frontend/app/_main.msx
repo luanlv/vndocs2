@@ -2,6 +2,7 @@ var Main = Main || {***REMOVED***;
 var fn = require('./core/_fn.msx');
 var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
+Main.Post = require('./main/post.msx');
 
 data.token = $(document.getElementsByName("csrfToken")).val();
 // alert($(token).val());
@@ -12,7 +13,8 @@ $(document).ajaxSend(function(elm, xhr, s){
 ***REMOVED***);
 
 m.route(document.querySelector('#app'), "/", {
-  "/": Main.Home
+  "/": Main.Home,
+  "/post/:postID": Main.Post
 ***REMOVED***);
 
 

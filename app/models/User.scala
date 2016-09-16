@@ -30,7 +30,8 @@ case class User(
   fullName: Option[String],
   email: Option[String],
   avatarURL: Option[String],
-  activated: Boolean) extends Identity with TemporalModel {
+  activated: Boolean
+) extends Identity with TemporalModel {
   /**
    * Tries to construct a name.
    *
