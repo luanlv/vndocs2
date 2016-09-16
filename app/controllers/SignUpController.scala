@@ -68,6 +68,7 @@ class SignUpController @Inject() (
         userService.retrieve(loginInfo).flatMap {
           case Some(user) =>
             val url = routes.SignInController.view().absoluteURL()
+            println("send email =======================")
             mailerClient.send(Email(
               subject = Messages("email.already.signed.up.subject"),
               from = Messages("email.from"),

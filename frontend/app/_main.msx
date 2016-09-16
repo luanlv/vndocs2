@@ -1,26 +1,19 @@
 var Main = Main || {***REMOVED***;
 var fn = require('./core/_fn.msx');
+var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
 
-
-// Window.menu = m.prop();
-//
-// Window.setup = function(){
-//   m.redraw();
-// ***REMOVED***;
-
-// Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
-
+data.token = $(document.getElementsByName("csrfToken")).val();
+// alert($(token).val());
+$(document).ajaxSend(function(elm, xhr, s){
+  if (s.type == "POST") {
+    xhr.setRequestHeader('Csrf-Token', data.token);
+***REMOVED***
+***REMOVED***);
 
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home
 ***REMOVED***);
-
-
-
-
-
-
 
 
 module.exports = Main;

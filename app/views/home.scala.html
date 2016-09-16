@@ -17,6 +17,8 @@
             Window.posts = @Html(posts);
         </script>
         <div id="app"></div>
+        @helper.CSRF.formField
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="/assets/admin/js/libs/moment/moment.min.js"></script>
         <script src="/assets/lib/mithril.min.js"></script>
         <script src="/assets/js/app.js"></script>

@@ -1,32 +1,25 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")***REMOVED***var f=n[o]={exports:{***REMOVED******REMOVED***;t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)***REMOVED***,f,f.exports,e,t,n,r)***REMOVED***return n[o].exports***REMOVED***var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s***REMOVED***)({1:[function(require,module,exports){
 var Main = Main || {***REMOVED***;
 var fn = require('./core/_fn.msx');
+var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
 
-
-// Window.menu = m.prop();
-//
-// Window.setup = function(){
-//   m.redraw();
-// ***REMOVED***;
-
-// Window.requestMenu = fn.requestWithFeedback({method: "GET", url: "/setup/menu"***REMOVED***, Window.menu, Window.setup);
-
+data.token = $(document.getElementsByName("csrfToken")).val();
+// alert($(token).val());
+$(document).ajaxSend(function(elm, xhr, s){
+  if (s.type == "POST") {
+    xhr.setRequestHeader('Csrf-Token', data.token);
+***REMOVED***
+***REMOVED***);
 
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home
 ***REMOVED***);
 
 
-
-
-
-
-
-
 module.exports = Main;
 
-***REMOVED***,{"./core/_fn.msx":7,"./main/home.msx":9***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./core/_data.msx":6,"./core/_fn.msx":7,"./main/home.msx":9***REMOVED***],2:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
         {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
@@ -76,28 +69,61 @@ var Content = function(ctrl){
 
 module.exports = Content;
 ***REMOVED***,{***REMOVED***],3:[function(require,module,exports){
-
+var data = require('../core/_data.msx');
 
 
 var Login = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"login-popup", style:"display: none"***REMOVED***, children: [
+    {tag: "div", attrs: {className:"login-popup", style:(!data.showLogin)?"display: none":""***REMOVED***, children: [
       {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
-          {tag: "button", attrs: {type:"button"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-facebook"***REMOVED******REMOVED***]***REMOVED***, 
-          {tag: "button", attrs: {type:"button"***REMOVED***, children: [{tag: "i", attrs: {class:"fa fa-twitter"***REMOVED******REMOVED***]***REMOVED***, 
+          {tag: "form", attrs: {action:"/signIn", method:"POST"***REMOVED***, children: [
+            {tag: "input", attrs: {type:"text", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***, 
+            {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"***REMOVED******REMOVED***, 
+            {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"***REMOVED******REMOVED***, 
+            {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
           
-          {tag: "div", attrs: {class:"or-email"***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Or  via  email"]***REMOVED***]***REMOVED***, 
-          {tag: "form", attrs: {***REMOVED***, children: [
-            {tag: "input", attrs: {type:"text", class:"user-email", id:"email", placeholder:"Email", autocomplete:"off"***REMOVED******REMOVED***, 
-            {tag: "input", attrs: {type:"password", class:"user-pasword", id:"password", placeholder:"Password", autocomplete:"off"***REMOVED******REMOVED***
+            {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
+              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
-            {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***
+          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
+          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***,
+    {tag: "div", attrs: {className:"login-popup", style:(!data.showSignup)?"display: none":""***REMOVED***, children: [
+      {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
+        {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
+          
+          {tag: "form", attrs: {action:"/signUp", method:"POST"***REMOVED***, children: [
+            {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
+              
+              {tag: "div", attrs: {class:"form-group  ", id:"firstName_field"***REMOVED***, children: [
+                {tag: "input", attrs: {type:"text", id:"firstName", name:"firstName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"First name"***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***, 
+              
+              {tag: "div", attrs: {class:"form-group  ", id:"lastName_field"***REMOVED***, children: [
+                {tag: "input", attrs: {type:"text", id:"lastName", name:"lastName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Last name"***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***, 
+              
+              {tag: "div", attrs: {class:"form-group  ", id:"email_field"***REMOVED***, children: [
+                {tag: "input", attrs: {type:"text", id:"email", name:"email", value:"", class:"form-control form-control input-lg", placeholder:"Email"***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***, 
+              
+              {tag: "section", attrs: {***REMOVED***, children: [
+                {tag: "div", attrs: {class:"form-group  ", id:"password_field"***REMOVED***, children: [
+                  {tag: "input", attrs: {type:"password", id:"password", name:"password", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Password"***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***, 
+      
+              {tag: "div", attrs: {class:"form-group"***REMOVED***, children: [
+                {tag: "div", attrs: {***REMOVED***, children: [
+                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Sign up"]***REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
-            {tag: "input", attrs: {type:"submit", value:"Đăng ký"***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***, 
+          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
           {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
@@ -106,7 +132,7 @@ var Login = function(ctrl){
 ***REMOVED***;
 
 module.exports = Login;
-***REMOVED***,{***REMOVED***],4:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":6***REMOVED***],4:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 
 var Menu = function(ctrl){
@@ -138,7 +164,18 @@ var Side = function(ctrl){
               ***REMOVED******REMOVED***
             ):(
                 {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
-                    {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " / ", {tag: "a", attrs: {href:""***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
+                    {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"#", 
+                        onclick:function(){
+                            data.showSignin = true;
+                            data.showSignup = false;
+                      ***REMOVED***
+                  ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " /", 
+                    {tag: "a", attrs: {href:"#", 
+                       onclick:function(){
+                           data.showSignin = false;
+                           data.showSignup = true;
+                     ***REMOVED***
+                  ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
                     {tag: "a", attrs: {href:"/authenticate/facebook", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
                     {tag: "a", attrs: {href:"/authenticate/google", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
               ***REMOVED******REMOVED***
@@ -158,6 +195,9 @@ var Side = function(ctrl){
 module.exports = Side;
 ***REMOVED***,{"../core/_data.msx":6***REMOVED***],6:[function(require,module,exports){
 var Data = {***REMOVED***;
+
+Data.showSignin = false;
+Data.showSignup = false;
 
 if(Window.user !== undefined) {
   Data.user = Window.user;

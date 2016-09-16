@@ -62,9 +62,14 @@ class SignInController @Inject() (
    * @return The result to display.
    */
   def submit = silhouette.UnsecuredAction.async { implicit request =>
+    println(" dang nhap =============================")
     SignInForm.form.bindFromRequest.fold(
-      form => Future.successful(BadRequest(views.html.signIn(form, socialProviderRegistry))),
+      form => {
+        println("form loi: " + form.toString)
+        Future.successful(BadRequest(views.html.signIn(form, socialProviderRegistry)))
+    ***REMOVED***,
       data => {
+        println("thong tin: " + data.email + " | " + data.password)
         val credentials = Credentials(data.email, data.password)
         credentialsProvider.authenticate(credentials).flatMap { loginInfo =>
           val result = Redirect(routes.ApplicationController.index())

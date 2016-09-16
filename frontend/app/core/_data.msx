@@ -1,5 +1,8 @@
 var Data = {***REMOVED***;
 
+Data.showSignin = false;
+Data.showSignup = false;
+
 if(Window.user !== undefined) {
   Data.user = Window.user;
   console.log(Data.user)

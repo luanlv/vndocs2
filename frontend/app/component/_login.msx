@@ -1,25 +1,58 @@
-
+var data = require('../core/_data.msx');
 
 
 var Login = function(ctrl){
   return [
-    <div className="login-popup" style="display: none">
+    <div className="login-popup" style={(!data.showLogin)?"display: none":""***REMOVED***>
       <div class="wrapper">
         <div class="wrapper-content">
-          <button type="button"><i class="fa fa-facebook"></i></button>
-          <button type="button"><i class="fa fa-twitter"></i></button>
+          <form action="/signIn" method="POST">
+            <input type="text" class="user-email" id="email" name="email" />
+            <input type="password" class="user-password" id="password" name="password" />
+            <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true"/>
+            <input type="hidden" name="csrfToken" value={data.token***REMOVED***/>
           
-          <div class="or-email"><span>Or  via  email</span></div>
-          <form>
-            <input type="text" class="user-email" id="email" placeholder="Email" autocomplete="off"/>
-            <input type="password" class="user-pasword" id="password" placeholder="Password" autocomplete="off"/>
+            <div class="logout">
+              <input type="submit" value="Đăng nhập"/>
+            </div>
           </form>
-          <div class="logout">
-            <input type="submit" value="Đăng nhập"/>
-          </div>
-          <div class="logout">
-            <input type="submit" value="Đăng ký"/>
-          </div>
+          <a href="#" class="forgot-pass">Đăng ký</a>
+          <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+        </div>
+      </div>
+    </div>,
+    <div className="login-popup" style={(!data.showSignup)?"display: none":""***REMOVED***>
+      <div class="wrapper">
+        <div class="wrapper-content">
+          
+          <form action="/signUp" method="POST">
+            <input type="hidden" name="csrfToken" value={data.token***REMOVED*** />
+              
+              <div class="form-group  " id="firstName_field">
+                <input type="text" id="firstName" name="firstName" value="" required="true" class="form-control form-control input-lg" placeholder="First name"/>
+              </div>
+              
+              <div class="form-group  " id="lastName_field">
+                <input type="text" id="lastName" name="lastName" value="" required="true" class="form-control form-control input-lg" placeholder="Last name"/>
+              </div>
+              
+              <div class="form-group  " id="email_field">
+                <input type="text" id="email" name="email" value="" class="form-control form-control input-lg" placeholder="Email"/>
+              </div>
+              
+              <section>
+                <div class="form-group  " id="password_field">
+                  <input type="password" id="password" name="password" value="" required="true" class="form-control form-control input-lg"  placeholder="Password"/>
+                </div>
+              </section>
+      
+              <div class="form-group">
+                <div>
+                  <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Sign up</button>
+                </div>
+              </div>
+          </form>
+          <a href="#" class="forgot-pass">Đăng ký</a>
           <a href="#" class="forgot-pass">Quên mật khẩu?</a>
         </div>
       </div>
