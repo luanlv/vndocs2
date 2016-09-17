@@ -52,17 +52,16 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
    * @return The user for whom the profile was saved.
    */
   def save(profile: CommonSocialProfile) = {
-    println("================ Runnign save with profile: " + profile.loginInfo)
+    println(profile.loginInfo)
     userDAO.find(profile.loginInfo).flatMap {
       case Some(user) => // Update user with profile
-        println("======OLD avatar: " + user.avatarURL)
-        println("======NEW avatar: " + profile.avatarURL)
+        println(user.services)
         userDAO.updateUser(user.copy(
           firstName = profile.firstName,
           lastName = profile.lastName,
           fullName = profile.fullName,
-          email = profile.email,
-          avatarURL = profile.avatarURL
+          email = profile.email
+        //          avatarURL = profile.avatarURL
         ))
       case None => // Insert a new user
         val uuid = UUID.randomUUID();

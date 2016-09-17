@@ -93,6 +93,10 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
       data
   ***REMOVED***
 ***REMOVED***
+  //
+  //  def removeUser(loginInfo) = {
+  //
+  //***REMOVED***
 
   def updated(data: JsObject) = {
     data.validate((__ \ '$set).json.update(

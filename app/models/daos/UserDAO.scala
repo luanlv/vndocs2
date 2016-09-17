@@ -6,6 +6,7 @@ import com.mohiva.play.silhouette.api.LoginInfo
 import models.User
 
 import scala.concurrent.Future
+import scala.util.Try
 
 /**
  * Give access to the user object.
@@ -37,4 +38,6 @@ trait UserDAO {
   def save(user: User): Future[User]
 
   def updateUser(user: User): Future[User]
+
+  def remove(loginInfo: LoginInfo): Future[Try[Boolean]]
 ***REMOVED***

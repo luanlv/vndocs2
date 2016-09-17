@@ -2,7 +2,7 @@ package controllers
 
 import java.io.File
 import java.util.UUID
-import javax.inject.Inject
+import javax.inject.{ Inject, Singleton ***REMOVED***
 
 import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
@@ -15,7 +15,7 @@ import models.services._
 import org.apache.commons.io.FilenameUtils
 import org.joda.time.DateTime
 import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
-import utils.silhouette.MyEnv
+import utils.silhouette.{ AuthController, MyEnv, WithService ***REMOVED***
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
 //import com.sksamuel.scrimage.nio.JpegWriter
@@ -37,25 +37,23 @@ import scala.concurrent.Future
  * @param socialProviderRegistry The social provider registry.
  * @param webJarAssets The webjar assets implementation.
  */
+@Singleton
 class Admin @Inject() (
-  ws: WSClient,
+  val silhouette: Silhouette[MyEnv],
   val messagesApi: MessagesApi,
-  silhouette: Silhouette[MyEnv],
   imageService: ImageService,
   postService: PostService,
   categoryService: CategoryService,
   setupService: SetupService,
   linkService: LinkService,
-  socialProviderRegistry: SocialProviderRegistry,
-  implicit val webJarAssets: WebJarAssets)
-  extends Controller with I18nSupport {
+  socialProviderRegistry: SocialProviderRegistry) extends AuthController {
 
   /**
    * Handles the index action.
    *
    * @return The result to display.
    */
-  def index = silhouette.SecuredAction.async { implicit request =>
+  def index = silhouette.SecuredAction(WithService("master")).async { implicit request =>
     println("==========================" + request.identity.email)
     if (request.identity.email.getOrElse("") == "admin@vndocs.com") {
       Future.successful(Redirect(routes.ApplicationController.index()))

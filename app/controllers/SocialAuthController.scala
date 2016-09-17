@@ -53,7 +53,7 @@ class SocialAuthController @Inject() (
             result <- silhouette.env.authenticatorService.embed(value, Redirect(routes.ApplicationController.index()))
         ***REMOVED*** yield {
             //            println("Thong tin")
-            //            println(profile)
+            println(profile)
             //            println(user)
             silhouette.env.eventBus.publish(LoginEvent(user, request))
             result

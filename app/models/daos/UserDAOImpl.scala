@@ -52,6 +52,11 @@ class UserDAOImpl @Inject() (repository: UserRepository) extends UserDAO {
     repository.updateUser(user.userID.toString, Json.toJson(user).asOpt[JsObject].getOrElse(Json.obj()))
     Future.successful(user)
 ***REMOVED***
+
+  def remove(loginInfo: LoginInfo) = {
+    repository.remove(Json.obj("loginInfo" -> loginInfo))
+***REMOVED***
+
 ***REMOVED***
 
 /**

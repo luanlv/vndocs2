@@ -221,6 +221,11 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
     new DelegableAuthInfoRepository(passwordInfoDAO, oauth1InfoDAO, oauth2InfoDAO, openIDInfoDAO)
 ***REMOVED***
 
+  //  @Provides
+  //  def provideAuthInfoRepository(passwordInfoDAO: DelegableAuthInfoDAO[PasswordInfo]): AuthInfoRepository = {
+  //    new DelegableAuthInfoRepository(passwordInfoDAO)
+  //***REMOVED***
+
   /**
    * Provides the authenticator service.
    *

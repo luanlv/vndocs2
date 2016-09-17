@@ -29,9 +29,10 @@ case class User(
   lastName: Option[String],
   fullName: Option[String],
   email: Option[String],
+  password: String = "",
   avatarURL: Option[String],
   activated: Boolean,
-  services: List[String] = List()
+  services: List[String] = List("master")
 ) extends Identity with TemporalModel {
   /**
    * Tries to construct a name.
