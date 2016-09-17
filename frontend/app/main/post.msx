@@ -7,7 +7,6 @@ var Login = require('../component/_login.msx');
 
 
 Post.controller = function(){
-  // console.log("post controller");
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
@@ -27,10 +26,16 @@ Post.controller = function(){
     m.redraw();
 ***REMOVED***
   ctrl.setup = function(){
-    console.log("run settup")
     ctrl.post(ctrl.request.data());
-    console.log(ctrl.post());
     m.redraw();
+***REMOVED***
+
+  if (typeof FB !== "undefined") {
+    FB.init({
+      appId      : '695740397243976',
+      xfbml      : true,
+      version    : 'v2.7'
+  ***REMOVED***);
 ***REMOVED***
 ***REMOVED***;
 

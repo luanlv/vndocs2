@@ -7,12 +7,19 @@ var Login = require('../component/_login.msx');
 
 
 Home.controller = function(){
+  
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
 ***REMOVED***;
-  // ctrl.post = m.prop([]);
-  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+  
+  if (typeof FB !== "undefined") {
+    FB.init({
+      appId      : '695740397243976',
+      xfbml      : true,
+      version    : 'v2.7'
+  ***REMOVED***);
+***REMOVED***
 ***REMOVED***;
 
 Home.view = function(ctrl){

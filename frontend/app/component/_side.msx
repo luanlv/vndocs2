@@ -10,6 +10,10 @@ var Side = function(ctrl){
             </form>
         </div>
         <hr className="style1"/>
+        <div style="height: 120px;">
+            <div class="fb-page" data-href="https://www.facebook.com/vndocs/" data-width="190" data-height="450" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/vndocs/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vndocs/" style="display: none">vndocs.com</a></blockquote></div>
+        </div>
+        <hr className="style1"/>
     </div>,
     
   ***REMOVED***

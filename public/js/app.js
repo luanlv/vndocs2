@@ -195,8 +195,6 @@ var Menu = function(ctrl){
 module.exports = Menu;
 ***REMOVED***,{"../core/_data.msx":7,"../core/_fn.msx":8***REMOVED***],5:[function(require,module,exports){
 var PostView = function(ctrl){
-  console.log(ctrl.request.ready())
-  console.log(ctrl.post())
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
          {tag: "div", attrs: {***REMOVED***, children: [
@@ -258,6 +256,10 @@ var Side = function(ctrl){
                     {tag: "input", attrs: {type:"text", class:"search-field", placeholder:"Tìm kiếm..."***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***, 
+        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
+        {tag: "div", attrs: {style:"height: 120px;"***REMOVED***, children: [
+            {tag: "div", attrs: {class:"fb-page", "data-href":"https://www.facebook.com/vndocs/", "data-width":"190", "data-height":"450", "data-small-header":"true", "data-adapt-container-width":"true", "data-hide-cover":"false", "data-show-facepile":"true"***REMOVED***, children: [{tag: "blockquote", attrs: {cite:"https://www.facebook.com/vndocs/", class:"fb-xfbml-parse-ignore"***REMOVED***, children: [{tag: "a", attrs: {href:"https://www.facebook.com/vndocs/", style:"display: none"***REMOVED***, children: ["vndocs.com"]***REMOVED***]***REMOVED***]***REMOVED***
       ***REMOVED******REMOVED***, 
         {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
@@ -406,12 +408,19 @@ var Login = require('../component/_login.msx');
 
 
 Home.controller = function(){
+  
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
 ***REMOVED***;
-  // ctrl.post = m.prop([]);
-  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+  
+  if (typeof FB !== "undefined") {
+    FB.init({
+      appId      : '695740397243976',
+      xfbml      : true,
+      version    : 'v2.7'
+  ***REMOVED***);
+***REMOVED***
 ***REMOVED***;
 
 Home.view = function(ctrl){
@@ -452,7 +461,6 @@ var Login = require('../component/_login.msx');
 
 
 Post.controller = function(){
-  // console.log("post controller");
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
@@ -472,10 +480,16 @@ Post.controller = function(){
     m.redraw();
 ***REMOVED***
   ctrl.setup = function(){
-    console.log("run settup")
     ctrl.post(ctrl.request.data());
-    console.log(ctrl.post());
     m.redraw();
+***REMOVED***
+
+  if (typeof FB !== "undefined") {
+    FB.init({
+      appId      : '695740397243976',
+      xfbml      : true,
+      version    : 'v2.7'
+  ***REMOVED***);
 ***REMOVED***
 ***REMOVED***;
 
