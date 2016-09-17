@@ -205,6 +205,17 @@ var PostView = function(ctrl){
       ***REMOVED******REMOVED***, 
         {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
         {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
+          {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+            
+            {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post.upload]***REMOVED***, 
+            {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+                      ctrl.post.categories.map(function(item){
+                        return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
+                    ***REMOVED***)
+                    ***REMOVED******REMOVED***, 
+            {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post.time).format('L')]***REMOVED***
+        ***REMOVED******REMOVED***, 
+          
           {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
             {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post.cover.id, alt:ctrl.post.cover.alt***REMOVED******REMOVED***]***REMOVED***
         ***REMOVED******REMOVED***, 
@@ -213,6 +224,7 @@ var PostView = function(ctrl){
             {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
+        {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
         {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
           m.trust(marked(ctrl.post.content))
       ***REMOVED******REMOVED***

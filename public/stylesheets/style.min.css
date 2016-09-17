@@ -607,7 +607,7 @@ body {
   .meta-data .category::before {
     content: "Thuộc: "; ***REMOVED***
   .meta-data .time::before {
-    content: "Thời gian: "; ***REMOVED***
+    content: "Ngày đăng: "; ***REMOVED***
   .meta-data .category span::after {
     content: ', '; ***REMOVED***
   .meta-data .category span:last-child::after {
@@ -818,7 +818,7 @@ hr.style18:before {
   margin: 10px; ***REMOVED***
 .postWr h1 {
   color: #0E6AAF;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold; ***REMOVED***
 .postWr .postInfo img {
   float: left; ***REMOVED***
@@ -829,3 +829,147 @@ hr.style18:before {
   float: right; ***REMOVED***
 .postWr .postContent {
   margin-top: 20px; ***REMOVED***
+
+.postContent {
+  /* https://github.com/mrmrs/fluidity */
+  @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+  @import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic); ***REMOVED***
+  @media print {
+    .postContent *,
+    .postContent *:before,
+    .postContent *:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important; ***REMOVED***
+    .postContent a,
+    .postContent a:visited {
+      text-decoration: underline; ***REMOVED***
+    .postContent a[href]:after {
+      content: " (" attr(href) ")"; ***REMOVED***
+    .postContent abbr[title]:after {
+      content: " (" attr(title) ")"; ***REMOVED***
+    .postContent a[href^="#"]:after,
+    .postContent a[href^="javascript:"]:after {
+      content: ""; ***REMOVED***
+    .postContent pre,
+    .postContent blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid; ***REMOVED***
+    .postContent thead {
+      display: table-header-group; ***REMOVED***
+    .postContent tr,
+    .postContent img {
+      page-break-inside: avoid; ***REMOVED***
+    .postContent img {
+      max-width: 100% !important; ***REMOVED***
+    .postContent p,
+    .postContent h2,
+    .postContent h3 {
+      orphans: 3;
+      widows: 3; ***REMOVED***
+    .postContent h2,
+    .postContent h3 {
+      page-break-after: avoid; ***REMOVED*** ***REMOVED***
+  .postContent pre,
+  .postContent code {
+    font-family: Menlo, Monaco, "Courier New", monospace; ***REMOVED***
+  .postContent pre {
+    padding: .5rem;
+    line-height: 1.25;
+    overflow-x: scroll; ***REMOVED***
+  .postContent a,
+  .postContent a:visited {
+    color: #3498db; ***REMOVED***
+  .postContent a:hover,
+  .postContent a:focus,
+  .postContent a:active {
+    color: #2980b9; ***REMOVED***
+  .postContent .modest-no-decoration {
+    text-decoration: none; ***REMOVED***
+  .postContent html {
+    font-size: 12px; ***REMOVED***
+  @media screen and (min-width: 32rem) and (max-width: 48rem) {
+    .postContent html {
+      font-size: 15px; ***REMOVED*** ***REMOVED***
+  @media screen and (min-width: 48rem) {
+    .postContent html {
+      font-size: 16px; ***REMOVED*** ***REMOVED***
+  .postContent body {
+    line-height: 1.85; ***REMOVED***
+  .postContent p,
+  .postContent .modest-p {
+    font-size: 1rem;
+    margin-bottom: 1.3rem; ***REMOVED***
+  .postContent h1,
+  .postContent .modest-h1,
+  .postContent h2,
+  .postContent .modest-h2,
+  .postContent h3,
+  .postContent .modest-h3,
+  .postContent h4,
+  .postContent .modest-h4 {
+    margin: 1.414rem 0 .5rem;
+    font-weight: inherit;
+    line-height: 1.42; ***REMOVED***
+  .postContent h1,
+  .postContent .modest-h1 {
+    margin-top: 0;
+    font-size: 3.998rem; ***REMOVED***
+  .postContent h2,
+  .postContent .modest-h2 {
+    font-size: 2.827rem; ***REMOVED***
+  .postContent h3,
+  .postContent .modest-h3 {
+    font-size: 1.999rem; ***REMOVED***
+  .postContent h4,
+  .postContent .modest-h4 {
+    font-size: 1.414rem; ***REMOVED***
+  .postContent h5,
+  .postContent .modest-h5 {
+    font-size: 1.121rem; ***REMOVED***
+  .postContent h6,
+  .postContent .modest-h6 {
+    font-size: .88rem; ***REMOVED***
+  .postContent small,
+  .postContent .modest-small {
+    font-size: .707em; ***REMOVED***
+  .postContent img,
+  .postContent canvas,
+  .postContent iframe,
+  .postContent video,
+  .postContent svg,
+  .postContent select,
+  .postContent textarea {
+    max-width: 100%; ***REMOVED***
+  .postContent html {
+    font-size: 18px;
+    max-width: 100%; ***REMOVED***
+  .postContent body {
+    color: #444;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 48rem;
+    line-height: 1.45;
+    padding: .25rem; ***REMOVED***
+  .postContent h1,
+  .postContent h2,
+  .postContent h3,
+  .postContent h4,
+  .postContent h5,
+  .postContent h6 {
+    font-family: Arimo, Helvetica, sans-serif; ***REMOVED***
+  .postContent h1,
+  .postContent h2,
+  .postContent h3 {
+    border-bottom: 2px solid #fafafa;
+    margin-bottom: 1.15rem;
+    padding-bottom: .5rem;
+    text-align: center; ***REMOVED***
+  .postContent blockquote {
+    border-left: 8px solid #fafafa;
+    padding: 1rem; ***REMOVED***
+  .postContent pre,
+  .postContent code {
+    background-color: #fafafa; ***REMOVED***

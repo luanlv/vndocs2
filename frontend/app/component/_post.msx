@@ -9,6 +9,17 @@ var PostView = function(ctrl){
         </div>
         <hr className="style3"/>
         <div className="postInfo cf">
+          <div className="meta-data">
+            
+            <span className="upload">{ctrl.post.upload***REMOVED***</span>
+            <span className="category">
+                      {ctrl.post.categories.map(function(item){
+                        return <span>{item***REMOVED***</span>
+                    ***REMOVED***)***REMOVED***
+                      </span>
+            <span className="time">{moment(ctrl.post.time).format('L')***REMOVED***</span>
+          </div>
+          
           <div className="t-left">
             <a href="#"><img src={"/cover/get/" + ctrl.post.cover.id***REMOVED*** alt={ctrl.post.cover.alt***REMOVED***/></a>
           </div>
@@ -17,6 +28,7 @@ var PostView = function(ctrl){
             <div className="rate-num">0</div>
           </div>
         </div>
+        <hr className="style3"/>
         <div className="postContent">
           {m.trust(marked(ctrl.post.content))***REMOVED***
         </div>
