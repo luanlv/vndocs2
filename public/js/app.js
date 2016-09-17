@@ -13,6 +13,11 @@ $(document).ajaxSend(function(elm, xhr, s){
 ***REMOVED***
 ***REMOVED***);
 
+Array.prototype.getItemByParam = function(paramPair) {
+  var key = Object.keys(paramPair)[0];
+  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)***REMOVED***);
+***REMOVED***
+
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post
@@ -194,11 +199,19 @@ var Menu = function(ctrl){
 
 module.exports = Menu;
 ***REMOVED***,{"../core/_data.msx":7,"../core/_fn.msx":8***REMOVED***],5:[function(require,module,exports){
+var fn = require('../core/_fn.msx');
+
 var PostView = function(ctrl){
+    console.log("=======>")
+    console.log(ctrl.post());
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
          {tag: "div", attrs: {***REMOVED***, children: [
-           {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [{tag: "a", attrs: {href:"/"***REMOVED***, children: ["Main page"]***REMOVED***, " » ", {tag: "a", attrs: {href:"/coursebooks/"***REMOVED***, children: ["Coursebooks"]***REMOVED***, " » ", ctrl.post().title]***REMOVED***, 
+           {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [
+             fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().categories[0], [])
+             /*<a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » {ctrl.post().title***REMOVED****/
+         ***REMOVED******REMOVED***, 
+           
            {tag: "br", attrs: {***REMOVED******REMOVED***, 
            {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
            {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
@@ -245,7 +258,7 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-***REMOVED***,{***REMOVED***],6:[function(require,module,exports){
+***REMOVED***,{"../core/_fn.msx":8***REMOVED***],6:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
@@ -366,6 +379,20 @@ fn.requestWithFeedback = function(args, bind, fn) {
         data: data,
         ready: completed
   ***REMOVED***
+***REMOVED***;
+
+fn.buildBreadcrumb = function(urls, category, currentCategory, result){
+    if(currentCategory === "NONE") {
+        result.push({tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: ["Trang chủ"]***REMOVED***);
+        return result;
+  ***REMOVED***
+    var jsonCategory = category.getItemByParam({slug: currentCategory***REMOVED***);
+    console.log(currentCategory)
+    console.log(category);
+    console.log(jsonCategory)
+    console.log(Window.urls[currentCategory])
+    result.push({tag: "a", attrs: {href:Window.urls[currentCategory], config:m.route***REMOVED***, children: [" ", jsonCategory.name, " "]***REMOVED***  );
+    return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 ***REMOVED***;
 
 module.exports = fn;

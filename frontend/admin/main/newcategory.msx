@@ -12,6 +12,7 @@ NewProduct.controller = function(){
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
+  
   ctrl.setup = function(){
     ctrl.categories(ctrl.request.data());
     // ctrl.showImgList = true;

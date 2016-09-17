@@ -85,4 +85,14 @@ fn.requestWithFeedback = function(args, bind, fn) {
   ***REMOVED***
 ***REMOVED***;
 
+fn.buildBreadcrumb = function(urls, category, currentCategory, result){
+    if(currentCategory === "NONE") {
+        result.push(<a href="/" config={m.route***REMOVED***>Trang chủ</a>);
+        return result;
+  ***REMOVED***
+    var jsonCategory = category.getItemByParam({slug: currentCategory***REMOVED***);
+    result.push(<a href={"/category/" + currentCategory***REMOVED*** config={m.route***REMOVED***> {jsonCategory.name***REMOVED*** </a>  );
+    return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
+***REMOVED***;
+
 module.exports = fn;

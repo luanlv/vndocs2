@@ -32,8 +32,10 @@
               ***REMOVED***(document, 'script', 'facebook-jssdk'));
         </script>
         <script >
+            Window.urls = {***REMOVED***;
             Window.menu = @Html(menu);
             Window.categories = @Html(categories);
+            console.log(Window.categories)
             Window.post = @Html(post);
             @user match {
                 case Some(user) => {

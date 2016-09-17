@@ -1,8 +1,16 @@
+var fn = require('../core/_fn.msx');
+
 var PostView = function(ctrl){
+    console.log("=======>")
+    console.log(ctrl.post());
     return <div className="main mh500">
       {ctrl.request.ready()?[
          <div>
-           <span className="breadcrumb"><a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » {ctrl.post().title***REMOVED***</span>
+           <span className="breadcrumb">
+             {fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().categories[0], [])***REMOVED***
+             {/*<a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » {ctrl.post().title***REMOVED****/***REMOVED***
+           </span>
+           
            <br/>
            <hr className="style3"/>
            <div className="postWr">

@@ -773,13 +773,13 @@ var NewProduct = function(ctrl){
                     ***REMOVED***
                   ***REMOVED***, children: [
                       (data().categories === undefined)?[
-                          categories.map(function(el){
+                        ctrl.categories().map(function(el){
                             return {tag: "option", attrs: {
                                 value:el._id
                           ***REMOVED***, children: [" ", el.name, " "]***REMOVED***
                         ***REMOVED***)
                     ***REMOVED***:[
-                        categories.map(function(el){
+                        ctrl.categories().map(function(el){
                           return {tag: "option", attrs: {
                               value:el._id, 
                               selected:
@@ -1491,6 +1491,8 @@ Fn.bindOnce = (function() {
 ***REMOVED***
 ***REMOVED***())
 
+
+
 module.exports = Fn;
 ***REMOVED***,{***REMOVED***],11:[function(require,module,exports){
 var Home = {***REMOVED***;
@@ -1591,6 +1593,7 @@ NewProduct.controller = function(){
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
+  
   ctrl.setup = function(){
     ctrl.categories(ctrl.request.data());
     // ctrl.showImgList = true;
@@ -1639,6 +1642,15 @@ NewProduct.controller = function(){
     ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
+  
+  ctrl.setup = function(){
+    ctrl.categories(ctrl.request.data());
+    // ctrl.showImgList = true;
+    m.redraw();
+***REMOVED***;
+  ctrl.categories = m.prop([]);
+  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
+  
 ***REMOVED***;
 
 

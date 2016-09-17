@@ -106,13 +106,13 @@ var NewProduct = function(ctrl){
                     ***REMOVED******REMOVED***
                     >
                       {(data().categories === undefined)?[
-                          categories.map(function(el){
+                        ctrl.categories().map(function(el){
                             return <option
                                 value={el._id***REMOVED***
                             > {el.name***REMOVED*** </option>
                         ***REMOVED***)
                     ***REMOVED***:[
-                        categories.map(function(el){
+                        ctrl.categories().map(function(el){
                           return <option
                               value={el._id***REMOVED***
                               selected={
