@@ -1,9 +1,25 @@
 var PostView = function(ctrl){
     return <div className="main mh500">
-      <span id="dle-speedbar"><a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » Gogo Loves English 3: Workbook</span>
+      <span className="breadcrumb"><a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » {ctrl.post.title***REMOVED***</span>
+      <br/>
       <hr className="style3"/>
       <div className="postWr">
-        {ctrl.post.title***REMOVED***
+        <div className="postTitle">
+          <h1>{ctrl.post.title***REMOVED***</h1>
+        </div>
+        <hr className="style3"/>
+        <div className="postInfo cf">
+          <div className="t-left">
+            <a href="#"><img src={"/cover/get/" + ctrl.post.cover.id***REMOVED*** alt={ctrl.post.cover.alt***REMOVED***/></a>
+          </div>
+          <div className="t-right">
+            <div className="rate-nav">RATING</div>
+            <div className="rate-num">0</div>
+          </div>
+        </div>
+        <div className="postContent">
+          {m.trust(marked(ctrl.post.content))***REMOVED***
+        </div>
       </div>
     </div>
 ***REMOVED***;

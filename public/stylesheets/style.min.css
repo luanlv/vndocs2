@@ -647,20 +647,23 @@ body {
   .main-item .title .t-left {
     padding-right: 70px; ***REMOVED***
   .main-item .title .t-right {
-    border-radius: 10px 10px 0 0;
-    border: 1px solid rgba(100, 100, 100, 0.3);
     position: absolute;
     top: 0;
-    right: 0;
-    width: 70px;
-    text-align: center; ***REMOVED***
-    .main-item .title .t-right .rate-nav {
-      background-color: #FF851B;
-      color: #fff;
-      border-radius: 10px 10px 0 0;
-      font-size: 12px; ***REMOVED***
-    .main-item .title .t-right .rate-num {
-      color: #FF851B; ***REMOVED***
+    right: 0; ***REMOVED***
+
+.t-right {
+  border-radius: 10px 10px 0 0;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  width: 70px;
+  text-align: center; ***REMOVED***
+  .t-right .rate-nav {
+    background-color: #FF851B;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    font-size: 12px; ***REMOVED***
+  .t-right .rate-num {
+    color: #FF851B;
+    font-size: 22px; ***REMOVED***
 
 hr.style1 {
   border-top: 1px solid #ddd; ***REMOVED***
@@ -807,3 +810,22 @@ hr.style18:before {
           width: 95%; ***REMOVED*** ***REMOVED***
     .login-popup .wrapper label {
       width: 150px !important; ***REMOVED***
+
+.breadcrumb {
+  font-size: 0.9em; ***REMOVED***
+
+.postWr .postTitle {
+  margin: 10px; ***REMOVED***
+.postWr h1 {
+  color: #0E6AAF;
+  font-size: 18px;
+  font-weight: bold; ***REMOVED***
+.postWr .postInfo img {
+  float: left; ***REMOVED***
+.postWr .postInfo .t-left {
+  padding-right: 90px; ***REMOVED***
+.postWr .postInfo .t-right {
+  width: 90px;
+  float: right; ***REMOVED***
+.postWr .postContent {
+  margin-top: 20px; ***REMOVED***

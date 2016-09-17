@@ -59,7 +59,7 @@ var Content = function(ctrl){
                       {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
                   ***REMOVED******REMOVED***, 
                     {tag: "div", attrs: {className:"info"***REMOVED***, children: [
-                      {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/image/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
+                      {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
                       {tag: "p", attrs: {className:"description"***REMOVED***, children: [
                       (window.isMobile)?el.description.slice(0,250):el.description, " ..."
                     ***REMOVED******REMOVED***
@@ -196,10 +196,26 @@ module.exports = Menu;
 ***REMOVED***,{"../core/_data.msx":7,"../core/_fn.msx":8***REMOVED***],5:[function(require,module,exports){
 var PostView = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
-      {tag: "span", attrs: {id:"dle-speedbar"***REMOVED***, children: [{tag: "a", attrs: {href:"/"***REMOVED***, children: ["Main page"]***REMOVED***, " » ", {tag: "a", attrs: {href:"/coursebooks/"***REMOVED***, children: ["Coursebooks"]***REMOVED***, " » Gogo Loves English 3: Workbook"]***REMOVED***, 
+      {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [{tag: "a", attrs: {href:"/"***REMOVED***, children: ["Main page"]***REMOVED***, " » ", {tag: "a", attrs: {href:"/coursebooks/"***REMOVED***, children: ["Coursebooks"]***REMOVED***, " » ", ctrl.post.title]***REMOVED***, 
+      {tag: "br", attrs: {***REMOVED******REMOVED***, 
       {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
       {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
-        ctrl.post.title
+        {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
+          {tag: "h1", attrs: {***REMOVED***, children: [ctrl.post.title]***REMOVED***
+      ***REMOVED******REMOVED***, 
+        {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+        {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
+          {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post.cover.id, alt:ctrl.post.cover.alt***REMOVED******REMOVED***]***REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
+            {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+        ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***, 
+        {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
+          m.trust(marked(ctrl.post.content))
+      ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***
 ***REMOVED***;
@@ -409,14 +425,15 @@ var Login = require('../component/_login.msx');
 
 
 Post.controller = function(){
+  // console.log("post controller");
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
 ***REMOVED***;
   ctrl.postID =  m.route.param("postID");
-  console.log(ctrl.postID);
   if(Window.post !== undefined){
     ctrl.post = Window.post;
+    console.log(ctrl.post);
 ***REMOVED*** else {
     ctrl.post = {***REMOVED***
 ***REMOVED***

@@ -15,7 +15,10 @@ import models.daos.UserDAO
 class PasswordInfoDAO @Inject() (userDAO: UserDAO) extends DelegableAuthInfoDAO[PasswordInfo] {
 
   def add(loginInfo: LoginInfo, authInfo: PasswordInfo): Future[PasswordInfo] =
-    update(loginInfo, authInfo)
+    {
+      println("running password info ==============================")
+      update(loginInfo, authInfo)
+  ***REMOVED***
 
   def find(loginInfo: LoginInfo): Future[Option[PasswordInfo]] =
     userDAO.find(loginInfo).map {

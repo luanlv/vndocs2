@@ -47,7 +47,6 @@ class PostController @Inject() (
   extends AuthController {
 
   def index(postID: String) = UserAwareAction.async { implicit request =>
-    println(" post indexing !!!!!!!!!!!!!")
     val data = for {
       menu <- setupService.retrieve("menu")
       categories <- categoryService.listParent

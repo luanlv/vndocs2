@@ -35,7 +35,7 @@ var Content = function(ctrl){
                       <span className="time">{moment(el.time).format('L')***REMOVED***</span>
                     </div>
                     <div className="info">
-                      <a href="#"><img src={"/image/get/" + el.cover.id***REMOVED*** alt={el.cover.alt***REMOVED***/></a>
+                      <a href="#"><img src={"/cover/get/" + el.cover.id***REMOVED*** alt={el.cover.alt***REMOVED***/></a>
                       <p className="description">
                       {(window.isMobile)?el.description.slice(0,250):el.description***REMOVED*** ...
                       </p>

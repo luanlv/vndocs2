@@ -33,7 +33,7 @@ import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.openid.OpenIdClient
 import play.api.libs.ws.WSClient
 import utils.ErrorHandler
-import utils.silhouette.{ MyEnv ***REMOVED***
+import utils.silhouette.{ MyEnv, PasswordInfoDAO ***REMOVED***
 
 /**
  * The Guice module which wires all Silhouette dependencies.
@@ -67,7 +67,7 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
     bind[Clock].toInstance(Clock())
 
     // Replace this with the bindings to your concrete DAOs
-    bind[DelegableAuthInfoDAO[PasswordInfo]].toInstance(new InMemoryAuthInfoDAO[PasswordInfo])
+    bind[DelegableAuthInfoDAO[PasswordInfo]].to[PasswordInfoDAO]
     bind[DelegableAuthInfoDAO[OAuth1Info]].toInstance(new InMemoryAuthInfoDAO[OAuth1Info])
     bind[DelegableAuthInfoDAO[OAuth2Info]].toInstance(new InMemoryAuthInfoDAO[OAuth2Info])
     bind[DelegableAuthInfoDAO[OpenIDInfo]].toInstance(new InMemoryAuthInfoDAO[OpenIDInfo])
@@ -322,7 +322,6 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
   def provideCredentialsProvider(
     authInfoRepository: AuthInfoRepository,
     passwordHasherRegistry: PasswordHasherRegistry): CredentialsProvider = {
-
     new CredentialsProvider(authInfoRepository, passwordHasherRegistry)
 ***REMOVED***
 

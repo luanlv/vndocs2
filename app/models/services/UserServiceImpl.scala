@@ -53,6 +53,7 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
    */
   def save(profile: CommonSocialProfile) = {
     println(profile.loginInfo)
+    println("runing save user ===========================")
     userDAO.find(profile.loginInfo).flatMap {
       case Some(user) => // Update user with profile
         println(user.services)

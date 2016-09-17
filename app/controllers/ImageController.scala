@@ -42,9 +42,11 @@ class ImageController @Inject() (
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
 
-  def getImage(id: String) = Action {
+  def getCover(id: String) = Action {
+    val file = new java.io.File("/tmp/" + id + ".jpg")
+    println(file.exists())
     Ok.sendFile(
-      content = new java.io.File("/tmp/" + id + ".jpg"),
+      file,
       inline = true
     )
 ***REMOVED***

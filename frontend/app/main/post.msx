@@ -7,14 +7,15 @@ var Login = require('../component/_login.msx');
 
 
 Post.controller = function(){
+  // console.log("post controller");
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
 ***REMOVED***;
   ctrl.postID =  m.route.param("postID");
-  console.log(ctrl.postID);
   if(Window.post !== undefined){
     ctrl.post = Window.post;
+    console.log(ctrl.post);
 ***REMOVED*** else {
     ctrl.post = {***REMOVED***
 ***REMOVED***

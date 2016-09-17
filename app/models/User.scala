@@ -2,6 +2,7 @@ package models
 
 import java.util.UUID
 
+import com.mohiva.play.silhouette.api.util.PasswordInfo
 import com.mohiva.play.silhouette.api.{ Identity, LoginInfo ***REMOVED***
 import models.daos.TemporalModel
 import org.joda.time.DateTime
@@ -29,7 +30,7 @@ case class User(
   lastName: Option[String],
   fullName: Option[String],
   email: Option[String],
-  password: String = "",
+  password: PasswordInfo = PasswordInfo("", ""),
   avatarURL: Option[String],
   activated: Boolean,
   services: List[String] = List("master")
@@ -52,5 +53,6 @@ case class User(
 object User {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
-  implicit val UserFormat = Json.format[User]
+  implicit val passwordFormat = Json.format[PasswordInfo]
+  implicit val userFormat = Json.format[User]
 ***REMOVED***

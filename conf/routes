@@ -20,7 +20,7 @@ GET /admin/category/listParent controllers.CategoryController.listParent
 
 GET  /posts/:page controllers.PostController.getPost(page: Int)
 
-GET   /image/get/:id  controllers.ImageController.getImage(id: String)
+GET   /cover/get/:id  controllers.ImageController.getCover(id: String)
 GET   /image/list/:page   controllers.Admin.listImage(page: Int)
 POST  /upload/image controllers.Admin.uploadImage
 
