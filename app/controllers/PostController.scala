@@ -60,8 +60,14 @@ class PostController @Inject() (
   ***REMOVED***
 ***REMOVED***
 
-  def getPost(page: Int) = Action.async { implicit request =>
+  def getPosts(page: Int) = Action.async { implicit request =>
     postService.getList(page).map { post =>
+      Ok(Json.toJson(post))
+  ***REMOVED***
+***REMOVED***
+
+  def getPost(postID: String) = Action.async { implicit request =>
+    postService.retrieve(postID).map { post =>
       Ok(Json.toJson(post))
   ***REMOVED***
 ***REMOVED***

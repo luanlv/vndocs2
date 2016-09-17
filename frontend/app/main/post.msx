@@ -13,14 +13,25 @@ Post.controller = function(){
     m.redraw();
 ***REMOVED***;
   ctrl.postID =  m.route.param("postID");
-  if(Window.post !== undefined){
-    ctrl.post = Window.post;
-    console.log(ctrl.post);
+  ctrl.request = {***REMOVED***;
+  ctrl.request.ready = m.prop(false);
+  ctrl.post = m.prop();
+  
+  if(Window.post === undefined) {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID***REMOVED***, ctrl.post, ctrl.setup);
 ***REMOVED*** else {
-    ctrl.post = {***REMOVED***
+    ctrl.request.data = m.prop(Window.post);
+    ctrl.post(ctrl.request.data());
+    Window.post = undefined;
+    ctrl.request.ready = m.prop(true);
+    m.redraw();
 ***REMOVED***
-  // ctrl.post = m.prop([]);
-  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+  ctrl.setup = function(){
+    console.log("run settup")
+    ctrl.post(ctrl.request.data());
+    console.log(ctrl.post());
+    m.redraw();
+***REMOVED***
 ***REMOVED***;
 
 Post.view = function(ctrl){

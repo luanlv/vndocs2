@@ -195,41 +195,53 @@ var Menu = function(ctrl){
 module.exports = Menu;
 ***REMOVED***,{"../core/_data.msx":7,"../core/_fn.msx":8***REMOVED***],5:[function(require,module,exports){
 var PostView = function(ctrl){
+  console.log(ctrl.request.ready())
+  console.log(ctrl.post())
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
-      {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [{tag: "a", attrs: {href:"/"***REMOVED***, children: ["Main page"]***REMOVED***, " » ", {tag: "a", attrs: {href:"/coursebooks/"***REMOVED***, children: ["Coursebooks"]***REMOVED***, " » ", ctrl.post.title]***REMOVED***, 
-      {tag: "br", attrs: {***REMOVED******REMOVED***, 
-      {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-      {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
-        {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
-          {tag: "h1", attrs: {***REMOVED***, children: [ctrl.post.title]***REMOVED***
-      ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
-          {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
-            
-            {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post.upload]***REMOVED***, 
-            {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                      ctrl.post.categories.map(function(item){
+      ctrl.request.ready()?[
+         {tag: "div", attrs: {***REMOVED***, children: [
+           {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [{tag: "a", attrs: {href:"/"***REMOVED***, children: ["Main page"]***REMOVED***, " » ", {tag: "a", attrs: {href:"/coursebooks/"***REMOVED***, children: ["Coursebooks"]***REMOVED***, " » ", ctrl.post().title]***REMOVED***, 
+           {tag: "br", attrs: {***REMOVED******REMOVED***, 
+           {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+           {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
+             {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
+               {tag: "h1", attrs: {***REMOVED***, children: [ctrl.post().title]***REMOVED***
+           ***REMOVED******REMOVED***, 
+             {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+             {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
+               {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+        
+                 {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post().upload]***REMOVED***, 
+                 {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+                      ctrl.post().categories.map(function(item){
                         return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
-            {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post.time).format('L')]***REMOVED***
-        ***REMOVED******REMOVED***, 
-          
-          {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-            {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post.cover.id, alt:ctrl.post.cover.alt***REMOVED******REMOVED***]***REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
-            {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-            {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+                 {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post().time).format('L')]***REMOVED***
+             ***REMOVED******REMOVED***, 
+      
+               {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
+                 {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post().cover.id, alt:ctrl.post().cover.alt***REMOVED******REMOVED***]***REMOVED***
+             ***REMOVED******REMOVED***, 
+               {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
+                 {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
+                 {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+             ***REMOVED******REMOVED***
+           ***REMOVED******REMOVED***, 
+             {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+             {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
+               m.trust(marked(ctrl.post().content))
+           ***REMOVED******REMOVED***
+         ***REMOVED******REMOVED***
+       ***REMOVED******REMOVED***
+    ***REMOVED***:[
+          {tag: "div", attrs: {***REMOVED***, children: [
+            "loading !!"
         ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
-          m.trust(marked(ctrl.post.content))
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
+    ***REMOVED***
+      
   ***REMOVED******REMOVED***
+      
 ***REMOVED***;
 
 
@@ -240,11 +252,14 @@ var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
     return [{tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
-        
-        
-        {tag: "div", attrs: {className:"hot"***REMOVED***
-            
-      ***REMOVED***
+        {tag: "div", attrs: {className:"search cf"***REMOVED***, children: [
+            {tag: "form", attrs: {class:"search-form"***REMOVED***, children: [
+                {tag: "div", attrs: {class:"search-field-container"***REMOVED***, children: [
+                    {tag: "input", attrs: {type:"text", class:"search-field", placeholder:"Tìm kiếm..."***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***, 
+        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
     
   ***REMOVED***
@@ -443,14 +458,25 @@ Post.controller = function(){
     m.redraw();
 ***REMOVED***;
   ctrl.postID =  m.route.param("postID");
-  if(Window.post !== undefined){
-    ctrl.post = Window.post;
-    console.log(ctrl.post);
+  ctrl.request = {***REMOVED***;
+  ctrl.request.ready = m.prop(false);
+  ctrl.post = m.prop();
+  
+  if(Window.post === undefined) {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID***REMOVED***, ctrl.post, ctrl.setup);
 ***REMOVED*** else {
-    ctrl.post = {***REMOVED***
+    ctrl.request.data = m.prop(Window.post);
+    ctrl.post(ctrl.request.data());
+    Window.post = undefined;
+    ctrl.request.ready = m.prop(true);
+    m.redraw();
 ***REMOVED***
-  // ctrl.post = m.prop([]);
-  // ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/1"***REMOVED***, ctrl.post, ctrl.setup);
+  ctrl.setup = function(){
+    console.log("run settup")
+    ctrl.post(ctrl.request.data());
+    console.log(ctrl.post());
+    m.redraw();
+***REMOVED***
 ***REMOVED***;
 
 Post.view = function(ctrl){

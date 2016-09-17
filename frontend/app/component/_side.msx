@@ -2,11 +2,14 @@ var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
     return [<div className="side mh1000">
-        
-        
-        <div className="hot">
-            
+        <div className="search cf">
+            <form class="search-form">
+                <div class="search-field-container">
+                    <input type="text" class="search-field" placeholder="Tìm kiếm..." />
+                </div>
+            </form>
         </div>
+        <hr className="style1"/>
     </div>,
     
   ***REMOVED***
