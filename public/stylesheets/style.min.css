@@ -381,13 +381,21 @@ body {
 
 .headWr {
   background: #f6f8f9;
-  min-height: 60px; ***REMOVED***
+  min-height: 50px; ***REMOVED***
   .headWr img {
     height: 40px;
     width: 200px;
     position: absolute;
     left: 0px;
-    top: 20px; ***REMOVED***
+    top: 13px; ***REMOVED***
+  .headWr span {
+    position: absolute;
+    left: 200px;
+    top: 33px;
+    color: #666;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic; ***REMOVED***
 
 .bodyWr {
   position: relative; ***REMOVED***

@@ -32,6 +32,10 @@ class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
     repository.getList(sort = Json.obj("time" -> -1), page = page, num = 10)
 ***REMOVED***
 
+  def getListByCategory(category: String, page: Int) = {
+    repository.getList(query = Json.obj("categories" -> category), sort = Json.obj("time" -> -1), page = page, num = 10)
+***REMOVED***
+
 ***REMOVED***
 
 /**

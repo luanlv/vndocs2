@@ -66,6 +66,26 @@ class PostController @Inject() (
   ***REMOVED***
 ***REMOVED***
 
+  def postsByCategoryIndex(categorySlug: String) = UserAwareAction.async { implicit request =>
+    val data = for {
+      menu <- setupService.retrieve("menu")
+      categories <- categoryService.listParent
+      post <- postService.getListByCategory(categorySlug, 1)
+  ***REMOVED*** yield (menu, categories, post)
+    data.map { data =>
+      Ok(views.html.post(
+        Json.toJson(data._1.get.value).toString,
+        Json.toJson(data._2).toString,
+        Json.toJson(data._3).toString))
+  ***REMOVED***
+***REMOVED***
+
+  def getPostsByCategory(categorySlug: String, page: Int) = Action.async { implicit request =>
+    postService.getListByCategory(categorySlug, page).map { post =>
+      Ok(Json.toJson(post))
+  ***REMOVED***
+***REMOVED***
+
   def getPost(postID: String) = Action.async { implicit request =>
     postService.retrieve(postID).map { post =>
       Ok(Json.toJson(post))

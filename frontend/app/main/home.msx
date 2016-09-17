@@ -4,6 +4,7 @@ var fn = require('../core/_fn.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
+var Head = require('../component/_head.msx');
 
 
 Home.controller = function(){
@@ -39,11 +40,7 @@ Home.controller = function(){
 Home.view = function(ctrl){
   return [
     <div className="headWr ">
-      <div className="container">
-        <a href="/" config={m.route***REMOVED***>
-          <img src="/assets/images/logo.png" alt="logo Vndocs.com"/>
-        </a>
-      </div>
+      {Head(ctrl)***REMOVED***
     </div>,
     <div className="container containerBor">
             <span className="menu-icon"

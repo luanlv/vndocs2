@@ -73,7 +73,6 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
       ***REMOVED*** else {
           profile.avatarURL.get
       ***REMOVED***
-        println(newAvatar)
         userDAO.save(User(
           userID = uuid,
           loginInfo = profile.loginInfo,

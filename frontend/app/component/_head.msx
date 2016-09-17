@@ -1,0 +1,14 @@
+var data = require('../core/_data.msx');
+
+var Head = function(ctrl){
+  return [
+    <div className="container">
+      <a href="/" config={m.route***REMOVED***>
+        <img src="/assets/images/logo.png" alt="logo Vndocs.com"/>
+      </a>
+      <span>Nơi chia sẻ tài liệu hoàn toàn miễn phí !</span>
+    </div>
+***REMOVED***
+***REMOVED***;
+
+module.exports = Head;

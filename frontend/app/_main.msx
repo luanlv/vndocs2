@@ -2,6 +2,7 @@ var Main = Main || {***REMOVED***;
 var fn = require('./core/_fn.msx');
 var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
+Main.Category = require('./main/category.msx');
 Main.Post = require('./main/post.msx');
 
 data.token = $(document.getElementsByName("csrfToken")).val();
@@ -19,7 +20,8 @@ Array.prototype.getItemByParam = function(paramPair) {
 
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
-  "/post/:postID": Main.Post
+  "/post/:postID": Main.Post,
+  "/category/:categorySlug": Main.Category
 ***REMOVED***);
 
 

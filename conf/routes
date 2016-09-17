@@ -11,6 +11,8 @@ GET /post/:postID     controllers.PostController.index(postID: String)
 GET /post/get/:postID     controllers.PostController.getPost(postID: String)
 GET  /posts/:page controllers.PostController.getPosts(page: Int)
 
+GET /category/:categorySlug     controllers.PostController.postsByCategoryIndex(categorySlug: String)
+GET /category/:categorySlug/:page controllers.PostController.getPostsByCategory(categorySlug: String, page: Int)
 
 GET /download/:id controllers.LinkController.getRealUrl(id)
 
