@@ -672,6 +672,7 @@ body {
 .main-item .title {
   position: relative; ***REMOVED***
   .main-item .title .t-left {
+    word-wrap: break-word;
     padding-right: 70px; ***REMOVED***
   .main-item .title .t-right {
     position: absolute;

@@ -1,48 +1,54 @@
 var Content = function(ctrl){
     return <div className="main mh500">
+      {ctrl.request.ready()?[
         <div className="sort roundbox">
-            <form name="news_set_sort" id="news_set_sort" method="post" action="http://englishtips.org/">Sort by:&nbsp;
-                {/*<img src="Englishtips.org_%20Learning%20English%20Together_files/desc.gif" alt=""/>*/***REMOVED***
-                    <a href="http://englishtips.org/#" onclick="dle_change_sort('date','asc'); return false;">date</a>
-                    <a href="http://englishtips.org/#" onclick="dle_change_sort('rating','desc'); return false;">rating</a>
-                    <a href="http://englishtips.org/#" onclick="dle_change_sort('news_read','desc'); return false;">most visited</a>
-                    <a href="http://englishtips.org/#" onclick="dle_change_sort('comm_num','desc'); return false;">comments</a>
-                    <a href="http://englishtips.org/#" onclick="dle_change_sort('title','desc'); return false;">alphabetically</a>
-            </form>
-        </div>
-        {
-          Window.posts.map(function(el){
-          return <div className="block main-item">
-                    <div className="title">
-                      <div className="t-left">
-                        <a href={"/post/" + el._id***REMOVED***
-                         className="title"
-                         config={m.route***REMOVED***
-                        >{el.title***REMOVED***</a>
-                      </div>
-                      <div className="t-right">
-                        <div className="rate-nav">RATING</div>
-                        <div className="rate-num">0</div>
-                      </div>
-                    </div>
-                    <div className="meta-data">
-                      <span className="upload">{el.upload***REMOVED***</span>
-                      <span className="category">
-                      {el.categories.map(function(item){
+          <form name="news_set_sort" id="news_set_sort" method="post" action="http://englishtips.org/">Sort by:&nbsp;
+            {/*<img src="Englishtips.org_%20Learning%20English%20Together_files/desc.gif" alt=""/>*/***REMOVED***
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('date','asc'); return false;">date</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('rating','desc'); return false;">rating</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('news_read','desc'); return false;">most visited</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('comm_num','desc'); return false;">comments</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('title','desc'); return false;">alphabetically</a>
+          </form>
+        </div>,
+          ctrl.posts().map(function(el) {
+            return <div className="block main-item">
+              <div className="title">
+                <div className="t-left">
+                  <a href={"/post/" + el._id***REMOVED***
+                     className="title"
+                     config={m.route***REMOVED***
+                  >{el.title***REMOVED***</a>
+                </div>
+                <div className="t-right">
+                  <div className="rate-nav">RATING</div>
+                  <div className="rate-num">0</div>
+                </div>
+              </div>
+              <div className="meta-data">
+                <span className="upload">{el.upload***REMOVED***</span>
+                <span className="category">
+                      {el.categories.map(function (item) {
                         return <span>{item***REMOVED***</span>
                     ***REMOVED***)***REMOVED***
                       </span>
-                      <span className="time">{moment(el.time).format('L')***REMOVED***</span>
-                    </div>
-                    <div className="info">
-                      <a href="#"><img src={"/cover/get/" + el.cover.id***REMOVED*** alt={el.cover.alt***REMOVED***/></a>
-                      <p className="description">
-                      {(window.isMobile)?el.description.slice(0,250):el.description***REMOVED*** ...
-                      </p>
-                    </div>
-                  </div>
-          ***REMOVED***)
-      ***REMOVED***
+                <span className="time">{moment(el.time).format('L')***REMOVED***</span>
+              </div>
+              <div className="info">
+                <a href="#"><img src={"/cover/get/" + el.cover.id***REMOVED*** alt={el.cover.alt***REMOVED***/></a>
+                <p className="description">
+                  {(window.isMobile) ? el.description.slice(0, 250) : el.description***REMOVED*** ...
+                </p>
+              </div>
+            </div>
+        ***REMOVED***)
+    ***REMOVED***:[
+          <div>
+            Loading !!
+          </div>
+    ***REMOVED******REMOVED***
+        
+        
     </div>
 ***REMOVED***;
 

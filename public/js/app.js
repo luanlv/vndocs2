@@ -29,48 +29,54 @@ module.exports = Main;
 ***REMOVED***,{"./core/_data.msx":7,"./core/_fn.msx":8,"./main/home.msx":10,"./main/post.msx":11***REMOVED***],2:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
+      ctrl.request.ready()?[
         {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
-            {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: ["Sort by: ", 
-                /*<img src="Englishtips.org_%20Learning%20English%20Together_files/desc.gif" alt=""/>*/
-                    {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["date"]***REMOVED***, 
-                    {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["rating"]***REMOVED***, 
-                    {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["most visited"]***REMOVED***, 
-                    {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["comments"]***REMOVED***, 
-                    {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('title','desc'); return false;"***REMOVED***, children: ["alphabetically"]***REMOVED***
-          ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***, 
-        
-          Window.posts.map(function(el){
-          return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
-                    {tag: "div", attrs: {className:"title"***REMOVED***, children: [
-                      {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-                        {tag: "a", attrs: {href:"/post/" + el._id, 
-                         className:"title", 
-                         config:m.route
-                      ***REMOVED***, children: [el.title]***REMOVED***
-                    ***REMOVED******REMOVED***, 
-                      {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
-                        {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                        {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
-                    ***REMOVED******REMOVED***
-                  ***REMOVED******REMOVED***, 
-                    {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
-                      {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
-                      {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                      el.categories.map(function(item){
+          {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: ["Sort by: ", 
+            /*<img src="Englishtips.org_%20Learning%20English%20Together_files/desc.gif" alt=""/>*/
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["date"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["rating"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["most visited"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["comments"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('title','desc'); return false;"***REMOVED***, children: ["alphabetically"]***REMOVED***
+        ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***,
+          ctrl.posts().map(function(el) {
+            return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"title"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
+                  {tag: "a", attrs: {href:"/post/" + el._id, 
+                     className:"title", 
+                     config:m.route
+                ***REMOVED***, children: [el.title]***REMOVED***
+              ***REMOVED******REMOVED***, 
+                {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
+                  {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+                {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
+                {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+                      el.categories.map(function (item) {
                         return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
-                      {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
-                  ***REMOVED******REMOVED***, 
-                    {tag: "div", attrs: {className:"info"***REMOVED***, children: [
-                      {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
-                      {tag: "p", attrs: {className:"description"***REMOVED***, children: [
-                      (window.isMobile)?el.description.slice(0,250):el.description, " ..."
-                    ***REMOVED******REMOVED***
-                  ***REMOVED******REMOVED***
-                ***REMOVED******REMOVED***
-          ***REMOVED***)
+                {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
+            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {className:"info"***REMOVED***, children: [
+                {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
+                {tag: "p", attrs: {className:"description"***REMOVED***, children: [
+                  (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED***)
+    ***REMOVED***:[
+          {tag: "div", attrs: {***REMOVED***, children: [
+            "Loading !!"
+        ***REMOVED******REMOVED***
+    ***REMOVED***
+        
         
   ***REMOVED******REMOVED***
 ***REMOVED***;
@@ -202,14 +208,12 @@ module.exports = Menu;
 var fn = require('../core/_fn.msx');
 
 var PostView = function(ctrl){
-    console.log("=======>")
-    console.log(ctrl.post());
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
          {tag: "div", attrs: {***REMOVED***, children: [
            {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [
-             fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().categories[0], [])
-             /*<a href="/">Main page</a> » <a href="/coursebooks/">Coursebooks</a> » {ctrl.post().title***REMOVED****/
+             fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().categories[0], []), 
+             ctrl.post().title
          ***REMOVED******REMOVED***, 
            
            {tag: "br", attrs: {***REMOVED******REMOVED***, 
@@ -383,15 +387,11 @@ fn.requestWithFeedback = function(args, bind, fn) {
 
 fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     if(currentCategory === "NONE") {
-        result.push({tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: ["Trang chủ"]***REMOVED***);
-        return result;
+        result.push(" » " ,{tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: ["Trang chủ"]***REMOVED*** );
+        return result.reverse();
   ***REMOVED***
     var jsonCategory = category.getItemByParam({slug: currentCategory***REMOVED***);
-    console.log(currentCategory)
-    console.log(category);
-    console.log(jsonCategory)
-    console.log(Window.urls[currentCategory])
-    result.push({tag: "a", attrs: {href:Window.urls[currentCategory], config:m.route***REMOVED***, children: [" ", jsonCategory.name, " "]***REMOVED***  );
+    result.push(" » " ,{tag: "a", attrs: {href:"/category/" + currentCategory, config:m.route***REMOVED***, children: [" ", jsonCategory.name, " "]***REMOVED***);
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 ***REMOVED***;
 
@@ -437,7 +437,21 @@ var Login = require('../component/_login.msx');
 Home.controller = function(){
   
   var ctrl = this;
+  ctrl.request = {***REMOVED***;
+  ctrl.request.ready = m.prop(false);
+  ctrl.posts = m.prop();
+  
+  if(Window.posts === undefined) {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
+***REMOVED*** else {
+    ctrl.request.data = m.prop(Window.posts);
+    ctrl.posts(ctrl.request.data());
+    Window.posts = undefined;
+    ctrl.request.ready = m.prop(true);
+    m.redraw();
+***REMOVED***;
   ctrl.setup = function(){
+    ctrl.posts(ctrl.request.data());
     m.redraw();
 ***REMOVED***;
   
@@ -505,11 +519,11 @@ Post.controller = function(){
     Window.post = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***
+***REMOVED***;
   ctrl.setup = function(){
     ctrl.post(ctrl.request.data());
     m.redraw();
-***REMOVED***
+***REMOVED***;
 
   if (typeof FB !== "undefined") {
     FB.init({

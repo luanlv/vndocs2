@@ -24,11 +24,11 @@ Post.controller = function(){
     Window.post = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***
+***REMOVED***;
   ctrl.setup = function(){
     ctrl.post(ctrl.request.data());
     m.redraw();
-***REMOVED***
+***REMOVED***;
 
   if (typeof FB !== "undefined") {
     FB.init({
