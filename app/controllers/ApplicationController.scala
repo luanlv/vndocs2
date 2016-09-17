@@ -1,6 +1,6 @@
 package controllers
 
-import javax.inject.Inject
+import javax.inject.{ Inject, Singleton ***REMOVED***
 
 import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
@@ -10,7 +10,7 @@ import play.api.i18n.{ I18nSupport, MessagesApi ***REMOVED***
 import play.api.libs.json.Json
 import play.api.libs.ws.{ WS, WSClient ***REMOVED***
 import play.api.mvc.{ Action, BodyParsers, Controller ***REMOVED***
-import utils.auth.DefaultEnv
+import utils.silhouette.{ AuthController, MyEnv ***REMOVED***
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
@@ -25,23 +25,22 @@ import scala.concurrent.Future
  * @param socialProviderRegistry The social provider registry.
  * @param webJarAssets The webjar assets implementation.
  */
+
+@Singleton
 class ApplicationController @Inject() (
-  ws: WSClient,
+  val silhouette: Silhouette[MyEnv],
   val messagesApi: MessagesApi,
   setupService: SetupService,
   categoryService: CategoryService,
   postService: PostService,
-  silhouette: Silhouette[DefaultEnv],
-  socialProviderRegistry: SocialProviderRegistry,
-  implicit val webJarAssets: WebJarAssets)
-  extends Controller with I18nSupport {
+  socialProviderRegistry: SocialProviderRegistry) extends AuthController {
 
   /**
    * Handles the index action.
    *
    * @return The result to display.
    */
-  def index = silhouette.UnsecuredAction.async { implicit request =>
+  def index = UserAwareAction.async { implicit request =>
     val data = for {
       menu <- setupService.retrieve("menu")
       categories <- categoryService.listParent
@@ -55,20 +54,20 @@ class ApplicationController @Inject() (
   ***REMOVED***
 ***REMOVED***
 
-  def indexLogged = silhouette.SecuredAction.async { implicit request =>
-    val data = for {
-      menu <- setupService.retrieve("menu")
-      categories <- categoryService.listParent
-      posts <- postService.getList(1)
-  ***REMOVED*** yield (menu, categories, posts)
-    data.map { data =>
-      Ok(views.html.home2(
-        request.identity,
-        Json.toJson(data._1.get.value).toString,
-        Json.toJson(data._2).toString,
-        Json.toJson(data._3).toString))
-  ***REMOVED***
-***REMOVED***
+  //  def indexLogged = silhouette.SecuredAction.async { implicit request =>
+  //    val data = for {
+  //      menu <- setupService.retrieve("menu")
+  //      categories <- categoryService.listParent
+  //      posts <- postService.getList(1)
+  //  ***REMOVED*** yield (menu, categories, posts)
+  //    data.map { data =>
+  //      Ok(views.html.home2(
+  //        request.identity,
+  //        Json.toJson(data._1.get.value).toString,
+  //        Json.toJson(data._2).toString,
+  //        Json.toJson(data._3).toString))
+  //  ***REMOVED***
+  //***REMOVED***
 
   def index2 = silhouette.SecuredAction.async(parse.json) { implicit request =>
     Future.successful(Ok("ok"))

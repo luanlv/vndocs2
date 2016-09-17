@@ -32,7 +32,8 @@ import play.api.Configuration
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.openid.OpenIdClient
 import play.api.libs.ws.WSClient
-import utils.auth.{ CustomSecuredErrorHandler, CustomUnsecuredErrorHandler, DefaultEnv ***REMOVED***
+import utils.ErrorHandler
+import utils.silhouette.{ MyEnv ***REMOVED***
 
 /**
  * The Guice module which wires all Silhouette dependencies.
@@ -43,9 +44,9 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
    * Configures the module.
    */
   def configure() {
-    bind[Silhouette[DefaultEnv]].to[SilhouetteProvider[DefaultEnv]]
-    bind[UnsecuredErrorHandler].to[CustomUnsecuredErrorHandler]
-    bind[SecuredErrorHandler].to[CustomSecuredErrorHandler]
+    bind[Silhouette[MyEnv]].to[SilhouetteProvider[MyEnv]]
+    bind[SecuredErrorHandler].to[ErrorHandler]
+    bind[UnsecuredErrorHandler].to[ErrorHandler]
     bind[UserService].to[UserServiceImpl]
     bind[ImageService].to[ImageServiceImpl]
     bind[PostService].to[PostServiceImpl]
@@ -93,9 +94,9 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
   def provideEnvironment(
     userService: UserService,
     authenticatorService: AuthenticatorService[CookieAuthenticator],
-    eventBus: EventBus): Environment[DefaultEnv] = {
+    eventBus: EventBus): Environment[MyEnv] = {
 
-    Environment[DefaultEnv](
+    Environment[MyEnv](
       userService,
       authenticatorService,
       Seq(),
@@ -353,7 +354,6 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
 
     new GoogleProvider(httpLayer, stateProvider, configuration.underlying.as[OAuth2Settings]("silhouette.google"))
 ***REMOVED***
-
   /**
    * Provides the VK provider.
    *

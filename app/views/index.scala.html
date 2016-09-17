@@ -1,4 +1,4 @@
-@(user: models.User)(implicit request: RequestHeader, messages: Messages, webJarAssets: WebJarAssets)
+@()(implicit user: Option[User], request: RequestHeader, messages: Messages)
 
 
   <div class="user col-md-6 col-md-offset-3">
@@ -6,23 +6,23 @@
       <hr class="col-md-12" />
       <h4 class="col-md-8">@Messages("welcome.signed.in")</h4>
       <div class="col-md-4 text-right">
-        <img src="@user.avatarURL.getOrElse(routes.Assets.at("images/silhouette.png"))" height="40px" />
+        <img src="@user.get.avatarURL.getOrElse(routes.Assets.at("images/silhouette.png"))" height="40px" />
       </div>
       <hr class="col-md-12" />
     </div>
     <div class="row data">
       <div class="col-md-12">
         <div class="row">
-          <p class="col-md-6"><strong>@Messages("first.name"):</strong></p><p class="col-md-6">@user.firstName.getOrElse("None")</p>
+          <p class="col-md-6"><strong>@Messages("first.name"):</strong></p><p class="col-md-6">@user.get.firstName.getOrElse("None")</p>
         </div>
         <div class="row">
-          <p class="col-md-6"><strong>@Messages("last.name"):</strong></p><p class="col-md-6">@user.lastName.getOrElse("None")</p>
+          <p class="col-md-6"><strong>@Messages("last.name"):</strong></p><p class="col-md-6">@user.get.lastName.getOrElse("None")</p>
         </div>
         <div class="row">
-          <p class="col-md-6"><strong>@Messages("full.name"):</strong></p><p class="col-md-6">@user.fullName.getOrElse("None")</p>
+          <p class="col-md-6"><strong>@Messages("full.name"):</strong></p><p class="col-md-6">@user.get.fullName.getOrElse("None")</p>
         </div>
         <div class="row">
-          <p class="col-md-6"><strong>@Messages("email"):</strong></p><p class="col-md-6">@user.email.getOrElse("None")</p>
+          <p class="col-md-6"><strong>@Messages("email"):</strong></p><p class="col-md-6">@user.get.email.getOrElse("None")</p>
         </div>
       </div>
     </div>

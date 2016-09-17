@@ -10,7 +10,7 @@ import models.services.UserService
 import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.mvc.{ Action, Controller ***REMOVED***
-import utils.auth.DefaultEnv
+import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 
@@ -26,7 +26,7 @@ import scala.concurrent.Future
  */
 class SocialAuthController @Inject() (
   val messagesApi: MessagesApi,
-  silhouette: Silhouette[DefaultEnv],
+  silhouette: Silhouette[MyEnv],
   userService: UserService,
   authInfoRepository: AuthInfoRepository,
   socialProviderRegistry: SocialProviderRegistry,

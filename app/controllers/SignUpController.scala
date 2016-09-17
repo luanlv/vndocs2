@@ -16,7 +16,7 @@ import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.mailer.{ Email, MailerClient ***REMOVED***
 import play.api.mvc.Controller
 import reactivemongo.bson.BSONObjectID
-import utils.auth.DefaultEnv
+import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 
@@ -35,7 +35,7 @@ import scala.concurrent.Future
  */
 class SignUpController @Inject() (
   val messagesApi: MessagesApi,
-  silhouette: Silhouette[DefaultEnv],
+  silhouette: Silhouette[MyEnv],
   userService: UserService,
   authInfoRepository: AuthInfoRepository,
   authTokenService: AuthTokenService,

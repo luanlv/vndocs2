@@ -16,7 +16,7 @@ import play.api.Configuration
 import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.mvc.Controller
-import utils.auth.DefaultEnv
+import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 import scala.concurrent.duration._
@@ -37,7 +37,7 @@ import scala.language.postfixOps
  */
 class SignInController @Inject() (
   val messagesApi: MessagesApi,
-  silhouette: Silhouette[DefaultEnv],
+  silhouette: Silhouette[MyEnv],
   userService: UserService,
   authInfoRepository: AuthInfoRepository,
   credentialsProvider: CredentialsProvider,

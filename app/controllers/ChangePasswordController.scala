@@ -12,7 +12,7 @@ import models.services.UserService
 import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.mvc.Controller
-import utils.auth.{ DefaultEnv, WithProvider ***REMOVED***
+import utils.silhouette.{ MyEnv, WithProvider ***REMOVED***
 
 import scala.concurrent.Future
 
@@ -29,7 +29,7 @@ import scala.concurrent.Future
  */
 class ChangePasswordController @Inject() (
   val messagesApi: MessagesApi,
-  silhouette: Silhouette[DefaultEnv],
+  silhouette: Silhouette[MyEnv],
   userService: UserService,
   credentialsProvider: CredentialsProvider,
   authInfoRepository: AuthInfoRepository,
@@ -42,7 +42,7 @@ class ChangePasswordController @Inject() (
    *
    * @return The result to display.
    */
-  def view = silhouette.SecuredAction(WithProvider[DefaultEnv#A](CredentialsProvider.ID)) { implicit request =>
+  def view = silhouette.SecuredAction(WithProvider[MyEnv#A](CredentialsProvider.ID)) { implicit request =>
     Ok(views.html.changePassword(ChangePasswordForm.form, request.identity))
 ***REMOVED***
 
@@ -51,7 +51,7 @@ class ChangePasswordController @Inject() (
    *
    * @return The result to display.
    */
-  def submit = silhouette.SecuredAction(WithProvider[DefaultEnv#A](CredentialsProvider.ID)).async { implicit request =>
+  def submit = silhouette.SecuredAction(WithProvider[MyEnv#A](CredentialsProvider.ID)).async { implicit request =>
     ChangePasswordForm.form.bindFromRequest.fold(
       form => Future.successful(BadRequest(views.html.changePassword(form, request.identity))),
       password => {

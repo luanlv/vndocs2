@@ -1,4 +1,4 @@
-@(menu: String, categories: String, post: String)(implicit request: RequestHeader, messages: Messages, webJarAssets: WebJarAssets)
+@(menu: String, categories: String, post: String)(implicit user: Option[User],request: RequestHeader, messages: Messages)
 
 <!doctype html>
 <html lang="en">
@@ -15,6 +15,18 @@
             Window.menu = @Html(menu);
             Window.categories = @Html(categories);
             Window.posts = @Html(post);
+            @user match {
+                case Some(user) => {
+                    Window.user = {
+                        "userID" : "@user.userID",
+                        "avatarURL" : "@user.avatarURL",
+                        "fullName" : "@user.fullName"
+                  ***REMOVED***;
+              ***REMOVED***
+                case None => {
+
+              ***REMOVED***
+          ***REMOVED***
         </script>
         <div id="app"></div>
         @helper.CSRF.formField

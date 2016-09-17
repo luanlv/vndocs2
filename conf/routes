@@ -3,10 +3,10 @@
 # ~~~~
 
 # Home page
-GET         /identifying                                controllers.ApplicationController.indexLogged
+#GET         /identifying                                controllers.ApplicationController.indexLogged
 GET         /                                controllers.ApplicationController.index
+GET       /test     controllers.TestController.index
 
-GET /post/:postID     controllers.PostController.indexLogged(postID: String)
 GET /post/:postID     controllers.PostController.index(postID: String)
 
 GET /download/:id controllers.LinkController.getRealUrl(id)
@@ -18,8 +18,7 @@ POST  /admin/menu controllers.Admin.doMenu
 GET  /setup/menu controllers.SetupController.getMenu
 GET /admin/category/listParent controllers.CategoryController.listParent
 
-GET /post/:page controllers.PostController.getPost(page: Int)
-POST /post  controllers.ApplicationController.index2
+GET  /posts/:page controllers.PostController.getPost(page: Int)
 
 GET   /image/get/:id  controllers.ImageController.getImage(id: String)
 GET   /image/list/:page   controllers.Admin.listImage(page: Int)

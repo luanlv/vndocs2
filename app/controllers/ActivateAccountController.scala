@@ -11,7 +11,7 @@ import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
 import play.api.libs.concurrent.Execution.Implicits._
 import play.api.libs.mailer.{ Email, MailerClient ***REMOVED***
 import play.api.mvc.Controller
-import utils.auth.DefaultEnv
+import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 import scala.language.postfixOps
@@ -28,7 +28,7 @@ import scala.language.postfixOps
  */
 class ActivateAccountController @Inject() (
   val messagesApi: MessagesApi,
-  silhouette: Silhouette[DefaultEnv],
+  silhouette: Silhouette[MyEnv],
   userService: UserService,
   authTokenService: AuthTokenService,
   mailerClient: MailerClient,
