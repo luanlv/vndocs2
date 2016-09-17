@@ -39,9 +39,13 @@ Home.controller = function(){
 Home.view = function(ctrl){
   return [
     <div className="headWr ">
-      head
+      <div className="container">
+        <a href="/" config={m.route***REMOVED***>
+          <img src="/assets/images/logo.png" alt="logo Vndocs.com"/>
+        </a>
+      </div>
     </div>,
-    <div className="container mh1000">
+    <div className="container containerBor">
             <span className="menu-icon"
                   onclick={function(){
                     var el = document.querySelectorAll('.menu')[0];

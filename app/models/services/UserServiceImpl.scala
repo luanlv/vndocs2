@@ -66,6 +66,14 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
         ))
       case None => // Insert a new user
         val uuid = UUID.randomUUID();
+        println("==================" + (profile.loginInfo.providerID == "facebook"))
+        println(profile.loginInfo.providerID == "facebook")
+        val newAvatar = if (profile.loginInfo.providerID == "facebook") {
+          "http://graph.facebook.com/" + profile.loginInfo.providerKey + "/picture"
+      ***REMOVED*** else {
+          profile.avatarURL.get
+      ***REMOVED***
+        println(newAvatar)
         userDAO.save(User(
           userID = uuid,
           loginInfo = profile.loginInfo,
@@ -73,7 +81,7 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
           lastName = profile.lastName,
           fullName = profile.fullName,
           email = profile.email,
-          avatarURL = profile.avatarURL,
+          avatarURL = Some(newAvatar),
           activated = true
         ))
   ***REMOVED***

@@ -467,9 +467,13 @@ Home.controller = function(){
 Home.view = function(ctrl){
   return [
     {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
-      "head"
+      {tag: "div", attrs: {className:"container"***REMOVED***, children: [
+        {tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: [
+          {tag: "img", attrs: {src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"container mh1000"***REMOVED***, children: [
+    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
             {tag: "span", attrs: {className:"menu-icon", 
                   onclick:function(){
                     var el = document.querySelectorAll('.menu')[0];
@@ -537,9 +541,13 @@ Post.controller = function(){
 Post.view = function(ctrl){
   return [
     {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
-      "head"
+      {tag: "div", attrs: {className:"container"***REMOVED***, children: [
+        {tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: [
+          {tag: "img", attrs: {src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"container mh1000"***REMOVED***, children: [
+    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
             {tag: "span", attrs: {className:"menu-icon", 
                   onclick:function(){
                     var el = document.querySelectorAll('.menu')[0];

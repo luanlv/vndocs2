@@ -373,15 +373,21 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px;
-  position: relative;
-  background: white; ***REMOVED***
+  position: relative; ***REMOVED***
   .container:after {
     content: " ";
     display: block;
     clear: both; ***REMOVED***
 
 .headWr {
+  background: #f6f8f9;
   min-height: 60px; ***REMOVED***
+  .headWr img {
+    height: 40px;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 20px; ***REMOVED***
 
 .bodyWr {
   position: relative; ***REMOVED***
@@ -417,18 +423,20 @@ body {
       top: 0;
       right: 0; ***REMOVED*** ***REMOVED***
 
-@media only screen and (min-width: 600px) {
-  .container {
-    border-radius: 10px 10px 0 0;
-    border: 1px solid #d2e5f3;
-    box-shadow: 0px 5px 5px 0px rgba(23, 22, 23, 0.3); ***REMOVED*** ***REMOVED***
-.container {
-  *zoom: 1; ***REMOVED***
-.container:before, .container:after {
-  content: "";
-  display: table; ***REMOVED***
-.container:after {
-  clear: both; ***REMOVED***
+.containerBor {
+  background: white; ***REMOVED***
+  @media only screen and (min-width: 600px) {
+    .containerBor {
+      border-radius: 10px 10px 0 0;
+      border: 1px solid #d2e5f3;
+      box-shadow: 0px 5px 5px 0px rgba(23, 22, 23, 0.3); ***REMOVED*** ***REMOVED***
+  .containerBor {
+    *zoom: 1; ***REMOVED***
+  .containerBor:before, .containerBor:after {
+    content: "";
+    display: table; ***REMOVED***
+  .containerBor:after {
+    clear: both; ***REMOVED***
 
 .menu-icon {
   background: #ddd;

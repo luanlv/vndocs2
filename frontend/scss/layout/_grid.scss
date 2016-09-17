@@ -36,13 +36,18 @@ body {
   @include container(100%);
   max-width: 1000px;
   position: relative;
-  background: white;
 ***REMOVED***
 
 .headWr {
-  //background: $teal;
+  background: #f6f8f9;
   min-height: 60px;
-  //margin-bottom: 10px;
+  img {
+    height: 40px;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+***REMOVED***
 ***REMOVED***
 .bodyWr{
   position: relative;
@@ -88,12 +93,13 @@ body {
 ***REMOVED***
 ***REMOVED***
 
-.container {
+.containerBor {
   @include min-breakpoint($mobile){
     border-radius: 10px 10px 0 0;
     border: 1px solid $border-light-blue;
     box-shadow: 0px 5px 5px 0px rgba(23,22,23,0.3);
 ***REMOVED***
   @include clearfix();
+  background: white;
 ***REMOVED***
 
