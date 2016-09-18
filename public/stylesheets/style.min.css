@@ -874,6 +874,15 @@ hr.style18:before {
 .postWr .postContent {
   margin-top: 20px; ***REMOVED***
 
+.breadcrumb a {
+  color: #0072bc;
+  text-decoration: none; ***REMOVED***
+  .breadcrumb a:hover {
+    color: #FF851B;
+    text-decoration: underline; ***REMOVED***
+  .breadcrumb a:visited {
+    color: #0072bc; ***REMOVED***
+
 .postContent {
   /* https://github.com/mrmrs/fluidity */
   @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);

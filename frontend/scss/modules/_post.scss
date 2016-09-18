@@ -29,3 +29,17 @@
     margin-top: 20px;
 ***REMOVED***
 ***REMOVED***
+
+.breadcrumb {
+  a {
+    color: #0072bc;
+    text-decoration: none;
+    &:hover {
+      color: $orange;
+      text-decoration: underline;
+  ***REMOVED***
+    &:visited {
+      color: #0072bc;
+  ***REMOVED***
+***REMOVED***
+***REMOVED***
