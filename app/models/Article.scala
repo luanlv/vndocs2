@@ -8,8 +8,9 @@ import play.api.libs.json.Json
 case class Article(
   _id: String,
   title: String,
-  user: LightUser,
-  content: String,
+  author: LightUser,
+  body: String,
+  tags: List[String] = List(),
   nComment: Int = 0,
   nLike: Int = 0,
   liker: List[String] = List(),
