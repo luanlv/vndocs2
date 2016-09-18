@@ -19,10 +19,16 @@ NewProduct.controller = function(){
 ***REMOVED***;
   
   ctrl.setup = function(){
+    console.log(" run setup !!!!!!")
     ctrl.categories(ctrl.request.data());
-    // ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
+  
+  ctrl.setup2 = function(){
+    ctrl.imgList(ctrl.request2.data());
+    m.redraw();
+***REMOVED***;
+  
   ctrl.categories = m.prop([]);
   ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
   

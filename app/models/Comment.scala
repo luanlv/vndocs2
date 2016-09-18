@@ -16,11 +16,6 @@ case class Comment(
   user: LightUser,
   time: DateTime = DateTime.now()
 ) extends Identity with TemporalModel {
-  /**
-   * Tries to construct a name.
-   *
-   * @return Maybe a name.
-   */
 
 ***REMOVED***
 

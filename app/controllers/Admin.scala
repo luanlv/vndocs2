@@ -130,7 +130,7 @@ class Admin @Inject() (
       import java.io.File
       val filename = picture.filename
       val contentType = picture.contentType
-      val path = s"/tmp/$uuid.jpg"
+      val path = s"/home/lvl/image/$uuid.jpg"
       resize(picture.ref.moveTo(new File(path)))
       val image = models.Image(
         id = uuid,

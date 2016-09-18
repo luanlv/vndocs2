@@ -86,11 +86,10 @@ var PostView = function(ctrl){
                 <span class="poster">
                   <img src={el.user.avatarURL***REMOVED*** class="icon"/>
                   <br/>
-                    {el.user.fullName***REMOVED***
                 </span>
                   <div class="comment">
                   <span class="info">
-                    Posted July 9th 2016, 01:04 AM
+                    <span className="userName">{el.user.fullName***REMOVED***</span> Posted July 9th 2016, 01:04 AM
                     <span class="buttons">
                       
                     </span>

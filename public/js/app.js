@@ -309,12 +309,11 @@ var PostView = function(ctrl){
               return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
                 {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
                   {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
-                  {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                    el.user.fullName
+                  {tag: "br", attrs: {***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
                   {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
                   {tag: "span", attrs: {class:"info"***REMOVED***, children: [
-                    "Posted July 9th 2016, 01:04 AM", 
+                    {tag: "span", attrs: {className:"userName"***REMOVED***, children: [el.user.fullName]***REMOVED***, " Posted July 9th 2016, 01:04 AM", 
                     {tag: "span", attrs: {class:"buttons"***REMOVED***
                       
                   ***REMOVED***

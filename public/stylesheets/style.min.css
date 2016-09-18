@@ -1038,12 +1038,9 @@ hr.style18:before {
   width: 80px;
   text-align: center;
   font-size: 12px;
-  background: #eee;
   height: 75px;
   padding-top: 5px;
-  padding-right: 5px;
-  border: 1px solid #bbb;
-  border-radius: 10px 0px 0px 10px; ***REMOVED***
+  padding-right: 5px; ***REMOVED***
 #comment span.info {
   display: block;
   border-bottom: 1px solid #ddd;
@@ -1061,7 +1058,7 @@ hr.style18:before {
   padding: 5px;
   margin: 0px auto 15px 80px;
   background: #fff;
-  border-radius: 0 10px 20px 5px;
+  border-radius: 5px 5px 10px 5px;
   border: #bbb solid 1px;
   border-width: 1px 1px 3px 1px; ***REMOVED***
 #comment .comment::after {
@@ -1096,7 +1093,7 @@ hr.style18:before {
   background: #ddd;
   border-color: #aaa; ***REMOVED***
 #comment .commentBox textarea {
-  height: 50px; ***REMOVED***
+  min-height: 50px; ***REMOVED***
 #comment .commentBox textarea, #comment .commentBox textarea:focus {
   resize: none;
   width: 100%;
@@ -1111,3 +1108,5 @@ hr.style18:before {
   #comment .commentBox .submit a {
     text-decoration: none;
     color: #666; ***REMOVED***
+#comment .userName {
+  color: #0074D9; ***REMOVED***

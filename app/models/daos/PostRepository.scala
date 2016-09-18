@@ -11,7 +11,9 @@ import reactivemongo.api.indexes.IndexType
 import scala.concurrent.Future
 
 @Singleton
-class PostRepository @Inject() (reactiveMongoApi: ReactiveMongoApi) extends DocumentDao[Post](reactiveMongoApi) with Repository[Post] {
+class PostRepository @Inject() (reactiveMongoApi: ReactiveMongoApi)
+  extends DocumentDao[Post](reactiveMongoApi)
+  with Repository[Post] {
 
   override def collectionName = "post"
 

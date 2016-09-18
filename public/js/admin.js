@@ -684,7 +684,7 @@ var data = m.prop({
 ***REMOVED***,
   "content": "## Noi dung",
   "cover" : {
-    "id" : "2658af83-e844-469d-893c-203bf4aa9b83",
+    "id" : "ec97531f-6aa0-4374-87d4-77b6a030a854",
     "alt" : "anh dai dien"
 ***REMOVED***
 ***REMOVED***);
@@ -792,10 +792,10 @@ var NewProduct = function(ctrl){
                 ***REMOVED******REMOVED***, 
                   /*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/
                   {tag: "div", attrs: {className:"col-sm-2 control-label"***REMOVED***, children: [
-                    {tag: "img", attrs: {src:"image/get/" + data().cover.id, alt:data().cover.alt, 
+                    {tag: "img", attrs: {src:"/cover/get/" + data().cover.id, alt:data().cover.alt, 
                       style:"cursor: pointer", 
                       onclick:function(){
-                        ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
+                        ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
                         ctrl.showImgList = true;
                         
                     ***REMOVED******REMOVED***
@@ -994,7 +994,7 @@ var NewProduct = function(ctrl){
                           ctrl.showImgList = false;
                       ***REMOVED***
                         
-                    ***REMOVED***, children: [{tag: "img", attrs: {src:"image/get/" + el.id, alt:el.filename***REMOVED******REMOVED***]***REMOVED***
+                    ***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.id, alt:el.filename***REMOVED******REMOVED***]***REMOVED***
                   ***REMOVED***)
                 ***REMOVED******REMOVED***, 
                   
@@ -1008,7 +1008,7 @@ var NewProduct = function(ctrl){
                       {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["4"]***REMOVED***, 
                       {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["5"]***REMOVED***, 
                       {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-default-bright"***REMOVED***, children: ["6"]***REMOVED***, 
-                      {tag: "input", attrs: {className:"btn ink-reaction btn-default-bright", name:"file", id:"file", type:"file", accept:"image/*", 
+                      {tag: "input", attrs: {className:"btn ink-reaction btn-default-bright", name:"file", id:"file", type:"file", accept:"/image/*", 
                         onchange:function(){
                           var file = $('#file').get(0).files[0];
                           var formData = new FormData();
@@ -1023,7 +1023,7 @@ var NewProduct = function(ctrl){
                               alert('Are you sure you want to upload image?');
                           ***REMOVED***,
                             success: function (data) {
-                              ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
+                              ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
                           ***REMOVED***,
                             error: function (jqXHR, textStatus, errorThrown) {
                               alert(textStatus + ': ' + errorThrown);
@@ -1644,10 +1644,16 @@ NewProduct.controller = function(){
 ***REMOVED***;
   
   ctrl.setup = function(){
+    console.log(" run setup !!!!!!")
     ctrl.categories(ctrl.request.data());
-    // ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
+  
+  ctrl.setup2 = function(){
+    ctrl.imgList(ctrl.request2.data());
+    m.redraw();
+***REMOVED***;
+  
   ctrl.categories = m.prop([]);
   ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
   

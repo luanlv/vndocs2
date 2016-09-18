@@ -43,8 +43,7 @@ class ImageController @Inject() (
   extends Controller with I18nSupport {
 
   def getCover(id: String) = Action {
-    val file = new java.io.File("/tmp/" + id + ".jpg")
-    println(file.exists())
+    val file = new java.io.File("/home/lvl/image/" + id + ".jpg")
     Ok.sendFile(
       file,
       inline = true

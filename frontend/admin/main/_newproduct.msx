@@ -17,7 +17,7 @@ var data = m.prop({
 ***REMOVED***,
   "content": "## Noi dung",
   "cover" : {
-    "id" : "2658af83-e844-469d-893c-203bf4aa9b83",
+    "id" : "ec97531f-6aa0-4374-87d4-77b6a030a854",
     "alt" : "anh dai dien"
 ***REMOVED***
 ***REMOVED***);
@@ -125,10 +125,10 @@ var NewProduct = function(ctrl){
                   </div>
                   {/*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/***REMOVED***
                   <div className="col-sm-2 control-label">
-                    <img src={"image/get/" + data().cover.id***REMOVED*** alt={data().cover.alt***REMOVED***
+                    <img src={"/cover/get/" + data().cover.id***REMOVED*** alt={data().cover.alt***REMOVED***
                       style="cursor: pointer"
                       onclick={function(){
-                        ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
+                        ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
                         ctrl.showImgList = true;
                         
                     ***REMOVED******REMOVED***
@@ -327,7 +327,7 @@ var NewProduct = function(ctrl){
                           ctrl.showImgList = false;
                       ***REMOVED***
                       ***REMOVED***
-                      ><img  src={"image/get/" + el.id***REMOVED*** alt={el.filename***REMOVED***/></a>
+                      ><img  src={"/cover/get/" + el.id***REMOVED*** alt={el.filename***REMOVED***/></a>
                   ***REMOVED***)***REMOVED***
                   </div>
                   
@@ -341,7 +341,7 @@ var NewProduct = function(ctrl){
                       <button type="button" className="btn ink-reaction btn-default-bright">4</button>
                       <button type="button" className="btn ink-reaction btn-default-bright">5</button>
                       <button type="button" className="btn ink-reaction btn-default-bright">6</button>
-                      <input className="btn ink-reaction btn-default-bright" name="file" id="file" type="file" accept="image/*"
+                      <input className="btn ink-reaction btn-default-bright" name="file" id="file" type="file" accept="/image/*"
                         onchange={function(){
                           var file = $('#file').get(0).files[0];
                           var formData = new FormData();
@@ -356,7 +356,7 @@ var NewProduct = function(ctrl){
                               alert('Are you sure you want to upload image?');
                           ***REMOVED***,
                             success: function (data) {
-                              ctrl.request = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup);
+                              ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
                           ***REMOVED***,
                             error: function (jqXHR, textStatus, errorThrown) {
                               alert(textStatus + ': ' + errorThrown);
