@@ -560,7 +560,7 @@ var NewArticle = function(ctrl){
   
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
                   {tag: "label", attrs: {htmlFor:"", className:"col-sm-2 control-label"***REMOVED***, children: ["Cover image"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"col-sm-10 control-label"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
                     {tag: "img", attrs: {src:"/cover/get/" + data().cover.id, alt:data().cover.alt, 
                       style:"cursor: pointer", 
                       onclick:function(){
@@ -576,12 +576,17 @@ var NewArticle = function(ctrl){
                 {tag: "div", attrs: {className:"form-group"***REMOVED***, children: [
                   {tag: "label", attrs: {htmlFor:"", className:"col-sm-2 control-label"***REMOVED***, children: ["List value"]***REMOVED***, 
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", className:"form-control", style:"float: left;", 
-                           onchange:function(el){
-                             console.log("ok")
-                         ***REMOVED***, 
-                           value:data().tags.toString(), 
-                           "data-role":"tagsinput"***REMOVED******REMOVED***
+        
+                    {tag: "select", attrs: {multiple:true,"data-role":"tagsinput", 
+                      onchange:function(el){
+                        data().tags = $(el.target).val()
+                    ***REMOVED***
+                  ***REMOVED***, children: [
+                      data().tags.map(function(el){
+                        return {tag: "option", attrs: {value:el***REMOVED***, children: [el]***REMOVED***
+                    ***REMOVED***)
+                      
+                  ***REMOVED******REMOVED***
                 ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
                 
@@ -1798,7 +1803,10 @@ Article.controller = function(){
     ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
-
+  
+  $(function() {
+    $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
+***REMOVED***);
 ***REMOVED***;
 
 

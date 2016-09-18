@@ -69,7 +69,7 @@ var NewArticle = function(ctrl){
   
                 <div className="form-group">
                   <label htmlFor="" className="col-sm-2 control-label">Cover image</label>
-                  <div className="col-sm-10 control-label">
+                  <div className="col-sm-10">
                     <img src={"/cover/get/" + data().cover.id***REMOVED*** alt={data().cover.alt***REMOVED***
                       style="cursor: pointer"
                       onclick={function(){
@@ -85,12 +85,17 @@ var NewArticle = function(ctrl){
                 <div className="form-group">
                   <label htmlFor="" className="col-sm-2 control-label">List value</label>
                   <div className="col-sm-10">
-                    <input type="text" className="form-control" style="float: left;"
-                           onchange={function(el){
-                             console.log("ok")
-                         ***REMOVED******REMOVED***
-                           value={data().tags.toString()***REMOVED***
-                           data-role="tagsinput" />
+        
+                    <select multiple data-role="tagsinput"
+                      onchange={function(el){
+                        data().tags = $(el.target).val()
+                    ***REMOVED******REMOVED***
+                    >
+                      {data().tags.map(function(el){
+                        return <option value={el***REMOVED***>{el***REMOVED***</option>
+                    ***REMOVED***)***REMOVED***
+                      
+                    </select>
                   </div>
                 </div>
                 

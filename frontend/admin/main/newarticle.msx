@@ -18,7 +18,10 @@ Article.controller = function(){
     ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
-
+  
+  $(function() {
+    $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
+***REMOVED***);
 ***REMOVED***;
 
 
