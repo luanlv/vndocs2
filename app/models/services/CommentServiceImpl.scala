@@ -9,4 +9,8 @@ class CommentServiceImpl @Inject() (commentDAO: CommentDAO) extends CommentServi
   def save(comment: Comment) = {
     commentDAO.save(comment)
 ***REMOVED***
+
+  def getList(postID: String, page: Int) = {
+    commentDAO.getList(postID, page)
+***REMOVED***
 ***REMOVED***

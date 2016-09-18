@@ -59,7 +59,6 @@ fn.toggleClass =  function(el, className){
 ***REMOVED***;
 
 fn.requestWithFeedback = function(args, bind, fn) {
-    console.log("get menu!");
     var data = m.prop();
     var completed = m.prop(false);
     var complete = function() {

@@ -10,7 +10,7 @@ import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import models.Image
-import models.services.{ CategoryService, ImageService, PostService, SetupService ***REMOVED***
+import models.services._
 import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
 import utils.silhouette.{ AuthController, MyEnv ***REMOVED***
 //import com.sksamuel.scrimage.Image
@@ -42,6 +42,7 @@ class PostController @Inject() (
   setupService: SetupService,
   categoryService: CategoryService,
   postService: PostService,
+  commentService: CommentService,
   socialProviderRegistry: SocialProviderRegistry)
   extends AuthController {
 
@@ -50,12 +51,15 @@ class PostController @Inject() (
       menu <- setupService.retrieve("menu")
       categories <- categoryService.listParent
       post <- postService.retrieve(postID)
-  ***REMOVED*** yield (menu, categories, post)
+      comments <- commentService.getList(postID, 1)
+  ***REMOVED*** yield (menu, categories, post, comments)
     data.map { data =>
       Ok(views.html.post(
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
-        Json.toJson(data._3).toString))
+        Json.toJson(data._3).toString,
+        Json.toJson(data._4).toString
+      ))
   ***REMOVED***
 ***REMOVED***
 
@@ -75,7 +79,9 @@ class PostController @Inject() (
       Ok(views.html.post(
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
-        Json.toJson(data._3).toString))
+        Json.toJson(data._3).toString,
+        ""
+      ))
   ***REMOVED***
 ***REMOVED***
 
@@ -86,8 +92,15 @@ class PostController @Inject() (
 ***REMOVED***
 
   def getPost(postID: String) = Action.async { implicit request =>
-    postService.retrieve(postID).map { post =>
-      Ok(Json.toJson(post))
+    var data = for {
+      post <- postService.retrieve(postID)
+      comments <- commentService.getList(postID, 1)
+  ***REMOVED*** yield (post, comments)
+    data.map { data =>
+      Ok(Json.obj(
+        "post" -> Json.toJson(data._1),
+        "comments" -> Json.toJson(data._2)
+      ))
   ***REMOVED***
 ***REMOVED***
 ***REMOVED***

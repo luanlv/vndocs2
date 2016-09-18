@@ -64,6 +64,11 @@ case class LightUser(
   avatarURL: Option[String]
 ) extends Identity with TemporalModel {
 
+***REMOVED***
+
+object LightUser {
+  import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
+
   def trimUser(user: User) = {
     LightUser(
       user.userID,
@@ -72,10 +77,6 @@ case class LightUser(
       user.avatarURL
     )
 ***REMOVED***
-***REMOVED***
-
-object LightUser {
-  import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
   implicit val lightUserFormat = Json.format[LightUser]
 ***REMOVED***

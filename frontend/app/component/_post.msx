@@ -5,31 +5,31 @@ var PostView = function(ctrl){
       {ctrl.request.ready()?[
          <div>
            <span className="breadcrumb">
-             {fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().categories[0], [])***REMOVED***
-             {ctrl.post().title***REMOVED***
+             {fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().post.categories[0], [])***REMOVED***
+             {ctrl.post().post.title***REMOVED***
            </span>
            
            <br/>
            <hr className="style3"/>
            <div className="postWr">
              <div className="postTitle">
-               <h1>{ctrl.post().title***REMOVED***</h1>
+               <h1>{ctrl.post().post.title***REMOVED***</h1>
              </div>
              <hr className="style3"/>
              <div className="postInfo cf">
                <div className="meta-data">
         
-                 <span className="upload">{ctrl.post().upload***REMOVED***</span>
+                 <span className="upload">{ctrl.post().post.upload***REMOVED***</span>
                  <span className="category">
-                      {ctrl.post().categories.map(function(item){
+                      {ctrl.post().post.categories.map(function(item){
                         return <span>{item***REMOVED***</span>
                     ***REMOVED***)***REMOVED***
                       </span>
-                 <span className="time">{moment(ctrl.post().time).format('L')***REMOVED***</span>
+                 <span className="time">{moment(ctrl.post().post.time).format('L')***REMOVED***</span>
                </div>
       
                <div className="t-left">
-                 <a href="#"><img src={"/cover/get/" + ctrl.post().cover.id***REMOVED*** alt={ctrl.post().cover.alt***REMOVED***/></a>
+                 <a href="#"><img src={"/cover/get/" + ctrl.post().post.cover.id***REMOVED*** alt={ctrl.post().post.cover.alt***REMOVED***/></a>
                </div>
                <div className="t-right">
                  <div className="rate-nav">RATING</div>
@@ -38,11 +38,11 @@ var PostView = function(ctrl){
              </div>
              <hr className="style3"/>
              <div className="postContent">
-               {m.trust(marked(ctrl.post().content))***REMOVED***
+               {m.trust(marked(ctrl.post().post.content))***REMOVED***
              </div>
            </div>
          </div>,
-          
+          <hr className="style3"/>,
           <div id="comment">
             
             <div className="commentWr">
@@ -79,22 +79,26 @@ var PostView = function(ctrl){
               </div>
             </div>
             
-            <div className="commentWr">
-              <span class="poster">
-                <img src="http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png" class="icon"/>
-                <br/>
-                  Kigurumix
-              </span>
-              <div class="comment">
-                <span class="info">
-                  Posted July 9th 2016, 01:04 AM
-                  <span class="buttons">
-                    Edit
-                  </span>
+            
+            
+            {ctrl.post().comments.map(function(el){
+              return <div className="commentWr">
+                <span class="poster">
+                  <img src={el.user.avatarURL***REMOVED*** class="icon"/>
+                  <br/>
+                    {el.user.fullName***REMOVED***
                 </span>
-                I feel your pain, I accidentally released the only shiny legendary I have ever hatched, Virizion, I was crushed.
+                  <div class="comment">
+                  <span class="info">
+                    Posted July 9th 2016, 01:04 AM
+                    <span class="buttons">
+                      
+                    </span>
+                  </span>
+                    {el.comment***REMOVED***
+                  </div>
               </div>
-            </div>
+          ***REMOVED***)***REMOVED***
             
             
           </div>

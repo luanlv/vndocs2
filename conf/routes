@@ -12,6 +12,7 @@ GET /post/get/:postID     controllers.PostController.getPost(postID: String)
 GET  /posts/:page controllers.PostController.getPosts(page: Int)
 
 
+GET   /comment/:postID/:page  controllers.CommentController.getList(postID: String, page: Int)
 POST  /comment/:postID  controllers.CommentController.doComment(postID: String)
 
 GET /category/:categorySlug     controllers.PostController.postsByCategoryIndex(categorySlug: String)

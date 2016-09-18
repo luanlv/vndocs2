@@ -11,7 +11,6 @@ import play.api.libs.json._
 import reactivemongo.bson.BSONObjectID
 
 case class Comment(
-  id: String,
   parentPost: String,
   comment: String,
   user: LightUser,

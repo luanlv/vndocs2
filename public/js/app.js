@@ -229,31 +229,31 @@ var PostView = function(ctrl){
       ctrl.request.ready()?[
          {tag: "div", attrs: {***REMOVED***, children: [
            {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [
-             fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().categories[0], []), 
-             ctrl.post().title
+             fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().post.categories[0], []), 
+             ctrl.post().post.title
          ***REMOVED******REMOVED***, 
            
            {tag: "br", attrs: {***REMOVED******REMOVED***, 
            {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
            {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
              {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
-               {tag: "h1", attrs: {***REMOVED***, children: [ctrl.post().title]***REMOVED***
+               {tag: "h1", attrs: {***REMOVED***, children: [ctrl.post().post.title]***REMOVED***
            ***REMOVED******REMOVED***, 
              {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
              {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
                {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
         
-                 {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post().upload]***REMOVED***, 
+                 {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post().post.upload]***REMOVED***, 
                  {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                      ctrl.post().categories.map(function(item){
+                      ctrl.post().post.categories.map(function(item){
                         return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
-                 {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post().time).format('L')]***REMOVED***
+                 {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post().post.time).format('L')]***REMOVED***
              ***REMOVED******REMOVED***, 
       
                {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-                 {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post().cover.id, alt:ctrl.post().cover.alt***REMOVED******REMOVED***]***REMOVED***
+                 {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post().post.cover.id, alt:ctrl.post().post.cover.alt***REMOVED******REMOVED***]***REMOVED***
              ***REMOVED******REMOVED***, 
                {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
                  {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
@@ -262,11 +262,11 @@ var PostView = function(ctrl){
            ***REMOVED******REMOVED***, 
              {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
              {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
-               m.trust(marked(ctrl.post().content))
+               m.trust(marked(ctrl.post().post.content))
            ***REMOVED******REMOVED***
          ***REMOVED******REMOVED***
        ***REMOVED******REMOVED***,
-          
+          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
           {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
             
             {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
@@ -303,22 +303,26 @@ var PostView = function(ctrl){
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             
-            {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
-              {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
-                {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
-                {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                  "Kigurumix"
-            ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
-                {tag: "span", attrs: {class:"info"***REMOVED***, children: [
-                  "Posted July 9th 2016, 01:04 AM", 
-                  {tag: "span", attrs: {class:"buttons"***REMOVED***, children: [
-                    "Edit"
-                ***REMOVED******REMOVED***
+            
+            
+            ctrl.post().comments.map(function(el){
+              return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+                {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
+                  {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
+                  {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                    el.user.fullName
               ***REMOVED******REMOVED***, 
-                "I feel your pain, I accidentally released the only shiny legendary I have ever hatched, Virizion, I was crushed."
+                  {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
+                  {tag: "span", attrs: {class:"info"***REMOVED***, children: [
+                    "Posted July 9th 2016, 01:04 AM", 
+                    {tag: "span", attrs: {class:"buttons"***REMOVED***
+                      
+                  ***REMOVED***
+                ***REMOVED******REMOVED***, 
+                    el.comment
+                ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***
+          ***REMOVED***)
             
             
         ***REMOVED******REMOVED***
@@ -433,7 +437,6 @@ fn.toggleClass =  function(el, className){
 ***REMOVED***;
 
 fn.requestWithFeedback = function(args, bind, fn) {
-    console.log("get menu!");
     var data = m.prop();
     var completed = m.prop(false);
     var complete = function() {
@@ -653,20 +656,24 @@ Post.controller = function(){
   ctrl.postID =  m.route.param("postID");
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
-  ctrl.post = m.prop();
+  ctrl.post = m.prop({***REMOVED***);
   ctrl.comment = m.prop("");
   
   if(Window.post === undefined) {
+    console.log("run request !!!!!!!!!!")
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID***REMOVED***, ctrl.post, ctrl.setup);
 ***REMOVED*** else {
-    ctrl.request.data = m.prop(Window.post);
-    ctrl.post(ctrl.request.data());
+    // ctrl.request.data = m.prop(Window.post);
+    ctrl.post().post = Window.post;
+    ctrl.post().comments = Window.comments;
     Window.post = undefined;
+    Window.comments = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
 ***REMOVED***;
   ctrl.setup = function(){
-    ctrl.post(ctrl.request.data());
+    // ctrl.post(ctrl.request.data());
+    console.log(ctrl.post());
     m.redraw();
 ***REMOVED***;
 
