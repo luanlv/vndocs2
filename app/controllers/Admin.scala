@@ -54,7 +54,7 @@ class Admin @Inject() (
    * @return The result to display.
    */
   def index = silhouette.SecuredAction(WithService("master")).async { implicit request =>
-    println("==========================" + request.identity.email)
+    //    println("==========================" + request.identity.email)
     if (request.identity.email.getOrElse("") == "admin@vndocs.com") {
       Future.successful(Redirect(routes.ApplicationController.index()))
   ***REMOVED*** else {

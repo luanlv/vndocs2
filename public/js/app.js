@@ -265,7 +265,64 @@ var PostView = function(ctrl){
                m.trust(marked(ctrl.post().content))
            ***REMOVED******REMOVED***
          ***REMOVED******REMOVED***
-       ***REMOVED******REMOVED***
+       ***REMOVED******REMOVED***,
+          
+          {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
+            
+            {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+              {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
+                {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                  "Kigurumix"
+            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
+                {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
+                  onchange:function(el){
+                    ctrl.comment($(el.target).val());
+                    console.log(ctrl.comment());
+                ***REMOVED***
+              ***REMOVED***, children: [
+                  ctrl.comment()
+              ***REMOVED******REMOVED***, 
+                {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
+                  {tag: "a", attrs: {href:"javascript:void(0)", 
+                    onclick:function(){
+                      $.ajax({
+                        type: "POST",
+                        url: "/comment/" + ctrl.postID,
+                        data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function(res){
+                          console.log(res)
+                      ***REMOVED***
+                    ***REMOVED***);
+                  ***REMOVED***
+                ***REMOVED***, children: [" Gửi "]***REMOVED***
+              ***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***, 
+            
+            {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+              {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
+                {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                  "Kigurumix"
+            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
+                {tag: "span", attrs: {class:"info"***REMOVED***, children: [
+                  "Posted July 9th 2016, 01:04 AM", 
+                  {tag: "span", attrs: {class:"buttons"***REMOVED***, children: [
+                    "Edit"
+                ***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+                "I feel your pain, I accidentally released the only shiny legendary I have ever hatched, Virizion, I was crushed."
+            ***REMOVED******REMOVED***
+          ***REMOVED******REMOVED***
+            
+            
+        ***REMOVED******REMOVED***
+          
     ***REMOVED***:[
           {tag: "div", attrs: {***REMOVED***, children: [
             "loading !!"
@@ -597,6 +654,7 @@ Post.controller = function(){
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.post = m.prop();
+  ctrl.comment = m.prop("");
   
   if(Window.post === undefined) {
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID***REMOVED***, ctrl.post, ctrl.setup);

@@ -37,7 +37,6 @@ import scala.concurrent.Future
 
 @Singleton
 class PostController @Inject() (
-  ws: WSClient,
   val messagesApi: MessagesApi,
   val silhouette: Silhouette[MyEnv],
   setupService: SetupService,

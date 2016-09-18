@@ -41,7 +41,64 @@ var PostView = function(ctrl){
                {m.trust(marked(ctrl.post().content))***REMOVED***
              </div>
            </div>
-         </div>
+         </div>,
+          
+          <div id="comment">
+            
+            <div className="commentWr">
+              <span class="poster">
+                <img src="http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png" class="icon"/>
+                <br/>
+                  Kigurumix
+              </span>
+              <div class="comment commentBox">
+                <textarea name="cmt" id="cmt"
+                  onchange={function(el){
+                    ctrl.comment($(el.target).val());
+                    console.log(ctrl.comment());
+                ***REMOVED******REMOVED***
+                >
+                  {ctrl.comment()***REMOVED***
+                </textarea>
+                <span className="submit">
+                  <a href="javascript:void(0)"
+                    onclick={function(){
+                      $.ajax({
+                        type: "POST",
+                        url: "/comment/" + ctrl.postID,
+                        data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function(res){
+                          console.log(res)
+                      ***REMOVED***
+                    ***REMOVED***);
+                  ***REMOVED******REMOVED***
+                  > Gửi </a>
+                </span>
+              </div>
+            </div>
+            
+            <div className="commentWr">
+              <span class="poster">
+                <img src="http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png" class="icon"/>
+                <br/>
+                  Kigurumix
+              </span>
+              <div class="comment">
+                <span class="info">
+                  Posted July 9th 2016, 01:04 AM
+                  <span class="buttons">
+                    Edit
+                  </span>
+                </span>
+                I feel your pain, I accidentally released the only shiny legendary I have ever hatched, Virizion, I was crushed.
+              </div>
+            </div>
+            
+            
+          </div>
+          
     ***REMOVED***:[
           <div>
             loading !!

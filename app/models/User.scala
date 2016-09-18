@@ -56,3 +56,26 @@ object User {
   implicit val passwordFormat = Json.format[PasswordInfo]
   implicit val userFormat = Json.format[User]
 ***REMOVED***
+
+case class LightUser(
+  userID: UUID,
+  loginInfo: LoginInfo,
+  fullName: Option[String],
+  avatarURL: Option[String]
+) extends Identity with TemporalModel {
+
+  def trimUser(user: User) = {
+    LightUser(
+      user.userID,
+      user.loginInfo,
+      user.fullName,
+      user.avatarURL
+    )
+***REMOVED***
+***REMOVED***
+
+object LightUser {
+  import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
+
+  implicit val lightUserFormat = Json.format[LightUser]
+***REMOVED***
