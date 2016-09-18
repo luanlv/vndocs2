@@ -32,11 +32,20 @@ var Menu = function(ctrl){
               <span className="title">Dashboard</span>
             </a>
           </li>
+          
           <li className="gui-folder">
             <a href="/admin#/newProduct"
             >
-              <div className="gui-icon"><i className="md md-email"></i></div>
+              <div className="gui-icon"><i className="md md-web"></i></div>
               <span className="title">Post</span>
+            </a>
+          </li>
+  
+          <li className="gui-folder">
+            <a href="/admin#/newArticle"
+            >
+              <div className="gui-icon"><i className="md md-web"></i></div>
+              <span className="title">Article</span>
             </a>
           </li>
   

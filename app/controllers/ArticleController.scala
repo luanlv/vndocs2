@@ -2,7 +2,7 @@ package controllers
 
 import com.google.inject.{ Inject, Singleton ***REMOVED***
 import com.mohiva.play.silhouette.api.Silhouette
-import models.{ Article, Comment, LightUser ***REMOVED***
+import models.{ Article, Comment, Cover, LightUser ***REMOVED***
 import models.services.{ ArticleService, CommentService ***REMOVED***
 import play.api.i18n.MessagesApi
 import play.api.libs.json.{ JsObject, Json ***REMOVED***
@@ -26,6 +26,7 @@ class ArticleController @Inject() (
       val newArticle = Article(
         _id = (article \ "_id").get.as[String],
         title = (article \ "title").get.as[String],
+        cover = (article \ "cover").get.as[Cover],
         body = (article \ "body").get.as[String],
         author = LightUser.trimUser(request.identity),
         tags = (article \ "tags").get.as[List[String]]

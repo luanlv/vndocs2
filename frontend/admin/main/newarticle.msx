@@ -1,14 +1,14 @@
-var Product = {***REMOVED***;
+var Article = {***REMOVED***;
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
-var NewProduct = require('./_newproduct.msx');
+var NewArticle = require('./_newarticle.msx');
 var Right = require('./_right.msx');
 var fn = require('./fn.msx');
 
 var postData = {"ok": "data"***REMOVED***
 
-Product.controller = function(){
-  console.log("new product");
+Article.controller = function(){
+  console.log("new article");
   var ctrl = this;
   ctrl.showImgList = false;
   ctrl.imgList = m.prop([]);
@@ -18,26 +18,17 @@ Product.controller = function(){
     ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
-  
-  ctrl.setup = function(){
-    ctrl.categories(ctrl.request.data());
-    m.redraw();
-***REMOVED***;
-  
-  
-  ctrl.categories = m.prop([]);
-  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
-  
+
 ***REMOVED***;
 
 
 
-Product.view = function(ctrl){
+Article.view = function(ctrl){
   return  [
     Header(ctrl),
     <div id="base">
       
-      {NewProduct(ctrl)***REMOVED***
+      {NewArticle(ctrl)***REMOVED***
       
       {Menu(ctrl)***REMOVED***
       
@@ -48,4 +39,4 @@ Product.view = function(ctrl){
 ***REMOVED***;
 
 
-module.exports = Product;
+module.exports = Article;

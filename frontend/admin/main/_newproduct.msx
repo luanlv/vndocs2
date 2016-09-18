@@ -387,64 +387,6 @@ var NewProduct = function(ctrl){
 ***REMOVED***
 
 
-var categories = [
-  {
-    "_id" : "1",
-    "slug" : "sp-phan-cung",
-    "name" : "SẢN PHẨM PHẦN CỨNG",
-    "description" : "",
-    "sku" : {
-      "parent_id" : "NONE",
-      "name" : "Category ??",
-      "slug" : "NONE"
-  ***REMOVED***
-***REMOVED***,
-  {
-    "_id" : "2",
-    "slug" : "stmicroelectronics",
-    "name" : "STMicroelectronics",
-    "description" : "",
-    "sku" : {
-      "parent_id" : "vi-dieu-khien",
-      "name" : "Category ??",
-      "slug" : "vi-dieu-khien"
-  ***REMOVED***
-***REMOVED***,
-  {
-    "_id" : "3",
-    "slug" : "power-supply",
-    "name" : "Power Supply",
-    "description" : "",
-    "sku" : {
-      "parent_id" : "module",
-      "name" : "Category ??",
-      "slug" : "module"
-  ***REMOVED***
-***REMOVED***
-];
 
-
-var listImgs = [
-    "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-    "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-    "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/1473295259_594549.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-  "http://englishtips.org/uploads/posts/2016-09/thumbs/2016090723420691521.jpg",
-]
 
 module.exports = NewProduct;
