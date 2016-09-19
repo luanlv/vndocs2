@@ -208,9 +208,13 @@ var Head = function(ctrl){
   return [
     {tag: "div", attrs: {className:"container"***REMOVED***, children: [
       {tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: [
-        {tag: "img", attrs: {src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
+        {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
     ***REMOVED******REMOVED***, 
-      {tag: "span", attrs: {***REMOVED***, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]***REMOVED***
+      {tag: "span", attrs: {className:"slogan"***REMOVED***, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]***REMOVED***, 
+      {tag: "div", attrs: {className:"free-logoWr"***REMOVED***, children: [
+        {tag: "img", attrs: {className:"free-logo", src:"/assets/images/100_free.png", alt:""***REMOVED******REMOVED***, 
+        {tag: "img", attrs: {className:"lookingfor", src:"/assets/images/lookingfor.png", alt:""***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***
 ***REMOVED***
 ***REMOVED***;
@@ -333,7 +337,9 @@ var Menu = function(ctrl){
             {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
                 "Menu"
           ***REMOVED******REMOVED***, 
-            fn.runCreateMenu(JSON.parse(Window.menu), 1)
+            {tag: "div", attrs: {className:"list-menu"***REMOVED***, children: [
+                fn.runCreateMenu(JSON.parse(Window.menu), 1)
+          ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
   ***REMOVED***;
 ***REMOVED***;

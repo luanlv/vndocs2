@@ -382,24 +382,6 @@ body {
     display: block;
     clear: both; ***REMOVED***
 
-.headWr {
-  background: #f6f8f9;
-  min-height: 50px; ***REMOVED***
-  .headWr img {
-    height: 40px;
-    width: 200px;
-    position: absolute;
-    left: 0px;
-    top: 13px; ***REMOVED***
-  .headWr span {
-    position: absolute;
-    left: 200px;
-    top: 33px;
-    color: #666;
-    font-size: 16px;
-    font-weight: bold;
-    font-style: italic; ***REMOVED***
-
 .bodyWr {
   position: relative; ***REMOVED***
 
@@ -449,6 +431,36 @@ body {
   .containerBor:after {
     clear: both; ***REMOVED***
 
+.headWr {
+  background: #f6f8f9;
+  min-height: 70px; ***REMOVED***
+  .headWr img.logo {
+    height: 40px;
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 33px; ***REMOVED***
+  .headWr span.slogan {
+    position: absolute;
+    left: 200px;
+    top: 53px;
+    color: #FF4136;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic; ***REMOVED***
+  .headWr .free-logoWr {
+    position: relative;
+    margin-left: 520px;
+    padding-top: 30px; ***REMOVED***
+  .headWr img.free-logo {
+    height: 40px;
+    width: 40px;
+    position: absolute; ***REMOVED***
+  .headWr img.lookingfor {
+    height: 20px;
+    position: absolute;
+    top: 10px; ***REMOVED***
+
 .menu-icon {
   background: #ddd;
   padding: 10px;
@@ -489,18 +501,30 @@ body {
 
 .menu {
   padding: 0px 0 5px 5px; ***REMOVED***
-  .menu a {
-    color: #0076a3;
-    padding: 0px 5px 5px 5px;
-    display: inline-block; ***REMOVED***
   .menu .level1 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
+    color: #333;
     font-family: Verdana, Arial, sans-serif; ***REMOVED***
+    .menu .level1 a:hover {
+      color: #FF851B !important; ***REMOVED***
+    .menu .level1 > li > a {
+      color: #555;
+      padding: 5px 5px 5px 5px;
+      display: inline-block; ***REMOVED***
+      .menu .level1 > li > a:visited {
+        color: #555; ***REMOVED***
   .menu .level2, .menu .level3 {
-    font-size: 11px;
+    padding-left: 5px;
     font-weight: normal;
-    font-family: Verdana, Arial, sans-serif; ***REMOVED***
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 11px; ***REMOVED***
+    .menu .level2 > li > a, .menu .level3 > li > a {
+      color: #555;
+      padding: 5px 0;
+      display: inline-block; ***REMOVED***
+      .menu .level2 > li > a:visited, .menu .level3 > li > a:visited {
+        color: #555; ***REMOVED***
   .menu .level2 a::before, .menu .level3 a::before {
     content: "» ";
     color: black;
@@ -512,87 +536,92 @@ body {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5); ***REMOVED***
 
+.login {
+  min-height: 107px; ***REMOVED***
+  .login .login-box {
+    background: #fff;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative; ***REMOVED***
+    .login .login-box > div {
+      font-size: 12px;
+      margin-bottom: 5px; ***REMOVED***
+      .login .login-box > div a {
+        color: #666;
+        text-decoration: none; ***REMOVED***
+        .login .login-box > div a:visited {
+          color: #666; ***REMOVED***
+  .login .login-box h2 {
+    padding: 0;
+    text-transform: uppercase;
+    color: #4688F1;
+    font-size: 1em; ***REMOVED***
+  .login .social-button {
+    font-size: 10px;
+    font-weight: bold;
+    background-position: 25px 0px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 3px;
+    margin: 3px auto;
+    outline: white none 0px;
+    padding-left: 20%;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+    transition: all .3s ease; ***REMOVED***
+  .login #facebook-connect {
+    background: white url("http://eswarasai.com/projects/social-buttons/img/facebook.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
+    border: 1px solid #3c5a9a; ***REMOVED***
+  .login #facebook-connect:hover {
+    border-color: #3c5a9a;
+    background: #3c5a9a url("http://eswarasai.com/projects/social-buttons/img/facebook-white.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
+    transition: all .3s ease-out; ***REMOVED***
+  .login #facebook-connect span {
+    box-sizing: border-box;
+    color: #3c5a9a;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none white;
+    outline: white none 0px;
+    transition: all .3s ease; ***REMOVED***
+  .login #facebook-connect:hover span {
+    color: #FFF;
+    transition: all .3s ease; ***REMOVED***
+  .login #google-connect {
+    background: white url("http://eswarasai.com/projects/social-buttons/img/google-plus.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
+    border: 1px solid #dc4a3d; ***REMOVED***
+  .login #google-connect:hover {
+    border-color: #dc4a3d;
+    background: #dc4a3d url("http://eswarasai.com/projects/social-buttons/img/google-plus-white.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
+    transition: all .3s ease-out; ***REMOVED***
+  .login #google-connect span {
+    box-sizing: border-box;
+    color: #dc4a3d;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none #dc4a3d;
+    outline: white none 0px;
+    transition: all .3s ease; ***REMOVED***
+  .login #google-connect:hover span {
+    color: #FFF;
+    transition: all .3s ease; ***REMOVED***
+
+.list-menu {
+  margin-top: 0px; ***REMOVED***
+
 .side {
   padding: 0 5px 0 5px; ***REMOVED***
-
-.login .login-box {
-  background: #fff;
-  padding: 20px 20px 10px 20px;
-  text-align: center;
-  letter-spacing: 1px;
-  position: relative; ***REMOVED***
-  .login .login-box > div {
-    font-size: 12px;
-    margin-bottom: 5px; ***REMOVED***
-    .login .login-box > div a {
-      color: #666;
-      text-decoration: none; ***REMOVED***
-      .login .login-box > div a:visited {
-        color: #666; ***REMOVED***
-.login .login-box h2 {
-  padding: 0;
-  text-transform: uppercase;
-  color: #4688F1;
-  font-size: 1em; ***REMOVED***
-.login .social-button {
-  font-size: 10px;
-  font-weight: bold;
-  background-position: 25px 0px;
-  box-sizing: border-box;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  vertical-align: middle;
-  width: 100%;
-  border-radius: 3px;
-  margin: 3px auto;
-  outline: white none 0px;
-  padding-left: 20%;
-  transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
-  transition: all .3s ease; ***REMOVED***
-.login #facebook-connect {
-  background: white url("http://eswarasai.com/projects/social-buttons/img/facebook.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
-  border: 1px solid #3c5a9a; ***REMOVED***
-.login #facebook-connect:hover {
-  border-color: #3c5a9a;
-  background: #3c5a9a url("http://eswarasai.com/projects/social-buttons/img/facebook-white.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
-  transition: all .3s ease-out; ***REMOVED***
-.login #facebook-connect span {
-  box-sizing: border-box;
-  color: #3c5a9a;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  border: 0px none white;
-  outline: white none 0px;
-  transition: all .3s ease; ***REMOVED***
-.login #facebook-connect:hover span {
-  color: #FFF;
-  transition: all .3s ease; ***REMOVED***
-.login #google-connect {
-  background: white url("http://eswarasai.com/projects/social-buttons/img/google-plus.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
-  border: 1px solid #dc4a3d; ***REMOVED***
-.login #google-connect:hover {
-  border-color: #dc4a3d;
-  background: #dc4a3d url("http://eswarasai.com/projects/social-buttons/img/google-plus-white.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
-  transition: all .3s ease-out; ***REMOVED***
-.login #google-connect span {
-  box-sizing: border-box;
-  color: #dc4a3d;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  border: 0px none #dc4a3d;
-  outline: white none 0px;
-  transition: all .3s ease; ***REMOVED***
-.login #google-connect:hover span {
-  color: #FFF;
-  transition: all .3s ease; ***REMOVED***
 
 .search-field-container {
   position: relative; ***REMOVED***
@@ -706,8 +735,7 @@ ul.side-article {
   border-radius: 10px 10px 0 0;
   background: rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #ddd;
-  color: #333;
-  font-weight: bolder; ***REMOVED***
+  color: #333; ***REMOVED***
   .roundbox a:visited {
     color: #333; ***REMOVED***
   .roundbox span {

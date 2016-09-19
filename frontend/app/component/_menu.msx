@@ -41,7 +41,9 @@ var Menu = function(ctrl){
             <div className="menubar">
                 Menu
             </div>
-            {fn.runCreateMenu(JSON.parse(Window.menu), 1)***REMOVED***
+            <div className="list-menu">
+                {fn.runCreateMenu(JSON.parse(Window.menu), 1)***REMOVED***
+            </div>
         </div>
   ***REMOVED***;
 ***REMOVED***;

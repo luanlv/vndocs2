@@ -4,9 +4,13 @@ var Head = function(ctrl){
   return [
     <div className="container">
       <a href="/" config={m.route***REMOVED***>
-        <img src="/assets/images/logo.png" alt="logo Vndocs.com"/>
+        <img className="logo" src="/assets/images/logo.png" alt="logo Vndocs.com"/>
       </a>
-      <span>Nơi chia sẻ tài liệu hoàn toàn miễn phí !</span>
+      <span className="slogan">Nơi chia sẻ tài liệu hoàn toàn miễn phí !</span>
+      <div className="free-logoWr">
+        <img className="free-logo" src="/assets/images/100_free.png" alt=""/>
+        <img className="lookingfor" src="/assets/images/lookingfor.png" alt=""/>
+      </div>
     </div>
 ***REMOVED***
 ***REMOVED***;
