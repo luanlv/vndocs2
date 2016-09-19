@@ -22,17 +22,6 @@
 ***REMOVED***
 ***REMOVED***
 
-.content {
-  width: 100%;
-  transition: all 300ms;
-  @include breakpoint($mobile){
-    border-left: 1px solid $border-light-blue;
-    position: relative;
-    right: 0;
-    transition: all 300ms;
-    top: 50px;
-***REMOVED***
-***REMOVED***
 
 .content.menu-active {
   transition: all 300ms;

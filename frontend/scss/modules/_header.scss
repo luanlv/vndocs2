@@ -5,23 +5,56 @@
 // ------------------------------------------------------------
 
 .headWr {
-  background: #f6f8f9;
-  min-height: 70px;
+  //background: $blue;
+  height: 38px;
+  @include breakpoint($mobile){
+    border-bottom: 1px solid #ddd;
+***REMOVED***
+  @include min-breakpoint($mobile){
+    background: #f6f8f9;
+    min-height: 38px;
+***REMOVED***
+  @include min-breakpoint(700){
+    min-height: 70px;
+***REMOVED***
+
   img.logo {
     height: 40px;
     width: 200px;
     position: absolute;
-    left: 0px;
-    top: 33px;
+    @include breakpoint($mobile){
+      margin: auto;
+      top: 7px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+  ***REMOVED***
+
+    @include min-breakpoint(700) {
+      position: absolute;
+      left: 0px;
+      top: 33px;
+  ***REMOVED***
+    @include min-breakpoint($mobile){
+      position: absolute;
+  ***REMOVED***
 ***REMOVED***
   span.slogan {
     position: absolute;
     left: 200px;
-    top: 53px;
+    top: 20px;
     color: #666;
     font-size: 16px;
     font-weight: bold;
     font-style: italic;
+    display: none;
+    @include min-breakpoint(700) {
+      top: 53px;
+      display: block;
+  ***REMOVED***
+    @include min-breakpoint($mobile){
+      display: block;
+  ***REMOVED***
 ***REMOVED***
   span.orange {
     color: $orange !important;
@@ -35,11 +68,19 @@
     height: 40px;
     width: 40px;
     position: absolute;
+    display: none;
+    @include min-breakpoint(700) {
+      display: block;
+  ***REMOVED***
 ***REMOVED***
   img.lookingfor {
     height: 25px;
     position: absolute;
     top: 10px;
+    display: none;
+    @include min-breakpoint(700) {
+      display: block;
+  ***REMOVED***
 ***REMOVED***
 
   .shareWr{
@@ -52,7 +93,7 @@
     top: -20px;
     right: 0;
     display: none;
-    @include min-breakpoint(888px) {
+    @include min-breakpoint(888) {
       display: block;
   ***REMOVED***
 ***REMOVED***
