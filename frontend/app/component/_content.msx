@@ -2,13 +2,12 @@ var Content = function(ctrl){
     return <div className="main mh500">
       {ctrl.request.ready()?[
         <div className="sort roundbox">
-          <form name="news_set_sort" id="news_set_sort" method="post" action="http://englishtips.org/">Sort by:&nbsp;
-            {/*<img src="Englishtips.org_%20Learning%20English%20Together_files/desc.gif" alt=""/>*/***REMOVED***
-            <a href="http://englishtips.org/#" onclick="dle_change_sort('date','asc'); return false;">date</a>
-            <a href="http://englishtips.org/#" onclick="dle_change_sort('rating','desc'); return false;">rating</a>
-            <a href="http://englishtips.org/#" onclick="dle_change_sort('news_read','desc'); return false;">most visited</a>
-            <a href="http://englishtips.org/#" onclick="dle_change_sort('comm_num','desc'); return false;">comments</a>
-            <a href="http://englishtips.org/#" onclick="dle_change_sort('title','desc'); return false;">alphabetically</a>
+          <form name="news_set_sort" id="news_set_sort" method="post" action="http://englishtips.org/">
+              <span>Lọc theo:&nbsp;</span>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('date','asc'); return false;">Ngày đăng</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('rating','desc'); return false;">Rating</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('news_read','desc'); return false;">Lượt xem</a>
+            <a href="http://englishtips.org/#" onclick="dle_change_sort('comm_num','desc'); return false;">Bình luận</a>
           </form>
         </div>,
           ctrl.posts().map(function(el) {

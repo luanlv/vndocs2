@@ -59,6 +59,7 @@
 .info .description {
   font-size: 1em;
   line-height: 1.5em;
+  color: #333;
 ***REMOVED***
 
 .sort {
@@ -75,8 +76,19 @@
 ***REMOVED***
 
 .roundbox {
-  border-radius: 10px 0 10px 0;
-  background: rgba(0, 0, 0, 0.07);
+  border-radius: 10px 10px 0 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-weight: bolder;
+  a:visited{
+    color: #333;
+***REMOVED***
+  span{
+    color: #666;
+    font-weight: normal;
+    font-style: italic;
+***REMOVED***
 ***REMOVED***
 
 .main {

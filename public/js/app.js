@@ -149,13 +149,12 @@ var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
         {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
-          {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: ["Sort by: ", 
-            /*<img src="Englishtips.org_%20Learning%20English%20Together_files/desc.gif" alt=""/>*/
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["date"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["rating"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["most visited"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["comments"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('title','desc'); return false;"***REMOVED***, children: ["alphabetically"]***REMOVED***
+          {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: [
+              {tag: "span", attrs: {***REMOVED***, children: ["Lọc theo: "]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["Ngày đăng"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["Rating"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["Lượt xem"]***REMOVED***, 
+            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["Bình luận"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***,
           ctrl.posts().map(function(el) {

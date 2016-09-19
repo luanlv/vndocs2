@@ -690,7 +690,8 @@ ul.side-article {
 
 .info .description {
   font-size: 1em;
-  line-height: 1.5em; ***REMOVED***
+  line-height: 1.5em;
+  color: #333; ***REMOVED***
 
 .sort {
   padding: 5px; ***REMOVED***
@@ -702,8 +703,17 @@ ul.side-article {
     content: ""; ***REMOVED***
 
 .roundbox {
-  border-radius: 10px 0 10px 0;
-  background: rgba(0, 0, 0, 0.07); ***REMOVED***
+  border-radius: 10px 10px 0 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-weight: bolder; ***REMOVED***
+  .roundbox a:visited {
+    color: #333; ***REMOVED***
+  .roundbox span {
+    color: #666;
+    font-weight: normal;
+    font-style: italic; ***REMOVED***
 
 .main {
   padding: 10px 15px 0 15px; ***REMOVED***
