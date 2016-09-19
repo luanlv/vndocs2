@@ -5,6 +5,7 @@ var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
 Main.Category = require('./main/category.msx');
 Main.Post = require('./main/post.msx');
+Main.Article = require('./main/article.msx');
 
 data.token = $(document.getElementsByName("csrfToken")).val();
 // alert($(token).val());
@@ -22,13 +23,128 @@ Array.prototype.getItemByParam = function(paramPair) {
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,
+  "/blog/:slug": Main.Article,
   "/category/:categorySlug": Main.Category
 ***REMOVED***);
 
 
 module.exports = Main;
 
-***REMOVED***,{"./core/_data.msx":8,"./core/_fn.msx":9,"./main/category.msx":11,"./main/home.msx":12,"./main/post.msx":13***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./core/_data.msx":9,"./core/_fn.msx":10,"./main/article.msx":12,"./main/category.msx":13,"./main/home.msx":14,"./main/post.msx":15***REMOVED***],2:[function(require,module,exports){
+var fn = require('../core/_fn.msx');
+
+var PostView = function(ctrl){
+  return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
+    ctrl.request.ready()?[
+      {tag: "div", attrs: {***REMOVED***, children: [
+
+        {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+        {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
+          {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
+            {tag: "h1", attrs: {***REMOVED***, children: [ctrl.article().article.title]***REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+              
+              {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.article().article.author]***REMOVED***, 
+              {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+                          ctrl.article().article.tags.map(function(el){
+                              {el***REMOVED***
+                          ***REMOVED***)
+                          
+                    ***REMOVED******REMOVED***, 
+              {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.article().article.time).format('L')]***REMOVED***
+          ***REMOVED******REMOVED***, 
+            
+            {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
+              {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.article().article.cover.id, alt:ctrl.article().article.cover.alt***REMOVED******REMOVED***]***REMOVED***
+          ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
+              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
+            m.trust(marked(ctrl.article().article.body))
+        ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***,
+      {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
+      {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
+        
+        {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+              {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
+                {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
+                {tag: "br", attrs: {***REMOVED******REMOVED***, 
+                  "Kigurumix"
+            ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
+                {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
+                          onchange:function(el){
+                            ctrl.comment($(el.target).val());
+                            console.log(ctrl.comment());
+                        ***REMOVED***
+              ***REMOVED***, children: [
+                  ctrl.comment()
+              ***REMOVED******REMOVED***, 
+            {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
+                  {tag: "a", attrs: {href:"javascript:void(0)", 
+                     onclick:function(){
+                       $.ajax({
+                         type: "POST",
+                         url: "/comment/" + ctrl.postID,
+                         data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
+                         contentType: "application/json",
+                         dataType: "json",
+                         success: function(res){
+                           console.log(res)
+                       ***REMOVED***
+                     ***REMOVED***);
+                   ***REMOVED***
+                ***REMOVED***, children: [" Gửi "]***REMOVED***
+              ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***, 
+        
+        
+        
+        ctrl.article().comments.map(function(el){
+          return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+                {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
+                  {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
+                  {tag: "br", attrs: {***REMOVED******REMOVED***
+              ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
+                  {tag: "span", attrs: {class:"info"***REMOVED***, children: [
+                    {tag: "span", attrs: {className:"userName"***REMOVED***, children: [el.user.fullName]***REMOVED***, " Posted July 9th 2016, 01:04 AM", 
+                    {tag: "span", attrs: {class:"buttons"***REMOVED***
+                      
+                  ***REMOVED***
+                ***REMOVED******REMOVED***, 
+              el.comment
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***
+      ***REMOVED***)
+      
+      
+    ***REMOVED******REMOVED***
+    
+  ***REMOVED***:[
+      {tag: "div", attrs: {***REMOVED***, children: [
+        "loading !!"
+    ***REMOVED******REMOVED***
+  ***REMOVED***
+    
+***REMOVED******REMOVED***
+  
+***REMOVED***;
+
+
+
+module.exports = PostView;
+***REMOVED***,{"../core/_fn.msx":10***REMOVED***],3:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
@@ -86,7 +202,7 @@ var Content = function(ctrl){
 
 
 module.exports = Content;
-***REMOVED***,{***REMOVED***],3:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],4:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Head = function(ctrl){
@@ -101,7 +217,7 @@ var Head = function(ctrl){
 ***REMOVED***;
 
 module.exports = Head;
-***REMOVED***,{"../core/_data.msx":8***REMOVED***],4:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":9***REMOVED***],5:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 
@@ -174,7 +290,7 @@ var Login = function(ctrl){
 ***REMOVED***;
 
 module.exports = Login;
-***REMOVED***,{"../core/_data.msx":8***REMOVED***],5:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":9***REMOVED***],6:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
 
@@ -221,7 +337,7 @@ var Menu = function(ctrl){
 
 
 module.exports = Menu;
-***REMOVED***,{"../core/_data.msx":8,"../core/_fn.msx":9***REMOVED***],6:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":9,"../core/_fn.msx":10***REMOVED***],7:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 
 var PostView = function(ctrl){
@@ -339,7 +455,7 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_fn.msx":9***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{"../core/_fn.msx":10***REMOVED***],8:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
@@ -355,14 +471,29 @@ var Side = function(ctrl){
         {tag: "div", attrs: {style:"height: 135px;"***REMOVED***, children: [
             {tag: "iframe", attrs: {src:"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvndocs&tabs&width=190&height=136&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=695740397243976", width:"190", height:"136", style:"border:none;overflow:hidden", scrolling:"no", frameborder:"0", allowTransparency:"true"***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***
+        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
+        {tag: "div", attrs: {className:"articles"***REMOVED***, children: [
+            "Hướng dẫn/Chia sẻ"
+      ***REMOVED******REMOVED***, 
+        {tag: "ul", attrs: {className:"side-article"***REMOVED***, children: [
+            ctrl.articles.map(function(el){
+                return {tag: "li", attrs: {***REMOVED***, children: [
+                    {tag: "a", attrs: {href:"/blog" + el.slug, 
+                        config:m.route
+                  ***REMOVED***, children: [
+                        el.title
+                  ***REMOVED******REMOVED***
+                    
+              ***REMOVED******REMOVED***
+          ***REMOVED***)
+      ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
     
   ***REMOVED***
 ***REMOVED***;
 
 module.exports = Side;
-***REMOVED***,{"../core/_data.msx":8***REMOVED***],8:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":9***REMOVED***],9:[function(require,module,exports){
 var Data = {***REMOVED***;
 
 Data.showSignin = false;
@@ -374,7 +505,7 @@ if(Window.user !== undefined) {
 ***REMOVED***
 
 module.exports = Data;
-***REMOVED***,{***REMOVED***],9:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],10:[function(require,module,exports){
 var fn ={***REMOVED***;
 
 
@@ -472,7 +603,7 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
 ***REMOVED***;
 
 module.exports = fn;
-***REMOVED***,{***REMOVED***],10:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],11:[function(require,module,exports){
 "use strict";
 
 window.mobilecheck = function() {
@@ -501,7 +632,75 @@ window.Main = require('./_main.msx');
 
 
 
-***REMOVED***,{"./_main.msx":1***REMOVED***],11:[function(require,module,exports){
+***REMOVED***,{"./_main.msx":1***REMOVED***],12:[function(require,module,exports){
+var Post = {***REMOVED***;
+var Menu = require('../component/_menu.msx');
+var fn = require('../core/_fn.msx');
+var ArticleView = require('../component/_article.msx');
+var Side = require('../component/_side.msx');
+var Login = require('../component/_login.msx');
+var Head = require('../component/_head.msx');
+
+Post.controller = function(){
+  var ctrl = this;
+  ctrl.setup = function(){
+    m.redraw();
+***REMOVED***;
+  ctrl.slug =  m.route.param("slug");
+  ctrl.request = {***REMOVED***;
+  ctrl.request.ready = m.prop(false);
+  ctrl.article = m.prop({***REMOVED***);
+  ctrl.comment = m.prop("");
+  
+  if(Window.article === undefined) {
+    console.log("run request !!!!!!!!!!")
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/blog/get/" + ctrl.slug***REMOVED***, ctrl.article, ctrl.setup);
+***REMOVED*** else {
+    // ctrl.request.data = m.prop(Window.post);
+    ctrl.article().article = Window.article;
+    ctrl.article().comments = Window.comments;
+    Window.article = undefined;
+    Window.comments = undefined;
+    ctrl.request.ready = m.prop(true);
+    m.redraw();
+***REMOVED***;
+  ctrl.setup = function(){
+    // ctrl.post(ctrl.request.data());
+    console.log(ctrl.article());
+    m.redraw();
+***REMOVED***;
+  
+***REMOVED***;
+
+Post.view = function(ctrl){
+  return [
+    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+      Head(ctrl)
+  ***REMOVED******REMOVED***,
+    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
+            {tag: "span", attrs: {className:"menu-icon", 
+                  onclick:function(){
+                    var el = document.querySelectorAll('.menu')[0];
+                    var el2 = document.querySelectorAll('.content')[0];
+                    fn.toggleClass(el, "menu-active");
+                    fn.toggleClass(el2, "menu-active");
+                ***REMOVED***
+          ***REMOVED***, children: ["Menu"]***REMOVED***, 
+      {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
+        Menu(ctrl), 
+        {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
+          ArticleView(ctrl), 
+          Side(ctrl)
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+    
+  ***REMOVED******REMOVED***,
+    Login(ctrl)
+***REMOVED***
+***REMOVED***;
+
+module.exports =  Post;
+***REMOVED***,{"../component/_article.msx":2,"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***],13:[function(require,module,exports){
 var Category = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -564,7 +763,7 @@ Category.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Category;
-***REMOVED***,{"../component/_content.msx":2,"../component/_head.msx":3,"../component/_login.msx":4,"../component/_menu.msx":5,"../component/_side.msx":7,"../core/_fn.msx":9***REMOVED***],12:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":3,"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***],14:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -580,6 +779,7 @@ Home.controller = function(){
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop();
+  ctrl.articles = Window.articles;
   
   if(Window.posts === undefined) {
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
@@ -625,7 +825,7 @@ Home.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":2,"../component/_head.msx":3,"../component/_login.msx":4,"../component/_menu.msx":5,"../component/_side.msx":7,"../core/_fn.msx":9***REMOVED***],13:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":3,"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***],15:[function(require,module,exports){
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -693,4 +893,4 @@ Post.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_head.msx":3,"../component/_login.msx":4,"../component/_menu.msx":5,"../component/_post.msx":6,"../component/_side.msx":7,"../core/_fn.msx":9***REMOVED***]***REMOVED***,{***REMOVED***,[10])
+***REMOVED***,{"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_post.msx":7,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***]***REMOVED***,{***REMOVED***,[11])

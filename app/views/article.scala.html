@@ -1,4 +1,4 @@
-@(menu: String, categories: String, posts: String, articles: String)(implicit user: Option[User], request: RequestHeader, messages: Messages)
+@(menu: String, categories: String, article: String, comments: String)(implicit user: Option[User],request: RequestHeader, messages: Messages)
 
 <!doctype html>
 <html lang="en">
@@ -7,16 +7,17 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        @*<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>*@
         <link rel="stylesheet" href="/assets/stylesheets/style.min.css">
+
     </head>
     <body>
+
         <script >
             Window.urls = {***REMOVED***;
             Window.menu = @Html(menu);
             Window.categories = @Html(categories);
-            Window.posts = @Html(posts);
-            Window.articles = @Html(articles);
+            Window.comments = @Html(comments);
+            Window.article = @Html(article);
             @user match {
                 case Some(user) => {
                     Window.user = {

@@ -11,7 +11,9 @@ GET /post/:postID     controllers.PostController.index(postID: String)
 GET /post/get/:postID     controllers.PostController.getPost(postID: String)
 GET  /posts/:page controllers.PostController.getPosts(page: Int)
 
-
+GET /blog/:slug controllers.ArticleController.index(slug: String)
+GET /blog/get/:slug controllers.ArticleController.getArticle(slug: String)
+GET /blogs/:page  controllers.ArticleController.getArticles(page: Int)
 POST  /admin/article  controllers.ArticleController.doArticle
 
 GET   /comment/:postID/:page  controllers.CommentController.getList(postID: String, page: Int)

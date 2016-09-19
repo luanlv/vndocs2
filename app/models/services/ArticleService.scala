@@ -9,4 +9,6 @@ trait ArticleService {
   def find(id: String): Future[Option[Article]]
 
   def save(data: Article): Future[Try[Article]]
+
+  def getList(page: Int): Future[List[Article]]
 ***REMOVED***

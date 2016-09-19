@@ -13,4 +13,8 @@ class ArticleServiceImpl @Inject() (articleDAO: ArticleDAO) extends ArticleServi
   def save(data: Article) = {
     articleDAO.save(data)
 ***REMOVED***
+
+  def getList(page: Int) = {
+    articleDAO.getList(page)
+***REMOVED***
 ***REMOVED***

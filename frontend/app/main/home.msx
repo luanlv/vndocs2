@@ -13,6 +13,7 @@ Home.controller = function(){
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop();
+  ctrl.articles = Window.articles;
   
   if(Window.posts === undefined) {
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);

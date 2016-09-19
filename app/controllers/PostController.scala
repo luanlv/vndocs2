@@ -92,7 +92,7 @@ class PostController @Inject() (
 ***REMOVED***
 
   def getPost(postID: String) = Action.async { implicit request =>
-    var data = for {
+    val data = for {
       post <- postService.retrieve(postID)
       comments <- commentService.getList(postID, 1)
   ***REMOVED*** yield (post, comments)

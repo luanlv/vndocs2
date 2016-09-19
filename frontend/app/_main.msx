@@ -4,6 +4,7 @@ var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
 Main.Category = require('./main/category.msx');
 Main.Post = require('./main/post.msx');
+Main.Article = require('./main/article.msx');
 
 data.token = $(document.getElementsByName("csrfToken")).val();
 // alert($(token).val());
@@ -21,6 +22,7 @@ Array.prototype.getItemByParam = function(paramPair) {
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,
+  "/blog/:slug": Main.Article,
   "/category/:categorySlug": Main.Category
 ***REMOVED***);
 

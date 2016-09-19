@@ -13,4 +13,8 @@ class ArticleDAOImpl @Inject() (repository: ArticleRepository) extends ArticleDA
   def save(data: Article) = {
     repository.insert(data)
 ***REMOVED***
+
+  def getList(page: Int) = {
+    repository.getList(sort = Json.obj("time" -> -1), page = page, num = 10)
+***REMOVED***
 ***REMOVED***

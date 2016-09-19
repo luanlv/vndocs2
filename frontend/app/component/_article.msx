@@ -1,0 +1,113 @@
+var fn = require('../core/_fn.msx');
+
+var PostView = function(ctrl){
+  return <div className="main mh500">
+    {ctrl.request.ready()?[
+      <div>
+
+        <hr className="style3"/>
+        <div className="postWr">
+          <div className="postTitle">
+            <h1>{ctrl.article().article.title***REMOVED***</h1>
+          </div>
+          <hr className="style3"/>
+          <div className="postInfo cf">
+            <div className="meta-data">
+              
+              <span className="upload">{ctrl.article().article.author***REMOVED***</span>
+              <span className="category">
+                          {ctrl.article().article.tags.map(function(el){
+                              {el***REMOVED***
+                          ***REMOVED***)
+                        ***REMOVED***
+                      </span>
+              <span className="time">{moment(ctrl.article().article.time).format('L')***REMOVED***</span>
+            </div>
+            
+            <div className="t-left">
+              <a href="#"><img src={"/cover/get/" + ctrl.article().article.cover.id***REMOVED*** alt={ctrl.article().article.cover.alt***REMOVED***/></a>
+            </div>
+            <div className="t-right">
+              <div className="rate-nav">RATING</div>
+              <div className="rate-num">0</div>
+            </div>
+          </div>
+          <hr className="style3"/>
+          <div className="postContent">
+            {m.trust(marked(ctrl.article().article.body))***REMOVED***
+          </div>
+        </div>
+      </div>,
+      <hr className="style3"/>,
+      <div id="comment">
+        
+        <div className="commentWr">
+              <span class="poster">
+                <img src="http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png" class="icon"/>
+                <br/>
+                  Kigurumix
+              </span>
+          <div class="comment commentBox">
+                <textarea name="cmt" id="cmt"
+                          onchange={function(el){
+                            ctrl.comment($(el.target).val());
+                            console.log(ctrl.comment());
+                        ***REMOVED******REMOVED***
+                >
+                  {ctrl.comment()***REMOVED***
+                </textarea>
+            <span className="submit">
+                  <a href="javascript:void(0)"
+                     onclick={function(){
+                       $.ajax({
+                         type: "POST",
+                         url: "/comment/" + ctrl.postID,
+                         data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
+                         contentType: "application/json",
+                         dataType: "json",
+                         success: function(res){
+                           console.log(res)
+                       ***REMOVED***
+                     ***REMOVED***);
+                   ***REMOVED******REMOVED***
+                  > Gửi </a>
+                </span>
+          </div>
+        </div>
+        
+        
+        
+        {ctrl.article().comments.map(function(el){
+          return <div className="commentWr">
+                <span class="poster">
+                  <img src={el.user.avatarURL***REMOVED*** class="icon"/>
+                  <br/>
+                </span>
+            <div class="comment">
+                  <span class="info">
+                    <span className="userName">{el.user.fullName***REMOVED***</span> Posted July 9th 2016, 01:04 AM
+                    <span class="buttons">
+                      
+                    </span>
+                  </span>
+              {el.comment***REMOVED***
+            </div>
+          </div>
+      ***REMOVED***)***REMOVED***
+      
+      
+      </div>
+    
+  ***REMOVED***:[
+      <div>
+        loading !!
+      </div>
+  ***REMOVED***
+  ***REMOVED***
+  </div>
+  
+***REMOVED***;
+
+
+
+module.exports = PostView;
