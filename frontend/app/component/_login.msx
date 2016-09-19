@@ -4,6 +4,12 @@ var data = require('../core/_data.msx');
 var Login = function(ctrl){
   return [
     <div className="login-popup"
+         onclick={function(){
+           if ($('.wrapper-content:hover').length == 0) {
+             data.showSignin = false;
+             data.showSignup = false;
+         ***REMOVED***
+       ***REMOVED******REMOVED***
          style={(!data.showSignin)?"display: none":""***REMOVED***>
       <div class="wrapper">
         <div class="wrapper-content">
@@ -48,7 +54,14 @@ var Login = function(ctrl){
         </div>
       </div>
     </div>,
-    <div className="login-popup" style={(!data.showSignup)?"display: none":""***REMOVED***>
+    <div className="login-popup"
+         onclick={function(){
+           if ($('.wrapper-content:hover').length == 0) {
+             data.showSignin = false;
+             data.showSignup = false;
+         ***REMOVED***
+       ***REMOVED******REMOVED***
+         style={(!data.showSignup)?"display: none":""***REMOVED***>
       <div class="wrapper">
         <div class="wrapper-content">
           <h3>Đăng ký</h3>
@@ -88,14 +101,19 @@ var Login = function(ctrl){
               <div class="form-group">
                 <div>
                   <div className="label"></div>
-                  <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Sign up</button>
+                  <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Đăng ký</button>
                 </div>
               </div>
           </form>
           <div className="label"></div>
           <span className="other">
-            <span>Đã có tài khoản?</span>
-            <a href="#" class="forgot-pass">Đăng nhập</a>
+            <span>Đã có tài khoản? </span>
+            <a href="#" class="forgot-pass"
+              onclick={function(){
+                data.showSignin = true;
+                data.showSignup = false;
+            ***REMOVED******REMOVED***
+            >Đăng nhập</a>
           </span>
         </div>
       </div>

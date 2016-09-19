@@ -1039,6 +1039,8 @@ hr.style18:before {
     width: 120px !important;
     display: inline-block;
     text-align: right; ***REMOVED***
+    .login-popup .label:after {
+      content: "\00a0"; ***REMOVED***
   .login-popup .other {
     margin-top: 5px; ***REMOVED***
     .login-popup .other a {
@@ -1049,6 +1051,20 @@ hr.style18:before {
     font-weight: bold;
     text-align: center;
     color: #FF851B; ***REMOVED***
+  .login-popup input[type="text"], .login-popup input[type="email"], .login-popup input[type="password"] {
+    padding: 10px;
+    border: solid 1px #fff;
+    box-shadow: inset 1px 1px 2px 0 #707070;
+    transition: box-shadow 0.3s; ***REMOVED***
+  .login-popup input[type="text"]:focus,
+  .login-popup input[type="text"].focus,
+  .login-popup input[type="email"]:focus,
+  .login-popup input[type="email"].focus,
+  .login-popup input[type="password"]:focus,
+  .login-popup input[type="password"].focus {
+    box-shadow: inset 1px 1px 2px 0 #c9c9c9; ***REMOVED***
+  .login-popup .wrapper-content {
+    z-index: 999; ***REMOVED***
 
 .breadcrumb {
   font-size: 0.9em; ***REMOVED***

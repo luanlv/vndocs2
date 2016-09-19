@@ -36,7 +36,7 @@ var Menu = function(ctrl){
                                    data.showSignin = false;
                                    data.showSignup = true;
                              ***REMOVED******REMOVED***
-                            ><span>Đăng ký</span></a></div>
+                            ><span> Đăng ký</span></a></div>
                         <a href="/authenticate/facebook" class="social-button" id="facebook-connect"> <span> Facebook</span></a>
                         <a href="/authenticate/google" class="social-button" id="google-connect"> <span> Google</span></a>
                     </div>

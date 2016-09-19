@@ -252,6 +252,12 @@ var data = require('../core/_data.msx');
 var Login = function(ctrl){
   return [
     {tag: "div", attrs: {className:"login-popup", 
+         onclick:function(){
+           if ($('.wrapper-content:hover').length == 0) {
+             data.showSignin = false;
+             data.showSignup = false;
+         ***REMOVED***
+       ***REMOVED***, 
          style:(!data.showSignin)?"display: none":""***REMOVED***, children: [
       {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
@@ -296,7 +302,14 @@ var Login = function(ctrl){
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"login-popup", style:(!data.showSignup)?"display: none":""***REMOVED***, children: [
+    {tag: "div", attrs: {className:"login-popup", 
+         onclick:function(){
+           if ($('.wrapper-content:hover').length == 0) {
+             data.showSignin = false;
+             data.showSignup = false;
+         ***REMOVED***
+       ***REMOVED***, 
+         style:(!data.showSignup)?"display: none":""***REMOVED***, children: [
       {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
           {tag: "h3", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
@@ -336,14 +349,19 @@ var Login = function(ctrl){
               {tag: "div", attrs: {class:"form-group"***REMOVED***, children: [
                 {tag: "div", attrs: {***REMOVED***, children: [
                   {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
-                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Sign up"]***REMOVED***
+                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Đăng ký"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
           {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
           {tag: "span", attrs: {className:"other"***REMOVED***, children: [
-            {tag: "span", attrs: {***REMOVED***, children: ["Đã có tài khoản?"]***REMOVED***, 
-            {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Đăng nhập"]***REMOVED***
+            {tag: "span", attrs: {***REMOVED***, children: ["Đã có tài khoản? "]***REMOVED***, 
+            {tag: "a", attrs: {href:"#", class:"forgot-pass", 
+              onclick:function(){
+                data.showSignin = true;
+                data.showSignup = false;
+            ***REMOVED***
+          ***REMOVED***, children: ["Đăng nhập"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
@@ -391,7 +409,7 @@ var Menu = function(ctrl){
                                    data.showSignin = false;
                                    data.showSignup = true;
                              ***REMOVED***
-                          ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
+                          ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [" Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
                         {tag: "a", attrs: {href:"/authenticate/facebook", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
                         {tag: "a", attrs: {href:"/authenticate/google", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
                   ***REMOVED******REMOVED***
