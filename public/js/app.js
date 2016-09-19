@@ -203,6 +203,7 @@ var Content = function(ctrl){
 module.exports = Content;
 ***REMOVED***,{***REMOVED***],4:[function(require,module,exports){
 var data = require('../core/_data.msx');
+var fn = require('../core/_fn.msx');
 
 var Head = function(ctrl){
   return [
@@ -210,17 +211,30 @@ var Head = function(ctrl){
       {tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: [
         {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
     ***REMOVED******REMOVED***, 
-      {tag: "span", attrs: {className:"slogan"***REMOVED***, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]***REMOVED***, 
+      {tag: "span", attrs: {className:"slogan orange", 
+        config:function(el, isInited, context){
+          if(!isInited){
+            setInterval(function(){
+              console.log("change color");
+              fn.toggleClass(el, 'orange');
+          ***REMOVED***, 300)
+        ***REMOVED***
+      ***REMOVED***
+    ***REMOVED***, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]***REMOVED***, 
       {tag: "div", attrs: {className:"free-logoWr"***REMOVED***, children: [
         {tag: "img", attrs: {className:"free-logo", src:"/assets/images/100_free.png", alt:""***REMOVED******REMOVED***, 
         {tag: "img", attrs: {className:"lookingfor", src:"/assets/images/lookingfor.png", alt:""***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***, 
+      
+      {tag: "div", attrs: {className:"shareWr"***REMOVED***, children: [
+        {tag: "img", attrs: {className:"share", src:"/assets/images/sharing-is-caring.png", alt:""***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***
 ***REMOVED***
 ***REMOVED***;
 
 module.exports = Head;
-***REMOVED***,{"../core/_data.msx":9***REMOVED***],5:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":9,"../core/_fn.msx":10***REMOVED***],5:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 

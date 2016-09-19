@@ -444,10 +444,12 @@ body {
     position: absolute;
     left: 200px;
     top: 53px;
-    color: #FF4136;
+    color: #666;
     font-size: 16px;
     font-weight: bold;
     font-style: italic; ***REMOVED***
+  .headWr span.orange {
+    color: #FF851B !important; ***REMOVED***
   .headWr .free-logoWr {
     position: relative;
     margin-left: 520px;
@@ -457,9 +459,21 @@ body {
     width: 40px;
     position: absolute; ***REMOVED***
   .headWr img.lookingfor {
-    height: 20px;
+    height: 25px;
     position: absolute;
     top: 10px; ***REMOVED***
+  .headWr .shareWr {
+    float: right;
+    position: relative; ***REMOVED***
+  .headWr img.share {
+    position: absolute;
+    height: 60px;
+    top: -20px;
+    right: 0;
+    display: none; ***REMOVED***
+    @media only screen and (min-width: 888pxpx) {
+      .headWr img.share {
+        display: block; ***REMOVED*** ***REMOVED***
 
 .menu-icon {
   background: #ddd;

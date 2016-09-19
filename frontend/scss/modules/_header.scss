@@ -18,10 +18,13 @@
     position: absolute;
     left: 200px;
     top: 53px;
-    color: $red;
+    color: #666;
     font-size: 16px;
     font-weight: bold;
     font-style: italic;
+***REMOVED***
+  span.orange {
+    color: $orange !important;
 ***REMOVED***
   .free-logoWr {
     position: relative;
@@ -34,8 +37,23 @@
     position: absolute;
 ***REMOVED***
   img.lookingfor {
-    height: 20px;
+    height: 25px;
     position: absolute;
     top: 10px;
+***REMOVED***
+
+  .shareWr{
+    float: right;
+    position: relative;
+***REMOVED***
+  img.share{
+    position: absolute;
+    height: 60px;
+    top: -20px;
+    right: 0;
+    display: none;
+    @include min-breakpoint(888px) {
+      display: block;
+  ***REMOVED***
 ***REMOVED***
 ***REMOVED***
