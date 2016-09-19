@@ -4,6 +4,9 @@ var data = require('../core/_data.msx');
 var Menu = function(ctrl){
     return [
         <div className="menu">
+            <div className="menubar">
+                Tài khoản
+            </div>
             <div className="login">
                 {(data.user !== undefined)?(
                     <div>
@@ -35,6 +38,9 @@ var Menu = function(ctrl){
     
             </div>
             <hr className="style1"/>
+            <div className="menubar">
+                Menu
+            </div>
             {fn.runCreateMenu(JSON.parse(Window.menu), 1)***REMOVED***
         </div>
   ***REMOVED***;

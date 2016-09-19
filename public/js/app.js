@@ -297,6 +297,9 @@ var data = require('../core/_data.msx');
 var Menu = function(ctrl){
     return [
         {tag: "div", attrs: {className:"menu"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+                "Tài khoản"
+          ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {className:"login"***REMOVED***, children: [
                 (data.user !== undefined)?(
                     {tag: "div", attrs: {***REMOVED***, children: [
@@ -328,6 +331,9 @@ var Menu = function(ctrl){
     
           ***REMOVED******REMOVED***, 
             {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+                "Menu"
+          ***REMOVED******REMOVED***, 
             fn.runCreateMenu(JSON.parse(Window.menu), 1)
       ***REMOVED******REMOVED***
   ***REMOVED***;
@@ -460,6 +466,9 @@ var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
     return [{tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+            "Tìm kiếm"
+      ***REMOVED******REMOVED***, 
         {tag: "div", attrs: {className:"search cf"***REMOVED***, children: [
             {tag: "form", attrs: {class:"search-form"***REMOVED***, children: [
                 {tag: "div", attrs: {class:"search-field-container"***REMOVED***, children: [
@@ -468,22 +477,26 @@ var Side = function(ctrl){
           ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
         {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {style:"height: 135px;"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+            "Fanpage website"
+      ***REMOVED******REMOVED***, 
+        {tag: "div", attrs: {style:"height: 135px; margin-top: 10px;"***REMOVED***, children: [
             {tag: "iframe", attrs: {src:"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvndocs&tabs&width=190&height=136&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=695740397243976", width:"190", height:"136", style:"border:none;overflow:hidden", scrolling:"no", frameborder:"0", allowTransparency:"true"***REMOVED******REMOVED***
       ***REMOVED******REMOVED***, 
         {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"articles"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
             "Hướng dẫn/Chia sẻ"
       ***REMOVED******REMOVED***, 
         {tag: "ul", attrs: {className:"side-article"***REMOVED***, children: [
             ctrl.articles.map(function(el){
                 return {tag: "li", attrs: {***REMOVED***, children: [
-                    {tag: "a", attrs: {href:"/blog" + el.slug, 
-                        config:m.route
-                  ***REMOVED***, children: [
-                        el.title
+                    {tag: "span", attrs: {***REMOVED***, children: [
+                        {tag: "a", attrs: {href:"/blog" + el.slug, 
+                            config:m.route
+                      ***REMOVED***, children: [
+                            el.title
+                      ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
-                    
               ***REMOVED******REMOVED***
           ***REMOVED***)
       ***REMOVED******REMOVED***

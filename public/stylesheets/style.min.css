@@ -488,7 +488,7 @@ body {
       transform: translateX(200px); ***REMOVED*** ***REMOVED***
 
 .menu {
-  padding: 10px 0 5px 5px; ***REMOVED***
+  padding: 0px 0 5px 5px; ***REMOVED***
   .menu a {
     color: #0076a3;
     padding: 0px 5px 5px 5px;
@@ -621,7 +621,7 @@ body {
   outline: none;
   border-radius: 4px; ***REMOVED***
 
-.articles {
+.menubar {
   margin-top: 10px;
   font-size: 15px;
   font-weight: bold;
@@ -643,8 +643,8 @@ ul.side-article {
   list-style: circle;
   padding-left: 15px; ***REMOVED***
   ul.side-article li {
-    margin-top: 5px;
-    border-bottom: 1px dashed rgba(100, 100, 100, 0.1); ***REMOVED***
+    margin: 5px 0;
+    border-bottom: 1px dashed rgba(100, 100, 100, 0.5); ***REMOVED***
 
 .block {
   margin-top: 15px;
