@@ -533,13 +533,7 @@ Category.controller = function(){
     m.redraw();
 ***REMOVED***;
   
-  if (typeof FB !== "undefined") {
-    FB.init({
-      appId      : '695740397243976',
-      xfbml      : true,
-      version    : 'v2.7'
-  ***REMOVED***);
-***REMOVED***
+
 ***REMOVED***;
 
 Category.view = function(ctrl){
@@ -601,13 +595,6 @@ Home.controller = function(){
     m.redraw();
 ***REMOVED***;
   
-  if (typeof FB !== "undefined") {
-    FB.init({
-      appId      : '695740397243976',
-      xfbml      : true,
-      version    : 'v2.7'
-  ***REMOVED***);
-***REMOVED***
 ***REMOVED***;
 
 Home.view = function(ctrl){
@@ -675,14 +662,7 @@ Post.controller = function(){
     console.log(ctrl.post());
     m.redraw();
 ***REMOVED***;
-
-  if (typeof FB !== "undefined") {
-    FB.init({
-      appId      : '695740397243976',
-      xfbml      : true,
-      version    : 'v2.7'
-  ***REMOVED***);
-***REMOVED***
+  
 ***REMOVED***;
 
 Post.view = function(ctrl){

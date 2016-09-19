@@ -28,13 +28,6 @@ Home.controller = function(){
     m.redraw();
 ***REMOVED***;
   
-  if (typeof FB !== "undefined") {
-    FB.init({
-      appId      : '695740397243976',
-      xfbml      : true,
-      version    : 'v2.7'
-  ***REMOVED***);
-***REMOVED***
 ***REMOVED***;
 
 Home.view = function(ctrl){

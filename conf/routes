@@ -12,6 +12,8 @@ GET /post/get/:postID     controllers.PostController.getPost(postID: String)
 GET  /posts/:page controllers.PostController.getPosts(page: Int)
 
 
+POST  /admin/article  controllers.ArticleController.doArticle
+
 GET   /comment/:postID/:page  controllers.CommentController.getList(postID: String, page: Int)
 POST  /comment/:postID  controllers.CommentController.doComment(postID: String)
 

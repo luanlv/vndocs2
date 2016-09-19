@@ -514,16 +514,17 @@ var NewArticle = function(ctrl){
               {tag: "form", attrs: {className:"form-horizontal", role:"form"***REMOVED***, children: [
                 {tag: "button", attrs: {type:"button", className:"btn ink-reaction btn-raised btn-primary", style:"float: right", 
                   onclick:function(){
-                    console.log(data());
-                    {/*$.ajax({*/***REMOVED***
-                      {/*type: "POST",*/***REMOVED***
-                      {/*url: "/admin/post",*/***REMOVED***
-                      {/*data: JSON.stringify(data()),*/***REMOVED***
-                      {/*contentType: "application/json",*/***REMOVED***
-                      {/*dataType: "json",*/***REMOVED***
-                      {/*success: function(data){*/***REMOVED***
-                      {/****REMOVED****/***REMOVED***
-                    {/****REMOVED***);*/***REMOVED***
+                    {/*console.log(data());*/***REMOVED***
+                    $.ajax({
+                      type: "POST",
+                      url: "/admin/article",
+                      data: JSON.stringify(data()),
+                      contentType: "application/json",
+                      dataType: "json",
+                      success: function(data){
+                        alert(data)
+                    ***REMOVED***
+                  ***REMOVED***);
                     
                 ***REMOVED***
               ***REMOVED***, children: ["Publish"]***REMOVED***, 
@@ -578,6 +579,12 @@ var NewArticle = function(ctrl){
                   {tag: "div", attrs: {className:"col-sm-10"***REMOVED***, children: [
         
                     {tag: "select", attrs: {multiple:true,"data-role":"tagsinput", 
+                      config:function(el,isInited,ctx){
+                        if(!isInited){
+                          console.log("init")
+                          $("select[multiple][data-role=tagsinput]").tagsinput();
+                      ***REMOVED***
+                    ***REMOVED***, 
                       onchange:function(el){
                         data().tags = $(el.target).val()
                     ***REMOVED***
@@ -1803,10 +1810,7 @@ Article.controller = function(){
     ctrl.showImgList = true;
     m.redraw();
 ***REMOVED***;
-  
-  $(function() {
-    $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
-***REMOVED***);
+
 ***REMOVED***;
 
 

@@ -1,38 +1,43 @@
-var Category = {***REMOVED***;
+var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
-var Content = require('../component/_content.msx');
+var ArticleView = require('../component/_article.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
 
-
-Category.controller = function(){
-  
+Post.controller = function(){
   var ctrl = this;
+  ctrl.setup = function(){
+    m.redraw();
+***REMOVED***;
+  ctrl.postID =  m.route.param("postID");
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
-  ctrl.categorySlug =  m.route.param("categorySlug");
+  ctrl.post = m.prop({***REMOVED***);
+  ctrl.comment = m.prop("");
   
-  if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"***REMOVED***, ctrl.posts, ctrl.setup);
+  if(Window.post === undefined) {
+    console.log("run request !!!!!!!!!!")
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID***REMOVED***, ctrl.post, ctrl.setup);
 ***REMOVED*** else {
-    ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
-    Window.posts = undefined;
+    // ctrl.request.data = m.prop(Window.post);
+    ctrl.post().post = Window.post;
+    ctrl.post().comments = Window.comments;
+    Window.post = undefined;
+    Window.comments = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
 ***REMOVED***;
   ctrl.setup = function(){
-    ctrl.posts(ctrl.request.data());
+    // ctrl.post(ctrl.request.data());
+    console.log(ctrl.post());
     m.redraw();
 ***REMOVED***;
   
-
 ***REMOVED***;
 
-Category.view = function(ctrl){
+Post.view = function(ctrl){
   return [
     <div className="headWr ">
       {Head(ctrl)***REMOVED***
@@ -49,7 +54,7 @@ Category.view = function(ctrl){
       <div className="bodyWr">
         {Menu(ctrl)***REMOVED***
         <div className="content mh1000 ">
-          {Content(ctrl)***REMOVED***
+          {PostView(ctrl)***REMOVED***
           {Side(ctrl)***REMOVED***
         </div>
       </div>
@@ -59,4 +64,4 @@ Category.view = function(ctrl){
 ***REMOVED***
 ***REMOVED***;
 
-module.exports =  Category;
+module.exports =  Post;
