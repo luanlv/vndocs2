@@ -1,4 +1,5 @@
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 
 var PostView = function(ctrl){
     return <div className="main mh500">
@@ -21,9 +22,11 @@ var PostView = function(ctrl){
         
                  <span className="upload">{ctrl.post().post.upload***REMOVED***</span>
                  <span className="category">
-                      {ctrl.post().post.categories.map(function(item){
-                        return <span>{item***REMOVED***</span>
-                    ***REMOVED***)***REMOVED***
+                     {ctrl.post().post.categories.map(function (item) {
+                         return <a href={"/category/" + item***REMOVED***
+                                   config={m.route***REMOVED***
+                         ><span>{Window.categories.getItemByParam({slug: item***REMOVED***).name***REMOVED***</span></a>
+                   ***REMOVED***)***REMOVED***
                       </span>
                  <span className="time">{moment(ctrl.post().post.time).format('L')***REMOVED***</span>
                </div>
@@ -34,6 +37,15 @@ var PostView = function(ctrl){
                <div className="t-right">
                  <div className="rate-nav">RATING</div>
                  <div className="rate-num">0</div>
+                 <button className="rate-button"
+                    onclick={function(el){
+                        if(Window.user == undefined){
+                            data.showSignin = true;
+                      ***REMOVED*** else {
+                            alert("voted");
+                      ***REMOVED***
+                  ***REMOVED******REMOVED***
+                 >+1</button>
                </div>
              </div>
              <hr className="style3"/>

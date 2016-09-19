@@ -29,20 +29,22 @@ class ArticleController @Inject() (
       categories <- categoryService.listParent
       article <- articleService.find(slug)
       comments <- commentService.getList(slug, 1)
-  ***REMOVED*** yield (menu, categories, article, comments)
+      articles <- articleService.getList(1)
+  ***REMOVED*** yield (menu, categories, article, comments, articles)
 
     data.map { data =>
       Ok(views.html.article(
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
-        Json.toJson(data._4).toString
+        Json.toJson(data._4).toString,
+        Json.toJson(data._5).toString
       ))
   ***REMOVED***
 
 ***REMOVED***
 
-  def getArticle(slug: String) = silhouette.UserAwareAction.async(parse.json) { implicit request =>
+  def getArticle(slug: String) = silhouette.UserAwareAction.async { implicit request =>
     val data = for {
       article <- articleService.find(slug)
       comments <- commentService.getList(slug, 1)

@@ -43,6 +43,7 @@ class PostController @Inject() (
   categoryService: CategoryService,
   postService: PostService,
   commentService: CommentService,
+  articleService: ArticleService,
   socialProviderRegistry: SocialProviderRegistry)
   extends AuthController {
 
@@ -52,13 +53,15 @@ class PostController @Inject() (
       categories <- categoryService.listParent
       post <- postService.retrieve(postID)
       comments <- commentService.getList(postID, 1)
-  ***REMOVED*** yield (menu, categories, post, comments)
+      articles <- articleService.getList(1)
+  ***REMOVED*** yield (menu, categories, post, comments, articles)
     data.map { data =>
       Ok(views.html.post(
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
-        Json.toJson(data._4).toString
+        Json.toJson(data._4).toString,
+        Json.toJson(data._5).toString
       ))
   ***REMOVED***
 ***REMOVED***
@@ -74,13 +77,14 @@ class PostController @Inject() (
       menu <- setupService.retrieve("menu")
       categories <- categoryService.listParent
       post <- postService.getListByCategory(categorySlug, 1)
-  ***REMOVED*** yield (menu, categories, post)
+      articles <- articleService.getList(1)
+  ***REMOVED*** yield (menu, categories, post, articles)
     data.map { data =>
-      Ok(views.html.post(
+      Ok(views.html.home(
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
-        ""
+        Json.toJson(data._4).toString
       ))
   ***REMOVED***
 ***REMOVED***

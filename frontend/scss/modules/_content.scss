@@ -139,7 +139,7 @@
     border-right: 1px solid $border-light-blue;
     box-shadow: inset 0px -3px 7px 0px rgba(43,38,43,0.1);
 ***REMOVED***
-  padding: 10px 15px 0 15px;
+  padding: 10px 15px 30px 15px;
 ***REMOVED***
 
 .main-item {
@@ -177,5 +177,13 @@
   .rate-num {
     color: $orange;
     font-size: 22px;
+***REMOVED***
+  .rate-button {
+    //border-radius: 0 0 5px 5px;
+    background: $orange;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    width: 100%;
 ***REMOVED***
 ***REMOVED***

@@ -24,10 +24,10 @@ var Side = function(ctrl){
             Hướng dẫn/Chia sẻ
         </div>
         <ul className="side-article">
-            {ctrl.articles.map(function(el){
+            {Window.articles.map(function(el){
                 return <li>
                     <span>
-                        <a href={"/blog" + el.slug***REMOVED***
+                        <a href={"/blog/" + el._id***REMOVED***
                             config={m.route***REMOVED***
                         >
                             {el.title***REMOVED***

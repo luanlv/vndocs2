@@ -30,7 +30,7 @@ m.route(document.querySelector('#app'), "/", {
 
 module.exports = Main;
 
-***REMOVED***,{"./core/_data.msx":9,"./core/_fn.msx":10,"./main/article.msx":12,"./main/category.msx":13,"./main/home.msx":14,"./main/post.msx":15***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./core/_data.msx":10,"./core/_fn.msx":11,"./main/article.msx":13,"./main/category.msx":14,"./main/home.msx":15,"./main/post.msx":16***REMOVED***],2:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 
 var PostView = function(ctrl){
@@ -144,7 +144,7 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_fn.msx":10***REMOVED***],3:[function(require,module,exports){
+***REMOVED***,{"../core/_fn.msx":11***REMOVED***],3:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
@@ -207,6 +207,21 @@ module.exports = Content;
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
+var Footer = function(ctrl){
+  return [
+    {tag: "div", attrs: {className:"footer"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"container"***REMOVED***, children: [
+        "©2016 VnDocs.com"
+    ***REMOVED******REMOVED***
+  ***REMOVED******REMOVED***
+***REMOVED***
+***REMOVED***;
+
+module.exports = Footer;
+***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],5:[function(require,module,exports){
+var data = require('../core/_data.msx');
+var fn = require('../core/_fn.msx');
+
 var Head = function(ctrl){
   return [
     {tag: "div", attrs: {className:"container"***REMOVED***, children: [
@@ -226,7 +241,6 @@ var Head = function(ctrl){
         config:function(el, isInited, context){
           if(!isInited){
             setInterval(function(){
-              console.log("change color");
               fn.toggleClass(el, 'orange');
           ***REMOVED***, 300)
         ***REMOVED***
@@ -245,7 +259,7 @@ var Head = function(ctrl){
 ***REMOVED***;
 
 module.exports = Head;
-***REMOVED***,{"../core/_data.msx":9,"../core/_fn.msx":10***REMOVED***],5:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],6:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 
@@ -370,7 +384,7 @@ var Login = function(ctrl){
 ***REMOVED***;
 
 module.exports = Login;
-***REMOVED***,{"../core/_data.msx":9***REMOVED***],6:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":10***REMOVED***],7:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
 
@@ -410,8 +424,8 @@ var Menu = function(ctrl){
                                    data.showSignup = true;
                              ***REMOVED***
                           ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [" Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
-                        {tag: "a", attrs: {href:"/authenticate/facebook", class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
-                        {tag: "a", attrs: {href:"/authenticate/google", class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
+                        {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
+                        {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
                   ***REMOVED******REMOVED***
                 )
     
@@ -431,8 +445,9 @@ var Menu = function(ctrl){
 
 
 module.exports = Menu;
-***REMOVED***,{"../core/_data.msx":9,"../core/_fn.msx":10***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],8:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 
 var PostView = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
@@ -455,9 +470,11 @@ var PostView = function(ctrl){
         
                  {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post().post.upload]***REMOVED***, 
                  {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                      ctrl.post().post.categories.map(function(item){
-                        return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
-                    ***REMOVED***)
+                     ctrl.post().post.categories.map(function (item) {
+                         return {tag: "a", attrs: {href:"/category/" + item, 
+                                   config:m.route
+                       ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [Window.categories.getItemByParam({slug: item***REMOVED***).name]***REMOVED***]***REMOVED***
+                   ***REMOVED***)
                     ***REMOVED******REMOVED***, 
                  {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post().post.time).format('L')]***REMOVED***
              ***REMOVED******REMOVED***, 
@@ -467,7 +484,16 @@ var PostView = function(ctrl){
              ***REMOVED******REMOVED***, 
                {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
                  {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                 {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+                 {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***, 
+                 {tag: "button", attrs: {className:"rate-button", 
+                    onclick:function(el){
+                        if(Window.user == undefined){
+                            data.showSignin = true;
+                      ***REMOVED*** else {
+                            alert("voted");
+                      ***REMOVED***
+                  ***REMOVED***
+               ***REMOVED***, children: ["+1"]***REMOVED***
              ***REMOVED******REMOVED***
            ***REMOVED******REMOVED***, 
              {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
@@ -549,7 +575,7 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_fn.msx":10***REMOVED***],8:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],9:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
@@ -576,10 +602,10 @@ var Side = function(ctrl){
             "Hướng dẫn/Chia sẻ"
       ***REMOVED******REMOVED***, 
         {tag: "ul", attrs: {className:"side-article"***REMOVED***, children: [
-            ctrl.articles.map(function(el){
+            Window.articles.map(function(el){
                 return {tag: "li", attrs: {***REMOVED***, children: [
                     {tag: "span", attrs: {***REMOVED***, children: [
-                        {tag: "a", attrs: {href:"/blog" + el.slug, 
+                        {tag: "a", attrs: {href:"/blog/" + el._id, 
                             config:m.route
                       ***REMOVED***, children: [
                             el.title
@@ -594,7 +620,7 @@ var Side = function(ctrl){
 ***REMOVED***;
 
 module.exports = Side;
-***REMOVED***,{"../core/_data.msx":9***REMOVED***],9:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":10***REMOVED***],10:[function(require,module,exports){
 var Data = {***REMOVED***;
 
 Data.showSignin = false;
@@ -606,7 +632,7 @@ if(Window.user !== undefined) {
 ***REMOVED***
 
 module.exports = Data;
-***REMOVED***,{***REMOVED***],10:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],11:[function(require,module,exports){
 var fn ={***REMOVED***;
 
 
@@ -703,8 +729,12 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 ***REMOVED***;
 
+fn.cookieUrl = function(){
+    
+***REMOVED***;
+
 module.exports = fn;
-***REMOVED***,{***REMOVED***],11:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],12:[function(require,module,exports){
 "use strict";
 
 window.mobilecheck = function() {
@@ -733,7 +763,7 @@ window.Main = require('./_main.msx');
 
 
 
-***REMOVED***,{"./_main.msx":1***REMOVED***],12:[function(require,module,exports){
+***REMOVED***,{"./_main.msx":1***REMOVED***],13:[function(require,module,exports){
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -741,6 +771,8 @@ var ArticleView = require('../component/_article.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
+var Footer = require('../component/_footer.msx');
+
 
 Post.controller = function(){
   var ctrl = this;
@@ -782,19 +814,20 @@ Post.view = function(ctrl){
           
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
           ArticleView(ctrl), 
           Side(ctrl)
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
     
   ***REMOVED******REMOVED***,
-    Login(ctrl)
+    Login(ctrl),
+    Footer(ctrl)
 ***REMOVED***
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_article.msx":2,"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***],13:[function(require,module,exports){
+***REMOVED***,{"../component/_article.msx":2,"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***],14:[function(require,module,exports){
 var Category = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -802,6 +835,7 @@ var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
+var Footer = require('../component/_footer.msx');
 
 
 Category.controller = function(){
@@ -838,19 +872,20 @@ Category.view = function(ctrl){
            
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
           Content(ctrl), 
           Side(ctrl)
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
     
   ***REMOVED******REMOVED***,
-    Login(ctrl)
+    Login(ctrl),
+    Footer(ctrl)
 ***REMOVED***
 ***REMOVED***;
 
 module.exports =  Category;
-***REMOVED***,{"../component/_content.msx":3,"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***],14:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":3,"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***],15:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -858,6 +893,7 @@ var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
+var Footer = require('../component/_footer.msx');
 
 
 Home.controller = function(){
@@ -893,19 +929,19 @@ Home.view = function(ctrl){
       
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
           Content(ctrl), 
           Side(ctrl)
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
-    
   ***REMOVED******REMOVED***,
-    Login(ctrl)
+    Login(ctrl),
+    Footer(ctrl)
 ***REMOVED***
 ***REMOVED***;
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":3,"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***],15:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":3,"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***],16:[function(require,module,exports){
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -913,6 +949,7 @@ var PostView = require('../component/_post.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
+var Footer = require('../component/_footer.msx');
 
 Post.controller = function(){
   var ctrl = this;
@@ -942,7 +979,6 @@ Post.controller = function(){
     console.log(ctrl.post());
     m.redraw();
 ***REMOVED***;
-  
 ***REMOVED***;
 
 Post.view = function(ctrl){
@@ -954,16 +990,17 @@ Post.view = function(ctrl){
    
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
           PostView(ctrl), 
           Side(ctrl)
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
     
   ***REMOVED******REMOVED***,
-    Login(ctrl)
+    Login(ctrl),
+    Footer(ctrl)
 ***REMOVED***
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_head.msx":4,"../component/_login.msx":5,"../component/_menu.msx":6,"../component/_post.msx":7,"../component/_side.msx":8,"../core/_fn.msx":10***REMOVED***]***REMOVED***,{***REMOVED***,[11])
+***REMOVED***,{"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_post.msx":8,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***]***REMOVED***,{***REMOVED***,[12])

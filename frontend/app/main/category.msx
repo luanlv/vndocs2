@@ -5,6 +5,7 @@ var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
+var Footer = require('../component/_footer.msx');
 
 
 Category.controller = function(){
@@ -41,14 +42,15 @@ Category.view = function(ctrl){
            
       <div className="bodyWr">
         {Menu(ctrl)***REMOVED***
-        <div className="content mh1000 ">
+        <div className="content ">
           {Content(ctrl)***REMOVED***
           {Side(ctrl)***REMOVED***
         </div>
       </div>
     
     </div>,
-    Login(ctrl)
+    Login(ctrl),
+    Footer(ctrl)
 ***REMOVED***
 ***REMOVED***;
 

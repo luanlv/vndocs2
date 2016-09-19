@@ -28,11 +28,16 @@
 
   .label {
     margin-top: 10px;
-    width: 120px !important;
+    width: 120px ;
     display: inline-block;
     text-align: right;
     &:after {
       content: "\00a0";
+  ***REMOVED***
+
+    @include breakpoint($mobile){
+      width: 60px;
+      font-size: 9px;
   ***REMOVED***
 ***REMOVED***
 

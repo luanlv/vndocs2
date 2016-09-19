@@ -5,6 +5,7 @@ var PostView = require('../component/_post.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
 var Head = require('../component/_head.msx');
+var Footer = require('../component/_footer.msx');
 
 Post.controller = function(){
   var ctrl = this;
@@ -34,7 +35,6 @@ Post.controller = function(){
     console.log(ctrl.post());
     m.redraw();
 ***REMOVED***;
-  
 ***REMOVED***;
 
 Post.view = function(ctrl){
@@ -46,14 +46,15 @@ Post.view = function(ctrl){
    
       <div className="bodyWr">
         {Menu(ctrl)***REMOVED***
-        <div className="content mh1000 ">
+        <div className="content ">
           {PostView(ctrl)***REMOVED***
           {Side(ctrl)***REMOVED***
         </div>
       </div>
     
     </div>,
-    Login(ctrl)
+    Login(ctrl),
+    Footer(ctrl)
 ***REMOVED***
 ***REMOVED***;
 

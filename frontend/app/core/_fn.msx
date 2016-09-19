@@ -94,4 +94,8 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 ***REMOVED***;
 
+fn.cookieUrl = function(){
+    
+***REMOVED***;
+
 module.exports = fn;

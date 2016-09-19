@@ -1,4 +1,4 @@
-@(menu: String, categories: String, article: String, comments: String)(implicit user: Option[User],request: RequestHeader, messages: Messages)
+@(menu: String, categories: String, article: String, comments: String, articles: String)(implicit user: Option[User],request: RequestHeader, messages: Messages)
 
 <!doctype html>
 <html lang="en">
@@ -18,6 +18,7 @@
             Window.categories = @Html(categories);
             Window.comments = @Html(comments);
             Window.article = @Html(article);
+            Window.articles = @Html(articles);
             @user match {
                 case Some(user) => {
                     Window.user = {
