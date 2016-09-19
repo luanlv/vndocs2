@@ -9,13 +9,19 @@ var Menu = function(ctrl){
             </div>
             <div className="login">
                 {(data.user !== undefined)?(
-                    <div>
-                        {data.user.fullName***REMOVED***
-                        <br/>
-                        <img src={data.user.avatarURL***REMOVED*** alt="avatar"/>
-                        <br/>
-                        <a href="/signOut">Logout</a>
-                        <br/>
+                    <div className="userInfo">
+                        <div className="top">
+                            <div className="left">
+                                <img src={data.user.avatarURL***REMOVED*** alt="avatar"/>
+                            </div>
+                                <div className="right">
+                                <div>Xin chào</div>
+                                <span>{data.user.fullName***REMOVED***</span>
+                            </div>
+                        </div>
+                        <div className="bot">
+                            <a href="/signOut">Đăng xuất</a>
+                        </div>
                     </div>
                 ):(
                     <div class="login-box">

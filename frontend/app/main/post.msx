@@ -43,14 +43,7 @@ Post.view = function(ctrl){
       {Head(ctrl)***REMOVED***
     </div>,
     <div className="container containerBor">
-            <span className="menu-icon"
-                  onclick={function(){
-                    var el = document.querySelectorAll('.menu')[0];
-                    var el2 = document.querySelectorAll('.content')[0];
-                    fn.toggleClass(el, "menu-active");
-                    fn.toggleClass(el2, "menu-active");
-                ***REMOVED******REMOVED***
-            >Menu</span>
+   
       <div className="bodyWr">
         {Menu(ctrl)***REMOVED***
         <div className="content mh1000 ">

@@ -175,7 +175,9 @@ var Content = function(ctrl){
                 {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
                 {tag: "span", attrs: {className:"category"***REMOVED***, children: [
                       el.categories.map(function (item) {
-                        return {tag: "span", attrs: {***REMOVED***, children: [item]***REMOVED***
+                        return {tag: "a", attrs: {href:"/category/" + item, 
+                            config:m.route
+                      ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [Window.categories.getItemByParam({slug: item***REMOVED***).name]***REMOVED***]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
                 {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
@@ -208,6 +210,15 @@ var fn = require('../core/_fn.msx');
 var Head = function(ctrl){
   return [
     {tag: "div", attrs: {className:"container"***REMOVED***, children: [
+       {tag: "span", attrs: {className:"menu-icon", 
+             onclick:function(elem){
+               var el = document.querySelectorAll('.menu')[0];
+               var el2 = document.querySelectorAll('.content')[0];
+               fn.toggleClass(el, "menu-active");
+               fn.toggleClass(el2, "menu-active");
+               fn.toggleClass(elem.target, "menu-active");
+           ***REMOVED***
+     ***REMOVED******REMOVED***, 
       {tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: [
         {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
     ***REMOVED******REMOVED***, 
@@ -240,66 +251,100 @@ var data = require('../core/_data.msx');
 
 var Login = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"login-popup", style:(!data.showSignin)?"display: none":""***REMOVED***, children: [
+    {tag: "div", attrs: {className:"login-popup", 
+         style:(!data.showSignin)?"display: none":""***REMOVED***, children: [
       {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
+          {tag: "h3", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***, 
           {tag: "form", attrs: {action:"/signIn", method:"POST"***REMOVED***, children: [
             {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "label", attrs: {htmlFor:"email"***REMOVED***, children: ["Email : "]***REMOVED***, 
+              {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                {tag: "label", attrs: {htmlFor:"email"***REMOVED***, children: ["Email : "]***REMOVED***
+            ***REMOVED******REMOVED***, 
               {tag: "input", attrs: {type:"email", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "label", attrs: {htmlFor:"password"***REMOVED***, children: ["Password : "]***REMOVED***, 
+              {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                {tag: "label", attrs: {htmlFor:"password"***REMOVED***, children: ["Password : "]***REMOVED***
+            ***REMOVED******REMOVED***, 
               {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "label", attrs: {htmlFor:"rememberMe"***REMOVED***, children: ["Remember me"]***REMOVED***, 
+              {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                {tag: "label", attrs: {htmlFor:"rememberMe"***REMOVED***, children: ["Remember me"]***REMOVED***
+            ***REMOVED******REMOVED***, 
               {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***, 
             {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
-          
             {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"label"***REMOVED***
+            ***REMOVED***, 
               {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
-          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
+          {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
+          {tag: "span", attrs: {className:"other"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"#", class:"forgot-pass", 
+              onclick:function(){
+                data.showSignin = false;
+                data.showSignup = true;
+            ***REMOVED***
+          ***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
+            {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
+        ***REMOVED******REMOVED***
+          
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
     {tag: "div", attrs: {className:"login-popup", style:(!data.showSignup)?"display: none":""***REMOVED***, children: [
       {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
         {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
-          
+          {tag: "h3", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
           {tag: "form", attrs: {action:"/signUp", method:"POST"***REMOVED***, children: [
             {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
               
               {tag: "div", attrs: {class:"form-group  ", id:"firstName_field"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"firstName"***REMOVED***, children: ["Họ : "]***REMOVED***
+              ***REMOVED******REMOVED***, 
                 {tag: "input", attrs: {type:"text", id:"firstName", name:"firstName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"First name"***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
               
               {tag: "div", attrs: {class:"form-group  ", id:"lastName_field"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"lastName"***REMOVED***, children: ["Tên : "]***REMOVED***
+              ***REMOVED******REMOVED***, 
                 {tag: "input", attrs: {type:"text", id:"lastName", name:"lastName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Last name"***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
               
               {tag: "div", attrs: {class:"form-group  ", id:"email_field"***REMOVED***, children: [
+                {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                  {tag: "label", attrs: {htmlFor:"email"***REMOVED***, children: ["Email : "]***REMOVED***
+              ***REMOVED******REMOVED***, 
                 {tag: "input", attrs: {type:"text", id:"email", name:"email", value:"", class:"form-control form-control input-lg", placeholder:"Email"***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
               
               {tag: "section", attrs: {***REMOVED***, children: [
                 {tag: "div", attrs: {class:"form-group  ", id:"password_field"***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"label"***REMOVED***, children: [
+                    {tag: "label", attrs: {htmlFor:"password"***REMOVED***, children: ["Mật khẩu : "]***REMOVED***
+                ***REMOVED******REMOVED***, 
                   {tag: "input", attrs: {type:"password", id:"password", name:"password", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Password"***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
       
               {tag: "div", attrs: {class:"form-group"***REMOVED***, children: [
                 {tag: "div", attrs: {***REMOVED***, children: [
+                  {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
                   {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Sign up"]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
-          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
-          {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
+          {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
+          {tag: "span", attrs: {className:"other"***REMOVED***, children: [
+            {tag: "span", attrs: {***REMOVED***, children: ["Đã có tài khoản?"]***REMOVED***, 
+            {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Đăng nhập"]***REMOVED***
+        ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***
@@ -319,13 +364,19 @@ var Menu = function(ctrl){
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {className:"login"***REMOVED***, children: [
                 (data.user !== undefined)?(
-                    {tag: "div", attrs: {***REMOVED***, children: [
-                        data.user.fullName, 
-                        {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                        {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"***REMOVED******REMOVED***, 
-                        {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                        {tag: "a", attrs: {href:"/signOut"***REMOVED***, children: ["Logout"]***REMOVED***, 
-                        {tag: "br", attrs: {***REMOVED******REMOVED***
+                    {tag: "div", attrs: {className:"userInfo"***REMOVED***, children: [
+                        {tag: "div", attrs: {className:"top"***REMOVED***, children: [
+                            {tag: "div", attrs: {className:"left"***REMOVED***, children: [
+                                {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"***REMOVED******REMOVED***
+                          ***REMOVED******REMOVED***, 
+                                {tag: "div", attrs: {className:"right"***REMOVED***, children: [
+                                {tag: "div", attrs: {***REMOVED***, children: ["Xin chào"]***REMOVED***, 
+                                {tag: "span", attrs: {***REMOVED***, children: [data.user.fullName]***REMOVED***
+                          ***REMOVED******REMOVED***
+                      ***REMOVED******REMOVED***, 
+                        {tag: "div", attrs: {className:"bot"***REMOVED***, children: [
+                            {tag: "a", attrs: {href:"/signOut"***REMOVED***, children: ["Đăng xuất"]***REMOVED***
+                      ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
                 ):(
                     {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
@@ -710,14 +761,7 @@ Post.view = function(ctrl){
       Head(ctrl)
   ***REMOVED******REMOVED***,
     {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
-            {tag: "span", attrs: {className:"menu-icon", 
-                  onclick:function(){
-                    var el = document.querySelectorAll('.menu')[0];
-                    var el2 = document.querySelectorAll('.content')[0];
-                    fn.toggleClass(el, "menu-active");
-                    fn.toggleClass(el2, "menu-active");
-                ***REMOVED***
-          ***REMOVED***, children: ["Menu"]***REMOVED***, 
+          
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
         {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
@@ -773,14 +817,7 @@ Category.view = function(ctrl){
       Head(ctrl)
   ***REMOVED******REMOVED***,
     {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
-            {tag: "span", attrs: {className:"menu-icon", 
-                  onclick:function(){
-                    var el = document.querySelectorAll('.menu')[0];
-                    var el2 = document.querySelectorAll('.content')[0];
-                    fn.toggleClass(el, "menu-active");
-                    fn.toggleClass(el2, "menu-active");
-                ***REMOVED***
-          ***REMOVED***, children: ["Menu"]***REMOVED***, 
+           
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
         {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
@@ -835,14 +872,7 @@ Home.view = function(ctrl){
       Head(ctrl)
   ***REMOVED******REMOVED***,
     {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
-            {tag: "span", attrs: {className:"menu-icon", 
-                  onclick:function(){
-                    var el = document.querySelectorAll('.menu')[0];
-                    var el2 = document.querySelectorAll('.content')[0];
-                    fn.toggleClass(el, "menu-active");
-                    fn.toggleClass(el2, "menu-active");
-                ***REMOVED***
-          ***REMOVED***, children: ["Menu"]***REMOVED***, 
+      
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
         {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [
@@ -903,14 +933,7 @@ Post.view = function(ctrl){
       Head(ctrl)
   ***REMOVED******REMOVED***,
     {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
-            {tag: "span", attrs: {className:"menu-icon", 
-                  onclick:function(){
-                    var el = document.querySelectorAll('.menu')[0];
-                    var el2 = document.querySelectorAll('.content')[0];
-                    fn.toggleClass(el, "menu-active");
-                    fn.toggleClass(el2, "menu-active");
-                ***REMOVED***
-          ***REMOVED***, children: ["Menu"]***REMOVED***, 
+   
       {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
         Menu(ctrl), 
         {tag: "div", attrs: {className:"content mh1000 "***REMOVED***, children: [

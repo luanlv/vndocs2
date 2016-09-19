@@ -19,9 +19,14 @@
 
 
 .main-item .title {
-  color: $title-color;
+  //color: $orange;
+
+  color: #5f9eb3;
+  &:hover {
+    color: $title-color;
+***REMOVED***
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.2em;
   text-decoration: none;
   margin-bottom: 7px;
   min-height: 40px;
@@ -44,8 +49,21 @@
   * {
     font-size: 13px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.6)
+    color: rgba(0, 0, 0, 0.6);
+    &:hover {
+      color: #000;
+  ***REMOVED***
 ***REMOVED***
+
+  &:hover {
+    *::before {
+      color: rgba(0, 0, 0, 0.8);
+  ***REMOVED***
+    *{
+      color: #000;
+  ***REMOVED***
+***REMOVED***
+
   .upload::before {
     content: "Đăng bởi: "
 ***REMOVED***
@@ -62,6 +80,16 @@
   ***REMOVED***
     span:last-child::after {
       content: '';
+  ***REMOVED***
+
+    span {
+      &:hover {
+        color: $orange !important;
+    ***REMOVED***
+      margin-left: 3px;
+  ***REMOVED***
+    a {
+      text-decoration: none;
   ***REMOVED***
 ***REMOVED***
 ***REMOVED***
@@ -106,7 +134,6 @@
 ***REMOVED***
 
 .main {
-
   @include min-breakpoint($mobile){
     border-left: 1px solid $border-light-blue;
     border-right: 1px solid $border-light-blue;

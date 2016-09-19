@@ -386,7 +386,8 @@ body {
   position: relative; ***REMOVED***
 
 .menu {
-  position: absolute; ***REMOVED***
+  position: absolute;
+  width: 195px; ***REMOVED***
   @media only screen and (max-width: 600px) {
     .menu {
       transition: all 300ms;
@@ -516,17 +517,26 @@ body {
         display: block; ***REMOVED*** ***REMOVED***
 
 .menu-icon {
-  background: #ddd;
-  padding: 10px;
+  background: #eee;
+  padding: 5px;
   border-radius: 5px;
-  margin: 5px;
-  position: fixed;
-  top: 5px;
+  position: absolute;
+  top: 3px;
   left: 5px;
-  z-index: 999; ***REMOVED***
+  z-index: 999;
+  border: 1px solid #999; ***REMOVED***
   @media only screen and (min-width: 600px) {
     .menu-icon {
       display: none; ***REMOVED*** ***REMOVED***
+  .menu-icon::after {
+    content: 'Menu'; ***REMOVED***
+
+.menu-icon.menu-active {
+  position: fixed;
+  top: 3px;
+  left: 5px; ***REMOVED***
+  .menu-icon.menu-active::after {
+    content: 'Close'; ***REMOVED***
 
 @media only screen and (max-width: 600px) {
   .menu.menu-active {
@@ -552,13 +562,13 @@ body {
     .menu .level1 a:hover {
       color: #FF851B !important; ***REMOVED***
     .menu .level1 > li > a {
-      color: #555;
-      padding: 5px 5px 5px 5px;
+      color: #444;
+      padding: 0px 5px 5px 5px;
       display: inline-block; ***REMOVED***
       .menu .level1 > li > a:visited {
-        color: #555; ***REMOVED***
+        color: #444; ***REMOVED***
   .menu .level2, .menu .level3 {
-    padding-left: 5px;
+    padding-left: 10px;
     font-weight: normal;
     font-family: Verdana, Arial, sans-serif;
     font-size: 11px; ***REMOVED***
@@ -661,7 +671,43 @@ body {
     transition: all .3s ease; ***REMOVED***
 
 .list-menu {
-  margin-top: 0px; ***REMOVED***
+  margin-top: 10px; ***REMOVED***
+
+.userInfo .top {
+  width: 100%;
+  height: 70px;
+  position: relative; ***REMOVED***
+  .userInfo .top .left {
+    margin: 5px;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border: 1px solid #ddd; ***REMOVED***
+  .userInfo .top .right {
+    padding: 5px;
+    padding-left: 70px;
+    text-align: center; ***REMOVED***
+    .userInfo .top .right div {
+      font-style: italic;
+      font-weight: lighter;
+      color: #666; ***REMOVED***
+    .userInfo .top .right span {
+      font-weight: bold; ***REMOVED***
+.userInfo .bot {
+  width: 100%;
+  height: 37px;
+  text-align: right;
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: underline; ***REMOVED***
+.userInfo a {
+  text-decoration: none;
+  color: #333; ***REMOVED***
+  .userInfo a:visited {
+    color: #333; ***REMOVED***
+  .userInfo a:hover {
+    color: #FF851B; ***REMOVED***
 
 .side {
   padding: 0 5px 0 5px; ***REMOVED***
@@ -736,12 +782,14 @@ ul.side-article {
   border-bottom: dashed 1px #d2e5f3; ***REMOVED***
 
 .main-item .title {
-  color: #0E6AAF;
+  color: #5f9eb3;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.2em;
   text-decoration: none;
   margin-bottom: 7px;
   min-height: 40px; ***REMOVED***
+  .main-item .title:hover {
+    color: #0E6AAF; ***REMOVED***
 
 .meta-data {
   margin-bottom: 7px; ***REMOVED***
@@ -758,6 +806,12 @@ ul.side-article {
     font-size: 13px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6); ***REMOVED***
+    .meta-data *:hover {
+      color: #000; ***REMOVED***
+  .meta-data:hover *::before {
+    color: rgba(0, 0, 0, 0.8); ***REMOVED***
+  .meta-data:hover * {
+    color: #000; ***REMOVED***
   .meta-data .upload::before {
     content: "Đăng bởi: "; ***REMOVED***
   .meta-data .category::before {
@@ -768,6 +822,12 @@ ul.side-article {
     content: ', '; ***REMOVED***
   .meta-data .category span:last-child::after {
     content: ''; ***REMOVED***
+  .meta-data .category span {
+    margin-left: 3px; ***REMOVED***
+    .meta-data .category span:hover {
+      color: #FF851B !important; ***REMOVED***
+  .meta-data .category a {
+    text-decoration: none; ***REMOVED***
 
 .info img {
   float: left;
@@ -974,8 +1034,21 @@ hr.style18:before {
       @media (max-width: 400px) {
         .login-popup .wrapper-content .wrapper-content {
           width: 95%; ***REMOVED*** ***REMOVED***
-    .login-popup .wrapper label {
-      width: 150px !important; ***REMOVED***
+  .login-popup .label {
+    margin-top: 10px;
+    width: 120px !important;
+    display: inline-block;
+    text-align: right; ***REMOVED***
+  .login-popup .other {
+    margin-top: 5px; ***REMOVED***
+    .login-popup .other a {
+      color: #333;
+      margin-right: 10px; ***REMOVED***
+  .login-popup h3 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #FF851B; ***REMOVED***
 
 .breadcrumb {
   font-size: 0.9em; ***REMOVED***

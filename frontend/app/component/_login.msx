@@ -3,66 +3,100 @@ var data = require('../core/_data.msx');
 
 var Login = function(ctrl){
   return [
-    <div className="login-popup" style={(!data.showSignin)?"display: none":""***REMOVED***>
+    <div className="login-popup"
+         style={(!data.showSignin)?"display: none":""***REMOVED***>
       <div class="wrapper">
         <div class="wrapper-content">
+          <h3>Đăng nhập</h3>
           <form action="/signIn" method="POST">
             <div>
-              <label htmlFor="email">Email : </label>
+              <div className="label">
+                <label htmlFor="email">Email : </label>
+              </div>
               <input type="email" class="user-email" id="email" name="email" />
             </div>
             <div>
-              <label htmlFor="password">Password : </label>
+              <div className="label">
+                <label htmlFor="password">Password : </label>
+              </div>
               <input type="password" class="user-password" id="password" name="password" />
             </div>
             <div>
-              <label htmlFor="rememberMe">Remember me</label>
+              <div className="label">
+                <label htmlFor="rememberMe">Remember me</label>
+              </div>
               <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true"/>
             </div>
             <input type="hidden" name="csrfToken" value={data.token***REMOVED***/>
-          
             <div class="logout">
+              <div className="label">
+              </div>
               <input type="submit" value="Đăng nhập"/>
             </div>
           </form>
-          <a href="#" class="forgot-pass">Đăng ký</a>
-          <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+          <div className="label"></div>
+          <span className="other">
+            <a href="#" class="forgot-pass"
+              onclick={function(){
+                data.showSignin = false;
+                data.showSignup = true;
+            ***REMOVED******REMOVED***
+            >Đăng ký</a>
+            <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+          </span>
+          
         </div>
       </div>
     </div>,
     <div className="login-popup" style={(!data.showSignup)?"display: none":""***REMOVED***>
       <div class="wrapper">
         <div class="wrapper-content">
-          
+          <h3>Đăng ký</h3>
           <form action="/signUp" method="POST">
             <input type="hidden" name="csrfToken" value={data.token***REMOVED*** />
               
               <div class="form-group  " id="firstName_field">
+                <div className="label">
+                  <label htmlFor="firstName">Họ : </label>
+                </div>
                 <input type="text" id="firstName" name="firstName" value="" required="true" class="form-control form-control input-lg" placeholder="First name"/>
               </div>
               
               <div class="form-group  " id="lastName_field">
+                <div className="label">
+                  <label htmlFor="lastName">Tên : </label>
+                </div>
                 <input type="text" id="lastName" name="lastName" value="" required="true" class="form-control form-control input-lg" placeholder="Last name"/>
               </div>
               
               <div class="form-group  " id="email_field">
+                <div className="label">
+                  <label htmlFor="email">Email : </label>
+                </div>
                 <input type="text" id="email" name="email" value="" class="form-control form-control input-lg" placeholder="Email"/>
               </div>
               
               <section>
                 <div class="form-group  " id="password_field">
+                  <div className="label">
+                    <label htmlFor="password">Mật khẩu : </label>
+                  </div>
                   <input type="password" id="password" name="password" value="" required="true" class="form-control form-control input-lg"  placeholder="Password"/>
                 </div>
               </section>
       
               <div class="form-group">
                 <div>
+                  <div className="label"></div>
                   <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Sign up</button>
                 </div>
               </div>
           </form>
-          <a href="#" class="forgot-pass">Đăng ký</a>
-          <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+          <div className="label"></div>
+          <span className="other">
+            <span>Đã có tài khoản?</span>
+            <a href="#" class="forgot-pass">Đăng nhập</a>
+          </span>
         </div>
       </div>
     </div>

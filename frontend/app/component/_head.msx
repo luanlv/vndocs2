@@ -4,6 +4,15 @@ var fn = require('../core/_fn.msx');
 var Head = function(ctrl){
   return [
     <div className="container">
+       <span className="menu-icon"
+             onclick={function(elem){
+               var el = document.querySelectorAll('.menu')[0];
+               var el2 = document.querySelectorAll('.content')[0];
+               fn.toggleClass(el, "menu-active");
+               fn.toggleClass(el2, "menu-active");
+               fn.toggleClass(elem.target, "menu-active");
+           ***REMOVED******REMOVED***
+       ></span>
       <a href="/" config={m.route***REMOVED***>
         <img className="logo" src="/assets/images/logo.png" alt="logo Vndocs.com"/>
       </a>
