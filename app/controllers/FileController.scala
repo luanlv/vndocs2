@@ -24,6 +24,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
 import scala.language.postfixOps
 import scala.concurrent.Future
+import play.Environment
 
 /**
  * The basic application controller.
@@ -39,8 +40,18 @@ class FileController @Inject() (
   silhouette: Silhouette[MyEnv],
   imageService: ImageService,
   socialProviderRegistry: SocialProviderRegistry,
+  val environment: Environment,
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
+
+  def getFile(name: String) = Action {
+    val file = environment.getFile("file/" + name)
+    //    val file = new java.io.File("/" + id + ".jpg")
+    Ok.sendFile(
+      file
+    //      inline = true
+    )
+***REMOVED***
 
   def getSize = Action(parse.json) { implicit request =>
     println(request.body)

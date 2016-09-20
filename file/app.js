@@ -27,8 +27,7 @@ m.route(document.querySelector('#app'), "/", {
   "/category/:categorySlug": Main.Category
 ***REMOVED***);
 
-
-
+alert("are you ok?");
 
 
 module.exports = Main;

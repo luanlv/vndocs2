@@ -20,7 +20,9 @@
     "gulp-sass": "*",
     "gulp-sourcemaps": "^1.5.0",
     "mithril": "^0.2.0",
-    "mithrilify": "0.0.5"
+    "mithrilify": "0.0.5",
+    "optimize-js": "*",
+    "gulp-run": "*"
 ***REMOVED***,
   "repository": {
     "type": "git",

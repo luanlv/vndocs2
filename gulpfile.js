@@ -3,16 +3,18 @@ var gulp        = require('gulp');
 var sass = require('gulp-ruby-sass');
 var browserify = require('gulp-browserify');
 var rename = require('gulp-rename');
-
+var optimizeJs = require('optimize-js');
 var gulpif = require('gulp-if');
 
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 //var minifyCss = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
+var run = require('gulp-run');
 
 // Registering a 'less' task that just compile our LESS files to CSS
 
+var localhost = new run.Command('curl http://localhost:9000');
 
 gulp.task('sass', function () {
   return sass('frontend/scss/*.scss')
@@ -30,8 +32,13 @@ gulp.task('app', function() {
       .pipe(browserify({
         transform: ['mithrilify']
     ***REMOVED***))
-      .pipe(rename('app.js'))
-      .pipe(gulp.dest('public/js/'))
+      .pipe(rename('app-tmp.js'))
+      // .pipe(gulp.dest('public/js/'))
+      .pipe(gulp.dest('file/'))
+  // var cmd = new run.Command('optimize-js ./public/js/app-tmp.js > ./public/js/app.js');
+  var cmd = new run.Command('optimize-js ./file/app-tmp.js > ./file/app.js');
+  cmd.exec('');
+  localhost.exec('');
 ***REMOVED***);
 
 gulp.task('admin', function() {
@@ -39,8 +46,11 @@ gulp.task('admin', function() {
       .pipe(browserify({
         transform: ['mithrilify']
     ***REMOVED***))
-      .pipe(rename('admin.js'))
+      .pipe(rename('admin-tmp.js'))
       .pipe(gulp.dest('public/js/'))
+  var cmd = new run.Command('optimize-js ./public/js/admin-tmp.js > ./public/js/admin.js');
+  cmd.exec('');
+  localhost.exec('');
 ***REMOVED***);
 
 

@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")***REMOVED***var f=n[o]={exports:{***REMOVED******REMOVED***;t[o][0].call(f.exports,(function(e){var n=t[o][1][e];return s(n?n:e)***REMOVED***),f,f.exports,e,t,n,r)***REMOVED***return n[o].exports***REMOVED***var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s***REMOVED***)({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")***REMOVED***var f=n[o]={exports:{***REMOVED******REMOVED***;t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)***REMOVED***,f,f.exports,e,t,n,r)***REMOVED***return n[o].exports***REMOVED***var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s***REMOVED***)({1:[function(require,module,exports){
 var Main = Main || {***REMOVED***;
 var fn = require('./core/_fn.msx');
 var data = require('./core/_data.msx');
@@ -9,15 +9,15 @@ Main.Article = require('./main/article.msx');
 
 data.token = $(document.getElementsByName("csrfToken")).val();
 // alert($(token).val());
-$(document).ajaxSend((function(elm, xhr, s){
+$(document).ajaxSend(function(elm, xhr, s){
   if (s.type == "POST") {
     xhr.setRequestHeader('Csrf-Token', data.token);
 ***REMOVED***
-***REMOVED***));
+***REMOVED***);
 
 Array.prototype.getItemByParam = function(paramPair) {
   var key = Object.keys(paramPair)[0];
-  return this.find((function(item){return ((item[key] == paramPair[key]) ? true: false)***REMOVED***));
+  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)***REMOVED***);
 ***REMOVED***
 
 m.route(document.querySelector('#app'), "/", {
@@ -53,9 +53,9 @@ var PostView = function(ctrl){
               
               {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.article().article.author]***REMOVED***, 
               {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                          ctrl.article().article.tags.map((function(el){
+                          ctrl.article().article.tags.map(function(el){
                               {el***REMOVED***
-                          ***REMOVED***))
+                          ***REMOVED***)
                           
                     ***REMOVED******REMOVED***, 
               {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.article().article.time).format('L')]***REMOVED***
@@ -150,7 +150,7 @@ var Comments = function(ctrl, content, id){
     
     
     
-      content.comments.map((function(el){
+      content.comments.map(function(el){
         return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
                 {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
                   {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
@@ -166,7 +166,7 @@ var Comments = function(ctrl, content, id){
             el.comment
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***
-    ***REMOVED***))
+    ***REMOVED***)
   
   
   ***REMOVED******REMOVED***
@@ -187,7 +187,7 @@ var Content = function(ctrl){
             {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["Bình luận"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***,
-          ctrl.posts().map((function(el) {
+          ctrl.posts().map(function(el) {
             return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
               {tag: "div", attrs: {className:"title"***REMOVED***, children: [
                 {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
@@ -204,11 +204,11 @@ var Content = function(ctrl){
               {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
                 {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
                 {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                      el.categories.map((function (item) {
+                      el.categories.map(function (item) {
                         return {tag: "a", attrs: {href:"/category/" + item, 
                             config:m.route
                       ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [Window.categories.getItemByParam({slug: item***REMOVED***).name]***REMOVED***]***REMOVED***
-                    ***REMOVED***))
+                    ***REMOVED***)
                     ***REMOVED******REMOVED***, 
                 {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
             ***REMOVED******REMOVED***, 
@@ -219,7 +219,7 @@ var Content = function(ctrl){
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
-        ***REMOVED***))
+        ***REMOVED***)
     ***REMOVED***:[
           {tag: "div", attrs: {***REMOVED***, children: [
             "Loading !!"
@@ -270,9 +270,9 @@ var Head = function(ctrl){
       {tag: "span", attrs: {className:"slogan orange", 
         config:function(el, isInited, context){
           if(!isInited){
-            setInterval((function(){
+            setInterval(function(){
               fn.toggleClass(el, 'orange');
-          ***REMOVED***), 300)
+          ***REMOVED***, 300)
         ***REMOVED***
       ***REMOVED***
     ***REMOVED***, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]***REMOVED***, 
@@ -501,11 +501,11 @@ var PostView = function(ctrl){
         
                  {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post().post.upload]***REMOVED***, 
                  {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                     ctrl.post().post.categories.map((function (item) {
+                     ctrl.post().post.categories.map(function (item) {
                          return {tag: "a", attrs: {href:"/category/" + item, 
                                    config:m.route
                        ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [Window.categories.getItemByParam({slug: item***REMOVED***).name]***REMOVED***]***REMOVED***
-                   ***REMOVED***))
+                   ***REMOVED***)
                     ***REMOVED******REMOVED***, 
                  {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post().post.time).format('L')]***REMOVED***
              ***REMOVED******REMOVED***, 
@@ -576,7 +576,7 @@ var Side = function(ctrl){
             "Hướng dẫn/Chia sẻ"
       ***REMOVED******REMOVED***, 
         {tag: "ul", attrs: {className:"side-article"***REMOVED***, children: [
-            Window.articles.map((function(el){
+            Window.articles.map(function(el){
                 return {tag: "li", attrs: {***REMOVED***, children: [
                     {tag: "span", attrs: {***REMOVED***, children: [
                         {tag: "a", attrs: {href:"/blog/" + el._id, 
@@ -586,7 +586,7 @@ var Side = function(ctrl){
                       ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
-          ***REMOVED***))
+          ***REMOVED***)
       ***REMOVED******REMOVED***
   ***REMOVED******REMOVED***,
     
@@ -632,13 +632,13 @@ fn.checkMenu = function(link){
 
 fn.createMenu = function(menuJson, level){
     return m('ul.level' + level, [
-        menuJson.map((function(child){
+        menuJson.map(function(child){
             return m('li',  [
                 m('a', {title: child.title, href: child.http, config: m.route***REMOVED*** ,m('span', child.title)),
                 (level > 1 )?{tag: "sup", attrs: {className:"norm"***REMOVED***, children: ["6431"]***REMOVED***:"",
                 (child.children !== undefined)?fn.createMenu(child.children, level + 1):''
           ***REMOVED***)
-      ***REMOVED***))
+      ***REMOVED***)
   ***REMOVED***)
 ***REMOVED***;
 
@@ -683,12 +683,12 @@ fn.requestWithFeedback = function(args, bind, fn) {
       ***REMOVED***
   ***REMOVED***;
     return {
-        request: m.request(args).then(data).then((function(data){
+        request: m.request(args).then(data).then(function(data){
             if(bind !== undefined) bind(data);
             if(fn !== undefined) fn();
             complete();
             m.redraw();
-      ***REMOVED***)),
+      ***REMOVED***),
         data: data,
         ready: completed
   ***REMOVED***
