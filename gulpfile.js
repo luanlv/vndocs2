@@ -23,8 +23,10 @@ gulp.task('sass', function () {
         browsers: ['last 2 versions'],
         cascade: false
     ***REMOVED***))
-      .pipe(rename('style.min.css'))
-      .pipe(gulp.dest('public/stylesheets'));
+      // .pipe(rename('style.min.css'))
+      .pipe(rename('style.css'))
+      // .pipe(gulp.dest('public/stylesheets'));
+      .pipe(gulp.dest('file/'));
 ***REMOVED***);
 
 gulp.task('app', function() {
@@ -38,7 +40,6 @@ gulp.task('app', function() {
   // var cmd = new run.Command('optimize-js ./public/js/app-tmp.js > ./public/js/app.js');
   var cmd = new run.Command('optimize-js ./file/app-tmp.js > ./file/app.js');
   cmd.exec('');
-  localhost.exec('');
 ***REMOVED***);
 
 gulp.task('admin', function() {
@@ -47,10 +48,11 @@ gulp.task('admin', function() {
         transform: ['mithrilify']
     ***REMOVED***))
       .pipe(rename('admin-tmp.js'))
-      .pipe(gulp.dest('public/js/'))
-  var cmd = new run.Command('optimize-js ./public/js/admin-tmp.js > ./public/js/admin.js');
+      // .pipe(gulp.dest('public/js/'))
+      .pipe(gulp.dest('file/'))
+  // var cmd = new run.Command('optimize-js ./public/js/admin-tmp.js > ./public/js/admin.js');
+  var cmd = new run.Command('optimize-js ./file/admin-tmp.js > ./file/admin.js');
   cmd.exec('');
-  localhost.exec('');
 ***REMOVED***);
 
 
