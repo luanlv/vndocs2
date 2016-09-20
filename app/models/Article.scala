@@ -13,6 +13,7 @@ case class Article(
   body: String,
   tags: List[String] = List(),
   nComment: Int = 0,
+  nView: Int = 0,
   nLike: Int = 0,
   liker: List[String] = List(),
   time: DateTime = DateTime.now()

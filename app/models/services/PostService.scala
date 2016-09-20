@@ -3,6 +3,7 @@ package models.services
 import models.{ Image, Post ***REMOVED***
 
 import scala.concurrent.Future
+import scala.util.Try
 
 /**
  * Handles actions to users.
@@ -12,6 +13,8 @@ trait PostService {
   def retrieve(id: String): Future[Option[Post]]
 
   def save(post: Post): Future[Post]
+
+  def incComment(postID: String): Future[Try[String]]
 
   def getList(page: Int): Future[List[Post]]
 

@@ -20,12 +20,18 @@ import scala.concurrent.ExecutionContext.Implicits.global
 @Singleton
 class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
 
-  def find(id: String) =
+  def find(id: String) = {
+    repository.incComment(id)
     repository.findOne(Json.obj("_id" -> id))
+***REMOVED***
 
   def save(post: Post) = {
     repository.insert(post)
     Future.successful(post)
+***REMOVED***
+
+  def incComment(postID: String) = {
+    repository.incComment(postID)
 ***REMOVED***
 
   def getList(page: Int) = {

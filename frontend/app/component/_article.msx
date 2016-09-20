@@ -49,7 +49,7 @@ var PostView = function(ctrl){
         </div>
       </div>,
       <hr className="style3"/>,
-      Comments(ctrl, ctrl.article(), ctrl.slug)
+      Comments(ctrl, ctrl.article(), ctrl.slug, "article")
     
   ***REMOVED***:[
       <div className="loading">

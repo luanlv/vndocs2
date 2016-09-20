@@ -70,6 +70,28 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
   ***REMOVED***
 ***REMOVED***
 
+  def incComment(id: String)(implicit writer: OWrites[T]) = {
+    //    document.updated = Some(new DateTime())
+    Logger.debug(s"Updating document: [collection=$collectionName, id=$id ")
+    recover(collection.flatMap(_.update(
+      Json.obj("_id" -> id),
+      Json.obj("$inc" -> Json.obj("nComment" -> 1)))
+    )) {
+      id
+  ***REMOVED***
+***REMOVED***
+
+  def incView(id: String)(implicit writer: OWrites[T]) = {
+    //    document.updated = Some(new DateTime())
+    Logger.debug(s"Updating document: [collection=$collectionName, id=$id ")
+    recover(collection.flatMap(_.update(
+      Json.obj("_id" -> id),
+      Json.obj("$inc" -> Json.obj("nView" -> 1)))
+    )) {
+      id
+  ***REMOVED***
+***REMOVED***
+
   def upsert(id: String, document: T)(implicit writer: OWrites[T]): Future[Try[T]] = {
     //    document.updated = Some(new DateTime())
     Logger.debug(s"Updating document: [collection=$collectionName, id=$id, document=$document]")

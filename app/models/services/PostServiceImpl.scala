@@ -10,12 +10,15 @@ import models.daos.{ PostDAO, UserDAO ***REMOVED***
 import play.api.libs.concurrent.Execution.Implicits._
 
 import scala.concurrent.Future
+import scala.util.Try
 
 class PostServiceImpl @Inject() (postDAO: PostDAO) extends PostService {
 
   def retrieve(id: String) = postDAO.find(id)
 
   def save(post: Post) = postDAO.save(post)
+
+  def incComment(postID: String) = postDAO.incComment(postID)
 
   def getList(page: Int) = postDAO.getList(page)
 

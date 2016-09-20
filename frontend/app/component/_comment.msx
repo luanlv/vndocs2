@@ -1,7 +1,7 @@
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
-var Comments = function(ctrl, content, id){
+var Comments = function(ctrl, content, id, type){
   return [
     <div id="comment">
     
@@ -37,7 +37,10 @@ var Comments = function(ctrl, content, id){
                        $.ajax({
                          type: "POST",
                          url: "/comment/" + id,
-                         data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
+                         data: JSON.stringify({
+                           "data" : ctrl.comment(),
+                           "type" : type
+                       ***REMOVED***),
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){

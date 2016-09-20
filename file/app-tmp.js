@@ -82,7 +82,7 @@ var PostView = function(ctrl){
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***,
       {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-      Comments(ctrl, ctrl.article(), ctrl.slug)
+      Comments(ctrl, ctrl.article(), ctrl.slug, "article")
     
   ***REMOVED***:[
       {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
@@ -105,7 +105,7 @@ module.exports = PostView;
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
-var Comments = function(ctrl, content, id){
+var Comments = function(ctrl, content, id, type){
   return [
     {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
     
@@ -141,7 +141,10 @@ var Comments = function(ctrl, content, id){
                        $.ajax({
                          type: "POST",
                          url: "/comment/" + id,
-                         data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
+                         data: JSON.stringify({
+                           "data" : ctrl.comment(),
+                           "type" : type
+                       ***REMOVED***),
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
@@ -546,7 +549,7 @@ var PostView = function(ctrl){
          ***REMOVED******REMOVED***
        ***REMOVED******REMOVED***,
           {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-          Comments(ctrl, ctrl.post(), ctrl.postID)
+          Comments(ctrl, ctrl.post(), ctrl.postID, "post")
           
     ***REMOVED***:[
           {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
