@@ -108,7 +108,7 @@
   color: rgba(0, 0, 0, 0.5)
 ***REMOVED***
 
-.login {
+.login, .login-popup {
   min-height: 107px;
   padding-top: 5px;
   .login-box {
@@ -273,6 +273,7 @@
     ***REMOVED***
       span {
         font-weight: bold;
+        color: $blue;
     ***REMOVED***
   ***REMOVED***
 ***REMOVED***

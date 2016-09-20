@@ -20,6 +20,8 @@ class PostServiceImpl @Inject() (postDAO: PostDAO) extends PostService {
 
   def incComment(postID: String) = postDAO.incComment(postID)
 
+  def vote(id: String, userID: String): Future[Try[String]] = postDAO.vote(id, userID)
+
   def getList(page: Int) = postDAO.getList(page)
 
   def getListByCategory(category: String, page: Int) = postDAO.getListByCategory(category, page)

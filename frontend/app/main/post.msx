@@ -25,6 +25,7 @@ Post.controller = function(){
   ctrl.request.ready = m.prop(false);
   ctrl.post = m.prop({***REMOVED***);
   ctrl.comment = m.prop("");
+  ctrl.voted = false;
   
   if(Window.post === undefined) {
     console.log("run request !!!!!!!!!!")

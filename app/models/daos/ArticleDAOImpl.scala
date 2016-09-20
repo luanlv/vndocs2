@@ -10,12 +10,16 @@ import scala.util.Try
 @Singleton
 class ArticleDAOImpl @Inject() (repository: ArticleRepository) extends ArticleDAO {
   def find(id: String) = {
-    repository.incComment(id)
+    repository.incView(id)
     repository.findOne(Json.obj("_id" -> id))
 ***REMOVED***
 
   def save(data: Article) = {
     repository.insert(data)
+***REMOVED***
+
+  def vote(id: String, userID: String): Future[Try[String]] = {
+    repository.vote(id, userID)
 ***REMOVED***
 
   def incComment(id: String): Future[Try[String]] = {

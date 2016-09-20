@@ -10,6 +10,8 @@ trait ArticleDAO {
 
   def save(data: Article): Future[Try[Article]]
 
+  def vote(id: String, userID: String): Future[Try[String]]
+
   def incComment(id: String): Future[Try[String]]
 
   def getList(page: Int): Future[List[Article]]

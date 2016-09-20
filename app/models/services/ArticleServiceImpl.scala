@@ -17,6 +17,8 @@ class ArticleServiceImpl @Inject() (articleDAO: ArticleDAO) extends ArticleServi
     articleDAO.save(data)
 ***REMOVED***
 
+  def vote(id: String, userID: String): Future[Try[String]] = articleDAO.vote(id, userID)
+
   def incComment(id: String): Future[Try[String]] = {
     articleDAO.incComment(id)
 ***REMOVED***

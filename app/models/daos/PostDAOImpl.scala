@@ -21,7 +21,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
 
   def find(id: String) = {
-    repository.incComment(id)
+    repository.incView(id)
     repository.findOne(Json.obj("_id" -> id))
 ***REMOVED***
 
@@ -32,6 +32,10 @@ class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
 
   def incComment(postID: String) = {
     repository.incComment(postID)
+***REMOVED***
+
+  def vote(id: String, userID: String): Future[Try[String]] = {
+    repository.vote(id, userID)
 ***REMOVED***
 
   def getList(page: Int) = {

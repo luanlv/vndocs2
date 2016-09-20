@@ -16,6 +16,8 @@ trait PostDAO {
 
   def incComment(postID: String): Future[Try[String]]
 
+  def vote(id: String, userID: String): Future[Try[String]]
+
   def getList(page: Int): Future[List[Post]]
 
   def getListByCategory(category: String, page: Int): Future[List[Post]]

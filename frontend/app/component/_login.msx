@@ -38,6 +38,15 @@ var Login = function(ctrl){
               <div className="label">
               </div>
               <input type="submit" value="Đăng nhập"/>
+  
+              <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
+                <a href={"/authenticate/google" + "?forward=" + m.route()***REMOVED*** class="social-button" id="google-connect"> </a>
+              </div>
+              
+              <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
+                <a href={"/authenticate/facebook" + "?forward=" + m.route()***REMOVED*** class="social-button" id="facebook-connect"> </a>
+              </div>
+              
             </div>
           </form>
           <div className="label"></div>
@@ -102,7 +111,15 @@ var Login = function(ctrl){
                 <div>
                   <div className="label"></div>
                   <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Đăng ký</button>
+                  <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
+                    <a href={"/authenticate/google" + "?forward=" + m.route()***REMOVED*** class="social-button" id="google-connect"> </a>
+                  </div>
+  
+                  <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
+                    <a href={"/authenticate/facebook" + "?forward=" + m.route()***REMOVED*** class="social-button" id="facebook-connect"> </a>
+                  </div>
                 </div>
+                
               </div>
           </form>
           <div className="label"></div>

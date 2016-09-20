@@ -37,13 +37,28 @@ var PostView = function(ctrl){
                </div>
                <div className="t-right">
                  <div className="rate-nav">RATING</div>
-                 <div className="rate-num">0</div>
+                 <div className="rate-num">{ctrl.post().post.nLike***REMOVED***</div>
                  <button className="rate-button"
                     onclick={function(el){
                         if(Window.user == undefined){
                             data.showSignin = true;
                       ***REMOVED*** else {
-                            alert("voted");
+                            if(!ctrl.voted) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/post/vote",
+                                    data: JSON.stringify({
+                                        "id": ctrl.postID,
+                                  ***REMOVED***),
+                                    contentType: "application/json",
+                                    dataType: "text",
+                                    success: function (res) {
+                                        ctrl.post().post.nLike += 1;
+                                        m.redraw();
+                                  ***REMOVED***
+                              ***REMOVED***);
+                                ctrl.voted = true;
+                          ***REMOVED***
                       ***REMOVED***
                   ***REMOVED******REMOVED***
                  >+1</button>

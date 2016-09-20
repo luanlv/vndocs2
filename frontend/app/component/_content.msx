@@ -21,7 +21,7 @@ var Content = function(ctrl){
                 </div>
                 <div className="t-right">
                   <div className="rate-nav">RATING</div>
-                  <div className="rate-num">0</div>
+                  <div className="rate-num">{el.nLike***REMOVED***</div>
                 </div>
               </div>
               <div className="meta-data">

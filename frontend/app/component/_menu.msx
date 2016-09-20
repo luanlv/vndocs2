@@ -37,6 +37,7 @@ var Menu = function(ctrl){
                                    data.showSignup = true;
                              ***REMOVED******REMOVED***
                             ><span> Đăng ký</span></a></div>
+                        <span style="width: 20px;"></span>
                         <a href={"/authenticate/facebook" + "?forward=" + m.route()***REMOVED*** class="social-button" id="facebook-connect"> <span> Facebook</span></a>
                         <a href={"/authenticate/google" + "?forward=" + m.route()***REMOVED*** class="social-button" id="google-connect"> <span> Google</span></a>
                     </div>

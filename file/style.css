@@ -578,29 +578,29 @@ body {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.5); ***REMOVED***
 
-.login {
+.login, .login-popup {
   min-height: 107px;
   padding-top: 5px; ***REMOVED***
-  .login .login-box {
+  .login .login-box, .login-popup .login-box {
     background: #fff;
     padding: 10px 20px 10px 20px;
     text-align: center;
     letter-spacing: 1px;
     position: relative; ***REMOVED***
-    .login .login-box > div {
+    .login .login-box > div, .login-popup .login-box > div {
       font-size: 12px;
       margin-bottom: 5px; ***REMOVED***
-      .login .login-box > div a {
+      .login .login-box > div a, .login-popup .login-box > div a {
         color: #666;
         text-decoration: none; ***REMOVED***
-        .login .login-box > div a:visited {
+        .login .login-box > div a:visited, .login-popup .login-box > div a:visited {
           color: #666; ***REMOVED***
-  .login .login-box h2 {
+  .login .login-box h2, .login-popup .login-box h2 {
     padding: 0;
     text-transform: uppercase;
     color: #4688F1;
     font-size: 1em; ***REMOVED***
-  .login .social-button {
+  .login .social-button, .login-popup .social-button {
     font-size: 10px;
     font-weight: bold;
     background-position: 25px 0px;
@@ -621,14 +621,14 @@ body {
     padding-left: 20%;
     transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
     transition: all .3s ease; ***REMOVED***
-  .login #facebook-connect {
+  .login #facebook-connect, .login-popup #facebook-connect {
     background: white url("http://eswarasai.com/projects/social-buttons/img/facebook.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
     border: 1px solid #3c5a9a; ***REMOVED***
-  .login #facebook-connect:hover {
+  .login #facebook-connect:hover, .login-popup #facebook-connect:hover {
     border-color: #3c5a9a;
     background: #3c5a9a url("http://eswarasai.com/projects/social-buttons/img/facebook-white.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
     transition: all .3s ease-out; ***REMOVED***
-  .login #facebook-connect span {
+  .login #facebook-connect span, .login-popup #facebook-connect span {
     box-sizing: border-box;
     color: #3c5a9a;
     cursor: pointer;
@@ -637,17 +637,17 @@ body {
     border: 0px none white;
     outline: white none 0px;
     transition: all .3s ease; ***REMOVED***
-  .login #facebook-connect:hover span {
+  .login #facebook-connect:hover span, .login-popup #facebook-connect:hover span {
     color: #FFF;
     transition: all .3s ease; ***REMOVED***
-  .login #google-connect {
+  .login #google-connect, .login-popup #google-connect {
     background: white url("http://eswarasai.com/projects/social-buttons/img/google-plus.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
     border: 1px solid #dc4a3d; ***REMOVED***
-  .login #google-connect:hover {
+  .login #google-connect:hover, .login-popup #google-connect:hover {
     border-color: #dc4a3d;
     background: #dc4a3d url("http://eswarasai.com/projects/social-buttons/img/google-plus-white.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
     transition: all .3s ease-out; ***REMOVED***
-  .login #google-connect span {
+  .login #google-connect span, .login-popup #google-connect span {
     box-sizing: border-box;
     color: #dc4a3d;
     cursor: pointer;
@@ -656,7 +656,7 @@ body {
     border: 0px none #dc4a3d;
     outline: white none 0px;
     transition: all .3s ease; ***REMOVED***
-  .login #google-connect:hover span {
+  .login #google-connect:hover span, .login-popup #google-connect:hover span {
     color: #FFF;
     transition: all .3s ease; ***REMOVED***
 
@@ -683,7 +683,8 @@ body {
       font-weight: lighter;
       color: #666; ***REMOVED***
     .userInfo .top .right span {
-      font-weight: bold; ***REMOVED***
+      font-weight: bold;
+      color: #0074D9; ***REMOVED***
 .userInfo .bot {
   width: 100%;
   height: 37px;
@@ -752,7 +753,8 @@ ul.side-article {
   padding-left: 15px; ***REMOVED***
   ul.side-article li {
     margin: 5px 0;
-    border-bottom: 1px dashed rgba(100, 100, 100, 0.5); ***REMOVED***
+    border-bottom: 1px dashed rgba(100, 100, 100, 0.5);
+    padding-bottom: 5px; ***REMOVED***
 
 .content {
   width: 100%;
@@ -1097,149 +1099,202 @@ hr.style18:before {
   .breadcrumb a:visited {
     color: #5f9eb3; ***REMOVED***
 
-.postContent {
-  /* https://github.com/mrmrs/fluidity */
-  @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
-  @import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic); ***REMOVED***
-  @media print {
-    .postContent *,
-    .postContent *:before,
-    .postContent *:after {
-      background: transparent !important;
-      color: #000 !important;
-      box-shadow: none !important;
-      text-shadow: none !important; ***REMOVED***
-    .postContent a,
-    .postContent a:visited {
-      text-decoration: underline; ***REMOVED***
-    .postContent a[href]:after {
-      content: " (" attr(href) ")"; ***REMOVED***
-    .postContent abbr[title]:after {
-      content: " (" attr(title) ")"; ***REMOVED***
-    .postContent a[href^="#"]:after,
-    .postContent a[href^="javascript:"]:after {
-      content: ""; ***REMOVED***
-    .postContent pre,
-    .postContent blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid; ***REMOVED***
-    .postContent thead {
-      display: table-header-group; ***REMOVED***
-    .postContent tr,
-    .postContent img {
-      page-break-inside: avoid; ***REMOVED***
-    .postContent img {
-      max-width: 100% !important; ***REMOVED***
-    .postContent p,
-    .postContent h2,
-    .postContent h3 {
-      orphans: 3;
-      widows: 3; ***REMOVED***
-    .postContent h2,
-    .postContent h3 {
-      page-break-after: avoid; ***REMOVED*** ***REMOVED***
-  .postContent pre,
-  .postContent code {
-    font-family: Menlo, Monaco, "Courier New", monospace; ***REMOVED***
-  .postContent pre {
-    padding: .5rem;
-    line-height: 1.25;
-    overflow-x: scroll; ***REMOVED***
-  .postContent a,
-  .postContent a:visited {
-    color: #3498db; ***REMOVED***
-  .postContent a:hover,
-  .postContent a:focus,
-  .postContent a:active {
-    color: #2980b9; ***REMOVED***
-  .postContent .modest-no-decoration {
-    text-decoration: none; ***REMOVED***
-  .postContent html {
-    font-size: 12px; ***REMOVED***
-  @media screen and (min-width: 32rem) and (max-width: 48rem) {
-    .postContent html {
-      font-size: 15px; ***REMOVED*** ***REMOVED***
-  @media screen and (min-width: 48rem) {
-    .postContent html {
-      font-size: 16px; ***REMOVED*** ***REMOVED***
-  .postContent body {
-    line-height: 1.85; ***REMOVED***
-  .postContent p,
-  .postContent .modest-p {
-    font-size: 1rem;
-    margin-bottom: 1.3rem; ***REMOVED***
-  .postContent h1,
-  .postContent .modest-h1,
-  .postContent h2,
-  .postContent .modest-h2,
-  .postContent h3,
-  .postContent .modest-h3,
-  .postContent h4,
-  .postContent .modest-h4 {
-    margin: 1.414rem 0 .5rem;
-    font-weight: inherit;
-    line-height: 1.42; ***REMOVED***
-  .postContent h1,
-  .postContent .modest-h1 {
-    margin-top: 0;
-    font-size: 3.998rem; ***REMOVED***
-  .postContent h2,
-  .postContent .modest-h2 {
-    font-size: 2.827rem; ***REMOVED***
-  .postContent h3,
-  .postContent .modest-h3 {
-    font-size: 1.999rem; ***REMOVED***
-  .postContent h4,
-  .postContent .modest-h4 {
-    font-size: 1.414rem; ***REMOVED***
-  .postContent h5,
-  .postContent .modest-h5 {
-    font-size: 1.121rem; ***REMOVED***
-  .postContent h6,
-  .postContent .modest-h6 {
-    font-size: .88rem; ***REMOVED***
-  .postContent small,
-  .postContent .modest-small {
-    font-size: .707em; ***REMOVED***
-  .postContent img,
-  .postContent canvas,
-  .postContent iframe,
-  .postContent video,
-  .postContent svg,
+.postContent, #render {
+  color: #444444;
+  line-height: 1;
+  max-width: 960px;
+  /* Code below this line is copyright Twitter Inc. */
+  /* override default chrome & firefox settings */
+  /* grey out placeholders */
+  /* buttons */ ***REMOVED***
+  .postContent h1, .postContent h2, .postContent h3, .postContent h4, #render h1, #render h2, #render h3, #render h4 {
+    color: #111111;
+    font-weight: 400; ***REMOVED***
+  .postContent h1, .postContent h2, .postContent h3, .postContent h4, .postContent h5, .postContent p, #render h1, #render h2, #render h3, #render h4, #render h5, #render p {
+    margin-bottom: 24px;
+    padding: 0; ***REMOVED***
+  .postContent h1, #render h1 {
+    font-size: 48px; ***REMOVED***
+  .postContent h2, #render h2 {
+    font-size: 36px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+    margin: 24px 0 6px; ***REMOVED***
+  .postContent h3, #render h3 {
+    font-size: 24px; ***REMOVED***
+  .postContent h4, #render h4 {
+    font-size: 21px; ***REMOVED***
+  .postContent h5, #render h5 {
+    font-size: 18px; ***REMOVED***
+  .postContent a, #render a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline; ***REMOVED***
+  .postContent a:hover, #render a:hover {
+    text-decoration: none;
+    color: #ff6600; ***REMOVED***
+  .postContent a:visited, #render a:visited {
+    color: purple; ***REMOVED***
+  .postContent ul, .postContent ol, #render ul, #render ol {
+    padding: 0;
+    margin: 0; ***REMOVED***
+  .postContent li, #render li {
+    line-height: 24px; ***REMOVED***
+  .postContent li ul, .postContent li ul, #render li ul, #render li ul {
+    margin-left: 24px; ***REMOVED***
+  .postContent p, .postContent ul, .postContent ol, #render p, #render ul, #render ol {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 540px; ***REMOVED***
+  .postContent pre, #render pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap; ***REMOVED***
+  .postContent code, #render code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px; ***REMOVED***
+  .postContent aside, #render aside {
+    display: block;
+    float: right;
+    width: 390px; ***REMOVED***
+  .postContent blockquote, #render blockquote {
+    border-left: .5em solid #eee;
+    padding: 0 2em;
+    margin-left: 0;
+    max-width: 476px; ***REMOVED***
+  .postContent blockquote cite, #render blockquote cite {
+    font-size: 14px;
+    line-height: 20px;
+    color: #bfbfbf; ***REMOVED***
+  .postContent blockquote cite:before, #render blockquote cite:before {
+    content: '\2014 \00A0'; ***REMOVED***
+  .postContent blockquote p, #render blockquote p {
+    color: #666;
+    max-width: 460px; ***REMOVED***
+  .postContent hr, #render hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999; ***REMOVED***
+  .postContent button,
+  .postContent input,
   .postContent select,
-  .postContent textarea {
-    max-width: 100%; ***REMOVED***
-  .postContent html {
-    font-size: 18px;
-    max-width: 100%; ***REMOVED***
-  .postContent body {
-    color: #444;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 300;
-    margin: 0 auto;
-    max-width: 48rem;
-    line-height: 1.45;
-    padding: .25rem; ***REMOVED***
-  .postContent h1,
-  .postContent h2,
-  .postContent h3,
-  .postContent h4,
-  .postContent h5,
-  .postContent h6 {
-    font-family: Arimo, Helvetica, sans-serif; ***REMOVED***
-  .postContent h1,
-  .postContent h2,
-  .postContent h3 {
-    border-bottom: 2px solid #fafafa;
-    margin-bottom: 1.15rem;
-    padding-bottom: .5rem;
-    text-align: center; ***REMOVED***
-  .postContent blockquote {
-    border-left: 8px solid #fafafa;
-    padding: 1rem; ***REMOVED***
-  .postContent pre,
-  .postContent code {
-    background-color: #fafafa; ***REMOVED***
+  .postContent textarea, #render button,
+  #render input,
+  #render select,
+  #render textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle; ***REMOVED***
+  .postContent button, .postContent input, #render button, #render input {
+    line-height: normal;
+    *overflow: visible; ***REMOVED***
+  .postContent button::-moz-focus-inner, .postContent input::-moz-focus-inner, #render button::-moz-focus-inner, #render input::-moz-focus-inner {
+    border: 0;
+    padding: 0; ***REMOVED***
+  .postContent button,
+  .postContent input[type="button"],
+  .postContent input[type="reset"],
+  .postContent input[type="submit"], #render button,
+  #render input[type="button"],
+  #render input[type="reset"],
+  #render input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button; ***REMOVED***
+  .postContent input[type=checkbox], .postContent input[type=radio], #render input[type=checkbox], #render input[type=radio] {
+    cursor: pointer; ***REMOVED***
+  .postContent input:not([type="image"]), .postContent textarea, #render input:not([type="image"]), #render textarea {
+    box-sizing: content-box; ***REMOVED***
+  .postContent input[type="search"], #render input[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box; ***REMOVED***
+  .postContent input[type="search"]::-webkit-search-decoration, #render input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; ***REMOVED***
+  .postContent label,
+  .postContent input,
+  .postContent select,
+  .postContent textarea, #render label,
+  #render input,
+  #render select,
+  #render textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: normal;
+    margin-bottom: 18px; ***REMOVED***
+  .postContent input[type=checkbox], .postContent input[type=radio], #render input[type=checkbox], #render input[type=radio] {
+    cursor: pointer;
+    margin-bottom: 0; ***REMOVED***
+  .postContent input[type=text],
+  .postContent input[type=password],
+  .postContent textarea,
+  .postContent select, #render input[type=text],
+  #render input[type=password],
+  #render textarea,
+  #render select {
+    display: inline-block;
+    width: 210px;
+    padding: 4px;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    height: 18px;
+    color: #808080;
+    border: 1px solid #ccc;
+    border-radius: 3px; ***REMOVED***
+  .postContent select, .postContent input[type=file], #render select, #render input[type=file] {
+    height: 27px;
+    line-height: 27px; ***REMOVED***
+  .postContent textarea, #render textarea {
+    height: auto; ***REMOVED***
+  .postContent :-moz-placeholder, #render :-moz-placeholder {
+    color: #bfbfbf; ***REMOVED***
+  .postContent ::-webkit-input-placeholder, #render ::-webkit-input-placeholder {
+    color: #bfbfbf; ***REMOVED***
+  .postContent input[type=text],
+  .postContent input[type=password],
+  .postContent select,
+  .postContent textarea, #render input[type=text],
+  #render input[type=password],
+  #render select,
+  #render textarea {
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); ***REMOVED***
+  .postContent input[type=text]:focus, .postContent input[type=password]:focus, .postContent textarea:focus, #render input[type=text]:focus, #render input[type=password]:focus, #render textarea:focus {
+    outline: none;
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6); ***REMOVED***
+  .postContent button, #render button {
+    display: inline-block;
+    padding: 4px 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #0064cd;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, left, right);
+    background-image: linear-gradient(top, #049cdb, #0064cd);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid #004b9a;
+    border-bottom-color: #003f81;
+    transition: 0.1s linear all;
+    border-color: #0064cd #0064cd #003f81;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); ***REMOVED***
+  .postContent button:hover, #render button:hover {
+    color: #fff;
+    background-position: 0 -15px;
+    text-decoration: none; ***REMOVED***
+  .postContent button:active, #render button:active {
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); ***REMOVED***
+  .postContent button::-moz-focus-inner, #render button::-moz-focus-inner {
+    padding: 0;
+    border: 0; ***REMOVED***
 
 #comment .notUser {
   color: red; ***REMOVED***

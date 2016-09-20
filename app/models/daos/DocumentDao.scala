@@ -92,6 +92,20 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
   ***REMOVED***
 ***REMOVED***
 
+  def vote(id: String, userID: String)(implicit writer: OWrites[T]) = {
+    //    document.updated = Some(new DateTime())
+    Logger.debug(s"Updating document: [collection=$collectionName, id=$id ")
+    recover(collection.flatMap(_.update(
+      Json.obj("_id" -> id, "liker" -> Json.obj("$ne" -> userID)),
+      Json.obj(
+        "$inc" -> Json.obj("nLike" -> 1),
+        "$push" -> Json.obj("liker" -> userID)
+      ))
+    )) {
+      id
+  ***REMOVED***
+***REMOVED***
+
   def upsert(id: String, document: T)(implicit writer: OWrites[T]): Future[Try[T]] = {
     //    document.updated = Some(new DateTime())
     Logger.debug(s"Updating document: [collection=$collectionName, id=$id, document=$document]")

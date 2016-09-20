@@ -24,6 +24,7 @@
     <link type="text/css" rel="stylesheet" href="/assets/admin/css/theme-default/libs/morris/morris.core.css?1420463396" />
     <link type="text/css" rel="stylesheet" href="/assets/styles/jquery.domenu-0.95.77.css" />
     <link type="text/css" rel="stylesheet" href="/assets/admin/tagsinput/bootstrap-tagsinput.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/admin/css/custom.css" />
 
 
     <!-- END STYLESHEETS -->
@@ -50,8 +51,6 @@
     ***REMOVED***
     </style>
 
-
-    <!-- BEGIN JAVASCRIPT -->
     <script src="/assets/admin/js/libs/jquery/jquery-1.11.2.min.js"></script>
     <script src="/assets/admin/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
     <script src="/assets/admin/js/libs/bootstrap/bootstrap.min.js"></script>
@@ -83,8 +82,9 @@
     <script src="/assets/lib/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="/assets/lib/marked.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/assets/lib/mithril.js"></script>
-    <script src="/assets/js/admin.js"></script>
-      <!-- END JAVASCRIPT -->
+    @*<script src="/assets/js/admin.js"></script>*@
+    <script src=@{"/file/admin.js?" + scala.util.Random.nextInt(10000)***REMOVED***></script>
+
 
   </body>
 </html>

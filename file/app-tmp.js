@@ -32,6 +32,7 @@ module.exports = Main;
 
 ***REMOVED***,{"./core/_data.msx":11,"./core/_fn.msx":12,"./main/article.msx":14,"./main/category.msx":15,"./main/home.msx":16,"./main/post.msx":17***REMOVED***],2:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
@@ -51,7 +52,7 @@ var PostView = function(ctrl){
               {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.article().article.author]***REMOVED***, 
               {tag: "span", attrs: {className:"category"***REMOVED***, children: [
                           ctrl.article().article.tags.map(function(el){
-                              {el***REMOVED***
+                              return {tag: "a", attrs: {href:"javascript:void(0)"***REMOVED***, children: ["el"]***REMOVED***
                           ***REMOVED***)
                           
                     ***REMOVED******REMOVED***, 
@@ -63,13 +64,28 @@ var PostView = function(ctrl){
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
               {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***, 
+              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [ctrl.article().article.nLike]***REMOVED***, 
               {tag: "button", attrs: {className:"rate-button", 
                       onclick:function(el){
                         if(Window.user == undefined){
                           data.showSignin = true;
                       ***REMOVED*** else {
-                          alert("voted");
+                          if (!ctrl.voted) {
+                            $.ajax({
+                              type: "POST",
+                              url: "/blog/vote",
+                              data: JSON.stringify({
+                                "id": ctrl.slug,
+                            ***REMOVED***),
+                              contentType: "application/json",
+                              dataType: "text",
+                              success: function (res) {
+                                ctrl.article().article.nLike += 1;
+                                m.redraw();
+                            ***REMOVED***
+                          ***REMOVED***);
+                        ***REMOVED***
+                          ctrl.voted = true;
                       ***REMOVED***
                     ***REMOVED***
             ***REMOVED***, children: ["+1"]***REMOVED***
@@ -101,7 +117,7 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_fn.msx":12,"./_comment.msx":3***REMOVED***],3:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3***REMOVED***],3:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
@@ -209,7 +225,7 @@ var Content = function(ctrl){
               ***REMOVED******REMOVED***, 
                 {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
                   {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+                  {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [el.nLike]***REMOVED***
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
               {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
@@ -344,7 +360,16 @@ var Login = function(ctrl){
             {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
               {tag: "div", attrs: {className:"label"***REMOVED***
             ***REMOVED***, 
-              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***
+              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***, 
+  
+              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
+                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" "]***REMOVED***
+            ***REMOVED******REMOVED***, 
+              
+              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
+                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" "]***REMOVED***
+            ***REMOVED******REMOVED***
+              
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
           {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
@@ -408,8 +433,16 @@ var Login = function(ctrl){
               {tag: "div", attrs: {class:"form-group"***REMOVED***, children: [
                 {tag: "div", attrs: {***REMOVED***, children: [
                   {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
-                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Đăng ký"]***REMOVED***
+                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
+                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
+                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" "]***REMOVED***
+                ***REMOVED******REMOVED***, 
+  
+                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
+                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" "]***REMOVED***
+                ***REMOVED******REMOVED***
               ***REMOVED******REMOVED***
+                
             ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
           {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
@@ -469,6 +502,7 @@ var Menu = function(ctrl){
                                    data.showSignup = true;
                              ***REMOVED***
                           ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [" Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
+                        {tag: "span", attrs: {style:"width: 20px;"***REMOVED******REMOVED***, 
                         {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
                         {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
                   ***REMOVED******REMOVED***
@@ -530,13 +564,28 @@ var PostView = function(ctrl){
              ***REMOVED******REMOVED***, 
                {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
                  {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                 {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***, 
+                 {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [ctrl.post().post.nLike]***REMOVED***, 
                  {tag: "button", attrs: {className:"rate-button", 
                     onclick:function(el){
                         if(Window.user == undefined){
                             data.showSignin = true;
                       ***REMOVED*** else {
-                            alert("voted");
+                            if(!ctrl.voted) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/post/vote",
+                                    data: JSON.stringify({
+                                        "id": ctrl.postID,
+                                  ***REMOVED***),
+                                    contentType: "application/json",
+                                    dataType: "text",
+                                    success: function (res) {
+                                        ctrl.post().post.nLike += 1;
+                                        m.redraw();
+                                  ***REMOVED***
+                              ***REMOVED***);
+                                ctrl.voted = true;
+                          ***REMOVED***
                       ***REMOVED***
                   ***REMOVED***
                ***REMOVED***, children: ["+1"]***REMOVED***
@@ -786,6 +835,7 @@ Post.controller = function(){
   ctrl.request.ready = m.prop(false);
   ctrl.article = m.prop({***REMOVED***);
   ctrl.comment = m.prop("");
+  ctrl.voted = false;
   
   if(Window.article === undefined) {
     console.log("run request !!!!!!!!!!")
@@ -990,6 +1040,7 @@ Post.controller = function(){
   ctrl.request.ready = m.prop(false);
   ctrl.post = m.prop({***REMOVED***);
   ctrl.comment = m.prop("");
+  ctrl.voted = false;
   
   if(Window.post === undefined) {
     console.log("run request !!!!!!!!!!")
