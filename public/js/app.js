@@ -135,7 +135,8 @@ var Comments = function(ctrl, content, id){
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
-                           console.log(res)
+                           content.comments.unshift(res)
+                           m.redraw();
                        ***REMOVED***
                      ***REMOVED***);
                    ***REMOVED***

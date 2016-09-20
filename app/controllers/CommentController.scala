@@ -10,6 +10,7 @@ import utils.silhouette.{ AuthController, MyEnv, WithService ***REMOVED***
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
+import scala.util.{ Failure, Success ***REMOVED***
 
 @Singleton
 class CommentController @Inject() (
@@ -28,8 +29,13 @@ class CommentController @Inject() (
             comment = comment,
             user = LightUser.trimUser(request.identity)
           )
-          commentService.save(newComment)
-          Future.successful(Ok("OK"))
+          commentService.save(newComment).map {
+            tryComment =>
+              tryComment match {
+                case Success(comment) => Ok(Json.toJson(comment))
+                case Failure(ex) => BadRequest(s"Error: ${ex.getMessage***REMOVED***")
+            ***REMOVED***
+        ***REMOVED***
       ***REMOVED***
   ***REMOVED***.getOrElse {
       Future.successful(BadRequest("not json"))
