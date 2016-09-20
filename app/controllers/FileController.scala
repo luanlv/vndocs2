@@ -50,7 +50,7 @@ class FileController @Inject() (
     Ok.sendFile(
       file
     //      inline = true
-    )
+    ).withHeaders("Cache-Control" -> "no-cache, no-store, must-revalidate")
 ***REMOVED***
 
   def getSize = Action(parse.json) { implicit request =>

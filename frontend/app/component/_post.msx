@@ -59,8 +59,12 @@ var PostView = function(ctrl){
           Comments(ctrl, ctrl.post(), ctrl.postID)
           
     ***REMOVED***:[
-          <div>
-            loading !!
+          <div className="loading">
+              <div class="loader">
+                  <div class="inner one"></div>
+                  <div class="inner two"></div>
+                  <div class="inner three"></div>
+              </div>
           </div>
     ***REMOVED***
     ***REMOVED***

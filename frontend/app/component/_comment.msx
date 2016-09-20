@@ -35,7 +35,8 @@ var Comments = function(ctrl, content, id){
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
-                           content.comments.unshift(res)
+                           content.comments.unshift(res);
+                           ctrl.comment('');
                            m.redraw();
                        ***REMOVED***
                      ***REMOVED***);

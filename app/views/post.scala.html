@@ -7,8 +7,9 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="/assets/styles/animate.css">
         @*<link rel="stylesheet" href="/assets/stylesheets/style.min.css">*@
-        <link rel="stylesheet" href="/file/style.css">
+        <link rel="stylesheet" href=@{"/file/style.css?" + scala.util.Random.nextInt(10000)***REMOVED*** >
 
     </head>
     <body>
@@ -41,6 +42,6 @@
         <script src="/assets/lib/mithril.min.js"></script>
         <script src="/assets/lib/mithril-storage.min.js"></script>
         @*<script src="/assets/js/app.js"></script>*@
-        <script src="/file/app.js"></script>
+        <script src=@{"/file/app.js?" + scala.util.Random.nextInt(10000)***REMOVED***></script>
     </body>
 </html>

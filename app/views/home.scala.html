@@ -1,3 +1,4 @@
+@import scala.util.Random
 @(menu: String, categories: String, posts: String, articles: String)(implicit user: Option[User], request: RequestHeader, messages: Messages)
 
 <!doctype html>
@@ -8,8 +9,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
         @*<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>*@
+        <link rel="stylesheet" href="/assets/styles/animate.css">
         @*<link rel="stylesheet" href="/assets/stylesheets/style.min.css">*@
-        <link rel="stylesheet" href="/file/style.css">
+        <link rel="stylesheet" href=@{"/file/style.css?" + scala.util.Random.nextInt(10000)***REMOVED*** >
     </head>
     <body>
         <script >
@@ -39,6 +41,6 @@
         <script src="/assets/lib/mithril.min.js"></script>
         <script src="/assets/lib/mithril-storage.min.js"></script>
         @*<script src="/assets/js/app.js"></script>*@
-        <script src="/file/app.js"></script>
+        <script src=@{"/file/app.js?" + scala.util.Random.nextInt(10000)***REMOVED***></script>
     </body>
 </html>

@@ -85,8 +85,12 @@ var PostView = function(ctrl){
       Comments(ctrl, ctrl.article(), ctrl.slug)
     
   ***REMOVED***:[
-      {tag: "div", attrs: {***REMOVED***, children: [
-        "loading !!"
+      {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
+        {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
+          {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***
   ***REMOVED***
     
@@ -135,7 +139,8 @@ var Comments = function(ctrl, content, id){
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
-                           content.comments.unshift(res)
+                           content.comments.unshift(res);
+                           ctrl.comment('');
                            m.redraw();
                        ***REMOVED***
                      ***REMOVED***);
@@ -218,8 +223,12 @@ var Content = function(ctrl){
           ***REMOVED******REMOVED***
         ***REMOVED***)
     ***REMOVED***:[
-          {tag: "div", attrs: {***REMOVED***, children: [
-            "Loading !!"
+          {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
+              {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
+                  {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
     ***REMOVED***
         
@@ -534,8 +543,12 @@ var PostView = function(ctrl){
           Comments(ctrl, ctrl.post(), ctrl.postID)
           
     ***REMOVED***:[
-          {tag: "div", attrs: {***REMOVED***, children: [
-            "loading !!"
+          {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
+              {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
+                  {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
+                  {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
+            ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
     ***REMOVED***
       
@@ -811,6 +824,7 @@ module.exports =  Post;
 var Category = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -870,7 +884,7 @@ Category.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Category;
-***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***],16:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],16:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');

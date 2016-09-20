@@ -1,6 +1,7 @@
 var Category = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
