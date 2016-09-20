@@ -24,7 +24,7 @@ Home.controller = function(){
   var ctrl = this;
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
+  ctrl.posts = m.prop({***REMOVED***);
   ctrl.articles = Window.articles;
   
   
@@ -33,13 +33,13 @@ Home.controller = function(){
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
 ***REMOVED*** else {
     ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
+    ctrl.posts().posts=ctrl.request.data();
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
 ***REMOVED***;
   ctrl.setup = function(){
-    ctrl.posts(ctrl.request.data());
+    // ctrl.posts(ctrl.request.data());
     m.redraw();
 ***REMOVED***;
   

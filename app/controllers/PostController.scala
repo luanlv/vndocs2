@@ -67,8 +67,17 @@ class PostController @Inject() (
 ***REMOVED***
 
   def getPosts(page: Int) = Action.async { implicit request =>
-    postService.getList(page).map { post =>
-      Ok(Json.toJson(post))
+    val data = for {
+      posts <- postService.getList(page)
+      total <- postService.count
+  ***REMOVED*** yield (posts, total)
+    data.map { data =>
+      Ok(
+        Json.obj(
+          "posts" -> Json.toJson(data._1),
+          "total" -> data._2
+        )
+      )
   ***REMOVED***
 ***REMOVED***
 

@@ -36,7 +36,7 @@ var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-  return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
+  return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
     ctrl.request.ready()?[
       {tag: "div", attrs: {***REMOVED***, children: [
 
@@ -203,7 +203,7 @@ var Comments = function(ctrl, content, id, type){
 module.exports = Comments;
 ***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],4:[function(require,module,exports){
 var Content = function(ctrl){
-    return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
+    return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
       ctrl.request.ready()?[
         {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
           {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: [
@@ -214,7 +214,7 @@ var Content = function(ctrl){
             {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["Bình luận"]***REMOVED***
         ***REMOVED******REMOVED***
       ***REMOVED******REMOVED***,
-          ctrl.posts().map(function(el) {
+          ctrl.posts().posts.map(function(el) {
             return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
               {tag: "div", attrs: {className:"title"***REMOVED***, children: [
                 {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
@@ -234,10 +234,16 @@ var Content = function(ctrl){
                       el.categories.map(function (item) {
                         return {tag: "a", attrs: {href:"/category/" + item, 
                             config:m.route
-                      ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [Window.categories.getItemByParam({slug: item***REMOVED***).name]***REMOVED***]***REMOVED***
+                      ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [(Window.categories.getItemByParam({slug: item***REMOVED***) == undefined)?(""):(Window.categories.getItemByParam({slug: item***REMOVED***).name)]***REMOVED***]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
-                {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***
+                {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***, 
+                {tag: "span", attrs: {className:"nComment"***REMOVED***, children: [
+                    {tag: "a", attrs: {href:"/post/" + el._id + "#comment", 
+                       config:m.route
+                  ***REMOVED***, children: [el.nComment, " bình luận"]***REMOVED***
+                    
+              ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
               {tag: "div", attrs: {className:"info"***REMOVED***, children: [
                 {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
@@ -246,7 +252,15 @@ var Content = function(ctrl){
               ***REMOVED******REMOVED***
             ***REMOVED******REMOVED***
           ***REMOVED******REMOVED***
-        ***REMOVED***)
+        ***REMOVED***),
+          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
+        {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"***REMOVED***, children: [
+          {tag: "a", attrs: {href:"http://englishtips.org/page/13/", rel:"nofollow"***REMOVED***, children: ["PREV"]***REMOVED***, 
+          {tag: "a", attrs: {href:"http://englishtips.org/", rel:"nofollow"***REMOVED***, children: ["1"]***REMOVED***, 
+          {tag: "a", attrs: {href:"http://englishtips.org/page/15/", rel:"nofollow"***REMOVED***, children: ["NEXT"]***REMOVED***, 
+          {tag: "a", attrs: {href:"#page", onclick:"javascript:ShowOrHide('go_on_page')"***REMOVED***, children: [" Go to page "]***REMOVED***
+      ***REMOVED******REMOVED***
+          
     ***REMOVED***:[
           {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
               {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
@@ -530,7 +544,7 @@ var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-    return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
+    return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
       ctrl.request.ready()?[
          {tag: "div", attrs: {***REMOVED***, children: [
            {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [
@@ -970,7 +984,7 @@ Home.controller = function(){
   var ctrl = this;
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
+  ctrl.posts = m.prop({***REMOVED***);
   ctrl.articles = Window.articles;
   
   
@@ -979,13 +993,13 @@ Home.controller = function(){
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
 ***REMOVED*** else {
     ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
+    ctrl.posts().posts=ctrl.request.data();
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
 ***REMOVED***;
   ctrl.setup = function(){
-    ctrl.posts(ctrl.request.data());
+    // ctrl.posts(ctrl.request.data());
     m.redraw();
 ***REMOVED***;
   

@@ -8,7 +8,8 @@ var gulpif = require('gulp-if');
 
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
-//var minifyCss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
+var minify = require('gulp-minify');
 var autoprefixer = require('gulp-autoprefixer');
 var run = require('gulp-run');
 
@@ -23,6 +24,7 @@ gulp.task('sass', function () {
         browsers: ['last 2 versions'],
         cascade: false
     ***REMOVED***))
+      // .pipe(cleanCSS())
       // .pipe(rename('style.min.css'))
       .pipe(rename('style.css'))
       // .pipe(gulp.dest('public/stylesheets'));
@@ -36,6 +38,7 @@ gulp.task('app', function() {
         transform: ['mithrilify']
     ***REMOVED***))
       .pipe(rename('app-tmp.js'))
+      // .pipe(minify({***REMOVED***))
       .pipe(gulp.dest('file/'))
       .on('end', function(){
         cmd.exec('');

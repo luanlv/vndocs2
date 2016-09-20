@@ -3,7 +3,7 @@ var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-    return <div className="main mh500">
+    return <div className="main mh800">
       {ctrl.request.ready()?[
          <div>
            <span className="breadcrumb">

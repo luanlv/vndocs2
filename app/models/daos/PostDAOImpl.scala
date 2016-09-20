@@ -38,6 +38,10 @@ class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
     repository.vote(id, userID)
 ***REMOVED***
 
+  def count: Future[Int] = {
+    repository.count
+***REMOVED***
+
   def getList(page: Int) = {
     repository.getList(sort = Json.obj("time" -> -1), page = page, num = 10)
 ***REMOVED***

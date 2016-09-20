@@ -327,6 +327,24 @@ button {
 *:before {
   box-sizing: border-box; ***REMOVED***
 
+.mh500 {
+  min-height: 500px; ***REMOVED***
+
+.mh1000 {
+  min-height: 1000px; ***REMOVED***
+
+.mh800 {
+  min-height: 800px; ***REMOVED***
+
+.mh700 {
+  min-height: 700px; ***REMOVED***
+
+.mh600 {
+  min-height: 600px; ***REMOVED***
+
+.mh300 {
+  min-height: 300px; ***REMOVED***
+
 .bg1 {
   background: #7FDBFF; ***REMOVED***
 

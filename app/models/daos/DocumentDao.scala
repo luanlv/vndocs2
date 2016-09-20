@@ -62,6 +62,10 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
     findOne(Json.obj("_id" -> kind))
 ***REMOVED***
 
+  def count: Future[Int] = {
+    collection.flatMap(_.count())
+***REMOVED***
+
   def update(id: String, document: T)(implicit writer: OWrites[T]): Future[Try[T]] = {
     //    document.updated = Some(new DateTime())
     Logger.debug(s"Updating document: [collection=$collectionName, id=$id, document=$document]")
@@ -129,6 +133,7 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
       data
   ***REMOVED***
 ***REMOVED***
+
   //
   //  def removeUser(loginInfo) = {
   //
@@ -142,49 +147,58 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
       success => success
     )
 ***REMOVED***
+
   def push(id: String, data: JsObject): Future[Try[JsObject]] = {
     Logger.debug(s"pushing to document: [collection=$collectionName, id=$id, data=$data]")
     recover(collection.flatMap(_.update(DBQueryBuilder.id(id), DBQueryBuilder.push(data)))) {
       data
   ***REMOVED***
 ***REMOVED***
+
   def push[S](id: String, field: String, data: S)(implicit writer: OWrites[S]): Future[Try[S]] = {
     Logger.debug(s"Pushing to document: [collection=$collectionName, id=$id, field=$field data=$data]")
     recover(collection.flatMap(_.update(DBQueryBuilder.id(id), DBQueryBuilder.push(field, data)))) {
       data
   ***REMOVED***
 ***REMOVED***
+
   def pull(id: String, data: JsObject): Future[Try[JsObject]] = {
     Logger.debug(s"pulling from document: [collection=$collectionName, id=$id, data=$data]")
     recover(collection.flatMap(_.update(DBQueryBuilder.id(id), DBQueryBuilder.pull(data)))) {
       data
   ***REMOVED***
 ***REMOVED***
+
   def pull[S](id: String, field: String, query: S)(implicit writer: OWrites[S]): Future[Try[Boolean]] = {
     Logger.debug(s"Pulling from document: [collection=$collectionName, id=$id, field=$field query=$query]")
     recover(collection.flatMap(_.update(DBQueryBuilder.id(id), DBQueryBuilder.pull(field, query)))) {
       true
   ***REMOVED***
 ***REMOVED***
+
   def unset(id: String, field: String): Future[Try[Boolean]] = {
     Logger.debug(s"Unsetting from document: [collection=$collectionName, id=$id, field=$field]")
     recover(collection.flatMap(_.update(DBQueryBuilder.id(id), DBQueryBuilder.unset(field)))) {
       true
   ***REMOVED***
 ***REMOVED***
+
   def remove(id: String): Future[Try[Boolean]] = remove(BSONObjectID(id))
+
   def remove(id: BSONObjectID): Future[Try[Boolean]] = {
     Logger.debug(s"Removing document: [collection=$collectionName, id=$id]")
     recover(collection.flatMap(_.remove(DBQueryBuilder.id(id)))) {
       true
   ***REMOVED***
 ***REMOVED***
+
   def remove(query: JsObject, firstMatchOnly: Boolean = false): Future[Try[Boolean]] = {
     Logger.debug(s"Removing document(s): [collection=$collectionName, firstMatchOnly=$firstMatchOnly, query=$query]")
     recover(collection.flatMap(_.remove(query, firstMatchOnly = firstMatchOnly))) {
       true
   ***REMOVED***
 ***REMOVED***
+
   def ensureIndex(
     key: List[(String, IndexType)],
     name: Option[String] = None,
