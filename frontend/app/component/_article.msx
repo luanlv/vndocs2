@@ -1,4 +1,5 @@
 var fn = require('../core/_fn.msx');
+var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
   return <div className="main mh500">
@@ -39,64 +40,7 @@ var PostView = function(ctrl){
         </div>
       </div>,
       <hr className="style3"/>,
-      <div id="comment">
-        
-        <div className="commentWr">
-              <span class="poster">
-                <img src="http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png" class="icon"/>
-                <br/>
-                  Kigurumix
-              </span>
-          <div class="comment commentBox">
-                <textarea name="cmt" id="cmt"
-                          onchange={function(el){
-                            ctrl.comment($(el.target).val());
-                            console.log(ctrl.comment());
-                        ***REMOVED******REMOVED***
-                >
-                  {ctrl.comment()***REMOVED***
-                </textarea>
-            <span className="submit">
-                  <a href="javascript:void(0)"
-                     onclick={function(){
-                       $.ajax({
-                         type: "POST",
-                         url: "/comment/" + ctrl.postID,
-                         data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
-                         contentType: "application/json",
-                         dataType: "json",
-                         success: function(res){
-                           console.log(res)
-                       ***REMOVED***
-                     ***REMOVED***);
-                   ***REMOVED******REMOVED***
-                  > Gửi </a>
-                </span>
-          </div>
-        </div>
-        
-        
-        
-        {ctrl.article().comments.map(function(el){
-          return <div className="commentWr">
-                <span class="poster">
-                  <img src={el.user.avatarURL***REMOVED*** class="icon"/>
-                  <br/>
-                </span>
-            <div class="comment">
-                  <span class="info">
-                    <span className="userName">{el.user.fullName***REMOVED***</span> Posted July 9th 2016, 01:04 AM
-                    <span class="buttons">
-                      
-                    </span>
-                  </span>
-              {el.comment***REMOVED***
-            </div>
-          </div>
-      ***REMOVED***)***REMOVED***
-      
-      
-      </div>
+      Comments(ctrl)
     
   ***REMOVED***:[
       <div>

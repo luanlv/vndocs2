@@ -30,8 +30,9 @@ m.route(document.querySelector('#app'), "/", {
 
 module.exports = Main;
 
-***REMOVED***,{"./core/_data.msx":10,"./core/_fn.msx":11,"./main/article.msx":13,"./main/category.msx":14,"./main/home.msx":15,"./main/post.msx":16***REMOVED***],2:[function(require,module,exports){
+***REMOVED***,{"./core/_data.msx":11,"./core/_fn.msx":12,"./main/article.msx":14,"./main/category.msx":15,"./main/home.msx":16,"./main/post.msx":17***REMOVED***],2:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
+var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
   return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
@@ -72,16 +73,40 @@ var PostView = function(ctrl){
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***,
       {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-      {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
-        
-        {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+      Comments(ctrl)
+    
+  ***REMOVED***:[
+      {tag: "div", attrs: {***REMOVED***, children: [
+        "loading !!"
+    ***REMOVED******REMOVED***
+  ***REMOVED***
+    
+***REMOVED******REMOVED***
+  
+***REMOVED***;
+
+
+
+module.exports = PostView;
+***REMOVED***,{"../core/_fn.msx":12,"./_comment.msx":3***REMOVED***],3:[function(require,module,exports){
+var data = require('../core/_data.msx');
+var fn = require('../core/_fn.msx');
+
+var Comments = function(ctrl){
+  return [
+    {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
+    
+      {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
               {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
                 {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
                 {tag: "br", attrs: {***REMOVED******REMOVED***, 
                   "Kigurumix"
             ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
+        {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
                 {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
+                          onclick:function(){
+  
+                        ***REMOVED***, 
                           onchange:function(el){
                             ctrl.comment($(el.target).val());
                             console.log(ctrl.comment());
@@ -89,7 +114,7 @@ var PostView = function(ctrl){
               ***REMOVED***, children: [
                   ctrl.comment()
               ***REMOVED******REMOVED***, 
-            {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
+          {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
                   {tag: "a", attrs: {href:"javascript:void(0)", 
                      onclick:function(){
                        $.ajax({
@@ -105,46 +130,36 @@ var PostView = function(ctrl){
                    ***REMOVED***
                 ***REMOVED***, children: [" Gửi "]***REMOVED***
               ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***, 
-        
-        
-        
-        ctrl.article().comments.map(function(el){
-          return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***, 
+    
+    
+    
+      ctrl.post().comments.map(function(el){
+        return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
                 {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
                   {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
                   {tag: "br", attrs: {***REMOVED******REMOVED***
               ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
+          {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
                   {tag: "span", attrs: {class:"info"***REMOVED***, children: [
                     {tag: "span", attrs: {className:"userName"***REMOVED***, children: [el.user.fullName]***REMOVED***, " Posted July 9th 2016, 01:04 AM", 
                     {tag: "span", attrs: {class:"buttons"***REMOVED***
                       
                   ***REMOVED***
                 ***REMOVED******REMOVED***, 
-              el.comment
-          ***REMOVED******REMOVED***
+            el.comment
         ***REMOVED******REMOVED***
-      ***REMOVED***)
-      
-      
-    ***REMOVED******REMOVED***
-    
-  ***REMOVED***:[
-      {tag: "div", attrs: {***REMOVED***, children: [
-        "loading !!"
-    ***REMOVED******REMOVED***
-  ***REMOVED***
-    
-***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED***)
   
+  
+  ***REMOVED******REMOVED***
+***REMOVED***
 ***REMOVED***;
 
-
-
-module.exports = PostView;
-***REMOVED***,{"../core/_fn.msx":11***REMOVED***],3:[function(require,module,exports){
+module.exports = Comments;
+***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],4:[function(require,module,exports){
 var Content = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
       ctrl.request.ready()?[
@@ -203,7 +218,7 @@ var Content = function(ctrl){
 
 
 module.exports = Content;
-***REMOVED***,{***REMOVED***],4:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],5:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
@@ -218,7 +233,7 @@ var Footer = function(ctrl){
 ***REMOVED***;
 
 module.exports = Footer;
-***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],5:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],6:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
@@ -259,7 +274,7 @@ var Head = function(ctrl){
 ***REMOVED***;
 
 module.exports = Head;
-***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],6:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],7:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 
@@ -384,7 +399,7 @@ var Login = function(ctrl){
 ***REMOVED***;
 
 module.exports = Login;
-***REMOVED***,{"../core/_data.msx":10***REMOVED***],7:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11***REMOVED***],8:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
 
@@ -445,9 +460,10 @@ var Menu = function(ctrl){
 
 
 module.exports = Menu;
-***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],8:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],9:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
+var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
     return {tag: "div", attrs: {className:"main mh500"***REMOVED***, children: [
@@ -503,64 +519,7 @@ var PostView = function(ctrl){
          ***REMOVED******REMOVED***
        ***REMOVED******REMOVED***,
           {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-          {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
-            
-            {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
-              {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
-                {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
-                {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                  "Kigurumix"
-            ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
-                {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
-                  onchange:function(el){
-                    ctrl.comment($(el.target).val());
-                    console.log(ctrl.comment());
-                ***REMOVED***
-              ***REMOVED***, children: [
-                  ctrl.comment()
-              ***REMOVED******REMOVED***, 
-                {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
-                  {tag: "a", attrs: {href:"javascript:void(0)", 
-                    onclick:function(){
-                      $.ajax({
-                        type: "POST",
-                        url: "/comment/" + ctrl.postID,
-                        data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
-                        contentType: "application/json",
-                        dataType: "json",
-                        success: function(res){
-                          console.log(res)
-                      ***REMOVED***
-                    ***REMOVED***);
-                  ***REMOVED***
-                ***REMOVED***, children: [" Gửi "]***REMOVED***
-              ***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***, 
-            
-            
-            
-            ctrl.post().comments.map(function(el){
-              return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
-                {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
-                  {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
-                  {tag: "br", attrs: {***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
-                  {tag: "span", attrs: {class:"info"***REMOVED***, children: [
-                    {tag: "span", attrs: {className:"userName"***REMOVED***, children: [el.user.fullName]***REMOVED***, " Posted July 9th 2016, 01:04 AM", 
-                    {tag: "span", attrs: {class:"buttons"***REMOVED***
-                      
-                  ***REMOVED***
-                ***REMOVED******REMOVED***, 
-                    el.comment
-                ***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***
-          ***REMOVED***)
-            
-            
-        ***REMOVED******REMOVED***
+          Comments(ctrl)
           
     ***REMOVED***:[
           {tag: "div", attrs: {***REMOVED***, children: [
@@ -575,7 +534,7 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_data.msx":10,"../core/_fn.msx":11***REMOVED***],9:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3***REMOVED***],10:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
@@ -620,7 +579,7 @@ var Side = function(ctrl){
 ***REMOVED***;
 
 module.exports = Side;
-***REMOVED***,{"../core/_data.msx":10***REMOVED***],10:[function(require,module,exports){
+***REMOVED***,{"../core/_data.msx":11***REMOVED***],11:[function(require,module,exports){
 var Data = {***REMOVED***;
 
 Data.showSignin = false;
@@ -632,7 +591,7 @@ if(Window.user !== undefined) {
 ***REMOVED***
 
 module.exports = Data;
-***REMOVED***,{***REMOVED***],11:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],12:[function(require,module,exports){
 var fn ={***REMOVED***;
 
 
@@ -734,7 +693,7 @@ fn.cookieUrl = function(){
 ***REMOVED***;
 
 module.exports = fn;
-***REMOVED***,{***REMOVED***],12:[function(require,module,exports){
+***REMOVED***,{***REMOVED***],13:[function(require,module,exports){
 "use strict";
 
 window.mobilecheck = function() {
@@ -763,7 +722,7 @@ window.Main = require('./_main.msx');
 
 
 
-***REMOVED***,{"./_main.msx":1***REMOVED***],13:[function(require,module,exports){
+***REMOVED***,{"./_main.msx":1***REMOVED***],14:[function(require,module,exports){
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -827,7 +786,7 @@ Post.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_article.msx":2,"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***],14:[function(require,module,exports){
+***REMOVED***,{"../component/_article.msx":2,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***],15:[function(require,module,exports){
 var Category = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -885,7 +844,7 @@ Category.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Category;
-***REMOVED***,{"../component/_content.msx":3,"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***],15:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***],16:[function(require,module,exports){
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -941,7 +900,7 @@ Home.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":3,"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***],16:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***],17:[function(require,module,exports){
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -1003,4 +962,4 @@ Post.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_footer.msx":4,"../component/_head.msx":5,"../component/_login.msx":6,"../component/_menu.msx":7,"../component/_post.msx":8,"../component/_side.msx":9,"../core/_fn.msx":11***REMOVED***]***REMOVED***,{***REMOVED***,[12])
+***REMOVED***,{"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_post.msx":9,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***]***REMOVED***,{***REMOVED***,[13])
