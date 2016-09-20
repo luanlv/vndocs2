@@ -107,7 +107,7 @@ var Comments = function(ctrl, content, id){
     
       {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
               {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
-                {tag: "img", attrs: {src:"http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png", class:"icon"***REMOVED******REMOVED***, 
+                {tag: "img", attrs: {src:(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL), class:"icon"***REMOVED******REMOVED***, 
                 {tag: "br", attrs: {***REMOVED******REMOVED***, 
                   "Kigurumix"
             ***REMOVED******REMOVED***, 

@@ -7,7 +7,7 @@ var Comments = function(ctrl, content, id){
     
       <div className="commentWr">
               <span class="poster">
-                <img src="http://i130.photobucket.com/albums/p258/Kigurumix/amy_av.png" class="icon"/>
+                <img src={(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL)***REMOVED*** class="icon"/>
                 <br/>
                   Kigurumix
               </span>
