@@ -9,7 +9,6 @@ var Comments = function(ctrl, content, id){
               <span class="poster">
                 <img src={(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL)***REMOVED*** class="icon"/>
                 <br/>
-                  Kigurumix
               </span>
         <div class="comment commentBox">
                 <textarea name="cmt" id="cmt"
@@ -25,6 +24,13 @@ var Comments = function(ctrl, content, id){
                 >
                   {ctrl.comment()***REMOVED***
                 </textarea>
+          {(Window.user == undefined)?(
+            <span className="notUser">
+            Chưa đăng nhập
+            </span>
+          ):(<span className="isUser">
+            {Window.user.fullName***REMOVED***
+          </span>)***REMOVED***
           <span className="submit">
                   <a href="javascript:void(0)"
                      onclick={function(){

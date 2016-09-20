@@ -1,4 +1,12 @@
 #comment {
+
+  .notUser {
+    color: red;
+***REMOVED***
+  .isUser {
+    color: $blue;
+***REMOVED***
+
   .icon { height: 50px; width: 50px; border-radius: 7px; ***REMOVED***
 
   span.poster {
@@ -16,6 +24,7 @@
   span.buttons { position: absolute; right: 20px; ***REMOVED***
 
   .comment {
+    white-space: pre-wrap;
     position: relative;
     font-size: 14px;
     color: #333;

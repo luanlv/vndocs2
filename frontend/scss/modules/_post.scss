@@ -33,13 +33,15 @@
 
 .breadcrumb {
   a {
-    color: #0072bc;
+    font-style: italic;
+    color: #5f9eb3;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+      color: $orange !important;
   ***REMOVED***
     &:visited {
-      color: #0072bc;
+      color: #5f9eb3;
   ***REMOVED***
 ***REMOVED***
 ***REMOVED***

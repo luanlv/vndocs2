@@ -112,8 +112,7 @@ var Comments = function(ctrl, content, id){
       {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
               {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
                 {tag: "img", attrs: {src:(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL), class:"icon"***REMOVED******REMOVED***, 
-                {tag: "br", attrs: {***REMOVED******REMOVED***, 
-                  "Kigurumix"
+                {tag: "br", attrs: {***REMOVED******REMOVED***
             ***REMOVED******REMOVED***, 
         {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
                 {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
@@ -129,6 +128,13 @@ var Comments = function(ctrl, content, id){
               ***REMOVED***, children: [
                   ctrl.comment()
               ***REMOVED******REMOVED***, 
+          (Window.user == undefined)?(
+            {tag: "span", attrs: {className:"notUser"***REMOVED***, children: [
+            "Chưa đăng nhập"
+          ***REMOVED******REMOVED***
+          ):({tag: "span", attrs: {className:"isUser"***REMOVED***, children: [
+            Window.user.fullName
+        ***REMOVED******REMOVED***), 
           {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
                   {tag: "a", attrs: {href:"javascript:void(0)", 
                      onclick:function(){
@@ -443,7 +449,7 @@ var Menu = function(ctrl){
                           ***REMOVED******REMOVED***
                       ***REMOVED******REMOVED***, 
                         {tag: "div", attrs: {className:"bot"***REMOVED***, children: [
-                            {tag: "a", attrs: {href:"/signOut"***REMOVED***, children: ["Đăng xuất"]***REMOVED***
+                            {tag: "a", attrs: {href:"/signOut?forward=" + m.route()***REMOVED***, children: ["Đăng xuất"]***REMOVED***
                       ***REMOVED******REMOVED***
                   ***REMOVED******REMOVED***
                 ):(

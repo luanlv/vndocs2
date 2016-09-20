@@ -1088,12 +1088,14 @@ hr.style18:before {
   margin-top: 20px; ***REMOVED***
 
 .breadcrumb a {
-  color: #0072bc;
+  font-style: italic;
+  color: #5f9eb3;
   text-decoration: none; ***REMOVED***
   .breadcrumb a:hover {
-    text-decoration: underline; ***REMOVED***
+    text-decoration: underline;
+    color: #FF851B !important; ***REMOVED***
   .breadcrumb a:visited {
-    color: #0072bc; ***REMOVED***
+    color: #5f9eb3; ***REMOVED***
 
 .postContent {
   /* https://github.com/mrmrs/fluidity */
@@ -1239,6 +1241,10 @@ hr.style18:before {
   .postContent code {
     background-color: #fafafa; ***REMOVED***
 
+#comment .notUser {
+  color: red; ***REMOVED***
+#comment .isUser {
+  color: #0074D9; ***REMOVED***
 #comment .icon {
   height: 50px;
   width: 50px;
@@ -1261,6 +1267,7 @@ hr.style18:before {
   position: absolute;
   right: 20px; ***REMOVED***
 #comment .comment {
+  white-space: pre-wrap;
   position: relative;
   font-size: 14px;
   color: #333;

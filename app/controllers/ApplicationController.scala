@@ -83,8 +83,8 @@ class ApplicationController @Inject() (
    * @return The result to display.
    */
   def signOut = silhouette.SecuredAction.async { implicit request =>
-
-    val result = Redirect(routes.ApplicationController.index())
+    val forward = request.getQueryString("forward").getOrElse("/")
+    val result = Redirect(forward)
     silhouette.env.eventBus.publish(LogoutEvent(request.identity, request))
     silhouette.env.authenticatorService.discard(request.authenticator, result)
 ***REMOVED***

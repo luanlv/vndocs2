@@ -20,7 +20,7 @@ var Menu = function(ctrl){
                             </div>
                         </div>
                         <div className="bot">
-                            <a href="/signOut">Đăng xuất</a>
+                            <a href={"/signOut?forward=" + m.route()***REMOVED***>Đăng xuất</a>
                         </div>
                     </div>
                 ):(
