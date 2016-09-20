@@ -2,6 +2,7 @@ var Data = {***REMOVED***;
 
 Data.showSignin = false;
 Data.showSignup = false;
+Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
 
 if(Window.user !== undefined) {
   Data.user = Window.user;

@@ -1,7 +1,7 @@
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
-var Comments = function(ctrl){
+var Comments = function(ctrl, content, id){
   return [
     <div id="comment">
     
@@ -14,7 +14,9 @@ var Comments = function(ctrl){
         <div class="comment commentBox">
                 <textarea name="cmt" id="cmt"
                           onclick={function(){
-  
+                            if(Window.user == undefined){
+                              data.showSignin = true;
+                          ***REMOVED***
                         ***REMOVED******REMOVED***
                           onchange={function(el){
                             ctrl.comment($(el.target).val());
@@ -28,7 +30,7 @@ var Comments = function(ctrl){
                      onclick={function(){
                        $.ajax({
                          type: "POST",
-                         url: "/comment/" + ctrl.postID,
+                         url: "/comment/" + id,
                          data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
                          contentType: "application/json",
                          dataType: "json",
@@ -44,7 +46,7 @@ var Comments = function(ctrl){
     
     
     
-      {ctrl.post().comments.map(function(el){
+      {content.comments.map(function(el){
         return <div className="commentWr">
                 <span class="poster">
                   <img src={el.user.avatarURL***REMOVED*** class="icon"/>

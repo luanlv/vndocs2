@@ -63,7 +63,16 @@ var PostView = function(ctrl){
           ***REMOVED******REMOVED***, 
             {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
               {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***
+              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: ["0"]***REMOVED***, 
+              {tag: "button", attrs: {className:"rate-button", 
+                      onclick:function(el){
+                        if(Window.user == undefined){
+                          data.showSignin = true;
+                      ***REMOVED*** else {
+                          alert("voted");
+                      ***REMOVED***
+                    ***REMOVED***
+            ***REMOVED***, children: ["+1"]***REMOVED***
           ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***, 
           {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
@@ -73,7 +82,7 @@ var PostView = function(ctrl){
       ***REMOVED******REMOVED***
     ***REMOVED******REMOVED***,
       {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-      Comments(ctrl)
+      Comments(ctrl, ctrl.article(), ctrl.slug)
     
   ***REMOVED***:[
       {tag: "div", attrs: {***REMOVED***, children: [
@@ -92,7 +101,7 @@ module.exports = PostView;
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
-var Comments = function(ctrl){
+var Comments = function(ctrl, content, id){
   return [
     {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
     
@@ -105,7 +114,9 @@ var Comments = function(ctrl){
         {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
                 {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
                           onclick:function(){
-  
+                            if(Window.user == undefined){
+                              data.showSignin = true;
+                          ***REMOVED***
                         ***REMOVED***, 
                           onchange:function(el){
                             ctrl.comment($(el.target).val());
@@ -119,7 +130,7 @@ var Comments = function(ctrl){
                      onclick:function(){
                        $.ajax({
                          type: "POST",
-                         url: "/comment/" + ctrl.postID,
+                         url: "/comment/" + id,
                          data: JSON.stringify({"data" : ctrl.comment()***REMOVED***),
                          contentType: "application/json",
                          dataType: "json",
@@ -135,7 +146,7 @@ var Comments = function(ctrl){
     
     
     
-      ctrl.post().comments.map(function(el){
+      content.comments.map(function(el){
         return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
                 {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
                   {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
@@ -519,7 +530,7 @@ var PostView = function(ctrl){
          ***REMOVED******REMOVED***
        ***REMOVED******REMOVED***,
           {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-          Comments(ctrl)
+          Comments(ctrl, ctrl.post(), ctrl.postID)
           
     ***REMOVED***:[
           {tag: "div", attrs: {***REMOVED***, children: [
@@ -584,6 +595,7 @@ var Data = {***REMOVED***;
 
 Data.showSignin = false;
 Data.showSignup = false;
+Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
 
 if(Window.user !== undefined) {
   Data.user = Window.user;
@@ -726,6 +738,7 @@ window.Main = require('./_main.msx');
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var ArticleView = require('../component/_article.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -734,6 +747,13 @@ var Footer = require('../component/_footer.msx');
 
 
 Post.controller = function(){
+  
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    Data.sessionstorage.set( 'url' , "/" );
+***REMOVED***
+  
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
@@ -786,7 +806,7 @@ Post.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_article.msx":2,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***],15:[function(require,module,exports){
+***REMOVED***,{"../component/_article.msx":2,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],15:[function(require,module,exports){
 var Category = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -798,6 +818,11 @@ var Footer = require('../component/_footer.msx');
 
 
 Category.controller = function(){
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    Data.sessionstorage.set( 'url' , "/" );
+***REMOVED***
   
   var ctrl = this;
   ctrl.request = {***REMOVED***;
@@ -848,6 +873,7 @@ module.exports =  Category;
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -856,12 +882,24 @@ var Footer = require('../component/_footer.msx');
 
 
 Home.controller = function(){
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    if(Data.sessionstorage.get( 'url' ) != "/" ){
+      console.log("=================================");
+      console.log(Data.sessionstorage.get( 'url' ));
+      m.route(Data.sessionstorage.get( 'url' ))
+  ***REMOVED***
+***REMOVED***
+  
   
   var ctrl = this;
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop();
   ctrl.articles = Window.articles;
+  
+  
   
   if(Window.posts === undefined) {
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
@@ -900,10 +938,11 @@ Home.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***],17:[function(require,module,exports){
+***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],17:[function(require,module,exports){
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var PostView = require('../component/_post.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -911,6 +950,13 @@ var Head = require('../component/_head.msx');
 var Footer = require('../component/_footer.msx');
 
 Post.controller = function(){
+  
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    Data.sessionstorage.set( 'url' , "/" );
+***REMOVED***
+  
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
@@ -962,4 +1008,4 @@ Post.view = function(ctrl){
 ***REMOVED***;
 
 module.exports =  Post;
-***REMOVED***,{"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_post.msx":9,"../component/_side.msx":10,"../core/_fn.msx":12***REMOVED***]***REMOVED***,{***REMOVED***,[13])
+***REMOVED***,{"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_post.msx":9,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***]***REMOVED***,{***REMOVED***,[13])

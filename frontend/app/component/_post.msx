@@ -56,7 +56,7 @@ var PostView = function(ctrl){
            </div>
          </div>,
           <hr className="style3"/>,
-          Comments(ctrl)
+          Comments(ctrl, ctrl.post(), ctrl.postID)
           
     ***REMOVED***:[
           <div>

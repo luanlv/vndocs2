@@ -9,6 +9,11 @@ var Footer = require('../component/_footer.msx');
 
 
 Category.controller = function(){
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    Data.sessionstorage.set( 'url' , "/" );
+***REMOVED***
   
   var ctrl = this;
   ctrl.request = {***REMOVED***;

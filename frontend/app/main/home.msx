@@ -1,6 +1,7 @@
 var Home = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -9,12 +10,24 @@ var Footer = require('../component/_footer.msx');
 
 
 Home.controller = function(){
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    if(Data.sessionstorage.get( 'url' ) != "/" ){
+      console.log("=================================");
+      console.log(Data.sessionstorage.get( 'url' ));
+      m.route(Data.sessionstorage.get( 'url' ))
+  ***REMOVED***
+***REMOVED***
+  
   
   var ctrl = this;
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop();
   ctrl.articles = Window.articles;
+  
+  
   
   if(Window.posts === undefined) {
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);

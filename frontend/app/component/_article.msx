@@ -31,6 +31,15 @@ var PostView = function(ctrl){
             <div className="t-right">
               <div className="rate-nav">RATING</div>
               <div className="rate-num">0</div>
+              <button className="rate-button"
+                      onclick={function(el){
+                        if(Window.user == undefined){
+                          data.showSignin = true;
+                      ***REMOVED*** else {
+                          alert("voted");
+                      ***REMOVED***
+                    ***REMOVED******REMOVED***
+              >+1</button>
             </div>
           </div>
           <hr className="style3"/>
@@ -40,7 +49,7 @@ var PostView = function(ctrl){
         </div>
       </div>,
       <hr className="style3"/>,
-      Comments(ctrl)
+      Comments(ctrl, ctrl.article(), ctrl.slug)
     
   ***REMOVED***:[
       <div>

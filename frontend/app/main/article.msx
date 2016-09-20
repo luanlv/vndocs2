@@ -1,6 +1,7 @@
 var Post = {***REMOVED***;
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var ArticleView = require('../component/_article.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -9,6 +10,13 @@ var Footer = require('../component/_footer.msx');
 
 
 Post.controller = function(){
+  
+  if(Window.user == undefined){
+    Data.sessionstorage.set( 'url' , m.route() );
+***REMOVED*** else {
+    Data.sessionstorage.set( 'url' , "/" );
+***REMOVED***
+  
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
