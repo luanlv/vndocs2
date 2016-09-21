@@ -1,43 +1,43 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -48,14 +48,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -66,14 +66,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -84,14 +84,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -102,14 +102,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -120,14 +120,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -138,14 +138,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -156,14 +156,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -174,14 +174,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -192,14 +192,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -210,14 +210,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -225,15 +225,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -241,15 +241,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -257,15 +257,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -273,15 +273,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -289,15 +289,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -305,15 +305,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -321,15 +321,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -337,15 +337,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -353,15 +353,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -369,15 +369,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -385,15 +385,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -401,15 +401,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -417,15 +417,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -433,15 +433,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -449,15 +449,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -465,15 +465,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -481,15 +481,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -497,15 +497,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -513,15 +513,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -529,15 +529,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 /*
 // Example usage
 
@@ -552,7 +552,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -562,7 +562,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -572,7 +572,7 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */
 .dd {
   position: relative;
@@ -580,20 +580,20 @@
   margin: 0;
   padding: 0;
   list-style: none;
-***REMOVED***
+}
 .dd-list {
   display: block;
   position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
-***REMOVED***
+}
 .dd-list .dd-list {
   padding-left: 30px;
-***REMOVED***
+}
 .dd-collapsed .dd-list {
   display: none;
-***REMOVED***
+}
 .dd-item,
 .dd-empty,
 .dd-placeholder {
@@ -602,27 +602,27 @@
   margin: 0;
   padding: 0;
   min-height: 20px;
-***REMOVED***
+}
 .dd-item .btn {
   display: block;
   margin: 5px 0;
   cursor: default;
   text-align: left;
-***REMOVED***
+}
 .dd-item .btn-equal,
 .dd-item .btn-icon-toggle {
   text-align: center;
-***REMOVED***
+}
 .dd-item.list-group {
   margin: 0;
-***REMOVED***
+}
 .dd-item.list-group > button {
   margin-left: 40px;
-***REMOVED***
+}
 .dd-item.list-group > .btn {
   z-index: 0;
   padding-left: 46px;
-***REMOVED***
+}
 .dd-item.list-group > .btn.dd-handle {
   z-index: 1;
   position: absolute;
@@ -634,7 +634,7 @@
   width: 36px;
   text-align: center;
   cursor: pointer;
-***REMOVED***
+}
 .dd-item.list-group > .btn.dd-handle:after {
   font-family: FontAwesome;
   font-weight: normal;
@@ -643,7 +643,7 @@
   -webkit-font-smoothing: antialiased;
   *margin-right: .3em;
   content: "\f0c9";
-***REMOVED***
+}
 .dd-item > button {
   display: block;
   position: relative;
@@ -662,7 +662,7 @@
   line-height: 1;
   text-align: center;
   font-weight: bold;
-***REMOVED***
+}
 .dd-item > button:before {
   content: '+';
   display: block;
@@ -670,10 +670,10 @@
   width: 100%;
   text-align: center;
   text-indent: 0;
-***REMOVED***
+}
 .dd-item > button[data-action="collapse"]:before {
   content: '-';
-***REMOVED***
+}
 .dd-placeholder,
 .dd-empty {
   margin: 5px 0;
@@ -683,29 +683,29 @@
   border: 1px dashed #b6bcbf;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-***REMOVED***
+}
 .dd-empty {
   border: 1px dashed #bbb;
   min-height: 100px;
   background-color: #e5e5e5;
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
-***REMOVED***
+}
 .dd-dragel {
   position: absolute;
   pointer-events: none;
   z-index: 9999;
-***REMOVED***
+}
 .dd-dragel > .list-group > .btn {
   margin: 0px;
-***REMOVED***
+}
 .dd-dragel > .dd-item .dd-handle {
   margin-top: 0;
-***REMOVED***
+}
 .dd-dragel .dd-handle {
   -webkit-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
-***REMOVED***
+}
 /**
  * Nestable Extras
  */
@@ -717,12 +717,12 @@
   border: 0;
   border-top: 2px solid #ddd;
   border-bottom: 2px solid #ddd;
-***REMOVED***
+}
 #nestable-menu {
   padding: 0;
   margin: 20px 0;
-***REMOVED***
+}
 .dd-hover > .dd-handle {
   background: #2196f3 !important;
-***REMOVED***
+}
 

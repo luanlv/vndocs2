@@ -12,7 +12,7 @@
 .fileinput-button {
   position: relative;
   overflow: hidden;
-***REMOVED***
+}
 .fileinput-button input {
   position: absolute;
   top: 0;
@@ -23,12 +23,12 @@
   font-size: 200px;
   direction: ltr;
   cursor: pointer;
-***REMOVED***
+}
 @media \0screen\,screen\9 {
   .fileinput-button input {
     filter: alpha(opacity=0);
     font-size: 100%;
     height: 100%;
-***REMOVED***
-***REMOVED***
+  }
+}
 

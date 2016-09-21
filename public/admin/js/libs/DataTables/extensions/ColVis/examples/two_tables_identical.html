@@ -24,18 +24,18 @@
 $(document).ready(function() {
 	var tables = $('table.display').DataTable( {
 		displayLength: 5
-	***REMOVED*** );
+	} );
 
 	// When the column visibility changes on the firs table, also change it on
 	// the others
 	tables.table(0).on('column-visibility', function ( e, settings, colIdx, visibility ) {
 		tables.tables(':gt(0)').column( colIdx ).visible( visibility );
-	***REMOVED*** );
+	} );
 
 	// Create ColVis on the first table only
 	var colvis = new $.fn.dataTable.ColVis( tables.table(0) );
 	$( colvis.button() ).insertAfter('div.info');
-***REMOVED*** );
+} );
 
 
 	</script>
@@ -271,18 +271,18 @@ $(document).ready(function() {
 					example:</p><code class="multiline brush: js;">$(document).ready(function() {
 	var tables = $('table.display').DataTable( {
 		displayLength: 5
-	***REMOVED*** );
+	} );
 
 	// When the column visibility changes on the firs table, also change it on
 	// the others
 	tables.table(0).on('column-visibility', function ( e, settings, colIdx, visibility ) {
 		tables.tables(':gt(0)').column( colIdx ).visible( visibility );
-	***REMOVED*** );
+	} );
 
 	// Create ColVis on the first table only
 	var colvis = new $.fn.dataTable.ColVis( tables.table(0) );
 	$( colvis.button() ).insertAfter('div.info');
-***REMOVED*** );</code>
+} );</code>
 
 					<p>In addition to the above code, the following Javascript library files are loaded for use in this
 					example:</p>

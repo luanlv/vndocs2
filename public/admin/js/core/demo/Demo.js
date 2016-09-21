@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = Demo.prototype;
 
 	// =========================================================================
@@ -23,7 +23,7 @@
 		this._initIconSearch();
 		this._initInversedTogglers();
 		this._initChatMessage();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// EVENTS
@@ -35,20 +35,20 @@
 
 		$('.card-head .tools .btn-refresh').on('click', function (e) {
 			o._handleCardRefresh(e);
-		***REMOVED***);
+		});
 		$('.card-head .tools .btn-collapse').on('click', function (e) {
 			o._handleCardCollapse(e);
-		***REMOVED***);
+		});
 		$('.card-head .tools .btn-close').on('click', function (e) {
 			o._handleCardClose(e);
-		***REMOVED***);
+		});
 		$('.card-head .tools .menu-card-styling a').on('click', function (e) {
 			o._handleCardStyling(e);
-		***REMOVED***);
+		});
 		$('.theme-selector a').on('click', function (e) {
 			o._handleThemeSwitch(e);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// CARD ACTIONS
@@ -60,18 +60,18 @@
 		materialadmin.AppCard.addCardLoader(card);
 		setTimeout(function () {
 			materialadmin.AppCard.removeCardLoader(card);
-		***REMOVED***, 1500);
-	***REMOVED***;
+		}, 1500);
+	};
 
 	p._handleCardCollapse = function (e) {
 		var card = $(e.currentTarget).closest('.card');
 		materialadmin.AppCard.toggleCardCollapse(card);
-	***REMOVED***;
+	};
 
 	p._handleCardClose = function (e) {
 		var card = $(e.currentTarget).closest('.card');
 		materialadmin.AppCard.removeCard(card);
-	***REMOVED***;
+	};
 
 	p._handleCardStyling = function (e) {
 		// Get selected style and active card
@@ -90,8 +90,8 @@
 			// Exclude style-white and style-transparent
 			styledCard.attr('class', function (i, c) {
 				return c.replace(/\bstyle-\S+/g, newStyle);
-			***REMOVED***);
-		***REMOVED***
+			});
+		}
 		else {
 			// Create variable to check if a style is switched
 			var styleSwitched = false;
@@ -103,17 +103,17 @@
 				if (!$(this).hasClass('style-white') && !$(this).hasClass('style-transparent')) {
 					$(this).attr('class', function (i, c) {
 						return c.replace(/\bstyle-\S+/g, newStyle);
-					***REMOVED***);
+					});
 					styleSwitched = true;
-				***REMOVED***
-			***REMOVED***);
+				}
+			});
 
 			// If no style is switched, add 1 to the main Card
 			if (styleSwitched === false) {
 				card.addClass(newStyle);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***;
+			}
+		}
+	};
 
 	// =========================================================================
 	// COLOR SWITCHER
@@ -123,15 +123,15 @@
 		e.preventDefault();
 		var newTheme = $(e.currentTarget).attr('href');
 		this.switchTheme(newTheme);
-	***REMOVED***;
+	};
 	
 	p.switchTheme = function (theme) {
 		$('link').each(function () {
 			var href = $(this).attr('href');
 			href = href.replace(/(assets\/css\/)(.*)(\/)/g, 'assets/css/' + theme + '/');
 			$(this).attr('href', href);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// CHAT MESSAGE
@@ -141,8 +141,8 @@
 		var o = this;
 		$('#sidebarChatMessage').keydown(function (e) {
 			o._handleChatMessage(e);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	
 	p._handleChatMessage = function (e) {
 		var input = $(e.currentTarget);
@@ -179,8 +179,8 @@
 			
 			// Refresh for correct scroller size
 			$('.offcanvas').trigger('refresh');
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// =========================================================================
 	// INVERSE UI TOGGLERS
@@ -192,28 +192,28 @@
 		
 		$('input[name="menubarInversed"]').on('change', function (e) {
 			o._handleMenubarInversed(e);
-		***REMOVED***);
+		});
 		$('input[name="headerInversed"]').on('change', function (e) {
 			o._handleHeaderInversed(e);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	
 	p._handleMenubarInversed = function (e) {
 		if($(e.currentTarget).val() === '1') {
 			$('#menubar').addClass('menubar-inverse');
-		***REMOVED***
+		}
 		else {
 			$('#menubar').removeClass('menubar-inverse');
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 	p._handleHeaderInversed = function (e) {
 		if($(e.currentTarget).val() === '1') {
 			$('#header').addClass('header-inverse');
-		***REMOVED***
+		}
 		else {
 			$('#header').removeClass('header-inverse');
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 	
 	// =========================================================================
 	// BUTTON STATES (LOADING)
@@ -225,9 +225,9 @@
 			btn.button('loading');
 			setTimeout(function () {
 				btn.button('reset');
-			***REMOVED***, 3000);
-		***REMOVED***);
-	***REMOVED***;
+			}, 3000);
+		});
+	};
 
 	// =========================================================================
 	// ICON SEARCH
@@ -236,7 +236,7 @@
 	p._initIconSearch = function () {
 		if($('#iconsearch').length === 0) {
 			return;
-		***REMOVED***
+		}
 
 		$('#iconsearch').focus();
 		$('#iconsearch').on('keyup', function () {
@@ -244,15 +244,15 @@
 			$('.col-md-3').hide();
 			$('.col-md-3:contains("' + val + '")').each(function (e) {
 				$(this).show();
-			***REMOVED***);
+			});
 
 			$('.card').hide();
 			$('.card:contains("' + val + '")').each(function (e) {
 				$(this).show();
-			***REMOVED***);
-		***REMOVED***);
-	***REMOVED***;
+			});
+		});
+	};
 		
 	// =========================================================================
 	namespace.Demo = new Demo;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

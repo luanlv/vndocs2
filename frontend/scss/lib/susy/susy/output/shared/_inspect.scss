@@ -16,10 +16,10 @@
   @each $item in $inspect {
     @if index($item, inspect) {
       $show: true;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @if $show or susy-get(debug inspect) {
-    -susy-#{$mixin***REMOVED***: inspect($inspect);
-***REMOVED***
-***REMOVED***
+    -susy-#{$mixin}: inspect($inspect);
+  }
+}

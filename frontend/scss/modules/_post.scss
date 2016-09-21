@@ -1,35 +1,35 @@
 .breadcrumb {
   font-size: 0.9em;
-***REMOVED***
+}
 
 .postWr {
   .postTitle {
     margin: 10px;
-***REMOVED***
+  }
   h1 {
     color: $title-color;
     font-size: 24px;
     font-weight: bold;
-***REMOVED***
+  }
 
   .postInfo {
     min-height: 155px;
     img {
       float: left;
-  ***REMOVED***
+    }
     .t-left{
       padding-right: 90px;
-  ***REMOVED***
+    }
     .t-right {
       width: 90px;
       float: right;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   .postContent {
     margin-top: 20px;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .breadcrumb {
   a {
@@ -39,9 +39,9 @@
     &:hover {
       text-decoration: underline;
       color: $orange !important;
-  ***REMOVED***
+    }
     &:visited {
       color: #5f9eb3;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

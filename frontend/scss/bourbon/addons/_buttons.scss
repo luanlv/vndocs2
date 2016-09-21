@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
-/// Generates variables for all buttons. Please note that you must use interpolation on the variable: `#{$all-buttons***REMOVED***`.
+/// Generates variables for all buttons. Please note that you must use interpolation on the variable: `#{$all-buttons}`.
 ///
 /// @example scss - Usage
-///   #{$all-buttons***REMOVED*** {
+///   #{$all-buttons} {
 ///     background-color: #f00;
-/// ***REMOVED***
+///   }
 ///
-///   #{$all-buttons-focus***REMOVED***,
-///   #{$all-buttons-hover***REMOVED*** {
+///   #{$all-buttons-focus},
+///   #{$all-buttons-hover} {
 ///     background-color: #0f0;
-/// ***REMOVED***
+///   }
 ///
-///   #{$all-buttons-active***REMOVED*** {
+///   #{$all-buttons-active} {
 ///     background-color: #00f;
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   button,
@@ -22,7 +22,7 @@
 ///   input[type="reset"],
 ///   input[type="submit"] {
 ///     background-color: #f00;
-/// ***REMOVED***
+///   }
 ///
 ///   button:focus,
 ///   input[type="button"]:focus,
@@ -33,14 +33,14 @@
 ///   input[type="reset"]:hover,
 ///   input[type="submit"]:hover {
 ///     background-color: #0f0;
-/// ***REMOVED***
+///   }
 ///
 ///   button:active,
 ///   input[type="button"]:active,
 ///   input[type="reset"]:active,
 ///   input[type="submit"]:active {
 ///     background-color: #00f;
-/// ***REMOVED***
+///   }
 ///
 /// @require assign-inputs
 ///

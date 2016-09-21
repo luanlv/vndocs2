@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Παρακαλώ εισάγετε έναν έγκυρο αριθμό πιστωτικής κάρτας.",
 	equalTo: "Παρακαλώ εισάγετε την ίδια τιμή ξανά.",
 	extension: "Παρακαλώ εισάγετε μια τιμή με έγκυρη επέκταση αρχείου.",
-	maxlength: $.validator.format("Παρακαλώ εισάγετε μέχρι και {0***REMOVED*** χαρακτήρες."),
-	minlength: $.validator.format("Παρακαλώ εισάγετε τουλάχιστον {0***REMOVED*** χαρακτήρες."),
-	rangelength: $.validator.format("Παρακαλώ εισάγετε μια τιμή με μήκος μεταξύ {0***REMOVED*** και {1***REMOVED*** χαρακτήρων."),
-	range: $.validator.format("Παρακαλώ εισάγετε μια τιμή μεταξύ {0***REMOVED*** και {1***REMOVED***."),
-	max: $.validator.format("Παρακαλώ εισάγετε μια τιμή μικρότερη ή ίση του {0***REMOVED***."),
-	min: $.validator.format("Παρακαλώ εισάγετε μια τιμή μεγαλύτερη ή ίση του {0***REMOVED***.")
-***REMOVED***);
+	maxlength: $.validator.format("Παρακαλώ εισάγετε μέχρι και {0} χαρακτήρες."),
+	minlength: $.validator.format("Παρακαλώ εισάγετε τουλάχιστον {0} χαρακτήρες."),
+	rangelength: $.validator.format("Παρακαλώ εισάγετε μια τιμή με μήκος μεταξύ {0} και {1} χαρακτήρων."),
+	range: $.validator.format("Παρακαλώ εισάγετε μια τιμή μεταξύ {0} και {1}."),
+	max: $.validator.format("Παρακαλώ εισάγετε μια τιμή μικρότερη ή ίση του {0}."),
+	min: $.validator.format("Παρακαλώ εισάγετε μια τιμή μεγαλύτερη ή ίση του {0}.")
+});
 
-***REMOVED***));
+}));

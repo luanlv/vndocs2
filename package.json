@@ -6,7 +6,7 @@
     "gulp-install": "^0.6.0",
     "immutable": "^3.7.4",
     "lodash": "^3.10.0"
-***REMOVED***,
+  },
   "devDependencies": {
     "browser-sync": "*",
     "gulp": "3.9.0",
@@ -24,9 +24,9 @@
     "mithrilify": "0.0.5",
     "optimize-js": "*",
     "gulp-run": "*"
-***REMOVED***,
+  },
   "repository": {
     "type": "git",
     "url": ""
-***REMOVED***
-***REMOVED***
+  }
+}

@@ -2,7 +2,7 @@ package models
 
 import java.util.UUID
 
-import com.mohiva.play.silhouette.api.{ Identity, LoginInfo ***REMOVED***
+import com.mohiva.play.silhouette.api.{ Identity, LoginInfo }
 import models.daos.TemporalModel
 import org.joda.time.DateTime
 import play.api.libs.json._
@@ -25,14 +25,14 @@ case class Post(
   liker: List[String] = List(),
   time: DateTime = DateTime.now()
 ) extends Identity with TemporalModel {
-***REMOVED***
+}
 
 object Post {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
   implicit val LinkinfoFormat = Json.format[LinkInfo]
   implicit val coverFormat = Json.format[Cover]
   implicit val PostFormat = Json.format[Post]
-***REMOVED***
+}
 
 case class LinkInfo(
   url: String,
@@ -41,13 +41,13 @@ case class LinkInfo(
   filesize: Long
 ) extends Identity with TemporalModel {
 
-***REMOVED***
+}
 
 object LinkInfo {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
   implicit val LinkinfoFormat = Json.format[LinkInfo]
-***REMOVED***
+}
 
 case class Cover(
   id: String,
@@ -55,10 +55,10 @@ case class Cover(
 
 ) extends Identity with TemporalModel {
 
-***REMOVED***
+}
 
 object Cover {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
   implicit val coverFormat = Json.format[Cover]
-***REMOVED***
+}

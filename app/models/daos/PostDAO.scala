@@ -1,6 +1,6 @@
 package models.daos
 
-import models.{ Image, Post ***REMOVED***
+import models.{ Image, Post }
 
 import scala.concurrent.Future
 import scala.util.Try
@@ -26,4 +26,4 @@ trait PostDAO {
 
   //  def getList(page: Int): Future[List[Post]]
 
-***REMOVED***
+}

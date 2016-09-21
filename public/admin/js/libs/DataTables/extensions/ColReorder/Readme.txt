@@ -22,8 +22,8 @@ ColReorder is initialised using the `R` option that it adds to DataTables' `dom`
 $(document).ready( function () {
     $('#example').dataTable( {
         "dom": 'Rlfrtip'
-  ***REMOVED*** );
-***REMOVED*** );
+    } );
+} );
 ```
 
 

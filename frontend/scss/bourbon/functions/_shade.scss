@@ -2,23 +2,23 @@
 
 /// Mixes a color with black.
 ///
-/// @param {Color***REMOVED*** $color
+/// @param {Color} $color
 ///
-/// @param {Number (Percentage)***REMOVED*** $percent
+/// @param {Number (Percentage)} $percent
 ///   The amount of black to be mixed in.
 ///
 /// @example scss - Usage
 ///   .element {
 ///     background-color: shade(#ffbb52, 60%);
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     background-color: #664a20;
-/// ***REMOVED***
+///   }
 ///
-/// @return {Color***REMOVED***
+/// @return {Color}
 
 @function shade($color, $percent) {
   @return mix(#000, $color, $percent);
-***REMOVED***
+}

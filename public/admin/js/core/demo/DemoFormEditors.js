@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoFormEditors.prototype;
 
 	// =========================================================================
@@ -19,7 +19,7 @@
 	p.initialize = function () {
 		this._initSummernote();
 		this._initCKEditor();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// SUMMERNOTE EDITOR
@@ -28,7 +28,7 @@
 	p._initSummernote = function () {
 		if (!$.isFunction($.fn.summernote)) {
 			return;
-		***REMOVED***
+		}
 
 		// Full toolbar
 		$('#summernote').summernote();
@@ -43,8 +43,8 @@
 				['para', ['ul', 'ol', 'paragraph']],
 				['height', ['height']]
 			]
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// CKEDITOR
@@ -60,8 +60,8 @@
 			CKEDITOR.inline('inlineContent1');
 		if ($('#inlineContent2').length > 0)
 			CKEDITOR.inline('inlineContent2');
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	namespace.DemoFormEditors = new DemoFormEditors;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

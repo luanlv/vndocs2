@@ -12,5 +12,5 @@
         monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mai", "Jūn", "Jūl", "Aug", "Sep", "Okt", "Nov", "Dec"],
         today: "Šodien",
         weekStart: 1
-  ***REMOVED***;
-***REMOVED***(jQuery));
+    };
+}(jQuery));

@@ -3,7 +3,7 @@ package models.daos
 import java.util.UUID
 
 import com.mohiva.play.silhouette.api.LoginInfo
-import models.{ Image, User ***REMOVED***
+import models.{ Image, User }
 
 import scala.concurrent.Future
 
@@ -18,4 +18,4 @@ trait ImageDAO {
 
   def getList(page: Int): Future[List[Image]]
 
-***REMOVED***
+}

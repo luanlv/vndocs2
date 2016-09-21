@@ -1,4 +1,4 @@
-var Home = {***REMOVED***;
+var Home = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -12,78 +12,79 @@ var Footer = require('../component/_footer.msx');
 Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     if(Data.sessionstorage.get( 'url' ) != "/" ){
-      console.log("=================================");
       console.log(Data.sessionstorage.get( 'url' ));
       m.route(Data.sessionstorage.get( 'url' ))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   
   
   var ctrl = this;
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop({***REMOVED***);
+  ctrl.posts = m.prop({});
   ctrl.posts().total = 1;
   ctrl.articles = Window.articles;
-  ctrl.page = 1;
+  ctrl.page = (m.route.param("p") == undefined)?(1):(parseInt(m.route.param("p")));
   
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page***REMOVED***, ctrl.posts, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page}, ctrl.posts, ctrl.setup);
+  } else {
     ctrl.request.data = m.prop(Window.posts);
     ctrl.posts().posts=ctrl.request.data();
-    ctrl.posts().total = Math.ceil(Window.totalPosts/5);
+    ctrl.posts().total = Window.totalPosts;
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     // ctrl.posts(ctrl.request.data());
     m.redraw();
-***REMOVED***;
+  };
   
   ctrl.goToPage = function(page){
-    if(page >= 1 && page <= ctrl.posts().total) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page***REMOVED***, ctrl.posts, ctrl.setup);
+    if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
       ctrl.page = page;
-      fn.changeUrl("Page 1", m.route() + "?page=" + ctrl.page)
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
   ctrl.goPrev = function(page){
     if(page > 1) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
       ctrl.page = page-1;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   ctrl.goNext = function(page){
-    if(page < ctrl.posts().total) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)***REMOVED***, ctrl.posts, ctrl.setup);
+    if(page < Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
       ctrl.page = page+1;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***;
+    }
+  }
+};
 
 Home.view = function(ctrl){
   return [
     <div className="headWr ">
-      {Head(ctrl)***REMOVED***
+      {Head(ctrl)}
     </div>,
     <div className="container containerBor">
       
       <div className="bodyWr">
-        {Menu(ctrl)***REMOVED***
+        {Menu(ctrl)}
         <div className="content ">
-          {Content(ctrl)***REMOVED***
-          {Side(ctrl)***REMOVED***
+          {Content(ctrl)}
+          {Side(ctrl)}
         </div>
       </div>
     </div>,
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Home;

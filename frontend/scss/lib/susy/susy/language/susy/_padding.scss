@@ -16,11 +16,11 @@
   @if is-inside($span) {
     $gutter: gutter($span);
     $width: if($gutter and comparable($width, $gutter), $width + $gutter, $width);
-***REMOVED***
+  }
 
   @include susy-inspect(prefix, $inspect);
   @include padding-output($width, null, $flow);
-***REMOVED***
+}
 
 // Suffix
 // ------
@@ -37,11 +37,11 @@
   @if is-inside($span) {
     $gutter: gutter($span);
     $width: if($gutter and comparable($width, $gutter), $width + $gutter, $width);
-***REMOVED***
+  }
 
   @include susy-inspect(suffix, $inspect);
   @include padding-output(null, $width, $flow);
-***REMOVED***
+}
 
 // Pad
 // ---
@@ -57,18 +57,18 @@
 
   @if $post {
     $post: map-merge((spread: wide), parse-span($post));
-***REMOVED*** @else {
+  } @else {
     $span: susy-get(span, $pre);
     @if length($span) > 1 {
       $pre: map-merge($pre, (span: nth($span, 1)));
       $post: map-merge($pre, (span: nth($span, 2)));
-  ***REMOVED*** @else {
+    } @else {
       $post: $pre;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @include susy-inspect(pad, $inspect);
   @include prefix($pre);
   @include suffix($post);
 
-***REMOVED***
+}

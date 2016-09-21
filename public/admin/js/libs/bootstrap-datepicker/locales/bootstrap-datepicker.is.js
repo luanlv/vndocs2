@@ -10,5 +10,5 @@
 		months: ["Janúar", "Febrúar", "Mars", "Apríl", "Maí", "Júní", "Júlí", "Ágúst", "September", "Október", "Nóvember", "Desember"],
 		monthsShort: ["Jan", "Feb", "Mar", "Apr", "Maí", "Jún", "Júl", "Ágú", "Sep", "Okt", "Nóv", "Des"],
 		today: "Í Dag"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

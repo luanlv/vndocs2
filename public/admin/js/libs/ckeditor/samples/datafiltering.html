@@ -79,7 +79,7 @@ editor.setData( '&lt;p&gt;Hello world!&lt;/p&gt;' );
 <pre class="samples">
 var editor = CKEDITOR.replace( <em>textarea_id</em>, {
 	<strong>allowedContent: 'p'</strong>
-***REMOVED*** );
+} );
 </pre>
 		<p>
 			Now try to play with allowed content:
@@ -113,7 +113,7 @@ alert( editor.getData() );
 <pre class="samples">
 CKEDITOR.replace( <em>textarea_id</em>, {
 	<strong>allowedContent: true</strong>
-***REMOVED*** );
+} );
 </pre>
 
 		<h2>Beyond data flow: Features activation</h2>
@@ -191,11 +191,11 @@ CKEDITOR.replace( 'editor2', {
 		'a[!href];' +
 		'img(left,right)[!src,alt,width,height];' +
 		'table tr th td caption;' +
-		'span{!font-family***REMOVED***;' +'
-		'span{!color***REMOVED***;' +
+		'span{!font-family};' +'
+		'span{!color};' +
 		'span(!marker);' +
 		'del ins'
-***REMOVED*** );
+} );
 </pre>
 			<p>
 				The following rules may require additional explanation:
@@ -223,7 +223,7 @@ CKEDITOR.replace( 'editor2', {
 					are accepted by the editor. Any tag attributes will be discarded.
 				</li>
 				<li>
-					<code>span{!font-family***REMOVED***</code>, <code>span{!color***REMOVED***</code>,
+					<code>span{!font-family}</code>, <code>span{!color}</code>,
 					<code>span(!marker)</code> - <code>&lt;span&gt;</code> tags
 					will be accepted if either <code>font-family</code> or
 					<code>color</code> style is set or <code>class="marker"</code>
@@ -256,11 +256,11 @@ CKEDITOR.replace( 'editor2', {
 					'a[!href];' +
 					'img(left,right)[!src,alt,width,height];' +
 					'table tr th td caption;' +
-					'span{!font-family***REMOVED***;' +
-					'span{!color***REMOVED***;' +
+					'span{!font-family};' +
+					'span{!color};' +
 					'span(!marker);' +
 					'del ins'
-			***REMOVED*** );
+			} );
 
 		</script>
 	</div>
@@ -284,15 +284,15 @@ CKEDITOR.replace( 'editor3', {
 		'b i ul ol big small': true,
 		'h1 h2 h3 p blockquote li': {
 			styles: 'text-align'
-		***REMOVED***,
-		a: { attributes: '!href,target' ***REMOVED***,
+		},
+		a: { attributes: '!href,target' },
 		img: {
 			attributes: '!src,alt',
 			styles: 'width,height',
 			classes: 'left,right'
-		***REMOVED***
-	***REMOVED***
-***REMOVED*** );
+		}
+	}
+} );
 </pre>
 		</div>
 		<textarea cols="80" id="editor3" name="editor3" rows="10">
@@ -305,15 +305,15 @@ CKEDITOR.replace( 'editor3', {
 					'b i ul ol big small': true,
 					'h1 h2 h3 p blockquote li': {
 						styles: 'text-align'
-					***REMOVED***,
-					a: { attributes: '!href,target' ***REMOVED***,
+					},
+					a: { attributes: '!href,target' },
 					img: {
 						attributes: '!src,alt',
 						styles: 'width,height',
 						classes: 'left,right'
-					***REMOVED***
-				***REMOVED***
-			***REMOVED*** );
+					}
+				}
+			} );
 
 		</script>
 	</div>
@@ -333,7 +333,7 @@ CKEDITOR.replace( 'editor4', {
 	removePlugins: 'bidi,font,forms,flash,horizontalrule,iframe,justify,table,tabletools,smiley',
 	removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image',
 	format_tags: 'p;h1;h2;h3;pre;address'
-***REMOVED*** );
+} );
 </pre>
 			<p>
 				As you can see, removing plugins and buttons implies filtering.
@@ -355,7 +355,7 @@ CKEDITOR.replace( 'editor4', {
 				removePlugins: 'bidi,div,font,forms,flash,horizontalrule,iframe,justify,table,tabletools,smiley',
 				removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image',
 				format_tags: 'p;h1;h2;h3;pre;address'
-			***REMOVED*** );
+			} );
 
 		</script>
 	</div>

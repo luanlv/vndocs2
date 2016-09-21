@@ -7,4 +7,4 @@ trait TemporalModel extends IdentifiableModel {
   //  var created: Option[DateTime]
   //  var updated: Option[DateTime]
 
-***REMOVED***
+}

@@ -6,14 +6,14 @@
   @if (breakpoint-string-value($first) == true) {
     $feature: $first;
     $value: $second;
-***REMOVED***
+  }
   @else {
     $feature: $second;
     $value: $first;
-***REMOVED***
+  }
 
   // Set Context
   $context-setter: private-breakpoint-set-context($feature, $value);
 
-  @return '(#{$feature***REMOVED***: #{$value***REMOVED***)';
-***REMOVED***
+  @return '(#{$feature}: #{$value})';
+}

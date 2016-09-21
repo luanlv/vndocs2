@@ -8,9 +8,9 @@ var Login = function(ctrl){
            if ($('.wrapper-content:hover').length == 0) {
              data.showSignin = false;
              data.showSignup = false;
-         ***REMOVED***
-       ***REMOVED******REMOVED***
-         style={(!data.showSignin)?"display: none":""***REMOVED***>
+           }
+         }}
+         style={(!data.showSignin)?"display: none":""}>
       <div class="wrapper">
         <div class="wrapper-content">
           <h3>Đăng nhập</h3>
@@ -33,18 +33,18 @@ var Login = function(ctrl){
               </div>
               <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true"/>
             </div>
-            <input type="hidden" name="csrfToken" value={data.token***REMOVED***/>
+            <input type="hidden" name="csrfToken" value={data.token}/>
             <div class="logout">
               <div className="label">
               </div>
               <input type="submit" value="Đăng nhập"/>
   
               <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                <a href={"/authenticate/google" + "?forward=" + m.route()***REMOVED*** class="social-button" id="google-connect"> </a>
+                <a href={"/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> </a>
               </div>
               
               <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                <a href={"/authenticate/facebook" + "?forward=" + m.route()***REMOVED*** class="social-button" id="facebook-connect"> </a>
+                <a href={"/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> </a>
               </div>
               
             </div>
@@ -55,7 +55,7 @@ var Login = function(ctrl){
               onclick={function(){
                 data.showSignin = false;
                 data.showSignup = true;
-            ***REMOVED******REMOVED***
+              }}
             >Đăng ký</a>
             <a href="#" class="forgot-pass">Quên mật khẩu?</a>
           </span>
@@ -68,14 +68,14 @@ var Login = function(ctrl){
            if ($('.wrapper-content:hover').length == 0) {
              data.showSignin = false;
              data.showSignup = false;
-         ***REMOVED***
-       ***REMOVED******REMOVED***
-         style={(!data.showSignup)?"display: none":""***REMOVED***>
+           }
+         }}
+         style={(!data.showSignup)?"display: none":""}>
       <div class="wrapper">
         <div class="wrapper-content">
           <h3>Đăng ký</h3>
           <form action="/signUp" method="POST">
-            <input type="hidden" name="csrfToken" value={data.token***REMOVED*** />
+            <input type="hidden" name="csrfToken" value={data.token} />
               
               <div class="form-group  " id="firstName_field">
                 <div className="label">
@@ -112,11 +112,11 @@ var Login = function(ctrl){
                   <div className="label"></div>
                   <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Đăng ký</button>
                   <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                    <a href={"/authenticate/google" + "?forward=" + m.route()***REMOVED*** class="social-button" id="google-connect"> </a>
+                    <a href={"/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> </a>
                   </div>
   
                   <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                    <a href={"/authenticate/facebook" + "?forward=" + m.route()***REMOVED*** class="social-button" id="facebook-connect"> </a>
+                    <a href={"/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> </a>
                   </div>
                 </div>
                 
@@ -129,13 +129,13 @@ var Login = function(ctrl){
               onclick={function(){
                 data.showSignin = true;
                 data.showSignup = false;
-            ***REMOVED******REMOVED***
+              }}
             >Đăng nhập</a>
           </span>
         </div>
       </div>
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports = Login;

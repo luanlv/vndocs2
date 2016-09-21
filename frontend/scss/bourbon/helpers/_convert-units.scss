@@ -8,14 +8,14 @@
   $index: index($strings, $unit);
 
   @if not $index {
-    @warn "Unknown unit `#{$unit***REMOVED***`.";
+    @warn "Unknown unit `#{$unit}`.";
     @return false;
-***REMOVED***
+  }
 
   @if type-of($number) != "number" {
-    @warn "`#{$number***REMOVED*** is not a number`";
+    @warn "`#{$number} is not a number`";
     @return false;
-***REMOVED***
+  }
 
   @return $number * nth($units, $index);
-***REMOVED***
+}

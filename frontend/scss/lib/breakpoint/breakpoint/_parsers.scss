@@ -22,8 +22,8 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
     @if $return != null {
       $run: false;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @if not $Memo-Exists or $run {
     // Internal Variables
@@ -46,7 +46,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
     @if ($or-list == false and breakpoint-get('legacy syntax') == false) {
       $query-string: breakpoint-parse($query);
-  ***REMOVED***
+    }
     @else {
       $length: length($query);
 
@@ -55,24 +55,24 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
       @if ($query-fallback != false) {
         $length: $length - 1;
-    ***REMOVED***
+      }
 
       @if (breakpoint-get('legacy syntax') == true) {
         $mq: ();
 
         @for $i from 1 through $length {
           $mq: append($mq, nth($query, $i), comma);
-      ***REMOVED***
+        }
 
         $query-string: breakpoint-parse($mq);
-    ***REMOVED***
+      }
       @else {
         $query-string: '';
         @for $i from 1 through $length {
           $query-string: $query-string + if($i == 1, '', ', ') + breakpoint-parse(nth($query, $i));
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
+        }
+      }
+    }
 
     $return: ('query': $query-string,
         'fallback': $query-fallback,
@@ -82,13 +82,13 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
     @if length($contexts) > 0 and nth($contexts, 1) != false {
       @if $query-fallback != false {
         $context-setter: private-breakpoint-set-context('no-query', $query-fallback);
-    ***REMOVED***
+      }
       $context-map: ();
       @each $context in $contexts {
         $context-map: map-merge($context-map, ($context: breakpoint-get-context($context)));
-    ***REMOVED***
+      }
       $return: map-merge($return, (context: $context-map));
-  ***REMOVED***
+    }
 
     // Reset Global Private Breakpoint Context
     $private-breakpoint-context-holder: () !global;
@@ -96,11 +96,11 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
     @if $Memo-Exists {
       $holder: memo-set(breakpoint, breakpoint $query $contexts, $return);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $return;
-***REMOVED***
+}
 
 //////////////////////////////
 // General Breakpoint Parser
@@ -118,7 +118,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
     // Force the print of the default media type if (force all is true and default media type is all) or (default media type is not all)
     $query-print: breakpoint-get('default media');
     $empty-media: false;
-***REMOVED***
+  }
 
 
   $query-resolution: false;
@@ -147,19 +147,19 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
           // Set Context
           $context-setter: private-breakpoint-set-context(media, $query-print);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
       @else {
         $parsed: breakpoint-parse-single($feature, $empty-media, $first);
-        $query-print: '#{$query-print***REMOVED*** #{$parsed***REMOVED***';
+        $query-print: '#{$query-print} #{$parsed}';
         $first: false;
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
     // Parse a double feature
     @else if ($length == 2) {
       @if (breakpoint-is-resolution($feature) != false) {
         $query-resolution: $feature;
-    ***REMOVED***
+      }
       @else {
         $parsed: null;
         // If it's a string/number pair,
@@ -169,30 +169,30 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
         $beta: nth($feature, 2);
         @if breakpoint-single-string($alpha) or breakpoint-single-string($beta) {
           $parsed: breakpoint-parse-single($alpha, $empty-media, $first);
-          $query-print: '#{$query-print***REMOVED*** #{$parsed***REMOVED***';
+          $query-print: '#{$query-print} #{$parsed}';
           $first: false;
           $parsed: breakpoint-parse-single($beta, $empty-media, $first);
-          $query-print: '#{$query-print***REMOVED*** #{$parsed***REMOVED***';
-      ***REMOVED***
+          $query-print: '#{$query-print} #{$parsed}';
+        }
         @else {
           $parsed: breakpoint-parse-double($feature, $empty-media, $first);
-          $query-print: '#{$query-print***REMOVED*** #{$parsed***REMOVED***';
+          $query-print: '#{$query-print} #{$parsed}';
           $first: false;
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
+        }
+      }
+    }
     // Parse a triple feature
     @else if ($length == 3) {
       $parsed: breakpoint-parse-triple($feature, $empty-media, $first);
-      $query-print: '#{$query-print***REMOVED*** #{$parsed***REMOVED***';
+      $query-print: '#{$query-print} #{$parsed}';
       $first: false;
-  ***REMOVED***
+    }
 
-***REMOVED***
+  }
 
   @if ($query-resolution != false) {
     $query-print: breakpoint-build-resolution($query-print, $query-resolution, $empty-media, $first);
-***REMOVED***
+  }
 
   // Loop through each feature that's been detected so far and append 'false' to the the value list to increment their counters
   @each $f, $v in $private-breakpoint-context-holder {
@@ -202,14 +202,14 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
       @for $i from $length to $private-breakpoint-query-count {
         @if $f == 'media' {
           $v-holder: append($v-holder, breakpoint-get('default media'));
-      ***REMOVED***
+        }
         @else {
           $v-holder: append($v-holder, false);
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
+        }
+      }
+    }
     $private-breakpoint-context-holder: map-merge($private-breakpoint-context-holder, ($f: $v-holder)) !global;
-***REMOVED***
+  }
 
   @return $query-print;
-***REMOVED***
+}

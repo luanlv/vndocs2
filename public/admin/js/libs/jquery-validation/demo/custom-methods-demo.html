@@ -12,64 +12,64 @@
 	// this one requires the text "buga", we define a default message, too
 	$.validator.addMethod("buga", function(value) {
 		return value == "buga";
-	***REMOVED***, 'Please enter "buga"!');
+	}, 'Please enter "buga"!');
 
 	// this one requires the value to be the same as the first parameter
 	$.validator.methods.equal = function(value, element, param) {
 		return value == param;
-	***REMOVED***;
+	};
 
 	$().ready(function() {
 		var validator = $("#texttests").bind("invalid-form.validate", function() {
 			$("#summary").html("Your form contains " + validator.numberOfInvalids() + " errors, see details below.");
-		***REMOVED***).validate({
+		}).validate({
 			debug: true,
 			errorElement: "em",
 			errorContainer: $("#warning, #summary"),
 			errorPlacement: function(error, element) {
 				error.appendTo(element.parent("td").next("td"));
-			***REMOVED***,
+			},
 			success: function(label) {
 				label.text("ok!").addClass("success");
-			***REMOVED***,
+			},
 			rules: {
 				number: {
 					required: true,
 					minlength: 3,
 					maxlength: 15,
 					number: true
-				***REMOVED***,
+				},
 				secret: "buga",
 				math: {
 					equal: 11
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***);
+				}
+			}
+		});
 
-	***REMOVED***);
+	});
 	</script>
 	<style>
 	form.cmxform {
 		width: 50em;
-	***REMOVED***
+	}
 	em.error {
 		background:url("images/unchecked.gif") no-repeat 0px 0px;
 		padding-left: 16px;
-	***REMOVED***
+	}
 	em.success {
 		background:url("images/checked.gif") no-repeat 0px 0px;
 		padding-left: 16px;
-	***REMOVED***
+	}
 	form.cmxform label.error {
 		margin-left: auto;
 		width: 250px;
-	***REMOVED***
+	}
 	em.error {
 		color: black;
-	***REMOVED***
+	}
 	#warning {
 		display: none;
-	***REMOVED***
+	}
 	</style>
 </head>
 <body>

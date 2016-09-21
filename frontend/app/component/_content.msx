@@ -1,7 +1,7 @@
 var Content = function(ctrl){
-  return <div className="main mh800">
+  return <div className="main cf mh800">
     {ctrl.request.ready()?[
-      <div className="sort roundbox">
+      <div className="sort roundbox" id="top">
         <form name="news_set_sort" id="news_set_sort" method="post" action="http://englishtips.org/">
           <span>Lọc theo:&nbsp;</span>
           <a href="http://englishtips.org/#" onclick="dle_change_sort('date','asc'); return false;">Ngày đăng</a>
@@ -10,66 +10,88 @@ var Content = function(ctrl){
           <a href="http://englishtips.org/#" onclick="dle_change_sort('comm_num','desc'); return false;">Bình luận</a>
         </form>
       </div>,
+      <div class="navigation" align="center" style="margin-bottom:10px; margin-top:10px;">
+        <button
+            onclick={function(){
+              ctrl.goPrev(ctrl.page)
+            }}
+        >PREV</button>
+        <input type="number" id="page" value={ctrl.page} style="width: 50px; text-alige: center"/>
+        / {Math.ceil(ctrl.posts().total/5) } &nbsp;
+        <button
+            onclick={function(){
+              ctrl.goToPage($('#page').val())
+            }}
+        > Go</button>
+        <button
+            onclick={function(){
+              ctrl.goNext(ctrl.page)
+            }}
+        >NEXT</button>
+      </div>,
+      <hr className="style3" style="margin-top: 45px;"/>,
       ctrl.posts().posts.map(function(el) {
         return <div className="block main-item">
           <div className="title">
             <div className="t-left">
-              <a href={"/post/" + el._id***REMOVED***
+              <a href={"/post/" + el._id}
                  className="title"
-                 config={m.route***REMOVED***
-              >{el.title***REMOVED***</a>
+                 config={m.route}
+              >{el.title}</a>
             </div>
             <div className="t-right">
               <div className="rate-nav">RATING</div>
-              <div className="rate-num">{el.nLike***REMOVED***</div>
+              <div className="rate-num">{el.nLike}</div>
             </div>
           </div>
           <div className="meta-data">
-            <span className="upload">{el.upload***REMOVED***</span>
+            <span className="upload">{el.upload}</span>
             <span className="category">
                       {el.categories.map(function (item) {
-                        return <a href={"/category/" + item***REMOVED***
-                                  config={m.route***REMOVED***
-                        ><span>{(Window.categories.getItemByParam({slug: item***REMOVED***) == undefined)?(""):(Window.categories.getItemByParam({slug: item***REMOVED***).name)***REMOVED***</span></a>
-                    ***REMOVED***)***REMOVED***
+                        return <a href={"/category/" + item}
+                                  config={m.route}
+                        ><span>{(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)}</span></a>
+                      })}
                       </span>
-            <span className="time">{moment(el.time).format('L')***REMOVED***</span>
+            <span className="time">{moment(el.time).format('L')}</span>
             <span className="nComment">
-                    <a href={"/post/" + el._id + "#comment"***REMOVED***
-                       config={m.route***REMOVED***
-                    >{el.nComment***REMOVED*** bình luận</a>
+                    <a href={"/post/" + el._id + "#comment"}
+                       config={m.route}
+                    >{el.nComment} bình luận</a>
                     
                 </span>
           </div>
           <div className="info">
-            <a href="#"><img src={"/cover/get/" + el.cover.id***REMOVED*** alt={el.cover.alt***REMOVED***/></a>
+            <a href="#"><img src={"/cover/get/" + el.cover.id} alt={el.cover.alt}/></a>
             <p className="description">
-              {(window.isMobile) ? el.description.slice(0, 250) : el.description***REMOVED*** ...
+              {(window.isMobile) ? el.description.slice(0, 250) : el.description} ...
             </p>
           </div>
         </div>
-    ***REMOVED***),
+      }),
+     
       <hr className="style3"/>,
       <div class="navigation" align="center" style="margin-bottom:10px; margin-top:10px;">
         <button
           onclick={function(){
             ctrl.goPrev(ctrl.page)
-        ***REMOVED******REMOVED***
+          }}
         >PREV</button>
-        <input type="number" id="page" value={ctrl.page***REMOVED*** style="width: 50px; text-alige: center"/>
+        <input type="number" id="page" value={ctrl.page} style="width: 50px; text-alige: center"/>
+        / {Math.ceil(ctrl.posts().total/5) } &nbsp;
         <button
             onclick={function(){
               ctrl.goToPage($('#page').val())
-          ***REMOVED******REMOVED***
+            }}
         > Go</button>
         <button
             onclick={function(){
               ctrl.goNext(ctrl.page)
-          ***REMOVED******REMOVED***
+            }}
         >NEXT</button>
       </div>
     
-  ***REMOVED***:[
+    ]:[
       <div className="loading">
         <div class="loader">
           <div class="inner one"></div>
@@ -77,11 +99,11 @@ var Content = function(ctrl){
           <div class="inner three"></div>
         </div>
       </div>
-  ***REMOVED******REMOVED***
+    ]}
   
   
   </div>
-***REMOVED***;
+};
 
 
 

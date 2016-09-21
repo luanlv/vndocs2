@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoUIMessages.prototype;
 
 	// =========================================================================
@@ -26,7 +26,7 @@
 		this._initToastr();
 		
 		$('#toast-info').trigger('click');
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// INIT TOASTR
@@ -38,7 +38,7 @@
 		this._initCustomToastr();
 		this._initPositionToastr();
 		this._initActionToastr();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// CUSTOM TOASTS
@@ -64,8 +64,8 @@
 			toastr.options.hideMethod = $('select[name="hideMethod"]').val();
 
 			toastr[$('#state').val()]($('#message').val(), '');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	p._showCustomMessage = function () {
 		toastr.options.closeButton = ($('select[name="closeButton"]').val() === 'true');
 		toastr.options.progressBar = ($('select[name="progressBar"]').val() === 'true');
@@ -81,7 +81,7 @@
 		toastr.options.hideMethod = $('select[name="hideMethod"]').val();
 
 		toastr[$('#state').val()]($('#message').val(), '');
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// STATE TOASTS
@@ -92,20 +92,20 @@
 		$('#toast-info').on('click', function (e) {
 			o._toastrStateConfig();
 			toastr.info('Welcome to the messages section', '');
-		***REMOVED***);
+		});
 		$('#toast-warning').on('click', function (e) {
 			o._toastrStateConfig();
 			toastr.warning('This name is already added', '');
-		***REMOVED***);
+		});
 		$('#toast-error').on('click', function (e) {
 			o._toastrStateConfig();
 			toastr.error('Duplicate item', '');
-		***REMOVED***);
+		});
 		$('#toast-success').on('click', function (e) {
 			o._toastrStateConfig();
 			toastr.success('Added to catalog', '');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// POSITION TOASTS
@@ -120,8 +120,8 @@
 			toastr.options.timeOut = 0;
 			toastr.options.positionClass = $(e.currentTarget).data('position');
 			toastr.info('Position message', '');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	
 	// =========================================================================
 	// ACTION TOASTS
@@ -135,14 +135,14 @@
 			o._toastrStateConfig();
 			toastr.options.progressBar = true;
 			toastr.info('Message with a progressbar', '');
-		***REMOVED***);
+		});
 		$('#toast-info-close').on('click', function (e) {
 			toastr.clear();
 
 			o._toastrStateConfig();
 			toastr.options.closeButton = true;
 			toastr.info('Message with a close button', '');
-		***REMOVED***);
+		});
 
 		$('#toast-action').on('click', function (e) {
 			toastr.clear();
@@ -163,7 +163,7 @@
 			var message = 'Marked as read. <button type="button" id="okBtn" class="btn btn-flat btn-success toastr-action">Undo</button>';
 
 			toastr.info(message, '');
-		***REMOVED***);
+		});
 
 		$('#toast-long-action').on('click', function (e) {
 			toastr.clear();
@@ -183,8 +183,8 @@
 
 			var message = 'Connection timed out due to firewall setup. Showing limited. <button type="button" id="okBtn" class="btn btn-flat btn-warning toastr-action">Retry</button>';
 			toastr.info(message, '');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// TOAST CONFIG
@@ -203,8 +203,8 @@
 		toastr.options.hideEasing = 'swing';
 		toastr.options.showMethod = 'slideDown';
 		toastr.options.hideMethod = 'slideUp';
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	namespace.DemoUIMessages = new DemoUIMessages;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

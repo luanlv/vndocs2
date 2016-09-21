@@ -2,23 +2,23 @@
 
 /// Mixes a color with white.
 ///
-/// @param {Color***REMOVED*** $color
+/// @param {Color} $color
 ///
-/// @param {Number (Percentage)***REMOVED*** $percent
+/// @param {Number (Percentage)} $percent
 ///   The amount of white to be mixed in.
 ///
 /// @example scss - Usage
 ///   .element {
 ///     background-color: tint(#6ecaa6, 40%);
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     background-color: #a8dfc9;
-/// ***REMOVED***
+///   }
 ///
-/// @return {Color***REMOVED***
+/// @return {Color}
 
 @function tint($color, $percent) {
   @return mix(#fff, $color, $percent);
-***REMOVED***
+}

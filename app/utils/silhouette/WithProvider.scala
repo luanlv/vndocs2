@@ -1,6 +1,6 @@
 package utils.silhouette
 
-import com.mohiva.play.silhouette.api.{ Authenticator, Authorization ***REMOVED***
+import com.mohiva.play.silhouette.api.{ Authenticator, Authorization }
 import models.User
 import play.api.mvc.Request
 
@@ -28,5 +28,5 @@ case class WithProvider[A <: Authenticator](provider: String) extends Authorizat
     request: Request[B]): Future[Boolean] = {
 
     Future.successful(user.loginInfo.providerID == provider)
-***REMOVED***
-***REMOVED***
+  }
+}

@@ -5,9 +5,9 @@
   $context-setter: private-breakpoint-set-context($default, $feature);
 
   @if (breakpoint-get('to ems') == true) and (type-of($feature) == 'number') {
-    @return '#{$default***REMOVED***: #{breakpoint-to-base-em($feature)***REMOVED***';
-***REMOVED***
+    @return '#{$default}: #{breakpoint-to-base-em($feature)}';
+  }
   @else {
-    @return '#{$default***REMOVED***: #{$feature***REMOVED***';
-***REMOVED***
-***REMOVED***
+    @return '#{$default}: #{$feature}';
+  }
+}

@@ -12,24 +12,24 @@
  *     caseSensitive: false,
  *     includeTerritories: false,
  *     includeMilitary: false
- ****REMOVED***
+ *  }
  *
  *  Only allow capital letters, no territories, no military zones
  *  stateInput: {
  *     caseSensitive: false
- ****REMOVED***
+ *  }
  *
  *  Case insensitive, include territories but not military zones
  *  stateInput: {
  *     includeTerritories: true
- ****REMOVED***
+ *  }
  *
  *  Only allow capital letters, include territories and military zones
  *  stateInput: {
  *     caseSensitive: true,
  *     includeTerritories: true,
  *     includeMilitary: true
- ****REMOVED***
+ *  }
  *
  *
  *
@@ -44,15 +44,15 @@ jQuery.validator.addMethod("stateUS", function(value, element, options) {
 
 	if (!includeTerritories && !includeMilitary) {
 		regex = "^(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])$";
-	***REMOVED*** else if (includeTerritories && includeMilitary) {
+	} else if (includeTerritories && includeMilitary) {
 		regex = "^(A[AEKLPRSZ]|C[AOT]|D[CE]|FL|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEINOPST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$";
-	***REMOVED*** else if (includeTerritories) {
+	} else if (includeTerritories) {
 		regex = "^(A[KLRSZ]|C[AOT]|D[CE]|FL|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEINOPST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$";
-	***REMOVED*** else {
+	} else {
 		regex = "^(A[AEKLPRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])$";
-	***REMOVED***
+	}
 
 	regex = caseSensitive ? new RegExp(regex) : new RegExp(regex, "i");
 	return this.optional(element) || regex.test(value);
-***REMOVED***,
+},
 "Please specify a valid state");

@@ -27,12 +27,12 @@
 
 				function match(index) {
 					return current == index && $(element).parents("#sf" + (index + 1)).length;
-				***REMOVED***
+				}
 			if (match(0) || match(1) || match(2)) {
 				return !this.optional(element);
-			***REMOVED***
+			}
 			return "dependency-mismatch";
-		***REMOVED***, $.validator.messages.required)
+		}, $.validator.messages.required)
 
 		var v = $("#cmaForm").validate({
 			errorClass: "warning",
@@ -40,38 +40,38 @@
 			onfocusout: false,
 			submitHandler: function() {
 				alert("Submitted, thanks!");
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 		// back buttons do not need to run validation
 		$("#sf2 .prevbutton").click(function() {
 			accordion.accordion("option", "active", 0);
 			current = 0;
-		***REMOVED***);
+		});
 		$("#sf3 .prevbutton").click(function() {
 			accordion.accordion("option", "active", 1);
 			current = 1;
-		***REMOVED***);
+		});
 		// these buttons all run the validation, overridden by specific targets above
 		$(".open2").click(function() {
 			if (v.form()) {
 				accordion.accordion("option", "active", 2);
 				current = 2;
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 		$(".open1").click(function() {
 			if (v.form()) {
 				accordion.accordion("option", "active", 1);
 				current = 1;
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 		$(".open0").click(function() {
 			if (v.form()) {
 				accordion.accordion("option", "active", 0);
 				current = 0;
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***);
+			}
+		});
+	});
 	</script>
 	<link rel="stylesheet" media="screen" href="style.css">
 </head>

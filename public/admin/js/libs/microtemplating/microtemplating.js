@@ -1,7 +1,7 @@
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 (function(){
-  var cache = {***REMOVED***;
+  var cache = {};
  
   this.tmpl = function tmpl(str, data){
     // Figure out if we're getting a template, or if we need to
@@ -13,9 +13,9 @@
       // Generate a reusable function that will serve as a template
       // generator (and which will be cached).
       new Function("obj",
-        "var p=[],print=function(){p.push.apply(p,arguments);***REMOVED***;" +
+        "var p=[],print=function(){p.push.apply(p,arguments);};" +
        
-        // Introduce the data as local variables using with(){***REMOVED***
+        // Introduce the data as local variables using with(){}
         "with(obj){p.push('" +
        
         // Convert the template into pure JavaScript
@@ -27,9 +27,9 @@
           .split("\t").join("');")
           .split("%>").join("p.push('")
           .split("\r").join("\\'")
-      + "');***REMOVED***return p.join('');");
+      + "');}return p.join('');");
    
     // Provide some basic currying to the user
     return data ? fn( data ) : fn;
-***REMOVED***;
-***REMOVED***)();
+  };
+})();

@@ -8,7 +8,7 @@
   @if $has-val-3 {
     $val-3: str-slice($val-2, $has-val-3 + 1, str-length($val-2));
     $val-2: str-slice($val-2, 1, $has-val-3 - 1);
-***REMOVED***
+  }
 
   $pos: _position-flipper($val-1) _position-flipper($val-2) _position-flipper($val-3);
   $pos: unquote($pos + "");
@@ -19,7 +19,7 @@
       webkit-image: -webkit- + $prefix + $pos + $suffix,
       spec-image: $image
     );
-***REMOVED***
+  }
 
   // Bring the code up to spec
   @else {
@@ -27,5 +27,5 @@
       webkit-image: -webkit- + $image,
       spec-image: $prefix + "to " + $pos + $suffix
     );
-***REMOVED***
-***REMOVED***
+  }
+}

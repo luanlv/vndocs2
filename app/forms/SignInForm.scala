@@ -30,4 +30,4 @@ object SignInForm {
     email: String,
     password: String,
     rememberMe: Boolean)
-***REMOVED***
+}

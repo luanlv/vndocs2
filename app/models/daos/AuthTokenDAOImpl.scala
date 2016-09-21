@@ -31,8 +31,8 @@ class AuthTokenDAOImpl extends AuthTokenDAO {
     tokens.filter {
       case (id, token) =>
         token.expiry.isBefore(dateTime)
-  ***REMOVED***.values.toSeq
-***REMOVED***
+    }.values.toSeq
+  }
 
   /**
    * Saves a token.
@@ -43,7 +43,7 @@ class AuthTokenDAOImpl extends AuthTokenDAO {
   def save(token: AuthToken) = {
     tokens += (token.id -> token)
     Future.successful(token)
-***REMOVED***
+  }
 
   /**
    * Removes the token for the given ID.
@@ -54,8 +54,8 @@ class AuthTokenDAOImpl extends AuthTokenDAO {
   def remove(id: UUID) = {
     tokens -= id
     Future.successful(())
-***REMOVED***
-***REMOVED***
+  }
+}
 
 /**
  * The companion object.
@@ -66,4 +66,4 @@ object AuthTokenDAOImpl {
    * The list of tokens.
    */
   val tokens: mutable.HashMap[UUID, AuthToken] = mutable.HashMap()
-***REMOVED***
+}

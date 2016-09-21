@@ -40,11 +40,11 @@
       padding-before: map-get($gutters, before),
       padding-after: map-get($gutters, after),
     ));
-***REMOVED***
+  }
 
   @if $symmetrical {
     $output: map-merge($output, (width: get-span-width($span)));
-***REMOVED***
+  }
 
   $box          : susy-get(box-sizing, $span);
   $global-box   : if(susy-get(global-box-sizing) == 'border-box', true, false);
@@ -54,16 +54,16 @@
   // Collective Output
   @if $box == border-box or ($inside and not($box) and not($global-box)) {
     @include output((box-sizing: border-box));
-***REMOVED*** @else if $box == content-box {
+  } @else if $box == content-box {
     @include output((box-sizing: content-box));
-***REMOVED***
+  }
 
   @include float-span-output($output...);
 
   // Individual Loop
   @for $item from 1 through $line {
-    $nth: '#{$line***REMOVED***n + #{$item***REMOVED***';
-    &:nth-#{$selector***REMOVED***(#{$nth***REMOVED***) {
+    $nth: '#{$line}n + #{$item}';
+    &:nth-#{$selector}(#{$nth}) {
       // Individual Prep
       $output: (
         width             : if($symmetrical, null, get-span-width($span)),
@@ -81,14 +81,14 @@
       @if get-edge($span) == first {
         @include break;
         @include first($span);
-    ***REMOVED*** @else {
+      } @else {
         @include nobreak;
-    ***REMOVED***
+      }
 
       // Individual Location Increment
       $location: get-location($span) + $n;
       $location: if($location > $context, 1, $location);
       $span: map-merge($span, (location: $location));
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

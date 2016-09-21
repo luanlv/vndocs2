@@ -5,14 +5,14 @@
 /// @example scss - Usage
 ///   .element {
 ///     @include hide-text;
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     overflow: hidden;
 ///     text-indent: 101%;
 ///     white-space: nowrap;
-/// ***REMOVED***
+///   }
 ///
 /// @todo Remove height argument in v5.0.0
 
@@ -23,5 +23,5 @@
 
   @if $height {
     @warn "The `hide-text` mixin has changed and no longer requires a height. The height argument will no longer be accepted in v5.0.0";
-***REMOVED***
-***REMOVED***
+  }
+}

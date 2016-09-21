@@ -11,9 +11,9 @@ var Head = function(ctrl){
                fn.toggleClass(el, "menu-active");
                fn.toggleClass(el2, "menu-active");
                fn.toggleClass(elem.target, "menu-active");
-           ***REMOVED******REMOVED***
+             }}
        ></span>
-      <a href="/" config={m.route***REMOVED***>
+      <a href="/" config={m.route}>
         <img className="logo" src="/assets/images/logo.png" alt="logo Vndocs.com"/>
       </a>
       <span className="slogan orange"
@@ -21,9 +21,9 @@ var Head = function(ctrl){
           if(!isInited){
             setInterval(function(){
               fn.toggleClass(el, 'orange');
-          ***REMOVED***, 300)
-        ***REMOVED***
-      ***REMOVED******REMOVED***
+            }, 300)
+          }
+        }}
       >Nơi chia sẻ tài liệu hoàn toàn miễn phí !</span>
       <div className="free-logoWr">
         <img className="free-logo" src="/assets/images/100_free.png" alt=""/>
@@ -34,7 +34,7 @@ var Head = function(ctrl){
         <img className="share" src="/assets/images/sharing-is-caring.png" alt=""/>
       </div>
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports = Head;

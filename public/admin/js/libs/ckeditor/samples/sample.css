@@ -6,28 +6,28 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 html, body, h1, h2, h3, h4, h5, h6, div, span, blockquote, p, address, form, fieldset, img, ul, ol, dl, dt, dd, li, hr, table, td, th, strong, em, sup, sub, dfn, ins, del, q, cite, var, samp, code, kbd, tt, pre
 {
 	line-height: 1.5em;
-***REMOVED***
+}
 
 body
 {
 	padding: 10px 30px;
-***REMOVED***
+}
 
 input, textarea, select, option, optgroup, button, td, th
 {
 	font-size: 100%;
-***REMOVED***
+}
 
 pre, code, kbd, samp, tt
 {
 	font-family: monospace,monospace;
 	font-size: 1em;
-***REMOVED***
+}
 
 body {
     width: 960px;
     margin: 0 auto;
-***REMOVED***
+}
 
 code
 {
@@ -38,13 +38,13 @@ code
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-***REMOVED***
+}
 
 abbr
 {
 	border-bottom: 1px dotted #555;
 	cursor: pointer;
-***REMOVED***
+}
 
 .new, .beta
 {
@@ -59,7 +59,7 @@ abbr
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-***REMOVED***
+}
 
 .new
 {
@@ -70,7 +70,7 @@ abbr
 	-moz-box-shadow: 0 2px 3px 0 #FFA54E inset;
 	-webkit-box-shadow: 0 2px 3px 0 #FFA54E inset;
 	box-shadow: 0 2px 3px 0 #FFA54E inset;
-***REMOVED***
+}
 
 .beta
 {
@@ -82,7 +82,7 @@ abbr
 	-moz-box-shadow: 0 2px 3px 0 #50D4FD inset;
 	-webkit-box-shadow: 0 2px 3px 0 #50D4FD inset;
 	box-shadow: 0 2px 3px 0 #50D4FD inset;
-***REMOVED***
+}
 
 h1.samples
 {
@@ -91,19 +91,19 @@ h1.samples
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
-***REMOVED***
+}
 
 h1.samples a
 {
 	color: #0782C1;
 	text-decoration: none;
 	border-bottom: 1px dotted #0782C1;
-***REMOVED***
+}
 
 .samples a:hover
 {
 	border-bottom: 1px dotted #0782C1;
-***REMOVED***
+}
 
 h2.samples
 {
@@ -111,51 +111,51 @@ h2.samples
 	font-size: 130%;
 	margin: 15px 0 0 0;
 	padding: 0;
-***REMOVED***
+}
 
 p, blockquote, address, form, pre, dl, h1.samples, h2.samples
 {
 	margin-bottom: 15px;
-***REMOVED***
+}
 
 ul.samples
 {
 	margin-bottom: 15px;
-***REMOVED***
+}
 
 .clear
 {
 	clear: both;
-***REMOVED***
+}
 
 fieldset
 {
 	margin: 0;
 	padding: 10px;
-***REMOVED***
+}
 
 body, input, textarea
 {
 	color: #333333;
 	font-family: Arial, Helvetica, sans-serif;
-***REMOVED***
+}
 
 body
 {
 	font-size: 75%;
-***REMOVED***
+}
 
 a.samples
 {
 	color: #189DE1;
 	text-decoration: none;
-***REMOVED***
+}
 
 form
 {
 	margin: 0;
 	padding: 0;
-***REMOVED***
+}
 
 pre.samples
 {
@@ -169,13 +169,13 @@ pre.samples
 	-o-tab-size: 4;
 	-webkit-tab-size: 4;
 	tab-size: 4;
-***REMOVED***
+}
 
 #footer
 {
 	clear: both;
 	padding-top: 10px;
-***REMOVED***
+}
 
 #footer hr
 {
@@ -183,24 +183,24 @@ pre.samples
 	height: 1px;
 	border: solid 1px gray;
 	border-bottom: none;
-***REMOVED***
+}
 
 #footer p
 {
 	margin: 0 10px 10px 10px;
 	float: left;
-***REMOVED***
+}
 
 #footer #copy
 {
 	float: right;
-***REMOVED***
+}
 
 #outputSample
 {
 	width: 100%;
 	table-layout: fixed;
-***REMOVED***
+}
 
 #outputSample thead th
 {
@@ -208,19 +208,19 @@ pre.samples
 	background-color: #999999;
 	padding: 4px;
 	white-space: nowrap;
-***REMOVED***
+}
 
 #outputSample tbody th
 {
 	vertical-align: top;
 	text-align: left;
-***REMOVED***
+}
 
 #outputSample pre
 {
 	margin: 0;
 	padding: 0;
-***REMOVED***
+}
 
 .description
 {
@@ -228,13 +228,13 @@ pre.samples
 	margin-bottom: 10px;
 	padding: 10px 10px 0;
 	overflow: hidden;
-***REMOVED***
+}
 
 label
 {
 	display: block;
 	margin-bottom: 6px;
-***REMOVED***
+}
 
 /**
  *	CKEditor editables are automatically set with the "cke_editable" class
@@ -245,7 +245,7 @@ label
 .cke_editable.cke_editable_inline
 {
 	cursor: pointer;
-***REMOVED***
+}
 
 /* Once an editable element gets focused, the "cke_focus" class is
    added to it, so we can style it differently. */
@@ -255,14 +255,14 @@ label
 	outline: none;
 	background: #eee;
 	cursor: text;
-***REMOVED***
+}
 
 /* Avoid pre-formatted overflows inline editable. */
 .cke_editable_inline pre
 {
 	white-space: pre-wrap;
 	word-wrap: break-word;
-***REMOVED***
+}
 
 /**
  *	Samples index styles.
@@ -273,39 +273,39 @@ label
 .twoColumnsRight
 {
 	overflow: hidden;
-***REMOVED***
+}
 
 .twoColumnsLeft,
 .twoColumnsRight
 {
 	width: 45%;
-***REMOVED***
+}
 
 .twoColumnsLeft
 {
 	float: left;
-***REMOVED***
+}
 
 .twoColumnsRight
 {
 	float: right;
-***REMOVED***
+}
 
 dl.samples
 {
 	padding: 0 0 0 40px;
-***REMOVED***
+}
 dl.samples > dt
 {
 	display: list-item;
 	list-style-type: disc;
 	list-style-position: outside;
 	margin: 0 0 3px;
-***REMOVED***
+}
 dl.samples > dd
 {
 	margin: 0 0 3px;
-***REMOVED***
+}
 .warning
 {
     color: #ff0000;
@@ -313,7 +313,7 @@ dl.samples > dd
     border: 2px dotted #ff0000;
 	padding: 15px 10px;
 	margin: 10px 0;
-***REMOVED***
+}
 
 /* Used on inline samples */
 
@@ -325,32 +325,32 @@ blockquote
 	border-style: solid;
 	border-color: #ccc;
 	border-width: 0;
-***REMOVED***
+}
 
 .cke_contents_ltr blockquote
 {
 	padding-left: 20px;
 	padding-right: 8px;
 	border-left-width: 5px;
-***REMOVED***
+}
 
 .cke_contents_rtl blockquote
 {
 	padding-left: 8px;
 	padding-right: 20px;
 	border-right-width: 5px;
-***REMOVED***
+}
 
 img.right {
     border: 1px solid #ccc;
     float: right;
     margin-left: 15px;
     padding: 5px;
-***REMOVED***
+}
 
 img.left {
     border: 1px solid #ccc;
     float: left;
     margin-right: 15px;
     padding: 5px;
-***REMOVED***
+}

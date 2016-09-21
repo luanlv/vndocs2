@@ -24,8 +24,8 @@ TableTools is initialised using the `T` option that it adds to DataTables' `dom`
 $(document).ready( function () {
 	$('#example').DataTable( {
 		dom: 'T<"clear">lfrtip'
-	***REMOVED*** );
-***REMOVED*** );
+	} );
+} );
 ```
 
 

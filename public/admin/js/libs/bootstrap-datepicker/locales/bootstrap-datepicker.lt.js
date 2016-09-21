@@ -12,5 +12,5 @@
         monthsShort: ["Sau", "Vas", "Kov", "Bal", "Geg", "Bir", "Lie", "Rugp", "Rugs", "Spa", "Lap", "Gru"],
         today: "Šiandien",
         weekStart: 1
-  ***REMOVED***;
-***REMOVED***(jQuery));
+    };
+}(jQuery));

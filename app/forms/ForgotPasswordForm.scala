@@ -14,4 +14,4 @@ object ForgotPasswordForm {
   val form = Form(
     "email" -> email
   )
-***REMOVED***
+}

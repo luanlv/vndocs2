@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = AppNavigation.prototype;
 
 	// =========================================================================
@@ -33,7 +33,7 @@
 		
 		this._invalidateMenu();
 		this._evalMenuScrollbar();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// EVENTS
@@ -46,33 +46,33 @@
 		// Window events
 		$(window).on('resize', function (e) {
 			o._handleScreenSize(e);
-		***REMOVED***);
+		});
 		
 		// Menu events
 		$('[data-toggle="menubar"]').on('click', function (e) {
 			o._handleMenuToggleClick(e);
-		***REMOVED***);
+		});
 		$('[data-dismiss="menubar"]').on('click', function (e) {
 			o._handleMenubarLeave();
-		***REMOVED***);
+		});
 		$('#main-menu').on('click', 'li', function (e) {
 			o._handleMenuItemClick(e);
-		***REMOVED***);
+		});
 		$('#main-menu').on('click', 'a', function (e) {
 			o._handleMenuLinkClick(e);
-		***REMOVED***);
+		});
 		$('body.menubar-hoverable').on('mouseenter', '#menubar', function (e) {
 			setTimeout(function () {
 				o._handleMenubarEnter();
-			***REMOVED***, 1);
-		***REMOVED***);
-	***REMOVED***;
+			}, 1);
+		});
+	};
 
 	// handlers
 	p._handleScreenSize = function (e) {
 		this._invalidateMenu();
 		this._evalMenuScrollbar(e);
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// MENU TOGGLER
@@ -81,20 +81,20 @@
 	p._handleMenuToggleClick = function (e) {
 		if (!materialadmin.App.isBreakpoint('xs')) {
 			$('body').toggleClass('menubar-pin');
-		***REMOVED***
+		}
 
 		var state = this.getMenuState();
 
 		if (state === AppNavigation.MENU_COLLAPSED) {
 			this._handleMenubarEnter();
-		***REMOVED***
+		}
 		else if (state === AppNavigation.MENU_MAXIMIZED) {
 			this._handleMenubarLeave();
-		***REMOVED***
+		}
 		else if (state === AppNavigation.MENU_HIDDEN) {
 			this._handleMenubarEnter();
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// =========================================================================
 	// MAIN BAR
@@ -115,9 +115,9 @@
 			var menuIsCollapsed = this.getMenuState() === AppNavigation.MENU_COLLAPSED;
 			if(menuIsCollapsed || item.hasClass('expanded') === false) {
 				this._openSubMenu(item);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***;
+			}
+		}
+	};
 
 	p._handleMenubarEnter = function (menuItem) {
 		var o = this;
@@ -130,7 +130,7 @@
 			// Add listener to close the menubar
 			$('#content').one('mouseover', function (e) {
 				o._handleMenubarLeave();
-			***REMOVED***);
+			});
 
 			// Add open variables
 			$('body').addClass('menubar-visible');
@@ -147,16 +147,16 @@
 					this._openSubMenu(this._lastOpened, 0);
 					this._lastOpened.parents('.gui-folder').each(function () {
 						o._openSubMenu($(this), 0);
-					***REMOVED***);
-				***REMOVED***
+					});
+				}
 				else {
 					// Else open the active item
 					var item = $('#main-menu > li.active');
 					this._openSubMenu(item, 0);
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***;
+				}
+			}
+		}
+	};
 
 	p._handleMenubarLeave = function () {
 		$('body').removeClass('menubar-visible');
@@ -165,24 +165,24 @@
 		if (materialadmin.App.minBreakpoint('md')) {
 			if ($('body').hasClass('menubar-pin')) {
 				return;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		$('#menubar').data('expanded', false);
 
 
 		// Never close the menu on extra small viewports
 		if (materialadmin.App.isBreakpoint('xs') === false) {
 			this._closeSubMenu($('#main-menu'));
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 
 	p._handleMenuLinkClick = function (e) {
 		// Prevent the link from firing when the menubar isn't visible
 		if (this.getMenuState() !== AppNavigation.MENU_MAXIMIZED) {
 			e.preventDefault();
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// =========================================================================
 	// OPEN / CLOSE MENU
@@ -193,14 +193,14 @@
 		menu.find('> li > ul').stop().slideUp(170, function () {
 			$(this).closest('li').removeClass('expanded');
 			o._evalMenuScrollbar();
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	p._openSubMenu = function (item, duration) {
 		var o = this;
 		if (typeof (duration) === 'undefined') {
 			duration = 170;
-		***REMOVED***
+		}
 		
 		// Remember the last opened item
 		this._lastOpened = item;
@@ -216,8 +216,8 @@
 
 			// Manually remove the style, jQuery sometimes failes to remove it
 			$('#main-menu ul').removeAttr('style');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// UTILS
@@ -232,18 +232,18 @@
 			if ($(this).is('li')) {
 				$(this).addClass('active');
 				$(this).addClass('expanded');
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 		// When invalidating, dont expand the first submenu when the menu is collapsed
 		if (this.getMenuState() === AppNavigation.MENU_COLLAPSED) {
 			$('#main-menu').find('> li').removeClass('expanded');
-		***REMOVED***
+		}
 
 		// Check if the menu is visible
 		if ($('body').hasClass('menubar-visible')) {
 			this._handleMenubarEnter();
-		***REMOVED***
+		}
 
 		// Trigger event
 		$('#main-menu').triggerHandler('ready');
@@ -252,7 +252,7 @@
 		// It solves the slow initiation bug in IE, 
 		// wich makes the collapse visible on startup
 		$('#menubar').addClass('animate');
-	***REMOVED***;
+	};
 
 	p.getMenuState = function () {
 		// By using the CSS properties, we can attach 
@@ -264,32 +264,32 @@
 		if (values === null) {
 			if ($('#menubar').width() <= 100) {
 				menuState = AppNavigation.MENU_COLLAPSED;
-			***REMOVED***
+			}
 			else {
 				menuState = AppNavigation.MENU_MAXIMIZED;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		else {
 			if (values[4] === '0') {
 				menuState = AppNavigation.MENU_MAXIMIZED;
-			***REMOVED***
+			}
 			else {
 				menuState = AppNavigation.MENU_HIDDEN;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		return menuState;
-	***REMOVED***;
+	};
 
 	p._evalMenuScrollbar = function () {
 		if (!$.isFunction($.fn.nanoScroller)) {
 			return;
-		***REMOVED***
+		}
 		
 		// First calculate the footer height
 		var footerHeight = $('#menubar .menubar-foot-panel').outerHeight();
 		footerHeight = Math.max(footerHeight, 1);
-		$('.menubar-scroll-panel').css({'padding-bottom': footerHeight***REMOVED***);
+		$('.menubar-scroll-panel').css({'padding-bottom': footerHeight});
 		
 		
 		// Check if there is a menu
@@ -304,16 +304,16 @@
 		// Add the scroller wrapper
 		if (parent.hasClass('nano-content') === false) {
 		menuScroller.wrap('<div class="nano"><div class="nano-content"></div></div>');
-		***REMOVED***
+		}
 
 		// Set the correct height
 		var height = $(window).height() - menu.position().top - menu.find('.nano').position().top;
 		var scroller = menuScroller.closest('.nano');
-		scroller.css({height: height***REMOVED***);
+		scroller.css({height: height});
 
 		// Add the nanoscroller
-		scroller.nanoScroller({preventPageScrolling: true, iOSNativeScrolling: true***REMOVED***);
-	***REMOVED***;
+		scroller.nanoScroller({preventPageScrolling: true, iOSNativeScrolling: true});
+	};
 
 
 	// =========================================================================
@@ -321,4 +321,4 @@
 	// =========================================================================
 
 	window.materialadmin.AppNavigation = new AppNavigation;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

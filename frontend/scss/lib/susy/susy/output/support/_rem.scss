@@ -16,7 +16,7 @@
   );
   @if susy-support(rem, $_reqs, $warn: false) and $rhythm-unit == rem {
     @include rem($prop, $val);
-***REMOVED*** @else {
-    #{$prop***REMOVED***: $val;
-***REMOVED***
-***REMOVED***
+  } @else {
+    #{$prop}: $val;
+  }
+}

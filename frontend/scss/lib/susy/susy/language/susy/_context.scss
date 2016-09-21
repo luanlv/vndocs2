@@ -14,7 +14,7 @@
   $columns    : susy-get(columns, $context);
 
   @return susy-slice($span, $location, $columns);
-***REMOVED***
+}
 
 // Nested [mixin]
 // --------------
@@ -33,4 +33,4 @@
   @content;
 
   $susy     : map-merge($susy, (columns: $old)) !global;
-***REMOVED***
+}

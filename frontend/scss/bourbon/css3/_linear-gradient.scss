@@ -14,13 +14,13 @@
     $g10: $g9; $g9: $g8; $g8: $g7; $g7: $g6; $g6: $g5;
     $g5: $g4; $g4: $g3; $g3: $g2; $g2: $g1; $g1: $pos;
     $pos: null;
-***REMOVED***
+  }
 
   @if $pos {
     $positions: _linear-positions-parser($pos);
     $pos-degree: nth($positions, 1);
     $pos-spec:   nth($positions, 2);
-***REMOVED***
+  }
 
   $full: $g1, $g2, $g3, $g4, $g5, $g6, $g7, $g8, $g9, $g10;
 
@@ -30,9 +30,9 @@
   // If $fallback is a color use that color as the fallback color
   @if (type-of($fallback) == color) or ($fallback == "transparent") {
     $fallback-color: $fallback;
-***REMOVED***
+  }
 
   background-color: $fallback-color;
   background-image: -webkit-linear-gradient($pos-degree $full); // Safari 5.1+, Chrome
-  background-image: unquote("linear-gradient(#{$pos-spec***REMOVED***#{$full***REMOVED***)");
-***REMOVED***
+  background-image: unquote("linear-gradient(#{$pos-spec}#{$full})");
+}

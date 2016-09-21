@@ -38,18 +38,18 @@ class AuthTokenCleaner @Inject() (
 
         msg.append("=================================\n")
         logger.info(msg.toString)
-    ***REMOVED***.recover {
+      }.recover {
         case e =>
           msg.append("Couldn't cleanup auth tokens because of unexpected error\n")
           msg.append("=================================\n")
           logger.error(msg.toString, e)
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+  }
+}
 
 /**
  * The companion object.
  */
 object AuthTokenCleaner {
   case object Clean
-***REMOVED***
+}

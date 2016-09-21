@@ -13,10 +13,10 @@
 
   @for $i from 1 through length($list) {
     $_return: if($i <= $length, append($_return, nth($list, $i)), $_return);
-***REMOVED***
+  }
 
   @return $_return;
-***REMOVED***
+}
 
 
 // Deep Get
@@ -31,11 +31,11 @@
   @each $key in $keys {
     @if type-of($_return) == map {
       $_return: map-get($_return, $key);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $_return;
-***REMOVED***
+}
 
 
 // Deep Set
@@ -58,10 +58,10 @@
     $_merge: ($_merge: $_value);
     $_return: if($_level, map-merge($_level, $_merge), $_merge);
     $_value: $_return;
-***REMOVED***
+  }
 
   @return $_return;
-***REMOVED***
+}
 
 
 // Deep Merge
@@ -74,15 +74,15 @@
 
   @if type-of($map1) != map or type-of($map2) != map {
     $map1: $map2;
-***REMOVED*** @else {
+  } @else {
     @each $key, $value in $map2 {
       $_new: ($key: _susy_deep-merge(map-get($map1, $key), $value));
       $map1: map-merge($map1, $_new);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $map1;
-***REMOVED***
+}
 
 
 // Deep Has-Key
@@ -98,14 +98,14 @@
   @each $key in $keys {
     @if not($_stop) {
       $_return: map-has-key($map, $key);
-  ***REMOVED***
+    }
 
     @if $_return {
       $map: map-get($map, $key);
-  ***REMOVED*** @else {
+    } @else {
       $_stop: true;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $_return;
-***REMOVED***
+}

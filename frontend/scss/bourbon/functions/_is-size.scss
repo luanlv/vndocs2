@@ -2,12 +2,12 @@
 
 /// Checks for a valid CSS size.
 ///
-/// @param {String***REMOVED*** $value
+/// @param {String} $value
 ///
-/// @require {function***REMOVED*** contains
-/// @require {function***REMOVED*** is-length
+/// @require {function} contains
+/// @require {function} is-length
 
 @function is-size($value) {
   @return is-length($value)
           or contains("fill" "fit-content" "min-content" "max-content", $value);
-***REMOVED***
+}

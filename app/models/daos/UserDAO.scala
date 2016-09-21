@@ -40,4 +40,4 @@ trait UserDAO {
   def updateUser(user: User): Future[User]
 
   def remove(loginInfo: LoginInfo): Future[Try[Boolean]]
-***REMOVED***
+}

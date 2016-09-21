@@ -12,5 +12,5 @@
 		today: "今日",
 		format: "yyyy年mm月dd日",
 		weekStart: 1
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

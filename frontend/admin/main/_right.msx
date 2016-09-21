@@ -234,7 +234,7 @@ var Right = function(ctrl){
         </div>
       </div>
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports = Right;

@@ -15,13 +15,13 @@ $.extend($.validator.messages, {
 	creditcard: "Por favor, introduza um n&uacute;mero de cart&atilde;o de cr&eacute;dito v&aacute;lido.",
 	equalTo: "Por favor, introduza de novo o mesmo valor.",
 	extension: "Por favor, introduza um ficheiro com uma extens&atilde;o v&aacute;lida.",
-	maxlength: $.validator.format("Por favor, n&atilde;o introduza mais do que {0***REMOVED*** caracteres."),
-	minlength: $.validator.format("Por favor, introduza pelo menos {0***REMOVED*** caracteres."),
-	rangelength: $.validator.format("Por favor, introduza entre {0***REMOVED*** e {1***REMOVED*** caracteres."),
-	range: $.validator.format("Por favor, introduza um valor entre {0***REMOVED*** e {1***REMOVED***."),
-	max: $.validator.format("Por favor, introduza um valor menor ou igual a {0***REMOVED***."),
-	min: $.validator.format("Por favor, introduza um valor maior ou igual a {0***REMOVED***."),
+	maxlength: $.validator.format("Por favor, n&atilde;o introduza mais do que {0} caracteres."),
+	minlength: $.validator.format("Por favor, introduza pelo menos {0} caracteres."),
+	rangelength: $.validator.format("Por favor, introduza entre {0} e {1} caracteres."),
+	range: $.validator.format("Por favor, introduza um valor entre {0} e {1}."),
+	max: $.validator.format("Por favor, introduza um valor menor ou igual a {0}."),
+	min: $.validator.format("Por favor, introduza um valor maior ou igual a {0}."),
 	nifES: "Por favor, introduza um NIF v&aacute;lido.",
 	nieES: "Por favor, introduza um NIE v&aacute;lido.",
 	cifES: "Por favor, introduza um CIF v&aacute;lido."
-***REMOVED***);
+});

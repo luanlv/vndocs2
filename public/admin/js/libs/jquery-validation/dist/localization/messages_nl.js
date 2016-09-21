@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Vul hier een geldig creditcardnummer in.",
 	equalTo: "Vul hier dezelfde waarde in.",
 	extension: "Vul hier een waarde in met een geldige extensie.",
-	maxlength: $.validator.format("Vul hier maximaal {0***REMOVED*** tekens in."),
-	minlength: $.validator.format("Vul hier minimaal {0***REMOVED*** tekens in."),
-	rangelength: $.validator.format("Vul hier een waarde in van minimaal {0***REMOVED*** en maximaal {1***REMOVED*** tekens."),
-	range: $.validator.format("Vul hier een waarde in van minimaal {0***REMOVED*** en maximaal {1***REMOVED***."),
-	max: $.validator.format("Vul hier een waarde in kleiner dan of gelijk aan {0***REMOVED***."),
-	min: $.validator.format("Vul hier een waarde in groter dan of gelijk aan {0***REMOVED***."),
+	maxlength: $.validator.format("Vul hier maximaal {0} tekens in."),
+	minlength: $.validator.format("Vul hier minimaal {0} tekens in."),
+	rangelength: $.validator.format("Vul hier een waarde in van minimaal {0} en maximaal {1} tekens."),
+	range: $.validator.format("Vul hier een waarde in van minimaal {0} en maximaal {1}."),
+	max: $.validator.format("Vul hier een waarde in kleiner dan of gelijk aan {0}."),
+	min: $.validator.format("Vul hier een waarde in groter dan of gelijk aan {0}."),
 
 	// for validations in additional-methods.js
 	iban: "Vul hier een geldig IBAN in.",
@@ -38,6 +38,6 @@ $.extend($.validator.messages, {
 	bankaccountNL: "Vul hier een geldig bankrekeningnummer in.",
 	giroaccountNL: "Vul hier een geldig gironummer in.",
 	bankorgiroaccountNL: "Vul hier een geldig bank- of gironummer in."
-***REMOVED***);
+});
 
-***REMOVED***));
+}));

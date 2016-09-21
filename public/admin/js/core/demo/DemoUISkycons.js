@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function() {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoUISkycons.prototype;
 	
 	// =========================================================================
@@ -18,20 +18,20 @@
 
 	p.initialize = function() {
 		this._initSkycons();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// Skycons
 	// =========================================================================
 
 	p._initSkycons = function () {
-		var skycons = new Skycons({"color": "black"***REMOVED***);
+		var skycons = new Skycons({"color": "black"});
 		$('canvas').each(function(){
 			skycons.add($(this).get(0), Skycons[$(this).data('type')]);
-		***REMOVED***);
+		});
 		skycons.play();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	namespace.DemoUISkycons = new DemoUISkycons;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

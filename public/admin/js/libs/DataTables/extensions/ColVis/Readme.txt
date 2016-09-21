@@ -21,8 +21,8 @@ ColVis is initialised using the `C` option that it adds to DataTables' `dom` opt
 $(document).ready( function () {
     $('#example').dataTable( {
         "dom": 'C<"clear">lfrtip'
-  ***REMOVED*** );
-***REMOVED*** );
+    } );
+} );
 ```
 
 

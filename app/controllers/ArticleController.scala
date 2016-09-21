@@ -1,13 +1,13 @@
 package controllers
 
-import com.google.inject.{ Inject, Singleton ***REMOVED***
+import com.google.inject.{ Inject, Singleton }
 import com.mohiva.play.silhouette.api.Silhouette
-import models.{ Article, Comment, Cover, LightUser ***REMOVED***
-import models.services.{ ArticleService, CategoryService, CommentService, SetupService ***REMOVED***
+import models.{ Article, Comment, Cover, LightUser }
+import models.services.{ ArticleService, CategoryService, CommentService, SetupService }
 import play.api.i18n.MessagesApi
-import play.api.libs.json.{ JsObject, Json ***REMOVED***
+import play.api.libs.json.{ JsObject, Json }
 import play.api.mvc.Action
-import utils.silhouette.{ AuthController, MyEnv, WithService ***REMOVED***
+import utils.silhouette.{ AuthController, MyEnv, WithService }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -30,7 +30,7 @@ class ArticleController @Inject() (
       article <- articleService.find(slug)
       comments <- commentService.getList(slug, 1)
       articles <- articleService.getList(1)
-  ***REMOVED*** yield (menu, categories, article, comments, articles)
+    } yield (menu, categories, article, comments, articles)
 
     data.map { data =>
       Ok(views.html.article(
@@ -40,28 +40,28 @@ class ArticleController @Inject() (
         Json.toJson(data._4).toString,
         Json.toJson(data._5).toString
       ))
-  ***REMOVED***
+    }
 
-***REMOVED***
+  }
 
   def getArticle(slug: String) = silhouette.UserAwareAction.async { implicit request =>
     val data = for {
       article <- articleService.find(slug)
       comments <- commentService.getList(slug, 1)
-  ***REMOVED*** yield (article, comments)
+    } yield (article, comments)
     data.map { data =>
       Ok(Json.obj(
         "article" -> Json.toJson(data._1),
         "comments" -> Json.toJson(data._2)
       ))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def getArticles(page: Int) = silhouette.UserAwareAction.async { implicit request =>
     articleService.getList(page).map { articles =>
       Ok(Json.toJson(articles))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def doArticle = silhouette.SecuredAction.async(parse.json) { implicit request =>
     request.body.asOpt[JsObject].map { article =>
@@ -76,9 +76,9 @@ class ArticleController @Inject() (
 
       articleService.save(newArticle)
       Future.successful(Ok("ok"))
-  ***REMOVED***.getOrElse {
+    }.getOrElse {
       Future.successful(BadRequest("not json"))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
-***REMOVED***
+}

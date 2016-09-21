@@ -37,15 +37,15 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 
 	coreStyles_bold: {
 		element: 'span',
-		attributes: { 'class': 'Bold' ***REMOVED***
-	***REMOVED***,
+		attributes: { 'class': 'Bold' }
+	},
 	coreStyles_italic: {
 		element: 'span',
-		attributes: { 'class': 'Italic' ***REMOVED***
-	***REMOVED***,
+		attributes: { 'class': 'Italic' }
+	},
 
 	...
-***REMOVED***);</pre>
+});</pre>
 	</div>
 	<form action="sample_posteddata.php" method="post">
 		<p>
@@ -78,31 +78,31 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					 */
 					coreStyles_bold: {
 						element: 'span',
-						attributes: { 'class': 'Bold' ***REMOVED***
-					***REMOVED***,
+						attributes: { 'class': 'Bold' }
+					},
 					coreStyles_italic: {
 						element: 'span',
-						attributes: { 'class': 'Italic' ***REMOVED***
-					***REMOVED***,
+						attributes: { 'class': 'Italic' }
+					},
 					coreStyles_underline: {
 						element: 'span',
-						attributes: { 'class': 'Underline' ***REMOVED***
-					***REMOVED***,
+						attributes: { 'class': 'Underline' }
+					},
 					coreStyles_strike: {
 						element: 'span',
-						attributes: { 'class': 'StrikeThrough' ***REMOVED***,
+						attributes: { 'class': 'StrikeThrough' },
 						overrides: 'strike'
-					***REMOVED***,
+					},
 					coreStyles_subscript: {
 						element: 'span',
-						attributes: { 'class': 'Subscript' ***REMOVED***,
+						attributes: { 'class': 'Subscript' },
 						overrides: 'sub'
-					***REMOVED***,
+					},
 					coreStyles_superscript: {
 						element: 'span',
-						attributes: { 'class': 'Superscript' ***REMOVED***,
+						attributes: { 'class': 'Superscript' },
 						overrides: 'sup'
-					***REMOVED***,
+					},
 
 					/*
 					 * Font face.
@@ -110,7 +110,7 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 
 					// List of fonts available in the toolbar combo. Each font definition is
 					// separated by a semi-colon (;). We are using class names here, so each font
-					// is defined by {Combo Label***REMOVED***/{Class Name***REMOVED***.
+					// is defined by {Combo Label}/{Class Name}.
 					font_names: 'Comic Sans MS/FontComic;Courier New/FontCourier;Times New Roman/FontTimes',
 
 					// Define the way font elements will be applied to the document. The "span"
@@ -121,16 +121,16 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					// set the font (Overrides).
 					font_style: {
 						element: 'span',
-						attributes: { 'class': '#(family)' ***REMOVED***,
+						attributes: { 'class': '#(family)' },
 						overrides: [
 							{
 								element: 'span',
 								attributes: {
 									'class': /^Font(?:Comic|Courier|Times)$/
-								***REMOVED***
-							***REMOVED***
+								}
+							}
 						]
-					***REMOVED***,
+					},
 
 					/*
 					 * Font sizes.
@@ -138,16 +138,16 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					fontSize_sizes: 'Smaller/FontSmaller;Larger/FontLarger;8pt/FontSmall;14pt/FontBig;Double Size/FontDouble',
 					fontSize_style: {
 						element: 'span',
-						attributes: { 'class': '#(size)' ***REMOVED***,
+						attributes: { 'class': '#(size)' },
 						overrides: [
 							{
 								element: 'span',
 								attributes: {
 									'class': /^Font(?:Smaller|Larger|Small|Big|Double)$/
-								***REMOVED***
-							***REMOVED***
+								}
+							}
 						]
-					***REMOVED*** ,
+					} ,
 
 					/*
 					 * Font colors.
@@ -157,29 +157,29 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					colorButton_colors: 'FontColor1/FF9900,FontColor2/0066CC,FontColor3/F00',
 					colorButton_foreStyle: {
 						element: 'span',
-						attributes: { 'class': '#(color)' ***REMOVED***,
+						attributes: { 'class': '#(color)' },
 						overrides: [
 							{
 								element: 'span',
 								attributes: {
 									'class': /^FontColor(?:1|2|3)$/
-								***REMOVED***
-							***REMOVED***
+								}
+							}
 						]
-					***REMOVED***,
+					},
 
 					colorButton_backStyle: {
 						element: 'span',
-						attributes: { 'class': '#(color)BG' ***REMOVED***,
+						attributes: { 'class': '#(color)BG' },
 						overrides: [
 							{
 								element: 'span',
 								attributes: {
 									'class': /^FontColor(?:1|2|3)BG$/
-								***REMOVED***
-							***REMOVED***
+								}
+							}
 						]
-					***REMOVED***,
+					},
 
 					/*
 					 * Indentation.
@@ -195,21 +195,21 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 					 * Styles combo.
 					 */
 					stylesSet: [
-						{ name: 'Strong Emphasis', element: 'strong' ***REMOVED***,
-						{ name: 'Emphasis', element: 'em' ***REMOVED***,
+						{ name: 'Strong Emphasis', element: 'strong' },
+						{ name: 'Emphasis', element: 'em' },
 
-						{ name: 'Computer Code', element: 'code' ***REMOVED***,
-						{ name: 'Keyboard Phrase', element: 'kbd' ***REMOVED***,
-						{ name: 'Sample Text', element: 'samp' ***REMOVED***,
-						{ name: 'Variable', element: 'var' ***REMOVED***,
+						{ name: 'Computer Code', element: 'code' },
+						{ name: 'Keyboard Phrase', element: 'kbd' },
+						{ name: 'Sample Text', element: 'samp' },
+						{ name: 'Variable', element: 'var' },
 
-						{ name: 'Deleted Text', element: 'del' ***REMOVED***,
-						{ name: 'Inserted Text', element: 'ins' ***REMOVED***,
+						{ name: 'Deleted Text', element: 'del' },
+						{ name: 'Inserted Text', element: 'ins' },
 
-						{ name: 'Cited Work', element: 'cite' ***REMOVED***,
-						{ name: 'Inline Quotation', element: 'q' ***REMOVED***
+						{ name: 'Cited Work', element: 'cite' },
+						{ name: 'Inline Quotation', element: 'q' }
 					]
-				***REMOVED***);
+				});
 
 			</script>
 		</p>

@@ -15,9 +15,9 @@
   $from: from($flow);
 
   $output: (
-    margin-#{$from***REMOVED***: $before,
-    margin-#{$to***REMOVED***: $after,
+    margin-#{$from}: $before,
+    margin-#{$to}: $after,
   );
 
   @include output($output);
-***REMOVED***
+}

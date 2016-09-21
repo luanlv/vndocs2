@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoLayout.prototype;
 
 	// =========================================================================
@@ -18,7 +18,7 @@
 
 	p.initialize = function () {
 		this._enableEvents();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// EVENTS
@@ -31,12 +31,12 @@
 		$('.card-outlined').on('click', function (e) {
 			var btn = $(e.currentTarget).next('.text-caption').find('a');
 			o._changeLayout(btn);
-		***REMOVED***);
+		});
 		$('.layoutButton').on('click', function (e) {
 			var btn = $(e.currentTarget);
 			o._changeLayout(btn);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// LAYOUT
@@ -88,9 +88,9 @@
 			case 6:
 				$('body').addClass('menubar-first');
 				break;
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// =========================================================================
 	namespace.DemoLayout = new DemoLayout;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

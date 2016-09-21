@@ -10,7 +10,7 @@
  * @example $.validator.methods.date("01.01.1900")
  * @result false
  *
- * @example <input name="pippo" class="{dateITA:true***REMOVED***" />
+ * @example <input name="pippo" class="{dateITA:true}" />
  * @desc Declares an optional input element whose value must be a valid date.
  *
  * @name $.validator.methods.dateITA
@@ -19,7 +19,7 @@
  */
 $.validator.addMethod("dateITA", function(value, element) {
 	var check = false,
-		re = /^\d{1,2***REMOVED***\/\d{1,2***REMOVED***\/\d{4***REMOVED***$/,
+		re = /^\d{1,2}\/\d{1,2}\/\d{4}$/,
 		adata, gg, mm, aaaa, xdata;
 	if ( re.test(value)) {
 		adata = value.split("/");
@@ -29,11 +29,11 @@ $.validator.addMethod("dateITA", function(value, element) {
 		xdata = new Date(aaaa, mm - 1, gg, 12, 0, 0, 0);
 		if ( ( xdata.getUTCFullYear() === aaaa ) && ( xdata.getUTCMonth () === mm - 1 ) && ( xdata.getUTCDate() === gg ) ) {
 			check = true;
-		***REMOVED*** else {
+		} else {
 			check = false;
-		***REMOVED***
-	***REMOVED*** else {
+		}
+	} else {
 		check = false;
-	***REMOVED***
+	}
 	return this.optional(element) || check;
-***REMOVED***, "Please enter a correct date");
+}, "Please enter a correct date");

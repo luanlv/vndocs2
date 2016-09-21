@@ -1,25 +1,25 @@
 .h-container {
   width: 1000px;
   margin: 0 auto;
-***REMOVED***
+}
 
 .h-left {
   float: right;
   width: 300px;
-***REMOVED***
+}
 .h-right {
   float: right;
   width: 700px;
   min-height: 30px;
-***REMOVED***
+}
 
 .h-top {
   height: 70px;
-***REMOVED***
+}
 
 .h-bot {
   height: 40px;
-***REMOVED***
+}
 
 .search {
   padding-top: 25px;
@@ -42,13 +42,13 @@
     &:focus {
       border: 1px solid #0c9adc;
       color: #333;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   .searchWr{
     position: relative;
     background: blue;
     float: left;
-***REMOVED***
+  }
 
   .search-icon {
     position: absolute;
@@ -60,7 +60,7 @@
     height: 21px;
     //background: #000;
     cursor: pointer;
-***REMOVED***
+  }
 
   .cartWr {
     float: left;
@@ -76,7 +76,7 @@
       float: left;
       height: 35px;
       width: 35px;
-  ***REMOVED***
+    }
 
     .number-items {
       float: left;
@@ -85,20 +85,20 @@
       padding: 0 5px 0 10px;
       vertical-align: middle;
       align-items: center;
-  ***REMOVED***
+    }
     &:hover {
       background: $hover-link-color;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   .userWr{
     float: left;
     width: 35px;
     height: 35px;
     margin-left: 5px;
-***REMOVED***
+  }
 
-***REMOVED***
+}
 
 .navMenu{
   height: 40px;
@@ -124,14 +124,14 @@
       &:hover {
         background: $top-menu-hover-active-background;
         color: $top-menu-hover-active-color;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
   .active {
     background: $top-menu-hover-active-background;
     color: $top-menu-hover-active-color;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 
 

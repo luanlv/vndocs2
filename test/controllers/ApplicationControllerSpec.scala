@@ -3,7 +3,7 @@ package controllers
 import java.util.UUID
 
 import com.google.inject.AbstractModule
-import com.mohiva.play.silhouette.api.{ Environment, LoginInfo ***REMOVED***
+import com.mohiva.play.silhouette.api.{ Environment, LoginInfo }
 import com.mohiva.play.silhouette.impl.authenticators.CookieAuthenticator
 import com.mohiva.play.silhouette.test._
 import models.User
@@ -12,7 +12,7 @@ import org.specs2.mock.Mockito
 import org.specs2.specification.Scope
 import play.api.inject.guice.GuiceApplicationBuilder
 import play.api.libs.concurrent.Execution.Implicits._
-import play.api.test.{ FakeRequest, PlaySpecification, WithApplication ***REMOVED***
+import play.api.test.{ FakeRequest, PlaySpecification, WithApplication }
 import utils.auth.DefaultEnv
 
 /**
@@ -38,8 +38,8 @@ class ApplicationControllerSpec extends PlaySpecification with Mockito {
         status(unauthorizedResult) must be equalTo OK
         contentType(unauthorizedResult) must beSome("text/html")
         contentAsString(unauthorizedResult) must contain("Silhouette - Sign In")
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
     "return 200 if user is authorized" in new Context {
       new WithApplication(application) {
@@ -48,9 +48,9 @@ class ApplicationControllerSpec extends PlaySpecification with Mockito {
         )
 
         status(result) must beEqualTo(OK)
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   /**
    * The context.
@@ -63,8 +63,8 @@ class ApplicationControllerSpec extends PlaySpecification with Mockito {
     class FakeModule extends AbstractModule with ScalaModule {
       def configure() = {
         bind[Environment[DefaultEnv]].toInstance(env)
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
     /**
      * An identity.
@@ -91,5 +91,5 @@ class ApplicationControllerSpec extends PlaySpecification with Mockito {
     lazy val application = new GuiceApplicationBuilder()
       .overrides(new FakeModule)
       .build()
-***REMOVED***
-***REMOVED***
+  }
+}

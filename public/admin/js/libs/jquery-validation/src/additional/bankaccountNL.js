@@ -7,10 +7,10 @@
 $.validator.addMethod("bankaccountNL", function(value, element) {
 	if (this.optional(element)) {
 		return true;
-	***REMOVED***
-	if (!(/^[0-9]{9***REMOVED***|([0-9]{2***REMOVED*** ){3***REMOVED***[0-9]{3***REMOVED***$/.test(value))) {
+	}
+	if (!(/^[0-9]{9}|([0-9]{2} ){3}[0-9]{3}$/.test(value))) {
 		return false;
-	***REMOVED***
+	}
 	// now '11 check'
 	var account = value.replace(/ /g, ""), // remove spaces
 		sum = 0,
@@ -20,6 +20,6 @@ $.validator.addMethod("bankaccountNL", function(value, element) {
 		factor = len - pos;
 		digit = account.substring(pos, pos + 1);
 		sum = sum + factor * digit;
-	***REMOVED***
+	}
 	return sum % 11 === 0;
-***REMOVED***, "Please specify a valid bank account number");
+}, "Please specify a valid bank account number");

@@ -3,9 +3,9 @@ package models.daos
 import javax.inject.Inject
 
 import com.google.inject.Singleton
-import models.{ Image, Setup ***REMOVED***
-import play.api.libs.json.{ JsObject, JsValue ***REMOVED***
-//import models.daos.{ DocumentDao, Repository ***REMOVED***
+import models.{ Image, Setup }
+import play.api.libs.json.{ JsObject, JsValue }
+//import models.daos.{ DocumentDao, Repository }
 import models.User
 import play.modules.reactivemongo.ReactiveMongoApi
 import reactivemongo.api.indexes.IndexType
@@ -20,4 +20,4 @@ class SetupRepository @Inject() (reactiveMongoApi: ReactiveMongoApi) extends Doc
   override def ensureIndexes: Future[Boolean] = ensureIndex(List("name" -> IndexType.Ascending), unique = true)
 
   ensureIndexes
-***REMOVED***
+}

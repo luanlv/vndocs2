@@ -16,15 +16,15 @@ table.dataTable {
 	thead td {
 		&:active {
 			outline: none;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	td {
 		&.center, 
 		&.dataTables_empty {
 			text-align: center;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	td.details-control {
 		text-align: center;
@@ -36,14 +36,14 @@ table.dataTable {
 			-webkit-font-smoothing: antialiased;
 			*margin-right: .3em;
 			content: "\f067";
-		***REMOVED***
+		}
 		cursor: pointer;
-	***REMOVED***
+	}
 	tr.shown td.details-control {
 		&:before { 
 			content: "\f068";
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 		
 	// Sorting
 	thead {
@@ -65,40 +65,40 @@ table.dataTable {
 				*margin-right: .3em;
 				float: right;
 				content: "\f0dc";
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		.sorting_asc:before, .sorting_asc_disabled:before { 
 			content: "\f0de";
-		***REMOVED***
+		}
 		.sorting_desc:before, .sorting_desc_disabled:before { 
 			content: "\f0dd";
-		***REMOVED***
+		}
 		// Numeric icons
 		.sort-numeric {
 			&.sorting:before, &.sorting_asc:before, &.sorting_asc_disabled:before { 
 				content: "\f162";
-			***REMOVED***
+			}
 			&.sorting_desc:before, &.sorting_desc_disabled:before { 
 				content: "\f163";
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		// Alphabet icons
 		.sort-alpha {
 			&.sorting:before, &.sorting_asc:before, &.sorting_asc_disabled:before { 
 				content: "\f15d";
-			***REMOVED***
+			}
 			&.sorting_desc:before, &.sorting_desc_disabled:before { 
 				content: "\f15e";
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		
 		.sorting_asc:before, .sorting_desc:before {
 			color: darken(@brand-primary, 20%);
-		***REMOVED***
+		}
 		.sorting:before, .sorting_asc_disabled:before, .sorting_desc_disabled:before {
 			color: lighten(#000, 75%);
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	/*
@@ -111,14 +111,14 @@ table.dataTable {
 			&.selected {
 				background-color: @table-row-selected;
 				color: contrast(@table-row-selected, @text-color, @white, @color-threshold);
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		th,
 		td {
 			padding: 8px 10px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	// Stripe classes - add "row-border" class to the table to activate
@@ -126,13 +126,13 @@ table.dataTable {
 	&.display tbody {
 		th, td {
 			border-top: @table-body-border;
-		***REMOVED***
+		}
 
 		tr:first-child th,
 			tr:first-child td {
 			border-top: none;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	// Stripe classes - add "cell-border" class to the table to activate
@@ -140,17 +140,17 @@ table.dataTable {
 		th, td {
 			border-top: @table-body-border;
 			border-right: @table-body-border;
-		***REMOVED***
+		}
 
 		tr th:first-child,
 			tr td:first-child {
 			border-left: @table-body-border;
-		***REMOVED***
+		}
 
 		tr:first-child th, tr:first-child td {
 			border-top: none;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	// Stripe classes - add "stripe" class to the table to activate
@@ -162,9 +162,9 @@ table.dataTable {
 			&.selected {
 				background-color: shade(@table-row-selected, 2.35%);
 				color: contrast(shade(@table-row-selected, 2.35%), @text-color, @white, @color-threshold);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 
 	// Hover classes - add "hover" class to the table to activate
@@ -176,9 +176,9 @@ table.dataTable {
 			&.selected {
 				background-color: shade(@table-row-selected, 3.6%);
 				color: contrast(shade(@table-row-selected, 3.6%), @text-color, @white, @color-threshold);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 
 	// Sort column highlighting - add "hover" class to the table to activate
@@ -189,171 +189,171 @@ table.dataTable {
 			tr>.sorting_2,
 			tr>.sorting_3 {
 				background-color: shade(@table-row-background, 2%); // shade by fa
-			***REMOVED***
+			}
 
 			tr.selected>.sorting_1,
 			tr.selected>.sorting_2,
 			tr.selected>.sorting_3 {
 				background-color: shade(@table-row-selected, 2%);
 				color: contrast(shade(@table-row-selected, 2%), @text-color, @white, @color-threshold);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 	&.display tbody,
 	&.order-column.stripe tbody,
 	&.table-striped tbody {
 		tr.odd {
-			>.sorting_1 { background-color: shade(@table-row-background, 5.4%); ***REMOVED*** // shade by f1
-			>.sorting_2 { background-color: shade(@table-row-background, 4.7%); ***REMOVED*** // shade by f3
-			>.sorting_3 { background-color: shade(@table-row-background, 3.9%); ***REMOVED*** // shade by f5
+			>.sorting_1 { background-color: shade(@table-row-background, 5.4%); } // shade by f1
+			>.sorting_2 { background-color: shade(@table-row-background, 4.7%); } // shade by f3
+			>.sorting_3 { background-color: shade(@table-row-background, 3.9%); } // shade by f5
 
 			&.selected {
-				>.sorting_1 { background-color: shade(@table-row-selected, 5.4%); ***REMOVED***
-				>.sorting_2 { background-color: shade(@table-row-selected, 4.7%); ***REMOVED***
-				>.sorting_3 { background-color: shade(@table-row-selected, 3.9%); ***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				>.sorting_1 { background-color: shade(@table-row-selected, 5.4%); }
+				>.sorting_2 { background-color: shade(@table-row-selected, 4.7%); }
+				>.sorting_3 { background-color: shade(@table-row-selected, 3.9%); }
+			}
+		}
 
 		tr.even {
-			>.sorting_1 { background-color: shade(@table-row-background, 2%); ***REMOVED*** // shade by fa
-			>.sorting_2 { background-color: shade(@table-row-background, 1.2%); ***REMOVED*** // shade by fc
-			>.sorting_3 { background-color: shade(@table-row-background, 0.4%); ***REMOVED*** // shade by fe
+			>.sorting_1 { background-color: shade(@table-row-background, 2%); } // shade by fa
+			>.sorting_2 { background-color: shade(@table-row-background, 1.2%); } // shade by fc
+			>.sorting_3 { background-color: shade(@table-row-background, 0.4%); } // shade by fe
 
 			&.selected {
-				>.sorting_1 { background-color: shade(@table-row-selected, 2%); ***REMOVED***
-				>.sorting_2 { background-color: shade(@table-row-selected, 1.2%); ***REMOVED***
-				>.sorting_3 { background-color: shade(@table-row-selected, 0.4%); ***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+				>.sorting_1 { background-color: shade(@table-row-selected, 2%); }
+				>.sorting_2 { background-color: shade(@table-row-selected, 1.2%); }
+				>.sorting_3 { background-color: shade(@table-row-selected, 0.4%); }
+			}
+		}
+	}
 
 	&.display tbody,
 	&.order-column.hover tbody {
 		tr:hover,
 			tr.odd:hover,
 			tr.even:hover {
-			>.sorting_1 { background-color: shade(@table-row-background, 8.2%); ***REMOVED*** // shade by ea
-			>.sorting_2 { background-color: shade(@table-row-background, 7.5%); ***REMOVED*** // shade by ec
-			>.sorting_3 { background-color: shade(@table-row-background, 6.3%); ***REMOVED*** // shade by ef
+			>.sorting_1 { background-color: shade(@table-row-background, 8.2%); } // shade by ea
+			>.sorting_2 { background-color: shade(@table-row-background, 7.5%); } // shade by ec
+			>.sorting_3 { background-color: shade(@table-row-background, 6.3%); } // shade by ef
 
 			&.selected {
-				>.sorting_1 { background-color: shade(@table-row-selected, 8.2%); ***REMOVED***
-				>.sorting_2 { background-color: shade(@table-row-selected, 7.5%); ***REMOVED***
-				>.sorting_3 { background-color: shade(@table-row-selected, 6.3%); ***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+				>.sorting_1 { background-color: shade(@table-row-selected, 8.2%); }
+				>.sorting_2 { background-color: shade(@table-row-selected, 7.5%); }
+				>.sorting_3 { background-color: shade(@table-row-selected, 6.3%); }
+			}
+		}
+	}
 
 	&.nowrap {
 		th, td {
 			white-space: nowrap;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	&.compact {
 		thead th,
 		thead td {
 			padding: 5px 9px;
-		***REMOVED***
+		}
 
 		tfoot th,
 		tfoot td {
 			padding: 5px 9px 3px 9px;
-		***REMOVED***
+		}
 
 		tbody th,
 		tbody td {
 			padding: 4px 5px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	// Typography
 	th.dt-left,
 	td.dt-left {
 		text-align: left;
-	***REMOVED***
+	}
 
 	th.dt-center,
 	td.dt-center,
 	td.dataTables_empty {
 		text-align: center;
-	***REMOVED***
+	}
 
 	th.dt-right,
 	td.dt-right {
 		text-align: right;
-	***REMOVED***
+	}
 
 	th.dt-justify,
 	td.dt-justify {
 		text-align: justify;
-	***REMOVED***
+	}
 
 	th.dt-nowrap,
 	td.dt-nowrap {
 		white-space: nowrap;
-	***REMOVED***
+	}
 
 	thead,
 	tfoot {
 		th.dt-head-left,
 		td.dt-head-left {
 			text-align: left;
-		***REMOVED***
+		}
 
 		th.dt-head-center,
 		td.dt-head-center{
 			text-align: center;
-		***REMOVED***
+		}
 
 		th.dt-head-right,
 		td.dt-head-right {
 			text-align: right;
-		***REMOVED***
+		}
 
 		th.dt-head-justify,
 		td.dt-head-justify {
 			text-align: justify;
-		***REMOVED***
+		}
 
 		th.dt-head-nowrap,
 		td.dt-head-nowrap {
 			white-space: nowrap;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	tbody {
 		th.dt-body-left,
 		td.dt-body-left {
 			text-align: left;
-		***REMOVED***
+		}
 
 		th.dt-body-center,
 		td.dt-body-center {
 			text-align: center;
-		***REMOVED***
+		}
 
 		th.dt-body-right,
 		td.dt-body-right {
 			text-align: right;
-		***REMOVED***
+		}
 
 		th.dt-body-justify,
 		td.dt-body-justify {
 			text-align: justify;
-		***REMOVED***
+		}
 
 		th.dt-body-nowrap,
 		td.dt-body-nowrap {
 			white-space: nowrap;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
-***REMOVED***
+}
 
-// Its not uncommon to use * {border-box***REMOVED*** now, but it messes up the column width
+// Its not uncommon to use * {border-box} now, but it messes up the column width
 // calculations, so use content-box for the table and cells
 table.dataTable,
 table.dataTable th,
@@ -361,7 +361,7 @@ table.dataTable td {
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
-***REMOVED***
+}
 
 
 /*
@@ -374,7 +374,7 @@ table.dataTable td {
 
 	.card-body.no-padding & {
 		.clearfix();
-	***REMOVED***
+	}
 
 	// Page length options
 	.dataTables_length {
@@ -397,12 +397,12 @@ table.dataTable td {
 				outline: 0;
 				border-bottom-width: 2px;
 				border-bottom-color: @brand-primary;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		.card-body.no-padding & {
 			margin: 15px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Filtering input
 	.dataTables_filter {
@@ -415,8 +415,8 @@ table.dataTable td {
 
 			i {
 				margin-right: 5px;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		input {
 			height: @input-height-base;
 			padding: @padding-base-vertical @padding-base-horizontal;
@@ -432,12 +432,12 @@ table.dataTable td {
 				outline: 0;
 				border-bottom-width: 2px;
 				border-bottom-color: @brand-primary;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		.card-body.no-padding & {
 			margin: 15px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Table info
 	.dataTables_info {
@@ -448,8 +448,8 @@ table.dataTable td {
 
 		.card-body.no-padding & {
 			margin: 15px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Paging
 	.dataTables_paginate {
@@ -459,7 +459,7 @@ table.dataTable td {
 
 		.card-body.no-padding & {
 			margin: 15px;
-		***REMOVED***
+		}
 
 		.paginate_button {
 			box-sizing: border-box;
@@ -480,7 +480,7 @@ table.dataTable td {
 			&.current:hover {
 				background-color: @table-paging-button-active;
 				color: contrast(@table-paging-button-active, @text-color, @white, @color-threshold);
-			***REMOVED***
+			}
 
 			&.disabled,
 			&.disabled:hover,
@@ -490,18 +490,18 @@ table.dataTable td {
 				border: 1px solid transparent;
 				background: transparent;
 				cursor:no-drop;
-			***REMOVED***
+			}
 
 			&:hover {
 				background-color: @table-paging-button-hover;
 				color: contrast(@table-paging-button-hover, @text-color, @white, @color-threshold);
-			***REMOVED***
+			}
 
 			&:active {
 				outline: none;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 	// Processing
 	.dataTables_processing {
@@ -519,7 +519,7 @@ table.dataTable td {
 
 		background-color: white;
 		#gradient > .horizontal-three-colors(@start-color: fade(@table-row-background, 0); @mid-color: fade(@table-row-background, 0); @end-color: fade(@table-row-background, 0));
-	***REMOVED***
+	}
 
 	.dataTables_length,
 	.dataTables_filter,
@@ -527,7 +527,7 @@ table.dataTable td {
 	.dataTables_processing,
 	.dataTables_paginate {
 		color: @text-color;
-	***REMOVED***
+	}
 
 	// Scrolling
 	.dataTables_scroll {
@@ -545,16 +545,16 @@ table.dataTable td {
 				overflow: hidden;
 				margin: 0 !important;
 				padding: 0 !important;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 	&.no-footer {
 		div.dataTables_scrollHead table,
 		div.dataTables_scrollBody table {
 			border-bottom: none;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Self clear the wrapper
 	&:after {
@@ -563,9 +563,9 @@ table.dataTable td {
 		content: "";
 		clear: both;
 		height: 0;
-	***REMOVED***
+	}
 	zoom: 1; // Poor old IE
-***REMOVED***
+}
 
 
 // Collapse the two column display of the control elements when the screen is
@@ -577,13 +577,13 @@ table.dataTable td {
 		.dataTables_paginate {
 			float: none;
 			text-align: center;
-		***REMOVED***
+		}
 
 		.dataTables_paginate {
 			margin-top: 0.5em;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 @media screen and (max-width: 640px) {
 	.dataTables_wrapper {
@@ -591,10 +591,10 @@ table.dataTable td {
 		.dataTables_filter {
 			float: none;
 			text-align: center;
-		***REMOVED***
+		}
 
 		.dataTables_filter {
 			margin-top: 0.5em;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}

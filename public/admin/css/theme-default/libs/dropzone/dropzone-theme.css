@@ -1,43 +1,43 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -48,14 +48,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -66,14 +66,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -84,14 +84,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -102,14 +102,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -120,14 +120,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -138,14 +138,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -156,14 +156,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -174,14 +174,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -192,14 +192,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -210,14 +210,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -225,15 +225,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -241,15 +241,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -257,15 +257,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -273,15 +273,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -289,15 +289,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -305,15 +305,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -321,15 +321,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -337,15 +337,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -353,15 +353,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -369,15 +369,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -385,15 +385,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -401,15 +401,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -417,15 +417,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -433,15 +433,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -449,15 +449,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -465,15 +465,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -481,15 +481,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -497,15 +497,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -513,15 +513,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -529,15 +529,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 /*
 // Example usage
 
@@ -552,7 +552,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -562,7 +562,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -572,7 +572,7 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */
 /*
  * The MIT License
@@ -586,7 +586,7 @@
     -ms-transform: translateY(40px);
     -o-transform: translateY(40px);
     transform: translateY(40px);
-***REMOVED***
+  }
   30%,
   70% {
     opacity: 1;
@@ -595,7 +595,7 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px);
-***REMOVED***
+  }
   100% {
     opacity: 0;
     -webkit-transform: translateY(-40px);
@@ -603,8 +603,8 @@
     -ms-transform: translateY(-40px);
     -o-transform: translateY(-40px);
     transform: translateY(-40px);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes passing-through {
   0% {
     opacity: 0;
@@ -613,7 +613,7 @@
     -ms-transform: translateY(40px);
     -o-transform: translateY(40px);
     transform: translateY(40px);
-***REMOVED***
+  }
   30%,
   70% {
     opacity: 1;
@@ -622,7 +622,7 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px);
-***REMOVED***
+  }
   100% {
     opacity: 0;
     -webkit-transform: translateY(-40px);
@@ -630,8 +630,8 @@
     -ms-transform: translateY(-40px);
     -o-transform: translateY(-40px);
     transform: translateY(-40px);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes passing-through {
   0% {
     opacity: 0;
@@ -640,7 +640,7 @@
     -ms-transform: translateY(40px);
     -o-transform: translateY(40px);
     transform: translateY(40px);
-***REMOVED***
+  }
   30%,
   70% {
     opacity: 1;
@@ -649,7 +649,7 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px);
-***REMOVED***
+  }
   100% {
     opacity: 0;
     -webkit-transform: translateY(-40px);
@@ -657,8 +657,8 @@
     -ms-transform: translateY(-40px);
     -o-transform: translateY(-40px);
     transform: translateY(-40px);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-in {
   0% {
     opacity: 0;
@@ -667,7 +667,7 @@
     -ms-transform: translateY(40px);
     -o-transform: translateY(40px);
     transform: translateY(40px);
-***REMOVED***
+  }
   30% {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -675,8 +675,8 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-in {
   0% {
     opacity: 0;
@@ -685,7 +685,7 @@
     -ms-transform: translateY(40px);
     -o-transform: translateY(40px);
     transform: translateY(40px);
-***REMOVED***
+  }
   30% {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -693,8 +693,8 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-in {
   0% {
     opacity: 0;
@@ -703,7 +703,7 @@
     -ms-transform: translateY(40px);
     -o-transform: translateY(40px);
     transform: translateY(40px);
-***REMOVED***
+  }
   30% {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -711,8 +711,8 @@
     -ms-transform: translateY(0px);
     -o-transform: translateY(0px);
     transform: translateY(0px);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1);
@@ -720,22 +720,22 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-***REMOVED***
+  }
   10% {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
-***REMOVED***
+  }
   20% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes pulse {
   0% {
     -webkit-transform: scale(1);
@@ -743,22 +743,22 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-***REMOVED***
+  }
   10% {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
-***REMOVED***
+  }
   20% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes pulse {
   0% {
     -webkit-transform: scale(1);
@@ -766,99 +766,99 @@
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-***REMOVED***
+  }
   10% {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
-***REMOVED***
+  }
   20% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-***REMOVED***
-***REMOVED***
+  }
+}
 .dropzone,
 .dropzone * {
   box-sizing: border-box;
-***REMOVED***
+}
 .dropzone {
   min-height: 150px;
   border: 2px solid rgba(0, 0, 0, 0.3);
   background: white;
   padding: 20px 20px;
-***REMOVED***
+}
 .dropzone.dz-clickable {
   cursor: pointer;
-***REMOVED***
+}
 .dropzone.dz-clickable * {
   cursor: default;
-***REMOVED***
+}
 .dropzone.dz-clickable .dz-message,
 .dropzone.dz-clickable .dz-message * {
   cursor: pointer;
-***REMOVED***
+}
 .dropzone.dz-started .dz-message {
   display: none;
-***REMOVED***
+}
 .dropzone.dz-drag-hover {
   border-style: solid;
-***REMOVED***
+}
 .dropzone.dz-drag-hover .dz-message {
   opacity: 0.5;
-***REMOVED***
+}
 .dropzone .dz-message {
   text-align: center;
   margin: 2em 0;
-***REMOVED***
+}
 .dropzone .dz-preview {
   position: relative;
   display: inline-block;
   vertical-align: top;
   margin: 16px;
   min-height: 100px;
-***REMOVED***
+}
 .dropzone .dz-preview:hover {
   z-index: 1000;
-***REMOVED***
+}
 .dropzone .dz-preview:hover .dz-details {
   opacity: 1;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-file-preview .dz-image {
   border-radius: 20px;
   background: #999;
   background: linear-gradient(to bottom, #eeeeee, #dddddd);
-***REMOVED***
+}
 .dropzone .dz-preview.dz-file-preview .dz-details {
   opacity: 1;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-image-preview {
   background: white;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-image-preview .dz-details {
   -webkit-transition: opacity 0.2s linear;
   -moz-transition: opacity 0.2s linear;
   -ms-transition: opacity 0.2s linear;
   -o-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-remove {
   font-size: 14px;
   text-align: center;
   display: block;
   cursor: pointer;
   border: none;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-remove:hover {
   text-decoration: underline;
-***REMOVED***
+}
 .dropzone .dz-preview:hover .dz-details {
   opacity: 1;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details {
   z-index: 20;
   position: absolute;
@@ -872,31 +872,31 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.9);
   line-height: 150%;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details .dz-size {
   margin-bottom: 1em;
   font-size: 16px;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details .dz-filename {
   white-space: nowrap;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details .dz-filename:hover span {
   border: 1px solid rgba(200, 200, 200, 0.8);
   background-color: rgba(255, 255, 255, 0.8);
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details .dz-filename:not(:hover) {
   overflow: hidden;
   text-overflow: ellipsis;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {
   border: 1px solid transparent;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-details .dz-filename span,
 .dropzone .dz-preview .dz-details .dz-size span {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 0 0.4em;
   border-radius: 3px;
-***REMOVED***
+}
 .dropzone .dz-preview:hover .dz-image img {
   -webkit-transform: scale(1.05, 1.05);
   -moz-transform: scale(1.05, 1.05);
@@ -905,7 +905,7 @@
   transform: scale(1.05, 1.05);
   -webkit-filter: blur(8px);
   filter: blur(8px);
-***REMOVED***
+}
 .dropzone .dz-preview .dz-image {
   border-radius: 20px;
   overflow: hidden;
@@ -914,17 +914,17 @@
   position: relative;
   display: block;
   z-index: 10;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-image img {
   display: block;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-success .dz-success-mark {
   -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
   -moz-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
   -ms-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
   -o-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
   animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
-***REMOVED***
+}
 .dropzone .dz-preview.dz-error .dz-error-mark {
   opacity: 1;
   -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
@@ -932,7 +932,7 @@
   -ms-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
   -o-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
   animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
-***REMOVED***
+}
 .dropzone .dz-preview .dz-success-mark,
 .dropzone .dz-preview .dz-error-mark {
   pointer-events: none;
@@ -944,13 +944,13 @@
   left: 50%;
   margin-left: -27px;
   margin-top: -27px;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-success-mark svg,
 .dropzone .dz-preview .dz-error-mark svg {
   display: block;
   width: 54px;
   height: 54px;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-processing .dz-progress {
   opacity: 1;
   -webkit-transition: all 0.2s linear;
@@ -958,7 +958,7 @@
   -ms-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-complete .dz-progress {
   opacity: 0;
   -webkit-transition: opacity 0.4s ease-in;
@@ -966,14 +966,14 @@
   -ms-transition: opacity 0.4s ease-in;
   -o-transition: opacity 0.4s ease-in;
   transition: opacity 0.4s ease-in;
-***REMOVED***
+}
 .dropzone .dz-preview:not(.dz-processing) .dz-progress {
   -webkit-animation: pulse 6s ease infinite;
   -moz-animation: pulse 6s ease infinite;
   -ms-animation: pulse 6s ease infinite;
   -o-animation: pulse 6s ease infinite;
   animation: pulse 6s ease infinite;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-progress {
   opacity: 1;
   z-index: 1000;
@@ -989,7 +989,7 @@
   -webkit-transform: scale(1);
   border-radius: 8px;
   overflow: hidden;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-progress .dz-upload {
   background: #333;
   background: linear-gradient(to bottom, #666666, #444444);
@@ -1003,14 +1003,14 @@
   -ms-transition: width 300ms ease-in-out;
   -o-transition: width 300ms ease-in-out;
   transition: width 300ms ease-in-out;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-error .dz-error-message {
   display: block;
-***REMOVED***
+}
 .dropzone .dz-preview.dz-error:hover .dz-error-message {
   opacity: 1;
   pointer-events: auto;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-error-message {
   pointer-events: none;
   z-index: 1000;
@@ -1032,7 +1032,7 @@
   background: linear-gradient(to bottom, #be2626, #a92222);
   padding: 0.5em 1.2em;
   color: white;
-***REMOVED***
+}
 .dropzone .dz-preview .dz-error-message:after {
   content: '';
   position: absolute;
@@ -1043,9 +1043,9 @@
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 6px solid #be2626;
-***REMOVED***
+}
 .dropzone {
   border: none;
   background: inherit;
-***REMOVED***
+}
 

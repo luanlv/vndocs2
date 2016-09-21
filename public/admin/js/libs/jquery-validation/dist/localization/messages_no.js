@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -12,9 +12,9 @@
  */
 $.extend($.validator.messages, {
 	required: "Dette feltet er obligatorisk.",
-	maxlength: $.validator.format("Maksimalt {0***REMOVED*** tegn."),
-	minlength: $.validator.format("Minimum {0***REMOVED*** tegn."),
-	rangelength: $.validator.format("Angi minimum {0***REMOVED*** og maksimum {1***REMOVED*** tegn."),
+	maxlength: $.validator.format("Maksimalt {0} tegn."),
+	minlength: $.validator.format("Minimum {0} tegn."),
+	rangelength: $.validator.format("Angi minimum {0} og maksimum {1} tegn."),
 	email: "Oppgi en gyldig epostadresse.",
 	url: "Angi en gyldig URL.",
 	date: "Angi en gyldig dato.",
@@ -24,10 +24,10 @@ $.extend($.validator.messages, {
 	numberSE: "Angi et gyldig nummer.",
 	digits: "Skriv kun tall.",
 	equalTo: "Skriv samme verdi igjen.",
-	range: $.validator.format("Angi en verdi mellom {0***REMOVED*** og {1***REMOVED***."),
-	max: $.validator.format("Angi en verdi som er mindre eller lik {0***REMOVED***."),
-	min: $.validator.format("Angi en verdi som er st&oslash;rre eller lik {0***REMOVED***."),
+	range: $.validator.format("Angi en verdi mellom {0} og {1}."),
+	max: $.validator.format("Angi en verdi som er mindre eller lik {0}."),
+	min: $.validator.format("Angi en verdi som er st&oslash;rre eller lik {0}."),
 	creditcard: "Angi et gyldig kredittkortnummer."
-***REMOVED***);
+});
 
-***REMOVED***));
+}));

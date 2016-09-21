@@ -2,60 +2,60 @@
 
 /// A mixin for generating vendor prefixes on non-standardized properties.
 ///
-/// @param {String***REMOVED*** $property
+/// @param {String} $property
 ///   Property to prefix
 ///
-/// @param {****REMOVED*** $value
+/// @param {*} $value
 ///   Value to use
 ///
-/// @param {List***REMOVED*** $prefixes
+/// @param {List} $prefixes
 ///   Prefixes to define
 ///
 /// @example scss - Usage
 ///   .element {
 ///     @include prefixer(border-radius, 10px, webkit ms spec);
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     -webkit-border-radius: 10px;
 ///     -moz-border-radius: 10px;
 ///     border-radius: 10px;
-/// ***REMOVED***
+///   }
 ///
-/// @require {variable***REMOVED*** $prefix-for-webkit
-/// @require {variable***REMOVED*** $prefix-for-mozilla
-/// @require {variable***REMOVED*** $prefix-for-microsoft
-/// @require {variable***REMOVED*** $prefix-for-opera
-/// @require {variable***REMOVED*** $prefix-for-spec
+/// @require {variable} $prefix-for-webkit
+/// @require {variable} $prefix-for-mozilla
+/// @require {variable} $prefix-for-microsoft
+/// @require {variable} $prefix-for-opera
+/// @require {variable} $prefix-for-spec
 
 @mixin prefixer($property, $value, $prefixes) {
   @each $prefix in $prefixes {
     @if $prefix == webkit {
       @if $prefix-for-webkit {
-        -webkit-#{$property***REMOVED***: $value;
-    ***REMOVED***
-  ***REMOVED*** @else if $prefix == moz {
+        -webkit-#{$property}: $value;
+      }
+    } @else if $prefix == moz {
       @if $prefix-for-mozilla {
-        -moz-#{$property***REMOVED***: $value;
-    ***REMOVED***
-  ***REMOVED*** @else if $prefix == ms {
+        -moz-#{$property}: $value;
+      }
+    } @else if $prefix == ms {
       @if $prefix-for-microsoft {
-        -ms-#{$property***REMOVED***: $value;
-    ***REMOVED***
-  ***REMOVED*** @else if $prefix == o {
+        -ms-#{$property}: $value;
+      }
+    } @else if $prefix == o {
       @if $prefix-for-opera {
-        -o-#{$property***REMOVED***: $value;
-    ***REMOVED***
-  ***REMOVED*** @else if $prefix == spec {
+        -o-#{$property}: $value;
+      }
+    } @else if $prefix == spec {
       @if $prefix-for-spec {
-        #{$property***REMOVED***: $value;
-    ***REMOVED***
-  ***REMOVED*** @else  {
-      @warn "Unrecognized prefix: #{$prefix***REMOVED***";
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+        #{$property}: $value;
+      }
+    } @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
 
 @mixin disable-prefix-for-all() {
   $prefix-for-webkit:    false !global;
@@ -63,4 +63,4 @@
   $prefix-for-microsoft: false !global;
   $prefix-for-opera:     false !global;
   $prefix-for-spec:      false !global;
-***REMOVED***
+}

@@ -9,13 +9,13 @@
         <title>Document</title>
         <link rel="stylesheet" href="/assets/styles/animate.css">
         @*<link rel="stylesheet" href="/assets/stylesheets/style.min.css">*@
-        <link rel="stylesheet" href=@{"/file/style.css?" + scala.util.Random.nextInt(10000)***REMOVED*** >
+        <link rel="stylesheet" href=@{"/file/style.css?" + scala.util.Random.nextInt(10000)} >
 
     </head>
     <body>
 
         <script >
-            Window.urls = {***REMOVED***;
+            Window.urls = {};
             Window.menu = @Html(menu);
             Window.categories = @Html(categories);
             Window.comments = @Html(comments);
@@ -27,12 +27,12 @@
                         "userID" : "@user.userID",
                         "avatarURL" : "@user.avatarURL",
                         "fullName" : "@user.fullName"
-                  ***REMOVED***;
-              ***REMOVED***
+                    };
+                }
                 case None => {
 
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
         </script>
         <div id="app"></div>
         @helper.CSRF.formField
@@ -42,6 +42,6 @@
         <script src="/assets/lib/mithril.min.op.js"></script>
         <script src="/assets/lib/mithril-storage.min.op.js"></script>
         @*<script src="/assets/js/app.js"></script>*@
-        <script src=@{"/file/app.js?" + scala.util.Random.nextInt(10000)***REMOVED***></script>
+        <script src=@{"/file/app.js?" + scala.util.Random.nextInt(10000)}></script>
     </body>
 </html>

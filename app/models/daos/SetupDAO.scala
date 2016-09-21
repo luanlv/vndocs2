@@ -1,7 +1,7 @@
 package models.daos
 
-import models.{ Image, Setup ***REMOVED***
-import play.api.libs.json.{ JsObject, JsValue ***REMOVED***
+import models.{ Image, Setup }
+import play.api.libs.json.{ JsObject, JsValue }
 
 import scala.concurrent.Future
 import scala.util.Try
@@ -15,4 +15,4 @@ trait SetupDAO {
 
   def save(data: Setup): Future[Try[Setup]]
 
-***REMOVED***
+}

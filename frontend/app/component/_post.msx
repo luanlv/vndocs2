@@ -7,73 +7,73 @@ var PostView = function(ctrl){
       {ctrl.request.ready()?[
          <div>
            <span className="breadcrumb">
-             {fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().post.categories[0], [])***REMOVED***
-             {ctrl.post().post.title***REMOVED***
+             {fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().post.categories[0], [])}
+             {ctrl.post().post.title}
            </span>
            
            <br/>
            <hr className="style3"/>
            <div className="postWr">
              <div className="postTitle">
-               <h1>{ctrl.post().post.title***REMOVED***</h1>
+               <h1>{ctrl.post().post.title}</h1>
              </div>
              <hr className="style3"/>
              <div className="postInfo cf">
                <div className="meta-data">
         
-                 <span className="upload">{ctrl.post().post.upload***REMOVED***</span>
+                 <span className="upload">{ctrl.post().post.upload}</span>
                  <span className="category">
                      {ctrl.post().post.categories.map(function (item) {
-                         return <a href={"/category/" + item***REMOVED***
-                                   config={m.route***REMOVED***
-                         ><span>{Window.categories.getItemByParam({slug: item***REMOVED***).name***REMOVED***</span></a>
-                   ***REMOVED***)***REMOVED***
+                         return <a href={"/category/" + item}
+                                   config={m.route}
+                         ><span>{Window.categories.getItemByParam({slug: item}).name}</span></a>
+                     })}
                       </span>
-                 <span className="time">{moment(ctrl.post().post.time).format('L')***REMOVED***</span>
+                 <span className="time">{moment(ctrl.post().post.time).format('L')}</span>
                </div>
       
                <div className="t-left">
-                 <a href="#"><img src={"/cover/get/" + ctrl.post().post.cover.id***REMOVED*** alt={ctrl.post().post.cover.alt***REMOVED***/></a>
+                 <a href="#"><img src={"/cover/get/" + ctrl.post().post.cover.id} alt={ctrl.post().post.cover.alt}/></a>
                </div>
                <div className="t-right">
                  <div className="rate-nav">RATING</div>
-                 <div className="rate-num">{ctrl.post().post.nLike***REMOVED***</div>
+                 <div className="rate-num">{ctrl.post().post.nLike}</div>
                  <button className="rate-button"
                     onclick={function(el){
                         if(Window.user == undefined){
                             data.showSignin = true;
-                      ***REMOVED*** else {
+                        } else {
                             if(!ctrl.voted) {
                                 $.ajax({
                                     type: "POST",
                                     url: "/post/vote",
                                     data: JSON.stringify({
                                         "id": ctrl.postID,
-                                  ***REMOVED***),
+                                    }),
                                     contentType: "application/json",
                                     dataType: "text",
                                     success: function (res) {
                                         ctrl.post().post.nLike += 1;
                                         m.redraw();
-                                  ***REMOVED***
-                              ***REMOVED***);
+                                    }
+                                });
                                 ctrl.voted = true;
-                          ***REMOVED***
-                      ***REMOVED***
-                  ***REMOVED******REMOVED***
+                            }
+                        }
+                    }}
                  >+1</button>
                </div>
              </div>
              <hr className="style3"/>
              <div className="postContent">
-               {m.trust(marked(ctrl.post().post.content))***REMOVED***
+               {m.trust(marked(ctrl.post().post.content))}
              </div>
            </div>
          </div>,
           <hr className="style3"/>,
           Comments(ctrl, ctrl.post(), ctrl.postID, "post")
           
-    ***REMOVED***:[
+      ]:[
           <div className="loading">
               <div class="loader">
                   <div class="inner one"></div>
@@ -81,11 +81,11 @@ var PostView = function(ctrl){
                   <div class="inner three"></div>
               </div>
           </div>
-    ***REMOVED***
-    ***REMOVED***
+      ]
+      }
     </div>
       
-***REMOVED***;
+};
 
 
 

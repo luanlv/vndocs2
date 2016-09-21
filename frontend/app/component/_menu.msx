@@ -12,15 +12,15 @@ var Menu = function(ctrl){
                     <div className="userInfo">
                         <div className="top">
                             <div className="left">
-                                <img src={data.user.avatarURL***REMOVED*** alt="avatar"/>
+                                <img src={data.user.avatarURL} alt="avatar"/>
                             </div>
                                 <div className="right">
                                 <div>Xin chào</div>
-                                <span>{data.user.fullName***REMOVED***</span>
+                                <span>{data.user.fullName}</span>
                             </div>
                         </div>
                         <div className="bot">
-                            <a href={"/signOut?forward=" + m.route()***REMOVED***>Đăng xuất</a>
+                            <a href={"/signOut?forward=" + m.route()}>Đăng xuất</a>
                         </div>
                     </div>
                 ):(
@@ -29,19 +29,19 @@ var Menu = function(ctrl){
                                 onclick={function(){
                                     data.showSignin = true;
                                     data.showSignup = false;
-                              ***REMOVED******REMOVED***
+                                }}
                         ><span>Đăng nhập</span></a> /
                             <a href="#"
                                onclick={function(){
                                    data.showSignin = false;
                                    data.showSignup = true;
-                             ***REMOVED******REMOVED***
+                               }}
                             ><span> Đăng ký</span></a></div>
                         <span style="width: 20px;"></span>
-                        <a href={"/authenticate/facebook" + "?forward=" + m.route()***REMOVED*** class="social-button" id="facebook-connect"> <span> Facebook</span></a>
-                        <a href={"/authenticate/google" + "?forward=" + m.route()***REMOVED*** class="social-button" id="google-connect"> <span> Google</span></a>
+                        <a href={"/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> <span> Facebook</span></a>
+                        <a href={"/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> <span> Google</span></a>
                     </div>
-                )***REMOVED***
+                )}
     
             </div>
             <hr className="style1"/>
@@ -49,11 +49,11 @@ var Menu = function(ctrl){
                 Menu
             </div>
             <div className="list-menu">
-                {fn.runCreateMenu(JSON.parse(Window.menu), 1)***REMOVED***
+                {fn.runCreateMenu(JSON.parse(Window.menu), 1)}
             </div>
         </div>
-  ***REMOVED***;
-***REMOVED***;
+    ];
+};
 
 
 

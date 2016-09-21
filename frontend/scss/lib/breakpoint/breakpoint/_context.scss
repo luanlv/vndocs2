@@ -11,11 +11,11 @@ $private-breakpoint-query-count: 0 !default;
 @function breakpoint-has-context() {
   @if length($private-breakpoint-query-count) {
     @return true;
-***REMOVED***
+  }
   @else {
     @return false;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 //////////////////////////////
 // Breakpoint Get Context
@@ -28,19 +28,19 @@ $private-breakpoint-query-count: 0 !default;
     @if $feature == 'no-query' {
       @if type-of($get) == 'list' and length($get) > 1 and nth($get, 1) == false {
         $get: nth($get, length($get));
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
     @return $get;
-***REMOVED***
+  }
   @else {
     @if breakpoint-has-context() and $feature == 'media' {
       @return breakpoint-get('default media');
-  ***REMOVED***
+    }
     @else {
       @return false;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 //////////////////////////////
 // Private function to set context
@@ -48,43 +48,43 @@ $private-breakpoint-query-count: 0 !default;
 @function private-breakpoint-set-context($feature, $value) {
   @if $value == 'monochrome' {
     $feature: 'monochrome';
-***REMOVED***
+  }
 
   $current: map-get($private-breakpoint-context-holder, $feature);
   @if $current and length($current) == $private-breakpoint-query-count {
-    @warn "You have already queried against `#{$feature***REMOVED***`. Unexpected things may happen if you query against the same feature more than once in the same `and` query. Breakpoint is overwriting the current context with `#{$value***REMOVED***`";
-***REMOVED***
+    @warn "You have already queried against `#{$feature}`. Unexpected things may happen if you query against the same feature more than once in the same `and` query. Breakpoint is overwriting the current context with `#{$value}`";
+  }
 
   @if not map-has-key($private-breakpoint-context-holder, $feature) {
     $v-holder: ();
     @for $i from 1 to $private-breakpoint-query-count {
       @if $feature == 'media' {
         $v-holder: append($v-holder, breakpoint-get('default media'));
-    ***REMOVED***
+      }
       @else {
         $v-holder: append($v-holder, false);
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
     $v-holder: append($v-holder, $value);
     $private-breakpoint-context-holder: map-merge($private-breakpoint-context-holder, ($feature: $v-holder)) !global;
-***REMOVED***
+  }
   @else {
     $v-holder: map-get($private-breakpoint-context-holder, $feature);
     $length: length($v-holder);
     @for $i from $length to $private-breakpoint-query-count - 1 {
       @if $feature == 'media' {
         $v-holder: append($v-holder, breakpoint-get('default media'));
-    ***REMOVED***
+      }
       @else {
         $v-holder: append($v-holder, false);
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
     $v-holder: append($v-holder, $value);
     $private-breakpoint-context-holder: map-merge($private-breakpoint-context-holder, ($feature: $v-holder)) !global;
-***REMOVED***
+  }
 
   @return true;
-***REMOVED***
+}
 
 //////////////////////////////
 // Private function to reset context
@@ -92,4 +92,4 @@ $private-breakpoint-query-count: 0 !default;
 @mixin private-breakpoint-reset-contexts {
   $private-breakpoint-context-holder: () !global;
   $private-breakpoint-query-count: 0 !global;
-***REMOVED***
+}

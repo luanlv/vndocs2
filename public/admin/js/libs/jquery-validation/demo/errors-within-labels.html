@@ -10,13 +10,13 @@
 <script src="../dist/jquery.validate.js"></script>
 
 <style>
-.cmxform fieldset p label span.error { color: red; ***REMOVED***
-form.cmxform { width: 30em; ***REMOVED***
+.cmxform fieldset p label span.error { color: red; }
+form.cmxform { width: 30em; }
 form.cmxform label {
 	width: auto;
 	display: block;
 	float: none;
-***REMOVED***
+}
 </style>
 
 <script>
@@ -24,8 +24,8 @@ form.cmxform label {
 $.validator.setDefaults({
 	submitHandler: function() {
 		alert("submitted!");
-	***REMOVED***
-***REMOVED***);
+	}
+});
 
 $().ready(function() {
 	// validate the form when it is submitted
@@ -36,25 +36,25 @@ $().ready(function() {
 				.closest( "form" )
 					.find( "label[for='" + element.attr( "id" ) + "']" )
 						.append( error );
-		***REMOVED***,
+		},
 		errorElement: "span",
 		messages: {
 			user: {
 				required: " (required)",
 				minlength: " (must be at least 3 characters)"
-			***REMOVED***,
+			},
 			password: {
 				required: " (required)",
 				minlength: " (must be between 5 and 12 characters)",
 				maxlength: " (must be between 5 and 12 characters)"
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***);
+			}
+		}
+	});
 
 	$(".cancel").click(function() {
 		validator.resetForm();
-	***REMOVED***);
-***REMOVED***);
+	});
+});
 </script>
 
 </head>

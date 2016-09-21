@@ -9,23 +9,23 @@
 				margin: 0;
 				height: 100%;
 				font: 13px/1.555 "Trebuchet MS", sans-serif;
-			***REMOVED***
+			}
 			a{
 			    color: #888;
 			    font-weight: bold;
 			    text-decoration: none;
 			    border-bottom: 1px solid #888;
-			***REMOVED***
+			}
 			.main-box {
 				color:#252525;
 				padding: 3px 5px;
 				text-align: justify;
-			***REMOVED***
-			.main-box p{margin: 0 0 14px;***REMOVED***
+			}
+			.main-box p{margin: 0 0 14px;}
 			.main-box .cerr{
 			    color: #f00000;
 			    border-bottom-color: #f00000;
-			***REMOVED***
+			}
 		</style>
 	</head>
 	<body>
@@ -42,32 +42,32 @@
 				var _init = function(handler) {
 					if (document.addEventListener) {
 						window.addEventListener('message', handler, false);
-					***REMOVED*** else {
+					} else {
 						window.attachEvent("onmessage", handler);
-					***REMOVED***;
-				***REMOVED***;
+					};
+				};
 				var _sendCmd = function(o) {
 					var str,
 						type = Object.prototype.toString,
 						fn = o.fn || null,
 						id = o.id || '',
 						target = o.target || window,
-						message = o.message || { 'id': id ***REMOVED***;
+						message = o.message || { 'id': id };
 
 					if (type.call(o.message) == "[object Object]") {
 						(o.message['id']) ? o.message['id'] : o.message['id'] = id;
 						message = o.message;
-					***REMOVED***;
+					};
 
 					str = JSON.stringify(message, fn);
 					target.postMessage(str, '*');
-				***REMOVED***;
+				};
 
 				return {
 					init: _init,
 					send: _sendCmd
-				***REMOVED***;
-			***REMOVED***;
+				};
+			};
 
 			var manageMessageTmp = new ManagerPostMessage;
 
@@ -76,32 +76,32 @@
 					var spell = parent.CKEDITOR.config.wsc.DefaultParams.scriptPath;
 					var serverUrl = parent.CKEDITOR.config.wsc.DefaultParams.serviceHost;
 					return serverUrl + spell;
-				***REMOVED***)();
+				})();
 
 				function loadScript(src, callback) {
 				    var scriptTag = document.createElement("script");
 				   		scriptTag.type = "text/javascript";
-				   	callback ? callback : callback = function() {***REMOVED***;
+				   	callback ? callback : callback = function() {};
 				    if(scriptTag.readyState) {
 				        //IE
 				        scriptTag.onreadystatechange = function() {
 				            if (scriptTag.readyState == "loaded" ||
 				            scriptTag.readyState == "complete") {
 				                scriptTag.onreadystatechange = null;
-				                setTimeout(function(){scriptTag.parentNode.removeChild(scriptTag)***REMOVED***,1)
+				                setTimeout(function(){scriptTag.parentNode.removeChild(scriptTag)},1)
 				                callback();
-				          ***REMOVED***
-				      ***REMOVED***;
-				  ***REMOVED***else{
+				            }
+				        };
+				    }else{
 				        //Others
 				        scriptTag.onload = function() {
-				           setTimeout(function(){scriptTag.parentNode.removeChild(scriptTag)***REMOVED***,1);
+				           setTimeout(function(){scriptTag.parentNode.removeChild(scriptTag)},1);
 				           callback();
-				      ***REMOVED***;
-				  ***REMOVED***;
+				        };
+				    };
 				    scriptTag.src = src;
 				    document.getElementsByTagName("head")[0].appendChild(scriptTag);
-				***REMOVED***;
+				};
 
 
 				window.onload = function(){
@@ -109,10 +109,10 @@
 						manageMessageTmp.send({
 							'id': 'iframeOnload',
 							'target': window.parent
-						***REMOVED***);
-					***REMOVED***);
-				***REMOVED***
-			***REMOVED***)(this);
+						});
+					});
+				}
+			})(this);
 		</script>
 	</body>
 </html>

@@ -10,10 +10,10 @@ import com.mohiva.play.silhouette.api.util.PasswordHasherRegistry
 import com.mohiva.play.silhouette.impl.providers._
 import forms.SignUpForm
 import models.User
-import models.services.{ AuthTokenService, UserService ***REMOVED***
-import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
+import models.services.{ AuthTokenService, UserService }
+import play.api.i18n.{ I18nSupport, Messages, MessagesApi }
 import play.api.libs.concurrent.Execution.Implicits._
-import play.api.libs.mailer.{ Email, MailerClient ***REMOVED***
+import play.api.libs.mailer.{ Email, MailerClient }
 import play.api.mvc.Controller
 import reactivemongo.bson.BSONObjectID
 import utils.silhouette.MyEnv
@@ -52,7 +52,7 @@ class SignUpController @Inject() (
    */
   def view = silhouette.UnsecuredAction.async { implicit request =>
     Future.successful(Ok(views.html.signUp(SignUpForm.form)))
-***REMOVED***
+  }
 
   /**
    * Handles the submitted form.
@@ -96,7 +96,7 @@ class SignUpController @Inject() (
               user <- userService.save(user.copy(avatarURL = avatar))
               //              authInfo <- authInfoRepository.add(loginInfo, authInfo)
               authToken <- authTokenService.create(user.userID)
-          ***REMOVED*** yield {
+            } yield {
               val url = routes.ActivateAccountController.activate(authToken.id).absoluteURL()
               //              mailerClient.send(Email(
               //                subject = Messages("email.sign.up.subject"),
@@ -108,9 +108,9 @@ class SignUpController @Inject() (
 
               silhouette.env.eventBus.publish(SignUpEvent(user, request))
               result
-          ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
+            }
+        }
+      }
     )
-***REMOVED***
-***REMOVED***
+  }
+}

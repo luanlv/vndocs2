@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "გთხოვთ მიუთითოთ საკრედიტო ბარათის კორექტული ნომერი.",
 	equalTo: "გთხოვთ მიუთითოთ ასეთივე მნიშვნელობა კიდევ ერთხელ.",
 	extension: "გთხოვთ აირჩიოთ ფაილი კორექტული გაფართოებით.",
-	maxlength: $.validator.format("დასაშვებია არაუმეტეს {0***REMOVED*** სიმბოლო."),
-	minlength: $.validator.format("აუცილებელია შეიყვანოთ მინიმუმ {0***REMOVED*** სიმბოლო."),
-	rangelength: $.validator.format("ტექსტში სიმბოლოების რაოდენობა უნდა იყოს {0***REMOVED***-დან {1***REMOVED***-მდე."),
-	range: $.validator.format("გთხოვთ შეიყვანოთ ციფრი {0***REMOVED***-დან {1***REMOVED***-მდე."),
-	max: $.validator.format("გთხოვთ შეიყვანოთ ციფრი რომელიც ნაკლებია ან უდრის {0***REMOVED***-ს."),
-	min: $.validator.format("გთხოვთ შეიყვანოთ ციფრი რომელიც მეტია ან უდრის {0***REMOVED***-ს.")
-***REMOVED***);
+	maxlength: $.validator.format("დასაშვებია არაუმეტეს {0} სიმბოლო."),
+	minlength: $.validator.format("აუცილებელია შეიყვანოთ მინიმუმ {0} სიმბოლო."),
+	rangelength: $.validator.format("ტექსტში სიმბოლოების რაოდენობა უნდა იყოს {0}-დან {1}-მდე."),
+	range: $.validator.format("გთხოვთ შეიყვანოთ ციფრი {0}-დან {1}-მდე."),
+	max: $.validator.format("გთხოვთ შეიყვანოთ ციფრი რომელიც ნაკლებია ან უდრის {0}-ს."),
+	min: $.validator.format("გთხოვთ შეიყვანოთ ციფრი რომელიც მეტია ან უდრის {0}-ს.")
+});
 
-***REMOVED***));
+}));

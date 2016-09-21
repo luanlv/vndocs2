@@ -32,11 +32,11 @@ $(document).ready(function() {
 				val += (x<0 || y<0 ? -100 : 100); // - if going back up, + if going down
 
 				// Format for the currency column
-				return '$'+val.toString().replace( /\B(?=(\d{3***REMOVED***)+(?!\d))/g, ',' );
-			***REMOVED***
-		***REMOVED*** ]
-	***REMOVED*** );
-***REMOVED*** );
+				return '$'+val.toString().replace( /\B(?=(\d{3})+(?!\d))/g, ',' );
+			}
+		} ]
+	} );
+} );
 
 
 	</script>
@@ -566,11 +566,11 @@ $(document).ready(function() {
 				val += (x&lt;0 || y&lt;0 ? -100 : 100); // - if going back up, + if going down
 
 				// Format for the currency column
-				return '$'+val.toString().replace( /\B(?=(\d{3***REMOVED***)+(?!\d))/g, ',' );
-			***REMOVED***
-		***REMOVED*** ]
-	***REMOVED*** );
-***REMOVED*** );</code>
+				return '$'+val.toString().replace( /\B(?=(\d{3})+(?!\d))/g, ',' );
+			}
+		} ]
+	} );
+} );</code>
 
 					<p>In addition to the above code, the following Javascript library files are loaded for use in this
 					example:</p>

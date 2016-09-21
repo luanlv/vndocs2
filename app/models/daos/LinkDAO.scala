@@ -14,4 +14,4 @@ trait LinkDAO {
 
   def save(data: Link): Future[Try[Link]]
 
-***REMOVED***
+}

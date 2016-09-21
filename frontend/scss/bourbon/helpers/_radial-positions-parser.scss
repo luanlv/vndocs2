@@ -3,16 +3,16 @@
   $pos:        nth($gradient-pos, 2);
   $shape-size-spec: _shape-size-stripper($shape-size);
 
-  $pre-spec: unquote(if($pos, "#{$pos***REMOVED***, ", null))
-             unquote(if($shape-size, "#{$shape-size***REMOVED***,", null));
-  $pos-spec: if($pos, "at #{$pos***REMOVED***", null);
+  $pre-spec: unquote(if($pos, "#{$pos}, ", null))
+             unquote(if($shape-size, "#{$shape-size},", null));
+  $pos-spec: if($pos, "at #{$pos}", null);
 
-  $spec: "#{$shape-size-spec***REMOVED*** #{$pos-spec***REMOVED***";
+  $spec: "#{$shape-size-spec} #{$pos-spec}";
 
   // Add comma
   @if ($spec != "  ") {
-    $spec: "#{$spec***REMOVED***,";
-***REMOVED***
+    $spec: "#{$spec},";
+  }
 
   @return $pre-spec $spec;
-***REMOVED***
+}

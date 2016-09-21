@@ -129,7 +129,7 @@ var Header = function(ctrl){
       
     </div>
   </header>
-***REMOVED***
-***REMOVED*** ;
+  ]
+} ;
 
 module.exports = Header;

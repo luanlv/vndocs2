@@ -13,5 +13,5 @@
 		clear: "Löschen",
 		weekStart: 1,
 		format: "dd.mm.yyyy"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

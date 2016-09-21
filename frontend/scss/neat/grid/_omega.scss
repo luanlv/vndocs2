@@ -2,7 +2,7 @@
 
 /// Removes the element's gutter margin, regardless of its position in the grid hierarchy or display property. It can target a specific element, or every `nth-child` occurrence. Works only with `block` layouts.
 ///
-/// @param {List***REMOVED*** $query [block]
+/// @param {List} $query [block]
 ///   List of arguments. Supported arguments are `nth-child` selectors (targets a specific pseudo element) and `auto` (targets `last-child`).
 ///
 ///   When passed an `nth-child` argument of type `*n` with `block` display, the omega mixin automatically adds a clear to the `*n+1` th element. Note that composite arguments such as `2n+1` do not support this feature.
@@ -12,76 +12,76 @@
 /// @example scss - Usage
 ///   .element {
 ///     @include omega;
-/// ***REMOVED***
+///   }
 ///
 ///   .nth-element {
 ///     @include omega(4n);
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     margin-right: 0;
-/// ***REMOVED***
+///   }
 ///
 ///   .nth-element:nth-child(4n) {
 ///     margin-right: 0;
-/// ***REMOVED***
+///   }
 ///
 ///   .nth-element:nth-child(4n+1) {
 ///     clear: left;
-/// ***REMOVED***
+///   }
 
 @mixin omega($query: block, $direction: default) {
   $table: belongs-to(table, $query);
   $auto: belongs-to(auto, $query);
 
   @if $direction != default {
-    @include -neat-warn("The omega mixin will no longer take a $direction argument. To change the layout direction, use the direction(){...***REMOVED*** mixin.");
-***REMOVED*** @else {
+    @include -neat-warn("The omega mixin will no longer take a $direction argument. To change the layout direction, use the direction(){...} mixin.");
+  } @else {
     $direction: get-direction($layout-direction, $default-layout-direction);
-***REMOVED***
+  }
 
   @if $table {
     @include -neat-warn("The omega mixin no longer removes padding in table layouts.");
-***REMOVED***
+  }
 
   @if length($query) == 1 {
     @if $auto {
       &:last-child {
-        margin-#{$direction***REMOVED***: 0;
-    ***REMOVED***
-  ***REMOVED***
+        margin-#{$direction}: 0;
+      }
+    }
 
     @else if contains-display-value($query) and $table == false {
-      margin-#{$direction***REMOVED***: 0;
-  ***REMOVED***
+      margin-#{$direction}: 0;
+    }
 
     @else {
       @include nth-child($query, $direction);
-  ***REMOVED***
-***REMOVED*** @else if length($query) == 2 {
+    }
+  } @else if length($query) == 2 {
     @if $auto {
       &:last-child {
-        margin-#{$direction***REMOVED***: 0;
-    ***REMOVED***
-  ***REMOVED*** @else {
+        margin-#{$direction}: 0;
+      }
+    } @else {
       @include nth-child(nth($query, 1), $direction);
-  ***REMOVED***
-***REMOVED*** @else {
+    }
+  } @else {
     @include -neat-warn("Too many arguments passed to the omega() mixin.");
-***REMOVED***
-***REMOVED***
+  }
+}
 
 @mixin nth-child($query, $direction) {
   $opposite-direction: get-opposite-direction($direction);
 
-  &:nth-child(#{$query***REMOVED***) {
-    margin-#{$direction***REMOVED***: 0;
-***REMOVED***
+  &:nth-child(#{$query}) {
+    margin-#{$direction}: 0;
+  }
 
   @if type-of($query) == number and unit($query) == "n" {
-    &:nth-child(#{$query***REMOVED***+1) {
+    &:nth-child(#{$query}+1) {
       clear: $opposite-direction;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

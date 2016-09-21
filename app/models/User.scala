@@ -3,7 +3,7 @@ package models
 import java.util.UUID
 
 import com.mohiva.play.silhouette.api.util.PasswordInfo
-import com.mohiva.play.silhouette.api.{ Identity, LoginInfo ***REMOVED***
+import com.mohiva.play.silhouette.api.{ Identity, LoginInfo }
 import models.daos.TemporalModel
 import org.joda.time.DateTime
 import play.api.libs.json._
@@ -46,16 +46,16 @@ case class User(
       case (Some(f), None) => Some(f)
       case (None, Some(l)) => Some(l)
       case _ => None
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 object User {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
   implicit val passwordFormat = Json.format[PasswordInfo]
   implicit val userFormat = Json.format[User]
-***REMOVED***
+}
 
 case class LightUser(
   userID: UUID,
@@ -64,7 +64,7 @@ case class LightUser(
   avatarURL: Option[String]
 ) extends Identity with TemporalModel {
 
-***REMOVED***
+}
 
 object LightUser {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
@@ -76,7 +76,7 @@ object LightUser {
       user.fullName,
       user.avatarURL
     )
-***REMOVED***
+  }
 
   implicit val lightUserFormat = Json.format[LightUser]
-***REMOVED***
+}

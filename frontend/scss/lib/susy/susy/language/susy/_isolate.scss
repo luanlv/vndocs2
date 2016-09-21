@@ -18,7 +18,7 @@
 
   @include susy-inspect(isolate, $inspect);
   @include isolate-output($output...);
-***REMOVED***
+}
 
 
 // Isolate [function]
@@ -37,10 +37,10 @@
       location: $isolation,
     );
     $isolate: map-merge($isolate, $new);
-***REMOVED***
+  }
 
   @return get-isolation($isolate);
-***REMOVED***
+}
 
 
 // Get Isolation
@@ -56,7 +56,7 @@
 
   @if type-of($location) == number and not(unitless($location)) {
     $width: $location;
-***REMOVED*** @else if $location {
+  } @else if $location {
     $push: $location - 1;
     @if $push > 0 {
       $push: map-merge($input, (
@@ -65,13 +65,13 @@
         spread: wide,
       ));
       $width: get-span-width($push);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @if susy-get(gutter-position, $input) == split
       and susy-get(gutters, $input) > 0 {
     $width: if($width == null, gutters($input), $width + gutters($input));
-***REMOVED***
+  }
 
   @return $width or 0;
-***REMOVED***
+}

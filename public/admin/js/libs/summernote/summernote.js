@@ -13,11 +13,11 @@
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define(['jquery'], factory);
-***REMOVED*** else {
+  } else {
     // Browser globals: jQuery
     factory(window.jQuery);
-***REMOVED***
-***REMOVED***(function ($) {
+  }
+}(function ($) {
   
 
 
@@ -32,35 +32,35 @@
       if (1 < arguments.length) {
         value = optInitialValue;
         isValueSet = true;
-    ***REMOVED***
+      }
       for (idx = 0; length > idx; ++idx) {
         if (this.hasOwnProperty(idx)) {
           if (isValueSet) {
             value = callback(value, this[idx], idx, this);
-        ***REMOVED*** else {
+          } else {
             value = this[idx];
             isValueSet = true;
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
+          }
+        }
+      }
       if (!isValueSet) {
         throw new TypeError('Reduce of empty array with no initial value');
-    ***REMOVED***
+      }
       return value;
-  ***REMOVED***;
-***REMOVED***
+    };
+  }
 
   if ('function' !== typeof Array.prototype.filter) {
     Array.prototype.filter = function (fun/*, thisArg*/) {
       if (this === void 0 || this === null) {
         throw new TypeError();
-    ***REMOVED***
+      }
   
       var t = Object(this);
       var len = t.length >>> 0;
       if (typeof fun !== 'function') {
         throw new TypeError();
-    ***REMOVED***
+      }
   
       var res = [];
       var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
@@ -69,20 +69,20 @@
           var val = t[i];
           if (fun.call(thisArg, val, i, t)) {
             res.push(val);
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
+          }
+        }
+      }
   
       return res;
-  ***REMOVED***;
-***REMOVED***
+    };
+  }
 
   var isSupportAmd = typeof define === 'function' && define.amd;
 
   /**
    * returns whether font is installed or not.
-   * @param {String***REMOVED*** fontName
-   * @return {Boolean***REMOVED***
+   * @param {String} fontName
+   * @return {Boolean}
    */
   var isFontInstalled = function (fontName) {
     var testFontName = fontName === 'Comic Sans MS' ? 'Courier New' : 'Comic Sans MS';
@@ -91,7 +91,7 @@
       left: '-9999px',
       top: '-9999px',
       fontSize: '200px'
-  ***REMOVED***).text('mmmmmmmmmwwwwwww').appendTo(document.body);
+    }).text('mmmmmmmmmwwwwwww').appendTo(document.body);
 
     var originalWidth = $tester.css('fontFamily', testFontName).width();
     var width = $tester.css('fontFamily', fontName + ',' + testFontName).width();
@@ -99,7 +99,7 @@
     $tester.remove();
 
     return originalWidth !== width;
-***REMOVED***;
+  };
 
   /**
    * Object which check platform and agent
@@ -113,7 +113,7 @@
     hasCodeMirror: isSupportAmd ? require.specified('CodeMirror') : !!window.CodeMirror,
     isFontInstalled: isFontInstalled,
     isW3CRangeSupport: !!document.createRange
-***REMOVED***;
+  };
 
   /**
    * func utils (for high-order func's arg)
@@ -122,54 +122,54 @@
     var eq = function (itemA) {
       return function (itemB) {
         return itemA === itemB;
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     var eq2 = function (itemA, itemB) {
       return itemA === itemB;
-  ***REMOVED***;
+    };
 
     var peq2 = function (propName) {
       return function (itemA, itemB) {
         return itemA[propName] === itemB[propName];
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     var ok = function () {
       return true;
-  ***REMOVED***;
+    };
 
     var fail = function () {
       return false;
-  ***REMOVED***;
+    };
 
     var not = function (f) {
       return function () {
         return !f.apply(f, arguments);
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     var and = function (fA, fB) {
       return function (item) {
         return fA(item) && fB(item);
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     var self = function (a) {
       return a;
-  ***REMOVED***;
+    };
 
     var idCounter = 0;
 
     /**
      * generate a globally-unique id
      *
-     * @param {String***REMOVED*** [prefix]
+     * @param {String} [prefix]
      */
     var uniqueId = function (prefix) {
       var id = ++idCounter + '';
       return prefix ? prefix + id : id;
-  ***REMOVED***;
+    };
 
     /**
      * returns bnd (bounds) from rect
@@ -177,12 +177,12 @@
      * - IE Compatability Issue: http://goo.gl/sRLOAo
      * - Scroll Issue: http://goo.gl/sNjUc
      *
-     * @param {Rect***REMOVED*** rect
-     * @return {Object***REMOVED*** bounds
-     * @return {Number***REMOVED*** bounds.top
-     * @return {Number***REMOVED*** bounds.left
-     * @return {Number***REMOVED*** bounds.width
-     * @return {Number***REMOVED*** bounds.height
+     * @param {Rect} rect
+     * @return {Object} bounds
+     * @return {Number} bounds.top
+     * @return {Number} bounds.left
+     * @return {Number} bounds.width
+     * @return {Number} bounds.height
      */
     var rect2bnd = function (rect) {
       var $document = $(document);
@@ -191,23 +191,23 @@
         left: rect.left + $document.scrollLeft(),
         width: rect.right - rect.left,
         height: rect.bottom - rect.top
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     /**
      * returns a copy of the object where the keys have become the values and the values the keys.
-     * @param {Object***REMOVED*** obj
-     * @return {Object***REMOVED***
+     * @param {Object} obj
+     * @return {Object}
      */
     var invertObject = function (obj) {
-      var inverted = {***REMOVED***;
+      var inverted = {};
       for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
           inverted[obj[key]] = key;
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
       return inverted;
-  ***REMOVED***;
+    };
 
     return {
       eq: eq,
@@ -221,8 +221,8 @@
       uniqueId: uniqueId,
       rect2bnd: rect2bnd,
       invertObject: invertObject
-  ***REMOVED***;
-***REMOVED***)();
+    };
+  })();
 
   /**
    * list utils
@@ -231,38 +231,38 @@
     /**
      * returns the first item of an array.
      *
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var head = function (array) {
       return array[0];
-  ***REMOVED***;
+    };
 
     /**
      * returns the last item of an array.
      *
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var last = function (array) {
       return array[array.length - 1];
-  ***REMOVED***;
+    };
 
     /**
      * returns everything but the last entry of the array.
      *
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var initial = function (array) {
       return array.slice(0, array.length - 1);
-  ***REMOVED***;
+    };
 
     /**
      * returns the rest of the items in an array.
      *
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var tail = function (array) {
       return array.slice(1);
-  ***REMOVED***;
+    };
 
     /**
      * returns item of array
@@ -272,9 +272,9 @@
         var item = array[idx];
         if (pred(item)) {
           return item;
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***;
+        }
+      }
+    };
 
     /**
      * returns true if all of the values in the array pass the predicate truth test.
@@ -283,82 +283,82 @@
       for (var idx = 0, len = array.length; idx < len; idx ++) {
         if (!pred(array[idx])) {
           return false;
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
       return true;
-  ***REMOVED***;
+    };
 
     /**
      * returns true if the value is present in the list.
      */
     var contains = function (array, item) {
       return $.inArray(item, array) !== -1;
-  ***REMOVED***;
+    };
 
     /**
      * get sum from a list
      *
-     * @param {Array***REMOVED*** array - array
-     * @param {Function***REMOVED*** fn - iterator
+     * @param {Array} array - array
+     * @param {Function} fn - iterator
      */
     var sum = function (array, fn) {
       fn = fn || func.self;
       return array.reduce(function (memo, v) {
         return memo + fn(v);
-    ***REMOVED***, 0);
-  ***REMOVED***;
+      }, 0);
+    };
   
     /**
      * returns a copy of the collection with array type.
-     * @param {Collection***REMOVED*** collection - collection eg) node.childNodes, ...
+     * @param {Collection} collection - collection eg) node.childNodes, ...
      */
     var from = function (collection) {
       var result = [], idx = -1, length = collection.length;
       while (++idx < length) {
         result[idx] = collection[idx];
-    ***REMOVED***
+      }
       return result;
-  ***REMOVED***;
+    };
   
     /**
      * cluster elements by predicate function.
      *
-     * @param {Array***REMOVED*** array - array
-     * @param {Function***REMOVED*** fn - predicate function for cluster rule
-     * @param {Array[]***REMOVED***
+     * @param {Array} array - array
+     * @param {Function} fn - predicate function for cluster rule
+     * @param {Array[]}
      */
     var clusterBy = function (array, fn) {
-      if (!array.length) { return []; ***REMOVED***
+      if (!array.length) { return []; }
       var aTail = tail(array);
       return aTail.reduce(function (memo, v) {
         var aLast = last(memo);
         if (fn(last(aLast), v)) {
           aLast[aLast.length] = v;
-      ***REMOVED*** else {
+        } else {
           memo[memo.length] = [v];
-      ***REMOVED***
+        }
         return memo;
-    ***REMOVED***, [[head(array)]]);
-  ***REMOVED***;
+      }, [[head(array)]]);
+    };
   
     /**
      * returns a copy of the array with all falsy values removed
      *
-     * @param {Array***REMOVED*** array - array
-     * @param {Function***REMOVED*** fn - predicate function for cluster rule
+     * @param {Array} array - array
+     * @param {Function} fn - predicate function for cluster rule
      */
     var compact = function (array) {
       var aResult = [];
       for (var idx = 0, len = array.length; idx < len; idx ++) {
-        if (array[idx]) { aResult.push(array[idx]); ***REMOVED***
-    ***REMOVED***
+        if (array[idx]) { aResult.push(array[idx]); }
+      }
       return aResult;
-  ***REMOVED***;
+    };
 
     /**
      * produces a duplicate-free version of the array
      *
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var unique = function (array) {
       var results = [];
@@ -366,40 +366,40 @@
       for (var idx = 0, len = array.length; idx < len; idx ++) {
         if (!contains(results, array[idx])) {
           results.push(array[idx]);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       return results;
-  ***REMOVED***;
+    };
 
     /**
      * returns next item.
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var next = function (array, item) {
       var idx = array.indexOf(item);
-      if (idx === -1) { return null; ***REMOVED***
+      if (idx === -1) { return null; }
 
       return array[idx + 1];
-  ***REMOVED***;
+    };
 
     /**
      * returns prev item.
-     * @param {Array***REMOVED*** array
+     * @param {Array} array
      */
     var prev = function (array, item) {
       var idx = array.indexOf(item);
-      if (idx === -1) { return null; ***REMOVED***
+      if (idx === -1) { return null; }
 
       return array[idx - 1];
-  ***REMOVED***;
+    };
 
   
     return { head: head, last: last, initial: initial, tail: tail,
              prev: prev, next: next, find: find, contains: contains,
              all: all, sum: sum, from: from,
-             clusterBy: clusterBy, compact: compact, unique: unique ***REMOVED***;
-***REMOVED***)();
+             clusterBy: clusterBy, compact: compact, unique: unique };
+  })();
 
 
   var NBSP_CHAR = String.fromCharCode(160);
@@ -412,28 +412,28 @@
     /**
      * returns whether node is `note-editable` or not.
      *
-     * @param {Node***REMOVED*** node
-     * @return {Boolean***REMOVED***
+     * @param {Node} node
+     * @return {Boolean}
      */
     var isEditable = function (node) {
       return node && $(node).hasClass('note-editable');
-  ***REMOVED***;
+    };
 
     /**
      * returns whether node is `note-control-sizing` or not.
      *
-     * @param {Node***REMOVED*** node
-     * @return {Boolean***REMOVED***
+     * @param {Node} node
+     * @return {Boolean}
      */
     var isControlSizing = function (node) {
       return node && $(node).hasClass('note-control-sizing');
-  ***REMOVED***;
+    };
 
     /**
      * build layoutInfo from $editor(.note-editor)
      *
-     * @param {jQuery***REMOVED*** $editor
-     * @return {Object***REMOVED***
+     * @param {jQuery} $editor
+     * @return {Object}
      */
     var buildLayoutInfo = function ($editor) {
       var makeFinder;
@@ -442,24 +442,24 @@
       if ($editor.hasClass('note-air-editor')) {
         var id = list.last($editor.attr('id').split('-'));
         makeFinder = function (sIdPrefix) {
-          return function () { return $(sIdPrefix + id); ***REMOVED***;
-      ***REMOVED***;
+          return function () { return $(sIdPrefix + id); };
+        };
 
         return {
-          editor: function () { return $editor; ***REMOVED***,
-          editable: function () { return $editor; ***REMOVED***,
+          editor: function () { return $editor; },
+          editable: function () { return $editor; },
           popover: makeFinder('#note-popover-'),
           handle: makeFinder('#note-handle-'),
           dialog: makeFinder('#note-dialog-')
-      ***REMOVED***;
+        };
 
         // frame mode
-    ***REMOVED*** else {
+      } else {
         makeFinder = function (sClassName) {
-          return function () { return $editor.find(sClassName); ***REMOVED***;
-      ***REMOVED***;
+          return function () { return $editor.find(sClassName); };
+        };
         return {
-          editor: function () { return $editor; ***REMOVED***,
+          editor: function () { return $editor; },
           dropzone: makeFinder('.note-dropzone'),
           toolbar: makeFinder('.note-toolbar'),
           editable: makeFinder('.note-editable'),
@@ -468,26 +468,26 @@
           popover: makeFinder('.note-popover'),
           handle: makeFinder('.note-handle'),
           dialog: makeFinder('.note-dialog')
-      ***REMOVED***;
-    ***REMOVED***
-  ***REMOVED***;
+        };
+      }
+    };
 
     /**
      * returns predicate which judge whether nodeName is same
      *
-     * @param {String***REMOVED*** nodeName
-     * @return {String***REMOVED***
+     * @param {String} nodeName
+     * @return {String}
      */
     var makePredByNodeName = function (nodeName) {
       nodeName = nodeName.toUpperCase();
       return function (node) {
         return node && node.nodeName.toUpperCase() === nodeName;
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     var isText = function (node) {
       return node && node.nodeType === 3;
-  ***REMOVED***;
+    };
 
     /**
      * ex) br, col, embed, hr, img, input, ...
@@ -495,50 +495,50 @@
      */
     var isVoid = function (node) {
       return node && /^BR|^IMG|^HR/.test(node.nodeName.toUpperCase());
-  ***REMOVED***;
+    };
 
     var isPara = function (node) {
       if (isEditable(node)) {
         return false;
-    ***REMOVED***
+      }
 
       // Chrome(v31.0), FF(v25.0.1) use DIV for paragraph
       return node && /^DIV|^P|^LI|^H[1-7]/.test(node.nodeName.toUpperCase());
-  ***REMOVED***;
+    };
 
     var isLi = makePredByNodeName('LI');
 
     var isPurePara = function (node) {
       return isPara(node) && !isLi(node);
-  ***REMOVED***;
+    };
 
     var isInline = function (node) {
       return !isBodyContainer(node) && !isList(node) && !isPara(node);
-  ***REMOVED***;
+    };
 
     var isList = function (node) {
       return node && /^UL|^OL/.test(node.nodeName.toUpperCase());
-  ***REMOVED***;
+    };
 
     var isCell = function (node) {
       return node && /^TD|^TH/.test(node.nodeName.toUpperCase());
-  ***REMOVED***;
+    };
 
     var isBlockquote = makePredByNodeName('BLOCKQUOTE');
 
     var isBodyContainer = function (node) {
       return isCell(node) || isBlockquote(node) || isEditable(node);
-  ***REMOVED***;
+    };
 
     var isAnchor = makePredByNodeName('A');
 
     var isParaInline = function (node) {
       return isInline(node) && !!ancestor(node, isPara);
-  ***REMOVED***;
+    };
 
     var isBodyInline = function (node) {
       return isInline(node) && !ancestor(node, isPara);
-  ***REMOVED***;
+    };
 
     var isBody = makePredByNodeName('BODY');
 
@@ -550,34 +550,34 @@
     /**
      * returns #text's text size or element's childNodes size
      *
-     * @param {Node***REMOVED*** node
+     * @param {Node} node
      */
     var nodeLength = function (node) {
       if (isText(node)) {
         return node.nodeValue.length;
-    ***REMOVED***
+      }
 
       return node.childNodes.length;
-  ***REMOVED***;
+    };
 
     /**
      * returns whether node is empty or not.
      *
-     * @param {Node***REMOVED*** node
-     * @return {Boolean***REMOVED***
+     * @param {Node} node
+     * @return {Boolean}
      */
     var isEmpty = function (node) {
       var len = nodeLength(node);
 
       if (len === 0) {
         return true;
-    ***REMOVED*** else if (!dom.isText(node) && len === 1 && node.innerHTML === blankHTML) {
+      } else if (!dom.isText(node) && len === 1 && node.innerHTML === blankHTML) {
         // ex) <p><br></p>, <span><br></span>
         return true;
-    ***REMOVED***
+      }
 
       return false;
-  ***REMOVED***;
+    };
 
     /**
      * padding blankHTML if node is empty (for cursor position)
@@ -585,30 +585,30 @@
     var paddingBlankHTML = function (node) {
       if (!isVoid(node) && !nodeLength(node)) {
         node.innerHTML = blankHTML;
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * find nearest ancestor predicate hit
      *
-     * @param {Node***REMOVED*** node
-     * @param {Function***REMOVED*** pred - predicate function
+     * @param {Node} node
+     * @param {Function} pred - predicate function
      */
     var ancestor = function (node, pred) {
       while (node) {
-        if (pred(node)) { return node; ***REMOVED***
-        if (isEditable(node)) { break; ***REMOVED***
+        if (pred(node)) { return node; }
+        if (isEditable(node)) { break; }
 
         node = node.parentNode;
-    ***REMOVED***
+      }
       return null;
-  ***REMOVED***;
+    };
 
     /**
      * returns new array of ancestor nodes (until predicate hit).
      *
-     * @param {Node***REMOVED*** node
-     * @param {Function***REMOVED*** [optional] pred - predicate function
+     * @param {Node} node
+     * @param {Function} [optional] pred - predicate function
      */
     var listAncestor = function (node, pred) {
       pred = pred || func.fail;
@@ -617,12 +617,12 @@
       ancestor(node, function (el) {
         if (!isEditable(el)) {
           ancestors.push(el);
-      ***REMOVED***
+        }
 
         return pred(el);
-    ***REMOVED***);
+      });
       return ancestors;
-  ***REMOVED***;
+    };
 
     /**
      * find farthest ancestor predicate hit
@@ -630,63 +630,63 @@
     var lastAncestor = function (node, pred) {
       var ancestors = listAncestor(node);
       return list.last(ancestors.filter(pred));
-  ***REMOVED***;
+    };
 
     /**
      * returns common ancestor node between two nodes.
      *
-     * @param {Node***REMOVED*** nodeA
-     * @param {Node***REMOVED*** nodeB
+     * @param {Node} nodeA
+     * @param {Node} nodeB
      */
     var commonAncestor = function (nodeA, nodeB) {
       var ancestors = listAncestor(nodeA);
       for (var n = nodeB; n; n = n.parentNode) {
-        if ($.inArray(n, ancestors) > -1) { return n; ***REMOVED***
-    ***REMOVED***
+        if ($.inArray(n, ancestors) > -1) { return n; }
+      }
       return null; // difference document area
-  ***REMOVED***;
+    };
 
     /**
      * listing all previous siblings (until predicate hit).
      *
-     * @param {Node***REMOVED*** node
-     * @param {Function***REMOVED*** [optional] pred - predicate function
+     * @param {Node} node
+     * @param {Function} [optional] pred - predicate function
      */
     var listPrev = function (node, pred) {
       pred = pred || func.fail;
 
       var nodes = [];
       while (node) {
-        if (pred(node)) { break; ***REMOVED***
+        if (pred(node)) { break; }
         nodes.push(node);
         node = node.previousSibling;
-    ***REMOVED***
+      }
       return nodes;
-  ***REMOVED***;
+    };
 
     /**
      * listing next siblings (until predicate hit).
      *
-     * @param {Node***REMOVED*** node
-     * @param {Function***REMOVED*** [pred] - predicate function
+     * @param {Node} node
+     * @param {Function} [pred] - predicate function
      */
     var listNext = function (node, pred) {
       pred = pred || func.fail;
 
       var nodes = [];
       while (node) {
-        if (pred(node)) { break; ***REMOVED***
+        if (pred(node)) { break; }
         nodes.push(node);
         node = node.nextSibling;
-    ***REMOVED***
+      }
       return nodes;
-  ***REMOVED***;
+    };
 
     /**
      * listing descendant nodes
      *
-     * @param {Node***REMOVED*** node
-     * @param {Function***REMOVED*** [pred] - predicate function
+     * @param {Node} node
+     * @param {Function} [pred] - predicate function
      */
     var listDescendant = function (node, pred) {
       var descendents = [];
@@ -696,21 +696,21 @@
       (function fnWalk(current) {
         if (node !== current && pred(current)) {
           descendents.push(current);
-      ***REMOVED***
+        }
         for (var idx = 0, len = current.childNodes.length; idx < len; idx++) {
           fnWalk(current.childNodes[idx]);
-      ***REMOVED***
-    ***REMOVED***)(node);
+        }
+      })(node);
 
       return descendents;
-  ***REMOVED***;
+    };
 
     /**
      * wrap node with new tag.
      *
-     * @param {Node***REMOVED*** node
-     * @param {Node***REMOVED*** tagName of wrapper
-     * @return {Node***REMOVED*** - wrapper
+     * @param {Node} node
+     * @param {Node} tagName of wrapper
+     * @return {Node} - wrapper
      */
     var wrap = function (node, wrapperName) {
       var parent = node.parentNode;
@@ -720,126 +720,126 @@
       wrapper.appendChild(node);
 
       return wrapper;
-  ***REMOVED***;
+    };
 
     /**
      * insert node after preceding
      *
-     * @param {Node***REMOVED*** node
-     * @param {Node***REMOVED*** preceding - predicate function
+     * @param {Node} node
+     * @param {Node} preceding - predicate function
      */
     var insertAfter = function (node, preceding) {
       var next = preceding.nextSibling, parent = preceding.parentNode;
       if (next) {
         parent.insertBefore(node, next);
-    ***REMOVED*** else {
+      } else {
         parent.appendChild(node);
-    ***REMOVED***
+      }
       return node;
-  ***REMOVED***;
+    };
 
     /**
      * append elements.
      *
-     * @param {Node***REMOVED*** node
-     * @param {Collection***REMOVED*** aChild
+     * @param {Node} node
+     * @param {Collection} aChild
      */
     var appendChildNodes = function (node, aChild) {
       $.each(aChild, function (idx, child) {
         node.appendChild(child);
-    ***REMOVED***);
+      });
       return node;
-  ***REMOVED***;
+    };
 
     /**
      * returns whether boundaryPoint is left edge or not.
      *
-     * @param {BoundaryPoint***REMOVED*** point
-     * @return {Boolean***REMOVED***
+     * @param {BoundaryPoint} point
+     * @return {Boolean}
      */
     var isLeftEdgePoint = function (point) {
       return point.offset === 0;
-  ***REMOVED***;
+    };
 
     /**
      * returns whether boundaryPoint is right edge or not.
      *
-     * @param {BoundaryPoint***REMOVED*** point
-     * @return {Boolean***REMOVED***
+     * @param {BoundaryPoint} point
+     * @return {Boolean}
      */
     var isRightEdgePoint = function (point) {
       return point.offset === nodeLength(point.node);
-  ***REMOVED***;
+    };
 
     /**
      * returns whether boundaryPoint is edge or not.
      *
-     * @param {BoundaryPoint***REMOVED*** point
-     * @return {Boolean***REMOVED***
+     * @param {BoundaryPoint} point
+     * @return {Boolean}
      */
     var isEdgePoint = function (point) {
       return isLeftEdgePoint(point) || isRightEdgePoint(point);
-  ***REMOVED***;
+    };
 
     /**
      * returns wheter node is left edge of ancestor or not.
      *
-     * @param {Node***REMOVED*** node
-     * @param {Node***REMOVED*** ancestor
-     * @return {Boolean***REMOVED***
+     * @param {Node} node
+     * @param {Node} ancestor
+     * @return {Boolean}
      */
     var isLeftEdgeOf = function (node, ancestor) {
       while (node && node !== ancestor) {
         if (position(node) !== 0) {
           return false;
-      ***REMOVED***
+        }
         node = node.parentNode;
-    ***REMOVED***
+      }
 
       return true;
-  ***REMOVED***;
+    };
 
     /**
      * returns whether node is right edge of ancestor or not.
      *
-     * @param {Node***REMOVED*** node
-     * @param {Node***REMOVED*** ancestor
-     * @return {Boolean***REMOVED***
+     * @param {Node} node
+     * @param {Node} ancestor
+     * @return {Boolean}
      */
     var isRightEdgeOf = function (node, ancestor) {
       while (node && node !== ancestor) {
         if (position(node) !== nodeLength(node.parentNode) - 1) {
           return false;
-      ***REMOVED***
+        }
         node = node.parentNode;
-    ***REMOVED***
+      }
 
       return true;
-  ***REMOVED***;
+    };
 
     /**
      * returns offset from parent.
      *
-     * @param {Node***REMOVED*** node
+     * @param {Node} node
      */
     var position = function (node) {
       var offset = 0;
       while ((node = node.previousSibling)) {
         offset += 1;
-    ***REMOVED***
+      }
       return offset;
-  ***REMOVED***;
+    };
 
     var hasChildren = function (node) {
       return !!(node && node.childNodes && node.childNodes.length);
-  ***REMOVED***;
+    };
 
     /**
      * returns previous boundaryPoint
      *
-     * @param {BoundaryPoint***REMOVED*** point
-     * @param {Boolean***REMOVED*** isSkipInnerOffset
-     * @return {BoundaryPoint***REMOVED***
+     * @param {BoundaryPoint} point
+     * @param {Boolean} isSkipInnerOffset
+     * @return {BoundaryPoint}
      */
     var prevPoint = function (point, isSkipInnerOffset) {
       var node, offset;
@@ -847,30 +847,30 @@
       if (point.offset === 0) {
         if (isEditable(point.node)) {
           return null;
-      ***REMOVED***
+        }
 
         node = point.node.parentNode;
         offset = position(point.node);
-    ***REMOVED*** else if (hasChildren(point.node)) {
+      } else if (hasChildren(point.node)) {
         node = point.node.childNodes[point.offset - 1];
         offset = nodeLength(node);
-    ***REMOVED*** else {
+      } else {
         node = point.node;
         offset = isSkipInnerOffset ? 0 : point.offset - 1;
-    ***REMOVED***
+      }
 
       return {
         node: node,
         offset: offset
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     /**
      * returns next boundaryPoint
      *
-     * @param {BoundaryPoint***REMOVED*** point
-     * @param {Boolean***REMOVED*** isSkipInnerOffset
-     * @return {BoundaryPoint***REMOVED***
+     * @param {BoundaryPoint} point
+     * @param {Boolean} isSkipInnerOffset
+     * @return {BoundaryPoint}
      */
     var nextPoint = function (point, isSkipInnerOffset) {
       var node, offset;
@@ -878,94 +878,94 @@
       if (nodeLength(point.node) === point.offset) {
         if (isEditable(point.node)) {
           return null;
-      ***REMOVED***
+        }
 
         node = point.node.parentNode;
         offset = position(point.node) + 1;
-    ***REMOVED*** else if (hasChildren(point.node)) {
+      } else if (hasChildren(point.node)) {
         node = point.node.childNodes[point.offset];
         offset = 0;
-    ***REMOVED*** else {
+      } else {
         node = point.node;
         offset = isSkipInnerOffset ? nodeLength(point.node) : point.offset + 1;
-    ***REMOVED***
+      }
 
       return {
         node: node,
         offset: offset
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     /**
      * returns whether pointA and pointB is same or not.
      *
-     * @param {BoundaryPoint***REMOVED*** pointA
-     * @param {BoundaryPoint***REMOVED*** pointB
-     * @return {Boolean***REMOVED***
+     * @param {BoundaryPoint} pointA
+     * @param {BoundaryPoint} pointB
+     * @return {Boolean}
      */
     var isSamePoint = function (pointA, pointB) {
       return pointA.node === pointB.node && pointA.offset === pointB.offset;
-  ***REMOVED***;
+    };
 
     /**
      * returns whether point is visible (can set cursor) or not.
      * 
-     * @param {BoundaryPoint***REMOVED*** point
-     * @return {Boolean***REMOVED***
+     * @param {BoundaryPoint} point
+     * @return {Boolean}
      */
     var isVisiblePoint = function (point) {
       if (isText(point.node) || !hasChildren(point.node) || isEmpty(point.node)) {
         return true;
-    ***REMOVED***
+      }
 
       var leftNode = point.node.childNodes[point.offset - 1];
       var rightNode = point.node.childNodes[point.offset];
       if ((!leftNode || isVoid(leftNode)) && (!rightNode || isVoid(rightNode))) {
         return true;
-    ***REMOVED***
+      }
 
       return false;
-  ***REMOVED***;
+    };
 
     /**
-     * @param {BoundaryPoint***REMOVED*** point
-     * @param {Function***REMOVED*** pred
-     * @return {BoundaryPoint***REMOVED***
+     * @param {BoundaryPoint} point
+     * @param {Function} pred
+     * @return {BoundaryPoint}
      */
     var prevPointUntil = function (point, pred) {
       while (point) {
         if (pred(point)) {
           return point;
-      ***REMOVED***
+        }
 
         point = prevPoint(point);
-    ***REMOVED***
+      }
 
       return null;
-  ***REMOVED***;
+    };
 
     /**
-     * @param {BoundaryPoint***REMOVED*** point
-     * @param {Function***REMOVED*** pred
-     * @return {BoundaryPoint***REMOVED***
+     * @param {BoundaryPoint} point
+     * @param {Function} pred
+     * @return {BoundaryPoint}
      */
     var nextPointUntil = function (point, pred) {
       while (point) {
         if (pred(point)) {
           return point;
-      ***REMOVED***
+        }
 
         point = nextPoint(point);
-    ***REMOVED***
+      }
 
       return null;
-  ***REMOVED***;
+    };
 
     /**
-     * @param {BoundaryPoint***REMOVED*** startPoint
-     * @param {BoundaryPoint***REMOVED*** endPoint
-     * @param {Function***REMOVED*** handler
-     * @param {Boolean***REMOVED*** isSkipInnerOffset
+     * @param {BoundaryPoint} startPoint
+     * @param {BoundaryPoint} endPoint
+     * @param {Function} handler
+     * @param {Boolean} isSkipInnerOffset
      */
     var walkPoint = function (startPoint, endPoint, handler, isSkipInnerOffset) {
       var point = startPoint;
@@ -975,50 +975,50 @@
 
         if (isSamePoint(point, endPoint)) {
           break;
-      ***REMOVED***
+        }
 
         var isSkipOffset = isSkipInnerOffset &&
                            startPoint.node !== point.node &&
                            endPoint.node !== point.node;
         point = nextPoint(point, isSkipOffset);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * return offsetPath(array of offset) from ancestor
      *
-     * @param {Node***REMOVED*** ancestor - ancestor node
-     * @param {Node***REMOVED*** node
+     * @param {Node} ancestor - ancestor node
+     * @param {Node} node
      */
     var makeOffsetPath = function (ancestor, node) {
       var ancestors = listAncestor(node, func.eq(ancestor));
       return $.map(ancestors, position).reverse();
-  ***REMOVED***;
+    };
 
     /**
      * return element from offsetPath(array of offset)
      *
-     * @param {Node***REMOVED*** ancestor - ancestor node
-     * @param {array***REMOVED*** aOffset - offsetPath
+     * @param {Node} ancestor - ancestor node
+     * @param {array} aOffset - offsetPath
      */
     var fromOffsetPath = function (ancestor, aOffset) {
       var current = ancestor;
       for (var i = 0, len = aOffset.length; i < len; i++) {
         if (current.childNodes.length <= aOffset[i]) {
           current = current.childNodes[current.childNodes.length - 1];
-      ***REMOVED*** else {
+        } else {
           current = current.childNodes[aOffset[i]];
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
       return current;
-  ***REMOVED***;
+    };
 
     /**
      * split element or #text
      *
-     * @param {BoundaryPoint***REMOVED*** point
-     * @param {Boolean***REMOVED*** [isSkipPaddingBlankHTML]
-     * @return {Node***REMOVED*** right node of boundaryPoint
+     * @param {BoundaryPoint} point
+     * @param {Boolean} [isSkipPaddingBlankHTML]
+     * @return {Node} right node of boundaryPoint
      */
     var splitNode = function (point, isSkipPaddingBlankHTML) {
       // split #text
@@ -1026,12 +1026,12 @@
         // edge case
         if (isLeftEdgePoint(point)) {
           return point.node;
-      ***REMOVED*** else if (isRightEdgePoint(point)) {
+        } else if (isRightEdgePoint(point)) {
           return point.node.nextSibling;
-      ***REMOVED***
+        }
 
         return point.node.splitText(point.offset);
-    ***REMOVED***
+      }
 
       // split element
       var childNode = point.node.childNodes[point.offset];
@@ -1041,18 +1041,18 @@
       if (!isSkipPaddingBlankHTML) {
         paddingBlankHTML(point.node);
         paddingBlankHTML(clone);
-    ***REMOVED***
+      }
 
       return clone;
-  ***REMOVED***;
+    };
 
     /**
      * split tree by point
      *
-     * @param {Node***REMOVED*** root - split root
-     * @param {BoundaryPoint***REMOVED*** point
-     * @param {Boolean***REMOVED*** [isSkipPaddingBlankHTML]
-     * @return {Node***REMOVED*** right node of boundaryPoint
+     * @param {Node} root - split root
+     * @param {BoundaryPoint} point
+     * @param {Boolean} [isSkipPaddingBlankHTML]
+     * @return {Node} right node of boundaryPoint
      */
     var splitTree = function (root, point, isSkipPaddingBlankHTML) {
       // ex) [#text, <span>, <p>]
@@ -1060,43 +1060,43 @@
 
       if (!ancestors.length) {
         return null;
-    ***REMOVED*** else if (ancestors.length === 1) {
+      } else if (ancestors.length === 1) {
         return splitNode(point, isSkipPaddingBlankHTML);
-    ***REMOVED***
+      }
 
       return ancestors.reduce(function (node, parent) {
         var clone = insertAfter(parent.cloneNode(false), parent);
 
         if (node === point.node) {
           node = splitNode(point, isSkipPaddingBlankHTML);
-      ***REMOVED***
+        }
 
         appendChildNodes(clone, listNext(node));
 
         if (!isSkipPaddingBlankHTML) {
           paddingBlankHTML(parent);
           paddingBlankHTML(clone);
-      ***REMOVED***
+        }
         return clone;
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     var create = function (nodeName) {
       return document.createElement(nodeName);
-  ***REMOVED***;
+    };
 
     var createText = function (text) {
       return document.createTextNode(text);
-  ***REMOVED***;
+    };
 
     /**
      * remove node, (isRemoveChild: remove child or not)
-     * @param {Node***REMOVED*** node
-     * @param {Boolean***REMOVED*** isRemoveChild
+     * @param {Node} node
+     * @param {Boolean} isRemoveChild
      */
     var remove = function (node, isRemoveChild) {
-      if (!node || !node.parentNode) { return; ***REMOVED***
-      if (node.removeNode) { return node.removeNode(isRemoveChild); ***REMOVED***
+      if (!node || !node.parentNode) { return; }
+      if (node.removeNode) { return node.removeNode(isRemoveChild); }
 
       var parent = node.parentNode;
       if (!isRemoveChild) {
@@ -1104,64 +1104,64 @@
         var i, len;
         for (i = 0, len = node.childNodes.length; i < len; i++) {
           nodes.push(node.childNodes[i]);
-      ***REMOVED***
+        }
 
         for (i = 0, len = nodes.length; i < len; i++) {
           parent.insertBefore(nodes[i], node);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       parent.removeChild(node);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {Node***REMOVED*** node
-     * @param {Function***REMOVED*** pred
+     * @param {Node} node
+     * @param {Function} pred
      */
     var removeWhile = function (node, pred) {
       while (node) {
         if (isEditable(node) || !pred(node)) {
           break;
-      ***REMOVED***
+        }
 
         var parent = node.parentNode;
         remove(node);
         node = parent;
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * replace node with provided nodeName
      *
-     * @param {Node***REMOVED*** node
-     * @param {String***REMOVED*** nodeName
-     * @return {Node***REMOVED*** - new node
+     * @param {Node} node
+     * @param {String} nodeName
+     * @return {Node} - new node
      */
     var replace = function (node, nodeName) {
       if (node.nodeName.toUpperCase() === nodeName.toUpperCase()) {
         return node;
-    ***REMOVED***
+      }
 
       var newNode = create(nodeName);
 
       if (node.style.cssText) {
         newNode.style.cssText = node.style.cssText;
-    ***REMOVED***
+      }
 
       appendChildNodes(newNode, list.from(node.childNodes));
       insertAfter(newNode, node);
       remove(node);
 
       return newNode;
-  ***REMOVED***;
+    };
 
     var isTextarea = makePredByNodeName('TEXTAREA');
 
     /**
      * get the HTML contents of node 
      *
-     * @param {jQuery***REMOVED*** $node
-     * @param {Boolean***REMOVED*** [isNewlineOnBlock]
+     * @param {jQuery} $node
+     * @param {Boolean} [isNewlineOnBlock]
      */
     var html = function ($node, isNewlineOnBlock) {
       var markup = isTextarea($node[0]) ? $node.val() : $node.html();
@@ -1175,18 +1175,18 @@
           var isBlockNode = /^BLOCKQUOTE|^TABLE|^TBODY|^TR|^HR|^UL|^OL/.test(name);
 
           return match + ((isEndOfInlineContainer || isBlockNode) ? '\n' : '');
-      ***REMOVED***);
+        });
         markup = $.trim(markup);
-    ***REMOVED***
+      }
 
       return markup;
-  ***REMOVED***;
+    };
 
     var value = function ($textarea) {
       var val = $textarea.val();
       // strip line breaks
       return val.replace(/[\n\r]/g, '');
-  ***REMOVED***;
+    };
 
     return {
       NBSP_CHAR: NBSP_CHAR,
@@ -1255,14 +1255,14 @@
       replace: replace,
       html: html,
       value: value
-  ***REMOVED***;
-***REMOVED***)();
+    };
+  })();
 
 
   /**
    * Data structure
-   *  - {BoundaryPoint***REMOVED***: a point of dom tree
-   *  - {BoundaryPoints***REMOVED***: two boundaryPoints corresponding to the start and the end of the Range
+   *  - {BoundaryPoint}: a point of dom tree
+   *  - {BoundaryPoints}: two boundaryPoints corresponding to the start and the end of the Range
    *
    *  @see http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html#Level-2-Range-Position
    */
@@ -1271,9 +1271,9 @@
     /**
      * return boundaryPoint from TextRange, inspired by Andy Na's HuskyRange.js
      *
-     * @param {TextRange***REMOVED*** textRange
-     * @param {Boolean***REMOVED*** isStart
-     * @return {BoundaryPoint***REMOVED***
+     * @param {TextRange} textRange
+     * @param {Boolean} isStart
+     * @return {BoundaryPoint}
      *
      * @see http://msdn.microsoft.com/en-us/library/ie/ms535872(v=vs.85).aspx
      */
@@ -1285,13 +1285,13 @@
       for (offset = 0; offset < childNodes.length; offset++) {
         if (dom.isText(childNodes[offset])) {
           continue;
-      ***REMOVED***
+        }
         tester.moveToElementText(childNodes[offset]);
         if (tester.compareEndPoints('StartToStart', textRange) >= 0) {
           break;
-      ***REMOVED***
+        }
         prevContainer = childNodes[offset];
-    ***REMOVED***
+      }
   
       if (offset !== 0 && dom.isText(childNodes[offset - 1])) {
         var textRangeStart = document.body.createTextRange(), curTextNode = null;
@@ -1306,7 +1306,7 @@
         while (textCount > curTextNode.nodeValue.length && curTextNode.nextSibling) {
           textCount -= curTextNode.nodeValue.length;
           curTextNode = curTextNode.nextSibling;
-      ***REMOVED***
+        }
   
         /* jshint ignore:start */
         var dummy = curTextNode.nodeValue; // enforce IE to re-reference curTextNode, hack
@@ -1316,22 +1316,22 @@
             textCount === curTextNode.nodeValue.length) {
           textCount -= curTextNode.nodeValue.length;
           curTextNode = curTextNode.nextSibling;
-      ***REMOVED***
+        }
   
         container = curTextNode;
         offset = textCount;
-    ***REMOVED***
+      }
   
       return {
         cont: container,
         offset: offset
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
     
     /**
      * return TextRange from boundary point (inspired by google closure-library)
-     * @param {BoundaryPoint***REMOVED*** point
-     * @return {TextRange***REMOVED***
+     * @param {BoundaryPoint} point
+     * @return {TextRange}
      */
     var pointToTextRange = function (point) {
       var textRangeInfo = function (container, offset) {
@@ -1343,22 +1343,22 @@
           node =  prevContainer || container.parentNode;
           offset += list.sum(list.tail(prevTextNodes), dom.nodeLength);
           isCollapseToStart = !prevContainer;
-      ***REMOVED*** else {
+        } else {
           node = container.childNodes[offset] || container;
           if (dom.isText(node)) {
             return textRangeInfo(node, 0);
-        ***REMOVED***
+          }
   
           offset = 0;
           isCollapseToStart = false;
-      ***REMOVED***
+        }
   
         return {
           node: node,
           collapseToStart: isCollapseToStart,
           offset: offset
-      ***REMOVED***;
-    ***REMOVED***;
+        };
+      };
   
       var textRange = document.body.createTextRange();
       var info = textRangeInfo(point.node, point.offset);
@@ -1367,15 +1367,15 @@
       textRange.collapse(info.collapseToStart);
       textRange.moveStart('character', info.offset);
       return textRange;
-  ***REMOVED***;
+    };
     
     /**
      * Wrapped Range
      *
-     * @param {Node***REMOVED*** sc - start container
-     * @param {Number***REMOVED*** so - start offset
-     * @param {Node***REMOVED*** ec - end container
-     * @param {Number***REMOVED*** eo - end offset
+     * @param {Node} sc - start container
+     * @param {Number} so - start offset
+     * @param {Node} ec - end container
+     * @param {Number} eo - end offset
      */
     var WrappedRange = function (sc, so, ec, eo) {
       this.sc = sc;
@@ -1391,20 +1391,20 @@
           w3cRange.setEnd(ec, eo);
 
           return w3cRange;
-      ***REMOVED*** else {
+        } else {
           var textRange = pointToTextRange({
             node: sc,
             offset: so
-        ***REMOVED***);
+          });
 
           textRange.setEndPoint('EndToEnd', pointToTextRange({
             node: ec,
             offset: eo
-        ***REMOVED***));
+          }));
 
           return textRange;
-      ***REMOVED***
-    ***REMOVED***;
+        }
+      };
 
       this.getPoints = function () {
         return {
@@ -1412,22 +1412,22 @@
           so: so,
           ec: ec,
           eo: eo
-      ***REMOVED***;
-    ***REMOVED***;
+        };
+      };
 
       this.getStartPoint = function () {
         return {
           node: sc,
           offset: so
-      ***REMOVED***;
-    ***REMOVED***;
+        };
+      };
 
       this.getEndPoint = function () {
         return {
           node: ec,
           offset: eo
-      ***REMOVED***;
-    ***REMOVED***;
+        };
+      };
 
       /**
        * select update visible range
@@ -1438,27 +1438,27 @@
           var selection = document.getSelection();
           if (selection.rangeCount > 0) {
             selection.removeAllRanges();
-        ***REMOVED***
+          }
           selection.addRange(nativeRng);
-      ***REMOVED*** else {
+        } else {
           nativeRng.select();
-      ***REMOVED***
-    ***REMOVED***;
+        }
+      };
 
       /**
-       * @return {WrappedRange***REMOVED***
+       * @return {WrappedRange}
        */
       this.normalize = function () {
         var getVisiblePoint = function (point) {
           if (!dom.isVisiblePoint(point)) {
             if (dom.isLeftEdgePoint(point)) {
               point = dom.nextPointUntil(point, dom.isVisiblePoint);
-          ***REMOVED*** else if (dom.isRightEdgePoint(point)) {
+            } else if (dom.isRightEdgePoint(point)) {
               point = dom.prevPointUntil(point, dom.isVisiblePoint);
-          ***REMOVED***
-        ***REMOVED***
+            }
+          }
           return point;
-      ***REMOVED***;
+        };
 
         var startPoint = getVisiblePoint(this.getStartPoint());
         var endPoint = getVisiblePoint(this.getStartPoint());
@@ -1469,16 +1469,16 @@
           endPoint.node,
           endPoint.offset
         );
-    ***REMOVED***;
+      };
 
       /**
        * returns matched nodes on range
        *
-       * @param {Function***REMOVED*** [pred] - predicate function
-       * @param {Object***REMOVED*** [options]
-       * @param {Boolean***REMOVED*** [options.includeAncestor]
-       * @param {Boolean***REMOVED*** [options.fullyContains]
-       * @return {Node[]***REMOVED***
+       * @param {Function} [pred] - predicate function
+       * @param {Object} [options]
+       * @param {Boolean} [options.includeAncestor]
+       * @param {Boolean} [options.fullyContains]
+       * @return {Node[]}
        */
       this.nodes = function (pred, options) {
         pred = pred || func.ok;
@@ -1496,43 +1496,43 @@
         dom.walkPoint(startPoint, endPoint, function (point) {
           if (dom.isEditable(point.node)) {
             return;
-        ***REMOVED***
+          }
 
           var node;
           if (fullyContains) {
             if (dom.isLeftEdgePoint(point)) {
               leftEdgeNodes.push(point.node);
-          ***REMOVED***
+            }
             if (dom.isRightEdgePoint(point) && list.contains(leftEdgeNodes, point.node)) {
               node = point.node;
-          ***REMOVED***
-        ***REMOVED*** else if (includeAncestor) {
+            }
+          } else if (includeAncestor) {
             node = dom.ancestor(point.node, pred);
-        ***REMOVED*** else {
+          } else {
             node = point.node;
-        ***REMOVED***
+          }
 
           if (node && pred(node)) {
             nodes.push(node);
-        ***REMOVED***
-      ***REMOVED***, true);
+          }
+        }, true);
 
         return list.unique(nodes);
-    ***REMOVED***;
+      };
 
       /**
        * returns commonAncestor of range
-       * @return {Element***REMOVED*** - commonAncestor
+       * @return {Element} - commonAncestor
        */
       this.commonAncestor = function () {
         return dom.commonAncestor(sc, ec);
-    ***REMOVED***;
+      };
 
       /**
        * returns expanded range by pred
        *
-       * @param {Function***REMOVED*** pred - predicate function
-       * @return {WrappedRange***REMOVED***
+       * @param {Function} pred - predicate function
+       * @return {WrappedRange}
        */
       this.expand = function (pred) {
         var startAncestor = dom.ancestor(sc, pred);
@@ -1540,19 +1540,19 @@
 
         if (!startAncestor && !endAncestor) {
           return new WrappedRange(sc, so, ec, eo);
-      ***REMOVED***
+        }
 
         var boundaryPoints = this.getPoints();
 
         if (startAncestor) {
           boundaryPoints.sc = startAncestor;
           boundaryPoints.so = 0;
-      ***REMOVED***
+        }
 
         if (endAncestor) {
           boundaryPoints.ec = endAncestor;
           boundaryPoints.eo = dom.nodeLength(endAncestor);
-      ***REMOVED***
+        }
 
         return new WrappedRange(
           boundaryPoints.sc,
@@ -1560,19 +1560,19 @@
           boundaryPoints.ec,
           boundaryPoints.eo
         );
-    ***REMOVED***;
+      };
 
       /**
-       * @param {Boolean***REMOVED*** isCollapseToStart
-       * @return {WrappedRange***REMOVED***
+       * @param {Boolean} isCollapseToStart
+       * @return {WrappedRange}
        */
       this.collapse = function (isCollapseToStart) {
         if (isCollapseToStart) {
           return new WrappedRange(sc, so, sc, so);
-      ***REMOVED*** else {
+        } else {
           return new WrappedRange(ec, eo, ec, eo);
-      ***REMOVED***
-    ***REMOVED***;
+        }
+      };
 
       /**
        * splitText on range
@@ -1583,7 +1583,7 @@
 
         if (dom.isText(ec) && !dom.isEdgePoint(this.getEndPoint())) {
           ec.splitText(eo);
-      ***REMOVED***
+        }
 
         if (dom.isText(sc) && !dom.isEdgePoint(this.getStartPoint())) {
           boundaryPoints.sc = sc.splitText(so);
@@ -1592,8 +1592,8 @@
           if (isSameContainer) {
             boundaryPoints.ec = boundaryPoints.sc;
             boundaryPoints.eo = eo - so;
-        ***REMOVED***
-      ***REMOVED***
+          }
+        }
 
         return new WrappedRange(
           boundaryPoints.sc,
@@ -1601,25 +1601,25 @@
           boundaryPoints.ec,
           boundaryPoints.eo
         );
-    ***REMOVED***;
+      };
 
       /**
        * delete contents on range
-       * @return {WrappedRange***REMOVED***
+       * @return {WrappedRange}
        */
       this.deleteContents = function () {
         if (this.isCollapsed()) {
           return this;
-      ***REMOVED***
+        }
 
         var rng = this.splitText();
         var nodes = rng.nodes(null, {
           fullyContains: true
-      ***REMOVED***);
+        });
 
         var point = dom.prevPointUntil(rng.getStartPoint(), function (point) {
           return !list.contains(nodes, point.node);
-      ***REMOVED***);
+        });
 
         var emptyParents = [];
         $.each(nodes, function (idx, node) {
@@ -1627,14 +1627,14 @@
           var parent = node.parentNode;
           if (point.node !== parent && dom.nodeLength(parent) === 1) {
             emptyParents.push(parent);
-        ***REMOVED***
+          }
           dom.remove(node, false);
-      ***REMOVED***);
+        });
 
         // remove empty parents
         $.each(emptyParents, function (idx, node) {
           dom.remove(node, false);
-      ***REMOVED***);
+        });
 
         return new WrappedRange(
           point.node,
@@ -1642,7 +1642,7 @@
           point.node,
           point.offset
         );
-    ***REMOVED***;
+      };
       
       /**
        * makeIsOn: return isOn(pred) function
@@ -1651,8 +1651,8 @@
         return function () {
           var ancestor = dom.ancestor(sc, pred);
           return !!ancestor && (ancestor === dom.ancestor(ec, pred));
-      ***REMOVED***;
-    ***REMOVED***;
+        };
+      };
   
       // isOnEditable: judge whether range is on editable or not
       this.isOnEditable = makeIsOn(dom.isEditable);
@@ -1664,39 +1664,39 @@
       this.isOnCell = makeIsOn(dom.isCell);
 
       /**
-       * @param {Function***REMOVED*** pred
-       * @return {Boolean***REMOVED***
+       * @param {Function} pred
+       * @return {Boolean}
        */
       this.isLeftEdgeOf = function (pred) {
         if (!dom.isLeftEdgePoint(this.getStartPoint())) {
           return false;
-      ***REMOVED***
+        }
 
         var node = dom.ancestor(this.sc, pred);
         return node && dom.isLeftEdgeOf(this.sc, node);
-    ***REMOVED***;
+      };
 
       /**
        * returns whether range was collapsed or not
        */
       this.isCollapsed = function () {
         return sc === ec && so === eo;
-    ***REMOVED***;
+      };
 
       /**
        * wrap inline nodes which children of body with paragraph
        *
-       * @return {WrappedRange***REMOVED***
+       * @return {WrappedRange}
        */
       this.wrapBodyInlineWithPara = function () {
         if (dom.isBodyContainer(sc) && dom.isEmpty(sc)) {
           sc.innerHTML = dom.emptyPara;
           return new WrappedRange(sc.firstChild, 0);
-      ***REMOVED***
+        }
 
         if (dom.isParaInline(sc) || dom.isPara(sc)) {
           return this.normalize();
-      ***REMOVED***
+        }
 
         // find inline top ancestor
         var topAncestor;
@@ -1705,10 +1705,10 @@
           topAncestor = list.last(ancestors);
           if (!dom.isInline(topAncestor)) {
             topAncestor = ancestors[ancestors.length - 2] || sc.childNodes[so];
-        ***REMOVED***
-      ***REMOVED*** else {
+          }
+        } else {
           topAncestor = sc.childNodes[so - 1];
-      ***REMOVED***
+        }
 
         // siblings not in paragraph
         var inlineSiblings = dom.listPrev(topAncestor, dom.isParaInline).reverse();
@@ -1718,17 +1718,17 @@
         if (inlineSiblings.length) {
           var para = dom.wrap(list.head(inlineSiblings), 'p');
           dom.appendChildNodes(para, list.tail(inlineSiblings));
-      ***REMOVED***
+        }
 
         return this.normalize();
-    ***REMOVED***;
+      };
 
       /**
        * insert node at current cursor
        *
-       * @param {Node***REMOVED*** node
-       * @param {Boolean***REMOVED*** [isInline]
-       * @return {Node***REMOVED***
+       * @param {Node} node
+       * @param {Boolean} [isInline]
+       * @return {Node}
        */
       this.insertNode = function (node, isInline) {
         var rng = this.wrapBodyInlineWithPara();
@@ -1739,10 +1739,10 @@
           container = dom.isPara(point.node) ? point.node : point.node.parentNode;
           if (dom.isPara(point.node)) {
             pivot = point.node.childNodes[point.offset];
-        ***REMOVED*** else {
+          } else {
             pivot = dom.splitTree(point.node, point);
-        ***REMOVED***
-      ***REMOVED*** else {
+          }
+        } else {
           // splitRoot will be childNode of container
           var ancestors = dom.listAncestor(point.node, dom.isBodyContainer);
           var topAncestor = list.last(ancestors) || point.node;
@@ -1750,62 +1750,62 @@
           if (dom.isBodyContainer(topAncestor)) {
             splitRoot = ancestors[ancestors.length - 2];
             container = topAncestor;
-        ***REMOVED*** else {
+          } else {
             splitRoot = topAncestor;
             container = splitRoot.parentNode;
-        ***REMOVED***
+          }
           pivot = splitRoot && dom.splitTree(splitRoot, point);
-      ***REMOVED***
+        }
 
         if (pivot) {
           pivot.parentNode.insertBefore(node, pivot);
-      ***REMOVED*** else {
+        } else {
           container.appendChild(node);
-      ***REMOVED***
+        }
 
         return node;
-    ***REMOVED***;
+      };
   
       this.toString = function () {
         var nativeRng = nativeRange();
         return agent.isW3CRangeSupport ? nativeRng.toString() : nativeRng.text;
-    ***REMOVED***;
+      };
   
       /**
        * create offsetPath bookmark
-       * @param {Node***REMOVED*** editable
+       * @param {Node} editable
        */
       this.bookmark = function (editable) {
         return {
           s: {
             path: dom.makeOffsetPath(editable, sc),
             offset: so
-        ***REMOVED***,
+          },
           e: {
             path: dom.makeOffsetPath(editable, ec),
             offset: eo
-        ***REMOVED***
-      ***REMOVED***;
-    ***REMOVED***;
+          }
+        };
+      };
 
       /**
        * getClientRects
-       * @return {Rect[]***REMOVED***
+       * @return {Rect[]}
        */
       this.getClientRects = function () {
         var nativeRng = nativeRange();
         return nativeRng.getClientRects();
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
   
     return {
       /**
        * create Range Object From arguments or Browser Selection
        *
-       * @param {Node***REMOVED*** sc - start container
-       * @param {Number***REMOVED*** so - start offset
-       * @param {Node***REMOVED*** ec - end container
-       * @param {Number***REMOVED*** eo - end offset
+       * @param {Node} sc - start container
+       * @param {Number} so - start offset
+       * @param {Node} ec - end container
+       * @param {Number} eo - end offset
        */
       create : function (sc, so, ec, eo) {
         if (!arguments.length) { // from Browser Selection
@@ -1813,17 +1813,17 @@
             var selection = document.getSelection();
             if (selection.rangeCount === 0) {
               return null;
-          ***REMOVED*** else if (dom.isBody(selection.anchorNode)) {
+            } else if (dom.isBody(selection.anchorNode)) {
               // Firefox: returns entire body as range on initialization. We won't never need it.
               return null;
-          ***REMOVED***
+            }
   
             var nativeRng = selection.getRangeAt(0);
             sc = nativeRng.startContainer;
             so = nativeRng.startOffset;
             ec = nativeRng.endContainer;
             eo = nativeRng.endOffset;
-        ***REMOVED*** else { // IE8: TextRange
+          } else { // IE8: TextRange
             var textRange = document.selection.createRange();
             var textRangeEnd = textRange.duplicate();
             textRangeEnd.collapse(false);
@@ -1838,36 +1838,36 @@
                 dom.isTextNode(endPoint.node) && dom.isRightEdgePoint(endPoint) &&
                 endPoint.node.nextSibling === startPoint.node) {
               startPoint = endPoint;
-          ***REMOVED***
+            }
 
             sc = startPoint.cont;
             so = startPoint.offset;
             ec = endPoint.cont;
             eo = endPoint.offset;
-        ***REMOVED***
-      ***REMOVED*** else if (arguments.length === 2) { //collapsed
+          }
+        } else if (arguments.length === 2) { //collapsed
           ec = sc;
           eo = so;
-      ***REMOVED***
+        }
         return new WrappedRange(sc, so, ec, eo);
-    ***REMOVED***,
+      },
 
       /**
        * create WrappedRange from node
        *
-       * @param {Node***REMOVED*** node
-       * @return {WrappedRange***REMOVED***
+       * @param {Node} node
+       * @return {WrappedRange}
        */
       createFromNode: function (node) {
         return this.create(node, 0, node, 1);
-    ***REMOVED***,
+      },
 
       /**
        * create WrappedRange from Bookmark
        *
-       * @param {Node***REMOVED*** editable
-       * @param {Obkect***REMOVED*** bookmark
-       * @return {WrappedRange***REMOVED***
+       * @param {Node} editable
+       * @param {Obkect} bookmark
+       * @return {WrappedRange}
        */
       createFromBookmark : function (editable, bookmark) {
         var sc = dom.fromOffsetPath(editable, bookmark.s.path);
@@ -1875,9 +1875,9 @@
         var ec = dom.fromOffsetPath(editable, bookmark.e.path);
         var eo = bookmark.e.offset;
         return new WrappedRange(sc, so, ec, eo);
-    ***REMOVED***
-  ***REMOVED***;
-***REMOVED***)();
+      }
+    };
+  })();
 
   var settings = {
     // version
@@ -1910,7 +1910,7 @@
         mode: 'text/html',
         htmlMode: true,
         lineNumbers: true
-    ***REMOVED***,
+      },
 
       // language
       lang: 'en-US',                // language 'en-US', 'ko-KR', ...
@@ -1928,7 +1928,7 @@
         ['insert', ['link', 'picture', 'hr']],
         ['view', ['fullscreen', 'codeview']],
         ['help', ['help']]
-    ***REMOVED***,
+      ],
 
       // air mode: inline editor
       airMode: false,
@@ -1949,7 +1949,7 @@
         ['para', ['ul', 'paragraph']],
         ['table', ['table']],
         ['insert', ['link', 'picture']]
-    ***REMOVED***,
+      ],
 
       // style tag
       styleTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
@@ -1962,7 +1962,7 @@
         'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
         'Helvetica Neue', 'Impact', 'Lucida Grande',
         'Tahoma', 'Times New Roman', 'Verdana'
-    ***REMOVED***,
+      ],
 
       // pallete colors(n x n)
       colors: [
@@ -1974,7 +1974,7 @@
         ['#CE0000', '#E79439', '#EFC631', '#6BA54A', '#4A7B8C', '#3984C6', '#634AA5', '#A54A7B'],
         ['#9C0000', '#B56308', '#BD9400', '#397B21', '#104A5A', '#085294', '#311873', '#731842'],
         ['#630000', '#7B3900', '#846300', '#295218', '#083139', '#003163', '#21104A', '#4A1031']
-    ***REMOVED***,
+      ],
 
       // lineHeight
       lineHeights: ['1.0', '1.2', '1.4', '1.5', '1.6', '1.8', '2.0', '3.0'],
@@ -1983,7 +1983,7 @@
       insertTableMaxSize: {
         col: 10,
         row: 10
-    ***REMOVED***,
+      },
 
       // image
       maximumImageFileSize: null, // size in bytes, null = no limit
@@ -2002,18 +2002,18 @@
 
       /**
        * manipulate link address when user create link
-       * @param {String***REMOVED*** sLinkUrl
-       * @return {String***REMOVED***
+       * @param {String} sLinkUrl
+       * @return {String}
        */
       onCreateLink: function (sLinkUrl) {
         if (sLinkUrl.indexOf('@') !== -1 && sLinkUrl.indexOf(':') === -1) {
           sLinkUrl =  'mailto:' + sLinkUrl;
-      ***REMOVED*** else if (sLinkUrl.indexOf('://') === -1) {
+        } else if (sLinkUrl.indexOf('://') === -1) {
           sLinkUrl = 'http://' + sLinkUrl;
-      ***REMOVED***
+        }
 
         return sLinkUrl;
-    ***REMOVED***,
+      },
 
       keyMap: {
         pc: {
@@ -2044,7 +2044,7 @@
           'CTRL+NUM6': 'formatH6',
           'CTRL+ENTER': 'insertHorizontalRule',
           'CTRL+K': 'showLinkDialog'
-      ***REMOVED***,
+        },
 
         mac: {
           'ENTER': 'insertParagraph',
@@ -2074,9 +2074,9 @@
           'CMD+NUM6': 'formatH6',
           'CMD+ENTER': 'insertHorizontalRule',
           'CMD+K': 'showLinkDialog'
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***,
+        }
+      }
+    },
 
     // default language: en-US
     lang: {
@@ -2088,7 +2088,7 @@
           clear: 'Remove Font Style',
           height: 'Line Height',
           name: 'Font Family'
-      ***REMOVED***,
+        },
         image: {
           image: 'Picture',
           insert: 'Insert Image',
@@ -2109,7 +2109,7 @@
           maximumFileSizeError: 'Maximum file size exceeded.',
           url: 'Image URL',
           remove: 'Remove Image'
-      ***REMOVED***,
+        },
         link: {
           link: 'Link',
           insert: 'Insert Link',
@@ -2118,13 +2118,13 @@
           textToDisplay: 'Text to display',
           url: 'To what URL should this link go?',
           openInNewWindow: 'Open in new window'
-      ***REMOVED***,
+        },
         table: {
           table: 'Table'
-      ***REMOVED***,
+        },
         hr: {
           insert: 'Insert Horizontal Rule'
-      ***REMOVED***,
+        },
         style: {
           style: 'Style',
           normal: 'Normal',
@@ -2136,16 +2136,16 @@
           h4: 'Header 4',
           h5: 'Header 5',
           h6: 'Header 6'
-      ***REMOVED***,
+        },
         lists: {
           unordered: 'Unordered list',
           ordered: 'Ordered list'
-      ***REMOVED***,
+        },
         options: {
           help: 'Help',
           fullscreen: 'Full Screen',
           codeview: 'Code View'
-      ***REMOVED***,
+        },
         paragraph: {
           paragraph: 'Paragraph',
           outdent: 'Outdent',
@@ -2154,7 +2154,7 @@
           center: 'Align center',
           right: 'Align right',
           justify: 'Justify full'
-      ***REMOVED***,
+        },
         color: {
           recent: 'Recent Color',
           more: 'More Color',
@@ -2164,7 +2164,7 @@
           setTransparent: 'Set transparent',
           reset: 'Reset',
           resetToDefault: 'Reset to default'
-      ***REMOVED***,
+        },
         shortcut: {
           shortcuts: 'Keyboard shortcuts',
           close: 'Close',
@@ -2173,14 +2173,14 @@
           paragraphFormatting: 'Paragraph formatting',
           documentStyle: 'Document Style',
           extraKeys: 'Extra keys'
-      ***REMOVED***,
+        },
         history: {
           undo: 'Undo',
           redo: 'Redo'
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***;
+        }
+      }
+    }
+  };
 
   /**
    * Async functions which returns `Promise`
@@ -2189,8 +2189,8 @@
     /**
      * read contents of file as representing URL
      *
-     * @param {File***REMOVED*** file
-     * @return {Promise***REMOVED*** - then: sDataUrl
+     * @param {File} file
+     * @return {Promise} - then: sDataUrl
      */
     var readFileAsDataURL = function (file) {
       return $.Deferred(function (deferred) {
@@ -2198,39 +2198,39 @@
           onload: function (e) {
             var sDataURL = e.target.result;
             deferred.resolve(sDataURL);
-        ***REMOVED***,
+          },
           onerror: function () {
             deferred.reject(this);
-        ***REMOVED***
-      ***REMOVED***).readAsDataURL(file);
-    ***REMOVED***).promise();
-  ***REMOVED***;
+          }
+        }).readAsDataURL(file);
+      }).promise();
+    };
   
     /**
      * create `<image>` from url string
      *
-     * @param {String***REMOVED*** sUrl
-     * @return {Promise***REMOVED*** - then: $image
+     * @param {String} sUrl
+     * @return {Promise} - then: $image
      */
     var createImage = function (sUrl, filename) {
       return $.Deferred(function (deferred) {
         $('<img>').one('load', function () {
           deferred.resolve($(this));
-      ***REMOVED***).one('error abort', function () {
+        }).one('error abort', function () {
           deferred.reject($(this).detach());
-      ***REMOVED***).css({
+        }).css({
           display: 'none'
-      ***REMOVED***).appendTo(document.body)
+        }).appendTo(document.body)
           .attr('src', sUrl)
           .attr('data-filename', filename);
-    ***REMOVED***).promise();
-  ***REMOVED***;
+      }).promise();
+    };
 
     return {
       readFileAsDataURL: readFileAsDataURL,
       createImage: createImage
-  ***REMOVED***;
-***REMOVED***)();
+    };
+  })();
 
   /**
    * Object for keycodes.
@@ -2238,7 +2238,7 @@
   var key = {
     isEdit: function (keyCode) {
       return list.contains([8, 9, 13, 32], keyCode);
-  ***REMOVED***,
+    },
     nameFromCode: {
       '8': 'BACKSPACE',
       '9': 'TAB',
@@ -2273,8 +2273,8 @@
       '219': 'LEFTBRACKET',
       '220': 'BACKSLASH',
       '221': 'RIGHTBRACKET'
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
 
   /**
    * Style
@@ -2286,46 +2286,46 @@
      * will result in an object of property-value pairs.
      * (compability with version < 1.9)
      *
-     * @param  {jQuery***REMOVED*** $obj
-     * @param  {Array***REMOVED*** propertyNames - An array of one or more CSS properties.
-     * @returns {Object***REMOVED***
+     * @param  {jQuery} $obj
+     * @param  {Array} propertyNames - An array of one or more CSS properties.
+     * @returns {Object}
      */
     var jQueryCSS = function ($obj, propertyNames) {
       if (agent.jqueryVersion < 1.9) {
-        var result = {***REMOVED***;
+        var result = {};
         $.each(propertyNames, function (idx, propertyName) {
           result[propertyName] = $obj.css(propertyName);
-      ***REMOVED***);
+        });
         return result;
-    ***REMOVED***
+      }
       return $obj.css.call($obj, propertyNames);
-  ***REMOVED***;
+    };
 
     /**
      * paragraph level style
      *
-     * @param {WrappedRange***REMOVED*** rng
-     * @param {Object***REMOVED*** styleInfo
+     * @param {WrappedRange} rng
+     * @param {Object} styleInfo
      */
     this.stylePara = function (rng, styleInfo) {
       $.each(rng.nodes(dom.isPara, {
         includeAncestor: true
-    ***REMOVED***), function (idx, para) {
+      }), function (idx, para) {
         $(para).css(styleInfo);
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     /**
      * get current style on cursor
      *
-     * @param {WrappedRange***REMOVED*** rng
-     * @param {Node***REMOVED*** target - target element on event
-     * @return {Object***REMOVED*** - object contains style properties.
+     * @param {WrappedRange} rng
+     * @param {Node} target - target element on event
+     * @return {Object} - object contains style properties.
      */
     this.current = function (rng, target) {
       var $cont = $(dom.isText(rng.sc) ? rng.sc.parentNode : rng.sc);
       var properties = ['font-family', 'font-size', 'text-align', 'list-style-type', 'line-height'];
-      var styleInfo = jQueryCSS($cont, properties) || {***REMOVED***;
+      var styleInfo = jQueryCSS($cont, properties) || {};
 
       styleInfo['font-size'] = parseInt(styleInfo['font-size'], 10);
 
@@ -2340,19 +2340,19 @@
       // list-style-type to list-style(unordered, ordered)
       if (!rng.isOnList()) {
         styleInfo['list-style'] = 'none';
-    ***REMOVED*** else {
+      } else {
         var aOrderedType = ['circle', 'disc', 'disc-leading-zero', 'square'];
         var isUnordered = $.inArray(styleInfo['list-style-type'], aOrderedType) > -1;
         styleInfo['list-style'] = isUnordered ? 'unordered' : 'ordered';
-    ***REMOVED***
+      }
 
       var para = dom.ancestor(rng.sc, dom.isPara);
       if (para && para.style['line-height']) {
         styleInfo['line-height'] = para.style.lineHeight;
-    ***REMOVED*** else {
+      } else {
         var lineHeight = parseInt(styleInfo['line-height'], 10) / parseInt(styleInfo['font-size'], 10);
         styleInfo['line-height'] = lineHeight.toFixed(1);
-    ***REMOVED***
+      }
 
       styleInfo.image = dom.isImg(target) && target;
       styleInfo.anchor = rng.isOnAnchor() && dom.ancestor(rng.sc, dom.isAnchor);
@@ -2360,16 +2360,16 @@
       styleInfo.range = rng;
 
       return styleInfo;
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
 
   var Typing = function () {
 
     /**
-     * @param {jQuery***REMOVED*** $editable 
-     * @param {WrappedRange***REMOVED*** rng
-     * @param {Number***REMOVED*** tabsize
+     * @param {jQuery} $editable 
+     * @param {WrappedRange} rng
+     * @param {Number} tabsize
      */
     this.insertTab = function ($editable, rng, tabsize) {
       var tab = dom.createText(new Array(tabsize + 1).join(dom.NBSP_CHAR));
@@ -2378,7 +2378,7 @@
 
       rng = range.create(tab, tabsize);
       rng.select();
-  ***REMOVED***;
+    };
 
     /**
      * insert paragraph
@@ -2405,22 +2405,22 @@
 
         $.each(emptyAnchors, function (idx, anchor) {
           dom.remove(anchor);
-      ***REMOVED***);
+        });
       // no paragraph: insert empty paragraph
-    ***REMOVED*** else {
+      } else {
         var next = rng.sc.childNodes[rng.so];
         nextPara = $(dom.emptyPara)[0];
         if (next) {
           rng.sc.insertBefore(nextPara, next);
-      ***REMOVED*** else {
+        } else {
           rng.sc.appendChild(nextPara);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       range.create(nextPara, 0).normalize().select();
-  ***REMOVED***;
+    };
 
-***REMOVED***;
+  };
 
   /**
    * Table
@@ -2430,8 +2430,8 @@
     /**
      * handle tab key
      *
-     * @param {WrappedRange***REMOVED*** rng
-     * @param {Boolean***REMOVED*** isShift
+     * @param {WrappedRange} rng
+     * @param {Boolean} isShift
      */
     this.tab = function (rng, isShift) {
       var cell = dom.ancestor(rng.commonAncestor(), dom.isCell);
@@ -2441,31 +2441,31 @@
       var nextCell = list[isShift ? 'prev' : 'next'](cells, cell);
       if (nextCell) {
         range.create(nextCell, 0).select();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * create empty table element
      *
-     * @param {Number***REMOVED*** rowCount
-     * @param {Number***REMOVED*** colCount
-     * @return {Node***REMOVED***
+     * @param {Number} rowCount
+     * @param {Number} colCount
+     * @return {Node}
      */
     this.createTable = function (colCount, rowCount) {
       var tds = [], tdHTML;
       for (var idxCol = 0; idxCol < colCount; idxCol++) {
         tds.push('<td>' + dom.blank + '</td>');
-    ***REMOVED***
+      }
       tdHTML = tds.join('');
 
       var trs = [], trHTML;
       for (var idxRow = 0; idxRow < rowCount; idxRow++) {
         trs.push('<tr>' + tdHTML + '</tr>');
-    ***REMOVED***
+      }
       trHTML = trs.join('');
       return $('<table class="table table-bordered">' + trHTML + '</table>')[0];
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
 
   var Bullet = function () {
@@ -2475,7 +2475,7 @@
      */
     this.insertOrderedList = function () {
       this.toggleList('OL');
-  ***REMOVED***;
+    };
 
     /**
      * toggle unordered list
@@ -2483,7 +2483,7 @@
      */
     this.insertUnorderedList = function () {
       this.toggleList('UL');
-  ***REMOVED***;
+    };
 
     /**
      * indent
@@ -2493,24 +2493,24 @@
       var self = this;
       var rng = range.create().wrapBodyInlineWithPara();
 
-      var paras = rng.nodes(dom.isPara, { includeAncestor: true ***REMOVED***);
+      var paras = rng.nodes(dom.isPara, { includeAncestor: true });
       var clustereds = list.clusterBy(paras, func.peq2('parentNode'));
 
       $.each(clustereds, function (idx, paras) {
         var head = list.head(paras);
         if (dom.isLi(head)) {
           self.wrapList(paras, head.parentNode.nodeName);
-      ***REMOVED*** else {
+        } else {
           $.each(paras, function (idx, para) {
             $(para).css('marginLeft', function (idx, val) {
               return (parseInt(val, 10) || 0) + 25;
-          ***REMOVED***);
-        ***REMOVED***);
-      ***REMOVED***
-    ***REMOVED***);
+            });
+          });
+        }
+      });
 
       rng.select();
-  ***REMOVED***;
+    };
 
     /**
      * outdent
@@ -2520,65 +2520,65 @@
       var self = this;
       var rng = range.create().wrapBodyInlineWithPara();
 
-      var paras = rng.nodes(dom.isPara, { includeAncestor: true ***REMOVED***);
+      var paras = rng.nodes(dom.isPara, { includeAncestor: true });
       var clustereds = list.clusterBy(paras, func.peq2('parentNode'));
 
       $.each(clustereds, function (idx, paras) {
         var head = list.head(paras);
         if (dom.isLi(head)) {
           self.releaseList([paras]);
-      ***REMOVED*** else {
+        } else {
           $.each(paras, function (idx, para) {
             $(para).css('marginLeft', function (idx, val) {
               val = (parseInt(val, 10) || 0);
               return val > 25 ? val - 25 : '';
-          ***REMOVED***);
-        ***REMOVED***);
-      ***REMOVED***
-    ***REMOVED***);
+            });
+          });
+        }
+      });
 
       rng.select();
-  ***REMOVED***;
+    };
 
     /**
      * toggle list
-     * @param {String***REMOVED*** listName - OL or UL
+     * @param {String} listName - OL or UL
      */
     this.toggleList = function (listName) {
       var self = this;
       var rng = range.create().wrapBodyInlineWithPara();
 
-      var paras = rng.nodes(dom.isPara, { includeAncestor: true ***REMOVED***);
+      var paras = rng.nodes(dom.isPara, { includeAncestor: true });
       var clustereds = list.clusterBy(paras, func.peq2('parentNode'));
 
       // paragraph to list
       if (list.find(paras, dom.isPurePara)) {
         $.each(clustereds, function (idx, paras) {
           self.wrapList(paras, listName);
-      ***REMOVED***);
+        });
       // list to paragraph or change list style
-    ***REMOVED*** else {
+      } else {
         var diffLists = rng.nodes(dom.isList, {
           includeAncestor: true
-      ***REMOVED***).filter(function (listNode) {
+        }).filter(function (listNode) {
           return !$.nodeName(listNode, listName);
-      ***REMOVED***);
+        });
 
         if (diffLists.length) {
           $.each(diffLists, function (idx, listNode) {
             dom.replace(listNode, listName);
-        ***REMOVED***);
-      ***REMOVED*** else {
+          });
+        } else {
           this.releaseList(clustereds, true);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       rng.select();
-  ***REMOVED***;
+    };
 
     /**
-     * @param {Node[]***REMOVED*** paras
-     * @param {String***REMOVED*** listName
+     * @param {Node[]} paras
+     * @param {String} listName
      */
     this.wrapList = function (paras, listName) {
       var head = list.head(paras);
@@ -2592,7 +2592,7 @@
       // P to LI
       paras = $.map(paras, function (para) {
         return dom.isPurePara(para) ? dom.replace(para, 'LI') : para;
-    ***REMOVED***);
+      });
 
       // append to list(<ul>, <ol>)
       dom.appendChildNodes(listNode, paras);
@@ -2600,13 +2600,13 @@
       if (nextList) {
         dom.appendChildNodes(listNode, list.from(nextList.childNodes));
         dom.remove(nextList);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
-     * @param {Array[]***REMOVED*** clustereds
-     * @param {Boolean***REMOVED*** isEscapseToBody
-     * @return {Node[]***REMOVED***
+     * @param {Array[]} clustereds
+     * @param {Boolean} isEscapseToBody
+     * @return {Node[]}
      */
     this.releaseList = function (clustereds, isEscapseToBody) {
       var releasedParas = [];
@@ -2620,12 +2620,12 @@
         var lastList = headList.childNodes.length > 1 ? dom.splitTree(headList, {
           node: last.parentNode,
           offset: dom.position(last) + 1
-      ***REMOVED***, true) : null;
+        }, true) : null;
 
         var middleList = dom.splitTree(headList, {
           node: head.parentNode,
           offset: dom.position(head)
-      ***REMOVED***, true);
+        }, true);
 
         paras = isEscapseToBody ? dom.listDescendant(middleList, dom.isLi) :
                                   list.from(middleList.childNodes).filter(dom.isLi);
@@ -2634,12 +2634,12 @@
         if (isEscapseToBody || !dom.isList(headList.parentNode)) {
           paras = $.map(paras, function (para) {
             return dom.replace(para, 'P');
-        ***REMOVED***);
-      ***REMOVED***
+          });
+        }
 
         $.each(list.from(paras).reverse(), function (idx, para) {
           dom.insertAfter(para, headList);
-      ***REMOVED***);
+        });
 
         // remove empty lists
         var rootLists = list.compact([headList, middleList, lastList]);
@@ -2648,16 +2648,16 @@
           $.each(listNodes.reverse(), function (idx, listNode) {
             if (!dom.nodeLength(listNode)) {
               dom.remove(listNode, true);
-          ***REMOVED***
-        ***REMOVED***);
-      ***REMOVED***);
+            }
+          });
+        });
 
         releasedParas = releasedParas.concat(paras);
-    ***REMOVED***);
+      });
 
       return releasedParas;
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   /**
    * Editor
@@ -2676,92 +2676,92 @@
     this.createRange = function ($editable) {
       $editable.focus();
       return range.create();
-  ***REMOVED***;
+    };
 
     /**
      * save current range
      *
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.saveRange = function ($editable, thenCollapse) {
       $editable.focus();
       $editable.data('range', range.create());
       if (thenCollapse) {
         range.create().collapse().select();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.saveNode = function ($editable) {
       // copy child node reference
       var copy = [];
       for (var key  = 0, len = $editable[0].childNodes.length; key < len; key++) {
         copy.push($editable[0].childNodes[key]);
-    ***REMOVED***
+      }
       $editable.data('childNodes', copy);
-  ***REMOVED***;
+    };
 
     /**
      * restore lately range
      *
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.restoreRange = function ($editable) {
       var rng = $editable.data('range');
       if (rng) {
         rng.select();
         $editable.focus();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.restoreNode = function ($editable) {
       $editable.html('');
       var child = $editable.data('childNodes');
       for (var index = 0, len = child.length; index < len; index++) {
         $editable[0].appendChild(child[index]);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
     /**
      * current style
-     * @param {Node***REMOVED*** target
+     * @param {Node} target
      */
     this.currentStyle = function (target) {
       var rng = range.create();
       return rng ? rng.isOnEditable() && style.current(rng, target) : false;
-  ***REMOVED***;
+    };
 
     var triggerOnChange = this.triggerOnChange = function ($editable) {
       var onChange = $editable.data('callbacks').onChange;
       if (onChange) {
         onChange($editable.html(), $editable);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * undo
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.undo = function ($editable) {
       $editable.data('NoteHistory').undo();
       triggerOnChange($editable);
-  ***REMOVED***;
+    };
 
     /**
      * redo
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.redo = function ($editable) {
       $editable.data('NoteHistory').redo();
       triggerOnChange($editable);
-  ***REMOVED***;
+    };
 
     /**
      * after command
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     var afterCommand = this.afterCommand = function ($editable) {
       $editable.data('NoteHistory').recordUndo();
       triggerOnChange($editable);
-  ***REMOVED***;
+    };
 
     /* jshint ignore:start */
     // native commands(with execCommand), generate function for execCommand
@@ -2776,26 +2776,26 @@
           document.execCommand(sCmd, false, value);
 
           afterCommand($editable);
-      ***REMOVED***;
-    ***REMOVED***)(commands[idx]);
-  ***REMOVED***
+        };
+      })(commands[idx]);
+    }
     /* jshint ignore:end */
 
     /**
      * handle tab key
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {Object***REMOVED*** options
+     * @param {jQuery} $editable
+     * @param {Object} options
      */
     this.tab = function ($editable, options) {
       var rng = range.create();
       if (rng.isCollapsed() && rng.isOnCell()) {
         table.tab(rng);
-    ***REMOVED*** else {
+      } else {
         typing.insertTab($editable, rng, options.tabsize);
         afterCommand($editable);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * handle shift+tab key
@@ -2804,162 +2804,162 @@
       var rng = range.create();
       if (rng.isCollapsed() && rng.isOnCell()) {
         table.tab(rng, true);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * insert paragraph
      *
-     * @param {Node***REMOVED*** $editable
+     * @param {Node} $editable
      */
     this.insertParagraph = function ($editable) {
       typing.insertParagraph($editable);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.insertOrderedList = function ($editable) {
       bullet.insertOrderedList($editable);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.insertUnorderedList = function ($editable) {
       bullet.insertUnorderedList($editable);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.indent = function ($editable) {
       bullet.indent($editable);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.outdent = function ($editable) {
       bullet.outdent($editable);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * insert image
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** sUrl
+     * @param {jQuery} $editable
+     * @param {String} sUrl
      */
     this.insertImage = function ($editable, sUrl, filename) {
       async.createImage(sUrl, filename).then(function ($image) {
         $image.css({
           display: '',
           width: Math.min($editable.width(), $image.width())
-      ***REMOVED***);
+        });
         range.create().insertNode($image[0]);
         afterCommand($editable);
-    ***REMOVED***).fail(function () {
+      }).fail(function () {
         var callbacks = $editable.data('callbacks');
         if (callbacks.onImageUploadError) {
           callbacks.onImageUploadError();
-      ***REMOVED***
-    ***REMOVED***);
-  ***REMOVED***;
+        }
+      });
+    };
 
     /**
      * insert node
-     * @param {Node***REMOVED*** $editable
-     * @param {Node***REMOVED*** node
-     * @param {Boolean***REMOVED*** [isInline]
+     * @param {Node} $editable
+     * @param {Node} node
+     * @param {Boolean} [isInline]
      */
     this.insertNode = function ($editable, node, isInline) {
       range.create().insertNode(node, isInline);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * insert text
-     * @param {Node***REMOVED*** $editable
-     * @param {String***REMOVED*** text
+     * @param {Node} $editable
+     * @param {String} text
      */
     this.insertText = function ($editable, text) {
       var textNode = this.createRange($editable).insertNode(dom.createText(text), true);
       range.create(textNode, dom.nodeLength(textNode)).select();
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * formatBlock
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** tagName
+     * @param {jQuery} $editable
+     * @param {String} tagName
      */
     this.formatBlock = function ($editable, tagName) {
       tagName = agent.isMSIE ? '<' + tagName + '>' : tagName;
       document.execCommand('FormatBlock', false, tagName);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     this.formatPara = function ($editable) {
       this.formatBlock($editable, 'P');
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /* jshint ignore:start */
     for (var idx = 1; idx <= 6; idx ++) {
       this['formatH' + idx] = function (idx) {
         return function ($editable) {
           this.formatBlock($editable, 'H' + idx);
-      ***REMOVED***;
-    ***REMOVED***(idx);
-  ***REMOVED***;
+        };
+      }(idx);
+    };
     /* jshint ignore:end */
 
     /**
      * fontsize
      * FIXME: Still buggy
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** value - px
+     * @param {jQuery} $editable
+     * @param {String} value - px
      */
     this.fontSize = function ($editable, value) {
       document.execCommand('fontSize', false, 3);
       if (agent.isFF) {
-        // firefox: <font size="3"> to <span style='font-size={value***REMOVED***px;'>, buggy
+        // firefox: <font size="3"> to <span style='font-size={value}px;'>, buggy
         $editable.find('font[size=3]').removeAttr('size').css('font-size', value + 'px');
-    ***REMOVED*** else {
-        // chrome: <span style="font-size: medium"> to <span style='font-size={value***REMOVED***px;'>
+      } else {
+        // chrome: <span style="font-size: medium"> to <span style='font-size={value}px;'>
         $editable.find('span').filter(function () {
           return this.style.fontSize === 'medium';
-      ***REMOVED***).css('font-size', value + 'px');
-    ***REMOVED***
+        }).css('font-size', value + 'px');
+      }
 
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * lineHeight
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** value
+     * @param {jQuery} $editable
+     * @param {String} value
      */
     this.lineHeight = function ($editable, value) {
       style.stylePara(range.create(), {
         lineHeight: value
-    ***REMOVED***);
+      });
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * unlink
      *
      * @type command
      *
-     * @param {jQuery***REMOVED*** $editable
+     * @param {jQuery} $editable
      */
     this.unlink = function ($editable) {
       var rng = range.create();
@@ -2970,17 +2970,17 @@
         document.execCommand('unlink');
 
         afterCommand($editable);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * create link
      *
      * @type command
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {Object***REMOVED*** linkInfo
-     * @param {Object***REMOVED*** options
+     * @param {jQuery} $editable
+     * @param {Object} linkInfo
+     * @param {Object} options
      */
     this.createLink = function ($editable, linkInfo, options) {
       var linkUrl = linkInfo.url;
@@ -2990,7 +2990,7 @@
 
       if (options.onCreateLink) {
         linkUrl = options.onCreateLink(linkUrl);
-    ***REMOVED***
+      }
 
       rng = rng.deleteContents();
 
@@ -2999,16 +2999,16 @@
       $(anchor).attr({
         href: linkUrl,
         target: isNewWindow ? '_blank' : ''
-    ***REMOVED***);
+      });
 
       range.createFromNode(anchor).select();
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * returns link info
      *
-     * @return {Object***REMOVED***
+     * @return {Object}
      */
     this.getLinkInfo = function ($editable) {
       $editable.focus();
@@ -3023,18 +3023,18 @@
         text: rng.toString(),
         isNewWindow: $anchor.length ? $anchor.attr('target') === '_blank' : true,
         url: $anchor.length ? $anchor.attr('href') : ''
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     this.color = function ($editable, sObjColor) {
       var oColor = JSON.parse(sObjColor);
       var foreColor = oColor.foreColor, backColor = oColor.backColor;
 
-      if (foreColor) { document.execCommand('foreColor', false, foreColor); ***REMOVED***
-      if (backColor) { document.execCommand('backColor', false, backColor); ***REMOVED***
+      if (foreColor) { document.execCommand('foreColor', false, foreColor); }
+      if (backColor) { document.execCommand('backColor', false, backColor); }
 
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     this.insertTable = function ($editable, sDim) {
       var dimension = sDim.split('x');
@@ -3042,47 +3042,47 @@
       rng = rng.deleteContents();
       rng.insertNode(table.createTable(dimension[0], dimension[1]));
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** value
-     * @param {jQuery***REMOVED*** $target
+     * @param {jQuery} $editable
+     * @param {String} value
+     * @param {jQuery} $target
      */
     this.floatMe = function ($editable, value, $target) {
       $target.css('float', value);
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     this.imageShape = function ($editable, value, $target) {
       $target.removeClass('img-rounded img-circle img-thumbnail');
 
       if (value) {
         $target.addClass(value);
-    ***REMOVED***
+      }
 
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * resize overlay element
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** value
-     * @param {jQuery***REMOVED*** $target - target element
+     * @param {jQuery} $editable
+     * @param {String} value
+     * @param {jQuery} $target - target element
      */
     this.resize = function ($editable, value, $target) {
       $target.css({
         width: value * 100 + '%',
         height: ''
-    ***REMOVED***);
+      });
 
       afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {Position***REMOVED*** pos
-     * @param {jQuery***REMOVED*** $target - target element
-     * @param {Boolean***REMOVED*** [bKeepRatio] - keep ratio
+     * @param {Position} pos
+     * @param {jQuery} $target - target element
+     * @param {Boolean} [bKeepRatio] - keep ratio
      */
     this.resizeTo = function (pos, $target, bKeepRatio) {
       var imageSize;
@@ -3092,30 +3092,30 @@
         imageSize = {
           width: ratio > newRatio ? pos.x : pos.y / ratio,
           height: ratio > newRatio ? pos.x * ratio : pos.y
-      ***REMOVED***;
-    ***REMOVED*** else {
+        };
+      } else {
         imageSize = {
           width: pos.x,
           height: pos.y
-      ***REMOVED***;
-    ***REMOVED***
+        };
+      }
 
       $target.css(imageSize);
-  ***REMOVED***;
+    };
 
     /**
      * remove media object
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {String***REMOVED*** value - dummy argument (for keep interface)
-     * @param {jQuery***REMOVED*** $target - target element
+     * @param {jQuery} $editable
+     * @param {String} value - dummy argument (for keep interface)
+     * @param {jQuery} $target - target element
      */
     this.removeMedia = function ($editable, value, $target) {
       $target.detach();
 
       afterCommand($editable);
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   /**
    * History
@@ -3127,36 +3127,36 @@
 
     var makeSnapshot = function () {
       var rng = range.create();
-      var emptyBookmark = {s: {path: [0], offset: 0***REMOVED***, e: {path: [0], offset: 0***REMOVED******REMOVED***;
+      var emptyBookmark = {s: {path: [0], offset: 0}, e: {path: [0], offset: 0}};
 
       return {
         contents: $editable.html(),
         bookmark: (rng ? rng.bookmark(editable) : emptyBookmark)
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     var applySnapshot = function (snapshot) {
       if (snapshot.contents !== null) {
         $editable.html(snapshot.contents);
-    ***REMOVED***
+      }
       if (snapshot.bookmark !== null) {
         range.createFromBookmark(editable, snapshot.bookmark).select();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.undo = function () {
       if (0 < stackOffset) {
         stackOffset--;
         applySnapshot(stack[stackOffset]);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.redo = function () {
       if (stack.length - 1 > stackOffset) {
         stackOffset++;
         applySnapshot(stack[stackOffset]);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.recordUndo = function () {
       stackOffset++;
@@ -3164,15 +3164,15 @@
       // Wash out stack after stackOffset
       if (stack.length > stackOffset) {
         stack = stack.slice(0, stackOffset);
-    ***REMOVED***
+      }
 
       // Create new snapshot and push it to the end
       stack.push(makeSnapshot());
-  ***REMOVED***;
+    };
 
     // Create first undo stack
     this.recordUndo();
-***REMOVED***;
+  };
 
   /**
    * Button
@@ -3181,33 +3181,33 @@
     /**
      * update button status
      *
-     * @param {jQuery***REMOVED*** $container
-     * @param {Object***REMOVED*** styleInfo
+     * @param {jQuery} $container
+     * @param {Object} styleInfo
      */
     this.update = function ($container, styleInfo) {
       /**
        * handle dropdown's check mark (for fontname, fontsize, lineHeight).
-       * @param {jQuery***REMOVED*** $btn
-       * @param {Number***REMOVED*** value
+       * @param {jQuery} $btn
+       * @param {Number} value
        */
       var checkDropdownMenu = function ($btn, value) {
         $btn.find('.dropdown-menu li a').each(function () {
           // always compare string to avoid creating another func.
           var isChecked = ($(this).data('value') + '') === (value + '');
           this.className = isChecked ? 'checked' : '';
-      ***REMOVED***);
-    ***REMOVED***;
+        });
+      };
 
       /**
        * update button state(active or not).
        *
-       * @param {String***REMOVED*** selector
-       * @param {Function***REMOVED*** pred
+       * @param {String} selector
+       * @param {Function} pred
        */
       var btnState = function (selector, pred) {
         var $btn = $container.find(selector);
         $btn.toggleClass('active', pred());
-    ***REMOVED***;
+      };
 
       // fontname
       var $fontname = $container.find('.note-fontname');
@@ -3218,8 +3218,8 @@
           selectedFont = selectedFont.replace(/\'/g, '');
           $fontname.find('.note-current-fontname').text(selectedFont);
           checkDropdownMenu($fontname, selectedFont);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       // fontsize
       var $fontsize = $container.find('.note-fontsize');
@@ -3232,48 +3232,48 @@
 
       btnState('button[data-event="bold"]', function () {
         return styleInfo['font-bold'] === 'bold';
-    ***REMOVED***);
+      });
       btnState('button[data-event="italic"]', function () {
         return styleInfo['font-italic'] === 'italic';
-    ***REMOVED***);
+      });
       btnState('button[data-event="underline"]', function () {
         return styleInfo['font-underline'] === 'underline';
-    ***REMOVED***);
+      });
       btnState('button[data-event="strikethrough"]', function () {
         return styleInfo['font-strikethrough'] === 'strikethrough';
-    ***REMOVED***);
+      });
       btnState('button[data-event="superscript"]', function () {
         return styleInfo['font-superscript'] === 'superscript';
-    ***REMOVED***);
+      });
       btnState('button[data-event="subscript"]', function () {
         return styleInfo['font-subscript'] === 'subscript';
-    ***REMOVED***);
+      });
       btnState('button[data-event="justifyLeft"]', function () {
         return styleInfo['text-align'] === 'left' || styleInfo['text-align'] === 'start';
-    ***REMOVED***);
+      });
       btnState('button[data-event="justifyCenter"]', function () {
         return styleInfo['text-align'] === 'center';
-    ***REMOVED***);
+      });
       btnState('button[data-event="justifyRight"]', function () {
         return styleInfo['text-align'] === 'right';
-    ***REMOVED***);
+      });
       btnState('button[data-event="justifyFull"]', function () {
         return styleInfo['text-align'] === 'justify';
-    ***REMOVED***);
+      });
       btnState('button[data-event="insertUnorderedList"]', function () {
         return styleInfo['list-style'] === 'unordered';
-    ***REMOVED***);
+      });
       btnState('button[data-event="insertOrderedList"]', function () {
         return styleInfo['list-style'] === 'ordered';
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     /**
      * update recent color
      *
-     * @param {Node***REMOVED*** button
-     * @param {String***REMOVED*** eventName
-     * @param {value***REMOVED*** value
+     * @param {Node} button
+     * @param {String} eventName
+     * @param {value} value
      */
     this.updateRecentColor = function (button, eventName, value) {
       var $color = $(button).closest('.note-color');
@@ -3283,8 +3283,8 @@
       $recentColor.attr('data-value', JSON.stringify(colorInfo));
       var sKey = eventName === 'backColor' ? 'background-color' : 'color';
       $recentColor.find('i').css(sKey, value);
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   /**
    * Toolbar
@@ -3294,47 +3294,47 @@
 
     this.update = function ($toolbar, styleInfo) {
       button.update($toolbar, styleInfo);
-  ***REMOVED***;
+    };
 
     /**
-     * @param {Node***REMOVED*** button
-     * @param {String***REMOVED*** eventName
-     * @param {String***REMOVED*** value
+     * @param {Node} button
+     * @param {String} eventName
+     * @param {String} value
      */
     this.updateRecentColor = function (buttonNode, eventName, value) {
       button.updateRecentColor(buttonNode, eventName, value);
-  ***REMOVED***;
+    };
 
     /**
      * activate buttons exclude codeview
-     * @param {jQuery***REMOVED*** $toolbar
+     * @param {jQuery} $toolbar
      */
     this.activate = function ($toolbar) {
       $toolbar.find('button')
               .not('button[data-event="codeview"]')
               .removeClass('disabled');
-  ***REMOVED***;
+    };
 
     /**
      * deactivate buttons exclude codeview
-     * @param {jQuery***REMOVED*** $toolbar
+     * @param {jQuery} $toolbar
      */
     this.deactivate = function ($toolbar) {
       $toolbar.find('button')
               .not('button[data-event="codeview"]')
               .addClass('disabled');
-  ***REMOVED***;
+    };
 
     this.updateFullscreen = function ($container, bFullscreen) {
       var $btn = $container.find('button[data-event="fullscreen"]');
       $btn.toggleClass('active', bFullscreen);
-  ***REMOVED***;
+    };
 
     this.updateCodeview = function ($container, isCodeview) {
       var $btn = $container.find('button[data-event="codeview"]');
       $btn.toggleClass('active', isCodeview);
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   /**
    * Popover (http://getbootstrap.com/javascript/#popovers)
@@ -3344,8 +3344,8 @@
 
     /**
      * returns position from placeholder
-     * @param {Node***REMOVED*** placeholder
-     * @param {Boolean***REMOVED*** isAirMode
+     * @param {Node} placeholder
+     * @param {Boolean} isAirMode
      */
     var posFromPlaceholder = function (placeholder, isAirMode) {
       var $placeholder = $(placeholder);
@@ -3356,29 +3356,29 @@
       return {
         left: pos.left,
         top: pos.top + height
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     /**
      * show popover
-     * @param {jQuery***REMOVED*** popover
-     * @param {Position***REMOVED*** pos
+     * @param {jQuery} popover
+     * @param {Position} pos
      */
     var showPopover = function ($popover, pos) {
       $popover.css({
         display: 'block',
         left: pos.left,
         top: pos.top
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     var PX_POPOVER_ARROW_OFFSET_X = 20;
 
     /**
      * update current state
-     * @param {jQuery***REMOVED*** $popover - popover container
-     * @param {Object***REMOVED*** styleInfo - style object
-     * @param {Boolean***REMOVED*** isAirMode
+     * @param {jQuery} $popover - popover container
+     * @param {Object} styleInfo - style object
+     * @param {Boolean} isAirMode
      */
     this.update = function ($popover, styleInfo, isAirMode) {
       button.update($popover, styleInfo);
@@ -3389,16 +3389,16 @@
         var href = $(styleInfo.anchor).attr('href');
         $anchor.attr('href', href).html(href);
         showPopover($linkPopover, posFromPlaceholder(styleInfo.anchor, isAirMode));
-    ***REMOVED*** else {
+      } else {
         $linkPopover.hide();
-    ***REMOVED***
+      }
 
       var $imagePopover = $popover.find('.note-image-popover');
       if (styleInfo.image) {
         showPopover($imagePopover, posFromPlaceholder(styleInfo.image, isAirMode));
-    ***REMOVED*** else {
+      } else {
         $imagePopover.hide();
-    ***REMOVED***
+      }
 
       var $airPopover = $popover.find('.note-air-popover');
       if (isAirMode && !styleInfo.range.isCollapsed()) {
@@ -3406,29 +3406,29 @@
         showPopover($airPopover, {
           left: Math.max(bnd.left + bnd.width / 2 - PX_POPOVER_ARROW_OFFSET_X, 0),
           top: bnd.top + bnd.height
-      ***REMOVED***);
-    ***REMOVED*** else {
+        });
+      } else {
         $airPopover.hide();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
-     * @param {Node***REMOVED*** button
-     * @param {String***REMOVED*** eventName
-     * @param {String***REMOVED*** value
+     * @param {Node} button
+     * @param {String} eventName
+     * @param {String} value
      */
     this.updateRecentColor = function (button, eventName, value) {
       button.updateRecentColor(button, eventName, value);
-  ***REMOVED***;
+    };
 
     /**
      * hide all popovers
-     * @param {jQuery***REMOVED*** $popover - popover container
+     * @param {jQuery} $popover - popover container
      */
     this.hide = function ($popover) {
       $popover.children().hide();
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   /**
    * Handle
@@ -3436,9 +3436,9 @@
   var Handle = function () {
     /**
      * update handle
-     * @param {jQuery***REMOVED*** $handle
-     * @param {Object***REMOVED*** styleInfo
-     * @param {Boolean***REMOVED*** isAirMode
+     * @param {jQuery} $handle
+     * @param {Object} styleInfo
+     * @param {Boolean} isAirMode
      */
     this.update = function ($handle, styleInfo, isAirMode) {
       var $selection = $handle.find('.note-control-selection');
@@ -3450,7 +3450,7 @@
         var imageSize = {
           w: $image.outerWidth(true),
           h: $image.outerHeight(true)
-      ***REMOVED***;
+        };
 
         $selection.css({
           display: 'block',
@@ -3458,18 +3458,18 @@
           top: pos.top,
           width: imageSize.w,
           height: imageSize.h
-      ***REMOVED***).data('target', styleInfo.image); // save current image element.
+        }).data('target', styleInfo.image); // save current image element.
         var sizingText = imageSize.w + 'x' + imageSize.h;
         $selection.find('.note-control-selection-info').text(sizingText);
-    ***REMOVED*** else {
+      } else {
         $selection.hide();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.hide = function ($handle) {
       $handle.children().hide();
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   /**
    * Dialog 
@@ -3481,20 +3481,20 @@
     /**
      * toggle button status
      *
-     * @param {jQuery***REMOVED*** $btn
-     * @param {Boolean***REMOVED*** isEnable
+     * @param {jQuery} $btn
+     * @param {Boolean} isEnable
      */
     var toggleBtn = function ($btn, isEnable) {
       $btn.toggleClass('disabled', !isEnable);
       $btn.attr('disabled', !isEnable);
-  ***REMOVED***;
+    };
 
     /**
      * show image dialog
      *
-     * @param {jQuery***REMOVED*** $editable
-     * @param {jQuery***REMOVED*** $dialog
-     * @return {Promise***REMOVED***
+     * @param {jQuery} $editable
+     * @param {jQuery} $dialog
+     * @return {Promise}
      */
     this.showImageDialog = function ($editable, $dialog) {
       return $.Deferred(function (deferred) {
@@ -3510,7 +3510,7 @@
             .on('change', function () {
               deferred.resolve(this.files || this.value);
               $imageDialog.modal('hide');
-          ***REMOVED***)
+            })
             .val('')
           );
 
@@ -3519,37 +3519,37 @@
 
             deferred.resolve($imageUrl.val());
             $imageDialog.modal('hide');
-        ***REMOVED***);
+          });
 
           $imageUrl.on('keyup paste', function (event) {
             var url;
             
             if (event.type === 'paste') {
               url = event.originalEvent.clipboardData.getData('text');
-          ***REMOVED*** else {
+            } else {
               url = $imageUrl.val();
-          ***REMOVED***
+            }
             
             toggleBtn($imageBtn, url);
-        ***REMOVED***).val('').trigger('focus');
-      ***REMOVED***).one('hidden.bs.modal', function () {
+          }).val('').trigger('focus');
+        }).one('hidden.bs.modal', function () {
           $imageInput.off('change');
           $imageUrl.off('keyup paste');
           $imageBtn.off('click');
 
           if (deferred.state() === 'pending') {
             deferred.reject();
-        ***REMOVED***
-      ***REMOVED***).modal('show');
-    ***REMOVED***);
-  ***REMOVED***;
+          }
+        }).modal('show');
+      });
+    };
 
     /**
      * Show link dialog and set event handlers on dialog controls.
      *
-     * @param {jQuery***REMOVED*** $dialog
-     * @param {Object***REMOVED*** linkInfo
-     * @return {Promise***REMOVED***
+     * @param {jQuery} $dialog
+     * @param {Object} linkInfo
+     * @return {Promise}
      */
     this.showLinkDialog = function ($editable, $dialog, linkInfo) {
       return $.Deferred(function (deferred) {
@@ -3567,13 +3567,13 @@
             // if linktext was modified by keyup,
             // stop cloning text from linkUrl
             linkInfo.text = $linkText.val();
-        ***REMOVED***);
+          });
 
           // if no url was given, copy text to url
           if (!linkInfo.url) {
             linkInfo.url = linkInfo.text;
             toggleBtn($linkBtn, linkInfo.text);
-        ***REMOVED***
+          }
 
           $linkUrl.on('input', function () {
             toggleBtn($linkBtn, $linkUrl.val());
@@ -3581,8 +3581,8 @@
             // when create a new link
             if (!linkInfo.text) {
               $linkText.val($linkUrl.val());
-          ***REMOVED***
-        ***REMOVED***).val(linkInfo.url).trigger('focus').trigger('select');
+            }
+          }).val(linkInfo.url).trigger('focus').trigger('select');
 
           $openInNewWindow.prop('checked', linkInfo.newWindow);
 
@@ -3594,10 +3594,10 @@
               url: $linkUrl.val(),
               text: $linkText.val(),
               newWindow: $openInNewWindow.is(':checked')
-          ***REMOVED***);
+            });
             $linkDialog.modal('hide');
-        ***REMOVED***);
-      ***REMOVED***).one('hidden.bs.modal', function () {
+          });
+        }).one('hidden.bs.modal', function () {
           // detach events
           $linkText.off('input');
           $linkUrl.off('input');
@@ -3605,15 +3605,15 @@
 
           if (deferred.state() === 'pending') {
             deferred.reject();
-        ***REMOVED***
-      ***REMOVED***).modal('show');
-    ***REMOVED***).promise();
-  ***REMOVED***;
+          }
+        }).modal('show');
+      }).promise();
+    };
 
     /**
      * show help dialog
      *
-     * @param {jQuery***REMOVED*** $dialog
+     * @param {jQuery} $dialog
      */
     this.showHelpDialog = function ($editable, $dialog) {
       return $.Deferred(function (deferred) {
@@ -3621,10 +3621,10 @@
 
         $helpDialog.one('hidden.bs.modal', function () {
           deferred.resolve();
-      ***REMOVED***).modal('show');
-    ***REMOVED***).promise();
-  ***REMOVED***;
-***REMOVED***;
+        }).modal('show');
+      }).promise();
+    };
+  };
 
 
   var CodeMirror;
@@ -3632,11 +3632,11 @@
     if (agent.isSupportAmd) {
       require(['CodeMirror'], function (cm) {
         CodeMirror = cm;
-    ***REMOVED***);
-  ***REMOVED*** else {
+      });
+    } else {
       CodeMirror = window.CodeMirror;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   /**
    * EventHandler
@@ -3652,34 +3652,34 @@
 
     this.getEditor = function () {
       return editor;
-  ***REMOVED***;
+    };
 
     /**
      * returns makeLayoutInfo from editor's descendant node.
      *
-     * @param {Node***REMOVED*** descendant
-     * @returns {Object***REMOVED***
+     * @param {Node} descendant
+     * @returns {Object}
      */
     var makeLayoutInfo = function (descendant) {
       var $target = $(descendant).closest('.note-editor, .note-air-editor, .note-air-layout');
 
-      if (!$target.length) { return null; ***REMOVED***
+      if (!$target.length) { return null; }
 
       var $editor;
       if ($target.is('.note-editor, .note-air-editor')) {
         $editor = $target;
-    ***REMOVED*** else {
+      } else {
         $editor = $('#note-editor-' + list.last($target.attr('id').split('-')));
-    ***REMOVED***
+      }
 
       return dom.buildLayoutInfo($editor);
-  ***REMOVED***;
+    };
 
     /**
      * insert Images from file array.
      *
-     * @param {Object***REMOVED*** layoutInfo
-     * @param {File[]***REMOVED*** files
+     * @param {Object} layoutInfo
+     * @param {File[]} files
      */
     var insertImages = function (layoutInfo, files) {
       var $editor = layoutInfo.editor(),
@@ -3692,31 +3692,31 @@
       if (callbacks.onImageUpload) {
         callbacks.onImageUpload(files, editor, $editable);
       // else insert Image as dataURL
-    ***REMOVED*** else {
+      } else {
         $.each(files, function (idx, file) {
           var filename = file.name;
           if (options.maximumImageFileSize && options.maximumImageFileSize < file.size) {
             if (callbacks.onImageUploadError) {
               callbacks.onImageUploadError(options.langInfo.image.maximumFileSizeError);
-          ***REMOVED*** else {
+            } else {
               alert(options.langInfo.image.maximumFileSizeError);
-          ***REMOVED***
-        ***REMOVED*** else {
+            }
+          } else {
             async.readFileAsDataURL(file).then(function (sDataURL) {
               editor.insertImage($editable, sDataURL, filename);
-          ***REMOVED***).fail(function () {
+            }).fail(function () {
               if (callbacks.onImageUploadError) {
                 callbacks.onImageUploadError();
-            ***REMOVED***
-          ***REMOVED***);
-        ***REMOVED***
-      ***REMOVED***);
-    ***REMOVED***
-  ***REMOVED***;
+              }
+            });
+          }
+        });
+      }
+    };
 
     var commands = {
       /**
-       * @param {Object***REMOVED*** layoutInfo
+       * @param {Object} layoutInfo
        */
       showLinkDialog: function (layoutInfo) {
         var $editor = layoutInfo.editor(),
@@ -3732,13 +3732,13 @@
           editor.createLink($editable, linkInfo, options);
           // hide popover after creating link
           popover.hide(layoutInfo.popover());
-      ***REMOVED***).fail(function () {
+        }).fail(function () {
           editor.restoreRange($editable);
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
 
       /**
-       * @param {Object***REMOVED*** layoutInfo
+       * @param {Object} layoutInfo
        */
       showImageDialog: function (layoutInfo) {
         var $dialog = layoutInfo.dialog(),
@@ -3751,17 +3751,17 @@
           if (typeof data === 'string') {
             // image url
             editor.insertImage($editable, data);
-        ***REMOVED*** else {
+          } else {
             // array of files
             insertImages(layoutInfo, data);
-        ***REMOVED***
-      ***REMOVED***).fail(function () {
+          }
+        }).fail(function () {
           editor.restoreRange($editable);
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
 
       /**
-       * @param {Object***REMOVED*** layoutInfo
+       * @param {Object} layoutInfo
        */
       showHelpDialog: function (layoutInfo) {
         var $dialog = layoutInfo.dialog(),
@@ -3770,8 +3770,8 @@
         editor.saveRange($editable, true);
         dialog.showHelpDialog($editable, $dialog).then(function () {
           editor.restoreRange($editable);
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
 
       fullscreen: function (layoutInfo) {
         var $editor = layoutInfo.editor(),
@@ -3784,8 +3784,8 @@
           $codable.css('height', size.h);
           if ($codable.data('cmeditor')) {
             $codable.data('cmeditor').setsize(null, size.h);
-        ***REMOVED***
-      ***REMOVED***;
+          }
+        };
 
         $editor.toggleClass('fullscreen');
         var isFullscreen = $editor.hasClass('fullscreen');
@@ -3795,20 +3795,20 @@
           $window.on('resize', function () {
             resize({
               h: $window.height() - $toolbar.outerHeight()
-          ***REMOVED***);
-        ***REMOVED***).trigger('resize');
+            });
+          }).trigger('resize');
 
           $scrollbar.css('overflow', 'hidden');
-      ***REMOVED*** else {
+        } else {
           $window.off('resize');
           resize({
             h: $editable.data('orgheight')
-        ***REMOVED***);
+          });
           $scrollbar.css('overflow', 'visible');
-      ***REMOVED***
+        }
 
         toolbar.updateFullscreen($toolbar, isFullscreen);
-    ***REMOVED***,
+      },
 
       codeview: function (layoutInfo) {
         var $editor = layoutInfo.editor(),
@@ -3843,67 +3843,67 @@
               cmEditor.ternServer = server;
               cmEditor.on('cursorActivity', function (cm) {
                 server.updateArgHints(cm);
-            ***REMOVED***);
-          ***REMOVED***
+              });
+            }
 
             // CodeMirror hasn't Padding.
             cmEditor.setSize(null, $editable.outerHeight());
             $codable.data('cmEditor', cmEditor);
-        ***REMOVED***
-      ***REMOVED*** else {
+          }
+        } else {
           // deactivate CodeMirror as codable
           if (agent.hasCodeMirror) {
             cmEditor = $codable.data('cmEditor');
             $codable.val(cmEditor.getValue());
             cmEditor.toTextArea();
-        ***REMOVED***
+          }
 
           $editable.html(dom.value($codable) || dom.emptyPara);
           $editable.height(options.height ? $codable.height() : 'auto');
 
           toolbar.activate($toolbar);
           $editable.focus();
-      ***REMOVED***
+        }
 
         toolbar.updateCodeview(layoutInfo.toolbar(), isCodeview);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     var hMousedown = function (event) {
       //preventDefault Selection for FF, IE8+
       if (dom.isImg(event.target)) {
         event.preventDefault();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     var hToolbarAndPopoverUpdate = function (event) {
       // delay for range after mouseup
       setTimeout(function () {
         var layoutInfo = makeLayoutInfo(event.currentTarget || event.target);
         var styleInfo = editor.currentStyle(event.target);
-        if (!styleInfo) { return; ***REMOVED***
+        if (!styleInfo) { return; }
 
         var isAirMode = layoutInfo.editor().data('options').airMode;
         if (!isAirMode) {
           toolbar.update(layoutInfo.toolbar(), styleInfo);
-      ***REMOVED***
+        }
 
         popover.update(layoutInfo.popover(), styleInfo, isAirMode);
         handle.update(layoutInfo.handle(), styleInfo, isAirMode);
-    ***REMOVED***, 0);
-  ***REMOVED***;
+      }, 0);
+    };
 
     var hScroll = function (event) {
       var layoutInfo = makeLayoutInfo(event.currentTarget || event.target);
       //hide popover and handle when scrolled
       popover.hide(layoutInfo.popover());
       handle.hide(layoutInfo.handle());
-  ***REMOVED***;
+    };
 
     /**
      * paste clipboard image
      *
-     * @param {Event***REMOVED*** event
+     * @param {Event} event
      */
     var hPasteClipboardImage = function (event) {
       var clipboardData = event.originalEvent.clipboardData;
@@ -3915,7 +3915,7 @@
         // only can run if it has onImageUpload method
         if (!callbacks.onImageUpload) {
           return;
-      ***REMOVED***
+        }
 
         // save cursor
         editor.saveNode($editable);
@@ -3931,9 +3931,9 @@
           var array = new Uint8Array(data.length);
           for (var i = 0; i < data.length; i++) {
             array[i] = data.charCodeAt(i);
-        ***REMOVED***
+          }
 
-          var blob = new Blob([array], { type : 'image/png'***REMOVED***);
+          var blob = new Blob([array], { type : 'image/png'});
           blob.name = 'clipboard.png';
 
           editor.restoreNode($editable);
@@ -3941,26 +3941,26 @@
           insertImages(layoutInfo, [blob]);
 
           editor.afterCommand($editable);
-      ***REMOVED***, 0);
+        }, 0);
 
         return;
-    ***REMOVED***
+      }
 
       var item = list.head(clipboardData.items);
       var isClipboardImage = item.kind === 'file' && item.type.indexOf('image/') !== -1;
 
       if (isClipboardImage) {
         insertImages(layoutInfo, [item.getAsFile()]);
-    ***REMOVED***
+      }
 
       editor.afterCommand($editable);
-  ***REMOVED***;
+    };
 
     /**
      * `mousedown` event handler on $handle
      *  - controlSizing: resize image
      *
-     * @param {MouseEvent***REMOVED*** event
+     * @param {MouseEvent} event
      */
     var hHandleMousedown = function (event) {
       if (dom.isControlSizing(event.target)) {
@@ -3982,28 +3982,28 @@
           editor.resizeTo({
             x: event.clientX - posStart.left,
             y: event.clientY - (posStart.top - scrollTop)
-        ***REMOVED***, $target, !event.shiftKey);
+          }, $target, !event.shiftKey);
 
-          handle.update($handle, {image: target***REMOVED***, isAirMode);
-          popover.update($popover, {image: target***REMOVED***, isAirMode);
-      ***REMOVED***).one('mouseup', function () {
+          handle.update($handle, {image: target}, isAirMode);
+          popover.update($popover, {image: target}, isAirMode);
+        }).one('mouseup', function () {
           $document.off('mousemove');
           editor.afterCommand($editable);
-      ***REMOVED***);
+        });
 
         if (!$target.data('ratio')) { // original ratio.
           $target.data('ratio', $target.height() / $target.width());
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***;
+        }
+      }
+    };
 
     var hToolbarAndPopoverMousedown = function (event) {
       // prevent default event when insertTable (FF, Webkit)
       var $btn = $(event.target).closest('[data-event]');
       if ($btn.length) {
         event.preventDefault();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     var hToolbarAndPopoverClick = function (event) {
       var $btn = $(event.target).closest('[data-event]');
@@ -4022,40 +4022,40 @@
         if ($.inArray(eventName, ['resize', 'floatMe', 'removeMedia', 'imageShape']) !== -1) {
           var $selection = layoutInfo.handle().find('.note-control-selection');
           $target = $($selection.data('target'));
-      ***REMOVED***
+        }
 
         // If requested, hide the popover when the button is clicked.
         // Useful for things like showHelpDialog.
         if (hide) {
           $btn.parents('.popover').hide();
-      ***REMOVED***
+        }
 
         if (editor[eventName]) { // on command
           var $editable = layoutInfo.editable();
           $editable.trigger('focus');
           editor[eventName]($editable, value, $target);
-      ***REMOVED*** else if (commands[eventName]) {
+        } else if (commands[eventName]) {
           commands[eventName].call(this, layoutInfo);
-      ***REMOVED*** else if ($.isFunction($.summernote.pluginEvents[eventName])) {
+        } else if ($.isFunction($.summernote.pluginEvents[eventName])) {
           $.summernote.pluginEvents[eventName](layoutInfo, value, $target);
-      ***REMOVED***
+        }
 
         // after command
         if ($.inArray(eventName, ['backColor', 'foreColor']) !== -1) {
           var options = layoutInfo.editor().data('options', options);
           var module = options.airMode ? popover : toolbar;
           module.updateRecentColor(list.head($btn), eventName, value);
-      ***REMOVED***
+        }
 
         hToolbarAndPopoverUpdate(event);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     var EDITABLE_PADDING = 24;
     /**
      * `mousedown` event handler on statusbar
      *
-     * @param {MouseEvent***REMOVED*** event
+     * @param {MouseEvent} event
      */
     var hStatusbarMousedown = function (event) {
       event.preventDefault();
@@ -4074,10 +4074,10 @@
         nHeight = (options.maxHeight > 0) ? Math.min(nHeight, options.maxHeight) : nHeight;
 
         $editable.height(nHeight);
-    ***REMOVED***).one('mouseup', function () {
+      }).one('mouseup', function () {
         $document.off('mousemove');
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     var PX_PER_EM = 18;
     var hDimensionPickerMove = function (event, options) {
@@ -4094,55 +4094,55 @@
         posOffset = {
           x: event.pageX - posCatcher.left,
           y: event.pageY - posCatcher.top
-      ***REMOVED***;
-    ***REMOVED*** else {
+        };
+      } else {
         posOffset = {
           x: event.offsetX,
           y: event.offsetY
-      ***REMOVED***;
-    ***REMOVED***
+        };
+      }
 
       var dim = {
         c: Math.ceil(posOffset.x / PX_PER_EM) || 1,
         r: Math.ceil(posOffset.y / PX_PER_EM) || 1
-    ***REMOVED***;
+      };
 
-      $highlighted.css({ width: dim.c + 'em', height: dim.r + 'em' ***REMOVED***);
+      $highlighted.css({ width: dim.c + 'em', height: dim.r + 'em' });
       $catcher.attr('data-value', dim.c + 'x' + dim.r);
 
       if (3 < dim.c && dim.c < options.insertTableMaxSize.col) {
-        $unhighlighted.css({ width: dim.c + 1 + 'em'***REMOVED***);
-    ***REMOVED***
+        $unhighlighted.css({ width: dim.c + 1 + 'em'});
+      }
 
       if (3 < dim.r && dim.r < options.insertTableMaxSize.row) {
-        $unhighlighted.css({ height: dim.r + 1 + 'em'***REMOVED***);
-    ***REMOVED***
+        $unhighlighted.css({ height: dim.r + 1 + 'em'});
+      }
 
       $dimensionDisplay.html(dim.c + ' x ' + dim.r);
-  ***REMOVED***;
+    };
 
     /**
      * Drag and Drop Events
      *
-     * @param {Object***REMOVED*** layoutInfo - layout Informations
-     * @param {Object***REMOVED*** options
+     * @param {Object} layoutInfo - layout Informations
+     * @param {Object} options
      */
     var handleDragAndDropEvent = function (layoutInfo, options) {
       if (options.disableDragAndDrop) {
         // prevent default drop event
         $document.on('drop', function (e) {
           e.preventDefault();
-      ***REMOVED***);
-    ***REMOVED*** else {
+        });
+      } else {
         attachDragAndDropEvent(layoutInfo, options);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * attach Drag and Drop Events
      *
-     * @param {Object***REMOVED*** layoutInfo - layout Informations
-     * @param {Object***REMOVED*** options
+     * @param {Object} layoutInfo - layout Informations
+     * @param {Object} options
      */
     var attachDragAndDropEvent = function (layoutInfo, options) {
       var collection = $(),
@@ -4157,26 +4157,26 @@
           $dropzone.width(layoutInfo.editor.width());
           $dropzone.height(layoutInfo.editor.height());
           $dropzoneMessage.text(options.langInfo.image.dragImageHere);
-      ***REMOVED***
+        }
         collection = collection.add(e.target);
-    ***REMOVED***).on('dragleave', function (e) {
+      }).on('dragleave', function (e) {
         collection = collection.not(e.target);
         if (!collection.length) {
           layoutInfo.editor.removeClass('dragover');
-      ***REMOVED***
-    ***REMOVED***).on('drop', function () {
+        }
+      }).on('drop', function () {
         collection = $();
         layoutInfo.editor.removeClass('dragover');
-    ***REMOVED***);
+      });
 
       // change dropzone's message on hover.
       $dropzone.on('dragenter', function () {
         $dropzone.addClass('hover');
         $dropzoneMessage.text(options.langInfo.image.dropImage);
-    ***REMOVED***).on('dragleave', function () {
+      }).on('dragleave', function () {
         $dropzone.removeClass('hover');
         $dropzoneMessage.text(options.langInfo.image.dragImageHere);
-    ***REMOVED***);
+      });
 
       // attach dropImage
       $dropzone.on('drop', function (event) {
@@ -4188,18 +4188,18 @@
         layoutInfo.editable().focus();
         if (dataTransfer && dataTransfer.files && dataTransfer.files.length) {
           insertImages(layoutInfo, dataTransfer.files);
-      ***REMOVED*** else if (text) {
+        } else if (text) {
           editor.insertText(layoutInfo.editable(), text);
-      ***REMOVED***
-    ***REMOVED***).on('dragover', false); // prevent default dragover event
-  ***REMOVED***;
+        }
+      }).on('dragover', false); // prevent default dragover event
+    };
 
 
     /**
      * bind KeyMap on keydown
      *
-     * @param {Object***REMOVED*** layoutInfo
-     * @param {Object***REMOVED*** keyMap
+     * @param {Object} layoutInfo
+     * @param {Object} keyMap
      */
     this.bindKeyMap = function (layoutInfo, keyMap) {
       var $editor = layoutInfo.editor;
@@ -4211,13 +4211,13 @@
         var aKey = [];
 
         // modifier
-        if (event.metaKey) { aKey.push('CMD'); ***REMOVED***
-        if (event.ctrlKey && !event.altKey) { aKey.push('CTRL'); ***REMOVED***
-        if (event.shiftKey) { aKey.push('SHIFT'); ***REMOVED***
+        if (event.metaKey) { aKey.push('CMD'); }
+        if (event.ctrlKey && !event.altKey) { aKey.push('CTRL'); }
+        if (event.shiftKey) { aKey.push('SHIFT'); }
 
         // keycode
         var keyName = key.nameFromCode[event.keyCode];
-        if (keyName) { aKey.push(keyName); ***REMOVED***
+        if (keyName) { aKey.push(keyName); }
 
         var eventName = keyMap[aKey.join('+')];
         if (eventName) {
@@ -4225,32 +4225,32 @@
 
           if (editor[eventName]) {
             editor[eventName]($editable, $editor.data('options'));
-        ***REMOVED*** else if (commands[eventName]) {
+          } else if (commands[eventName]) {
             commands[eventName].call(this, layoutInfo);
-        ***REMOVED*** else if ($.summernote.plugins[eventName]) {
+          } else if ($.summernote.plugins[eventName]) {
             var plugin = $.summernote.plugins[eventName];
             if ($.isFunction(plugin.event)) {
               plugin.event(event, editor, layoutInfo);
-          ***REMOVED***
-        ***REMOVED***
-      ***REMOVED*** else if (key.isEdit(event.keyCode)) {
+            }
+          }
+        } else if (key.isEdit(event.keyCode)) {
           editor.afterCommand($editable);
-      ***REMOVED***
-    ***REMOVED***);
-  ***REMOVED***;
+        }
+      });
+    };
 
     /**
      * attach eventhandler
      *
-     * @param {Object***REMOVED*** layoutInfo - layout Informations
-     * @param {Object***REMOVED*** options - user options include custom event handlers
-     * @param {Function***REMOVED*** options.enter - enter key handler
+     * @param {Object} layoutInfo - layout Informations
+     * @param {Object} options - user options include custom event handlers
+     * @param {Function} options.enter - enter key handler
      */
     this.attach = function (layoutInfo, options) {
       // handlers for editable
       if (options.shortcuts) {
         this.bindKeyMap(layoutInfo, options.keyMap[agent.isMac ? 'mac' : 'pc']);
-    ***REMOVED***
+      }
       layoutInfo.editable.on('mousedown', hMousedown);
       layoutInfo.editable.on('keyup mouseup', hToolbarAndPopoverUpdate);
       layoutInfo.editable.on('scroll', hScroll);
@@ -4273,8 +4273,8 @@
         // handler for statusbar
         if (!options.disableResizeEditor) {
           layoutInfo.statusbar.on('mousedown', hStatusbarMousedown);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       // handler for table dimension
       var $catcherContainer = options.airMode ? layoutInfo.popover :
@@ -4283,9 +4283,9 @@
       $catcher.css({
         width: options.insertTableMaxSize.col + 'em',
         height: options.insertTableMaxSize.row + 'em'
-    ***REMOVED***).on('mousemove', function (event) {
+      }).on('mousemove', function (event) {
         hDimensionPickerMove(event, options);
-    ***REMOVED***);
+      });
 
       // save options on editor
       layoutInfo.editor.data('options', options);
@@ -4295,8 +4295,8 @@
         // protect FF Error: NS_ERROR_FAILURE: Failure
         setTimeout(function () {
           document.execCommand('styleWithCSS', 0, options.styleWithSpan);
-      ***REMOVED***, 0);
-    ***REMOVED***
+        }, 0);
+      }
 
       // History
       var history = new History(layoutInfo.editable);
@@ -4306,30 +4306,30 @@
       // enter, focus, blur, keyup, keydown
       if (options.onenter) {
         layoutInfo.editable.keypress(function (event) {
-          if (event.keyCode === key.ENTER) { options.onenter(event); ***REMOVED***
-      ***REMOVED***);
-    ***REMOVED***
+          if (event.keyCode === key.ENTER) { options.onenter(event); }
+        });
+      }
 
-      if (options.onfocus) { layoutInfo.editable.focus(options.onfocus); ***REMOVED***
-      if (options.onblur) { layoutInfo.editable.blur(options.onblur); ***REMOVED***
-      if (options.onkeyup) { layoutInfo.editable.keyup(options.onkeyup); ***REMOVED***
-      if (options.onkeydown) { layoutInfo.editable.keydown(options.onkeydown); ***REMOVED***
-      if (options.onpaste) { layoutInfo.editable.on('paste', options.onpaste); ***REMOVED***
+      if (options.onfocus) { layoutInfo.editable.focus(options.onfocus); }
+      if (options.onblur) { layoutInfo.editable.blur(options.onblur); }
+      if (options.onkeyup) { layoutInfo.editable.keyup(options.onkeyup); }
+      if (options.onkeydown) { layoutInfo.editable.keydown(options.onkeydown); }
+      if (options.onpaste) { layoutInfo.editable.on('paste', options.onpaste); }
 
       // callbacks for advanced features (camel)
-      if (options.onToolbarClick) { layoutInfo.toolbar.click(options.onToolbarClick); ***REMOVED***
+      if (options.onToolbarClick) { layoutInfo.toolbar.click(options.onToolbarClick); }
       if (options.onChange) {
         var hChange = function () {
           editor.triggerOnChange(layoutInfo.editable);
-      ***REMOVED***;
+        };
 
         if (agent.isMSIE) {
           var sDomEvents = 'DOMCharacterDataModified DOMSubtreeModified DOMNodeInserted';
           layoutInfo.editable.on(sDomEvents, hChange);
-      ***REMOVED*** else {
+        } else {
           layoutInfo.editable.on('input', hChange);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       // All editor status will be saved on editable with jquery's data
       // for support multiple editor with singleton object.
@@ -4340,8 +4340,8 @@
         onImageUploadError: options.onImageUploadError,
         onFileUpload: options.onFileUpload,
         onFileUploadError: options.onFileUpload
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     this.detach = function (layoutInfo, options) {
       layoutInfo.editable.off();
@@ -4354,9 +4354,9 @@
         layoutInfo.dropzone.off();
         layoutInfo.toolbar.off();
         layoutInfo.statusbar.off();
-    ***REMOVED***
-  ***REMOVED***;
-***REMOVED***;
+      }
+    };
+  };
 
   /**
    * renderer
@@ -4368,13 +4368,13 @@
     /**
      * bootstrap button template
      *
-     * @param {String***REMOVED*** label
-     * @param {Object***REMOVED*** [options]
-     * @param {String***REMOVED*** [options.event]
-     * @param {String***REMOVED*** [options.value]
-     * @param {String***REMOVED*** [options.title]
-     * @param {String***REMOVED*** [options.dropdown]
-     * @param {String***REMOVED*** [options.hide]
+     * @param {String} label
+     * @param {Object} [options]
+     * @param {String} [options.event]
+     * @param {String} [options.value]
+     * @param {String} [options.title]
+     * @param {String} [options.dropdown]
+     * @param {String} [options.hide]
      */
     var tplButton = function (label, options) {
       var event = options.event;
@@ -4399,28 +4399,28 @@
                (dropdown ? ' <span class="caret"></span>' : '') +
              '</button>' +
              (dropdown || '');
-  ***REMOVED***;
+    };
 
     /**
      * bootstrap icon button template
      *
-     * @param {String***REMOVED*** iconClassName
-     * @param {Object***REMOVED*** [options]
-     * @param {String***REMOVED*** [options.event]
-     * @param {String***REMOVED*** [options.value]
-     * @param {String***REMOVED*** [options.title]
-     * @param {String***REMOVED*** [options.dropdown]
+     * @param {String} iconClassName
+     * @param {Object} [options]
+     * @param {String} [options.event]
+     * @param {String} [options.value]
+     * @param {String} [options.title]
+     * @param {String} [options.dropdown]
      */
     var tplIconButton = function (iconClassName, options) {
       var label = '<i class="' + iconClassName + '"></i>';
       return tplButton(label, options);
-  ***REMOVED***;
+    };
 
     /**
      * bootstrap popover template
      *
-     * @param {String***REMOVED*** className
-     * @param {String***REMOVED*** content
+     * @param {String} className
+     * @param {String} content
      */
     var tplPopover = function (className, content) {
       return '<div class="' + className + ' popover bottom in" style="display: none;">' +
@@ -4429,15 +4429,15 @@
                  content +
                '</div>' +
              '</div>';
-  ***REMOVED***;
+    };
 
     /**
      * bootstrap dialog template
      *
-     * @param {String***REMOVED*** className
-     * @param {String***REMOVED*** [title]
-     * @param {String***REMOVED*** body
-     * @param {String***REMOVED*** [footer]
+     * @param {String} className
+     * @param {String} [title]
+     * @param {String} body
+     * @param {String} [footer]
      */
     var tplDialog = function (className, title, body, footer) {
       return '<div class="' + className + ' modal" aria-hidden="false">' +
@@ -4458,7 +4458,7 @@
                  '</div>' +
                '</div>' +
              '</div>';
-  ***REMOVED***;
+    };
 
     var tplButtonInfo = {
       picture: function (lang) {
@@ -4466,15 +4466,15 @@
           event: 'showImageDialog',
           title: lang.image.image,
           hide: true
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       link: function (lang) {
         return tplIconButton('fa fa-link', {
           event: 'showLinkDialog',
           title: lang.link.link,
           hide: true
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       table: function (lang) {
         var dropdown = '<ul class="note-table dropdown-menu">' +
                          '<div class="note-dimension-picker">' +
@@ -4487,8 +4487,8 @@
         return tplIconButton('fa fa-table', {
           title: lang.table.table,
           dropdown: dropdown
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       style: function (lang, options) {
         var items = options.styleTags.reduce(function (memo, v) {
           var label = lang.style[v === 'p' ? 'normal' : v];
@@ -4498,36 +4498,36 @@
                      '<' + v + '>' + label + '</' + v + '>'
                    ) +
                  '</a></li>';
-      ***REMOVED***, '');
+        }, '');
 
         return tplIconButton('fa fa-magic', {
           title: lang.style.style,
           dropdown: '<ul class="dropdown-menu">' + items + '</ul>'
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       fontname: function (lang, options) {
         var items = options.fontNames.reduce(function (memo, v) {
-          if (!agent.isFontInstalled(v)) { return memo; ***REMOVED***
+          if (!agent.isFontInstalled(v)) { return memo; }
           return memo + '<li><a data-event="fontName" href="#" data-value="' + v + '">' +
                           '<i class="fa fa-check"></i> ' + v +
                         '</a></li>';
-      ***REMOVED***, '');
+        }, '');
         var label = '<span class="note-current-fontname">' +
                        options.defaultFontName +
                      '</span>';
         return tplButton(label, {
           title: lang.font.name,
           dropdown: '<ul class="dropdown-menu">' + items + '</ul>'
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       color: function (lang) {
         var colorButtonLabel = '<i class="fa fa-font" style="color:black;background-color:yellow;"></i>';
         var colorButton = tplButton(colorButtonLabel, {
           className: 'note-recent-color',
           title: lang.color.recent,
           event: 'color',
-          value: '{"backColor":"yellow"***REMOVED***'
-      ***REMOVED***);
+          value: '{"backColor":"yellow"}'
+        });
 
         var dropdown = '<ul class="dropdown-menu">' +
                          '<li>' +
@@ -4552,72 +4552,72 @@
         var moreButton = tplButton('', {
           title: lang.color.more,
           dropdown: dropdown
-      ***REMOVED***);
+        });
 
         return colorButton + moreButton;
-    ***REMOVED***,
+      },
       bold: function (lang) {
         return tplIconButton('fa fa-bold', {
           event: 'bold',
           title: lang.font.bold
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       italic: function (lang) {
         return tplIconButton('fa fa-italic', {
           event: 'italic',
           title: lang.font.italic
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       underline: function (lang) {
         return tplIconButton('fa fa-underline', {
           event: 'underline',
           title: lang.font.underline
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       clear: function (lang) {
         return tplIconButton('fa fa-eraser', {
           event: 'removeFormat',
           title: lang.font.clear
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       ul: function (lang) {
         return tplIconButton('fa fa-list-ul', {
           event: 'insertUnorderedList',
           title: lang.lists.unordered
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       ol: function (lang) {
         return tplIconButton('fa fa-list-ol', {
           event: 'insertOrderedList',
           title: lang.lists.ordered
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       paragraph: function (lang) {
         var leftButton = tplIconButton('fa fa-align-left', {
           title: lang.paragraph.left,
           event: 'justifyLeft'
-      ***REMOVED***);
+        });
         var centerButton = tplIconButton('fa fa-align-center', {
           title: lang.paragraph.center,
           event: 'justifyCenter'
-      ***REMOVED***);
+        });
         var rightButton = tplIconButton('fa fa-align-right', {
           title: lang.paragraph.right,
           event: 'justifyRight'
-      ***REMOVED***);
+        });
         var justifyButton = tplIconButton('fa fa-align-justify', {
           title: lang.paragraph.justify,
           event: 'justifyFull'
-      ***REMOVED***);
+        });
 
         var outdentButton = tplIconButton('fa fa-outdent', {
           title: lang.paragraph.outdent,
           event: 'outdent'
-      ***REMOVED***);
+        });
         var indentButton = tplIconButton('fa fa-indent', {
           title: lang.paragraph.indent,
           event: 'indent'
-      ***REMOVED***);
+        });
 
         var dropdown = '<div class="dropdown-menu">' +
                          '<div class="note-align btn-group">' +
@@ -4631,59 +4631,59 @@
         return tplIconButton('fa fa-align-left', {
           title: lang.paragraph.paragraph,
           dropdown: dropdown
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       height: function (lang, options) {
         var items = options.lineHeights.reduce(function (memo, v) {
           return memo + '<li><a data-event="lineHeight" href="#" data-value="' + parseFloat(v) + '">' +
                           '<i class="fa fa-check"></i> ' + v +
                         '</a></li>';
-      ***REMOVED***, '');
+        }, '');
 
         return tplIconButton('fa fa-text-height', {
           title: lang.font.height,
           dropdown: '<ul class="dropdown-menu">' + items + '</ul>'
-      ***REMOVED***);
+        });
 
-    ***REMOVED***,
+      },
       help: function (lang) {
         return tplIconButton('fa fa-question', {
           event: 'showHelpDialog',
           title: lang.options.help,
           hide: true
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       fullscreen: function (lang) {
         return tplIconButton('fa fa-arrows-alt', {
           event: 'fullscreen',
           title: lang.options.fullscreen
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       codeview: function (lang) {
         return tplIconButton('fa fa-code', {
           event: 'codeview',
           title: lang.options.codeview
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       undo: function (lang) {
         return tplIconButton('fa fa-undo', {
           event: 'undo',
           title: lang.history.undo
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       redo: function (lang) {
         return tplIconButton('fa fa-repeat', {
           event: 'redo',
           title: lang.history.redo
-      ***REMOVED***);
-    ***REMOVED***,
+        });
+      },
       hr: function (lang) {
         return tplIconButton('fa fa-minus', {
           event: 'insertHorizontalRule',
           title: lang.hr.insert
-      ***REMOVED***);
-    ***REMOVED***
-  ***REMOVED***;
+        });
+      }
+    };
 
     var tplPopovers = function (lang, options) {
       var tplLinkPopover = function () {
@@ -4691,84 +4691,84 @@
           title: lang.link.edit,
           event: 'showLinkDialog',
           hide: true
-      ***REMOVED***);
+        });
         var unlinkButton = tplIconButton('fa fa-unlink', {
           title: lang.link.unlink,
           event: 'unlink'
-      ***REMOVED***);
+        });
         var content = '<a href="http://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;' +
                       '<div class="note-insert btn-group">' +
                         linkButton + unlinkButton +
                       '</div>';
         return tplPopover('note-link-popover', content);
-    ***REMOVED***;
+      };
 
       var tplImagePopover = function () {
         var fullButton = tplButton('<span class="note-fontsize-10">100%</span>', {
           title: lang.image.resizeFull,
           event: 'resize',
           value: '1'
-      ***REMOVED***);
+        });
         var halfButton = tplButton('<span class="note-fontsize-10">50%</span>', {
           title: lang.image.resizeHalf,
           event: 'resize',
           value: '0.5'
-      ***REMOVED***);
+        });
         var quarterButton = tplButton('<span class="note-fontsize-10">25%</span>', {
           title: lang.image.resizeQuarter,
           event: 'resize',
           value: '0.25'
-      ***REMOVED***);
+        });
 
         var leftButton = tplIconButton('fa fa-align-left', {
           title: lang.image.floatLeft,
           event: 'floatMe',
           value: 'left'
-      ***REMOVED***);
+        });
         var rightButton = tplIconButton('fa fa-align-right', {
           title: lang.image.floatRight,
           event: 'floatMe',
           value: 'right'
-      ***REMOVED***);
+        });
         var justifyButton = tplIconButton('fa fa-align-justify', {
           title: lang.image.floatNone,
           event: 'floatMe',
           value: 'none'
-      ***REMOVED***);
+        });
 
         var roundedButton = tplIconButton('fa fa-square', {
           title: lang.image.shapeRounded,
           event: 'imageShape',
           value: 'img-rounded'
-      ***REMOVED***);
+        });
         var circleButton = tplIconButton('fa fa-circle-o', {
           title: lang.image.shapeCircle,
           event: 'imageShape',
           value: 'img-circle'
-      ***REMOVED***);
+        });
         var thumbnailButton = tplIconButton('fa fa-picture-o', {
           title: lang.image.shapeThumbnail,
           event: 'imageShape',
           value: 'img-thumbnail'
-      ***REMOVED***);
+        });
         var noneButton = tplIconButton('fa fa-times', {
           title: lang.image.shapeNone,
           event: 'imageShape',
           value: ''
-      ***REMOVED***);
+        });
 
         var removeButton = tplIconButton('fa fa-trash-o', {
           title: lang.image.remove,
           event: 'removeMedia',
           value: 'none'
-      ***REMOVED***);
+        });
 
         var content = '<div class="btn-group">' + fullButton + halfButton + quarterButton + '</div>' +
                       '<div class="btn-group">' + leftButton + rightButton + justifyButton + '</div>' +
                       '<div class="btn-group">' + roundedButton + circleButton + thumbnailButton + noneButton + '</div>' +
                       '<div class="btn-group">' + removeButton + '</div>';
         return tplPopover('note-image-popover', content);
-    ***REMOVED***;
+      };
 
       var tplAirPopover = function () {
         var content = '';
@@ -4777,19 +4777,19 @@
           content += '<div class="note-' + group[0] + ' btn-group">';
           for (var i = 0, lenGroup = group[1].length; i < lenGroup; i++) {
             content += tplButtonInfo[group[1][i]](lang, options);
-        ***REMOVED***
+          }
           content += '</div>';
-      ***REMOVED***
+        }
 
         return tplPopover('note-air-popover', content);
-    ***REMOVED***;
+      };
 
       return '<div class="note-popover">' +
                tplLinkPopover() +
                tplImagePopover() +
                (options.airMode ?  tplAirPopover() : '') +
              '</div>';
-  ***REMOVED***;
+    };
 
     var tplHandles = function () {
       return '<div class="note-handle">' +
@@ -4802,12 +4802,12 @@
                  '<div class="note-control-selection-info"></div>' +
                '</div>' +
              '</div>';
-  ***REMOVED***;
+    };
 
     /**
      * shortcut table template
-     * @param {String***REMOVED*** title
-     * @param {String***REMOVED*** body
+     * @param {String} title
+     * @param {String} body
      */
     var tplShortcut = function (title, keys) {
       var keyClass = 'note-shortcut-col col-xs-6 note-shortcut-';
@@ -4818,61 +4818,61 @@
           '<div class="' + keyClass + 'key">' + keys[i].kbd + '</div>' +
           '<div class="' + keyClass + 'name">' + keys[i].text + '</div>'
           );
-    ***REMOVED***
+      }
 
       return '<div class="note-shortcut-row row"><div class="' + keyClass + 'title col-xs-offset-6">' + title + '</div></div>' +
              '<div class="note-shortcut-row row">' + body.join('</div><div class="note-shortcut-row row">') + '</div>';
-  ***REMOVED***;
+    };
 
     var tplShortcutText = function (lang) {
       var keys = [
-        { kbd: '⌘ + B', text: lang.font.bold ***REMOVED***,
-        { kbd: '⌘ + I', text: lang.font.italic ***REMOVED***,
-        { kbd: '⌘ + U', text: lang.font.underline ***REMOVED***,
-        { kbd: '⌘ + \\', text: lang.font.clear ***REMOVED***
-    ***REMOVED***;
+        { kbd: '⌘ + B', text: lang.font.bold },
+        { kbd: '⌘ + I', text: lang.font.italic },
+        { kbd: '⌘ + U', text: lang.font.underline },
+        { kbd: '⌘ + \\', text: lang.font.clear }
+      ];
 
       return tplShortcut(lang.shortcut.textFormatting, keys);
-  ***REMOVED***;
+    };
 
     var tplShortcutAction = function (lang) {
       var keys = [
-        { kbd: '⌘ + Z', text: lang.history.undo ***REMOVED***,
-        { kbd: '⌘ + ⇧ + Z', text: lang.history.redo ***REMOVED***,
-        { kbd: '⌘ + ]', text: lang.paragraph.indent ***REMOVED***,
-        { kbd: '⌘ + [', text: lang.paragraph.outdent ***REMOVED***,
-        { kbd: '⌘ + ENTER', text: lang.hr.insert ***REMOVED***
-    ***REMOVED***;
+        { kbd: '⌘ + Z', text: lang.history.undo },
+        { kbd: '⌘ + ⇧ + Z', text: lang.history.redo },
+        { kbd: '⌘ + ]', text: lang.paragraph.indent },
+        { kbd: '⌘ + [', text: lang.paragraph.outdent },
+        { kbd: '⌘ + ENTER', text: lang.hr.insert }
+      ];
 
       return tplShortcut(lang.shortcut.action, keys);
-  ***REMOVED***;
+    };
 
     var tplShortcutPara = function (lang) {
       var keys = [
-        { kbd: '⌘ + ⇧ + L', text: lang.paragraph.left ***REMOVED***,
-        { kbd: '⌘ + ⇧ + E', text: lang.paragraph.center ***REMOVED***,
-        { kbd: '⌘ + ⇧ + R', text: lang.paragraph.right ***REMOVED***,
-        { kbd: '⌘ + ⇧ + J', text: lang.paragraph.justify ***REMOVED***,
-        { kbd: '⌘ + ⇧ + NUM7', text: lang.lists.ordered ***REMOVED***,
-        { kbd: '⌘ + ⇧ + NUM8', text: lang.lists.unordered ***REMOVED***
-    ***REMOVED***;
+        { kbd: '⌘ + ⇧ + L', text: lang.paragraph.left },
+        { kbd: '⌘ + ⇧ + E', text: lang.paragraph.center },
+        { kbd: '⌘ + ⇧ + R', text: lang.paragraph.right },
+        { kbd: '⌘ + ⇧ + J', text: lang.paragraph.justify },
+        { kbd: '⌘ + ⇧ + NUM7', text: lang.lists.ordered },
+        { kbd: '⌘ + ⇧ + NUM8', text: lang.lists.unordered }
+      ];
 
       return tplShortcut(lang.shortcut.paragraphFormatting, keys);
-  ***REMOVED***;
+    };
 
     var tplShortcutStyle = function (lang) {
       var keys = [
-        { kbd: '⌘ + NUM0', text: lang.style.normal ***REMOVED***,
-        { kbd: '⌘ + NUM1', text: lang.style.h1 ***REMOVED***,
-        { kbd: '⌘ + NUM2', text: lang.style.h2 ***REMOVED***,
-        { kbd: '⌘ + NUM3', text: lang.style.h3 ***REMOVED***,
-        { kbd: '⌘ + NUM4', text: lang.style.h4 ***REMOVED***,
-        { kbd: '⌘ + NUM5', text: lang.style.h5 ***REMOVED***,
-        { kbd: '⌘ + NUM6', text: lang.style.h6 ***REMOVED***
-    ***REMOVED***;
+        { kbd: '⌘ + NUM0', text: lang.style.normal },
+        { kbd: '⌘ + NUM1', text: lang.style.h1 },
+        { kbd: '⌘ + NUM2', text: lang.style.h2 },
+        { kbd: '⌘ + NUM3', text: lang.style.h3 },
+        { kbd: '⌘ + NUM4', text: lang.style.h4 },
+        { kbd: '⌘ + NUM5', text: lang.style.h5 },
+        { kbd: '⌘ + NUM6', text: lang.style.h6 }
+      ];
 
       return tplShortcut(lang.shortcut.documentStyle, keys);
-  ***REMOVED***;
+    };
 
     var tplExtraShortcuts = function (lang, options) {
       var extraKeys = options.extraKeys;
@@ -4880,12 +4880,12 @@
 
       for (var key in extraKeys) {
         if (extraKeys.hasOwnProperty(key)) {
-          keys.push({ kbd: key, text: extraKeys[key] ***REMOVED***);
-      ***REMOVED***
-    ***REMOVED***
+          keys.push({ kbd: key, text: extraKeys[key] });
+        }
+      }
 
       return tplShortcut(lang.shortcut.extraKeys, keys);
-  ***REMOVED***;
+    };
 
     var tplShortcutTable = function (lang, options) {
       var colClass = 'class="note-shortcut note-shortcut-col col-sm-6 col-xs-12"';
@@ -4894,20 +4894,20 @@
         '<div ' + colClass + '>' + tplShortcutText(lang, options) + '</div>',
         '<div ' + colClass + '>' + tplShortcutStyle(lang, options) + '</div>' +
         '<div ' + colClass + '>' + tplShortcutPara(lang, options) + '</div>'
-    ***REMOVED***;
+      ];
 
       if (options.extraKeys) {
         template.push('<div ' + colClass + '>' + tplExtraShortcuts(lang, options) + '</div>');
-    ***REMOVED***
+      }
 
       return '<div class="note-shortcut-row row">' +
                template.join('</div><div class="note-shortcut-row row">') +
              '</div>';
-  ***REMOVED***;
+    };
 
     var replaceMacKeys = function (sHtml) {
       return sHtml.replace(/⌘/g, 'Ctrl').replace(/⇧/g, 'Shift');
-  ***REMOVED***;
+    };
 
     var tplDialogInfo = {
       image: function (lang, options) {
@@ -4917,7 +4917,7 @@
           var readableSize = (options.maximumImageFileSize / Math.pow(1024, unit)).toFixed(2) * 1 +
                              ' ' + ' KMGTP'[unit] + 'B';
           imageLimitation = '<small>' + lang.image.maximumFileSize + ' : ' + readableSize + '</small>';
-      ***REMOVED***
+        }
 
         var body = '<div class="form-group row-fluid note-group-select-from-files">' +
                      '<label>' + lang.image.selectFromFiles + '</label>' +
@@ -4930,7 +4930,7 @@
                    '</div>';
         var footer = '<button href="#" class="btn btn-primary note-image-btn disabled" disabled>' + lang.image.insert + '</button>';
         return tplDialog('note-image-dialog', lang.image.insert, body, footer);
-    ***REMOVED***,
+      },
 
       link: function (lang, options) {
         var body = '<div class="form-group row-fluid">' +
@@ -4950,7 +4950,7 @@
                    );
         var footer = '<button href="#" class="btn btn-primary note-link-btn disabled" disabled>' + lang.link.insert + '</button>';
         return tplDialog('note-link-dialog', lang.link.insert, body, footer);
-    ***REMOVED***,
+      },
 
       help: function (lang, options) {
         var body = '<a class="modal-close pull-right" aria-hidden="true" tabindex="-1">' + lang.shortcut.close + '</a>' +
@@ -4962,18 +4962,18 @@
                      '<a href="//github.com/HackerWins/summernote/issues" target="_blank">Issues</a>' +
                    '</p>';
         return tplDialog('note-help-dialog', '', body, '');
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     var tplDialogs = function (lang, options) {
       var dialogs = '';
 
       $.each(tplDialogInfo, function (idx, tplDialog) {
         dialogs += tplDialog(lang, options);
-    ***REMOVED***);
+      });
 
       return '<div class="note-dialog">' + dialogs + '</div>';
-  ***REMOVED***;
+    };
 
     var tplStatusbar = function () {
       return '<div class="note-resizebar">' +
@@ -4981,25 +4981,25 @@
                '<div class="note-icon-bar"></div>' +
                '<div class="note-icon-bar"></div>' +
              '</div>';
-  ***REMOVED***;
+    };
 
     var representShortcut = function (str) {
       if (agent.isMac) {
         str = str.replace('CMD', '⌘').replace('SHIFT', '⇧');
-    ***REMOVED***
+      }
 
       return str.replace('BACKSLASH', '\\')
                 .replace('SLASH', '/')
                 .replace('LEFTBRACKET', '[')
                 .replace('RIGHTBRACKET', ']');
-  ***REMOVED***;
+    };
 
     /**
      * createTooltip
      *
-     * @param {jQuery***REMOVED*** $container
-     * @param {Object***REMOVED*** keyMap
-     * @param {String***REMOVED*** [sPlacement]
+     * @param {jQuery} $container
+     * @param {Object} keyMap
+     * @param {String} [sPlacement]
      */
     var createTooltip = function ($container, keyMap, sPlacement) {
       var invertedKeyMap = func.invertObject(keyMap);
@@ -5011,18 +5011,18 @@
         if (sShortcut) {
           $btn.attr('title', function (i, v) {
             return v + ' (' + representShortcut(sShortcut) + ')';
-        ***REMOVED***);
-      ***REMOVED***
+          });
+        }
       // bootstrap tooltip on btn-group bug
       // https://github.com/twbs/bootstrap/issues/5687
-    ***REMOVED***).tooltip({
+      }).tooltip({
         container: 'body',
         trigger: 'hover',
         placement: sPlacement || 'top'
-    ***REMOVED***).on('click', function () {
+      }).on('click', function () {
         $(this).tooltip('hide');
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     // createPalette
     var createPalette = function ($container, options) {
@@ -5040,18 +5040,18 @@
                            '" data-value="', color,
                            '" title="', color,
                            '" data-toggle="button" tabindex="-1"></button>'].join(''));
-        ***REMOVED***
+          }
           paletteContents.push('<div class="note-color-row">' + buttons.join('') + '</div>');
-      ***REMOVED***
+        }
         $palette.html(paletteContents.join(''));
-    ***REMOVED***);
-  ***REMOVED***;
+      });
+    };
 
     /**
      * create summernote layout (air mode)
      *
-     * @param {jQuery***REMOVED*** $holder
-     * @param {Object***REMOVED*** options
+     * @param {jQuery} $holder
+     * @param {Object} options
      */
     this.createLayoutByAirMode = function ($holder, options) {
       var langInfo = options.langInfo;
@@ -5062,7 +5062,7 @@
       $holder.attr({
         'id': 'note-editor-' + id,
         'contentEditable': true
-    ***REMOVED***);
+      });
 
       var body = document.body;
 
@@ -5086,15 +5086,15 @@
       $dialog.attr('id', 'note-dialog-' + id);
       $dialog.find('button.close, a.modal-close').click(function () {
         $(this).closest('.modal').modal('hide');
-    ***REMOVED***);
+      });
       $dialog.appendTo(body);
-  ***REMOVED***;
+    };
 
     /**
      * create summernote layout (normal mode)
      *
-     * @param {jQuery***REMOVED*** $holder
-     * @param {Object***REMOVED*** options
+     * @param {jQuery} $holder
+     * @param {Object} options
      */
     this.createLayoutByFrame = function ($holder, options) {
       var langInfo = options.langInfo;
@@ -5103,12 +5103,12 @@
       var $editor = $('<div class="note-editor"></div>');
       if (options.width) {
         $editor.width(options.width);
-    ***REMOVED***
+      }
 
       //02. statusbar (resizebar)
       if (options.height > 0) {
         $('<div class="note-statusbar">' + (options.disableResizeEditor ? '' : tplStatusbar()) + '</div>').prependTo($editor);
-    ***REMOVED***
+      }
 
       //03. create Editable
       var isContentEditable = !$holder.is(':disabled');
@@ -5116,13 +5116,13 @@
           .prependTo($editor);
       if (options.height) {
         $editable.height(options.height);
-    ***REMOVED***
+      }
       if (options.direction) {
         $editable.attr('dir', options.direction);
-    ***REMOVED***
+      }
       if (options.placeholder) {
         $editable.attr('data-placeholder', options.placeholder);
-    ***REMOVED***
+      }
 
       $editable.html(dom.html($holder));
 
@@ -5139,11 +5139,11 @@
         for (var i = 0, btnLength = groupButtons.length; i < btnLength; i++) {
           var buttonInfo = tplButtonInfo[groupButtons[i]];
           // continue creating toolbar even if a button doesn't exist
-          if (!$.isFunction(buttonInfo)) { continue; ***REMOVED***
+          if (!$.isFunction(buttonInfo)) { continue; }
           toolbarHTML += buttonInfo(langInfo, options);
-      ***REMOVED***
+        }
         toolbarHTML += '</div>';
-    ***REMOVED***
+      }
 
       toolbarHTML = '<div class="note-toolbar btn-toolbar">' + toolbarHTML + '</div>';
 
@@ -5164,7 +5164,7 @@
       var $dialog = $(tplDialogs(langInfo, options)).prependTo($editor);
       $dialog.find('button.close, a.modal-close').click(function () {
         $(this).closest('.modal').modal('hide');
-    ***REMOVED***);
+      });
 
       //08. create Dropzone
       $('<div class="note-dropzone"><div class="note-dropzone-message"></div></div>').prependTo($editor);
@@ -5172,62 +5172,62 @@
       //09. Editor/Holder switch
       $editor.insertAfter($holder);
       $holder.hide();
-  ***REMOVED***;
+    };
 
     this.noteEditorFromHolder = function ($holder) {
       if ($holder.hasClass('note-air-editor')) {
         return $holder;
-    ***REMOVED*** else if ($holder.next().hasClass('note-editor')) {
+      } else if ($holder.next().hasClass('note-editor')) {
         return $holder.next();
-    ***REMOVED*** else {
+      } else {
         return $();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * create summernote layout
      *
-     * @param {jQuery***REMOVED*** $holder
-     * @param {Object***REMOVED*** options
+     * @param {jQuery} $holder
+     * @param {Object} options
      */
     this.createLayout = function ($holder, options) {
       if (this.noteEditorFromHolder($holder).length) {
         return;
-    ***REMOVED***
+      }
 
       if (options.airMode) {
         this.createLayoutByAirMode($holder, options);
-    ***REMOVED*** else {
+      } else {
         this.createLayoutByFrame($holder, options);
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     /**
      * returns layoutInfo from holder
      *
-     * @param {jQuery***REMOVED*** $holder - placeholder
-     * @returns {Object***REMOVED***
+     * @param {jQuery} $holder - placeholder
+     * @returns {Object}
      */
     this.layoutInfoFromHolder = function ($holder) {
       var $editor = this.noteEditorFromHolder($holder);
-      if (!$editor.length) { return; ***REMOVED***
+      if (!$editor.length) { return; }
 
       var layoutInfo = dom.buildLayoutInfo($editor);
       // cache all properties.
       for (var key in layoutInfo) {
         if (layoutInfo.hasOwnProperty(key)) {
           layoutInfo[key] = layoutInfo[key].call();
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
       return layoutInfo;
-  ***REMOVED***;
+    };
 
     /**
      * removeLayout
      *
-     * @param {jQuery***REMOVED*** $holder - placeholder
-     * @param {Object***REMOVED*** layoutInfo
-     * @param {Object***REMOVED*** options
+     * @param {jQuery} $holder - placeholder
+     * @param {Object} layoutInfo
+     * @param {Object} options
      *
      */
     this.removeLayout = function ($holder, layoutInfo, options) {
@@ -5238,33 +5238,33 @@
         layoutInfo.popover.remove();
         layoutInfo.handle.remove();
         layoutInfo.dialog.remove();
-    ***REMOVED*** else {
+      } else {
         $holder.html(layoutInfo.editable.html());
 
         layoutInfo.editor.remove();
         $holder.show();
-    ***REMOVED***
-  ***REMOVED***;
+      }
+    };
 
     this.getTemplate = function () {
       return {
         button: tplButton,
         iconButton: tplIconButton,
         dialog: tplDialog
-    ***REMOVED***;
-  ***REMOVED***;
+      };
+    };
 
     this.addButtonInfo = function (name, buttonInfo) {
       tplButtonInfo[name] = buttonInfo;
-  ***REMOVED***;
+    };
 
     this.addDialogInfo = function (name, dialogInfo) {
       tplDialogInfo[name] = dialogInfo;
-  ***REMOVED***;
-***REMOVED***;
+    };
+  };
 
   // jQuery namespace for summernote
-  $.summernote = $.summernote || {***REMOVED***;
+  $.summernote = $.summernote || {};
 
   // extends default `settings`
   $.extend($.summernote, settings);
@@ -5279,46 +5279,46 @@
       agent: agent,
       dom: dom,
       range: range
-  ***REMOVED***,
-    pluginEvents: {***REMOVED***
-***REMOVED***);
+    },
+    pluginEvents: {}
+  });
 
   /**
    * addPlugin
    *
-   * @param {Object***REMOVED*** plugin
+   * @param {Object} plugin
    */
   $.summernote.addPlugin = function (plugin) {
     if (plugin.buttons) {
       $.each(plugin.buttons, function (name, button) {
         renderer.addButtonInfo(name, button);
-    ***REMOVED***);
-  ***REMOVED***
+      });
+    }
 
     if (plugin.dialogs) {
       $.each(plugin.dialogs, function (name, dialog) {
         renderer.addDialogInfo(name, dialog);
-    ***REMOVED***);
-  ***REMOVED***
+      });
+    }
 
     if (plugin.events) {
       $.each(plugin.events, function (name, event) {
         $.summernote.pluginEvents[name] = event;
-    ***REMOVED***);
-  ***REMOVED***
+      });
+    }
 
     if (plugin.langs) {
       $.each(plugin.langs, function (locale, lang) {
         if ($.summernote.lang[locale]) {
           $.extend($.summernote.lang[locale], lang);
-      ***REMOVED***
-    ***REMOVED***);
-  ***REMOVED***
+        }
+      });
+    }
 
     if (plugin.options) {
       $.extend($.summernote.options, plugin.options);
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
 
   /**
    * extend jquery fn
@@ -5328,16 +5328,16 @@
      * initialize summernote
      *  - create editor layout and attach Mouse and keyboard events.
      *
-     * @param {Object***REMOVED*** options
-     * @returns {this***REMOVED***
+     * @param {Object} options
+     * @returns {this}
      */
     summernote: function (options) {
       // extend default options
-      options = $.extend({***REMOVED***, $.summernote.options, options);
+      options = $.extend({}, $.summernote.options, options);
 
       // Include langInfo in options for later use, e.g. for image drag-n-drop
       // Setup language info with en-US as default
-      options.langInfo = $.extend(true, {***REMOVED***, $.summernote.lang['en-US'], $.summernote.lang[options.lang]);
+      options.langInfo = $.extend(true, {}, $.summernote.lang['en-US'], $.summernote.lang[options.lang]);
 
       this.each(function (idx, holder) {
         var $holder = $(holder);
@@ -5357,76 +5357,76 @@
             // callback on submit
             if (options.onsubmit) {
               options.onsubmit(contents);
-          ***REMOVED***
-        ***REMOVED***);
-      ***REMOVED***
-    ***REMOVED***);
+            }
+          });
+        }
+      });
 
       // focus on first editable element
       if (this.first().length && options.focus) {
         var info = renderer.layoutInfoFromHolder(this.first());
         info.editable.focus();
-    ***REMOVED***
+      }
 
       // callback on init
       if (this.length && options.oninit) {
         options.oninit();
-    ***REMOVED***
+      }
 
       return this;
-  ***REMOVED***,
+    },
     //
 
     /**
      * get the HTML contents of note or set the HTML contents of note.
      *
-     * @param {String***REMOVED*** [sHTML] - HTML contents(optional, set)
-     * @returns {this|String***REMOVED*** - context(set) or HTML contents of note(get).
+     * @param {String} [sHTML] - HTML contents(optional, set)
+     * @returns {this|String} - context(set) or HTML contents of note(get).
      */
     code: function (sHTML) {
       // get the HTML contents of note
       if (sHTML === undefined) {
         var $holder = this.first();
-        if (!$holder.length) { return; ***REMOVED***
+        if (!$holder.length) { return; }
         var info = renderer.layoutInfoFromHolder($holder);
         if (!!(info && info.editable)) {
           var isCodeview = info.editor.hasClass('codeview');
           if (isCodeview && agent.hasCodeMirror) {
             info.codable.data('cmEditor').save();
-        ***REMOVED***
+          }
           return isCodeview ? info.codable.val() : info.editable.html();
-      ***REMOVED***
+        }
         return dom.isTextarea($holder[0]) ? $holder.val() : $holder.html();
-    ***REMOVED***
+      }
 
       // set the HTML contents of note
       this.each(function (i, holder) {
         var info = renderer.layoutInfoFromHolder($(holder));
-        if (info && info.editable) { info.editable.html(sHTML); ***REMOVED***
-    ***REMOVED***);
+        if (info && info.editable) { info.editable.html(sHTML); }
+      });
 
       return this;
-  ***REMOVED***,
+    },
 
     /**
      * destroy Editor Layout and detach Key and Mouse Event
      *
-     * @returns {this***REMOVED***
+     * @returns {this}
      */
     destroy: function () {
       this.each(function (idx, holder) {
         var $holder = $(holder);
 
         var info = renderer.layoutInfoFromHolder($holder);
-        if (!info || !info.editable) { return; ***REMOVED***
+        if (!info || !info.editable) { return; }
 
         var options = info.editor.data('options');
 
         eventHandler.detach(info, options);
         renderer.removeLayout($holder, info, options);
-    ***REMOVED***);
+      });
 
       return this;
-  ***REMOVED***
-***REMOVED***);
-***REMOVED***));
+    }
+  });
+}));

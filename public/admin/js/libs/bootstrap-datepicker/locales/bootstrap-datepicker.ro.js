@@ -12,5 +12,5 @@
 		today: "Astăzi",
 		clear: "Șterge",
 		weekStart: 1
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

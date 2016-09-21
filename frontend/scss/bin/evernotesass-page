@@ -13,34 +13,34 @@ process.argv.forEach(function (val, index, array) {
   if(val.indexOf('name') > -1){
     name = val.split('=');
     name = name[1];
-***REMOVED***else if(val.indexOf('path') > -1){
+  }else if(val.indexOf('path') > -1){
     filePath = val.split('=');
     filePath = filePath[1];
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 if(name === undefined){
   name = 'page';
-***REMOVED***
+}
 
 if(filePath === undefined){
   filePath = 'sass';
-***REMOVED***
+}
 
 // create page specific
 fs.readFile(path.join(__dirname, '../Page.scss'), 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
     console.log('Directory path might be wrong');
-***REMOVED***
+  }
   var newFile = data.replace('@import "views/blue";', '').replace('@import "modules/header";', '').replace('@import "modules/footer";', '');
   write(dir + '/'+ filePath + '/' + name + '.scss', newFile);
-***REMOVED***);
+});
 
 function write(path, str, mode) {
-  fs.writeFileSync(path, str, { mode: mode || 0666 ***REMOVED***);
+  fs.writeFileSync(path, str, { mode: mode || 0666 });
   console.log('   \x1b[36mcreate\x1b[0m : ' + path);
-***REMOVED***
+}
 
 
 function mkdir(path, fn) {
@@ -48,6 +48,6 @@ function mkdir(path, fn) {
     if (err) throw err;
     console.log('   \033[36mcreate\033[0m : ' + path);
     fn && fn();
-***REMOVED***);
-***REMOVED***
+  });
+}
 console.log('Evernote Sass page ' + version);

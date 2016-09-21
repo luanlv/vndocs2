@@ -2,7 +2,7 @@ package models
 
 import java.util.UUID
 
-import com.mohiva.play.silhouette.api.{ Identity, LoginInfo ***REMOVED***
+import com.mohiva.play.silhouette.api.{ Identity, LoginInfo }
 import models.daos.TemporalModel
 import org.joda.time.DateTime
 import play.api.libs.json._
@@ -23,10 +23,10 @@ case class Image(
    * @return Maybe a name.
    */
 
-***REMOVED***
+}
 
 object Image {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
 
   implicit val ImageFormat = Json.format[Image]
-***REMOVED***
+}

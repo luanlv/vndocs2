@@ -8,4 +8,4 @@ trait IdentifiableModel {
 
   //  def identity = _id.map(_.stringify).getOrElse("")
 
-***REMOVED***
+}

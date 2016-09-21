@@ -9,18 +9,18 @@
   @if $original-prefix-for-webkit {
     @include disable-prefix-for-all();
     $prefix-for-webkit: true !global;
-    @-webkit-keyframes #{$name***REMOVED*** {
+    @-webkit-keyframes #{$name} {
       @content;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @if $original-prefix-for-mozilla {
     @include disable-prefix-for-all();
     $prefix-for-mozilla: true !global;
-    @-moz-keyframes #{$name***REMOVED*** {
+    @-moz-keyframes #{$name} {
       @content;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   $prefix-for-webkit:    $original-prefix-for-webkit    !global;
   $prefix-for-mozilla:   $original-prefix-for-mozilla   !global;
@@ -29,8 +29,8 @@
   $prefix-for-spec:      $original-prefix-for-spec      !global;
 
   @if $original-prefix-for-spec {
-    @keyframes #{$name***REMOVED*** {
+    @keyframes #{$name} {
       @content;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

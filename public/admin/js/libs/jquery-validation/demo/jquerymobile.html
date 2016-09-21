@@ -17,24 +17,24 @@
 		margin-top: 0.5em;
 		width: 100%;
 		float: none;
-	***REMOVED***
+	}
 	@media screen and (orientation: portrait) {
 		label.error {
 			margin-left: 0;
 			display: block;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 	@media screen and (orientation: landscape) {
 		label.error {
 			display: inline-block;
 			margin-left: 22%;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 	em {
 		color: red;
 		font-weight: bold;
 		padding-right: .25em;
-	***REMOVED***
+	}
 	</style>
 </head>
 <body>
@@ -62,16 +62,16 @@ $( "#page1" ).on( "pageinit", function() {
 		rules: {
 			email: {
 				required: true
-			***REMOVED***,
+			},
 			password: {
 				required: true
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		errorPlacement: function( error, element ) {
 			error.insertAfter( element.parent() );
-		***REMOVED***
-	***REMOVED***);
-***REMOVED***);
+		}
+	});
+});
 </script>
 </body>
 </html>

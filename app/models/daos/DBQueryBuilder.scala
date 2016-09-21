@@ -1,6 +1,6 @@
 package models.daos
 
-import play.api.libs.json.{ JsObject, Json, OWrites, Writes ***REMOVED***
+import play.api.libs.json.{ JsObject, Json, OWrites, Writes }
 import reactivemongo.bson.BSONObjectID
 import reactivemongo.play.json._
 
@@ -44,4 +44,4 @@ object DBQueryBuilder {
 
   def orderBy[T](query: T)(implicit writer: Writes[T]): JsObject = Json.obj("$orderby" -> query)
 
-***REMOVED***
+}

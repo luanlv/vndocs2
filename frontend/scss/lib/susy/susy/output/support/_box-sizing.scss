@@ -11,9 +11,9 @@
   @if $model {
     @if susy-support(box-sizing, (mixin: box-sizing), $warn: false) {
       @include box-sizing($model);
-  ***REMOVED*** @else {
+    } @else {
       $prefix: (moz, webkit, official);
       @include susy-prefix(box-sizing, $model, $prefix);
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

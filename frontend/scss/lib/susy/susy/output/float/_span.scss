@@ -25,11 +25,11 @@
   $output: (
     width: $width,
     float: if($float == to, $to, null) or if($float == from, $from, null),
-    margin-#{$from***REMOVED***: $margin-before,
-    margin-#{$to***REMOVED***: $margin-after,
-    padding-#{$from***REMOVED***: $padding-before,
-    padding-#{$to***REMOVED***: $padding-after,
+    margin-#{$from}: $margin-before,
+    margin-#{$to}: $margin-after,
+    padding-#{$from}: $padding-before,
+    padding-#{$to}: $padding-after,
   );
 
   @include output($output);
-***REMOVED***
+}

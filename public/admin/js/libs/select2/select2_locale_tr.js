@@ -7,13 +7,13 @@
     "use strict";
 
     $.fn.select2.locales['tr'] = {
-        formatNoMatches: function () { return "Sonuç bulunamadı"; ***REMOVED***,
-        formatInputTooShort: function (input, min) { var n = min - input.length; return "En az " + n + " karakter daha girmelisiniz"; ***REMOVED***,
-        formatInputTooLong: function (input, max) { var n = input.length - max; return n + " karakter azaltmalısınız"; ***REMOVED***,
-        formatSelectionTooBig: function (limit) { return "Sadece " + limit + " seçim yapabilirsiniz"; ***REMOVED***,
-        formatLoadMore: function (pageNumber) { return "Daha fazla…"; ***REMOVED***,
-        formatSearching: function () { return "Aranıyor…"; ***REMOVED***
-  ***REMOVED***;
+        formatNoMatches: function () { return "Sonuç bulunamadı"; },
+        formatInputTooShort: function (input, min) { var n = min - input.length; return "En az " + n + " karakter daha girmelisiniz"; },
+        formatInputTooLong: function (input, max) { var n = input.length - max; return n + " karakter azaltmalısınız"; },
+        formatSelectionTooBig: function (limit) { return "Sadece " + limit + " seçim yapabilirsiniz"; },
+        formatLoadMore: function (pageNumber) { return "Daha fazla…"; },
+        formatSearching: function () { return "Aranıyor…"; }
+    };
 
     $.extend($.fn.select2.defaults, $.fn.select2.locales['tr']);
-***REMOVED***)(jQuery);
+})(jQuery);

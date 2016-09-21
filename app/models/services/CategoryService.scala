@@ -1,6 +1,6 @@
 package models.services
 
-import models.{ Category, Post ***REMOVED***
+import models.{ Category, Post }
 
 import scala.concurrent.Future
 
@@ -15,4 +15,4 @@ trait CategoryService {
 
   def listParent: Future[List[Category]]
 
-***REMOVED***
+}

@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -21,12 +21,12 @@ $.extend($.validator.messages, {
 	digits: "Harap masukan angka saja.",
 	creditcard: "Harap masukkan format kartu kredit yang benar.",
 	equalTo: "Harap masukkan nilai yg sama dengan sebelumnya.",
-	maxlength: $.validator.format("Input dibatasi hanya {0***REMOVED*** karakter."),
-	minlength: $.validator.format("Input tidak kurang dari {0***REMOVED*** karakter."),
-	rangelength: $.validator.format("Panjang karakter yg diizinkan antara {0***REMOVED*** dan {1***REMOVED*** karakter."),
-	range: $.validator.format("Harap masukkan nilai antara {0***REMOVED*** dan {1***REMOVED***."),
-	max: $.validator.format("Harap masukkan nilai lebih kecil atau sama dengan {0***REMOVED***."),
-	min: $.validator.format("Harap masukkan nilai lebih besar atau sama dengan {0***REMOVED***.")
-***REMOVED***);
+	maxlength: $.validator.format("Input dibatasi hanya {0} karakter."),
+	minlength: $.validator.format("Input tidak kurang dari {0} karakter."),
+	rangelength: $.validator.format("Panjang karakter yg diizinkan antara {0} dan {1} karakter."),
+	range: $.validator.format("Harap masukkan nilai antara {0} dan {1}."),
+	max: $.validator.format("Harap masukkan nilai lebih kecil atau sama dengan {0}."),
+	min: $.validator.format("Harap masukkan nilai lebih besar atau sama dengan {0}.")
+});
 
-***REMOVED***));
+}));

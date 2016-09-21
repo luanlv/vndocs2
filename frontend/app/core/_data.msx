@@ -1,4 +1,4 @@
-var Data = {***REMOVED***;
+var Data = {};
 
 Data.showSignin = false;
 Data.showSignup = false;
@@ -7,6 +7,6 @@ Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
 if(Window.user !== undefined) {
   Data.user = Window.user;
   console.log(Data.user)
-***REMOVED***
+}
 
 module.exports = Data;

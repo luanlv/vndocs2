@@ -27,18 +27,18 @@ var Side = function(ctrl){
             {Window.articles.map(function(el){
                 return <li>
                     <span>
-                        <a href={"/blog/" + el._id***REMOVED***
-                            config={m.route***REMOVED***
+                        <a href={"/blog/" + el._id}
+                            config={m.route}
                         >
-                            {el.title***REMOVED***
+                            {el.title}
                         </a>
                     </span>
                 </li>
-          ***REMOVED***)***REMOVED***
+            })}
         </ul>
     </div>,
     
-  ***REMOVED***
-***REMOVED***;
+    ]
+};
 
 module.exports = Side;

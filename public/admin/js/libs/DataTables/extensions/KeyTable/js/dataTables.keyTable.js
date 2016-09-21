@@ -52,8 +52,8 @@ KeyTable = function ( oInit )
 	 *           are dynamically added later on
 	 */
 	this.event = {
-		"remove": {***REMOVED***
-	***REMOVED***;
+		"remove": {}
+	};
 
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -69,7 +69,7 @@ KeyTable = function ( oInit )
 	this.fnGetCurrentPosition = function ()
 	{
 		return [ _iOldX, _iOldY ];
-	***REMOVED***;
+	};
 
 
 	/*
@@ -81,7 +81,7 @@ KeyTable = function ( oInit )
 	this.fnGetCurrentData = function ()
 	{
 		return _nOldFocus.innerHTML;
-	***REMOVED***;
+	};
 
 
 	/*
@@ -93,7 +93,7 @@ KeyTable = function ( oInit )
 	this.fnGetCurrentTD = function ()
 	{
 		return _nOldFocus;
-	***REMOVED***;
+	};
 
 
 	/*
@@ -109,12 +109,12 @@ KeyTable = function ( oInit )
 		if ( typeof x == 'object' && x.nodeName )
 		{
 			_fnSetFocus( x );
-		***REMOVED***
+		}
 		else
 		{
 			_fnSetFocus( _fnCellFromCoords(x, y) );
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 
 	/*
@@ -126,7 +126,7 @@ KeyTable = function ( oInit )
 	this.fnBlur = function()
 	{
 		_fnBlur();
-	***REMOVED***;
+	};
 
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -186,7 +186,7 @@ KeyTable = function ( oInit )
 		"esc": [],
 		"focus": [],
 		"blur": []
-	***REMOVED***;
+	};
 
 	/*
 	 * Variable: _oDatatable
@@ -236,18 +236,18 @@ KeyTable = function ( oInit )
 				 typeof z == "function" )
 			{
 				_fnEventAdd( sKey, x, y, z );
-			***REMOVED***
+			}
 			else if ( typeof x == "object" && typeof y == "function" )
 			{
 				var aCoords = _fnCoordsFromCell( x );
 				_fnEventAdd( sKey, aCoords[0], aCoords[1], y );
-			***REMOVED***
+			}
 			else
 			{
 				alert( "Unhandable event type was added: x" +x+ "  y:" +y+ "  z:" +z );
-			***REMOVED***
-		***REMOVED***;
-	***REMOVED***
+			}
+		};
+	}
 
 
 	/*
@@ -279,30 +279,30 @@ KeyTable = function ( oInit )
 				if ( typeof arguments[2] == "function" )
 				{
 					_fnEventRemove( sKey, x, y, z );
-				***REMOVED***
+				}
 				else
 				{
 					_fnEventRemove( sKey, x, y );
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 			else if ( typeof arguments[0] == "object" )
 			{
 				var aCoords = _fnCoordsFromCell( x );
 				if ( typeof arguments[1] == "function" )
 				{
 					_fnEventRemove( sKey, aCoords[0], aCoords[1], y );
-				***REMOVED***
+				}
 				else
 				{
 					_fnEventRemove( sKey, aCoords[0], aCoords[1] );
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 			else
 			{
 				alert( "Unhandable event type was removed: x" +x+ "  y:" +y+ "  z:" +z );
-			***REMOVED***
-		***REMOVED***;
-	***REMOVED***
+			}
+		};
+	}
 
 	/* Use the template functions to add the event API functions */
 	for ( var sKey in _oaoEvents )
@@ -311,8 +311,8 @@ KeyTable = function ( oInit )
 		{
 			this.event[sKey] = _fnEventAddTemplate( sKey );
 			this.event.remove[sKey] = _fnEventRemoveTemplate( sKey );
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	/*
@@ -330,8 +330,8 @@ KeyTable = function ( oInit )
 			"x": x,
 			"y": y,
 			"fn": fn
-		***REMOVED*** );
-	***REMOVED***
+		} );
+	}
 
 
 	/*
@@ -357,8 +357,8 @@ KeyTable = function ( oInit )
 				{
 					_oaoEvents[sType].splice( i-iCorrector, 1 );
 					iCorrector++;
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 			else
 			{
 				if ( _oaoEvents[sType][i-iCorrector].x == x &&
@@ -366,11 +366,11 @@ KeyTable = function ( oInit )
 				{
 					_oaoEvents[sType].splice( i, 1 );
 					return 1;
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 		return iCorrector;
-	***REMOVED***
+	}
 
 
 	/*
@@ -398,10 +398,10 @@ KeyTable = function ( oInit )
 			{
 				aEvents[i].fn( _fnCellFromCoords(x,y), x, y );
 				iFired++;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		return iFired;
-	***REMOVED***
+	}
 
 
 
@@ -422,18 +422,18 @@ KeyTable = function ( oInit )
 		if ( _nOldFocus == nTarget )
 		{
 			return;
-		***REMOVED***
+		}
 
 		if ( typeof bAutoScroll == 'undefined' )
 		{
 			bAutoScroll = true;
-		***REMOVED***
+		}
 
 		/* Remove old focus (with blur event if needed) */
 		if ( _nOldFocus !== null )
 		{
 			_fnRemoveFocus( _nOldFocus );
-		***REMOVED***
+		}
 
 		/* Add the new class to highlight the focused cell */
 		$(nTarget).addClass( _sFocusClass );
@@ -456,14 +456,14 @@ KeyTable = function ( oInit )
 					if ( oSettings._iDisplayStart + oSettings._iDisplayLength < oSettings.fnRecordsDisplay() )
 					{
 						oSettings._iDisplayStart += oSettings._iDisplayLength;
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 				else
 				{
 					oSettings._iDisplayStart = 0;
-				***REMOVED***
+				}
 				_oDatatable.oApi._fnCalculateEnd( oSettings );
-			***REMOVED***
+			}
 
 			/* Page backwards */
 			while ( iRow < oSettings._iDisplayStart )
@@ -475,16 +475,16 @@ KeyTable = function ( oInit )
 				if ( oSettings._iDisplayStart < 0 )
 				{
 				  oSettings._iDisplayStart = 0;
-				***REMOVED***
+				}
 				_oDatatable.oApi._fnCalculateEnd( oSettings );
-			***REMOVED***
+			}
 
 			/* Re-draw the table */
 			_oDatatable.oApi._fnDraw( oSettings );
 
 			/* Restore the key capture */
 			_bKeyCapture = bKeyCaptureCache;
-		***REMOVED***
+		}
 
 		/* Cache the information that we are interested in */
 		var aNewPos = _fnCoordsFromCell( nTarget );
@@ -512,32 +512,32 @@ KeyTable = function ( oInit )
 			{
 				aiPos[1] -= $(oSettings.nTable.parentNode).scrollTop();
 				aiPos[0] -= $(oSettings.nTable.parentNode).scrollLeft();
-			***REMOVED***
+			}
 
 			/* Correct viewport positioning for vertical scrolling */
 			if ( aiPos[1]+iHeight > iScrollTop+iViewportHeight )
 			{
 				/* Displayed element if off the bottom of the viewport */
 				_fnSetScrollTop( aiPos[1]+iHeight - iViewportHeight );
-			***REMOVED***
+			}
 			else if ( aiPos[1] < iScrollTop )
 			{
 				/* Displayed element if off the top of the viewport */
 				_fnSetScrollTop( aiPos[1] );
-			***REMOVED***
+			}
 
 			/* Correct viewport positioning for horizontal scrolling */
 			if ( aiPos[0]+iWidth > iScrollLeft+iViewportWidth )
 			{
 				/* Displayed element is off the bottom of the viewport */
 				_fnSetScrollLeft( aiPos[0]+iWidth - iViewportWidth );
-			***REMOVED***
+			}
 			else if ( aiPos[0] < iScrollLeft )
 			{
 				/* Displayed element if off the Left of the viewport */
 				_fnSetScrollLeft( aiPos[0] );
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		/* Take account of scrolling in DataTables 1.7 */
 		if ( _oDatatable && typeof oSettings.oScroll != 'undefined' &&
@@ -555,29 +555,29 @@ KeyTable = function ( oInit )
 			if ( nTarget.offsetTop + iHeight > iViewportHeight+iScrollTop )
 			{
 				dtScrollBody.scrollTop = (nTarget.offsetTop + iHeight) - iViewportHeight;
-			***REMOVED***
+			}
 			else if ( nTarget.offsetTop < iScrollTop )
 			{
 				dtScrollBody.scrollTop = nTarget.offsetTop;
-			***REMOVED***
+			}
 
 			/* Correct for horizontal scrolling */
 			if ( nTarget.offsetLeft + iWidth > iViewportWidth+iScrollLeft )
 			{
 				dtScrollBody.scrollLeft = (nTarget.offsetLeft + iWidth) - iViewportWidth;
-			***REMOVED***
+			}
 			else if ( nTarget.offsetLeft < iScrollLeft )
 			{
 				dtScrollBody.scrollLeft = nTarget.offsetLeft;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		/* Focused - so we want to capture the keys */
 		_fnCaptureKeys();
 
 		/* Fire of the focus event if there is one */
 		_fnEventFire( "focus", _iOldX, _iOldY );
-	***REMOVED***
+	}
 
 
 	/*
@@ -593,7 +593,7 @@ KeyTable = function ( oInit )
 		_iOldY = null;
 		_nOldFocus = null;
 		_fnReleaseKeys();
-	***REMOVED***
+	}
 
 
 	/*
@@ -607,7 +607,7 @@ KeyTable = function ( oInit )
 		$(nTarget).removeClass( _sFocusClass );
 		$(nTarget).parent().removeClass( _sFocusClass );
 		_fnEventFire( "blur", _iOldX, _iOldY );
-	***REMOVED***
+	}
 
 
 	/*
@@ -622,11 +622,11 @@ KeyTable = function ( oInit )
 		while ( nTarget.nodeName != "TD" )
 		{
 			nTarget = nTarget.parentNode;
-		***REMOVED***
+		}
 
 		_fnSetFocus( nTarget );
 		_fnCaptureKeys();
-	***REMOVED***
+	}
 
 
 
@@ -646,13 +646,13 @@ KeyTable = function ( oInit )
 		if ( _that.block || !_bKeyCapture )
 		{
 			return true;
-		***REMOVED***
+		}
 
 		/* If a modifier key is pressed (exapct shift), ignore the event */
 		if ( e.metaKey || e.altKey || e.ctrlKey )
 		{
 			return true;
-		***REMOVED***
+		}
 		var
 			x, y,
 			iTableWidth = _nBody.getElementsByTagName('tr')[0].getElementsByTagName('td').length,
@@ -673,14 +673,14 @@ KeyTable = function ( oInit )
 			{
 				/* If the table has been updated such that the focused cell can't be seen - do nothing */
 				return;
-			***REMOVED***
+			}
 			_iOldX = aDtPos[ 0 ];
 			_iOldY = aDtPos[ 1 ];
-		***REMOVED***
+		}
 		else
 		{
 			iTableHeight = _nBody.getElementsByTagName('tr').length;
-		***REMOVED***
+		}
 
 		/* Capture shift+tab to match the left arrow key */
 		var iKey = (e.keyCode == 9 && e.shiftKey) ? -1 : e.keyCode;
@@ -699,7 +699,7 @@ KeyTable = function ( oInit )
 					/* Only lose focus if there isn't an escape handler on the cell */
 					_fnBlur();
 					return;
-				***REMOVED***
+				}
 				x = _iOldX;
 				y = _iOldY;
 				break;
@@ -709,10 +709,10 @@ KeyTable = function ( oInit )
 				if ( _iOldX > 0 ) {
 					x = _iOldX - 1;
 					y = _iOldY;
-				***REMOVED*** else if ( _iOldY > 0 ) {
+				} else if ( _iOldY > 0 ) {
 					x = iTableWidth-1;
 					y = _iOldY - 1;
-				***REMOVED*** else {
+				} else {
 					/* at start of table */
 					if ( iKey == -1 && _bForm )
 					{
@@ -725,25 +725,25 @@ KeyTable = function ( oInit )
 						/* This timeout is a little nasty - but IE appears to have some asyhnc behaviour for 
 						 * focus
 						 */
-						setTimeout( function(){ _bInputFocused = false; ***REMOVED***, 0 );
+						setTimeout( function(){ _bInputFocused = false; }, 0 );
 						_bKeyCapture = false;
 						_fnBlur();
 						return true;
-					***REMOVED***
+					}
 					else
 					{
 						return false;
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 				break;
 
 			case 38: /* up arrow */
 				if ( _iOldY > 0 ) {
 					x = _iOldX;
 					y = _iOldY - 1;
-				***REMOVED*** else {
+				} else {
 					return false;
-				***REMOVED***
+				}
 				break;
 
 			case 36: /* home */
@@ -756,7 +756,7 @@ KeyTable = function ( oInit )
 				y = _iOldY - 10;
 				if (y < 0) {
 					y = 0;
-				***REMOVED***
+				}
 				break;
 
 			case 9: /* tab */
@@ -764,10 +764,10 @@ KeyTable = function ( oInit )
 				if ( _iOldX < iTableWidth-1 ) {
 					x = _iOldX + 1;
 					y = _iOldY;
-				***REMOVED*** else if ( _iOldY < iTableHeight-1 ) {
+				} else if ( _iOldY < iTableHeight-1 ) {
 					x = 0;
 					y = _iOldY + 1;
-				***REMOVED*** else {
+				} else {
 					/* at end of table */
 					if ( iKey == 9 && _bForm )
 					{
@@ -780,25 +780,25 @@ KeyTable = function ( oInit )
 						/* This timeout is a little nasty - but IE appears to have some asyhnc behaviour for 
 						 * focus
 						 */
-						setTimeout( function(){ _bInputFocused = false; ***REMOVED***, 0 );
+						setTimeout( function(){ _bInputFocused = false; }, 0 );
 						_bKeyCapture = false;
 						_fnBlur();
 						return true;
-					***REMOVED***
+					}
 					else
 					{
 						return false;
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 				break;
 
 			case 40: /* down arrow */
 				if ( _iOldY < iTableHeight-1 ) {
 					x = _iOldX;
 					y = _iOldY + 1;
-				***REMOVED*** else {
+				} else {
 					return false;
-				***REMOVED***
+				}
 				break;
 
 			case 35: /* end */
@@ -811,16 +811,16 @@ KeyTable = function ( oInit )
 				y = _iOldY+10;
 				if (y > iTableHeight-1) {
 					y = iTableHeight-1;
-				***REMOVED***
+				}
 				break;
 
 			default: /* Nothing we are interested in */
 				return true;
-		***REMOVED***
+		}
 
 		_fnSetFocus( _fnCellFromCoords(x, y) );
 		return false;
-	***REMOVED***
+	}
 
 
 	/*
@@ -834,8 +834,8 @@ KeyTable = function ( oInit )
 		if ( !_bKeyCapture )
 		{
 			_bKeyCapture = true;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	/*
@@ -847,7 +847,7 @@ KeyTable = function ( oInit )
 	function _fnReleaseKeys( )
 	{
 		_bKeyCapture = false;
-	***REMOVED***
+	}
 
 
 
@@ -869,17 +869,17 @@ KeyTable = function ( oInit )
 			if ( typeof _oDatatable.aoData[ _oDatatable.aiDisplay[ y ] ] != 'undefined' )
 			{
 				return _oDatatable.aoData[ _oDatatable.aiDisplay[ y ] ].nTr.getElementsByTagName('td')[x];
-			***REMOVED***
+			}
 			else
 			{
 				return null;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		else
 		{
 			return $('tr:eq('+y+')>td:eq('+x+')', _nBody )[0];
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	/*
@@ -897,15 +897,15 @@ KeyTable = function ( oInit )
 				$('td', n.parentNode).index(n),
 				$('tr', n.parentNode.parentNode).index(n.parentNode) + _oDatatable._iDisplayStart
 			];
-		***REMOVED***
+		}
 		else
 		{
 			return [
 				$('td', n.parentNode).index(n),
 				$('tr', n.parentNode.parentNode).index(n.parentNode)
 			];
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	/*
@@ -921,7 +921,7 @@ KeyTable = function ( oInit )
 	{
 		document.documentElement.scrollTop = iPos;
 		document.body.scrollTop = iPos;
-	***REMOVED***
+	}
 
 
 	/*
@@ -934,7 +934,7 @@ KeyTable = function ( oInit )
 	{
 		document.documentElement.scrollLeft = iPos;
 		document.body.scrollLeft = iPos;
-	***REMOVED***
+	}
 
 
 	/*
@@ -958,10 +958,10 @@ KeyTable = function ( oInit )
 				iLeft += obj.offsetLeft;
 				iTop += obj.offsetTop;
 				obj = obj.offsetParent;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		return [iLeft,iTop];
-	***REMOVED***
+	}
 
 
 	/*
@@ -981,11 +981,11 @@ KeyTable = function ( oInit )
 				if ( nTds[j] == nTarget )
 				{
 					return [ j, i ];
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 		return null;
-	***REMOVED***
+	}
 
 
 
@@ -1014,31 +1014,31 @@ KeyTable = function ( oInit )
 
 		/* Capture undefined initialisation and apply the defaults */
 		if ( typeof oInit == 'undefined' ) {
-			oInit = {***REMOVED***;
-		***REMOVED***
+			oInit = {};
+		}
 
 		if ( typeof oInit.focus == 'undefined' ) {
 			oInit.focus = [0,0];
-		***REMOVED***
+		}
 
 		oInit.table = table;
 		$(oInit.table).addClass('KeyTable');
 
 		if ( typeof oInit.focusClass != 'undefined' ) {
 			_sFocusClass = oInit.focusClass;
-		***REMOVED***
+		}
 
 		if ( typeof datatable != 'undefined' ) {
 			_oDatatable = datatable;
-		***REMOVED***
+		}
 
 		if ( typeof oInit.initScroll == 'undefined' ) {
 			oInit.initScroll = true;
-		***REMOVED***
+		}
 
 		if ( typeof oInit.form == 'undefined' ) {
 			oInit.form = false;
-		***REMOVED***
+		}
 		_bForm = oInit.form;
 
 		/* Cache the tbody node of interest */
@@ -1057,7 +1057,7 @@ KeyTable = function ( oInit )
 			if ( typeof oInit.tabIndex != 'undefined' )
 			{
 				_nInput.tabIndex = oInit.tabIndex;
-			***REMOVED***
+			}
 			nDiv.appendChild(_nInput);
 			oInit.table.parentNode.insertBefore( nDiv, oInit.table.nextSibling );
 
@@ -1070,31 +1070,31 @@ KeyTable = function ( oInit )
 					if ( typeof oInit.focus.nodeName != "undefined" )
 					{
 						_fnSetFocus( oInit.focus, oInit.initScroll );
-					***REMOVED***
+					}
 					else
 					{
 						_fnSetFocus( _fnCellFromCoords( oInit.focus[0], oInit.focus[1]), oInit.initScroll );
-					***REMOVED***
+					}
 
 					/* Need to interup the thread for this to work */
-					setTimeout( function() { _nInput.blur(); ***REMOVED***, 0 );
-				***REMOVED***
-			***REMOVED*** );
+					setTimeout( function() { _nInput.blur(); }, 0 );
+				}
+			} );
 			_bKeyCapture = false;
-		***REMOVED***
+		}
 		else
 		{
 			/* Set the initial focus on the table */
 			if ( typeof oInit.focus.nodeName != "undefined" )
 			{
 				_fnSetFocus( oInit.focus, oInit.initScroll );
-			***REMOVED***
+			}
 			else
 			{
 				_fnSetFocus( _fnCellFromCoords( oInit.focus[0], oInit.focus[1]), oInit.initScroll );
-			***REMOVED***
+			}
 			_fnCaptureKeys();
-		***REMOVED***
+		}
 
 		/* Add event listeners */
 		$(document).bind( "keydown", _fnKey );
@@ -1102,11 +1102,11 @@ KeyTable = function ( oInit )
 		if ( _oDatatable )
 		{
 			$(_oDatatable.nTable).on( 'click', 'td', _fnClick );
-		***REMOVED***
+		}
 		else
 		{
 			$(_nBody).on( 'click', 'td', _fnClick );
-		***REMOVED***
+		}
 
 		/* Loose table focus when click outside the table */
 		$(document).click( function(e) {
@@ -1118,33 +1118,33 @@ KeyTable = function ( oInit )
 				{
 					bTableClick = true;
 					break;
-				***REMOVED***
+				}
 				nTarget = nTarget.parentNode;
-			***REMOVED***
+			}
 			if ( !bTableClick )
 			{
 				_fnBlur();
-			***REMOVED***
-		***REMOVED*** );
-	***REMOVED***
+			}
+		} );
+	}
 
 	var table, datatable;
 
 	if ( oInit === undefined ) {
 		table = $('table.KeyTable')[0];
 		datatable = null;
-	***REMOVED***
+	}
 	else if ( $.isPlainObject( oInit ) ) {
 		table = oInit.table;
 		datatable = oInit.datatable;
-	***REMOVED***
+	}
 	else {
 		datatable = new $.fn.dataTable.Api( oInit ).settings()[0];
 		table = datatable.nTable;
-	***REMOVED***
+	}
 	/* Initialise our new object */
 	_fnInit( table, datatable, oInit, this );
-***REMOVED***;
+};
 
 
 KeyTable.version = "1.2.1";
@@ -1155,21 +1155,21 @@ $.fn.DataTable.KeyTable = KeyTable;
 
 
 return KeyTable;
-***REMOVED***; // /factory
+}; // /factory
 
 
 // Define as an AMD module if possible
 if ( typeof define === 'function' && define.amd ) {
 	define( ['jquery', 'datatables'], factory );
-***REMOVED***
+}
 else if ( typeof exports === 'object' ) {
     // Node/CommonJS
     factory( require('jquery'), require('datatables') );
-***REMOVED***
+}
 else if ( jQuery && !jQuery.fn.dataTable.KeyTable ) {
 	// Otherwise simply initialise as normal, stopping multiple evaluation
 	factory( jQuery, jQuery.fn.dataTable );
-***REMOVED***
+}
 
 
-***REMOVED***)(window, document);
+})(window, document);

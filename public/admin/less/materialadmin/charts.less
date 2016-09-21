@@ -13,7 +13,7 @@
 	canvas {
 		position: relative;
 		vertical-align: top;
-	***REMOVED***
+	}
 
 	&.knob-shadow:before {
 		position: absolute;
@@ -28,8 +28,8 @@
 		border-radius: 50%;
 		.scaleY(.07);
 		z-index: 0;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Knob stack
@@ -51,7 +51,7 @@
 			display: block;
 			color: @white;
 			text-align: center;
-		***REMOVED***
+		}
 
 		.knob-legend {
 			position: absolute;
@@ -62,11 +62,11 @@
 				font-size: 16px;
 				display: block;
 				width: 100%;
-			***REMOVED***
+			}
 			span {
 				position: relative;
 				top: 2px;
-			***REMOVED***
+			}
 
 			&:after,
 				&:before {
@@ -76,11 +76,11 @@
 				display: block;
 				height: 1px;
 				background-color: @gray-light2;
-			***REMOVED***
+			}
 			&:after {
 				width: @knob-legend-diagonal;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		&:nth-child(1) {
 			.knob-legend {
 				left: 5%; right: 50%;
@@ -88,12 +88,12 @@
 
 				&:before {
 					top: 0; right: 0; left: 0;
-				***REMOVED***
-				&:after { width: 0; ***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+				&:after { width: 0; }
+			}
+		}
 		&:nth-child(2) {
-			&:after { top: 20px; ***REMOVED***
+			&:after { top: 20px; }
 			.knob-legend {
 				left: 50%; right: 5%;
 				top: 30px;
@@ -101,28 +101,28 @@
 
 				&:before {
 					top: 0; right: 0; left: 0;
-				***REMOVED***
-				&:after { width: 0; ***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+				&:after { width: 0; }
+			}
+		}
 		&:nth-child(3) {
-			&:after { top: 40px; ***REMOVED***
+			&:after { top: 40px; }
 			.knob-legend {
 				left: 5%; right: 50%;
 				top: @knob-legend-diagonal-side + 50px;
 
 				&:before {
 					top: 0; right: @knob-legend-diagonal-side; left: 0;
-				***REMOVED***
+				}
 				&:after {
 					right: @knob-legend-diagonal-x  / 2;
 					top: -(@knob-legend-diagonal / 2) - (@knob-legend-diagonal-x  / 2);
 					.rotate(-45deg);
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 		&:nth-child(4) {
-			&:after { top: 60px; ***REMOVED***
+			&:after { top: 60px; }
 			.knob-legend {
 				left: 50%; right: 5%;
 				top: @knob-legend-diagonal-side + 70px;
@@ -130,22 +130,22 @@
 
 				&:before {
 					top: 0; right: 0; left: @knob-legend-diagonal-side;
-				***REMOVED***
+				}
 				&:after {
 					left: @knob-legend-diagonal-x  / 2;
 					top: -(@knob-legend-diagonal / 2) - (@knob-legend-diagonal-x  / 2);
 					.rotate(45deg);
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+				}
+			}
+		}
+	}
 
 	.knob {
 		position: absolute;
 		top: 0; left: 0; right: 0; bottom: 0;
 		margin: auto;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Knob colors
@@ -181,13 +181,13 @@
 	div.legend {
 		> div {
 			border: 1px solid rgba(255, 255, 255, 0.4);
-		***REMOVED***
+		}
 		> table{ 
 			color: inherit !important;
-			td { padding: 4px; ***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			td { padding: 4px; }
+		}
+	}
+}
 
 .legendColorBox {
 	> div {
@@ -196,15 +196,15 @@
 		
 		> div {
 			border-radius: 50%;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 .flot-legend-horizontal {
 	table tr {
 		float: left;
 		padding-right: 8px;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Piechart styles
@@ -221,7 +221,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-	***REMOVED***
+	}
 
 	.display{
 		display: table-cell;
@@ -233,9 +233,9 @@
 			font-weight: @weight-light;
 			margin-left: 0.1em;
 			font-size: .6em;
-		***REMOVED***
-	***REMOVED***	
-***REMOVED***
+		}
+	}	
+}
 
 
 // Sparkline tooltip fix
@@ -243,4 +243,4 @@
 
 .jqstooltip{
 	box-sizing: content-box;
-***REMOVED***
+}

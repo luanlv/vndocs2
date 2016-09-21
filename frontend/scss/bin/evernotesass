@@ -16,60 +16,60 @@ mkdir(dir + '/sass', function(){
   // create files
   write(dir + '/sass/base/_fonts.scss', '');
   write(dir + '/sass/layout/_grid.scss', '');
-***REMOVED***);
+});
 
 // copy the mixins directory and create a new mixins directory
 fs.copy(path.join(__dirname, '../base/mixins'), dir + '/sass/base/mixins', function(err) {
   if (err) {
     return console.log(err);
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 // create page specific
 fs.readFile(path.join(__dirname, '../Page.scss'), 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
-***REMOVED***
+  }
   var newFile = data.replace('@import "views/blue";', '').replace('@import "modules/header";', '').replace('@import "modules/footer";', '');
   write(dir + '/sass/page.scss', newFile);
-***REMOVED***);
+});
 
 // create mixins
 fs.readFile(path.join(__dirname, '../base/_mixins.scss'), 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
-***REMOVED***
+  }
   write(dir + '/sass/base/_mixins.scss', data);
-***REMOVED***);
+});
 
 // create extends
 fs.readFile(path.join(__dirname, '../base/_extends.scss'), 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
-***REMOVED***
+  }
   write(dir + '/sass/base/_extends.scss', data);
-***REMOVED***);
+});
 
 // create reset
 fs.readFile(path.join(__dirname, '../base/_reset.scss'), 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
-***REMOVED***
+  }
   write(dir + '/sass/base/_reset.scss', data);
-***REMOVED***);
+});
 
 // create variables
 fs.readFile(path.join(__dirname, '../base/_variables.scss'), 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
-***REMOVED***
+  }
   write(dir + '/sass/base/_variables.scss', data);
-***REMOVED***);
+});
 
 function write(path, str, mode) {
-  fs.writeFileSync(path, str, { mode: mode || 0666 ***REMOVED***);
+  fs.writeFileSync(path, str, { mode: mode || 0666 });
   console.log('   \x1b[36mcreate\x1b[0m : ' + path);
-***REMOVED***
+}
 
 
 function mkdir(path, fn) {
@@ -77,6 +77,6 @@ function mkdir(path, fn) {
     if (err) throw err;
     console.log('   \033[36mcreate\033[0m : ' + path);
     fn && fn();
-***REMOVED***);
-***REMOVED***
+  });
+}
 console.log('Evernote Sass ' + version);

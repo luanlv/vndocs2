@@ -24,8 +24,8 @@ Scroller is initialised by simply including the letter `dt-string S` in the `dt-
 $(document).ready( function () {
 	$('#example').DataTable( {
 		dom: 'lfrtipS'
-	***REMOVED*** );
-***REMOVED*** );
+	} );
+} );
 ```
 
 Note that rows in the table must all be the same height. Information in a cell which expands on to multiple lines will cause some odd behaviour in the scrolling. Additionally, the table's `cellspacing` parameter must be set to 0, again to ensure the information display is correct.

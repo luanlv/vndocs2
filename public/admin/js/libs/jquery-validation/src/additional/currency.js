@@ -12,19 +12,19 @@
  * Soft symbol checking
  *  currencyInput: {
  *     currency: ["$", false]
- ****REMOVED***
+ *  }
  *
  * Strict symbol checking (default)
  *  currencyInput: {
  *     currency: "$"
  *     //OR
  *     currency: ["$", true]
- ****REMOVED***
+ *  }
  *
  * Multiple Symbols
  *  currencyInput: {
  *     currency: "$,£,¢"
- ****REMOVED***
+ *  }
  */
 $.validator.addMethod("currency", function(value, element, param) {
     var isParamString = typeof param === "string",
@@ -34,8 +34,8 @@ $.validator.addMethod("currency", function(value, element, param) {
 
     symbol = symbol.replace(/,/g, "");
     symbol = soft ? symbol + "]" : symbol + "]?";
-    regex = "^[" + symbol + "([1-9]{1***REMOVED***[0-9]{0,2***REMOVED***(\\,[0-9]{3***REMOVED***)*(\\.[0-9]{0,2***REMOVED***)?|[1-9]{1***REMOVED***[0-9]{0,***REMOVED***(\\.[0-9]{0,2***REMOVED***)?|0(\\.[0-9]{0,2***REMOVED***)?|(\\.[0-9]{1,2***REMOVED***)?)$";
+    regex = "^[" + symbol + "([1-9]{1}[0-9]{0,2}(\\,[0-9]{3})*(\\.[0-9]{0,2})?|[1-9]{1}[0-9]{0,}(\\.[0-9]{0,2})?|0(\\.[0-9]{0,2})?|(\\.[0-9]{1,2})?)$";
     regex = new RegExp(regex);
     return this.optional(element) || regex.test(value);
 
-***REMOVED***, "Please specify a valid currency");
+}, "Please specify a valid currency");

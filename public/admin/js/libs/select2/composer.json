@@ -9,12 +9,12 @@
   "require": {
     "robloach/component-installer": "*",
     "components/jquery": ">=1.7.1"
-***REMOVED***,
+  },
   "extra": {
     "component": {
       "scripts": [
         "select2.js"
-    ***REMOVED***,
+      ],
       "files": [
         "select2.js",
         "select2_locale_*.js",
@@ -23,7 +23,7 @@
         "select2-spinner.gif",
         "select2.png",
         "select2x2.png"
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      ]
+    }
+  }
+}

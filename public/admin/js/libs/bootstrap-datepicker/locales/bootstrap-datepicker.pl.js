@@ -11,5 +11,5 @@
                 monthsShort: ["Sty", "Lu", "Mar", "Kw", "Maj", "Cze", "Lip", "Sie", "Wrz", "Pa", "Lis", "Gru"],
                 today: "Dzisiaj",
                 weekStart: 1
-      ***REMOVED***;
-***REMOVED***(jQuery));
+        };
+}(jQuery));

@@ -1,6 +1,6 @@
 package models.daos
 
-import javax.inject.{ Inject, Singleton ***REMOVED***
+import javax.inject.{ Inject, Singleton }
 
 import scala.util.Try
 import java.util.UUID
@@ -8,7 +8,7 @@ import java.util.UUID
 import com.mohiva.play.silhouette.api.LoginInfo
 import models.User
 import models.daos.UserDAOImpl._
-import play.api.libs.json.{ JsObject, Json ***REMOVED***
+import play.api.libs.json.{ JsObject, Json }
 
 import scala.collection.mutable
 import scala.concurrent.Future
@@ -46,18 +46,18 @@ class UserDAOImpl @Inject() (repository: UserRepository) extends UserDAO {
   def save(user: User) = {
     repository.insert(user)
     Future.successful(user)
-***REMOVED***
+  }
 
   def updateUser(user: User) = {
     repository.updateUser(user.userID.toString, Json.toJson(user).asOpt[JsObject].getOrElse(Json.obj()))
     Future.successful(user)
-***REMOVED***
+  }
 
   def remove(loginInfo: LoginInfo) = {
     repository.remove(Json.obj("loginInfo" -> loginInfo))
-***REMOVED***
+  }
 
-***REMOVED***
+}
 
 /**
  * The companion object.
@@ -68,4 +68,4 @@ object UserDAOImpl {
    * The list of users.
    */
   //  val users: mutable.HashMap[UUID, User] = mutable.HashMap()
-***REMOVED***
+}

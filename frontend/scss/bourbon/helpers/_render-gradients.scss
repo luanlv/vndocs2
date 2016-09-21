@@ -8,19 +8,19 @@
     @if $gradient-positions {
       $pre-spec: nth($gradient-positions, 1);
       $spec:     nth($gradient-positions, 2);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   @else if $gradient-type == radial {
     $pre-spec: nth($gradient-positions, 1);
     $spec:     nth($gradient-positions, 2);
-***REMOVED***
+  }
 
   @if $vendor {
-    $vendor-gradients: -#{$vendor***REMOVED***-#{$gradient-type***REMOVED***-gradient(#{$pre-spec***REMOVED*** $gradients);
-***REMOVED***
+    $vendor-gradients: -#{$vendor}-#{$gradient-type}-gradient(#{$pre-spec} $gradients);
+  }
   @else if $vendor == false {
-    $vendor-gradients: "#{$gradient-type***REMOVED***-gradient(#{$spec***REMOVED*** #{$gradients***REMOVED***)";
+    $vendor-gradients: "#{$gradient-type}-gradient(#{$spec} #{$gradients})";
     $vendor-gradients: unquote($vendor-gradients);
-***REMOVED***
+  }
   @return $vendor-gradients;
-***REMOVED***
+}

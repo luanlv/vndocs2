@@ -28,10 +28,10 @@ $modular-scale-base: em($em-base) !default;
   // scale $v2 to just above $v1
   @while $v2 > $v1 {
     $v2: ($v2 / $ratio); // will be off-by-1
-***REMOVED***
+  }
   @while $v2 < $v1 {
     $v2: ($v2 * $ratio); // will fix off-by-1
-***REMOVED***
+  }
 
   // check AFTER scaling $v2 to prevent double-counting corner-case
   $double-stranded: $v2 > $v1;
@@ -41,29 +41,29 @@ $modular-scale-base: em($em-base) !default;
       @if $double-stranded and ($v1 * $ratio) > $v2 {
         $value: $v2;
         $v2: ($v2 * $ratio);
-    ***REMOVED*** @else {
+      } @else {
         $v1: ($v1 * $ratio);
         $value: $v1;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   @if $increment < 0 {
     // adjust $v2 to just below $v1
     @if $double-stranded {
       $v2: ($v2 / $ratio);
-  ***REMOVED***
+    }
 
     @for $i from $increment through -1 {
       @if $double-stranded and ($v1 / $ratio) < $v2 {
         $value: $v2;
         $v2: ($v2 / $ratio);
-    ***REMOVED*** @else {
+      } @else {
         $v1: ($v1 / $ratio);
         $value: $v1;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   @return $value;
-***REMOVED***
+}

@@ -16,13 +16,13 @@ body
 	background-color: #fff;
 
 	margin: 20px;
-***REMOVED***
+}
 
 .cke_editable
 {
 	font-size: 13px;
 	line-height: 1.6em;
-***REMOVED***
+}
 
 blockquote
 {
@@ -32,26 +32,26 @@ blockquote
 	border-style: solid;
 	border-color: #ccc;
 	border-width: 0;
-***REMOVED***
+}
 
 .cke_contents_ltr blockquote
 {
 	padding-left: 20px;
 	padding-right: 8px;
 	border-left-width: 5px;
-***REMOVED***
+}
 
 .cke_contents_rtl blockquote
 {
 	padding-left: 8px;
 	padding-right: 20px;
 	border-right-width: 5px;
-***REMOVED***
+}
 
 a
 {
 	color: #0782C1;
-***REMOVED***
+}
 
 ol,ul,dl
 {
@@ -59,19 +59,19 @@ ol,ul,dl
 	*margin-right: 0px;
 	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
 	padding: 0 40px;
-***REMOVED***
+}
 
 h1,h2,h3,h4,h5,h6
 {
 	font-weight: normal;
 	line-height: 1.2em;
-***REMOVED***
+}
 
 hr
 {
 	border: 0px;
 	border-top: 1px solid #ccc;
-***REMOVED***
+}
 
 img.right
 {
@@ -79,7 +79,7 @@ img.right
 	float: right;
 	margin-left: 15px;
 	padding: 5px;
-***REMOVED***
+}
 
 img.left
 {
@@ -87,23 +87,23 @@ img.left
 	float: left;
 	margin-right: 15px;
 	padding: 5px;
-***REMOVED***
+}
 
 pre
 {
 	white-space: pre-wrap; /* CSS 2.1 */
 	word-wrap: break-word; /* IE7 */
-***REMOVED***
+}
 
 .marker
 {
 	background-color: Yellow;
-***REMOVED***
+}
 
 span[lang]
 {
    font-style: italic;
-***REMOVED***
+}
 
 figure
 {
@@ -114,10 +114,10 @@ figure
 	padding: 10px;
 	margin: 10px 20px;
 	display: block; /* For IE8 */
-***REMOVED***
+}
 
 figure figcaption
 {
 	text-align: center;
 	display: block; /* For IE8 */
-***REMOVED***
+}

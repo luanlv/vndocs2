@@ -14,26 +14,26 @@
 
   @if $type == number and unitless($columns) {
     $return: $columns;
-***REMOVED*** @else if $type == list {
+  } @else if $type == list {
     $fail: null;
     @each $col in $columns {
       @if type-of($col) == number {
         $fail: $fail or if(unitless($col), null, true);
-    ***REMOVED*** @else {
+      } @else {
         $fail: true;
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
     $return: if($fail, $return, $columns);
-***REMOVED***
+  }
 
   @if $return != $columns and not($silent) {
     $return: null;
     $warn: '$columns must be a unitless number or list of unitless numbers.';
-    @warn $warn + ' Current value [#{$type***REMOVED***]: #{$columns***REMOVED***';
-***REMOVED***
+    @warn $warn + ' Current value [#{$type}]: #{$columns}';
+  }
 
   @return $return;
-***REMOVED***
+}
 
 
 // Valid Gutters
@@ -48,10 +48,10 @@
 
   @if $type == number and unitless($gutters) {
     $return: $gutters;
-***REMOVED*** @else if not($silent) {
+  } @else if not($silent) {
     $warn: '$gutters must be a unitless number.';
-    @warn $warn + ' Current value [#{$type***REMOVED***]: #{$gutters***REMOVED***';
-***REMOVED***
+    @warn $warn + ' Current value [#{$type}]: #{$gutters}';
+  }
 
   @return $return;
-***REMOVED***
+}

@@ -30,7 +30,7 @@ $susy: () !default;
   $defaults
 ) {
   $susy-defaults: map-merge($susy-defaults, $defaults) !global;
-***REMOVED***
+}
 
 
 // Susy Set
@@ -42,7 +42,7 @@ $susy: () !default;
   $key-value...
 ) {
   $susy: _susy-deep-set($susy, $key-value...) !global;
-***REMOVED***
+}
 
 
 // Susy Get
@@ -65,9 +65,9 @@ $susy: () !default;
       @if $_keyset {
         $_return: _susy-deep-get($opt, $key...);
         $_break: true;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   @return $_return;
-***REMOVED***
+}

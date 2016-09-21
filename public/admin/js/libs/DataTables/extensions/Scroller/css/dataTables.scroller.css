@@ -6,11 +6,11 @@
 div.DTS tbody th,
 div.DTS tbody td {
 	white-space: nowrap;
-***REMOVED***
+}
 
 div.DTS tbody tr.even {
 	background-color: white;
-***REMOVED***
+}
 
 div.DTS div.DTS_Loading {
 	position: absolute;
@@ -27,18 +27,18 @@ div.DTS div.DTS_Loading {
 	text-align: center;
 	background-color: white;
 	background-color: rgba(255, 255, 255, 0.5);
-***REMOVED***
+}
 
 div.DTS div.dataTables_scrollHead,
 div.DTS div.dataTables_scrollFoot {
 	background-color: white;
-***REMOVED***
+}
 
 div.DTS div.dataTables_scrollBody {
 	z-index: 2;
-***REMOVED***
+}
 
 div.DTS div.dataTables_scroll {
 	background: url('../images/loading-background.png') repeat 0 0;
-***REMOVED***
+}
 

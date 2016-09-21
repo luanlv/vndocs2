@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "โปรดระบุรหัสบัตรเครดิตที่ถูกต้อง",
 	equalTo: "โปรดระบุค่าเดิมอีกครั้ง",
 	extension: "โปรดระบุค่าที่มีส่วนขยายที่ถูกต้อง",
-	maxlength: $.validator.format("โปรดอย่าระบุค่าที่ยาวกว่า {0***REMOVED*** อักขระ"),
-	minlength: $.validator.format("โปรดอย่าระบุค่าที่สั้นกว่า {0***REMOVED*** อักขระ"),
-	rangelength: $.validator.format("โปรดอย่าระบุค่าความยาวระหว่าง {0***REMOVED*** ถึง {1***REMOVED*** อักขระ"),
-	range: $.validator.format("โปรดระบุค่าระหว่าง {0***REMOVED*** และ {1***REMOVED***"),
-	max: $.validator.format("โปรดระบุค่าน้อยกว่าหรือเท่ากับ {0***REMOVED***"),
-	min: $.validator.format("โปรดระบุค่ามากกว่าหรือเท่ากับ {0***REMOVED***")
-***REMOVED***);
+	maxlength: $.validator.format("โปรดอย่าระบุค่าที่ยาวกว่า {0} อักขระ"),
+	minlength: $.validator.format("โปรดอย่าระบุค่าที่สั้นกว่า {0} อักขระ"),
+	rangelength: $.validator.format("โปรดอย่าระบุค่าความยาวระหว่าง {0} ถึง {1} อักขระ"),
+	range: $.validator.format("โปรดระบุค่าระหว่าง {0} และ {1}"),
+	max: $.validator.format("โปรดระบุค่าน้อยกว่าหรือเท่ากับ {0}"),
+	min: $.validator.format("โปรดระบุค่ามากกว่าหรือเท่ากับ {0}")
+});
 
-***REMOVED***));
+}));

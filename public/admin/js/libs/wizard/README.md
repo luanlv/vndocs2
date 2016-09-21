@@ -20,7 +20,7 @@ Code Examples
 //basic wizard
 $(document).ready(function() {
 	$('#rootwizard').bootstrapWizard();
-***REMOVED***);
+});
 ```
 
 ```javascript
@@ -30,9 +30,9 @@ $(document).ready(function() {
 		tabClass: 'nav nav-pills',
 		onNext: function(tab, navigation, index) {
 			alert('next');
-  		***REMOVED***
-***REMOVED***);
-***REMOVED***);
+  		}
+  });
+});
 ```
 
 ```javascript

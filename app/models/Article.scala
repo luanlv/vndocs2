@@ -19,9 +19,9 @@ case class Article(
   time: DateTime = DateTime.now()
 ) extends Identity with TemporalModel {
 
-***REMOVED***
+}
 
 object Article {
   import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat // This is required
   implicit val articleFormat = Json.format[Article]
-***REMOVED***
+}

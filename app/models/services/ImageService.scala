@@ -4,7 +4,7 @@ import java.util.UUID
 
 import com.mohiva.play.silhouette.api.services.IdentityService
 import com.mohiva.play.silhouette.impl.providers.CommonSocialProfile
-import models.{ Image, User ***REMOVED***
+import models.{ Image, User }
 
 import scala.concurrent.Future
 
@@ -19,4 +19,4 @@ trait ImageService {
 
   def getList(page: Int): Future[List[Image]]
 
-***REMOVED***
+}

@@ -3,7 +3,7 @@
  *
  * Works with all kind of text inputs.
  *
- * @example <input type="text" size="20" name="VehicleID" class="{required:true,vinUS:true***REMOVED***" />
+ * @example <input type="text" size="20" name="VehicleID" class="{required:true,vinUS:true}" />
  * @desc Declares a required input element whose value must be a valid vehicle identification number.
  *
  * @name $.validator.methods.vinUS
@@ -13,7 +13,7 @@
 $.validator.addMethod("vinUS", function(v) {
 	if (v.length !== 17) {
 		return false;
-	***REMOVED***
+	}
 
 	var LL = [ "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ],
 		VL = [ 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 7, 9, 2, 3, 4, 5, 6, 7, 8, 9 ],
@@ -26,29 +26,29 @@ $.validator.addMethod("vinUS", function(v) {
 		d = v.slice(i, i + 1);
 		if (i === 8) {
 			cdv = d;
-		***REMOVED***
+		}
 		if (!isNaN(d)) {
 			d *= f;
-		***REMOVED*** else {
+		} else {
 			for (n = 0; n < LL.length; n++) {
 				if (d.toUpperCase() === LL[n]) {
 					d = VL[n];
 					d *= f;
 					if (isNaN(cdv) && n === 8) {
 						cdv = LL[n];
-					***REMOVED***
+					}
 					break;
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 		rs += d;
-	***REMOVED***
+	}
 	cd = rs % 11;
 	if (cd === 10) {
 		cd = "X";
-	***REMOVED***
+	}
 	if (cd === cdv) {
 		return true;
-	***REMOVED***
+	}
 	return false;
-***REMOVED***, "The specified vehicle identification number (VIN) is invalid.");
+}, "The specified vehicle identification number (VIN) is invalid.");

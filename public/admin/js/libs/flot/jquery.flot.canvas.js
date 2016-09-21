@@ -19,7 +19,7 @@ The plugin supports these options:
 
 {
     canvas: boolean
-***REMOVED***
+}
 
 The "canvas" option controls whether full canvas drawing is enabled, making it
 possible to toggle on and off. This is useful when a plot uses HTML text in the
@@ -31,7 +31,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 
 	var options = {
 		canvas: true
-	***REMOVED***;
+	};
 
 	var render, getTextInfo, addText;
 
@@ -51,7 +51,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 			getTextInfo = Canvas.prototype.getTextInfo,
 			addText = Canvas.prototype.addText,
 			render = Canvas.prototype.render;
-		***REMOVED***
+		}
 
 		// Finishes rendering the canvas, including overlaid text
 
@@ -59,7 +59,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 
 			if (!plot.getOptions().canvas) {
 				return render.call(this);
-			***REMOVED***
+			}
 
 			var context = this.context,
 				cache = this._textCache;
@@ -91,30 +91,30 @@ browser, but needs to redraw with canvas text when exporting as an image.
 										context.fillStyle = info.font.color;
 										context.font = info.font.definition;
 										updateStyles = false;
-									***REMOVED***
+									}
 
 									for (var i = 0, position; position = positions[i]; i++) {
 										if (position.active) {
 											for (var j = 0, line; line = position.lines[j]; j++) {
 												context.fillText(lines[j].text, line[0], line[1]);
-											***REMOVED***
-										***REMOVED*** else {
+											}
+										} else {
 											positions.splice(i--, 1);
-										***REMOVED***
-									***REMOVED***
+										}
+									}
 
 									if (positions.length == 0) {
 										delete styleCache[key];
-									***REMOVED***
-								***REMOVED***
-							***REMOVED***
-						***REMOVED***
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 
 			context.restore();
-		***REMOVED***;
+		};
 
 		// Creates (if necessary) and returns a text info object.
 		//
@@ -128,12 +128,12 @@ browser, but needs to redraw with canvas text when exporting as an image.
 		//         height: Height of this line.
 		//         widths: Width of this line.
 		//         text: Text on this line.
-		//   ***REMOVED***],
+		//     }],
 		//     font: {
 		//         definition: Canvas font property string.
 		//         color: Color of the text.
-		//   ***REMOVED***,
-		// ***REMOVED***
+		//     },
+		// }
 		//
 		// The positions array contains objects that look like this:
 		//
@@ -142,13 +142,13 @@ browser, but needs to redraw with canvas text when exporting as an image.
 		//     lines: Array of [x, y] coordinates at which to draw the line.
 		//     x: X coordinate at which to draw the text.
 		//     y: Y coordinate at which to draw the text.
-		// ***REMOVED***
+		// }
 
 		Canvas.prototype.getTextInfo = function(layer, text, font, angle, width) {
 
 			if (!plot.getOptions().canvas) {
 				return getTextInfo.call(this, layer, text, font, angle, width);
-			***REMOVED***
+			}
 
 			var textStyle, layerCache, styleCache, info;
 
@@ -160,23 +160,23 @@ browser, but needs to redraw with canvas text when exporting as an image.
 
 			if (typeof font === "object") {
 				textStyle = font.style + " " + font.variant + " " + font.weight + " " + font.size + "px " + font.family;
-			***REMOVED*** else {
+			} else {
 				textStyle = font;
-			***REMOVED***
+			}
 
 			// Retrieve (or create) the cache for the text's layer and styles
 
 			layerCache = this._textCache[layer];
 
 			if (layerCache == null) {
-				layerCache = this._textCache[layer] = {***REMOVED***;
-			***REMOVED***
+				layerCache = this._textCache[layer] = {};
+			}
 
 			styleCache = layerCache[textStyle];
 
 			if (styleCache == null) {
-				styleCache = layerCache[textStyle] = {***REMOVED***;
-			***REMOVED***
+				styleCache = layerCache[textStyle] = {};
+			}
 
 			info = styleCache[text];
 
@@ -201,7 +201,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 						weight: element.css("font-weight"),
 						family: element.css("font-family"),
 						color: element.css("color")
-					***REMOVED***;
+					};
 
 					// Setting line-height to 1, without units, sets it equal
 					// to the font-size, even if the font-size is abstract,
@@ -212,7 +212,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 					font.size = element.css("line-height", 1).height();
 
 					element.remove();
-				***REMOVED***
+				}
 
 				textStyle = font.style + " " + font.variant + " " + font.weight + " " + font.size + "px " + font.family;
 
@@ -227,8 +227,8 @@ browser, but needs to redraw with canvas text when exporting as an image.
 					font: {
 						definition: textStyle,
 						color: font.color
-					***REMOVED***
-				***REMOVED***;
+					}
+				};
 
 				context.save();
 				context.font = textStyle;
@@ -252,14 +252,14 @@ browser, but needs to redraw with canvas text when exporting as an image.
 						text: lineText,
 						width: measured.width,
 						height: font.lineHeight
-					***REMOVED***);
-				***REMOVED***
+					});
+				}
 
 				context.restore();
-			***REMOVED***
+			}
 
 			return info;
-		***REMOVED***;
+		};
 
 		// Adds a text string to the canvas text overlay.
 
@@ -267,7 +267,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 
 			if (!plot.getOptions().canvas) {
 				return addText.call(this, layer, x, y, text, font, angle, width, halign, valign);
-			***REMOVED***
+			}
 
 			var info = this.getTextInfo(layer, text, font, angle, width),
 				positions = info.positions,
@@ -282,11 +282,11 @@ browser, but needs to redraw with canvas text when exporting as an image.
 
 			if (valign == "middle") {
 				y = Math.round(y - info.height / 2);
-			***REMOVED*** else if (valign == "bottom") {
+			} else if (valign == "bottom") {
 				y = Math.round(y - info.height);
-			***REMOVED*** else {
+			} else {
 				y = Math.round(y);
-			***REMOVED***
+			}
 
 			// FIXME: LEGACY BROWSER FIX
 			// AFFECTS: Opera < 12.00
@@ -296,7 +296,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 
 			if (!!(window.opera && window.opera.version().split(".")[0] < 12)) {
 				y -= 2;
-			***REMOVED***
+			}
 
 			// Determine whether this text already exists at this position.
 			// If so, mark it for inclusion in the next render pass.
@@ -305,8 +305,8 @@ browser, but needs to redraw with canvas text when exporting as an image.
 				if (position.x == x && position.y == y) {
 					position.active = true;
 					return;
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			// If the text doesn't exist at this position, create a new entry
 
@@ -315,7 +315,7 @@ browser, but needs to redraw with canvas text when exporting as an image.
 				lines: [],
 				x: x,
 				y: y
-			***REMOVED***;
+			};
 
 			positions.push(position);
 
@@ -325,21 +325,21 @@ browser, but needs to redraw with canvas text when exporting as an image.
 			for (var i = 0, line; line = lines[i]; i++) {
 				if (halign == "center") {
 					position.lines.push([Math.round(x - line.width / 2), y]);
-				***REMOVED*** else if (halign == "right") {
+				} else if (halign == "right") {
 					position.lines.push([Math.round(x - line.width), y]);
-				***REMOVED*** else {
+				} else {
 					position.lines.push([Math.round(x), y]);
-				***REMOVED***
+				}
 				y += line.height;
-			***REMOVED***
-		***REMOVED***;
-	***REMOVED***
+			}
+		};
+	}
 
 	$.plot.plugins.push({
 		init: init,
 		options: options,
 		name: "canvas",
 		version: "1.0"
-	***REMOVED***);
+	});
 
-***REMOVED***)(jQuery);
+})(jQuery);

@@ -8,7 +8,7 @@ var Footer = function(ctrl){
         ©2016 VnDocs.com
       </div>
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports = Footer;

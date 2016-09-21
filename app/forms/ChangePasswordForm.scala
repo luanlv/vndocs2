@@ -15,4 +15,4 @@ object ChangePasswordForm {
     "current-password" -> nonEmptyText,
     "new-password" -> nonEmptyText
   ))
-***REMOVED***
+}

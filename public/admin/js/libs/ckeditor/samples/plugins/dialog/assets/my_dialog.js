@@ -18,7 +18,7 @@ CKEDITOR.dialog.add( 'myDialog', function( editor ) {
 						id: 'input1',
 						type: 'text',
 						label: 'Text Field'
-					***REMOVED***,
+					},
 					{
 						id: 'select1',
 						type: 'select',
@@ -27,9 +27,9 @@ CKEDITOR.dialog.add( 'myDialog', function( editor ) {
 							[ 'option1', 'value1' ],
 							[ 'option2', 'value2' ]
 						]
-					***REMOVED***
+					}
 				]
-			***REMOVED***,
+			},
 			{
 				id: 'tab2',
 				label: 'Second Tab',
@@ -39,10 +39,10 @@ CKEDITOR.dialog.add( 'myDialog', function( editor ) {
 						id: 'button1',
 						type: 'button',
 						label: 'Button Field'
-					***REMOVED***
+					}
 				]
-			***REMOVED***
+			}
 		]
-	***REMOVED***;
-***REMOVED***);
+	};
+});
 

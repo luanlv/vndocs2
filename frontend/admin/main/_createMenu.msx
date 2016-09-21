@@ -10,8 +10,8 @@ var data = m.prop({
     "parent_id" : "NONE",
     "name" : "NONE",
     "slug" : "NONE"
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 
 var CreateMenu = function(ctrl){
@@ -42,7 +42,7 @@ var CreateMenu = function(ctrl){
                           <div class="dd-edit-box" style="display: none;">
                             <input type="text" name="title" autocomplete="off" placeholder="Item"
                                    data-placeholder="title?"
-                                   data-default-value="name {?numeric.increment***REMOVED***"/>
+                                   data-default-value="name {?numeric.increment}"/>
                             <input type="text" name="http" id="http" autocomplete="off" placeholder="link"/>
                               <i class="end-edit">save</i>
                           </div>
@@ -61,22 +61,22 @@ var CreateMenu = function(ctrl){
                             data: ctrl.domenu.toJson(),
                             contentType: "application/json; charset=utf-8",
                             dataType: "text"
-                        ***REMOVED***);
+                          });
                           request.done(function( msg ) {
-                        ***REMOVED***).then(function(){
-                        ***REMOVED***);
+                          }).then(function(){
+                          });
                           request.fail(function( jqXHR, textStatus ) {
                             alert( "Request failed: " + textStatus );
-                        ***REMOVED***);
-                      ***REMOVED***);
+                          });
+                        });
                         console.log(ctrl.domenu.toJson());
-                    ***REMOVED******REMOVED***
+                      }}
                           
                     >Update</button>
                     <button id="preview"
                             onclick={function(){
                               console.log("click")
-                          ***REMOVED******REMOVED***
+                            }}
                     >PreView</button>
                   </div>
                 </div>
@@ -91,14 +91,14 @@ var CreateMenu = function(ctrl){
           </div>
           
           <div className="offcanvas">
-            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
+            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")} style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))}>
               <div className="offcanvas-head">
                 <header>Images controller </header>
                 <div className="offcanvas-tools">
                   <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
                      onclick={function(){
-                       {/*ctrl.showImgList = false;*/***REMOVED***
-                   ***REMOVED******REMOVED***
+                       {/*ctrl.showImgList = false;*/}
+                     }}
                   >
                     <i className="md md-close"></i>
                   </a>
@@ -125,10 +125,10 @@ var CreateMenu = function(ctrl){
     ctrl.showImgList?(<div className="backdrop"
                            onclick={function(){
                              ctrl.showImgList = false;
-                         ***REMOVED******REMOVED***
+                           }}
     ></div>):""
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 
 

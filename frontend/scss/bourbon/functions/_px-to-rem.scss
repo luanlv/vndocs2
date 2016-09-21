@@ -5,11 +5,11 @@
 @function rem($pxval) {
   @if not unitless($pxval) {
     $pxval: strip-units($pxval);
-***REMOVED***
+  }
 
   $base: $em-base;
   @if not unitless($base) {
     $base: strip-units($base);
-***REMOVED***
+  }
   @return ($pxval / $base) * 1rem;
-***REMOVED***
+}

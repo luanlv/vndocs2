@@ -14,12 +14,12 @@ import models.User
 case class WithService(anyOf: String*) extends Authorization[User, CookieAuthenticator] {
   def isAuthorized[A](user: User, authenticator: CookieAuthenticator)(implicit r: Request[A]) = Future.successful {
     WithService.isAuthorized(user, anyOf: _*)
-***REMOVED***
-***REMOVED***
+  }
+}
 object WithService {
   def isAuthorized(user: User, anyOf: String*): Boolean =
     anyOf.intersect(user.services).size > 0 || user.services.contains("master")
-***REMOVED***
+}
 
 /**
  * Only allows those users that have every of the selected services.
@@ -29,9 +29,9 @@ object WithService {
 case class WithServices(allOf: String*) extends Authorization[User, CookieAuthenticator] {
   def isAuthorized[A](user: User, authenticator: CookieAuthenticator)(implicit r: Request[A]) = Future.successful {
     WithServices.isAuthorized(user, allOf: _*)
-***REMOVED***
-***REMOVED***
+  }
+}
 object WithServices {
   def isAuthorized(user: User, allOf: String*): Boolean =
     allOf.intersect(user.services).size == allOf.size || user.services.contains("master")
-***REMOVED***
+}

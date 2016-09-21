@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function() {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoTableDynamic.prototype;
 
 	// =========================================================================
@@ -18,7 +18,7 @@
 
 	p.initialize = function() {
 		this._initDataTables();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// DATATABLES
@@ -27,12 +27,12 @@
 	p._initDataTables = function() {
 		if (!$.isFunction($.fn.dataTable)) {
 			return;
-		***REMOVED***
+		}
 
 		// Init the demo DataTables
 		this._createDataTable1();
 		this._createDataTable2();
-	***REMOVED***;
+	};
 
 	p._createDataTable1 = function() {
 		$('#datatable1').DataTable({
@@ -42,21 +42,21 @@
 				"buttonText": "Columns",
 				"overlayFade": 0,
 				"align": "right"
-			***REMOVED***,
+			},
 			"language": {
 				"lengthMenu": '_MENU_ entries per page',
 				"search": '<i class="fa fa-search"></i>',
 				"paginate": {
 					"previous": '<i class="fa fa-angle-left"></i>',
 					"next": '<i class="fa fa-angle-right"></i>'
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***);
+				}
+			}
+		});
 
 		$('#datatable1 tbody').on('click', 'tr', function() {
 			$(this).toggleClass('selected');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	p._createDataTable2 = function() {
 		var table = $('#datatable2').DataTable({
@@ -68,15 +68,15 @@
 					"orderable": false,
 					"data": null,
 					"defaultContent": ''
-				***REMOVED***,
-				{"data": "name"***REMOVED***,
-				{"data": "position"***REMOVED***,
-				{"data": "office"***REMOVED***,
-				{"data": "salary"***REMOVED***
+				},
+				{"data": "name"},
+				{"data": "position"},
+				{"data": "office"},
+				{"data": "salary"}
 			],
 			"tableTools": {
 				"sSwfPath": $('#datatable2').data('swftools')
-			***REMOVED***,
+			},
 			"order": [[1, 'asc']],
 			"language": {
 				"lengthMenu": '_MENU_ entries per page',
@@ -84,9 +84,9 @@
 				"paginate": {
 					"previous": '<i class="fa fa-angle-left"></i>',
 					"next": '<i class="fa fa-angle-right"></i>'
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***);
+				}
+			}
+		});
 		
 		//Add event listener for opening and closing details
 		var o = this;
@@ -98,14 +98,14 @@
 				// This row is already open - close it
 				row.child.hide();
 				tr.removeClass('shown');
-			***REMOVED***
+			}
 			else {
 				// Open this row
 				row.child(o._formatDetails(row.data())).show();
 				tr.addClass('shown');
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***;
+			}
+		});
+	};
 
 	// =========================================================================
 	// DETAILS
@@ -127,8 +127,8 @@
 				'<td>And any further details here (images etc)...</td>' +
 				'</tr>' +
 				'</table>';
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	namespace.DemoTableDynamic = new DemoTableDynamic;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

@@ -10,11 +10,11 @@
 
   /**
    * Add a dot at the beginning of a string
-   * @returns {string***REMOVED***
+   * @returns {string}
    */
   String.prototype.dot = function() {
     return '.' + this;
-***REMOVED***;
+  };
 
   /**
    * For each chunk prepend the current string
@@ -22,7 +22,7 @@
    * @param knife
    * @param innerGlue
    * @param outerGlue
-   * @returns {string***REMOVED***
+   * @returns {string}
    */
   String.prototype.eachHas = function(chunk, knife, innerGlue, outerGlue) {
     var subject   = this,
@@ -34,35 +34,35 @@
 
     chunks.forEach(function(chunk, c) {
       opt.push(subject + innerGlue + chunk);
-  ***REMOVED***);
+    });
 
     return opt.join(outerGlue);
-***REMOVED***;
+  };
 
   /**
    * Pad a string with a specified value, till a min length has been reached
    * @param val
    * @param minLength
-   * @returns {String***REMOVED***
+   * @returns {String}
    */
   String.prototype.padLength = function(val, minLength) {
     var subject = this;
     while(subject.length < minLength) {
       subject = val + subject;
-  ***REMOVED***
+    }
     return subject;
-***REMOVED***;
+  };
 
   /**
    * Join a sibling string by a delimiter
    * @param sibling
    * @param delimiter
-   * @returns {string***REMOVED***
+   * @returns {string}
    */
   String.prototype.join = function(sibling, delimiter) {
     var delimiter = typeof delimiter === 'string' ? delimiter : " ";
     return this + delimiter + sibling;
-***REMOVED***;
+  };
 
   /**
    * Detect CSS pointer-events property
@@ -74,14 +74,14 @@
         docEl = document.documentElement;
     if(!('pointerEvents' in el.style)) {
       return false;
-  ***REMOVED***
+    }
     el.style.pointerEvents = 'auto';
     el.style.pointerEvents = 'x';
     docEl.appendChild(el);
     var supports           = window.getComputedStyle && window.getComputedStyle(el, '').pointerEvents === 'auto';
     docEl.removeChild(el);
     return !!supports;
-***REMOVED***)();
+  })();
 
   /**
    * @version-control +0.1.0 slide animation duration option, default is 0
@@ -91,7 +91,7 @@
    * @version-control +0.1.0 option itemAddBtnClass
    * @version-control +0.1.0 option refuseConfirmDelay (ms), default is 2000ms
    * @version-control +0.1.0 option addBtnSelector
-   * @type {{listNodeName: string, itemNodeName: string, rootClass: string, listClass: string, itemClass: string, dragClass: string, handleClass: string, collapsedClass: string, placeClass: string, noDragClass: string, emptyClass: string, contentClass: string, removeBtnClass: string, editBoxClass: string, expandBtnHTML: string, collapseBtnHTML: string, editBtnHTML: string, data: string, slideAnimationDuration: number, group: number, maxDepth: number, threshold: number***REMOVED******REMOVED***
+   * @type {{listNodeName: string, itemNodeName: string, rootClass: string, listClass: string, itemClass: string, dragClass: string, handleClass: string, collapsedClass: string, placeClass: string, noDragClass: string, emptyClass: string, contentClass: string, removeBtnClass: string, editBoxClass: string, expandBtnHTML: string, collapseBtnHTML: string, editBtnHTML: string, data: string, slideAnimationDuration: number, group: number, maxDepth: number, threshold: number}}
    */
   var defaults = {
     listNodeName:           'ol',
@@ -128,7 +128,7 @@
         support: false,
         // Any CSS-supported value is valid
         selectWidth: '45%'
-  ***REMOVED***,
+    },
     slideAnimationDuration: 0,
     group:                  0,
     maxDepth:               20,
@@ -149,21 +149,21 @@
     onItemRemoved:          [],
     onItemStartEdit:        [],
     onItemEndEdit:          []
-***REMOVED***;
+  };
 
   function Plugin(element, options) {
     // After $(...).domenu() is called 1:
     this.w       = $(document);
     this.el      = $(element);
-    this.options = $.extend({***REMOVED***, defaults, options);
+    this.options = $.extend({}, defaults, options);
     // 2:
     this.init();
-***REMOVED***
+  }
 
   Plugin.prototype = {
 
     init:                             function() {
-      // Plugin {w: m.fn.init[1], el: m.fn.init[1], options: Object, mouse: Object, isTouch: false…***REMOVED***
+      // Plugin {w: m.fn.init[1], el: m.fn.init[1], options: Object, mouse: Object, isTouch: false…}
       var list = this,
           opt  = this.options;
 
@@ -182,13 +182,13 @@
         // If an element is a parent then it contains another li elements
         // and can be collapsed and expanded
         list.setParent($(el));
-    ***REMOVED***);
+      });
 
       list.el.on('click', 'button', function(e) {
         // Don't do anything when dragging
         if(list.dragEl) {
           return;
-      ***REMOVED***
+        }
         var target = $(e.currentTarget),
             action = target.data('action'),
             item   = target.parent(list.options.itemNodeName);
@@ -196,12 +196,12 @@
         // jQuery object data
         if(action === 'collapse') {
           list.collapseItem(item);
-      ***REMOVED***
+        }
 
         if(action === 'expand') {
           list.expandItem(item);
-      ***REMOVED***
-    ***REMOVED***);
+        }
+      });
 
       // Declaring some custom event handlers
       var onStartEvent = function(e) {
@@ -211,9 +211,9 @@
             if(!handle.hasClass(list.options.handleClass)) {
               if(handle.closest(list.options.noDragClass.dot()).length) {
                 return;
-            ***REMOVED***
+              }
               handle = handle.closest(list.options.handleClass.dot());
-          ***REMOVED***
+            }
 
             // If the element is not draggable, or is while dragging
             // then don't do anything
@@ -223,28 +223,28 @@
             list.isTouch = /^touch/.test(e.type);
             if(list.isTouch && e.touches.length !== 1) {
               return;
-          ***REMOVED***
+            }
 
             // Don't do whatever browsers do by default
             e.preventDefault();
             // At this point object is identified as available to drag
             // so start dragging
             list.dragStart(e.touches ? e.touches[0] : e);
-        ***REMOVED***,
+          },
 
           onMoveEvent  = function(e) {
             if(list.dragEl) {
               e.preventDefault();
               list.dragMove(e.touches ? e.touches[0] : e);
-          ***REMOVED***
-        ***REMOVED***,
+            }
+          },
 
           onEndEvent   = function(e) {
             if(list.dragEl) {
               e.preventDefault();
               list.dragStop(e.touches ? e.touches[0] : e);
-          ***REMOVED***
-        ***REMOVED***;
+            }
+          };
 
       // If thouch events are avialable, start listening for those events
       if(hasTouch) {
@@ -252,7 +252,7 @@
         window.addEventListener('touchmove', onMoveEvent, false);
         window.addEventListener('touchend', onEndEvent, false);
         window.addEventListener('touchcancel', onEndEvent, false);
-    ***REMOVED***
+      }
 
       // Start listening for the events below
       list.el.on('mousedown', onStartEvent);
@@ -264,7 +264,7 @@
       // @version-control +0.1.0 support global add button selector
       if(opt.addBtnSelector) this.addNewListItemListener($(opt.addBtnSelector));
       else this.addNewListItemListener(this.el.find(opt.addBtnClass.dot()));
-  ***REMOVED***,
+    },
     /**
      * @dev-since 0.13.29
      * @version-control +0.1.0 default add button removed
@@ -283,14 +283,14 @@
         // Call item addition event listeners
         opt.onItemAdded.forEach(function(cb, i) {
           cb(item, e);
-      ***REMOVED***);
-    ***REMOVED***);
+        });
+      });
 
       // Call init event listeners
       opt.onDomenuInitialized.forEach(function(cb, i) {
         cb();
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     /**
      * @dev-since 0.13.29
      * @version-control +0.0.5 support end edit on click
@@ -301,8 +301,8 @@
           opt = _this.options,
           endEditBtn = item.find(opt.endEditBtnClass.dot()).first();
 
-      endEditBtn.on('click', null, {forced: true***REMOVED***, _this.keypressEnterEndEditEventHandler.bind(_this));
-  ***REMOVED***,
+      endEditBtn.on('click', null, {forced: true}, _this.keypressEnterEndEditEventHandler.bind(_this));
+    },
     /**
      * @version-control +0.0.1 lazy keypressEnterEndEditEventHandler binding
      * @version-control +0.0.1 prevent slide animation bubbling
@@ -328,8 +328,8 @@
           item.data('domenu_keypressEnterEndEditEventHandler', true);
 
           item.on('keypress', keypressEnterEndEditEventHandler.bind(_this));
-      ***REMOVED***);
-    ***REMOVED***;
+        });
+      };
 
 
       // Setup on click endEdit event listener
@@ -337,7 +337,7 @@
       {
         _this.clickEndEditEventHandler(item);
         item.data('domenu_clickEndEditEventHandler', true);
-    ***REMOVED***
+      }
 
       // Hide the span
       spn.stop().slideToggle(opt.slideAnimationDuration, function() {
@@ -358,26 +358,26 @@
 
             // Be ready to close the edit mode
             igniteKeypressEnterEndEditEventHandler(item);
-        ***REMOVED***);
-      ***REMOVED***);
-    ***REMOVED***);
+          });
+        });
+      });
 
       // Call start edit event listeners
       opt.onItemStartEdit.forEach(function(cb, i) {
         cb(item, event);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     /**
      * @version-control +0.1.0 support default value tokens and placeholder tokens
      * @param token
      * @param input
-     * @returns {****REMOVED***
+     * @returns {*}
      */
     resolveToken:                     function(token, input) {
       if(typeof token !== "string") return;
 
       var out       = token,
-          tagRegex  = /\{\?[a-z\-\.]+\***REMOVED***/ig,
+          tagRegex  = /\{\?[a-z\-\.]+\}/ig,
           tags      = out.match(tagRegex),
           tagsCount = tags && tags.length || 0;
 
@@ -386,7 +386,7 @@
 
         // Process each tag and replace it it in the output string
         switch(tags[currentTag]) {
-          case "{?date.gregorian-slashed-DMY***REMOVED***":
+          case "{?date.gregorian-slashed-DMY}":
             var dateTime = new Date(Date.now()),
                 date     = dateTime.getDay().toString().padLength('0', 2) + '/' +
                   dateTime.getMonth().toString().padLength('0', 2) + '/' +
@@ -395,7 +395,7 @@
             out = out.replace(tags[currentTag], date);
             break;
 
-          case "{?date.mysql-datetime***REMOVED***":
+          case "{?date.mysql-datetime}":
             var date = new Date(Date.now());
             date     = date.getUTCFullYear() + '-' +
               ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
@@ -406,25 +406,25 @@
             out      = out.replace(tags[currentTag], date);
             break;
 
-          case "{?numeric.increment***REMOVED***":
+          case "{?numeric.increment}":
             // We begin with 1 - evaluate to true on check..
             this.incrementIncrement = this.incrementIncrement || 1;
             out                     = out.replace(tags[currentTag], this.incrementIncrement);
             this.incrementIncrement += 1;
             break;
 
-          case "{?value***REMOVED***":
+          case "{?value}":
             out = out.replace(tags[currentTag], input.value);
             break;
 
           default:
             out = token;
             break;
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       return out;
-  ***REMOVED***,
+    },
     /**
      * @version-control +0.0.1 shared way to save input state
      * @version-control +0.0.5 tokens support
@@ -437,7 +437,7 @@
       // Call on save edit box event listeners
       opt.onSaveEditBoxInput.forEach(function(cb, i) {
         cb(inputCollection);
-    ***REMOVED***);
+      });
 
       inputCollection.each(function(c, input) {
         var itemDataValue     = $(input).parents(opt.itemClass.dot().join(',').join(opt.itemBlueprintClass.dot())).first().data(input.getAttribute('name')),
@@ -445,8 +445,8 @@
             item              = $(input).parents(opt.itemClass.dot()).first();
         if(!(itemDataValue || input.value)) var tokenizedDefault = _this.resolveToken(inputDefaultValue, $(input));
         item.data(input.getAttribute('name'), $(input).val()|| itemDataValue || tokenizedDefault);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     /**
      * @version-control +0.1.0 dynamic inputs
      * @version-control +0.0.1 prevent slide bubbling
@@ -490,27 +490,27 @@
         // Call end edit event listeners
         opt.onItemEndEdit.forEach(function(cb, i) {
           cb(item, event);
-      ***REMOVED***);
+        });
 
         // Show the span content
         spn.stop().slideDown(opt.slideAnimationDuration);
-    ***REMOVED***);
+      });
 
 
-  ***REMOVED***,
+    },
     resolveInputDataEntryByName:      function(name) {
       var item = this.el
       opt = this.options,
 
         item.find(opt.editBoxClass.dot().join(opt.inputSelector)).each(function(i, input) {
           if(input.getAttribute('name') === name) return $(input).data('name');
-      ***REMOVED***)
-  ***REMOVED***,
+        })
+    },
     setItemTitle:                     function(item, title) {
       var _this = this,
           opt   = this.options;
       item.find(opt.contentClass.dot().join('span')).first().text(title);
-  ***REMOVED***,
+    },
     determineAndSetItemTitle:         function(item) {
       var _this                                 = this,
           opt                                   = this.options,
@@ -523,7 +523,7 @@
           choice                                = firstInputText || firstInputValue || itemDataValue || _this.resolveToken(firstEditBoxInputDataPlaceholderValue) || firstEditBoxInputPlaceholderValue;
 
       item.find(opt.contentClass.dot().join('span')).first().text(choice);
-  ***REMOVED***,
+    },
     /**
      * @version-control +0.0.4 fix fill inputs with placeholders #3
      * @version-control +0.1.0 fix populate inputs with values whenever possible #5
@@ -542,13 +542,13 @@
            if(selectedOption.length !== 0) selectedOption.attr('selected', 'selected');
            else if (item.data($(input).attr('name'))) $(input).append('<option value="' + item.data($(input).attr('name')) + '">' + item.data($(input).attr('name')) +'</option>');
            else return;
-      ***REMOVED***
+        }
         // Set the placeholder value of the input
         $(input).attr('placeholder', _this.resolveToken($(input).data('placeholder'), $(input)) || $(input).attr('placeholder'));
         // And set the value of the input
         $(input).val(item.data($(input).attr('name')));
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     /**
      * @version-control +0.0.5 support dynamic inputs
      * @version-control +0.0.5 support tokenization
@@ -558,7 +558,7 @@
      * @version-control +0.1.0 feature add a child item
      * @version-control +0.0.1 support itemAddChildItem onItemAdded events
      * @param data
-     * @returns {****REMOVED***
+     * @returns {*}
      */
     createNewListItem:                function(data) {
       var id              = typeof id !== 'undefined' ? id : this.getHighestId() + 1,
@@ -580,13 +580,13 @@
         _this.unsetEmptyParent(parent);
         jQuery.each(opt.onItemRemoved, function(i, cb) {
           cb(blueprint);
-      ***REMOVED***);
-    ***REMOVED***;
+        });
+      };
 
         // Use user supplied JSON data to fill the data fields
-      $.each(data || {***REMOVED***, function(key, value) {
+      $.each(data || {}, function(key, value) {
         blueprint.data(key, value);
-    ***REMOVED***);
+      });
 
       // Rename yourself to the default itemClass
       blueprint.attr('class', opt.itemClass);
@@ -621,19 +621,19 @@
             // but only for a limited amount of time
             var revertAddClass = setTimeout(function() {
               rmvBtn.removeClass(confirmClass);
-          ***REMOVED***, opt.refuseConfirmDelay);
-        ***REMOVED***
+            }, opt.refuseConfirmDelay);
+          }
 
         // When there is no confirmation class just remove the item
-      ***REMOVED*** else {
+        } else {
           blueprint.remove();
 
           // Call item remove event listeners
           opt.onItemRemoved.forEach(function(cb, i) {
             cb(blueprint, e);
-        ***REMOVED***);
-      ***REMOVED***
-    ***REMOVED***);
+          });
+        }
+      });
 
       // Set the add button click event handler
       blueprint.find(opt.itemAddBtnClass.dot()).first().on('click', function(event) {
@@ -642,13 +642,13 @@
         // Call item addition event listeners
         opt.onItemAdded.forEach(function(cb, i) {
           cb(blueprint, event);
-      ***REMOVED***);
+        });
 
         // Call item add child item event listeners
         opt.onItemAddChildItem .forEach(function(cb, i) {
           cb(blueprint, event);
-      ***REMOVED***);
-    ***REMOVED***);
+        });
+      });
 
       // Setup editing; on every mouse click clickStartEditEventHandler will be called
       blueprint.find('span').first().get(0).addEventListener('click', this.clickStartEditEventHandler.bind(this));
@@ -657,10 +657,10 @@
         {
           blueprint.find('select').css('width', _this.options.select2.selectWidth);        
           blueprint.find('select').select2();
-      ***REMOVED***
+        }
       // Give back a ready itemClass element
       return blueprint;
-  ***REMOVED***,
+    },
     itemAddChildItem: function(parentElement) {
       var _this = this,
           opt = _this.options,
@@ -671,7 +671,7 @@
       listElement.append(newItem);
       parentElement.append(listElement);
       _this.setParent(parentElement);
-  ***REMOVED***,
+    },
     getHighestId:                     function() {
       var opt = this.options,
           el  = this.el,
@@ -680,19 +680,19 @@
       el.find(opt.itemNodeName).each(function(i, e) {
         var eId = $(e).data('id');
         if(eId > id) return id = eId;
-    ***REMOVED***);
+      });
 
       return id;
-  ***REMOVED***,
+    },
     /**
      * @version-control +0.0.2 itemClass li prefix support
-     * @returns {****REMOVED***
+     * @returns {*}
      */
     serialize:                        function() {
       // Call toJson event listeners
       this.options.onToJson.forEach(function(cb, i) {
         cb();
-    ***REMOVED***);
+      });
 
       var data,
           depth = 0,
@@ -703,7 +703,7 @@
         items.each(function() {
           var li           = $(this),
               sub          = li.children(list.options.listNodeName),
-              filteredData = {***REMOVED***;
+              filteredData = {};
 
 
           // Filter out domenu_ prefixed data values
@@ -714,21 +714,21 @@
 
             // Include the value if not skipped
             filteredData[key] = li.data(key);
-        ***REMOVED***);
+          });
 
-          var item = $.extend({***REMOVED***, filteredData);
+          var item = $.extend({}, filteredData);
 
           if(sub.length) {
             item.children = step(sub, depth + 1);
-        ***REMOVED***
+          }
 
           array.push(item);
-      ***REMOVED***);
+        });
         return array;
-    ***REMOVED***;
+      };
       data      = step(list.el.find(list.options.listNodeName).first(), depth);
       return data;
-  ***REMOVED***,
+    },
     deserialize:                      function(data, override) {
       var data  = JSON.parse(data) || JSON.parse(this.options.data),
           _this = this,
@@ -746,25 +746,25 @@
           _this.setParent(item, true);
           jQuery.each(i.children, function(i, e) {
             processItem(e, cref);
-        ***REMOVED***)
-      ***REMOVED*** else {
+          })
+        } else {
           var item = _this.createNewListItem(i);
           pref.append(item);
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       jQuery.each(data, function(i, e) {
         processItem(e, list);
-    ***REMOVED***)
+      })
 
       // Call start edit event listeners
       this.options.onParseJson.forEach(function(cb, i) {
         cb();
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     serialise:                        function() {
       return this.serialize();
-  ***REMOVED***,
+    },
 
     reset: function() {
       this.mouse      = {
@@ -785,7 +785,7 @@
         lastDirY: 0,
         distAxX:  0,
         distAxY:  0
-    ***REMOVED***;
+      };
       this.isTouch    = false;
       this.moving     = false;
       this.dragEl     = null;
@@ -793,7 +793,7 @@
       this.dragDepth  = 0;
       this.hasNewRoot = false;
       this.pointEl    = null;
-  ***REMOVED***,
+    },
 
     expandItem: function(li) {
       li.removeClass(this.options.collapsedClass);
@@ -804,8 +804,8 @@
       // Call start edit event listeners
       this.options.onItemExpand.forEach(function(cb, i) {
         cb(li);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
 
     collapseItem: function(li) {
       var lists = li.children(this.options.listNodeName);
@@ -814,13 +814,13 @@
         li.children('[data-action="collapse"]').hide();
         li.children('[data-action="expand"]').show();
         li.children(this.options.listNodeName).hide();
-    ***REMOVED***
+      }
 
       // Call start edit event listeners
       this.options.onItemCollapse.forEach(function(cb, i) {
         cb(li);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
 
     expandAll: function(cb) {
       var list = this;
@@ -828,8 +828,8 @@
         var item = $(this);
         if(cb && cb(item)) list.expandItem($(this));
         else list.expandItem($(this));
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     /**
      * @version-control +0.0.1 collapse all fix
      * @param cb
@@ -840,8 +840,8 @@
         var item = $(this);
         if(cb && cb(item)) list.collapseItem(item);
         else list.collapseItem(item);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     /**
      * @dev-since 0.13.29
      * @version-control +0.0.5 prevent setting multiple parents on a parent element
@@ -874,11 +874,11 @@
         var handle = li.find(this.options.handleClass.dot()).first().clone();
         li.find(this.options.handleClass.dot()).first().remove();
         li.prepend(handle);
-    ***REMOVED***
+      }
       // If the selector gets targeted within the li element
       // hide it
       li.children('[data-action="expand"]').hide();
-  ***REMOVED***,
+    },
     /**
      * @dev-since 0.13.29
      * @version-control +0.1.0 fix clean item data when unsetting a parent #4
@@ -890,7 +890,7 @@
       parent.children('[data-action]').remove();
       parent.children(this.options.listNodeName).remove();
       parent.removeData('children');
-  ***REMOVED***,
+    },
     /**
      * @dev-since 0.13.29
      * @version-control +0.0.5 unsetEmptyParent
@@ -899,7 +899,7 @@
     unsetEmptyParent: function(parent) {
       var _this = this;
       if (parent.find(this.options.itemClass.dot()).length === 0) _this.unsetParent(parent);
-  ***REMOVED***,
+    },
     dragStart: function(e) {
       var mouse    = this.mouse,
           target   = $(e.target),
@@ -933,7 +933,7 @@
       this.dragEl.css({
         'left': e.pageX - mouse.offsetX,
         'top':  e.pageY - mouse.offsetY
-    ***REMOVED***);
+      });
 
       // What is the deepest element within dragEl?
       var i, depth,
@@ -942,14 +942,14 @@
         depth = $(items[i]).parents(this.options.listNodeName).length;
         if(depth > this.dragDepth) {
           this.dragDepth = depth;
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       // Call start drag event listeners
       this.options.onItemDrag.forEach(function(cb, i) {
         cb(dragItem, e);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
     dragStop:  function(e) {
       var el = this.dragEl.children(this.options.itemNodeName).first();
       el[0].parentNode.removeChild(el[0]);
@@ -959,14 +959,14 @@
       this.el.trigger('change');
       if(this.hasNewRoot) {
         this.dragRootEl.trigger('change');
-    ***REMOVED***
+      }
       this.reset();
 
       // Call end drag event listeners
       this.options.onItemDrop.forEach(function(cb, i) {
         cb(el, e);
-    ***REMOVED***);
-  ***REMOVED***,
+      });
+    },
 
 
     /**
@@ -991,7 +991,7 @@
         // = begin offset of the element
         'left': e.pageX - mouse.offsetX,
         'top':  e.pageY - mouse.offsetY
-    ***REMOVED***);
+      });
 
       // mouse position last events
       mouse.lastX = mouse.nowX;
@@ -1018,23 +1018,23 @@
         mouse.dirAx  = newAx;
         mouse.moving = true;
         return;
-    ***REMOVED***
+      }
 
       // calc distance moved on this axis (and direction)
       // if the direction has changed
       if(mouse.dirAx !== newAx) {
         mouse.distAxX = 0;
         mouse.distAxY = 0;
-    ***REMOVED*** else {
+      } else {
         mouse.distAxX += Math.abs(mouse.distX);
         if(mouse.dirX !== 0 && mouse.dirX !== mouse.lastDirX) {
           mouse.distAxX = 0;
-      ***REMOVED***
+        }
         mouse.distAxY += Math.abs(mouse.distY);
         if(mouse.dirY !== 0 && mouse.dirY !== mouse.lastDirY) {
           mouse.distAxY = 0;
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
       mouse.dirAx = newAx;
 
 
@@ -1059,36 +1059,36 @@
               list.append(this.placeEl);
               prev.append(list);
               this.setParent(prev);
-          ***REMOVED*** else {
+            } else {
               // else append to next level up
               list = prev.children(opt.listNodeName).last();
               list.append(this.placeEl);
-          ***REMOVED***
-        ***REMOVED***
-      ***REMOVED***
+            }
+          }
+        }
         // decrease horizontal level
         if(mouse.distX < 0) {
           // we can't decrease a level if an item proceeds the current one
           next = this.placeEl.next(opt.itemNodeName);
           if(next.length) {
             this.placeEl.before(next);
-        ***REMOVED***
+          }
           if(!next.length) {
             parent = this.placeEl.parent();
             this.placeEl.closest(opt.itemNodeName).after(this.placeEl);
             if(!parent.children().length) {
               this.unsetEmptyParent(parent.parent());
-          ***REMOVED***
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
+            }
+          }
+        }
+      }
 
       var isEmpty = false;
 
       // find list item under cursor
       if(!hasPointerEvents) {
         this.dragEl[0].style.visibility = 'hidden';
-    ***REMOVED***
+      }
       // TODO: include this fix this in the next patch
       this.pointEl = $(document.elementFromPoint(e.pageX - document.body.scrollLeft, e.pageY - (window.pageYOffset || document.documentElement.scrollTop)));
       
@@ -1099,17 +1099,17 @@
 
       if(!hasPointerEvents) {
         this.dragEl[0].style.visibility = 'visible';
-    ***REMOVED***
+      }
       if(this.pointEl.hasClass(opt.handleClass)) {
         this.pointEl = this.pointEl.parent(opt.itemNodeName);
-    ***REMOVED***
+      }
       if(this.pointEl.hasClass(opt.emptyClass)) {
         isEmpty = true;
-    ***REMOVED***
+      }
       // When no pointer element has been found or when the pointer element has no options.itemClass
       else if(! this.pointEl.length || ! this.pointEl.hasClass(opt.itemClass)) {
         return;
-    ***REMOVED***
+      }
 
       // find parent list of item under cursor
       var pointElRoot = this.pointEl.closest(opt.rootClass.dot()),
@@ -1123,12 +1123,12 @@
         // check if groups match if dragging over new root
         if(isNewRoot && opt.group !== pointElRoot.data('domenu-group')) {
           return;
-      ***REMOVED***
+        }
         // check depth limit
         depth = this.dragDepth - 1 + this.pointEl.parents(opt.listNodeName).length;
         if(depth > opt.maxDepth) {
           return;
-      ***REMOVED***
+        }
         var before = e.pageY < (this.pointEl.offset().top + this.pointEl.height() / 2);
         parent     = this.placeEl.parent();
         // if empty create new list to replace empty placeholder
@@ -1136,29 +1136,29 @@
           list = $(document.createElement(opt.listNodeName)).addClass(opt.listClass);
           list.append(this.placeEl);
           this.pointEl.replaceWith(list);
-      ***REMOVED***
+        }
         else if(before) {
           this.pointEl.before(this.placeEl);
-      ***REMOVED***
+        }
         else {
           this.pointEl.after(this.placeEl);
-      ***REMOVED***
+        }
         if(!parent.children().length) {
           // play with unsetParent, unsetEmptyParent should be needed here
           this.unsetEmptyParent(parent.parent());
-      ***REMOVED***
+        }
         if(!this.dragRootEl.find(opt.itemNodeName).length) {
           this.dragRootEl.append('<div class="' + opt.emptyClass + '"/>');
-      ***REMOVED***
+        }
         // parent root list has changed
         if(isNewRoot) {
           this.dragRootEl = pointElRoot;
           this.hasNewRoot = this.el[0] !== this.dragRootEl[0];
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
+        }
+      }
+    }
 
-***REMOVED***;
+  };
 
   /**
    * Works like a proxy to Plugin prototype.
@@ -1169,37 +1169,37 @@
     if(!plugin) throw new TypeError('expected object, got ' + typeof plugin);
     this._plugin = plugin,
       this._lists = lists;
-***REMOVED***
+  }
 
   PublicPlugin.prototype = {
     getLists:            function(params) {
       return this._lists;
-  ***REMOVED***,
+    },
     parseJson:           function(data, override) {
       var data = data || null, override = override || false;
       this._plugin.deserialize(data, override);
       return this;
-  ***REMOVED***,
+    },
     toJson:              function() {
       var data = this._plugin.serialize();
       return JSON.stringify(data);
-  ***REMOVED***,
+    },
     expandAll:           function() {
       this._plugin.expandAll();
       return this;
-  ***REMOVED***,
+    },
     collapseAll:         function() {
       this._plugin.collapseAll();
       return this;
-  ***REMOVED***,
+    },
     expand:              function(cb) {
       this._plugin.expandAll(cb);
       return this;
-  ***REMOVED***,
+    },
     collapse:            function(cb) {
       this._plugin.collapseAll(cb);
       return this;
-  ***REMOVED***,
+    },
     /**
      * @desc  Listen toParse calls
      * @callback-params
@@ -1207,13 +1207,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature onParseJson event listener
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onParseJson: function(callback) {
       var _this = this;
       _this._plugin.options.onParseJson.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Listen to toJson calls
      * @callback-params
@@ -1221,13 +1221,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen to toJson calls
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onToJson: function(callback) {
       var _this = this;
       _this._plugin.options.onToJson.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Listen for save events
      * @callback-params jQueryCollection inputCollection
@@ -1235,13 +1235,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen for editBoxSave events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onSaveEditBoxInput: function(callback) {
       var _this = this;
       _this._plugin.options.onSaveEditBoxInput.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when user starts to drag an item
      * @callback-params jQueryCollection dragItem, MouseEvent event
@@ -1249,13 +1249,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen for itemDrag events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemDrag:          function(callback) {
       var _this = this;
       _this._plugin.options.onItemDrag.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when the user stops to drag an item
      * @callback-params jQueryCollection dragItem, MouseEvent event
@@ -1263,13 +1263,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen from itemDrop events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemDrop:          function(callback) {
       var _this = this;
       _this._plugin.options.onItemDrop.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when an item has been added to the list
      * @callback-params jQueryCollection item, MouseEvent event
@@ -1277,13 +1277,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen for itemAdded events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemAdded:         function(callback) {
       var _this = this;
       _this._plugin.options.onItemAdded.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when an item has been removed
      * @callback-params jQueryCollection item, MouseEvent event
@@ -1291,13 +1291,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen for itemRemoved events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemRemoved:       function(callback) {
       var _this = this;
       this._plugin.options.onItemRemoved.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when an item is entering the edit mode
      * @callback-params jQueryCollection item, MouseEvent event
@@ -1305,13 +1305,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen for itemStartEdit events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemStartEdit:     function(callback) {
       var _this = this;
       this._plugin.options.onItemStartEdit.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when an item is exiting the edit mode
      * @callback-params jQueryCollection item, MouseEvent event
@@ -1319,13 +1319,13 @@
      * @param callback
      * @dev-since >0.0.1
      * @version-control +0.1.0 feature listen for itemEndEdit events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemEndEdit:       function(callback) {
       var _this = this;
       this._plugin.options.onItemEndEdit.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
     /**
      * @desc Fires when an item adds a child item
      * @callback-params jQueryCollection item, MouseEvent event
@@ -1333,19 +1333,19 @@
      * @param callback
      * @dev-since 0.13.29
      * @version-control +0.1.0 feature listen for itemAddChildItem events
-     * @returns {PublicPlugin***REMOVED***
+     * @returns {PublicPlugin}
      */
     onItemAddChildItem:       function(callback) {
       var _this = this;
       this._plugin.options.onItemAddChildItem.push(callback.bind(_this));
       return _this;
-  ***REMOVED***,
+    },
 
     getListNodes: function() {
       var opt       = this._plugin.options,
           listNodes = this._plugin.el.find(opt.listNodeName);
       return listNodes;
-  ***REMOVED***,
+    },
 
     /**
      * @desc Get the current plugin configuration
@@ -1355,8 +1355,8 @@
      */
     getPluginOptions: function() {
       return this._plugin.options;
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
 
   /**
    * @dev-since 0.0.1
@@ -1365,7 +1365,7 @@
    * @dev-since 0.13.29
    * @version-control +0.0.5 random key generation improvements
    * @param params
-   * @returns {*|PublicPlugin***REMOVED***
+   * @returns {*|PublicPlugin}
    */
     // $('#domenu').domenu();
   $.fn.domenu = function(params) {
@@ -1393,7 +1393,7 @@
             pseudoRandomNumericKey = Math.random().toString().replace(/\D/g, '');
         domenu.data("domenu", pl);
         domenu.data("domenu-id", pseudoRandomNumericKey);
-    ***REMOVED***
+      }
       else {
 
         plugin  = domenu.data("domenu");
@@ -1403,20 +1403,20 @@
           if(typeof pPlugin[params] === 'function') {
             // proxy
             retval = pPlugin[params]();
-        ***REMOVED***
+          }
           else if(typeof pPlugin.getPluginOptions()[params] !== 'undefined') {
             retval = pPlugin.getPluginOptions()[params];
-        ***REMOVED***
+          }
           else if(typeof plugin[params] === 'function') {
             retval = plugin[params]();
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***);
+          }
+        }
+      }
+    });
 
     plugin  = plugin || domenu.data("domenu");
     pPlugin = pPlugin || new PublicPlugin(plugin, lists);
     return retval || pPlugin;
-***REMOVED***;
+  };
 
-***REMOVED***)(window.jQuery || window.Zepto, window, document);
+})(window.jQuery || window.Zepto, window, document);

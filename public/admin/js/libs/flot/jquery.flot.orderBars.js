@@ -7,7 +7,7 @@
  *
  * To activate the plugin you must specify the parameter "order" for the specific serie :
  *
- *  $.plot($("#placeholder"), [{ data: [ ... ], bars :{ order = null or integer ***REMOVED***])
+ *  $.plot($("#placeholder"), [{ data: [ ... ], bars :{ order = null or integer }])
  *
  * If 2 series have the same order param, they are ordered by the position in the array;
  *
@@ -49,43 +49,43 @@
 
                     if (isBarAtLeftOfCenter(position)){
                         decallage = -1*(sumWidth(orderedBarSeries,position-1,Math.floor(nbOfBarsToOrder / 2)-1)) - centerBarShift;
-                  ***REMOVED***else{
+                    }else{
                         decallage = sumWidth(orderedBarSeries,Math.ceil(nbOfBarsToOrder / 2),position-2) + centerBarShift + borderWidthInXabsWidth*2;
-                  ***REMOVED***
+                    }
 
                     shiftedPoints = shiftPoints(datapoints,serie,decallage);
                     datapoints.points = shiftedPoints;
-             ***REMOVED***
-         ***REMOVED***
+               }
+           }
            return shiftedPoints;
-      ***REMOVED***
+        }
 
         function serieNeedToBeReordered(serie){
             return serie.bars != null
                 && serie.bars.show
                 && serie.bars.order != null;
-      ***REMOVED***
+        }
 
         function calculPixel2XWidthConvert(plot){
             var gridDimSize = isHorizontal ? plot.getPlaceholder().innerHeight() : plot.getPlaceholder().innerWidth();
             var minMaxValues = isHorizontal ? getAxeMinMaxValues(plot.getData(),1) : getAxeMinMaxValues(plot.getData(),0);
             var AxeSize = minMaxValues[1] - minMaxValues[0];
             pixelInXWidthEquivalent = AxeSize / gridDimSize;
-      ***REMOVED***
+        }
 
         function getAxeMinMaxValues(series,AxeIdx){
             var minMaxValues = new Array();
             for(var i = 0; i < series.length; i++){
                 minMaxValues[0] = series[i].data[0][AxeIdx];
                 minMaxValues[1] = series[i].data[series[i].data.length - 1][AxeIdx];
-          ***REMOVED***
+            }
             return minMaxValues;
-      ***REMOVED***
+        }
 
         function retrieveBarSeries(plot){
             orderedBarSeries = findOthersBarsToReOrders(plot.getData());
             nbOfBarsToOrder = orderedBarSeries.length;
-      ***REMOVED***
+        }
 
         function findOthersBarsToReOrders(series){
             var retSeries = new Array();
@@ -93,28 +93,28 @@
             for(var i = 0; i < series.length; i++){
                 if(series[i].bars.order != null && series[i].bars.show){
                     retSeries.push(series[i]);
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
 
             return retSeries.sort(sortByOrder);
-      ***REMOVED***
+        }
 
         function sortByOrder(serie1,serie2){
             var x = serie1.bars.order;
             var y = serie2.bars.order;
             return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-      ***REMOVED***
+        }
 
         function  calculBorderAndBarWidth(serie){
             borderWidth = serie.bars.lineWidth ? serie.bars.lineWidth  : 2;
             borderWidthInXabsWidth = borderWidth * pixelInXWidthEquivalent;
-      ***REMOVED***
+        }
         
         function checkIfGraphIsHorizontal(serie){
             if(serie.bars.horizontal){
                 isHorizontal = true;
-          ***REMOVED***
-      ***REMOVED***
+            }
+        }
 
         function findPosition(serie){
             var pos = 0
@@ -122,11 +122,11 @@
                 if (serie == orderedBarSeries[i]){
                     pos = i;
                     break;
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
 
             return pos+1;
-      ***REMOVED***
+        }
 
         function calculCenterBarShift(){
             var width = 0;
@@ -135,21 +135,21 @@
                 width = (orderedBarSeries[Math.ceil(nbOfBarsToOrder / 2)].bars.barWidth)/2;
 
             return width;
-      ***REMOVED***
+        }
 
         function isBarAtLeftOfCenter(position){
             return position <= Math.ceil(nbOfBarsToOrder / 2);
-      ***REMOVED***
+        }
 
         function sumWidth(series,start,end){
             var totalWidth = 0;
 
             for(var i = start; i <= end; i++){
                 totalWidth += series[i].bars.barWidth+borderWidthInXabsWidth*2;
-          ***REMOVED***
+            }
 
             return totalWidth;
-      ***REMOVED***
+        }
 
         function shiftPoints(datapoints,serie,dx){
             var ps = datapoints.pointsize;
@@ -161,27 +161,27 @@
                 //using the index 3 to not overide the third index.
                 serie.data[j][3] = points[i];
                 j++;
-          ***REMOVED***
+            }
 
             return points;
-      ***REMOVED***
+        }
 
         plot.hooks.processDatapoints.push(reOrderBars);
 
-  ***REMOVED***
+    }
 
     var options = {
         series : {
-            bars: {order: null***REMOVED*** // or number/string
-      ***REMOVED***
-  ***REMOVED***;
+            bars: {order: null} // or number/string
+        }
+    };
 
     $.plot.plugins.push({
         init: init,
         options: options,
         name: "orderBars",
         version: "0.2"
-  ***REMOVED***);
+    });
 
-***REMOVED***)(jQuery);
+})(jQuery);
 

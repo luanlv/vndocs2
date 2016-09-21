@@ -11,7 +11,7 @@
 ) {
   $columns: valid-columns($columns);
   @return if(type-of($columns) == number, $columns, null);
-***REMOVED***
+}
 
 
 // Susy Count
@@ -23,7 +23,7 @@
 ) {
   $columns: valid-columns($columns);
   @return is-symmetrical($columns) or length($columns);
-***REMOVED***
+}
 
 
 // Susy Sum
@@ -47,11 +47,11 @@
   @if not($column-sum) {
     @each $column in $columns {
       $column-sum: ($column-sum or 0) + $column;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $column-sum + $gutter-sum;
-***REMOVED***
+}
 
 
 // Susy Slice
@@ -73,11 +73,11 @@
     $sub-columns: ();
     @for $i from $location to ($location + $span) {
       $sub-columns: append($sub-columns, nth($columns, $i));
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $sub-columns;
-***REMOVED***
+}
 
 
 // Susy
@@ -100,4 +100,4 @@
   $span: susy-slice($span, $location, $columns);
 
   @return susy-sum($span, $gutters, $spread);
-***REMOVED***
+}

@@ -1,4 +1,4 @@
-var Main = Main || {***REMOVED***;
+var Main = Main || {};
 var fn = require('./core/_fn.msx');
 var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
@@ -11,20 +11,20 @@ data.token = $(document.getElementsByName("csrfToken")).val();
 $(document).ajaxSend(function(elm, xhr, s){
   if (s.type == "POST") {
     xhr.setRequestHeader('Csrf-Token', data.token);
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 Array.prototype.getItemByParam = function(paramPair) {
   var key = Object.keys(paramPair)[0];
-  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)***REMOVED***);
-***REMOVED***
+  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)});
+}
 
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,
   "/blog/:slug": Main.Article,
   "/category/:categorySlug": Main.Category
-***REMOVED***);
+});
 
 
 module.exports = Main;

@@ -1,4 +1,4 @@
-var Category = {***REMOVED***;
+var Category = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -12,52 +12,52 @@ var Footer = require('../component/_footer.msx');
 Category.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     Data.sessionstorage.set( 'url' , "/" );
-***REMOVED***
+  }
   
   var ctrl = this;
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop();
   ctrl.categorySlug =  m.route.param("categorySlug");
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"***REMOVED***, ctrl.posts, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"}, ctrl.posts, ctrl.setup);
+  } else {
     ctrl.request.data = m.prop(Window.posts);
     ctrl.posts(ctrl.request.data());
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     ctrl.posts(ctrl.request.data());
     m.redraw();
-***REMOVED***;
+  };
   
 
-***REMOVED***;
+};
 
 Category.view = function(ctrl){
   return [
     <div className="headWr ">
-      {Head(ctrl)***REMOVED***
+      {Head(ctrl)}
     </div>,
     <div className="container containerBor">
            
       <div className="bodyWr">
-        {Menu(ctrl)***REMOVED***
+        {Menu(ctrl)}
         <div className="content ">
-          {Content(ctrl)***REMOVED***
-          {Side(ctrl)***REMOVED***
+          {Content(ctrl)}
+          {Side(ctrl)}
         </div>
       </div>
     
     </div>,
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Category;

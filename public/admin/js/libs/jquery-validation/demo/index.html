@@ -10,8 +10,8 @@
 	$.validator.setDefaults({
 		submitHandler: function() {
 			alert("submitted!");
-		***REMOVED***
-	***REMOVED***);
+		}
+	});
 
 	$().ready(function() {
 		// validate the comment form when it is submitted
@@ -25,46 +25,46 @@
 				username: {
 					required: true,
 					minlength: 2
-				***REMOVED***,
+				},
 				password: {
 					required: true,
 					minlength: 5
-				***REMOVED***,
+				},
 				confirm_password: {
 					required: true,
 					minlength: 5,
 					equalTo: "#password"
-				***REMOVED***,
+				},
 				email: {
 					required: true,
 					email: true
-				***REMOVED***,
+				},
 				topic: {
 					required: "#newsletter:checked",
 					minlength: 2
-				***REMOVED***,
+				},
 				agree: "required"
-			***REMOVED***,
+			},
 			messages: {
 				firstname: "Please enter your firstname",
 				lastname: "Please enter your lastname",
 				username: {
 					required: "Please enter a username",
 					minlength: "Your username must consist of at least 2 characters"
-				***REMOVED***,
+				},
 				password: {
 					required: "Please provide a password",
 					minlength: "Your password must be at least 5 characters long"
-				***REMOVED***,
+				},
 				confirm_password: {
 					required: "Please provide a password",
 					minlength: "Your password must be at least 5 characters long",
 					equalTo: "Please enter the same password as above"
-				***REMOVED***,
+				},
 				email: "Please enter a valid email address",
 				agree: "Please accept our policy"
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 		// propose username by combining first- and lastname
 		$("#username").focus(function() {
@@ -72,8 +72,8 @@
 			var lastname = $("#lastname").val();
 			if (firstname && lastname && !this.value) {
 				this.value = firstname + "." + lastname;
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 		//code to hide topic selection, disable for demo
 		var newsletter = $("#newsletter");
@@ -85,31 +85,31 @@
 		newsletter.click(function() {
 			topics[this.checked ? "removeClass" : "addClass"]("gray");
 			topicInputs.attr("disabled", !this.checked);
-		***REMOVED***);
-	***REMOVED***);
+		});
+	});
 	</script>
 	<style>
 	#commentForm {
 		width: 500px;
-	***REMOVED***
+	}
 	#commentForm label {
 		width: 250px;
-	***REMOVED***
+	}
 	#commentForm label.error, #commentForm input.submit {
 		margin-left: 253px;
-	***REMOVED***
+	}
 	#signupForm {
 		width: 670px;
-	***REMOVED***
+	}
 	#signupForm label.error {
 		margin-left: 10px;
 		width: auto;
 		display: inline;
-	***REMOVED***
+	}
 	#newsletter_topics label.error {
 		display: none;
 		margin-left: 103px;
-	***REMOVED***
+	}
 	</style>
 </head>
 <body>

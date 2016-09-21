@@ -12,5 +12,5 @@
 		today: "Ma",
 		weekStart: 1,
 		format: "yyyy.mm.dd"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

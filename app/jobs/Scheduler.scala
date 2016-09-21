@@ -1,6 +1,6 @@
 package jobs
 
-import akka.actor.{ ActorRef, ActorSystem ***REMOVED***
+import akka.actor.{ ActorRef, ActorSystem }
 import com.google.inject.Inject
 import com.google.inject.name.Named
 import com.typesafe.akka.extension.quartz.QuartzSchedulerExtension
@@ -15,4 +15,4 @@ class Scheduler @Inject() (
   QuartzSchedulerExtension(system).schedule("AuthTokenCleaner", authTokenCleaner, AuthTokenCleaner.Clean)
 
   authTokenCleaner ! AuthTokenCleaner.Clean
-***REMOVED***
+}

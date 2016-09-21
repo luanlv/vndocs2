@@ -38,12 +38,12 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 		<pre class="samples">
 CKEDITOR.replace( <em>'textarea_id'</em>, {
 	<strong>toolbar:</strong> [
-		{ name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] ***REMOVED***,	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
+		{ name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },	// Defines toolbar group with name (used to create voice label) and items in 3 subgroups.
 		[ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],			// Defines toolbar group without name.
 		'/',																					// Line break - next group will be placed in new line.
-		{ name: 'basicstyles', items: [ 'Bold', 'Italic' ] ***REMOVED***
+		{ name: 'basicstyles', items: [ 'Bold', 'Italic' ] }
 	]
-***REMOVED***);</pre>
+});</pre>
 
 		<h2 class="samples">By <a href="http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups">config.toolbarGroups</a></h2>
 
@@ -60,15 +60,15 @@ CKEDITOR.replace( <em>'textarea_id'</em>, {
 		<pre class="samples">
 CKEDITOR.replace( <em>'textarea_id'</em>, {
 	<strong>toolbarGroups:</strong> [
-		{ name: 'document',	   groups: [ 'mode', 'document' ] ***REMOVED***,			// Displays document group with its two subgroups.
- 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] ***REMOVED***,			// Group's name will be used to create voice label.
+		{ name: 'document',	   groups: [ 'mode', 'document' ] },			// Displays document group with its two subgroups.
+ 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },			// Group's name will be used to create voice label.
  		'/',																// Line break - next group will be placed in new line.
- 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] ***REMOVED***,
- 		{ name: 'links' ***REMOVED***
+ 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+ 		{ name: 'links' }
 	]
 
 	// NOTE: Remember to leave 'toolbar' property with the default value (null).
-***REMOVED***);</pre>
+});</pre>
 	</div>
 
 	<div id="currentToolbar" style="display: none">
@@ -111,7 +111,7 @@ CKEDITOR.replace( <em>'textarea_id'</em>, {
 				CKEDITOR.document.getById( 'currentToolbar' ).show();
 			else
 				return;
-		***REMOVED***
+		}
 
 		if ( !buttonsNames )
 			buttonsNames = createButtonsNamesHash( editor.ui.items );
@@ -124,26 +124,26 @@ CKEDITOR.replace( <em>'textarea_id'</em>, {
 				'\n\n' +
 				'// Toolbar groups configuration.\n' +
 				dumpToolbarConfiguration( editor, true )
-		***REMOVED***
+		}
 		// Toolbar groups doesn't count in this case - print only toolbar.
 		else {
 			output += '// Toolbar configuration.\n' +
 				dumpToolbarConfiguration( editor );
-		***REMOVED***
+		}
 
 		// Recreate to avoid old IE from loosing whitespaces on filling <pre> content.
 		var preOutput = pre.getOuterHtml().replace( /(?=<\/)/, output );
 		CKEDITOR.dom.element.createFromHtml( preOutput ).replace( pre );
-	***REMOVED*** );
+	} );
 
-	CKEDITOR.replace( 'editorCurrent', { height: 100 ***REMOVED*** );
+	CKEDITOR.replace( 'editorCurrent', { height: 100 } );
 	CKEDITOR.replace( 'editorFull', {
 		// Reset toolbar settings, so full toolbar will be generated automatically.
 		toolbar: null,
 		toolbarGroups: null,
 		removeButtons: null,
 		height: 100
-	***REMOVED*** );
+	} );
 
 	function dumpToolbarConfiguration( editor, printGroups ) {
 		var output = [],
@@ -153,10 +153,10 @@ CKEDITOR.replace( <em>'textarea_id'</em>, {
 			var group = dumpToolbarGroup( toolbar[ i ], printGroups );
 			if ( group )
 				output.push( group );
-		***REMOVED***
+		}
 
 		return 'config.toolbar' + ( printGroups ? 'Groups' : '' ) + ' = [\n\t' + output.join( ',\n\t' ) + '\n];';
-	***REMOVED***
+	}
 
 	function dumpToolbarGroup( group, printGroups ) {
 		var output = [];
@@ -178,8 +178,8 @@ CKEDITOR.replace( <em>'textarea_id'</em>, {
 		if ( !printGroups )
 			output.push( 'items: ' + dumpToolbarItems( group.items ) );
 
-		return '{ ' + output.join( ', ' ) + ' ***REMOVED***';
-	***REMOVED***
+		return '{ ' + output.join( ', ' ) + ' }';
+	}
 
 	function dumpToolbarItems( items ) {
 		if ( typeof items == 'string' )
@@ -197,25 +197,25 @@ CKEDITOR.replace( <em>'textarea_id'</em>, {
 					names.push( '-' );
 				else
 					names.push( buttonsNames[ item.name ] );
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		return '[ \'' + names.join( '\', \'' ) + '\' ]';
-	***REMOVED***
+	}
 
-	// Creates { 'lowercased': 'LowerCased' ***REMOVED*** buttons names hash.
+	// Creates { 'lowercased': 'LowerCased' } buttons names hash.
 	function createButtonsNamesHash( items ) {
-		var hash = {***REMOVED***,
+		var hash = {},
 			name;
 
 		for ( name in items ) {
 			hash[ items[ name ].name ] = name;
-		***REMOVED***
+		}
 
 		return hash;
-	***REMOVED***
+	}
 
-***REMOVED***)();
+})();
 	</script>
 
 	<div id="footer">

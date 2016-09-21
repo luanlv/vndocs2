@@ -30,11 +30,11 @@ $max-width: em(1088) !default;
 ///
 /// @example css - CSS Output
 ///   html {
-///     box-sizing: border-box; ***REMOVED***
+///     box-sizing: border-box; }
 ///
 ///   *, *::after, *::before {
 ///     box-sizing: inherit;
-/// ***REMOVED***
+///   }
 
 $border-box-sizing: true !default;
 

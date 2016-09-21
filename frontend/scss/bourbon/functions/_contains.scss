@@ -4,23 +4,23 @@
 ///
 /// @access private
 ///
-/// @param {List***REMOVED*** $list
+/// @param {List} $list
 ///   The list to check against.
 ///
-/// @param {List***REMOVED*** $values
+/// @param {List} $values
 ///   A single value or list of values to check for.
 ///
 /// @example scss - Usage
 ///   contains($list, $value)
 ///
-/// @return {Bool***REMOVED***
+/// @return {Bool}
 
 @function contains($list, $values...) {
   @each $value in $values {
     @if type-of(index($list, $value)) != "number" {
       @return false;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return true;
-***REMOVED***
+}

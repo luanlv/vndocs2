@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Si us plau, escriu un número de tarjeta vàlid.",
 	equalTo: "Si us plau, escriu el maateix valor de nou.",
 	extension: "Si us plau, escriu un valor amb una extensió acceptada.",
-	maxlength: $.validator.format("Si us plau, no escriguis més de {0***REMOVED*** caracters."),
-	minlength: $.validator.format("Si us plau, no escriguis menys de {0***REMOVED*** caracters."),
-	rangelength: $.validator.format("Si us plau, escriu un valor entre {0***REMOVED*** i {1***REMOVED*** caracters."),
-	range: $.validator.format("Si us plau, escriu un valor entre {0***REMOVED*** i {1***REMOVED***."),
-	max: $.validator.format("Si us plau, escriu un valor menor o igual a {0***REMOVED***."),
-	min: $.validator.format("Si us plau, escriu un valor major o igual a {0***REMOVED***.")
-***REMOVED***);
+	maxlength: $.validator.format("Si us plau, no escriguis més de {0} caracters."),
+	minlength: $.validator.format("Si us plau, no escriguis menys de {0} caracters."),
+	rangelength: $.validator.format("Si us plau, escriu un valor entre {0} i {1} caracters."),
+	range: $.validator.format("Si us plau, escriu un valor entre {0} i {1}."),
+	max: $.validator.format("Si us plau, escriu un valor menor o igual a {0}."),
+	min: $.validator.format("Si us plau, escriu un valor major o igual a {0}.")
+});
 
-***REMOVED***));
+}));

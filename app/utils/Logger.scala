@@ -9,4 +9,4 @@ trait Logger {
    * A named logger instance.
    */
   val logger = play.api.Logger(this.getClass)
-***REMOVED***
+}

@@ -2,41 +2,41 @@
 
 /// Outputs the spec and prefixed versions of the `::selection` pseudo-element.
 ///
-/// @param {Bool***REMOVED*** $current-selector [false]
+/// @param {Bool} $current-selector [false]
 ///   If set to `true`, it takes the current element into consideration.
 ///
 /// @example scss - Usage
 ///   .element {
 ///     @include selection(true) {
 ///       background-color: #ffbb52;
-///   ***REMOVED***
-/// ***REMOVED***
+///     }
+///   }
 ///
 /// @example css - CSS Output
 ///   .element::-moz-selection {
 ///     background-color: #ffbb52;
-/// ***REMOVED***
+///   }
 ///
 ///   .element::selection {
 ///     background-color: #ffbb52;
-/// ***REMOVED***
+///   }
 
 @mixin selection($current-selector: false) {
   @if $current-selector {
     &::-moz-selection {
       @content;
-  ***REMOVED***
+    }
 
     &::selection {
       @content;
-  ***REMOVED***
-***REMOVED*** @else {
+    }
+  } @else {
     ::-moz-selection {
       @content;
-  ***REMOVED***
+    }
 
     ::selection {
       @content;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

@@ -7,16 +7,16 @@
 		// Initialize app when document is ready
 		$(document).ready(function() {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = AppCard.prototype;
 
 	// =========================================================================
 	// INIT
 	// =========================================================================
 
-	p.initialize = function() {***REMOVED***;
+	p.initialize = function() {};
 
 	// =========================================================================
 	// CARD LOADER
@@ -40,10 +40,10 @@
 			hwaccel: false, // Whether to use hardware acceleration
 			className: 'spinner', // The CSS class to assign to the spinner
 			zIndex: 2e9 // The z-index (defaults to 2000000000)
-		***REMOVED***;
+		};
 		var spinner = new Spinner(opts).spin(container.get(0));
 		card.data('card-spinner', spinner);
-	***REMOVED***;
+	};
 
 	p.removeCardLoader = function (card) {
 		var spinner = card.data('card-spinner');
@@ -51,8 +51,8 @@
 		loader.fadeOut(function () {
 			spinner.stop();
 			loader.remove();
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	
 	// =========================================================================
 	// CARD COLLAPSE
@@ -66,10 +66,10 @@
 			if (dispatched === false) {
 				$('#COLLAPSER').triggerHandler('card.bb.collapse', [!$(this).is(":visible")]);
 				dispatched = true;
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 		card.toggleClass('card-collapsed');
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// CARD REMOVE
@@ -78,12 +78,12 @@
 	p.removeCard = function (card) {
 		card.fadeOut(function () {
 			card.remove();
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	
 	// =========================================================================
 	// DEFINE NAMESPACE
 	// =========================================================================
 
 	window.materialadmin.AppCard = new AppCard;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

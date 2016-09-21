@@ -26,12 +26,12 @@ $(document).ready(function() {
     $('#example tfoot th').each( function () {
         var title = $('#example thead th').eq( $(this).index() ).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-  ***REMOVED*** );
+    } );
  
     // DataTable
     var table = $('#example').DataTable( {
 		dom: 'Rlfrtip'
-	***REMOVED*** );
+	} );
      
     // Apply the filter
     $("#example tfoot input").on( 'keyup change', function () {
@@ -39,8 +39,8 @@ $(document).ready(function() {
             .column( $(this).parent().index()+':visible' )
             .search( this.value )
             .draw();
-  ***REMOVED*** );
-***REMOVED*** );
+    } );
+} );
 
 
 	</script>
@@ -558,12 +558,12 @@ $(document).ready(function() {
     $('#example tfoot th').each( function () {
         var title = $('#example thead th').eq( $(this).index() ).text();
         $(this).html( '&lt;input type=&quot;text&quot; placeholder=&quot;Search '+title+'&quot; /&gt;' );
-  ***REMOVED*** );
+    } );
  
     // DataTable
     var table = $('#example').DataTable( {
 		dom: 'Rlfrtip'
-	***REMOVED*** );
+	} );
      
     // Apply the filter
     $(&quot;#example tfoot input&quot;).on( 'keyup change', function () {
@@ -571,8 +571,8 @@ $(document).ready(function() {
             .column( $(this).parent().index()+':visible' )
             .search( this.value )
             .draw();
-  ***REMOVED*** );
-***REMOVED*** );</code>
+    } );
+} );</code>
 
 					<p>In addition to the above code, the following Javascript library files are loaded for use in this
 					example:</p>

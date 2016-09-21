@@ -14,16 +14,16 @@
 
   @if $inherit {
     @at-root {
-       html { @include output((box-sizing: $box)); ***REMOVED***
-       *, *:before, *:after { box-sizing: inherit; ***REMOVED***
-   ***REMOVED***
-***REMOVED*** @else {
-    *, *:before, *:after { @include output((box-sizing: $box)); ***REMOVED***
-***REMOVED***
+       html { @include output((box-sizing: $box)); }
+       *, *:before, *:after { box-sizing: inherit; }
+     }
+  } @else {
+    *, *:before, *:after { @include output((box-sizing: $box)); }
+  }
 
   @include susy-inspect(global-box-sizing, $inspect);
   @include update-box-model($box);
-***REMOVED***
+}
 
 // Border Box Sizing
 // -----------------
@@ -33,7 +33,7 @@
   $inherit: false
 ) {
   @include global-box-sizing(border-box, $inherit);
-***REMOVED***
+}
 
 // Update Box Model
 // ----------------
@@ -43,5 +43,5 @@
 ) {
   @if $box != susy-get(global-box-sizing) {
   @include susy-set(global-box-sizing, $box);
-***REMOVED***
-***REMOVED***
+  }
+}

@@ -11,5 +11,5 @@
 		monthsShort: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
 		today: "I Dag",
 		clear: "Nulstil"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

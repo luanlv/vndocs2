@@ -19,7 +19,7 @@
 ) {
   $return: if($flow == rtl, (from: right, to: left), (from: left, to: right));
   @return map-get($return, $key);
-***REMOVED***
+}
 
 // To
 // --
@@ -29,7 +29,7 @@
   $flow: map-get($susy-defaults, flow)
 ) {
   @return get-direction($flow, to);
-***REMOVED***
+}
 
 // From
 // ----
@@ -39,4 +39,4 @@
   $flow: map-get($susy-defaults, flow)
 ) {
   @return get-direction($flow, from);
-***REMOVED***
+}

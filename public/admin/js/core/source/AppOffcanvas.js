@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = AppOffcanvas.prototype;
 	// =========================================================================
 	// MEMBERS
@@ -24,7 +24,7 @@
 
 	p.initialize = function () {
 		this._enableEvents();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// EVENTS
@@ -36,35 +36,35 @@
 		// Window events
 		$(window).on('resize', function (e) {
 			o._handleScreenSize(e);
-		***REMOVED***);
+		});
 
 		// Offcanvas events
 		$('.offcanvas').on('refresh', function (e) {
 			o.evalScrollbar(e);
-		***REMOVED***);
+		});
 		$('[data-toggle="offcanvas"]').on('click', function (e) {
 			e.preventDefault();
 			o._handleOffcanvasOpen($(e.currentTarget));
-		***REMOVED***);$('[data-dismiss="offcanvas"]').on('click', function (e) {
+		});$('[data-dismiss="offcanvas"]').on('click', function (e) {
 			o._handleOffcanvasClose();
-		***REMOVED***);
+		});
 		// $('#base').on('click', '> .backdrop', function (e) {
 		// 	o._handleOffcanvasClose();
-		// ***REMOVED***);
+		// });
 
 		// Open active offcanvas buttons
 		$('[data-toggle="offcanvas-left"].active').each(function () {
 			o._handleOffcanvasOpen($(this));
-		***REMOVED***);
+		});
 		$('[data-toggle="offcanvas-right"].active').each(function () {
 			o._handleOffcanvasOpen($(this));
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// handlers
 	p._handleScreenSize = function (e) {
 		this.evalScrollbar(e);
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// HANDLERS
@@ -75,7 +75,7 @@
 		if (btn.hasClass('active')) {
 			this._handleOffcanvasClose();
 			return;
-		***REMOVED***
+		}
 
 		var id = btn.attr('href');
 
@@ -85,12 +85,12 @@
 		// Open off-canvas
 		this.openOffcanvas(id);
 		this.invalidate();
-	***REMOVED***;
+	};
 
 	p._handleOffcanvasClose = function (e) {
 		this.closeOffcanvas();
 		this.invalidate();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// OPEN OFFCANVAS
@@ -114,8 +114,8 @@
 		var width = $(id).width();
 		if (width > $(document).width()) {
 			width = $(document).width() - 8;
-			$(id + '.active').css({'width': width***REMOVED***);
-		***REMOVED***
+			$(id + '.active').css({'width': width});
+		}
 		width = (leftOffcanvas) ? width : '-' + width;
 
 		// Translate position offcanvas pane
@@ -125,8 +125,8 @@
 			'-ms-transform': translate,
 			'-o-transform': translate,
 			'transform': translate
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// CLOSE OFFCANVAS
@@ -143,8 +143,8 @@
 			'-ms-transform': '',
 			'-o-transform': '',
 			'transform': ''
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// OFFCANVAS BUTTONS
@@ -155,7 +155,7 @@
 		var id = $('.offcanvas-pane.active').attr('id');
 		$('[data-toggle="offcanvas"]').removeClass('active');
 		$('[href="#' + id + '"]').addClass('active');
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// BACKDROP
@@ -165,23 +165,23 @@
 		// Clear the timer that removes the keyword
 		if ($('.offcanvas-pane.active').length > 0 && this._useBackdrop) {
 			this._addBackdrop();
-		***REMOVED***
+		}
 		else {
 			this._removeBackdrop();
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	p._addBackdrop = function () {
 		if ($('#base > .backdrop').length === 0 && $('#base').data('backdrop') !== 'hidden') {
 			$('<div class="backdrop"></div>').hide().appendTo('#base').fadeIn();
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	p._removeBackdrop = function () {
 		$('#base > .backdrop').fadeOut(function () {
 			$(this).remove();
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// BODY SCROLLING
@@ -196,8 +196,8 @@
 			if (scrollbarWidth !== bodyPad) {
 				$('body').css('padding-right', bodyPad + scrollbarWidth);
 				$('.headerbar').css('padding-right', bodyPad + scrollbarWidth);
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		else {
 			this._timer = setTimeout(function () {
 				// Remove offcanvas-expanded to enable body scrollbar
@@ -205,9 +205,9 @@
 				$('body').css('padding-right', '');
 				$('.headerbar').removeClass('offcanvas-expanded');
 				$('.headerbar').css('padding-right', '');
-			***REMOVED***, 330);
-		***REMOVED***
-	***REMOVED***;
+			}, 330);
+		}
+	};
 
 	// =========================================================================
 	// INVALIDATE
@@ -218,7 +218,7 @@
 		this.toggleBackdropState();
 		this.toggleBodyScrolling();
 		this.evalScrollbar();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// SCROLLBAR
@@ -227,7 +227,7 @@
 	p.evalScrollbar = function () {
 		if (!$.isFunction($.fn.nanoScroller)) {
 			return;
-		***REMOVED***
+		}
 		
 		// Check if there is a menu
 		var menu = $('.offcanvas-pane.active');
@@ -241,16 +241,16 @@
 		// Add the scroller wrapper
 		if (parent.hasClass('nano-content') === false) {
 			menuScroller.wrap('<div class="nano"><div class="nano-content"></div></div>');
-		***REMOVED***
+		}
 		
 		// Set the correct height
 		var height = $(window).height() - menu.find('.nano').position().top;
 		var scroller = menuScroller.closest('.nano');
-		scroller.css({height: height***REMOVED***);
+		scroller.css({height: height});
 
 		// Add the nanoscroller
-		scroller.nanoScroller({preventPageScrolling: true***REMOVED***);
-	***REMOVED***;
+		scroller.nanoScroller({preventPageScrolling: true});
+	};
 
 	// =========================================================================
 	// UTILS
@@ -263,11 +263,11 @@
 		var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 		$('body')[0].removeChild(scrollDiv);
 		return scrollbarWidth;
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// DEFINE NAMESPACE
 	// =========================================================================
 
 	window.materialadmin.AppOffcanvas = new AppOffcanvas;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

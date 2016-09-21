@@ -12,17 +12,17 @@
 	line-height: 14px;
 	box-shadow: 0 0 3px #444;
 	box-sizing: content-box;
-***REMOVED***
+}
 
 @mixin control-open() {
 	content: '+';
 	background-color: #31b131;
-***REMOVED***
+}
 
 @mixin control-close() {
 	content: '-';
 	background-color: #d33333;
-***REMOVED***
+}
 
 
 //
@@ -44,20 +44,20 @@ table.dataTable {
 				width: 16px;
 				@include control;
 				@include control-open;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		tr.parent {
 			td:first-child:before,
 			th:first-child:before {
 				@include control-close;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		tr.child td:before {
 			display: none;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	// Styling for the `column` type
@@ -76,16 +76,16 @@ table.dataTable {
 				margin-left: -10px;
 				@include control;
 				@include control-open;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		tr.parent {
 			td.control:before,
 			th.control:before {
 				@include control-close;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 
 	// Child row styling
@@ -94,7 +94,7 @@ table.dataTable {
 
 		&:hover {
 			background: transparent !important;
-		***REMOVED***
+		}
 
 		ul {
 			display: inline-block;
@@ -108,21 +108,21 @@ table.dataTable {
 
 				&:first-child {
 					padding-top: 0;
-				***REMOVED***
+				}
 
 				&:last-child {
 					border-bottom: none;
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 
 		span.dtr-title {
 			display: inline-block;
 			min-width: 75px;
 			font-weight: bold;
-		***REMOVED***
+		}
 
-		span.dtr-data {***REMOVED***
-	***REMOVED***
-***REMOVED***
+		span.dtr-data {}
+	}
+}
 

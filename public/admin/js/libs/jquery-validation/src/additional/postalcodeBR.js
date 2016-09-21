@@ -7,5 +7,5 @@
 * 99999999
 */
 $.validator.addMethod("postalcodeBR", function(cep_value, element) {
-	return this.optional(element) || /^\d{2***REMOVED***.\d{3***REMOVED***-\d{3***REMOVED***?$|^\d{5***REMOVED***-?\d{3***REMOVED***?$/.test( cep_value );
-***REMOVED***, "Informe um CEP válido.");
+	return this.optional(element) || /^\d{2}.\d{3}-\d{3}?$|^\d{5}-?\d{3}?$/.test( cep_value );
+}, "Informe um CEP válido.");

@@ -1,43 +1,43 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -48,14 +48,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -66,14 +66,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -84,14 +84,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -102,14 +102,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -120,14 +120,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -138,14 +138,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -156,14 +156,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -174,14 +174,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -192,14 +192,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -210,14 +210,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -225,15 +225,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -241,15 +241,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -257,15 +257,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -273,15 +273,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -289,15 +289,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -305,15 +305,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -321,15 +321,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -337,15 +337,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -353,15 +353,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -369,15 +369,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -385,15 +385,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -401,15 +401,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -417,15 +417,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -433,15 +433,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -449,15 +449,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -465,15 +465,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -481,15 +481,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -497,15 +497,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -513,15 +513,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -529,15 +529,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 /*
 // Example usage
 
@@ -552,7 +552,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -562,7 +562,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -572,7 +572,7 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */
 /*
  * File:        TableTools.css
@@ -604,10 +604,10 @@ div.DTTT_container {
   position: relative;
   float: right;
   margin: 0 0 0 15px;
-***REMOVED***
+}
 .card-body.no-padding div.DTTT_container {
   margin: 15px 15px 15px 0;
-***REMOVED***
+}
 button.DTTT_button,
 div.DTTT_button,
 a.DTTT_button {
@@ -621,15 +621,15 @@ a.DTTT_button {
   /* Generated by http://www.colorzilla.com/gradient-editor/ */
   background: #ffffff;
   /* Old browsers */
-***REMOVED***
+}
 /* Buttons are cunning border-box sizing - we can't just use that for A and DIV due to IE6/7 */
 button.DTTT_button {
   height: 30px;
   padding: 3px 8px;
-***REMOVED***
+}
 .DTTT_button embed {
   outline: none;
-***REMOVED***
+}
 button.DTTT_button:hover,
 div.DTTT_button:hover,
 a.DTTT_button:hover {
@@ -638,7 +638,7 @@ a.DTTT_button:hover {
   text-decoration: none !important;
   background: #f3f3f3;
   /* Old browsers */
-***REMOVED***
+}
 button.DTTT_disabled,
 div.DTTT_disabled,
 a.DTTT_disabled {
@@ -646,7 +646,7 @@ a.DTTT_disabled {
   border: 1px solid #d0d0d0;
   background: #ffffff;
   /* Old browsers */
-***REMOVED***
+}
 /*
  * SELECTING
  * Row selection styles
@@ -654,31 +654,31 @@ a.DTTT_disabled {
 table.DTTT_selectable tbody tr {
   cursor: pointer;
   *cursor: hand;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.odd {
   background-color: #9FAFD1;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.odd td.sorting_1 {
   background-color: #9FAFD1;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.odd td.sorting_2 {
   background-color: #9FAFD1;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.odd td.sorting_3 {
   background-color: #9FAFD1;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.even {
   background-color: #B0BED9;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.even td.sorting_1 {
   background-color: #B0BED9;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.even td.sorting_2 {
   background-color: #B0BED9;
-***REMOVED***
+}
 table.dataTable tr.DTTT_selected.even td.sorting_3 {
   background-color: #B0BED9;
-***REMOVED***
+}
 /*
  * COLLECTIONS
  * Drop down list (collection) styles
@@ -692,10 +692,10 @@ div.DTTT_collection {
   background-color: rgba(255, 255, 255, 0.3);
   overflow: hidden;
   z-index: 2002;
-***REMOVED***
+}
 div.DTTT_collection_background {
   z-index: 2001;
-***REMOVED***
+}
 div.DTTT_collection button.DTTT_button,
 div.DTTT_collection div.DTTT_button,
 div.DTTT_collection a.DTTT_button {
@@ -705,7 +705,7 @@ div.DTTT_collection a.DTTT_button {
   display: block;
   float: none;
   margin-bottom: 4px;
-***REMOVED***
+}
 /*
  * PRINTING
  * Print display styles
@@ -726,15 +726,15 @@ div.DTTT_collection a.DTTT_button {
   opacity: 0.95;
   border: 1px solid black;
   border: 1px solid rgba(0, 0, 0, 0.5);
-***REMOVED***
+}
 .DTTT_print_info h6 {
   font-weight: normal;
   font-size: 28px;
   line-height: 28px;
   margin: 1em;
-***REMOVED***
+}
 .DTTT_print_info p {
   font-size: 14px;
   line-height: 20px;
-***REMOVED***
+}
 

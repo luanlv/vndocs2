@@ -13,14 +13,14 @@ var data = m.prop({
         "shortUrl": "",
         "filename": "",
         "filesize" : 0
-  ***REMOVED***
-***REMOVED***,
+    }
+  ],
   "content": "## Noi dung",
   "cover" : {
     "id" : "ec97531f-6aa0-4374-87d4-77b6a030a854",
     "alt" : "anh dai dien"
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 var NewProduct = function(ctrl){
   return [
@@ -34,7 +34,7 @@ var NewProduct = function(ctrl){
                 
                 <button type="button" className="btn ink-reaction btn-raised btn-primary" style="float: right"
                   onclick={function(){
-                    {/*console.log(data());*/***REMOVED***
+                    {/*console.log(data());*/}
                     delete data().time;
                     $.ajax({
                       type: "POST",
@@ -43,10 +43,10 @@ var NewProduct = function(ctrl){
                       contentType: "application/json",
                       dataType: "json",
                       success: function(data){
-                    ***REMOVED***
-                  ***REMOVED***);
+                      }
+                    });
                     
-                ***REMOVED******REMOVED***
+                  }}
                 >Publish</button>
                 <button type="button" className="btn ink-reaction btn-raised" style="float: right; margin-right: 20px;">Save</button>
                 <br/>
@@ -61,10 +61,10 @@ var NewProduct = function(ctrl){
                         <input type="text" className="form-control" id="url" name="title"
                                onchange={function(el){
                                  data().id = $(el.target).val()
-                             ***REMOVED******REMOVED***
-                               value={data().id***REMOVED***
+                               }}
+                               value={data().id}
                         />
-                    )***REMOVED***
+                    )}
                     <div className="form-control-line"></div>
                   </div>
                 </div>
@@ -79,10 +79,10 @@ var NewProduct = function(ctrl){
                         onchange={function(el){
                           data().title = $(el.target).val();
                           data().id = fn.slug(data().title);
-                      ***REMOVED******REMOVED***
-                        value={data().title***REMOVED***
+                        }}
+                        value={data().title}
                         />
-                    )***REMOVED***
+                    )}
                     <div className="form-control-line"></div>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ var NewProduct = function(ctrl){
                   <label htmlFor="date" className="col-sm-2 control-label">Upload Date</label>
                   <div className="col-sm-2">
                     <input type="date" className="form-control" id="date" disabled
-                       value={(data().time !== undefined)?(moment.unix(data().time/1000).format("YYYY-MM-DD")):(moment().format("YYYY-MM-DD"))***REMOVED***
+                       value={(data().time !== undefined)?(moment.unix(data().time/1000).format("YYYY-MM-DD")):(moment().format("YYYY-MM-DD"))}
                     />
                     <div className="form-control-line"></div>
                   </div>
@@ -103,35 +103,35 @@ var NewProduct = function(ctrl){
                     <select multiple className="form-control" size="7" id="categories" name="categories"
                       onchange={function(el){
                         data().categories = $(el.target).val();
-                    ***REMOVED******REMOVED***
+                      }}
                     >
                       {(data().categories === undefined)?[
                         ctrl.categories().map(function(el){
                             return <option
-                                value={el._id***REMOVED***
-                            > {el.name***REMOVED*** </option>
-                        ***REMOVED***)
-                    ***REMOVED***:[
+                                value={el._id}
+                            > {el.name} </option>
+                          })
+                      ]:[
                         ctrl.categories().map(function(el){
                           return <option
-                              value={el._id***REMOVED***
+                              value={el._id}
                               selected={
                                 (data().categories.indexOf(el._id) >= 0)?"true":""
-                            ***REMOVED***
-                          > {el.name***REMOVED*** </option>
-                      ***REMOVED***)
-                    ***REMOVED******REMOVED***
+                              }
+                          > {el.name} </option>
+                        })
+                      ]}
                     </select>
                   </div>
-                  {/*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/***REMOVED***
+                  {/*<label htmlFor="image" className="col-sm-1 control-label">Cover</label>*/}
                   <div className="col-sm-2 control-label">
-                    <img src={"/cover/get/" + data().cover.id***REMOVED*** alt={data().cover.alt***REMOVED***
+                    <img src={"/cover/get/" + data().cover.id} alt={data().cover.alt}
                       style="cursor: pointer"
                       onclick={function(){
-                        ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
+                        ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"}, ctrl.imgList, ctrl.setup2);
                         ctrl.showImgList = true;
                         
-                    ***REMOVED******REMOVED***
+                      }}
                     />
                   </div>
                 </div>
@@ -143,11 +143,11 @@ var NewProduct = function(ctrl){
                       config={function(el, isInit, ctx){
                         if(!isInit) {
                           $(el).val(data().description)
-                      ***REMOVED***
-                    ***REMOVED******REMOVED***
+                        }
+                      }}
                       onchange={function(el){
                         data().description = $(el.target).val();
-                    ***REMOVED******REMOVED***
+                      }}
                     ></textarea>
                     
                     <div className="form-control-line"></div>
@@ -167,64 +167,64 @@ var NewProduct = function(ctrl){
                       <input disabled type="text" className="form-control" id="" placeholder="File size"/><div className="form-control-line"></div>
                     </div>
                   </div>
-              ***REMOVED***:[
+                ]:[
                     data().link.map(function(el, index){
                       return (
                           <div className="form-group">
-                            <label htmlFor={"url" + (index+1)***REMOVED*** className="col-sm-2 control-label">File {index + 1***REMOVED***</label>
+                            <label htmlFor={"url" + (index+1)} className="col-sm-2 control-label">File {index + 1}</label>
                             <div className="col-sm-2">
-                              <input type="text" className="form-control" id={"url" + (index+1)***REMOVED*** name={"url" + (index+1)***REMOVED*** placeholder="URL"
+                              <input type="text" className="form-control" id={"url" + (index+1)} name={"url" + (index+1)} placeholder="URL"
                                      onchange={function(item){
                                        data().link[index].url = $(item.target).val();
                                        $.ajax({
                                          type: "POST",
                                          url: "/file/getSize",
-                                         data: JSON.stringify({"url" : data().link[index].url***REMOVED***),
+                                         data: JSON.stringify({"url" : data().link[index].url}),
                                          contentType: "application/json",
                                          dataType: "json",
                                          success: function(res){
                                            data().link[index].filesize = res.size;
                                            console.log(data().link[index])
                                            m.redraw();
-                                       ***REMOVED***
-                                     ***REMOVED***);
-                                   ***REMOVED******REMOVED***
-                                     value={el.url***REMOVED***
+                                         }
+                                       });
+                                     }}
+                                     value={el.url}
                               /><div className="form-control-line"></div>
                             </div>
                             <div className="col-sm-2">
                               <input type="text" className="form-control"   placeholder="Short Url"
                                      onchange={function(item){
                                        data().link[index].shortUrl = $(item.target).val();
-                                   ***REMOVED******REMOVED***
-                                     value={el.shortUrl***REMOVED***
+                                     }}
+                                     value={el.shortUrl}
                               /><div className="form-control-line"></div>
                             </div>
                             <div className="col-sm-3">
                               <input type="text" className="form-control" id="" placeholder="File name"
                                      onchange={function(item){
                                        data().link[index].filename = $(item.target).val();
-                                   ***REMOVED******REMOVED***
-                                     value={el.filename***REMOVED***
+                                     }}
+                                     value={el.filename}
                               /><div className="form-control-line"></div>
                             </div>
                             <div className="col-sm-2">
                               <input disabled type="number" className="form-control" id="" placeholder="File size"
-                                     value={(el.filesize>0)?(el.filesize):""***REMOVED***
+                                     value={(el.filesize>0)?(el.filesize):""}
                               /><div className="form-control-line"></div>
                             </div>
                             <div className="col-sm-1">
                               <button type="button" className="btn btn-floating-action"
                                 onclick={function(){
                                   data().link.splice(index, 1);
-                              ***REMOVED******REMOVED***
+                                }}
                               ><i className="glyphicon glyphicon-remove"></i></button>
                             </div>
                           </div>
                       )
-                  ***REMOVED***)
+                    })
                   
-              ***REMOVED******REMOVED***
+                ]}
   
                 <button type="button" className="btn ink-reaction btn-flat btn-primary btn-loading-state" style="float: right"
                   onclick={function(el){
@@ -234,9 +234,9 @@ var NewProduct = function(ctrl){
                           "shortUrl": "",
                           "filename": "",
                           "filesize" : 0
-                      ***REMOVED***
+                        }
                     )
-                ***REMOVED******REMOVED***
+                  }}
                 >Add new file</button>
                 
               </form>
@@ -256,15 +256,15 @@ var NewProduct = function(ctrl){
                            editor.getSession().on('change', function () {
                              data().content = editor.getSession().getValue();
                              m.redraw();
-                         ***REMOVED***);
-                           {/*input(editor.getSession().getValue());*/***REMOVED***
+                           });
+                           {/*input(editor.getSession().getValue());*/}
                            data().content = editor.getSession().getValue()
                            m.redraw();
                            editor.$blockScrolling = Infinity;
                            editor.setOptions({
                              maxLines: Infinity,
                              wrap: true
-                         ***REMOVED***);
+                           });
                            editor.focus();
   
                            document.getElementById('editor').style.fontSize='14px';
@@ -272,12 +272,12 @@ var NewProduct = function(ctrl){
   
                            fn.setupAce(editor);
                            
-                       ***REMOVED***
-                    ***REMOVED***
-                  ***REMOVED***
+                         }
+                      }
+                    }
                        
                   >
-                    {data().content***REMOVED***
+                    {data().content}
                   </div>
                 </div>
               </div>
@@ -290,7 +290,7 @@ var NewProduct = function(ctrl){
                 <div id="render" className="card-body">
                   {
                     m("div", m.trust(marked(data().content)))
-                ***REMOVED***
+                  }
                 </div>
               </div>
   
@@ -302,14 +302,14 @@ var NewProduct = function(ctrl){
           </div>
   
           <div className="offcanvas">
-            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
+            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")} style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))}>
             <div className="offcanvas-head">
               <header>Images controller </header>
               <div className="offcanvas-tools">
                 <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
                   onclick={function(){
                     ctrl.showImgList = false;
-                ***REMOVED******REMOVED***
+                  }}
                 >
                   <i className="md md-close"></i>
                 </a>
@@ -325,10 +325,10 @@ var NewProduct = function(ctrl){
                           data().cover.id=el.id;
                           data().cover.alt=el.filename;
                           ctrl.showImgList = false;
-                      ***REMOVED***
-                      ***REMOVED***
-                      ><img  src={"/cover/get/" + el.id***REMOVED*** alt={el.filename***REMOVED***/></a>
-                  ***REMOVED***)***REMOVED***
+                        }
+                        }
+                      ><img  src={"/cover/get/" + el.id} alt={el.filename}/></a>
+                    })}
                   </div>
                   
                   
@@ -354,15 +354,15 @@ var NewProduct = function(ctrl){
                             processData: false,
                             beforeSend: function (data) {
                               alert('Are you sure you want to upload image?');
-                          ***REMOVED***,
+                            },
                             success: function (data) {
-                              ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
-                          ***REMOVED***,
+                              ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"}, ctrl.imgList, ctrl.setup2);
+                            },
                             error: function (jqXHR, textStatus, errorThrown) {
                               alert(textStatus + ': ' + errorThrown);
-                          ***REMOVED***
-                        ***REMOVED***);
-                      ***REMOVED******REMOVED***
+                            }
+                          });
+                        }}
                       />
                   
                     </div>
@@ -381,10 +381,10 @@ var NewProduct = function(ctrl){
     ctrl.showImgList?(<div className="backdrop"
       onclick={function(){
         ctrl.showImgList = false;
-    ***REMOVED******REMOVED***
+      }}
     ></div>):""
-***REMOVED***
-***REMOVED***
+  ]
+}
 
 
 

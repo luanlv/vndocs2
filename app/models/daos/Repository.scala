@@ -35,4 +35,4 @@ trait Repository[E <: TemporalModel] {
   def remove(id: BSONObjectID): Future[Try[Boolean]]
 
   def remove(query: JsObject, firstMatchOnly: Boolean = false): Future[Try[Boolean]]
-***REMOVED***
+}

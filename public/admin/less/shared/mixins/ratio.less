@@ -2,14 +2,14 @@
 // --------------------------------------------------
 
 .make-ratio(@size; @columns; @rows) {
-	@item: ~'.ratio-@{size***REMOVED***-@{columns***REMOVED***_@{rows***REMOVED***';
-	@{item***REMOVED*** {
+	@item: ~'.ratio-@{size}-@{columns}_@{rows}';
+	@{item} {
 		//padding: (5px * @columns) 0;
-	***REMOVED***
-	@{item***REMOVED***:before {
+	}
+	@{item}:before {
 		padding-top: (100% / @columns) * @rows;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 /*
@@ -26,7 +26,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -36,7 +36,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -46,5 +46,5 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */

@@ -5,12 +5,12 @@ test( "elements() order", function() {
 		v = $( "#elementsOrder" ).validate({
 			errorLabelContainer: container,
 			wrap: "li"
-		***REMOVED***);
+		});
 
 	deepEqual(
 		v.elements().map( function() {
 			return $( this ).attr( "id" );
-		***REMOVED***).get(),
+		}).get(),
 		[
 			"order1",
 			"order2",
@@ -26,7 +26,7 @@ test( "elements() order", function() {
 	deepEqual(
 		container.children().map( function() {
 			return $( this ).attr( "id" );
-		***REMOVED***).get(),
+		}).get(),
 		[
 			"order1-error",
 			"order2-error",
@@ -37,7 +37,7 @@ test( "elements() order", function() {
 		],
 		"labels in error container must be in document order"
 	);
-***REMOVED***);
+});
 
 test( "error containers, simple", function() {
 	expect( 14 );
@@ -45,10 +45,10 @@ test( "error containers, simple", function() {
 		v = $( "#form" ).validate({
 			errorLabelContainer: container,
 			showErrors: function() {
-				container.find( "h3" ).html( jQuery.validator.format( "There are {0***REMOVED*** errors in your form.", this.size()) );
+				container.find( "h3" ).html( jQuery.validator.format( "There are {0} errors in your form.", this.size()) );
 				this.defaultShowErrors();
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 	v.prepareForm();
 	ok( v.valid(), "form is valid" );
@@ -61,14 +61,14 @@ test( "error containers, simple", function() {
 			message: "bar",
 			element: {
 				name: "foo"
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		{
 			message: "necessary",
 			element: {
 				name: "required"
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 	];
 
 	ok( !v.valid(), "form is not valid after adding errors manually" );
@@ -77,7 +77,7 @@ test( "error containers, simple", function() {
 	ok( container.is( ":visible" ), "Check that the container is visible" );
 	container.find( ".error:not(input)" ).each(function() {
 		ok( $( this ).is( ":visible" ), "Check that each label is visible" );
-	***REMOVED***);
+	});
 	equal( "There are 2 errors in your form.", container.find( "h3" ).html() );
 
 	v.prepareForm();
@@ -87,8 +87,8 @@ test( "error containers, simple", function() {
 	ok( container.is( ":hidden" ), "Check that the container is hidden" );
 	container.find( ".error:not(input)" ).each(function() {
 		ok( $( this ).is( ":hidden" ), "Check that each label is hidden" );
-	***REMOVED***);
-***REMOVED***);
+	});
+});
 
 test( "error containers, with labelcontainer I", function() {
 	expect( 16 );
@@ -98,7 +98,7 @@ test( "error containers, with labelcontainer I", function() {
 			errorContainer: container,
 			errorLabelContainer: labelcontainer,
 			wrapper: "li"
-		***REMOVED***);
+		});
 
 	ok( v.valid(), "form is valid" );
 	equal( 0, container.find( ".error:not(input)" ).length, "There should be no error labels in the container" );
@@ -110,15 +110,15 @@ test( "error containers, with labelcontainer I", function() {
 			message: "bar",
 			element: {
 				name: "foo"
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		{
 			name: "required",
 			message: "necessary",
 			element: {
 				name: "required"
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 	];
 
 	ok( !v.valid(), "form is not valid after adding errors manually" );
@@ -132,8 +132,8 @@ test( "error containers, with labelcontainer I", function() {
 		ok( $( this ).is( ":visible" ), "Check that each label is visible1" );
 		equal( "li", $( this ).parent()[0].tagName.toLowerCase(), "Check that each label is wrapped in an li" );
 		ok( $( this ).parent( "li" ).is( ":visible" ), "Check that each parent li is visible" );
-	***REMOVED***);
-***REMOVED***);
+	});
+});
 
 test( "errorcontainer, show/hide only on submit", function() {
 	expect( 14 );
@@ -141,15 +141,15 @@ test( "errorcontainer, show/hide only on submit", function() {
 		labelContainer = $( "#labelcontainer" ),
 		v = $( "#testForm1" ).bind( "invalid-form.validate", function() {
 			ok( true, "invalid-form event triggered called" );
-		***REMOVED***).validate({
+		}).validate({
 			errorContainer: container,
 			errorLabelContainer: labelContainer,
 			showErrors: function() {
-				container.html( jQuery.validator.format( "There are {0***REMOVED*** errors in your form.", this.numberOfInvalids()) );
+				container.html( jQuery.validator.format( "There are {0} errors in your form.", this.numberOfInvalids()) );
 				ok( true, "showErrors called" );
 				this.defaultShowErrors();
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 	equal( "", container.html(), "must be empty" );
 	equal( "", labelContainer.html(), "must be empty" );
@@ -166,14 +166,14 @@ test( "errorcontainer, show/hide only on submit", function() {
 			jQuery.event.fix({
 				type: "keyup",
 				target: $( "#firstname" )[ 0 ]
-			***REMOVED***)
+			})
 		]);
 	equal( 1, labelContainer.find( ".error:visible" ).length );
 	equal( "There are 1 errors in your form.", container.html() );
 
 	$( "#lastname" ).val( "abc" );
 	ok( v.form(), "Form now valid, trigger showErrors but not invalid-form" );
-***REMOVED***);
+});
 
 test( "test label used as error container", function(assert) {
 	expect( 8 );
@@ -184,9 +184,9 @@ test( "test label used as error container", function(assert) {
 		errorPlacement: function( error, element ) {
 			// Append error within linked label
 			$( "label[for='" + element.attr( "id" ) + "']" ).append( error );
-		***REMOVED***,
+		},
 		errorElement: "span"
-	***REMOVED***);
+	});
 
 	ok( !field.valid() );
 	equal( "Field Label", field.next( "label" ).contents().first().text(), "container label isn't disrupted" );
@@ -198,7 +198,7 @@ test( "test label used as error container", function(assert) {
 	equal( "Field Label", field.next( "label" ).contents().first().text(), "container label isn't disrupted" );
 	ok( !field.attr( "aria-describedby" ), "field does not require aria-describedby attribute" );
 	assert.noErrorFor(field);
-***REMOVED***);
+});
 
 test( "test error placed adjacent to descriptive label", function(assert) {
 	expect( 8 );
@@ -207,7 +207,7 @@ test( "test error placed adjacent to descriptive label", function(assert) {
 
 	form.validate({
 		errorElement: "span"
-	***REMOVED***);
+	});
 
 	ok( !field.valid() );
 	equal( 1, form.find( "label" ).length );
@@ -219,7 +219,7 @@ test( "test error placed adjacent to descriptive label", function(assert) {
 	equal( 1, form.find( "label" ).length );
 	equal( "Field Label", form.find( "label" ).text(), "container label isn't disrupted" );
 	assert.noErrorFor( field );
-***REMOVED***);
+});
 
 test( "test descriptive label used alongside error label", function(assert) {
 	expect( 8 );
@@ -228,7 +228,7 @@ test( "test descriptive label used alongside error label", function(assert) {
 
 	form.validate({
 		errorElement: "label"
-	***REMOVED***);
+	});
 
 	ok( !field.valid() );
 	equal( 1, form.find( "label.title" ).length );
@@ -240,7 +240,7 @@ test( "test descriptive label used alongside error label", function(assert) {
 	equal( 1, form.find( "label.title" ).length );
 	equal( "Field Label", form.find( "label.title" ).text(), "container label isn't disrupted" );
 	assert.noErrorFor( field );
-***REMOVED***);
+});
 
 test( "test custom errorElement", function(assert) {
 	expect( 4 );
@@ -250,23 +250,23 @@ test( "test custom errorElement", function(assert) {
 	form.validate({
 		messages: {
 			username: "missing"
-		***REMOVED***,
+		},
 		errorElement: "label"
-	***REMOVED***);
+	});
 
 	ok( !field.valid() );
 	assert.hasError( field, "missing", "Field should have error 'missing'" );
 	field.val( "foo" );
 	ok( field.valid() );
 	assert.noErrorFor( field, "Field should not have a visible error" );
-***REMOVED***);
+});
 
 test( "test existing label used as error element", function(assert) {
 	expect( 4 );
 	var form = $( "#testForm14" ),
 		field = $( "#testForm14text" );
 
-	form.validate({ errorElement: "label" ***REMOVED***);
+	form.validate({ errorElement: "label" });
 
 	ok( !field.valid() );
 	assert.hasError( field, "required" );
@@ -274,14 +274,14 @@ test( "test existing label used as error element", function(assert) {
 	field.val( "foo" );
 	ok( field.valid() );
 	assert.noErrorFor( field );
-***REMOVED***);
+});
 
 test( "test existing non-label used as error element", function(assert) {
 	expect( 4 );
 	var form = $( "#testForm15" ),
 		field = $( "#testForm15text" );
 
-	form.validate({ errorElement: "span" ***REMOVED***);
+	form.validate({ errorElement: "span" });
 
 	ok( !field.valid() );
 	assert.hasError( field, "required" );
@@ -289,7 +289,7 @@ test( "test existing non-label used as error element", function(assert) {
 	field.val( "foo" );
 	ok( field.valid() );
 	assert.noErrorFor( field );
-***REMOVED***);
+});
 
 test( "test existing non-error aria-describedby", function( assert ) {
 	expect( 8 );
@@ -297,7 +297,7 @@ test( "test existing non-error aria-describedby", function( assert ) {
 		field = $( "#testForm17text" );
 
 	equal( field.attr( "aria-describedby" ), "testForm17text-description" );
-	form.validate({ errorElement: "span" ***REMOVED***);
+	form.validate({ errorElement: "span" });
 
 	ok( !field.valid() );
 	equal( field.attr( "aria-describedby" ), "testForm17text-description testForm17text-error" );
@@ -309,7 +309,7 @@ test( "test existing non-error aria-describedby", function( assert ) {
 
 	strictEqual( "This is where you enter your data", $("#testForm17text-description").text() );
 	strictEqual( "", $("#testForm17text-error").text(), "Error label is empty for valid field" );
-***REMOVED***);
+});
 
 test( "test pre-assigned non-error aria-describedby", function( assert ) {
 	expect( 7 );
@@ -318,7 +318,7 @@ test( "test pre-assigned non-error aria-describedby", function( assert ) {
 
 	// Pre-assign error identifier
 	field.attr( "aria-describedby", "testForm17text-description testForm17text-error" );
-	form.validate({ errorElement: "span" ***REMOVED***);
+	form.validate({ errorElement: "span" });
 
 	ok( !field.valid() );
 	equal( field.attr( "aria-describedby" ), "testForm17text-description testForm17text-error" );
@@ -330,7 +330,7 @@ test( "test pre-assigned non-error aria-describedby", function( assert ) {
 
 	strictEqual( "This is where you enter your data", $("#testForm17text-description").text() );
 	strictEqual( "", $("#testForm17text-error").text(), "Error label is empty for valid field" );
-***REMOVED***);
+});
 
 test( "test id/name containing brackets", function( assert ) {
 	var form = $( "#testForm18" ),
@@ -338,9 +338,9 @@ test( "test id/name containing brackets", function( assert ) {
 
 	form.validate({
 		errorElement: "span"
-	***REMOVED***);
+	});
 
 	form.valid();
 	field.valid();
 	assert.hasError( field, "required" );
-***REMOVED***);
+});

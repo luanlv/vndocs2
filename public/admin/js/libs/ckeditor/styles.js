@@ -20,19 +20,19 @@ CKEDITOR.stylesSet.add( 'default', [
 	// so they are not needed here by default. You may enable them to avoid
 	// placing the "Format" combo in the toolbar, maintaining the same features.
 	/*
-	{ name: 'Paragraph',		element: 'p' ***REMOVED***,
-	{ name: 'Heading 1',		element: 'h1' ***REMOVED***,
-	{ name: 'Heading 2',		element: 'h2' ***REMOVED***,
-	{ name: 'Heading 3',		element: 'h3' ***REMOVED***,
-	{ name: 'Heading 4',		element: 'h4' ***REMOVED***,
-	{ name: 'Heading 5',		element: 'h5' ***REMOVED***,
-	{ name: 'Heading 6',		element: 'h6' ***REMOVED***,
-	{ name: 'Preformatted Text',element: 'pre' ***REMOVED***,
-	{ name: 'Address',			element: 'address' ***REMOVED***,
+	{ name: 'Paragraph',		element: 'p' },
+	{ name: 'Heading 1',		element: 'h1' },
+	{ name: 'Heading 2',		element: 'h2' },
+	{ name: 'Heading 3',		element: 'h3' },
+	{ name: 'Heading 4',		element: 'h4' },
+	{ name: 'Heading 5',		element: 'h5' },
+	{ name: 'Heading 6',		element: 'h6' },
+	{ name: 'Preformatted Text',element: 'pre' },
+	{ name: 'Address',			element: 'address' },
 	*/
 
-	{ name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' ***REMOVED*** ***REMOVED***,
-	{ name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' ***REMOVED*** ***REMOVED***,
+	{ name: 'Italic Title',		element: 'h2', styles: { 'font-style': 'italic' } },
+	{ name: 'Subtitle',			element: 'h3', styles: { 'color': '#aaa', 'font-style': 'italic' } },
 	{
 		name: 'Special Container',
 		element: 'div',
@@ -40,8 +40,8 @@ CKEDITOR.stylesSet.add( 'default', [
 			padding: '5px 10px',
 			background: '#eee',
 			border: '1px solid #ccc'
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
 	/* Inline Styles */
 
@@ -49,47 +49,47 @@ CKEDITOR.stylesSet.add( 'default', [
 	// some of them in the Styles combo, removing them from the toolbar.
 	// (This requires the "stylescombo" plugin)
 	/*
-	{ name: 'Strong',			element: 'strong', overrides: 'b' ***REMOVED***,
-	{ name: 'Emphasis',			element: 'em'	, overrides: 'i' ***REMOVED***,
-	{ name: 'Underline',		element: 'u' ***REMOVED***,
-	{ name: 'Strikethrough',	element: 'strike' ***REMOVED***,
-	{ name: 'Subscript',		element: 'sub' ***REMOVED***,
-	{ name: 'Superscript',		element: 'sup' ***REMOVED***,
+	{ name: 'Strong',			element: 'strong', overrides: 'b' },
+	{ name: 'Emphasis',			element: 'em'	, overrides: 'i' },
+	{ name: 'Underline',		element: 'u' },
+	{ name: 'Strikethrough',	element: 'strike' },
+	{ name: 'Subscript',		element: 'sub' },
+	{ name: 'Superscript',		element: 'sup' },
 	*/
 
-	{ name: 'Marker',			element: 'span', attributes: { 'class': 'marker' ***REMOVED*** ***REMOVED***,
+	{ name: 'Marker',			element: 'span', attributes: { 'class': 'marker' } },
 
-	{ name: 'Big',				element: 'big' ***REMOVED***,
-	{ name: 'Small',			element: 'small' ***REMOVED***,
-	{ name: 'Typewriter',		element: 'tt' ***REMOVED***,
+	{ name: 'Big',				element: 'big' },
+	{ name: 'Small',			element: 'small' },
+	{ name: 'Typewriter',		element: 'tt' },
 
-	{ name: 'Computer Code',	element: 'code' ***REMOVED***,
-	{ name: 'Keyboard Phrase',	element: 'kbd' ***REMOVED***,
-	{ name: 'Sample Text',		element: 'samp' ***REMOVED***,
-	{ name: 'Variable',			element: 'var' ***REMOVED***,
+	{ name: 'Computer Code',	element: 'code' },
+	{ name: 'Keyboard Phrase',	element: 'kbd' },
+	{ name: 'Sample Text',		element: 'samp' },
+	{ name: 'Variable',			element: 'var' },
 
-	{ name: 'Deleted Text',		element: 'del' ***REMOVED***,
-	{ name: 'Inserted Text',	element: 'ins' ***REMOVED***,
+	{ name: 'Deleted Text',		element: 'del' },
+	{ name: 'Inserted Text',	element: 'ins' },
 
-	{ name: 'Cited Work',		element: 'cite' ***REMOVED***,
-	{ name: 'Inline Quotation',	element: 'q' ***REMOVED***,
+	{ name: 'Cited Work',		element: 'cite' },
+	{ name: 'Inline Quotation',	element: 'q' },
 
-	{ name: 'Language: RTL',	element: 'span', attributes: { 'dir': 'rtl' ***REMOVED*** ***REMOVED***,
-	{ name: 'Language: LTR',	element: 'span', attributes: { 'dir': 'ltr' ***REMOVED*** ***REMOVED***,
+	{ name: 'Language: RTL',	element: 'span', attributes: { 'dir': 'rtl' } },
+	{ name: 'Language: LTR',	element: 'span', attributes: { 'dir': 'ltr' } },
 
 	/* Object Styles */
 
 	{
 		name: 'Styled image (left)',
 		element: 'img',
-		attributes: { 'class': 'left' ***REMOVED***
-	***REMOVED***,
+		attributes: { 'class': 'left' }
+	},
 
 	{
 		name: 'Styled image (right)',
 		element: 'img',
-		attributes: { 'class': 'right' ***REMOVED***
-	***REMOVED***,
+		attributes: { 'class': 'right' }
+	},
 
 	{
 		name: 'Compact table',
@@ -99,13 +99,13 @@ CKEDITOR.stylesSet.add( 'default', [
 			cellspacing: '0',
 			border: '1',
 			bordercolor: '#ccc'
-		***REMOVED***,
+		},
 		styles: {
 			'border-collapse': 'collapse'
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
-	{ name: 'Borderless Table',		element: 'table',	styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' ***REMOVED*** ***REMOVED***,
-	{ name: 'Square Bulleted List',	element: 'ul',		styles: { 'list-style-type': 'square' ***REMOVED*** ***REMOVED***
+	{ name: 'Borderless Table',		element: 'table',	styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
+	{ name: 'Square Bulleted List',	element: 'ul',		styles: { 'list-style-type': 'square' } }
 ]);
 

@@ -10,10 +10,10 @@
 ) {
   @if susy-support(background-image, (mixin: background-image), $warn: false) {
     @include background-image($image...);
-***REMOVED*** @else {
+  } @else {
     background-image: $image;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Susy Background Size
 // ---------------------
@@ -24,10 +24,10 @@
 ) {
   @if susy-support(background-options, (mixin: background-size)) {
     @include background-size($size);
-***REMOVED*** @else {
+  } @else {
     background-size: $size;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Susy Background Origin
 // ----------------------
@@ -38,10 +38,10 @@
 ) {
   @if susy-support(background-options, (mixin: background-origin)) {
     @include background-origin($origin);
-***REMOVED*** @else {
+  } @else {
     background-origin: $origin;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Susy Background Clip
 // --------------------
@@ -52,7 +52,7 @@
 ) {
   @if susy-support(background-options, (mixin: background-clip)) {
     @include background-clip($clip);
-***REMOVED*** @else {
+  } @else {
     background-clip: $clip;
-***REMOVED***
-***REMOVED***
+  }
+}

@@ -11,5 +11,5 @@
 		monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des"],
 		today: "Hari Ini",
 		clear: "Kosongkan"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

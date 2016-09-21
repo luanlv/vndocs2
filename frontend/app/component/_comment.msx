@@ -7,7 +7,7 @@ var Comments = function(ctrl, content, id, type){
     
       <div className="commentWr">
               <span class="poster">
-                <img src={(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL)***REMOVED*** class="icon"/>
+                <img src={(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL)} class="icon"/>
                 <br/>
               </span>
         <div class="comment commentBox">
@@ -15,22 +15,22 @@ var Comments = function(ctrl, content, id, type){
                           onclick={function(){
                             if(Window.user == undefined){
                               data.showSignin = true;
-                          ***REMOVED***
-                        ***REMOVED******REMOVED***
+                            }
+                          }}
                           onchange={function(el){
                             ctrl.comment($(el.target).val());
                             console.log(ctrl.comment());
-                        ***REMOVED******REMOVED***
+                          }}
                 >
-                  {ctrl.comment()***REMOVED***
+                  {ctrl.comment()}
                 </textarea>
           {(Window.user == undefined)?(
             <span className="notUser">
             Chưa đăng nhập
             </span>
           ):(<span className="isUser">
-            {Window.user.fullName***REMOVED***
-          </span>)***REMOVED***
+            {Window.user.fullName}
+          </span>)}
           <span className="submit">
                   <a href="javascript:void(0)"
                      onclick={function(){
@@ -40,16 +40,16 @@ var Comments = function(ctrl, content, id, type){
                          data: JSON.stringify({
                            "data" : ctrl.comment(),
                            "type" : type
-                       ***REMOVED***),
+                         }),
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
                            content.comments.unshift(res);
                            ctrl.comment('');
                            m.redraw();
-                       ***REMOVED***
-                     ***REMOVED***);
-                   ***REMOVED******REMOVED***
+                         }
+                       });
+                     }}
                   > Gửi </a>
                 </span>
         </div>
@@ -60,24 +60,24 @@ var Comments = function(ctrl, content, id, type){
       {content.comments.map(function(el){
         return <div className="commentWr">
                 <span class="poster">
-                  <img src={el.user.avatarURL***REMOVED*** class="icon"/>
+                  <img src={el.user.avatarURL} class="icon"/>
                   <br/>
                 </span>
           <div class="comment">
                   <span class="info">
-                    <span className="userName">{el.user.fullName***REMOVED***</span> Posted July 9th 2016, 01:04 AM
+                    <span className="userName">{el.user.fullName}</span> Posted July 9th 2016, 01:04 AM
                     <span class="buttons">
                       
                     </span>
                   </span>
-            {el.comment***REMOVED***
+            {el.comment}
           </div>
         </div>
-    ***REMOVED***)***REMOVED***
+      })}
   
   
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports = Comments;

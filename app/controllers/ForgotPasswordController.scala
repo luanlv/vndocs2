@@ -5,10 +5,10 @@ import javax.inject.Inject
 import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.impl.providers.CredentialsProvider
 import forms.ForgotPasswordForm
-import models.services.{ AuthTokenService, UserService ***REMOVED***
-import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
+import models.services.{ AuthTokenService, UserService }
+import play.api.i18n.{ I18nSupport, Messages, MessagesApi }
 import play.api.libs.concurrent.Execution.Implicits._
-import play.api.libs.mailer.{ Email, MailerClient ***REMOVED***
+import play.api.libs.mailer.{ Email, MailerClient }
 import play.api.mvc.Controller
 import utils.silhouette.MyEnv
 
@@ -40,7 +40,7 @@ class ForgotPasswordController @Inject() (
    */
   def view = silhouette.UnsecuredAction.async { implicit request =>
     Future.successful(Ok(views.html.forgotPassword(ForgotPasswordForm.form)))
-***REMOVED***
+  }
 
   /**
    * Sends an email with password reset instructions.
@@ -69,10 +69,10 @@ class ForgotPasswordController @Inject() (
                 bodyHtml = Some(views.html.emails.resetPassword(user, url).body)
               ))
               result
-          ***REMOVED***
+            }
           case None => Future.successful(result)
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
     )
-***REMOVED***
-***REMOVED***
+  }
+}

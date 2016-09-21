@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
-/// Generates variables for all text-based inputs. Please note that you must use interpolation on the variable: `#{$all-text-inputs***REMOVED***`.
+/// Generates variables for all text-based inputs. Please note that you must use interpolation on the variable: `#{$all-text-inputs}`.
 ///
 /// @example scss - Usage
-///   #{$all-text-inputs***REMOVED*** {
+///   #{$all-text-inputs} {
 ///     border: 1px solid #f00;
-/// ***REMOVED***
+///   }
 ///
-///   #{$all-text-inputs-focus***REMOVED***,
-///   #{$all-text-inputs-hover***REMOVED*** {
+///   #{$all-text-inputs-focus},
+///   #{$all-text-inputs-hover} {
 ///     border: 1px solid #0f0;
-/// ***REMOVED***
+///   }
 ///
-///   #{$all-text-inputs-active***REMOVED*** {
+///   #{$all-text-inputs-active} {
 ///     border: 1px solid #00f;
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   input[type="color"],
@@ -33,7 +33,7 @@
 ///   input[type="week"],
 ///   textarea {
 ///     border: 1px solid #f00;
-/// ***REMOVED***
+///   }
 ///
 ///   input[type="color"]:focus,
 ///   input[type="date"]:focus,
@@ -66,7 +66,7 @@
 ///   input[type="week"]:hover,
 ///   textarea:hover {
 ///     border: 1px solid #0f0;
-/// ***REMOVED***
+///   }
 ///
 ///   input[type="color"]:active,
 ///   input[type="date"]:active,
@@ -84,7 +84,7 @@
 ///   input[type="week"]:active,
 ///   textarea:active {
 ///     border: 1px solid #00f;
-/// ***REMOVED***
+///   }
 ///
 /// @require assign-inputs
 ///

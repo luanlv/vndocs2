@@ -9,21 +9,21 @@
 @mixin placeholder-color($color) {
   &.placeholder {
     color: $color
-***REMOVED***
+  }
 
   &:-moz-placeholder {
     color: $color
-***REMOVED***
+  }
 
   &::-moz-placeholder {
     color: $color
-***REMOVED***
+  }
 
   &::-webkit-input-placeholder {
     color: $color
-***REMOVED***
+  }
 
   &:-ms-input-placeholder {
     color: $color
-***REMOVED***
-***REMOVED***
+  }
+}

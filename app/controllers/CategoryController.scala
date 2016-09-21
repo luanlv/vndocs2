@@ -4,21 +4,21 @@ import java.io.File
 import java.util.UUID
 import javax.inject.Inject
 
-import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
+import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette }
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import models.Image
-import models.services.{ CategoryService, ImageService ***REMOVED***
+import models.services.{ CategoryService, ImageService }
 import play.api.libs.json.Json
 import utils.silhouette.MyEnv
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
 //import com.sksamuel.scrimage.nio.JpegWriter
-import play.api.i18n.{ I18nSupport, MessagesApi ***REMOVED***
+import play.api.i18n.{ I18nSupport, MessagesApi }
 import play.api.libs.iteratee.Enumerator
-import play.api.libs.ws.{ WS, WSClient ***REMOVED***
-import play.api.mvc.{ Action, Controller ***REMOVED***
+import play.api.libs.ws.{ WS, WSClient }
+import play.api.mvc.{ Action, Controller }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
@@ -45,7 +45,7 @@ class CategoryController @Inject() (
   def listParent = Action.async {
     categoryService.listParent map { categories =>
       Ok(Json.toJson(categories))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
-***REMOVED***
+}

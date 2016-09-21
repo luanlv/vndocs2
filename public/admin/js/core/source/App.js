@@ -5,9 +5,9 @@
 		var o = this; // Create reference to this instance
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***); // Initialize app when document is ready
+		}); // Initialize app when document is ready
 
-	***REMOVED***;
+	};
 	var p = App.prototype;
 
 	// =========================================================================
@@ -40,7 +40,7 @@
 
 		// Init accordion
 		this._initAccordion();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// EVENTS
@@ -55,9 +55,9 @@
 			clearTimeout(o._resizeTimer);
 			o._resizeTimer = setTimeout(function () {
 				o._handleFunctionCalls(e);
-			***REMOVED***, 300);
-		***REMOVED***);
-	***REMOVED***;
+			}, 300);
+		});
+	};
 
 	// =========================================================================
 	// JQUERY-KNOB
@@ -73,11 +73,11 @@
 			draw: function () {
 				if (knob.data('percentage')) {
 					$(this.i).val(this.cv + '%');
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***;
+				}
+			}
+		};
 		return options;
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// ACCORDION
@@ -87,14 +87,14 @@
 		$('.panel-group .card .in').each(function () {
 			var card = $(this).parent();
 			card.addClass('expanded');
-		***REMOVED***);
+		});
 
 
 		$('.panel-group').on('hide.bs.collapse', function (e) {
 			var content = $(e.target);
 			var card = content.parent();
 			card.removeClass('expanded');
-		***REMOVED***);
+		});
 
 		$('.panel-group').on('show.bs.collapse', function (e) {
 			var content = $(e.target);
@@ -103,8 +103,8 @@
 
 			group.find('.card.expanded').removeClass('expanded');
 			card.addClass('expanded');
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// INK EFFECT
@@ -129,13 +129,13 @@
 			ink.css({
 				top: yPos,
 				left: xPos
-			***REMOVED***).appendTo($(this));
+			}).appendTo($(this));
 
 			window.setTimeout(function () {
 				ink.remove();
-			***REMOVED***, 1500);
-		***REMOVED***);
-	***REMOVED***;
+			}, 1500);
+		});
+	};
 
 	p.getBackground = function (item) {
 		// Is current element's background color set?
@@ -145,17 +145,17 @@
 		if ((isNaN(alpha) || alpha > 0.8) && color !== 'transparent') {
 			// if so then return that color if it isn't transparent
 			return color;
-		***REMOVED***
+		}
 
 		// if not: are you at the body element?
 		if (item.is("body")) {
 			// return known 'false' value
 			return false;
-		***REMOVED*** else {
+		} else {
 			// call getBackground with parent item
 			return this.getBackground(item.parent());
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	p.getLuma = function (color) {
 		var rgba = color.substring(4, color.length - 1).split(',');
@@ -164,7 +164,7 @@
 		var b = rgba[2];
 		var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
 		return luma;
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// DETECT BREAKPOINTS
@@ -179,16 +179,16 @@
 		html += '<div class="device-lg visible-lg" data-breakpoint="lg"></div>';
 		html += '</div>';
 		$('body').append(html);
-	***REMOVED***;
+	};
 
 	p.isBreakpoint = function (alias) {
 		return $('.device-' + alias).is(':visible');
-	***REMOVED***;
+	};
 	p.minBreakpoint = function (alias) {
 		var breakpoints = ['xs', 'sm', 'md', 'lg'];
 		var breakpoint = $('#device-breakpoints div:visible').data('breakpoint');
 		return $.inArray(alias, breakpoints) < $.inArray(breakpoint, breakpoints);
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// UTILS
@@ -197,24 +197,24 @@
 	p.callOnResize = function (func) {
 		if (this._callFunctions === null) {
 			this._callFunctions = [];
-		***REMOVED***
+		}
 		this._callFunctions.push(func);
 		func.call();
-	***REMOVED***;
+	};
 
 	p._handleFunctionCalls = function (e) {
 		if (this._callFunctions === null) {
 			return;
-		***REMOVED***
+		}
 		for (var i = 0; i < this._callFunctions.length; i++) {
 			this._callFunctions[i].call();
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// =========================================================================
 	// DEFINE NAMESPACE
 	// =========================================================================
 
-	window.materialadmin = window.materialadmin || {***REMOVED***;
+	window.materialadmin = window.materialadmin || {};
 	window.materialadmin.App = new App;
-***REMOVED***(jQuery)); // pass in (jQuery):
+}(jQuery)); // pass in (jQuery):

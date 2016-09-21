@@ -7,18 +7,18 @@ $.validator.addMethod( "nieES", function( value ) {
 	value = value.toUpperCase();
 
 	// Basic format test
-	if ( !value.match( "((^[A-Z]{1***REMOVED***[0-9]{7***REMOVED***[A-Z0-9]{1***REMOVED***$|^[T]{1***REMOVED***[A-Z0-9]{8***REMOVED***$)|^[0-9]{8***REMOVED***[A-Z]{1***REMOVED***$)" ) ) {
+	if ( !value.match( "((^[A-Z]{1}[0-9]{7}[A-Z0-9]{1}$|^[T]{1}[A-Z0-9]{8}$)|^[0-9]{8}[A-Z]{1}$)" ) ) {
 		return false;
-	***REMOVED***
+	}
 
 	// Test NIE
 	//T
-	if ( /^[T]{1***REMOVED***/.test( value ) ) {
-		return ( value[ 8 ] === /^[T]{1***REMOVED***[A-Z0-9]{8***REMOVED***$/.test( value ) );
-	***REMOVED***
+	if ( /^[T]{1}/.test( value ) ) {
+		return ( value[ 8 ] === /^[T]{1}[A-Z0-9]{8}$/.test( value ) );
+	}
 
 	//XYZ
-	if ( /^[XYZ]{1***REMOVED***/.test( value ) ) {
+	if ( /^[XYZ]{1}/.test( value ) ) {
 		return (
 			value[ 8 ] === "TRWAGMYFPDXBNJZSQVHLCKE".charAt(
 				value.replace( "X", "0" )
@@ -27,8 +27,8 @@ $.validator.addMethod( "nieES", function( value ) {
 					.substring( 0, 8 ) % 23
 			)
 		);
-	***REMOVED***
+	}
 
 	return false;
 
-***REMOVED***, "Please specify a valid NIE number." );
+}, "Please specify a valid NIE number." );

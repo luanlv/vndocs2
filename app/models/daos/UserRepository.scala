@@ -3,7 +3,7 @@ package models.daos
 import javax.inject.Inject
 
 import com.google.inject.Singleton
-//import models.daos.{ DocumentDao, Repository ***REMOVED***
+//import models.daos.{ DocumentDao, Repository }
 import models.User
 import play.modules.reactivemongo.ReactiveMongoApi
 import reactivemongo.api.indexes.IndexType
@@ -18,4 +18,4 @@ class UserRepository @Inject() (reactiveMongoApi: ReactiveMongoApi) extends Docu
   override def ensureIndexes: Future[Boolean] = ensureIndex(List("email" -> IndexType.Ascending), unique = true)
 
   ensureIndexes
-***REMOVED***
+}

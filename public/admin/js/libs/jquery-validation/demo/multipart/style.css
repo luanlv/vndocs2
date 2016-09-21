@@ -8,87 +8,87 @@
 	/********************************************
    HTML ELEMENTS
 ********************************************/ /* Top elements */
-	/** { margin:0; padding: 0; ***REMOVED****/
+	/** { margin:0; padding: 0; }*/
 body {
 	background-color: #000;
 	color: #555;
 	font: 78%/ 1.6 Verdana, 'Trebuchet MS', arial, sans-serif;
 	text-align: center;
 	margin: 15px 0;
-***REMOVED***
+}
 
 /* links */
 a {
 	color: #213540;
 	background: inherit;
 	text-decoration: none;
-***REMOVED***
+}
 
 a:hover {
 	color: #3e4255;
 	text-decoration: underline;
 	background: inherit;
-***REMOVED***
+}
 
 /* headers */
 h1,h2,h3 {
 	font-family: 'Trebuchet MS', Arial, sans-serif;
 	font-weight: bold;
-***REMOVED***
+}
 
 h1 {
 	font-size: 1.5em;
 	margin: 10px 15px;
-***REMOVED***
+}
 
 h2 {
 	font-size: 1.3em;
 	text-transform: uppercase;
 	color: #339900;
 	margin: 10px 15px;
-***REMOVED***
+}
 
 h3 {
 	font-size: 1.1em;
 	color: #333;
 	margin: 16px 0 0 18px;
-***REMOVED***
+}
 
 h1,h2,h3 {
 	padding: 0;
-***REMOVED***
+}
 
 p {
 	line-height: 1.4em;
 	padding: 0 15px;
-***REMOVED***
+}
 
 p.error {
 	color: #CC0033;
-***REMOVED***
+}
 
 ul,ol {
 	margin: 10px 6px;
 	padding: 0 15px;
 	color: #006699;
-***REMOVED***
+}
 
 ul span,ol span {
 	color: #666666;
-***REMOVED***
+}
 
 /* images */
 img {
 	border: 2px solid #CCC;
-***REMOVED***
+}
 
 img.float-right {
 	margin: 5px 0px 10px 10px;
-***REMOVED***
+}
 
 img.float-left {
 	margin: 5px 10px 10px 0px;
-***REMOVED***
+}
 
 code {
 	margin: 5px 0;
@@ -101,12 +101,12 @@ code {
 	background: #FAFAFA;
 	border: 1px solid #EAEAEA;
 	border-left: 5px solid #72A545;
-***REMOVED***
+}
 
 acronym {
 	cursor: help;
 	border-bottom: 1px solid #777;
-***REMOVED***
+}
 
 blockquote {
 	margin: 15px;
@@ -116,7 +116,7 @@ blockquote {
 	border: 1px solid #EAEAEA;
 	border-left: 5px solid #72A545;
 	font-weight: bold;
-***REMOVED***
+}
 
 /* form elements */
 fieldset {
@@ -124,17 +124,17 @@ fieldset {
 	padding-left: 6px;
 	border: 1px solid #004080;
 	color: #006699;
-***REMOVED***
+}
 
 fieldset fieldset {
 	border: 1px solid #9ea190;
 	margin: 17px 14px;
-***REMOVED***
+}
 
 form {
 	margin: 10px 15px;
 	padding: 0;
-***REMOVED***
+}
 
 label {
 	font-weight: bold;
@@ -142,21 +142,21 @@ label {
 	width: 160px;
 	text-align: right;
 	float: left;
-***REMOVED***
+}
 
 legend {
 	font-size: 1.2em;
 	padding: 0 12px;
 	font-weight: 900;
 	background-color: #F9F9F9;
-***REMOVED***
+}
 
 fieldset fieldset legend {
 	font-size: 1em;
 	color: #1a2129;
 	padding: 0 18px;
 	margin-left: 75px;
-***REMOVED***
+}
 
 input {
 	padding: 3px;
@@ -164,7 +164,7 @@ input {
 	border: 1px solid #CFCED3;
 	font: normal 1em Verdana, sans-serif;
 	color: #777;
-***REMOVED***
+}
 
 textarea {
 	width: 400px;
@@ -174,7 +174,7 @@ textarea {
 	height: 100px;
 	display: block;
 	color: #777;
-***REMOVED***
+}
 
 input.button {
 	margin: 0;
@@ -184,7 +184,7 @@ input.button {
 	background: #CCC url(buttonbg.gif) repeat-x left bottom;
 	color: #333; /* color: #339900; */
 	cursor: pointer;
-***REMOVED***
+}
 
 input.submitbutton {
 	background-color: #006699;
@@ -193,18 +193,18 @@ input.submitbutton {
 	font-weight: 900;
 	border: 1px solid #EAEAEA;
 	margin: 0 0 0 200px;
-***REMOVED***
+}
 
 /* search */
 #sidebar #search {
 	background: #f2f2f2;
 	margin: 0 15px;
 	padding: 5px 0;
-***REMOVED***
+}
 
 #sidebar #search img {
 	vertical-align: bottom;
-***REMOVED***
+}
 
 #sidebar #search .textbox {
 	background: #FFF url(input.png) no-repeat top left;
@@ -212,7 +212,7 @@ input.submitbutton {
 	font-size: 11px;
 	padding: 3px;
 	width: 110px;
-***REMOVED***
+}
 
 #sidebar #search input.searchbutton {
 	margin: 0;
@@ -223,7 +223,7 @@ input.submitbutton {
 	height: 25px;
 	color: #333;
 	width: 55px;
-***REMOVED***
+}
 
 /*****************************
       LAYOUT 
@@ -234,14 +234,14 @@ input.submitbutton {
 	text-align: left;
 	background-color: #FFF;
 	width: 790px;
-***REMOVED***
+}
 
 #content-wrap {
 	clear: both;
 	margin: 0;
 	padding: 0;
 	width: 790px;
-***REMOVED***
+}
 
 /* header */
 #header {
@@ -252,7 +252,7 @@ input.submitbutton {
 	margin: 0;
 	padding: 0;
 	background: #000 url(headerbg.jpg) no-repeat left bottom;
-***REMOVED***
+}
 
 #header h1#logo-text {
 	float: right;
@@ -265,7 +265,7 @@ input.submitbutton {
 	/* change the values of top and right to adjust the position of the logo*/
 	top: 35px;
 	right: 30px;
-***REMOVED***
+}
 
 #header h2#slogan {
 	float: right;
@@ -277,11 +277,11 @@ input.submitbutton {
 	color: #FFF;
 	clear: both;
 	text-align: right;
-***REMOVED***
+}
 
 #header h1#logo-text span {
 	color: #CFCED3;
-***REMOVED***
+}
 
 /* menu tabs */
 #header #header-tabs {
@@ -292,19 +292,19 @@ input.submitbutton {
 	height: 25px;
 	background: #000;
 	font: bold 1.1em Verdana, Tahoma, 'Trebuchet MS', Sans-serif;
-***REMOVED***
+}
 
 #header-tabs ul {
 	margin: 0;
 	padding: 2px 0px 0px 0px;
 	list-style: none;
-***REMOVED***
+}
 
 #header-tabs li {
 	display: inline;
 	margin: 0;
 	padding: 0;
-***REMOVED***
+}
 
 #header-tabs a {
 	float: left;
@@ -312,7 +312,7 @@ input.submitbutton {
 	margin: 0;
 	padding: 0 0 0 4px;
 	text-decoration: none;
-***REMOVED***
+}
 
 #header-tabs a span {
 	float: left;
@@ -320,34 +320,34 @@ input.submitbutton {
 	background: url(tabright.gif) no-repeat right top;
 	padding: 7px 15px 4px 8px;
 	color: #CCC;
-***REMOVED***
+}
 
 /* Commented Backslash Hack hides rule from IE5-Mac \*/
 #header-tabs a span {
 	float: none;
-***REMOVED***
+}
 
 /* End IE5-Mac hack */
 #header-tabs a:hover span {
 	color: #FFF;
-***REMOVED***
+}
 
 #header-tabs a:hover {
 	background-position: 0% -42px;
-***REMOVED***
+}
 
 #header-tabs a:hover span {
 	background-position: 100% -42px;
-***REMOVED***
+}
 
 #header-tabs #current a {
 	background-position: 0% -42px;
-***REMOVED***
+}
 
 #header-tabs #current a span {
 	background-position: 100% -42px;
 	color: #FFF;
-***REMOVED***
+}
 
 /* main content */
 #main {
@@ -357,14 +357,14 @@ input.submitbutton {
 	background-color: #F9F9F9;
 	border-left: 5px solid #000;
 	border-right: 5px solid #000;
-***REMOVED***
+}
 
 #main h1 {
 	padding: 8px 0 3px 25px;
 	text-transform: none;
 	border-bottom: 2px solid #f2f2f2;
 	color: #339900;
-***REMOVED***
+}
 
 /* sidebar */
 #sidebar { /*	float: right;
@@ -372,25 +372,25 @@ input.submitbutton {
 	margin: 0 0 10px 0; padding: 0;
 	background-color: inherit;	*/
 	display: none;
-***REMOVED***
+}
 
 #sidebar h1 {
 	padding: 8px 0px 3px 25px;
 	background: url(square_arrow.gif) no-repeat 0% .7em;
 	text-transform: none;
 	color: #339900;
-***REMOVED***
+}
 
 #sidebar ul.sidemenu {
 	list-style: none;
 	margin: 10px 15px;
 	padding: 0;
-***REMOVED***
+}
 
 #sidebar ul.sidemenu li {
 	margin-bottom: 1px;
 	border: 1px solid #f2f2f2;
-***REMOVED***
+}
 
 #sidebar ul.sidemenu a {
 	display: block;
@@ -401,18 +401,18 @@ input.submitbutton {
 	background: #f2f2f2;
 	border-left: 5px solid #CCC;
 	min-height: 18px;
-***REMOVED***
+}
 
 * html body #sidebar ul.sidemenu a {
 	height: 18px;
-***REMOVED***
+}
 
 #sidebar ul.sidemenu a:hover {
 	padding: 2px 5px 2px 10px;
 	background: #f2f2f2;
 	color: #339900;
 	border-left: 5px solid #72A545;
-***REMOVED***
+}
 
 /* footer */
 #footer {
@@ -422,13 +422,13 @@ input.submitbutton {
 	background: #000;
 	margin: 0;
 	font-size: 92%;
-***REMOVED***
+}
 
 #footer a {
 	text-decoration: none;
 	font-weight: bold;
 	color: #FFF;
-***REMOVED***
+}
 
 #footer #footer-left {
 	width: 68%;
@@ -436,7 +436,7 @@ input.submitbutton {
 	text-align: left;
 	margin: 0;
 	padding: 10px;
-***REMOVED***
+}
 
 #footer #footer-right {
 	width: 25%;
@@ -444,37 +444,37 @@ input.submitbutton {
 	text-align: right;
 	margin: 0;
 	padding: 10px;
-***REMOVED***
+}
 
 /* alignment classes */
 .float-left {
 	float: left;
-***REMOVED***
+}
 
 .float-right {
 	float: right;
-***REMOVED***
+}
 
 .align-left {
 	text-align: left;
-***REMOVED***
+}
 
 .align-right {
 	text-align: right;
-***REMOVED***
+}
 
 /* additional classes */
 .clear {
 	clear: both;
-***REMOVED***
+}
 
 .hide {
 	display: none;
-***REMOVED***
+}
 
 .gray {
 	color: #CCC;
-***REMOVED***
+}
 
 .comments {
 	color: #333;
@@ -484,17 +484,17 @@ input.submitbutton {
 	border-bottom: 1px dashed #EFF0F1;
 	padding: 5px 0;
 	margin-top: 20px;
-***REMOVED***
+}
 
 html {
 	min-height: 100.1%;
-***REMOVED***
+}
 
 /* ------ one ------------*/
 body .mainText {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-***REMOVED***
+}
 
 #demoText h1,.mainText h1 {
 	font-size: 130%;
@@ -506,7 +506,7 @@ body .mainText {
 	padding: 0;
 	border: none;
 	text-transform: capitalize;
-***REMOVED***
+}
 
 .mainText h2 {
 	font-size: 110%;
@@ -516,7 +516,7 @@ body .mainText {
 	background: none;
 	margin: 4px 32px 6px 22px;
 	text-transform: capitalize;
-***REMOVED***
+}
 
 .mainText h3 {
 	font-size: 120%;
@@ -524,44 +524,44 @@ body .mainText {
 	margin: 14px 0 0 0;
 	text-align: center;
 	color: #000033;
-***REMOVED***
+}
 
 .mainText table {
 	width: 95%;
 	border: 1px solid #0099FF;
 	border-collapse: collapse;
 	margin: 18px 7px;
-***REMOVED***
+}
 
 .mainText table td {
 	background-color: #99CCFF;
 	color: #000033;
 	padding: 4px;
-***REMOVED***
+}
 
 .mainText table th {
 	background-color: #000033;
 	color: #99CCFF;
 	padding: 4px;
-***REMOVED***
+}
 
 .mainText .linkPar a {
 	color: #000033;
 	text-decoration: underline;
-***REMOVED***
+}
 
 .mainText .linkPar a:hover {
 	color: #660033;
 	text-decoration: none;
 	font-weight: 900;
-***REMOVED***
+}
 
 .pusher {
 	cursor: pointer;
 	padding: 3px 10px 3px 22px;
 	font-weight: 900;
 	font-size: 14px;
-***REMOVED***
+}
 
 /* ------------- form specific styles are here  -------------- */
 fieldset {
@@ -571,14 +571,14 @@ fieldset {
 	/*border:none;
 padding:0;*/
 	color: #7563A5;
-***REMOVED***
+}
 
 legend {
 	background-color: #FFFFFF;
 	text-align: center;
 	color: #097981;
 	padding: 0 12px;
-***REMOVED***
+}
 
 label {
 	text-align: right;
@@ -590,11 +590,11 @@ label {
 	clear: left;
 	display: block;
 	color: #7563A5;
-***REMOVED***
+}
 
 label.checkbox,label.textarea {
 	border: none;
-***REMOVED***
+}
 
 label.lgfield {
 	border: none;
@@ -602,51 +602,51 @@ label.lgfield {
 	clear: both;
 	float: none;
 	width: 100%;
-***REMOVED***
+}
 
 fieldset input,fieldset select,fieldset textarea {
 	margin-left: 10px;
 	margin-bottom: 8px;
-***REMOVED***
+}
 
 select.longfield {
 	margin: 0 0 0 115px;
-***REMOVED***
+}
 
 input [type="radio"],input [type="checkbox"] {
 	margin: 2px 0 0 4px;
-***REMOVED***
+}
 
 textarea {
 	width: 250px;
 	float: left;
-***REMOVED***
+}
 
 /*Get Help Form Styles*/
 p.formDisclaimer {
 	text-align: center;
 	margin: 32px 24px 12px 0;
 	font-style: italic;
-***REMOVED***
+}
 
 div.buttonWrapper {
 	margin: 28px 0 14px 0;
 	clear: both;
 	text-align: center;
-***REMOVED***
+}
 
 .formspacer {
 	height: 1em;
 	clear: both;
-***REMOVED***
+}
 
 .hideField {
 	display: none;
-***REMOVED***
+}
 
 .pushOpen {
 	height: 18em;
-***REMOVED***
+}
 
 /* ----- error message for field validation ----- */
 #stepForm label.warning {
@@ -661,14 +661,14 @@ div.buttonWrapper {
 	font-size: 10px;
 	border: none;
 	border-top: 1px dotted #CC3366;
-***REMOVED***
+}
 
 div.requiredNotice {
 	width: 140px;
 	float: right;
 	margin: 0 24px 0 0;
 	padding: 0;
-***REMOVED***
+}
 
 h3.stepHeader {
 	text-align: left;
@@ -676,16 +676,16 @@ h3.stepHeader {
 	font-weight: bold;
 	margin: 0 0 24px 24px;
 	color: #676cac;
-***REMOVED***
+}
 
 ul#stepForm,ul#stepForm li {
 	margin: 0;
 	padding: 0;
-***REMOVED***
+}
 
 ul#stepForm li {
 	list-style: none;
-***REMOVED***
+}
 
 /* Form Buttons  */
 input.submitbutton,.nextbutton,.prevbutton {
@@ -698,8 +698,8 @@ input.submitbutton,.nextbutton,.prevbutton {
 	text-align: center;
 	color: #FFFFFF;
 	margin: 7px;
-***REMOVED***
+}
 
 input.submitbutton {
 	background-color: #006699;
-***REMOVED***
+}

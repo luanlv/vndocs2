@@ -25,9 +25,9 @@
             e.preventDefault(); // <-- important
             $(this).ajaxSubmit({
                 target: '#output'
-          ***REMOVED***);
-      ***REMOVED***);
-  ***REMOVED***);
+            });
+        });
+    });
 
     Use ajaxForm when you want the plugin to manage all the event binding
     for you.  For example,
@@ -35,8 +35,8 @@
     $(document).ready(function() {
         $('#myForm').ajaxForm({
             target: '#output'
-      ***REMOVED***);
-  ***REMOVED***);
+        });
+    });
 
     You can also use ajaxForm with delegation (requires jQuery v1.7+), so the
     form does not have to exist when you invoke ajaxForm:
@@ -44,7 +44,7 @@
     $('#myForm').ajaxForm({
         delegation: true,
         target: '#output'
-  ***REMOVED***);
+    });
 
     When using ajaxForm, the ajaxSubmit function will be invoked for you
     at the appropriate time.
@@ -53,7 +53,7 @@
 /**
  * Feature detection
  */
-var feature = {***REMOVED***;
+var feature = {};
 feature.fileapi = $("<input type='file'/>").get(0).files !== undefined;
 feature.formdata = window.FormData !== undefined;
 
@@ -68,13 +68,13 @@ $.fn.ajaxSubmit = function(options) {
     if (!this.length) {
         log('ajaxSubmit: skipping submit process - no element selected');
         return this;
-  ***REMOVED***
+    }
 
     var method, action, url, $form = this;
 
     if (typeof options == 'function') {
-        options = { success: options ***REMOVED***;
-  ***REMOVED***
+        options = { success: options };
+    }
 
     method = this.attr('method');
     action = this.attr('action');
@@ -83,93 +83,93 @@ $.fn.ajaxSubmit = function(options) {
     if (url) {
         // clean url (don't include hash vaue)
         url = (url.match(/^([^#]+)/)||[])[1];
-  ***REMOVED***
+    }
 
     options = $.extend(true, {
         url:  url,
         success: $.ajaxSettings.success,
         type: method || 'GET',
         iframeSrc: /^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank'
-  ***REMOVED***, options);
+    }, options);
 
     // hook for manipulating the form data before it is extracted;
     // convenient for use with rich editors like tinyMCE or FCKEditor
-    var veto = {***REMOVED***;
+    var veto = {};
     this.trigger('form-pre-serialize', [this, options, veto]);
     if (veto.veto) {
         log('ajaxSubmit: submit vetoed via form-pre-serialize trigger');
         return this;
-  ***REMOVED***
+    }
 
     // provide opportunity to alter form data before it is serialized
     if (options.beforeSerialize && options.beforeSerialize(this, options) === false) {
         log('ajaxSubmit: submit aborted via beforeSerialize callback');
         return this;
-  ***REMOVED***
+    }
 
     var traditional = options.traditional;
     if ( traditional === undefined ) {
         traditional = $.ajaxSettings.traditional;
-  ***REMOVED***
+    }
 
     var elements = [];
     var qx, a = this.formToArray(options.semantic, elements);
     if (options.data) {
         options.extraData = options.data;
         qx = $.param(options.data, traditional);
-  ***REMOVED***
+    }
 
     // give pre-submit callback an opportunity to abort the submit
     if (options.beforeSubmit && options.beforeSubmit(a, this, options) === false) {
         log('ajaxSubmit: submit aborted via beforeSubmit callback');
         return this;
-  ***REMOVED***
+    }
 
     // fire vetoable 'validate' event
     this.trigger('form-submit-validate', [a, this, options, veto]);
     if (veto.veto) {
         log('ajaxSubmit: submit vetoed via form-submit-validate trigger');
         return this;
-  ***REMOVED***
+    }
 
     var q = $.param(a, traditional);
     if (qx) {
         q = ( q ? (q + '&' + qx) : qx );
-  ***REMOVED***
+    }
     if (options.type.toUpperCase() == 'GET') {
         options.url += (options.url.indexOf('?') >= 0 ? '&' : '?') + q;
         options.data = null;  // data is null for 'get'
-  ***REMOVED***
+    }
     else {
         options.data = q; // data is the query string for 'post'
-  ***REMOVED***
+    }
 
     var callbacks = [];
     if (options.resetForm) {
-        callbacks.push(function() { $form.resetForm(); ***REMOVED***);
-  ***REMOVED***
+        callbacks.push(function() { $form.resetForm(); });
+    }
     if (options.clearForm) {
-        callbacks.push(function() { $form.clearForm(options.includeHidden); ***REMOVED***);
-  ***REMOVED***
+        callbacks.push(function() { $form.clearForm(options.includeHidden); });
+    }
 
     // perform a load on the target only if dataType is not provided
     if (!options.dataType && options.target) {
-        var oldSuccess = options.success || function(){***REMOVED***;
+        var oldSuccess = options.success || function(){};
         callbacks.push(function(data) {
             var fn = options.replaceTarget ? 'replaceWith' : 'html';
             $(options.target)[fn](data).each(oldSuccess, arguments);
-      ***REMOVED***);
-  ***REMOVED***
+        });
+    }
     else if (options.success) {
         callbacks.push(options.success);
-  ***REMOVED***
+    }
 
     options.success = function(data, status, xhr) { // jQuery 1.4+ passes xhr as 3rd arg
         var context = options.context || this ;    // jQuery 1.4+ supports scope context
         for (var i=0, max=callbacks.length; i < max; i++) {
             callbacks[i].apply(context, [data, status, xhr || $form, $form]);
-      ***REMOVED***
-  ***REMOVED***;
+        }
+    };
 
     // are there files to upload?
 
@@ -195,18 +195,18 @@ $.fn.ajaxSubmit = function(options) {
         if (options.closeKeepAlive) {
             $.get(options.closeKeepAlive, function() {
                 jqxhr = fileUploadIframe(a);
-          ***REMOVED***);
-      ***REMOVED***
+            });
+        }
         else {
             jqxhr = fileUploadIframe(a);
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
     else if ((hasFileInputs || multipart) && fileAPI) {
         jqxhr = fileUploadXhr(a);
-  ***REMOVED***
+    }
     else {
         jqxhr = $.ajax(options);
-  ***REMOVED***
+    }
 
     $form.removeData('jqxhr').data('jqxhr', jqxhr);
 
@@ -222,14 +222,14 @@ $.fn.ajaxSubmit = function(options) {
     function deepSerialize(extraData){
         var serialized = $.param(extraData).split('&');
         var len = serialized.length;
-        var result = {***REMOVED***;
+        var result = {};
         var i, part;
         for (i=0; i < len; i++) {
             part = serialized[i].split('=');
             result[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
-      ***REMOVED***
+        }
         return result;
-  ***REMOVED***
+    }
 
      // XMLHttpRequest Level 2 file uploads (big hat tip to francois2metz)
     function fileUploadXhr(a) {
@@ -237,23 +237,23 @@ $.fn.ajaxSubmit = function(options) {
 
         for (var i=0; i < a.length; i++) {
             formdata.append(a[i].name, a[i].value);
-      ***REMOVED***
+        }
 
         if (options.extraData) {
             var serializedData = deepSerialize(options.extraData);
             for (var p in serializedData)
                 if (serializedData.hasOwnProperty(p))
                     formdata.append(p, serializedData[p]);
-      ***REMOVED***
+        }
 
         options.data = null;
 
-        var s = $.extend(true, {***REMOVED***, $.ajaxSettings, options, {
+        var s = $.extend(true, {}, $.ajaxSettings, options, {
             contentType: false,
             processData: false,
             cache: false,
             type: method || 'POST'
-      ***REMOVED***);
+        });
 
         if (options.uploadProgress) {
             // workaround because jqXHR does not expose upload property
@@ -266,13 +266,13 @@ $.fn.ajaxSubmit = function(options) {
                         var total = event.total;
                         if (event.lengthComputable) {
                             percent = Math.ceil(position / total * 100);
-                      ***REMOVED***
+                        }
                         options.uploadProgress(event, position, total, percent);
-                  ***REMOVED***;
-              ***REMOVED***
+                    };
+                }
                 return xhr;
-          ***REMOVED***;
-      ***REMOVED***
+            };
+        }
 
         s.data = null;
             var beforeSend = s.beforeSend;
@@ -280,9 +280,9 @@ $.fn.ajaxSubmit = function(options) {
                 o.data = formdata;
                 if(beforeSend)
                     beforeSend.call(this, xhr, o);
-      ***REMOVED***;
+        };
         return $.ajax(s);
-  ***REMOVED***
+    }
 
     // private function for handling file uploads (hat tip to YAHOO!)
     function fileUploadIframe(a) {
@@ -296,7 +296,7 @@ $.fn.ajaxSubmit = function(options) {
             alert('Error: Form elements must not have name or id of "submit".');
             deferred.reject();
             return deferred;
-      ***REMOVED***
+        }
 
         if (a) {
             // ensure that every serialized input is still enabled
@@ -306,10 +306,10 @@ $.fn.ajaxSubmit = function(options) {
                     el.prop('disabled', false);
                 else
                     el.removeAttr('disabled');
-          ***REMOVED***
-      ***REMOVED***
+            }
+        }
 
-        s = $.extend(true, {***REMOVED***, $.ajaxSettings, options);
+        s = $.extend(true, {}, $.ajaxSettings, options);
         s.context = s.context || s;
         id = 'jqFormIO' + (new Date().getTime());
         if (s.iframeTarget) {
@@ -319,11 +319,11 @@ $.fn.ajaxSubmit = function(options) {
                  $io.attr('name', id);
             else
                 id = n;
-      ***REMOVED***
+        }
         else {
             $io = $('<iframe name="' + id + '" src="'+ s.iframeSrc +'" />');
-            $io.css({ position: 'absolute', top: '-1000px', left: '-1000px' ***REMOVED***);
-      ***REMOVED***
+            $io.css({ position: 'absolute', top: '-1000px', left: '-1000px' });
+        }
         io = $io[0];
 
 
@@ -333,9 +333,9 @@ $.fn.ajaxSubmit = function(options) {
             responseXML: null,
             status: 0,
             statusText: 'n/a',
-            getAllResponseHeaders: function() {***REMOVED***,
-            getResponseHeader: function() {***REMOVED***,
-            setRequestHeader: function() {***REMOVED***,
+            getAllResponseHeaders: function() {},
+            getResponseHeader: function() {},
+            setRequestHeader: function() {},
             abort: function(status) {
                 var e = (status === 'timeout' ? 'timeout' : 'aborted');
                 log('aborting upload... ' + e);
@@ -344,8 +344,8 @@ $.fn.ajaxSubmit = function(options) {
                 if (io.contentWindow.document.execCommand) {
                     try { // #214
                         io.contentWindow.document.execCommand('Stop');
-                  ***REMOVED*** catch(ignore) {***REMOVED***
-              ***REMOVED***
+                    } catch(ignore) {}
+                }
                 $io.attr('src', s.iframeSrc); // abort op in progress
                 xhr.error = e;
                 if (s.error)
@@ -354,43 +354,43 @@ $.fn.ajaxSubmit = function(options) {
                     $.event.trigger("ajaxError", [xhr, s, e]);
                 if (s.complete)
                     s.complete.call(s.context, xhr, e);
-          ***REMOVED***
-      ***REMOVED***;
+            }
+        };
 
         g = s.global;
         // trigger ajax global events so that activity/block indicators work like normal
         if (g && 0 === $.active++) {
             $.event.trigger("ajaxStart");
-      ***REMOVED***
+        }
         if (g) {
             $.event.trigger("ajaxSend", [xhr, s]);
-      ***REMOVED***
+        }
 
         if (s.beforeSend && s.beforeSend.call(s.context, xhr, s) === false) {
             if (s.global) {
                 $.active--;
-          ***REMOVED***
+            }
             deferred.reject();
             return deferred;
-      ***REMOVED***
+        }
         if (xhr.aborted) {
             deferred.reject();
             return deferred;
-      ***REMOVED***
+        }
 
         // add submitting element to data if we know it
         sub = form.clk;
         if (sub) {
             n = sub.name;
             if (n && !sub.disabled) {
-                s.extraData = s.extraData || {***REMOVED***;
+                s.extraData = s.extraData || {};
                 s.extraData[n] = sub.value;
                 if (sub.type == "image") {
                     s.extraData[n+'.x'] = form.clk_x;
                     s.extraData[n+'.y'] = form.clk_y;
-              ***REMOVED***
-          ***REMOVED***
-      ***REMOVED***
+                }
+            }
+        }
 
         var CLIENT_TIMEOUT_ABORT = 1;
         var SERVER_ABORT = 2;
@@ -398,15 +398,15 @@ $.fn.ajaxSubmit = function(options) {
         function getDoc(frame) {
             var doc = frame.contentWindow ? frame.contentWindow.document : frame.contentDocument ? frame.contentDocument : frame.document;
             return doc;
-      ***REMOVED***
+        }
 
         // Rails CSRF hack (thanks to Yvan Barthelemy)
         var csrf_token = $('meta[name=csrf-token]').attr('content');
         var csrf_param = $('meta[name=csrf-param]').attr('content');
         if (csrf_param && csrf_token) {
-            s.extraData = s.extraData || {***REMOVED***;
+            s.extraData = s.extraData || {};
             s.extraData[csrf_param] = csrf_token;
-      ***REMOVED***
+        }
 
         // take a breath so that pending repaints get some cpu time before the upload starts
         function doSubmit() {
@@ -417,23 +417,23 @@ $.fn.ajaxSubmit = function(options) {
             form.setAttribute('target',id);
             if (!method) {
                 form.setAttribute('method', 'POST');
-          ***REMOVED***
+            }
             if (a != s.url) {
                 form.setAttribute('action', s.url);
-          ***REMOVED***
+            }
 
             // ie borks in some cases when setting encoding
             if (! s.skipEncodingOverride && (!method || /post/i.test(method))) {
                 $form.attr({
                     encoding: 'multipart/form-data',
                     enctype:  'multipart/form-data'
-              ***REMOVED***);
-          ***REMOVED***
+                });
+            }
 
             // support timout
             if (s.timeout) {
-                timeoutHandle = setTimeout(function() { timedOut = true; cb(CLIENT_TIMEOUT_ABORT); ***REMOVED***, s.timeout);
-          ***REMOVED***
+                timeoutHandle = setTimeout(function() { timedOut = true; cb(CLIENT_TIMEOUT_ABORT); }, s.timeout);
+            }
 
             // look for server aborts
             function checkState() {
@@ -442,15 +442,15 @@ $.fn.ajaxSubmit = function(options) {
                     log('state = ' + state);
                     if (state && state.toLowerCase() == 'uninitialized')
                         setTimeout(checkState,50);
-              ***REMOVED***
+                }
                 catch(e) {
                     log('Server abort: ' , e, ' (', e.name, ')');
                     cb(SERVER_ABORT);
                     if (timeoutHandle)
                         clearTimeout(timeoutHandle);
                     timeoutHandle = undefined;
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
 
             // add "extra" data to form if provided in options
             var extraInputs = [];
@@ -463,14 +463,14 @@ $.fn.ajaxSubmit = function(options) {
                                extraInputs.push(
                                $('<input type="hidden" name="'+s.extraData[n].name+'">').attr('value',s.extraData[n].value)
                                    .appendTo(form)[0]);
-                         ***REMOVED*** else {
+                           } else {
                                extraInputs.push(
                                $('<input type="hidden" name="'+n+'">').attr('value',s.extraData[n])
                                    .appendTo(form)[0]);
-                         ***REMOVED***
-                      ***REMOVED***
-                  ***REMOVED***
-              ***REMOVED***
+                           }
+                        }
+                    }
+                }
 
                 if (!s.iframeTarget) {
                     // add iframe to doc and submit the form
@@ -479,58 +479,58 @@ $.fn.ajaxSubmit = function(options) {
                         io.attachEvent('onload', cb);
                     else
                         io.addEventListener('load', cb, false);
-              ***REMOVED***
+                }
                 setTimeout(checkState,15);
                 form.submit();
-          ***REMOVED***
+            }
             finally {
                 // reset attrs and remove "extra" input elements
                 form.setAttribute('action',a);
                 if(t) {
                     form.setAttribute('target', t);
-              ***REMOVED*** else {
+                } else {
                     $form.removeAttr('target');
-              ***REMOVED***
+                }
                 $(extraInputs).remove();
-          ***REMOVED***
-      ***REMOVED***
+            }
+        }
 
         if (s.forceSync) {
             doSubmit();
-      ***REMOVED***
+        }
         else {
             setTimeout(doSubmit, 10); // this lets dom updates render
-      ***REMOVED***
+        }
 
         var data, doc, domCheckCount = 50, callbackProcessed;
 
         function cb(e) {
             if (xhr.aborted || callbackProcessed) {
                 return;
-          ***REMOVED***
+            }
             try {
                 doc = getDoc(io);
-          ***REMOVED***
+            }
             catch(ex) {
                 log('cannot access response document: ', ex);
                 e = SERVER_ABORT;
-          ***REMOVED***
+            }
             if (e === CLIENT_TIMEOUT_ABORT && xhr) {
                 xhr.abort('timeout');
                 deferred.reject(xhr, 'timeout');
                 return;
-          ***REMOVED***
+            }
             else if (e == SERVER_ABORT && xhr) {
                 xhr.abort('server abort');
                 deferred.reject(xhr, 'error', 'server abort');
                 return;
-          ***REMOVED***
+            }
 
             if (!doc || doc.location.href == s.iframeSrc) {
                 // response not received yet
                 if (!timedOut)
                     return;
-          ***REMOVED***
+            }
             if (io.detachEvent)
                 io.detachEvent('onload', cb);
             else
@@ -540,7 +540,7 @@ $.fn.ajaxSubmit = function(options) {
             try {
                 if (timedOut) {
                     throw 'timeout';
-              ***REMOVED***
+                }
 
                 var isXml = s.dataType == 'xml' || doc.XMLDocument || $.isXMLDoc(doc);
                 log('isXml='+isXml);
@@ -551,11 +551,11 @@ $.fn.ajaxSubmit = function(options) {
                         log('requeing onLoad callback, DOM not available');
                         setTimeout(cb, 250);
                         return;
-                  ***REMOVED***
+                    }
                     // let this fall through because server response could be an empty document
                     //log('Could not access iframe DOM after mutiple tries.');
                     //throw 'DOMException: not available';
-              ***REMOVED***
+                }
 
                 //log('response detected');
                 var docRoot = doc.body ? doc.body : doc.documentElement;
@@ -564,14 +564,14 @@ $.fn.ajaxSubmit = function(options) {
                 if (isXml)
                     s.dataType = 'xml';
                 xhr.getResponseHeader = function(header){
-                    var headers = {'content-type': s.dataType***REMOVED***;
+                    var headers = {'content-type': s.dataType};
                     return headers[header];
-              ***REMOVED***;
+                };
                 // support for XHR 'status' & 'statusText' emulation :
                 if (docRoot) {
                     xhr.status = Number( docRoot.getAttribute('status') ) || xhr.status;
                     xhr.statusText = docRoot.getAttribute('statusText') || xhr.statusText;
-              ***REMOVED***
+                }
 
                 var dt = (s.dataType || '').toLowerCase();
                 var scr = /(json|script|text)/.test(dt);
@@ -583,45 +583,45 @@ $.fn.ajaxSubmit = function(options) {
                         // support for XHR 'status' & 'statusText' emulation :
                         xhr.status = Number( ta.getAttribute('status') ) || xhr.status;
                         xhr.statusText = ta.getAttribute('statusText') || xhr.statusText;
-                  ***REMOVED***
+                    }
                     else if (scr) {
                         // account for browsers injecting pre around json response
                         var pre = doc.getElementsByTagName('pre')[0];
                         var b = doc.getElementsByTagName('body')[0];
                         if (pre) {
                             xhr.responseText = pre.textContent ? pre.textContent : pre.innerText;
-                      ***REMOVED***
+                        }
                         else if (b) {
                             xhr.responseText = b.textContent ? b.textContent : b.innerText;
-                      ***REMOVED***
-                  ***REMOVED***
-              ***REMOVED***
+                        }
+                    }
+                }
                 else if (dt == 'xml' && !xhr.responseXML && xhr.responseText) {
                     xhr.responseXML = toXml(xhr.responseText);
-              ***REMOVED***
+                }
 
                 try {
                     data = httpData(xhr, dt, s);
-              ***REMOVED***
+                }
                 catch (e) {
                     status = 'parsererror';
                     xhr.error = errMsg = (e || status);
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
             catch (e) {
                 log('error caught: ',e);
                 status = 'error';
                 xhr.error = errMsg = (e || status);
-          ***REMOVED***
+            }
 
             if (xhr.aborted) {
                 log('upload aborted');
                 status = null;
-          ***REMOVED***
+            }
 
             if (xhr.status) { // we've set xhr.status
                 status = (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) ? 'success' : 'error';
-          ***REMOVED***
+            }
 
             // ordering of these callbacks/triggers is odd, but that's how $.ajax does it
             if (status === 'success') {
@@ -630,7 +630,7 @@ $.fn.ajaxSubmit = function(options) {
                 deferred.resolve(xhr.responseText, 'success', xhr);
                 if (g)
                     $.event.trigger("ajaxSuccess", [xhr, s]);
-          ***REMOVED***
+            }
             else if (status) {
                 if (errMsg === undefined)
                     errMsg = xhr.statusText;
@@ -639,14 +639,14 @@ $.fn.ajaxSubmit = function(options) {
                 deferred.reject(xhr, 'error', errMsg);
                 if (g)
                     $.event.trigger("ajaxError", [xhr, s, errMsg]);
-          ***REMOVED***
+            }
 
             if (g)
                 $.event.trigger("ajaxComplete", [xhr, s]);
 
             if (g && ! --$.active) {
                 $.event.trigger("ajaxStop");
-          ***REMOVED***
+            }
 
             if (s.complete)
                 s.complete.call(s.context, xhr, status);
@@ -660,24 +660,24 @@ $.fn.ajaxSubmit = function(options) {
                 if (!s.iframeTarget)
                     $io.remove();
                 xhr.responseXML = null;
-          ***REMOVED***, 100);
-      ***REMOVED***
+            }, 100);
+        }
 
         var toXml = $.parseXML || function(s, doc) { // use parseXML if available (jQuery 1.5+)
             if (window.ActiveXObject) {
                 doc = new ActiveXObject('Microsoft.XMLDOM');
                 doc.async = 'false';
                 doc.loadXML(s);
-          ***REMOVED***
+            }
             else {
                 doc = (new DOMParser()).parseFromString(s, 'text/xml');
-          ***REMOVED***
+            }
             return (doc && doc.documentElement && doc.documentElement.nodeName != 'parsererror') ? doc : null;
-      ***REMOVED***;
+        };
         var parseJSON = $.parseJSON || function(s) {
             /*jslint evil:true */
             return window['eval']('(' + s + ')');
-      ***REMOVED***;
+        };
 
         var httpData = function( xhr, type, s ) { // mostly lifted from jq1.4.4
 
@@ -688,23 +688,23 @@ $.fn.ajaxSubmit = function(options) {
             if (xml && data.documentElement.nodeName === 'parsererror') {
                 if ($.error)
                     $.error('parsererror');
-          ***REMOVED***
+            }
             if (s && s.dataFilter) {
                 data = s.dataFilter(data, type);
-          ***REMOVED***
+            }
             if (typeof data === 'string') {
                 if (type === 'json' || !type && ct.indexOf('json') >= 0) {
                     data = parseJSON(data);
-              ***REMOVED*** else if (type === "script" || !type && ct.indexOf("javascript") >= 0) {
+                } else if (type === "script" || !type && ct.indexOf("javascript") >= 0) {
                     $.globalEval(data);
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
             return data;
-      ***REMOVED***;
+        };
 
         return deferred;
-  ***REMOVED***
-***REMOVED***;
+    }
+};
 
 /**
  * ajaxForm() provides a mechanism for fully automating form submission.
@@ -722,23 +722,23 @@ $.fn.ajaxSubmit = function(options) {
  * the form itself.
  */
 $.fn.ajaxForm = function(options) {
-    options = options || {***REMOVED***;
+    options = options || {};
     options.delegation = options.delegation && $.isFunction($.fn.on);
 
     // in jQuery 1.3+ we can fix mistakes with the ready state
     if (!options.delegation && this.length === 0) {
-        var o = { s: this.selector, c: this.context ***REMOVED***;
+        var o = { s: this.selector, c: this.context };
         if (!$.isReady && o.s) {
             log('DOM not ready, queuing ajaxForm');
             $(function() {
                 $(o.s,o.c).ajaxForm(options);
-          ***REMOVED***);
+            });
             return this;
-      ***REMOVED***
+        }
         // is your DOM ready?  http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
         log('terminating; zero elements found by selector' + ($.isReady ? '' : ' (DOM not ready)'));
         return this;
-  ***REMOVED***
+    }
 
     if ( options.delegation ) {
         $(document)
@@ -747,12 +747,12 @@ $.fn.ajaxForm = function(options) {
             .on('submit.form-plugin', this.selector, options, doAjaxSubmit)
             .on('click.form-plugin', this.selector, options, captureSubmittingElement);
         return this;
-  ***REMOVED***
+    }
 
     return this.ajaxFormUnbind()
         .bind('submit.form-plugin', options, doAjaxSubmit)
         .bind('click.form-plugin', options, captureSubmittingElement);
-***REMOVED***;
+};
 
 // private event handlers
 function doAjaxSubmit(e) {
@@ -761,8 +761,8 @@ function doAjaxSubmit(e) {
     if (!e.isDefaultPrevented()) { // if event has been canceled, don't proceed
         e.preventDefault();
         $(this).ajaxSubmit(options);
-  ***REMOVED***
-***REMOVED***
+    }
+}
 
 function captureSubmittingElement(e) {
     /*jshint validthis:true */
@@ -773,33 +773,33 @@ function captureSubmittingElement(e) {
         var t = $el.closest('[type=submit]');
         if (t.length === 0) {
             return;
-      ***REMOVED***
+        }
         target = t[0];
-  ***REMOVED***
+    }
     var form = this;
     form.clk = target;
     if (target.type == 'image') {
         if (e.offsetX !== undefined) {
             form.clk_x = e.offsetX;
             form.clk_y = e.offsetY;
-      ***REMOVED*** else if (typeof $.fn.offset == 'function') {
+        } else if (typeof $.fn.offset == 'function') {
             var offset = $el.offset();
             form.clk_x = e.pageX - offset.left;
             form.clk_y = e.pageY - offset.top;
-      ***REMOVED*** else {
+        } else {
             form.clk_x = e.pageX - target.offsetLeft;
             form.clk_y = e.pageY - target.offsetTop;
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
     // clear form vars
-    setTimeout(function() { form.clk = form.clk_x = form.clk_y = null; ***REMOVED***, 100);
-***REMOVED***
+    setTimeout(function() { form.clk = form.clk_x = form.clk_y = null; }, 100);
+}
 
 
 // ajaxFormUnbind unbinds the event handlers that were bound by ajaxForm
 $.fn.ajaxFormUnbind = function() {
     return this.unbind('submit.form-plugin click.form-plugin');
-***REMOVED***;
+};
 
 /**
  * formToArray() gathers form element data into an array of objects that can
@@ -807,7 +807,7 @@ $.fn.ajaxFormUnbind = function() {
  * Each object in the array has both a 'name' and 'value' property.  An example of
  * an array for a simple login form might be:
  *
- * [ { name: 'username', value: 'jresig' ***REMOVED***, { name: 'password', value: 'secret' ***REMOVED*** ]
+ * [ { name: 'username', value: 'jresig' }, { name: 'password', value: 'secret' } ]
  *
  * It is this array that is passed to pre-submit callback functions provided to the
  * ajaxSubmit() and ajaxForm() methods.
@@ -816,13 +816,13 @@ $.fn.formToArray = function(semantic, elements) {
     var a = [];
     if (this.length === 0) {
         return a;
-  ***REMOVED***
+    }
 
     var form = this[0];
     var els = semantic ? form.getElementsByTagName('*') : form.elements;
     if (!els) {
         return a;
-  ***REMOVED***
+    }
 
     var i,j,n,v,el,max,jmax;
     for(i=0, max=els.length; i < max; i++) {
@@ -830,57 +830,57 @@ $.fn.formToArray = function(semantic, elements) {
         n = el.name;
         if (!n) {
             continue;
-      ***REMOVED***
+        }
 
         if (semantic && form.clk && el.type == "image") {
             // handle image inputs on the fly when semantic == true
             if(!el.disabled && form.clk == el) {
-                a.push({name: n, value: $(el).val(), type: el.type ***REMOVED***);
-                a.push({name: n+'.x', value: form.clk_x***REMOVED***, {name: n+'.y', value: form.clk_y***REMOVED***);
-          ***REMOVED***
+                a.push({name: n, value: $(el).val(), type: el.type });
+                a.push({name: n+'.x', value: form.clk_x}, {name: n+'.y', value: form.clk_y});
+            }
             continue;
-      ***REMOVED***
+        }
 
         v = $.fieldValue(el, true);
         if (v && v.constructor == Array) {
             if (elements)
                 elements.push(el);
             for(j=0, jmax=v.length; j < jmax; j++) {
-                a.push({name: n, value: v[j]***REMOVED***);
-          ***REMOVED***
-      ***REMOVED***
+                a.push({name: n, value: v[j]});
+            }
+        }
         else if (feature.fileapi && el.type == 'file' && !el.disabled) {
             if (elements)
                 elements.push(el);
             var files = el.files;
             if (files.length) {
                 for (j=0; j < files.length; j++) {
-                    a.push({name: n, value: files[j], type: el.type***REMOVED***);
-              ***REMOVED***
-          ***REMOVED***
+                    a.push({name: n, value: files[j], type: el.type});
+                }
+            }
             else {
                 // #180
-                a.push({ name: n, value: '', type: el.type ***REMOVED***);
-          ***REMOVED***
-      ***REMOVED***
+                a.push({ name: n, value: '', type: el.type });
+            }
+        }
         else if (v !== null && typeof v != 'undefined') {
             if (elements)
                 elements.push(el);
-            a.push({name: n, value: v, type: el.type, required: el.required***REMOVED***);
-      ***REMOVED***
-  ***REMOVED***
+            a.push({name: n, value: v, type: el.type, required: el.required});
+        }
+    }
 
     if (!semantic && form.clk) {
         // input type=='image' are not found in elements array! handle it here
         var $input = $(form.clk), input = $input[0];
         n = input.name;
         if (n && !input.disabled && input.type == 'image') {
-            a.push({name: n, value: $input.val()***REMOVED***);
-            a.push({name: n+'.x', value: form.clk_x***REMOVED***, {name: n+'.y', value: form.clk_y***REMOVED***);
-      ***REMOVED***
-  ***REMOVED***
+            a.push({name: n, value: $input.val()});
+            a.push({name: n+'.x', value: form.clk_x}, {name: n+'.y', value: form.clk_y});
+        }
+    }
     return a;
-***REMOVED***;
+};
 
 /**
  * Serializes form data into a 'submittable' string. This method will return a string
@@ -889,7 +889,7 @@ $.fn.formToArray = function(semantic, elements) {
 $.fn.formSerialize = function(semantic) {
     //hand off to jQuery.param for proper encoding
     return $.param(this.formToArray(semantic));
-***REMOVED***;
+};
 
 /**
  * Serializes all field elements in the jQuery object into a query string.
@@ -901,20 +901,20 @@ $.fn.fieldSerialize = function(successful) {
         var n = this.name;
         if (!n) {
             return;
-      ***REMOVED***
+        }
         var v = $.fieldValue(this, successful);
         if (v && v.constructor == Array) {
             for (var i=0,max=v.length; i < max; i++) {
-                a.push({name: n, value: v[i]***REMOVED***);
-          ***REMOVED***
-      ***REMOVED***
+                a.push({name: n, value: v[i]});
+            }
+        }
         else if (v !== null && typeof v != 'undefined') {
-            a.push({name: this.name, value: v***REMOVED***);
-      ***REMOVED***
-  ***REMOVED***);
+            a.push({name: this.name, value: v});
+        }
+    });
     //hand off to jQuery.param for proper encoding
     return $.param(a);
-***REMOVED***;
+};
 
 /**
  * Returns the value(s) of the element in the matched set.  For example, consider the following form:
@@ -960,14 +960,14 @@ $.fn.fieldValue = function(successful) {
         var v = $.fieldValue(el, successful);
         if (v === null || typeof v == 'undefined' || (v.constructor == Array && !v.length)) {
             continue;
-      ***REMOVED***
+        }
         if (v.constructor == Array)
             $.merge(val, v);
         else
             val.push(v);
-  ***REMOVED***
+    }
     return val;
-***REMOVED***;
+};
 
 /**
  * Returns the value of the field element.
@@ -976,20 +976,20 @@ $.fieldValue = function(el, successful) {
     var n = el.name, t = el.type, tag = el.tagName.toLowerCase();
     if (successful === undefined) {
         successful = true;
-  ***REMOVED***
+    }
 
     if (successful && (!n || el.disabled || t == 'reset' || t == 'button' ||
         (t == 'checkbox' || t == 'radio') && !el.checked ||
         (t == 'submit' || t == 'image') && el.form && el.form.clk != el ||
         tag == 'select' && el.selectedIndex == -1)) {
             return null;
-  ***REMOVED***
+    }
 
     if (tag == 'select') {
         var index = el.selectedIndex;
         if (index < 0) {
             return null;
-      ***REMOVED***
+        }
         var a = [], ops = el.options;
         var one = (t == 'select-one');
         var max = (one ? index+1 : ops.length);
@@ -999,17 +999,17 @@ $.fieldValue = function(el, successful) {
                 var v = op.value;
                 if (!v) { // extra pain for IE...
                     v = (op.attributes && op.attributes['value'] && !(op.attributes['value'].specified)) ? op.text : op.value;
-              ***REMOVED***
+                }
                 if (one) {
                     return v;
-              ***REMOVED***
+                }
                 a.push(v);
-          ***REMOVED***
-      ***REMOVED***
+            }
+        }
         return a;
-  ***REMOVED***
+    }
     return $(el).val();
-***REMOVED***;
+};
 
 /**
  * Clears the form data.  Takes the following actions on the form's input fields:
@@ -1022,8 +1022,8 @@ $.fieldValue = function(el, successful) {
 $.fn.clearForm = function(includeHidden) {
     return this.each(function() {
         $('input,select,textarea', this).clearFields(includeHidden);
-  ***REMOVED***);
-***REMOVED***;
+    });
+};
 
 /**
  * Clears the selected form elements.
@@ -1034,13 +1034,13 @@ $.fn.clearFields = $.fn.clearInputs = function(includeHidden) {
         var t = this.type, tag = this.tagName.toLowerCase();
         if (re.test(t) || tag == 'textarea') {
             this.value = '';
-      ***REMOVED***
+        }
         else if (t == 'checkbox' || t == 'radio') {
             this.checked = false;
-      ***REMOVED***
+        }
         else if (tag == 'select') {
             this.selectedIndex = -1;
-      ***REMOVED***
+        }
         else if (includeHidden) {
             // includeHidden can be the value true, or it can be a selector string
             // indicating a special test; for example:
@@ -1049,9 +1049,9 @@ $.fn.clearFields = $.fn.clearInputs = function(includeHidden) {
             if ( (includeHidden === true && /hidden/.test(t)) ||
                  (typeof includeHidden == 'string' && $(this).is(includeHidden)) )
                 this.value = '';
-      ***REMOVED***
-  ***REMOVED***);
-***REMOVED***;
+        }
+    });
+};
 
 /**
  * Resets the form data.  Causes all form elements to be reset to their original value.
@@ -1062,9 +1062,9 @@ $.fn.resetForm = function() {
         // note that IE reports the reset function as an 'object'
         if (typeof this.reset == 'function' || (typeof this.reset == 'object' && !this.reset.nodeType)) {
             this.reset();
-      ***REMOVED***
-  ***REMOVED***);
-***REMOVED***;
+        }
+    });
+};
 
 /**
  * Enables or disables any matching elements.
@@ -1072,11 +1072,11 @@ $.fn.resetForm = function() {
 $.fn.enable = function(b) {
     if (b === undefined) {
         b = true;
-  ***REMOVED***
+    }
     return this.each(function() {
         this.disabled = !b;
-  ***REMOVED***);
-***REMOVED***;
+    });
+};
 
 /**
  * Checks/unchecks any matching checkboxes or radio buttons and
@@ -1085,22 +1085,22 @@ $.fn.enable = function(b) {
 $.fn.selected = function(select) {
     if (select === undefined) {
         select = true;
-  ***REMOVED***
+    }
     return this.each(function() {
         var t = this.type;
         if (t == 'checkbox' || t == 'radio') {
             this.checked = select;
-      ***REMOVED***
+        }
         else if (this.tagName.toLowerCase() == 'option') {
             var $sel = $(this).parent('select');
             if (select && $sel[0] && $sel[0].type == 'select-one') {
                 // deselect all other options
                 $sel.find('option').selected(false);
-          ***REMOVED***
+            }
             this.selected = select;
-      ***REMOVED***
-  ***REMOVED***);
-***REMOVED***;
+        }
+    });
+};
 
 // expose debug var
 $.fn.ajaxSubmit.debug = false;
@@ -1112,10 +1112,10 @@ function log() {
     var msg = '[jquery.form] ' + Array.prototype.join.call(arguments,'');
     if (window.console && window.console.log) {
         window.console.log(msg);
-  ***REMOVED***
+    }
     else if (window.opera && window.opera.postError) {
         window.opera.postError(msg);
-  ***REMOVED***
-***REMOVED***
+    }
+}
 
-***REMOVED***)(jQuery);
+})(jQuery);

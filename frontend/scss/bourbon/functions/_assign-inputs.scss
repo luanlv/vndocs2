@@ -5,7 +5,7 @@
     $input: unquote($input);
     $input: if($pseudo, $input + ":" + $pseudo, $input);
     $list: append($list, $input, comma);
-***REMOVED***
+  }
 
   @return $list;
-***REMOVED***
+}

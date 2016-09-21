@@ -4,17 +4,17 @@
 ///
 /// @access private
 ///
-/// @param {List***REMOVED*** $list
+/// @param {List} $list
 ///   The list to check against.
 ///
-/// @return {Bool***REMOVED***
+/// @return {Bool}
 
 @function contains-falsy($list) {
   @each $item in $list {
     @if not $item {
       @return true;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return false;
-***REMOVED***
+}

@@ -7,4 +7,4 @@ import models.User
 trait MyEnv extends Env {
   type I = User
   type A = CookieAuthenticator
-***REMOVED***
+}

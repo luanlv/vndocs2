@@ -5,18 +5,18 @@
 /// @example scss - Usage
 ///   .element {
 ///     @include fill-parent;
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     width: 100%;
 ///     box-sizing: border-box;
-/// ***REMOVED***
+///   }
 
 @mixin fill-parent() {
   width: 100%;
 
   @if $border-box-sizing == false {
     box-sizing: border-box;
-***REMOVED***
-***REMOVED***
+  }
+}

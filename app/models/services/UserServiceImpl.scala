@@ -70,9 +70,9 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
         println(profile.loginInfo.providerID == "facebook")
         val newAvatar = if (profile.loginInfo.providerID == "facebook") {
           "http://graph.facebook.com/" + profile.loginInfo.providerKey + "/picture"
-      ***REMOVED*** else {
+        } else {
           profile.avatarURL.get
-      ***REMOVED***
+        }
         userDAO.save(User(
           userID = uuid,
           loginInfo = profile.loginInfo,
@@ -83,10 +83,10 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
           avatarURL = Some(newAvatar),
           activated = true
         ))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   //  def upsert(profile: CommonSocialProfile) = {
   //
-  //***REMOVED***
-***REMOVED***
+  //  }
+}

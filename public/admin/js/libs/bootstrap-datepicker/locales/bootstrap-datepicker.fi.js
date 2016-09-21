@@ -12,5 +12,5 @@
 		today: "tänään",
 		weekStart: 1,
 		format: "d.m.yyyy"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

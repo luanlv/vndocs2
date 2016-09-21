@@ -6,18 +6,18 @@
 // -------------------------
 
 .transitions (@value1,@value2:X,...) {
-	@value: ~`"@{arguments***REMOVED***".replace(/[\[\]]|\,\sX/g, '')`;
+	@value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
 
 	-webkit-transition: @value;
 	-o-transition: @value;
 	transition: @value;
-***REMOVED***
+}
 .transition-vendor (@prop, @transition){
-	-webkit-transition: ~'-webkit-@{prop***REMOVED***' @transition;
-	-moz-transition: ~'-moz-@{prop***REMOVED***' @transition;
-	-o-transition: ~'-o-@{prop***REMOVED***' @transition;
-	transition: ~'@{prop***REMOVED***' @transition;
-***REMOVED***
+	-webkit-transition: ~'-webkit-@{prop}' @transition;
+	-moz-transition: ~'-moz-@{prop}' @transition;
+	-o-transition: ~'-o-@{prop}' @transition;
+	transition: ~'@{prop}' @transition;
+}
 
 // Transformations
 // -------------------------
@@ -26,13 +26,13 @@
 	-webkit-transform: @value;
 	-ms-transform: @value; // IE9 only
 	transform: @value;
-***REMOVED***
+}
 
 .transform-style(@value) {
 	-webkit-transform-style: @value;
 	transform-style: @value;
-***REMOVED***
+}
 .transform-z(@value) {
 	-webkit-transform: translateZ(@value);
 	transform: translateZ(@value);
-***REMOVED***
+}

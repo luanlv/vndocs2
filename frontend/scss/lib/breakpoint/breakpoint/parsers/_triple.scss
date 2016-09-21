@@ -10,7 +10,7 @@
   // If we're forcing
   @if not ($empty-media) or not ($first) {
     $leader: 'and ';
-***REMOVED***
+  }
 
   // separate the string features from the value numbers
   $string: null;
@@ -18,19 +18,19 @@
   @each $val in $feature {
     @if type-of($val) == string {
       $string: $val;
-  ***REMOVED***
+    }
     @else {
       @if type-of($numbers) == 'null' {
         $numbers: $val;
-    ***REMOVED***
+      }
       @else {
         $numbers: append($numbers, $val);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   $parsed: breakpoint-parse-triple-default($string, nth($numbers, 1), nth($numbers, 2));
 
   @return $leader + $parsed;
 
-***REMOVED***
+}

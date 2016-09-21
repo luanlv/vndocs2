@@ -16,7 +16,7 @@
 
   // return to default $total-columns setting.
   $total-columns    : $default-layout !global;
-***REMOVED***
+}
 
 // Nest a block of code inside a new media-query and layout context.
 //
@@ -38,7 +38,7 @@
 
   @if not($breakpoint-media-output) and not($breakpoint-ie-output) and not($breakpoint-raw-output) {
     @warn "Either $breakpoint-media-output, $breakpoint-ie-output, or $breakpoint-raw-output must be true for at-breakpoint to work.";
-***REMOVED***
+  }
 
   // We need to have either a min-width breakpoint or a layout in order to proceed.
   @if $min or $layout or $max {
@@ -46,7 +46,7 @@
     // If we don't have a layout, we create one based on the min-width.
     @if not($layout) {
       $layout: get-layout($min);
-  ***REMOVED***
+    }
 
     // If we still don't have a layout, we have a problem.
     @if $layout {
@@ -58,48 +58,48 @@
               // Both $min and $max
               @media (min-width: $min) and (max-width: $max) {
                 @content;
-            ***REMOVED***
-          ***REMOVED*** @else {
+              }
+            } @else {
               @if not($min) and not($max) {
                 // Neither $min nor $max:
                 // We can create a breakpoint based on the number of columns in the layout.
                 $min: fix-ems(container-outer-width($width: false));
-            ***REMOVED***
+              }
               @if $min {
                 // Min only:
                 @media (min-width: $min) {
                   @content;
-              ***REMOVED***
-            ***REMOVED*** @else {
+                }
+              } @else {
                 // Max only:
                 @media (max-width: $max) {
                   @content;
-              ***REMOVED***
-            ***REMOVED***
-          ***REMOVED***
-        ***REMOVED***
-      ***REMOVED***
+                }
+              }
+            }
+          }
+        }
         // Set an IE fallback
         @if $ie and $breakpoint-ie-output {
           @if (type-of($ie) == 'bool') {
             $ie: 'lt-ie9';
-        ***REMOVED***
-          .#{$ie***REMOVED*** & {
+          }
+          .#{$ie} & {
             @content;
-        ***REMOVED***
-      ***REMOVED***
+          }
+        }
 
         @if $breakpoint-raw-output {
           @content;
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED*** @else {
+        }
+      }
+    } @else {
       @warn "We were unable to determine a layout for your breakpoint.";
-  ***REMOVED***
+    }
 
-***REMOVED*** @else {
+  } @else {
     @warn "You need to provide either a valid layout (number of columns)"
         + "or a valid media-query min-width breakpoint (length).";
-***REMOVED***
+  }
 
-***REMOVED***
+}

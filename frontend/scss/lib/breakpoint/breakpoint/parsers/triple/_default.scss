@@ -5,14 +5,14 @@
   $max: max($first, $second);
 
   // Set Context
-  $context-setter: private-breakpoint-set-context(min-#{$feature***REMOVED***, $min);
-  $context-setter: private-breakpoint-set-context(max-#{$feature***REMOVED***, $max);
+  $context-setter: private-breakpoint-set-context(min-#{$feature}, $min);
+  $context-setter: private-breakpoint-set-context(max-#{$feature}, $max);
 
   // Make them EMs if need be
   @if (breakpoint-get('to ems') == true) {
     $min: breakpoint-to-base-em($min);
     $max: breakpoint-to-base-em($max);
-***REMOVED***
+  }
 
-  @return '(min-#{$feature***REMOVED***: #{$min***REMOVED***) and (max-#{$feature***REMOVED***: #{$max***REMOVED***)';
-***REMOVED***
+  @return '(min-#{$feature}: #{$min}) and (max-#{$feature}: #{$max})';
+}

@@ -11,7 +11,7 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size:   13px;
   line-height: 20px;
-***REMOVED***
+}
 
 
 .dd-edit-box input,
@@ -28,39 +28,39 @@
   color:              #444;
   text-shadow:        0 1px 0 #fff;
   width:              30%;
-***REMOVED***
+}
 
 .dd-edit-box input::selection,
 .dd-edit-box textarea::selection {
   color: #fff;
   background: #0e90d2;
-***REMOVED***
+}
 
 .dd-edit-box input:focus,
 .dd-edit-box textarea:focus {
   text-shadow: none;
-***REMOVED***
+}
 .dd-button-container .custom-button-example {
   color: #000;
   text-align: center;
   padding: 1px 4px;
-***REMOVED***
+}
 
 .dd-edit-box select {
   width: 30%;
-***REMOVED***
+}
 
 .dd-edit-box > * {
   vertical-align: top;
-***REMOVED***
+}
 
 .dd-edit-box input, .dd-edit-box select, .dd-edit-box textarea {
   margin-bottom: 0;
-***REMOVED***
+}
 
 .dd-edit-box {
   position: relative;
-***REMOVED***
+}
 
 .dd-edit-box i {
   right:    0;
@@ -68,15 +68,15 @@
   cursor:   pointer;
   position: absolute;
   font-style: normal;
-***REMOVED***
+}
 
 .dd-item-blueprint {
   display: none;
-***REMOVED***
+}
 
 .dd > .dd-list {
   min-height: 80px;
-***REMOVED***
+}
 
 .dd-list {
   display:    block;
@@ -84,16 +84,16 @@
   margin:     0;
   padding:    0;
   list-style: none;
-***REMOVED***
+}
 
 .dd-list .dd-list {
   left: 30px;
   margin-right: 30px;
-***REMOVED***
+}
 
 .dd-collapsed .dd-list {
   display: none;
-***REMOVED***
+}
 
 .dd-item,
 .dd-empty,
@@ -106,7 +106,7 @@
   min-height:  20px;
   font-size:   13px;
   line-height: 20px;
-***REMOVED***
+}
 
 .dd-handle {
   cursor:                move;
@@ -125,12 +125,12 @@
   border-radius:         3px;
   box-sizing:            border-box;
   -moz-box-sizing:       border-box;
-***REMOVED***
+}
 
 .dd-handle:hover {
   color:      #2ea8e5;
   background: #fff;
-***REMOVED***
+}
 
 .dd-item > button {
   display:     inline-block;
@@ -150,7 +150,7 @@
   text-align:  center;
   font-weight: bold;
   color:       black;
-***REMOVED***
+}
 
 .dd.domenu .dd-new-item {
     background: transparent;
@@ -161,14 +161,14 @@
     font-size: 29px;
     color: #8F8F8F;
     outline: none;
-***REMOVED***
+}
 
 /* @since > 0.13.29 */
 .dd-item .item-remove,
 .dd-item .item-remove-confirm,
 .dd-item .item-add {
   outline: none;
-***REMOVED***
+}
 
 .dd-item .dd-button-container button {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.51), rgba(0, 0, 0, 0.14));
@@ -176,7 +176,7 @@
   border-radius:    2px;
   font:             normal 12px/18px Helvetica, Lato, Arial sans-serif;
   cursor:           pointer;
-***REMOVED***
+}
 
 .dd-item .dd-button-container .item-add {
   background-color: #55b3ff;
@@ -184,11 +184,11 @@
   color:            #ffffff;
   text-shadow:      0 1px 0 #2b77b5;
   box-shadow:       inset 0 1px 0 #cfe9ff;
-***REMOVED***
+}
 
 .dd-item .dd-button-container .item-add:active {
   box-shadow: inset 0 1px 3px #376f9c;
-***REMOVED***
+}
 
 .dd-item .dd-button-container .item-remove {
   background-color: #ff5555;
@@ -197,12 +197,12 @@
   text-shadow:      0 1px 0 #ffc0c0;
   box-shadow:       inset 0 1px 0 #ffc0c0;
   transition:       background-color 0.35s;
-***REMOVED***
+}
 
 .dd-item .dd-button-container .item-remove:active {
 
   box-shadow: inset 0 1px 5px #a54b4b;
-***REMOVED***
+}
 
 .dd-item .dd-button-container .item-remove-confirm {
 
@@ -211,15 +211,15 @@
   transition:       background-color 0.35s;
 
   border-color:     #ad7232;
-***REMOVED***
+}
 
 .dd-item .dd-button-container .item-remove-confirm:active {
 
-***REMOVED***
+}
 
 .item-remove-confirm {
   background: #ffce66;
-***REMOVED***
+}
 
 .dd-item .dd-button-container {
   position: absolute;
@@ -229,13 +229,13 @@
   overflow: visible;
   display:  none;
   right:    0;
-***REMOVED***
+}
 
 /* end @since > 0.13.29 */
 
 .dd3-item > button:first-child {
   margin-left: 30px;
-***REMOVED***
+}
 
 .dd-item > button:before {
   display:     block;
@@ -243,7 +243,7 @@
   width:       100%;
   text-align:  center;
   text-indent: 0;
-***REMOVED***
+}
 
 .dd-placeholder,
 .dd-empty {
@@ -254,7 +254,7 @@
   border: 1px dashed #6C9AB1;
   box-sizing:      border-box;
   -moz-box-sizing: border-box;
-***REMOVED***
+}
 
 .dd-empty {
   border:              1px dashed #bbb;
@@ -268,23 +268,23 @@
                        linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
   background-size:     60px 60px;
   background-position: 0 0, 30px 30px;
-***REMOVED***
+}
 
 .dd-dragel {
   height:         60px;
   position:       absolute;
   pointer-events: none;
   z-index:        9999;
-***REMOVED***
+}
 
 .dd-dragel > .dd-item .dd-handle {
   margin-top: 0;
-***REMOVED***
+}
 
 .dd-dragel .dd-handle {
   -webkit-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, .1);
   box-shadow:         2px 4px 6px 0 rgba(0, 0, 0, .1);
-***REMOVED***
+}
 
 /**
  * doMenu Draggable Handles
@@ -307,7 +307,7 @@
   border-radius:         3px;
   box-sizing:            border-box;
   -moz-box-sizing:       border-box;
-***REMOVED***
+}
 
 .dd3-content:hover {
   color:      #2ea8e5;
@@ -315,11 +315,11 @@
   background: -webkit-linear-gradient(top, #e5e5e5 10%, #ffffff 100%);
   background: -moz-linear-gradient(top, #e5e5e5 10%, #ffffff 100%);
   background: linear-gradient(top, #e5e5e5 10%, #ffffff 100%);
-***REMOVED***
+}
 
 .dd-dragel > .dd3-item > .dd3-content {
   margin: 0;
-***REMOVED***
+}
 
 .dd3-handle {
   position:                   absolute;
@@ -339,7 +339,7 @@
   background:                 linear-gradient(top, #c8c8c8 0%, #8c8c8c 100%);
   border-top-right-radius:    0;
   border-bottom-right-radius: 0;
-***REMOVED***
+}
 
 .dd3-handle:before {
   content:     '\2263';
@@ -353,19 +353,19 @@
   color:       #fff;
   font-size:   20px;
   font-weight: normal;
-***REMOVED***
+}
 
 .dd3-handle:hover {
   background: #c8c8c8;
   background: -webkit-linear-gradient(top, #c8c8c8 0%, #8c8c8c 100%);
   background: -moz-linear-gradient(top, #c8c8c8 0%, #8c8c8c 100%);
   background: linear-gradient(top, #c8c8c8 0%, #8c8c8c 100%);
-***REMOVED***
+}
 
 .dd3-content:hover .dd-button-container {
   display:    block;
   transition: display 2s;
-***REMOVED***
+}
 
 .dd .dd-new-item {
     width: 100%;
@@ -377,10 +377,10 @@
     cursor: pointer;
     transition: border 0.35s ease 0s, color 0.35s ease 0s;
     outline: none;
-***REMOVED***
+}
 
 .dd .dd-new-item:hover {
     border: 2px dashed #595858;
     color: #595858;
     transition: border 0.35s ease 0s, color 0.35s ease 0s;
-***REMOVED***
+}

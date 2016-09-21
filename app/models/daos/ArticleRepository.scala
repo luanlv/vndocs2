@@ -1,6 +1,6 @@
 package models.daos
 
-import com.google.inject.{ Inject, Singleton ***REMOVED***
+import com.google.inject.{ Inject, Singleton }
 import models.Article
 import play.modules.reactivemongo.ReactiveMongoApi
 import reactivemongo.api.indexes.IndexType
@@ -17,4 +17,4 @@ class ArticleRepository @Inject() (reactiveMongoApi: ReactiveMongoApi)
   override def ensureIndexes: Future[Boolean] = ensureIndex(List("" -> IndexType.Ascending), unique = true)
 
   ensureIndexes
-***REMOVED***
+}

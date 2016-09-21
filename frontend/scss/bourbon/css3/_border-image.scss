@@ -16,39 +16,39 @@
       @if $url-str == "url" {
         $webkit-border: $border;
         $spec-border:   $border;
-    ***REMOVED***
+      }
 
       @else if $gradient-type == "linear" {
-        $gradients: _linear-gradient-parser("#{$border***REMOVED***");
+        $gradients: _linear-gradient-parser("#{$border}");
         $webkit-border: map-get($gradients, webkit-image);
         $spec-border:   map-get($gradients, spec-image);
-    ***REMOVED***
+      }
 
       @else if $gradient-type == "radial" {
-        $gradients: _radial-gradient-parser("#{$border***REMOVED***");
+        $gradients: _radial-gradient-parser("#{$border}");
         $webkit-border: map-get($gradients, webkit-image);
         $spec-border:   map-get($gradients, spec-image);
-    ***REMOVED***
+      }
 
       @else {
         $webkit-border: $border;
         $spec-border:   $border;
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
     @else {
       $webkit-border: $border;
       $spec-border:   $border;
-  ***REMOVED***
+    }
 
     $webkit-borders: append($webkit-borders, $webkit-border, comma);
     $spec-borders:   append($spec-borders,   $spec-border,   comma);
-***REMOVED***
+  }
 
   -webkit-border-image: $webkit-borders;
           border-image: $spec-borders;
           border-style: solid;
-***REMOVED***
+}
 
 //Examples:
 // @include border-image(url("image.png"));

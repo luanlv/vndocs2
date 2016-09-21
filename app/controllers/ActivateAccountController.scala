@@ -6,10 +6,10 @@ import javax.inject.Inject
 
 import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.impl.providers.CredentialsProvider
-import models.services.{ AuthTokenService, UserService ***REMOVED***
-import play.api.i18n.{ I18nSupport, Messages, MessagesApi ***REMOVED***
+import models.services.{ AuthTokenService, UserService }
+import play.api.i18n.{ I18nSupport, Messages, MessagesApi }
 import play.api.libs.concurrent.Execution.Implicits._
-import play.api.libs.mailer.{ Email, MailerClient ***REMOVED***
+import play.api.libs.mailer.{ Email, MailerClient }
 import play.api.mvc.Controller
 import utils.silhouette.MyEnv
 
@@ -59,10 +59,10 @@ class ActivateAccountController @Inject() (
             bodyHtml = Some(views.html.emails.activateAccount(user, url).body)
           ))
           result
-      ***REMOVED***
+        }
       case None => Future.successful(result)
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   /**
    * Activates an account.
@@ -76,10 +76,10 @@ class ActivateAccountController @Inject() (
         case Some(user) if user.loginInfo.providerID == CredentialsProvider.ID =>
           userService.save(user.copy(activated = true)).map { _ =>
             Redirect(routes.SignInController.view()).flashing("success" -> Messages("account.activated"))
-        ***REMOVED***
+          }
         case _ => Future.successful(Redirect(routes.SignInController.view()).flashing("error" -> Messages("invalid.activation.link")))
-    ***REMOVED***
+      }
       case None => Future.successful(Redirect(routes.SignInController.view()).flashing("error" -> Messages("invalid.activation.link")))
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

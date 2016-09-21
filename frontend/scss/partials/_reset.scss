@@ -4,13 +4,13 @@ html {
     font-size: $base-font-size;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 14px;
-***REMOVED***
+}
 
 * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-***REMOVED***
+}
 
 body {
     margin: 0;
@@ -19,7 +19,7 @@ body {
     height: 100%;
     width: 100%;
     color: $base-font-color;
-***REMOVED***
+}
 
 h1,
 h2,
@@ -32,26 +32,26 @@ ol,
 ul {
     margin: 0;
     padding: 0;
-***REMOVED***
+}
 
 main,
 li {
     display: block;
-***REMOVED***
+}
 
 strong {
     font-weight: bold;
-***REMOVED***
+}
 
 a,
 button {
     color: inherit;
     transition: .3s;
-***REMOVED***
+}
 
 a {
     text-decoration: none;
-***REMOVED***
+}
 
 button {
     overflow: visible;
@@ -61,25 +61,25 @@ button {
     letter-spacing: inherit;
     background: none;
     cursor: pointer;
-***REMOVED***
+}
 
 ::-moz-focus-inner {
     padding: 0;
     border: 0;
     border-radius: 0;
-***REMOVED***
+}
 
 :focus {
     outline: 0;
     box-shadow: none;
     border-radius: 0;
-***REMOVED***
+}
 
 img {
     max-width: 100%;
     height: auto;
     border: 0;
-***REMOVED***
+}
 
 //Remove default input styles
 input[type=search] {
@@ -90,7 +90,7 @@ input[type=search] {
     border-radius: 0px;
     border: 0;
     border: none;
-***REMOVED***
+}
 
 input[type=text] {
     -webkit-appearance: none;
@@ -98,31 +98,31 @@ input[type=text] {
     appearance: none;
     -webkit-border-radius: 0px;
     border-radius: 0px;
-***REMOVED***
+}
 
 //Placeholder text for search
 ::-webkit-input-placeholder {
     color: $placeholder-text-color;
     opacity: $placeholder-text-opacity!important;
     font-size: $placeholder-text-font-size!important;
-***REMOVED***
+}
 
 :-moz-placeholder {
     /* Firefox 18- */
     color: $placeholder-text-color;
     opacity: $placeholder-text-opacity!important;
     font-size: $placeholder-text-font-size!important;
-***REMOVED***
+}
 
 ::-moz-placeholder {
     /* Firefox 19+ */
     color: $placeholder-text-color;
     opacity: $placeholder-text-opacity!important;
     font-size: $placeholder-text-font-size!important;
-***REMOVED***
+}
 
 :-ms-input-placeholder {
     color: $placeholder-text-color;
     opacity: $placeholder-text-opacity!important;
     font-size: $placeholder-text-font-size!important;
-***REMOVED***
+}

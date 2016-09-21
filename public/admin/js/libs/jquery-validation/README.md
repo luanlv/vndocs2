@@ -49,7 +49,7 @@ Alternatively include jQuery and the plugin via requirejs in your module.
 ```js
 define(["jquery", "jquery.validate"], function( $ ) {
 	$("form").validate();
-***REMOVED***);
+});
 ```
 
 For more information on how to setup a rules and customizations, [check the documentation](http://jqueryvalidation.org/documentation/).

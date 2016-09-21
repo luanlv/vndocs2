@@ -1,4 +1,4 @@
-var Post = {***REMOVED***;
+var Post = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -13,25 +13,25 @@ Post.controller = function(){
   
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     Data.sessionstorage.set( 'url' , "/" );
-***REMOVED***
+  }
   
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
-***REMOVED***;
+  };
   ctrl.slug =  m.route.param("slug");
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.article = m.prop({***REMOVED***);
+  ctrl.article = m.prop({});
   ctrl.comment = m.prop("");
   ctrl.voted = false;
   
   if(Window.article === undefined) {
     console.log("run request !!!!!!!!!!")
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/blog/get/" + ctrl.slug***REMOVED***, ctrl.article, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/blog/get/" + ctrl.slug}, ctrl.article, ctrl.setup);
+  } else {
     // ctrl.request.data = m.prop(Window.post);
     ctrl.article().article = Window.article;
     ctrl.article().comments = Window.comments;
@@ -39,34 +39,34 @@ Post.controller = function(){
     Window.comments = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     // ctrl.post(ctrl.request.data());
     console.log(ctrl.article());
     m.redraw();
-***REMOVED***;
+  };
   
-***REMOVED***;
+};
 
 Post.view = function(ctrl){
   return [
     <div className="headWr ">
-      {Head(ctrl)***REMOVED***
+      {Head(ctrl)}
     </div>,
     <div className="container containerBor">
           
       <div className="bodyWr">
-        {Menu(ctrl)***REMOVED***
+        {Menu(ctrl)}
         <div className="content ">
-          {ArticleView(ctrl)***REMOVED***
-          {Side(ctrl)***REMOVED***
+          {ArticleView(ctrl)}
+          {Side(ctrl)}
         </div>
       </div>
     
     </div>,
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Post;

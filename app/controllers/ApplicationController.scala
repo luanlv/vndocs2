@@ -1,16 +1,16 @@
 package controllers
 
-import javax.inject.{ Inject, Singleton ***REMOVED***
+import javax.inject.{ Inject, Singleton }
 
-import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
+import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette }
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import models.Setup
-import models.services.{ ArticleService, CategoryService, PostService, SetupService ***REMOVED***
-import play.api.i18n.{ I18nSupport, MessagesApi ***REMOVED***
+import models.services.{ ArticleService, CategoryService, PostService, SetupService }
+import play.api.i18n.{ I18nSupport, MessagesApi }
 import play.api.libs.json.Json
-import play.api.libs.ws.{ WS, WSClient ***REMOVED***
-import play.api.mvc.{ Action, BodyParsers, Controller ***REMOVED***
-import utils.silhouette.{ AuthController, MyEnv ***REMOVED***
+import play.api.libs.ws.{ WS, WSClient }
+import play.api.mvc.{ Action, BodyParsers, Controller }
+import utils.silhouette.{ AuthController, MyEnv }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
@@ -42,13 +42,14 @@ class ApplicationController @Inject() (
    * @return The result to display.
    */
   def index = UserAwareAction.async { implicit request =>
+    val page = request.getQueryString("p").getOrElse("1")
     val data = for {
       menu <- setupService.retrieve("menu")
       categories <- categoryService.listParent
-      posts <- postService.getList(1)
+      posts <- postService.getList(page.toInt)
       articles <- articleService.getList(1)
       totalPosts <- postService.count
-  ***REMOVED*** yield (menu, categories, posts, articles, totalPosts)
+    } yield (menu, categories, posts, articles, totalPosts)
     data.map { data =>
       Ok(views.html.home(
         Json.toJson(data._1.get.value).toString,
@@ -57,27 +58,27 @@ class ApplicationController @Inject() (
         Json.toJson(data._4).toString,
         data._5
       ))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   //  def indexLogged = silhouette.SecuredAction.async { implicit request =>
   //    val data = for {
   //      menu <- setupService.retrieve("menu")
   //      categories <- categoryService.listParent
   //      posts <- postService.getList(1)
-  //  ***REMOVED*** yield (menu, categories, posts)
+  //    } yield (menu, categories, posts)
   //    data.map { data =>
   //      Ok(views.html.home2(
   //        request.identity,
   //        Json.toJson(data._1.get.value).toString,
   //        Json.toJson(data._2).toString,
   //        Json.toJson(data._3).toString))
-  //  ***REMOVED***
-  //***REMOVED***
+  //    }
+  //  }
 
   def index2 = silhouette.SecuredAction.async(parse.json) { implicit request =>
     Future.successful(Ok("ok"))
-***REMOVED***
+  }
 
   /**
    * Handles the Sign Out action.
@@ -89,6 +90,6 @@ class ApplicationController @Inject() (
     val result = Redirect(forward)
     silhouette.env.eventBus.publish(LogoutEvent(request.identity, request))
     silhouette.env.authenticatorService.discard(request.authenticator, result)
-***REMOVED***
+  }
 
-***REMOVED***
+}

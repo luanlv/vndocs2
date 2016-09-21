@@ -25,41 +25,41 @@ $_SESSION['captcha_id'] = $str;
 	<style>
 	img {
 		border: 1px solid #eee;
-	***REMOVED***
+	}
 	p#statusgreen {
 		font-size: 1.2em;
 		background-color: #fff;
 		color: #0a0;
-	***REMOVED***
+	}
 	p#statusred {
 		font-size: 1.2em;
 		background-color: #fff;
 		color: #a00;
-	***REMOVED***
+	}
 	fieldset label {
 		display: block;
-	***REMOVED***
+	}
 	fieldset div#captchaimage {
 		float: left;
 		margin-right: 15px;
-	***REMOVED***
+	}
 	fieldset input#captcha {
 		width: 25%;
 		border: 1px solid #ddd;
 		padding: 2px;
-	***REMOVED***
+	}
 	fieldset input#submit {
 		display: block;
 		margin: 2% 0% 0% 0%;
-	***REMOVED***
+	}
 	#captcha.success {
 		border: 1px solid #49c24f;
 		background: #bcffbf;
-	***REMOVED***
+	}
 	#captcha.error {
 		border: 1px solid #c24949;
 		background: #ffbcbc;
-	***REMOVED***
+	}
 	</style>
 </head>
 <body>

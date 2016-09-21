@@ -8,14 +8,14 @@
     transition: all 300ms;
     top: 5px;
     margin-left: 5px;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .block {
   margin-top: 15px;
   min-height: 230px;
   border-bottom:dashed 1px $border-light-blue;
-***REMOVED***
+}
 
 
 .main-item .title {
@@ -24,98 +24,98 @@
   color: #5f9eb3;
   &:hover {
     color: $title-color;
-***REMOVED***
+  }
   font-weight: bold;
   font-size: 1.2em;
   text-decoration: none;
   margin-bottom: 7px;
   min-height: 40px;
-***REMOVED***
+}
 
 .meta-data{
   margin-bottom: 7px;
   & > span::after {
     content: ' |';
     margin-right: 3px;
-***REMOVED***
+  }
   & > span:last-child::after {
     content: '';
-***REMOVED***
+  }
   *::before {
     font-size: 11px;
     font-weight: bolder;
     color: rgba(0, 0, 0, 0.4);
-***REMOVED***
+  }
   * {
     font-size: 13px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6);
     &:hover {
       color: #000;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   &:hover {
     *::before {
       color: rgba(0, 0, 0, 0.8);
-  ***REMOVED***
+    }
     *{
       color: #000;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   .upload::before {
     content: "Đăng bởi: "
-***REMOVED***
+  }
   .category::before {
     content: "Thuộc: "
-***REMOVED***
+  }
   .time::before {
     content: "Ngày đăng: "
-***REMOVED***
+  }
 
   .category {
     span::after {
       content: ', ';
-  ***REMOVED***
+    }
     span:last-child::after {
       content: '';
-  ***REMOVED***
+    }
 
     span {
       &:hover {
         color: $orange !important;
-    ***REMOVED***
+      }
       margin-left: 3px;
-  ***REMOVED***
+    }
     a {
       text-decoration: none;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 .info img {
   float: left;
   margin: 5px;
-***REMOVED***
+}
 .info .description {
   font-size: 1em;
   line-height: 1.5em;
   color: #333;
-***REMOVED***
+}
 
 .sort {
   a {
     text-decoration: none;
-***REMOVED***
+  }
   a::after {
     content: " | "
-***REMOVED***
+  }
   a:last-child::after {
     content: ""
-***REMOVED***
+  }
   padding: 5px;
-***REMOVED***
+}
 
 .roundbox {
   border-radius: 10px 10px 0 0;
@@ -125,22 +125,22 @@
   //font-weight: bolder;
   a:visited{
     color: #333;
-***REMOVED***
+  }
   span{
     color: #666;
     font-weight: normal;
     font-style: italic;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .main {
   @include min-breakpoint($mobile){
     border-left: 1px solid $border-light-blue;
     border-right: 1px solid $border-light-blue;
     box-shadow: inset 0px -3px 7px 0px rgba(43,38,43,0.1);
-***REMOVED***
+  }
   padding: 10px 15px 30px 15px;
-***REMOVED***
+}
 
 .main-item {
   .title {
@@ -149,7 +149,7 @@
     .t-left {
       word-wrap: break-word;
       padding-right: 70px;
-  ***REMOVED***
+    }
     .t-right {
 
       position: absolute;
@@ -157,11 +157,11 @@
       right: 0;
 
 
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
 
-***REMOVED***
+}
 
 .t-right {
   border-radius: 10px 10px 0 0;
@@ -173,11 +173,11 @@
     color: $white;
     border-radius: 10px 10px 0 0;
     font-size: 12px;
-***REMOVED***
+  }
   .rate-num {
     color: $orange;
     font-size: 22px;
-***REMOVED***
+  }
   .rate-button {
     //border-radius: 0 0 5px 5px;
     background: $orange;
@@ -185,11 +185,12 @@
     font-weight: bold;
     padding: 2px;
     width: 100%;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .navigation {
+  float: right;
   * {
     margin-right: 5px;
-***REMOVED***
-***REMOVED***
+  }
+}

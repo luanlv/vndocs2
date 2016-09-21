@@ -16,7 +16,7 @@ body
 	background-color: #ffffff;
 	padding: 5px;
 	margin: 0px;
-***REMOVED***
+}
 
 /**
  * Core styles.
@@ -25,34 +25,34 @@ body
 .Bold
 {
 	font-weight: bold;
-***REMOVED***
+}
 
 .Italic
 {
 	font-style: italic;
-***REMOVED***
+}
 
 .Underline
 {
 	text-decoration: underline;
-***REMOVED***
+}
 
 .StrikeThrough
 {
 	text-decoration: line-through;
-***REMOVED***
+}
 
 .Subscript
 {
 	vertical-align: sub;
 	font-size: smaller;
-***REMOVED***
+}
 
 .Superscript
 {
 	vertical-align: super;
 	font-size: smaller;
-***REMOVED***
+}
 
 /**
  * Font faces.
@@ -61,17 +61,17 @@ body
 .FontComic
 {
 	font-family: 'Comic Sans MS';
-***REMOVED***
+}
 
 .FontCourier
 {
 	font-family: 'Courier New';
-***REMOVED***
+}
 
 .FontTimes
 {
 	font-family: 'Times New Roman';
-***REMOVED***
+}
 
 /**
  * Font sizes.
@@ -80,27 +80,27 @@ body
 .FontSmaller
 {
 	font-size: smaller;
-***REMOVED***
+}
 
 .FontLarger
 {
 	font-size: larger;
-***REMOVED***
+}
 
 .FontSmall
 {
 	font-size: 8pt;
-***REMOVED***
+}
 
 .FontBig
 {
 	font-size: 14pt;
-***REMOVED***
+}
 
 .FontDouble
 {
 	font-size: 200%;
-***REMOVED***
+}
 
 /**
  * Font colors.
@@ -108,32 +108,32 @@ body
 .FontColor1
 {
 	color: #ff9900;
-***REMOVED***
+}
 
 .FontColor2
 {
 	color: #0066cc;
-***REMOVED***
+}
 
 .FontColor3
 {
 	color: #ff0000;
-***REMOVED***
+}
 
 .FontColor1BG
 {
 	background-color: #ff9900;
-***REMOVED***
+}
 
 .FontColor2BG
 {
 	background-color: #0066cc;
-***REMOVED***
+}
 
 .FontColor3BG
 {
 	background-color: #ff0000;
-***REMOVED***
+}
 
 /**
  * Indentation.
@@ -142,17 +142,17 @@ body
 .Indent1
 {
 	margin-left: 40px;
-***REMOVED***
+}
 
 .Indent2
 {
 	margin-left: 80px;
-***REMOVED***
+}
 
 .Indent3
 {
 	margin-left: 120px;
-***REMOVED***
+}
 
 /**
  * Alignment.
@@ -161,22 +161,22 @@ body
 .JustifyLeft
 {
 	text-align: left;
-***REMOVED***
+}
 
 .JustifyRight
 {
 	text-align: right;
-***REMOVED***
+}
 
 .JustifyCenter
 {
 	text-align: center;
-***REMOVED***
+}
 
 .JustifyFull
 {
 	text-align: justify;
-***REMOVED***
+}
 
 /**
  * Other.
@@ -189,16 +189,16 @@ code
 	padding-left: 1px;
 	padding-right: 1px;
 	border: #c0c0c0 1px solid;
-***REMOVED***
+}
 
 kbd
 {
 	padding: 0px 1px 0px 1px;
 	border-width: 1px 2px 2px 1px;
 	border-style: solid;
-***REMOVED***
+}
 
 blockquote
 {
 	color: #808080;
-***REMOVED***
+}

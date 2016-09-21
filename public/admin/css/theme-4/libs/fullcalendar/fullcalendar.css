@@ -1,43 +1,43 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -48,14 +48,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -66,14 +66,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -84,14 +84,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -102,14 +102,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -120,14 +120,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -138,14 +138,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -156,14 +156,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -174,14 +174,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -192,14 +192,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -210,14 +210,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -225,15 +225,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -241,15 +241,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -257,15 +257,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -273,15 +273,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -289,15 +289,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -305,15 +305,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -321,15 +321,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -337,15 +337,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -353,15 +353,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -369,15 +369,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -385,15 +385,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -401,15 +401,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -417,15 +417,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -433,15 +433,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -449,15 +449,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -465,15 +465,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -481,15 +481,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -497,15 +497,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -513,15 +513,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -529,15 +529,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 /*
 // Example usage
 
@@ -552,7 +552,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -562,7 +562,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -572,7 +572,7 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */
 /*!
  * FullCalendar v2.2.3 Stylesheet
@@ -582,14 +582,14 @@
 .fc {
   direction: ltr;
   text-align: left;
-***REMOVED***
+}
 .fc-rtl {
   text-align: right;
-***REMOVED***
+}
 body .fc {
   /* extra precedence to overcome jqui */
   font-size: 1em;
-***REMOVED***
+}
 /* Colors
 --------------------------------------------------------------------------------------------------*/
 .fc-unthemed th,
@@ -600,39 +600,39 @@ body .fc {
 .fc-unthemed .fc-row,
 .fc-unthemed .fc-popover {
   border-color: #ddd;
-***REMOVED***
+}
 .fc-unthemed .fc-popover {
   background-color: #fff;
-***REMOVED***
+}
 .fc-unthemed hr,
 .fc-unthemed .fc-popover .fc-header {
   background: #eee;
-***REMOVED***
+}
 .fc-unthemed .fc-popover .fc-header .fc-close {
   color: #666;
-***REMOVED***
+}
 .fc-unthemed .fc-today {
   background: #fcf8e3;
-***REMOVED***
+}
 .fc-highlight {
   /* when user is selecting cells */
   background: #bce8f1;
   opacity: .3;
   filter: alpha(opacity=30);
   /* for IE */
-***REMOVED***
+}
 .fc-bgevent {
   /* default look for background events */
   background: #8fdf82;
   opacity: .3;
   filter: alpha(opacity=30);
   /* for IE */
-***REMOVED***
+}
 .fc-nonbusiness {
   /* default look for non-business-hours areas */
   /* will inherit .fc-bgevent's styles */
   background: #ccc;
-***REMOVED***
+}
 /* Icons (inline elements with styled text that mock arrow icons)
 --------------------------------------------------------------------------------------------------*/
 .fc-icon {
@@ -642,24 +642,24 @@ body .fc {
   height: .5em;
   /* will make the total height 1em */
   font-family: "Courier New", Courier, monospace;
-***REMOVED***
+}
 .fc-icon-left-single-arrow:after {
   content: "\02039";
   font-weight: bold;
-***REMOVED***
+}
 .fc-icon-right-single-arrow:after {
   content: "\0203A";
   font-weight: bold;
-***REMOVED***
+}
 .fc-icon-left-double-arrow:after {
   content: "\000AB";
-***REMOVED***
+}
 .fc-icon-right-double-arrow:after {
   content: "\000BB";
-***REMOVED***
+}
 .fc-icon-x:after {
   content: "\000D7";
-***REMOVED***
+}
 /* Buttons (styled <button> tags, normalized to work cross-browser)
 --------------------------------------------------------------------------------------------------*/
 .fc button {
@@ -676,26 +676,26 @@ body .fc {
   /* normalize */
   white-space: nowrap;
   cursor: pointer;
-***REMOVED***
+}
 /* Firefox has an annoying inner border */
 .fc button::-moz-focus-inner {
   margin: 0;
   padding: 0;
-***REMOVED***
+}
 .fc-state-default {
   /* non-theme */
   border: 1px solid;
-***REMOVED***
+}
 .fc-state-default.fc-corner-left {
   /* non-theme */
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-***REMOVED***
+}
 .fc-state-default.fc-corner-right {
   /* non-theme */
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-***REMOVED***
+}
 /* icons in buttons */
 .fc button .fc-icon {
   /* non-theme */
@@ -703,7 +703,7 @@ body .fc {
   top: .05em;
   /* seems to be a good adjustment across browsers */
   margin: 0 .1em;
-***REMOVED***
+}
 /*
   button states
   borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
@@ -721,14 +721,14 @@ body .fc {
   color: #333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-***REMOVED***
+}
 .fc-state-hover,
 .fc-state-down,
 .fc-state-active,
 .fc-state-disabled {
   color: #333333;
   background-color: #e6e6e6;
-***REMOVED***
+}
 .fc-state-hover {
   color: #333333;
   text-decoration: none;
@@ -737,25 +737,25 @@ body .fc {
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
-***REMOVED***
+}
 .fc-state-down,
 .fc-state-active {
   background-color: #cccccc;
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-***REMOVED***
+}
 .fc-state-disabled {
   cursor: default;
   background-image: none;
   opacity: 0.65;
   filter: alpha(opacity=65);
   box-shadow: none;
-***REMOVED***
+}
 /* Buttons Groups
 --------------------------------------------------------------------------------------------------*/
 .fc-button-group {
   display: inline-block;
-***REMOVED***
+}
 /*
 every button that is not first in a button group should scootch over one pixel and cover the
 previous button's border...
@@ -764,48 +764,48 @@ previous button's border...
   /* extra precedence b/c buttons have margin set to zero */
   float: left;
   margin: 0 0 0 -1px;
-***REMOVED***
+}
 .fc .fc-button-group > :first-child {
   /* same */
   margin-left: 0;
-***REMOVED***
+}
 /* Popover
 --------------------------------------------------------------------------------------------------*/
 .fc-popover {
   position: absolute;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-***REMOVED***
+}
 .fc-popover .fc-header {
   padding: 2px 4px;
-***REMOVED***
+}
 .fc-popover .fc-header .fc-title {
   margin: 0 2px;
-***REMOVED***
+}
 .fc-popover .fc-header .fc-close {
   cursor: pointer;
-***REMOVED***
+}
 .fc-ltr .fc-popover .fc-header .fc-title,
 .fc-rtl .fc-popover .fc-header .fc-close {
   float: left;
-***REMOVED***
+}
 .fc-rtl .fc-popover .fc-header .fc-title,
 .fc-ltr .fc-popover .fc-header .fc-close {
   float: right;
-***REMOVED***
+}
 /* unthemed */
 .fc-unthemed .fc-popover {
   border-width: 1px;
   border-style: solid;
-***REMOVED***
+}
 .fc-unthemed .fc-popover .fc-header .fc-close {
   font-size: 25px;
   margin-top: 4px;
-***REMOVED***
+}
 /* jqui themed */
 .fc-popover > .ui-widget-header + .ui-widget-content {
   border-top: 0;
   /* where they meet, let the header have the border */
-***REMOVED***
+}
 /* Misc Reusable Components
 --------------------------------------------------------------------------------------------------*/
 .fc hr {
@@ -815,10 +815,10 @@ previous button's border...
   /* height is unreliable across browsers, so use padding */
   border-style: solid;
   border-width: 1px 0;
-***REMOVED***
+}
 .fc-clear {
   clear: both;
-***REMOVED***
+}
 .fc-bg,
 .fc-bgevent-skeleton,
 .fc-highlight-skeleton,
@@ -828,15 +828,15 @@ previous button's border...
   top: 0;
   left: 0;
   right: 0;
-***REMOVED***
+}
 .fc-bg {
   bottom: 0;
   /* strech bg to bottom edge */
-***REMOVED***
+}
 .fc-bg table {
   height: 100%;
   /* strech bg to bottom edge */
-***REMOVED***
+}
 /* Tables
 --------------------------------------------------------------------------------------------------*/
 .fc table {
@@ -846,21 +846,21 @@ previous button's border...
   border-spacing: 0;
   font-size: 1em;
   /* normalize cross-browser */
-***REMOVED***
+}
 .fc th {
   text-align: center;
-***REMOVED***
+}
 .fc th,
 .fc td {
   border-style: solid;
   border-width: 1px;
   padding: 0;
   vertical-align: top;
-***REMOVED***
+}
 .fc td.fc-today {
   border-style: double;
   /* overcome neighboring borders */
-***REMOVED***
+}
 /* Fake Table Rows
 --------------------------------------------------------------------------------------------------*/
 .fc .fc-row {
@@ -868,7 +868,7 @@ previous button's border...
   /* no visible border by default. but make available if need be (scrollbar width compensation) */
   border-style: solid;
   border-width: 0;
-***REMOVED***
+}
 .fc-row table {
   /* don't put left/right border on anything within a fake row.
 	   the outer tbody will worry about this */
@@ -876,40 +876,40 @@ previous button's border...
   border-right: 0 hidden transparent;
   /* no bottom borders on rows */
   border-bottom: 0 hidden transparent;
-***REMOVED***
+}
 .fc-row:first-child table {
   border-top: 0 hidden transparent;
   /* no top border on first row */
-***REMOVED***
+}
 /* Day Row (used within the header and the DayGrid)
 --------------------------------------------------------------------------------------------------*/
 .fc-row {
   position: relative;
-***REMOVED***
+}
 .fc-row .fc-bg {
   z-index: 1;
-***REMOVED***
+}
 /* highlighting cells & background event skeleton */
 .fc-row .fc-bgevent-skeleton,
 .fc-row .fc-highlight-skeleton {
   bottom: 0;
   /* stretch skeleton to bottom of row */
-***REMOVED***
+}
 .fc-row .fc-bgevent-skeleton table,
 .fc-row .fc-highlight-skeleton table {
   height: 100%;
   /* stretch skeleton to bottom of row */
-***REMOVED***
+}
 .fc-row .fc-highlight-skeleton td,
 .fc-row .fc-bgevent-skeleton td {
   border-color: transparent;
-***REMOVED***
+}
 .fc-row .fc-bgevent-skeleton {
   z-index: 2;
-***REMOVED***
+}
 .fc-row .fc-highlight-skeleton {
   z-index: 3;
-***REMOVED***
+}
 /*
 row content (which contains day/week numbers and events) as well as "helper" (which contains
 temporary rendered events).
@@ -919,10 +919,10 @@ temporary rendered events).
   z-index: 4;
   padding-bottom: 2px;
   /* matches the space above the events */
-***REMOVED***
+}
 .fc-row .fc-helper-skeleton {
   z-index: 5;
-***REMOVED***
+}
 .fc-row .fc-content-skeleton td,
 .fc-row .fc-helper-skeleton td {
   /* see-through to the background below */
@@ -931,19 +931,19 @@ temporary rendered events).
   border-color: transparent;
   /* don't put a border between events and/or the day number */
   border-bottom: 0;
-***REMOVED***
+}
 .fc-row .fc-content-skeleton tbody td,
 .fc-row .fc-helper-skeleton tbody td {
   /* don't put a border between event cells */
   border-top: 0;
-***REMOVED***
+}
 /* Scrolling Container
 --------------------------------------------------------------------------------------------------*/
 .fc-scroller {
   /* this class goes on elements for guaranteed vertical scrollbars */
   overflow-y: scroll;
   overflow-x: hidden;
-***REMOVED***
+}
 .fc-scroller > * {
   /* we expect an immediate inner element */
   position: relative;
@@ -952,7 +952,7 @@ temporary rendered events).
   /* hack to force re-sizing this inner element when scrollbars appear/disappear */
   overflow: hidden;
   /* don't let negative margins or absolute positioning create further scroll */
-***REMOVED***
+}
 /* Global Event Styles
 --------------------------------------------------------------------------------------------------*/
 .fc-event {
@@ -969,7 +969,7 @@ temporary rendered events).
   /* default BACKGROUND color */
   font-weight: normal;
   /* undo jqui's ui-widget-header bold */
-***REMOVED***
+}
 /* overpower some of bootstrap's and jqui's styles on <a> tags */
 .fc-event,
 .fc-event:hover,
@@ -978,17 +978,17 @@ temporary rendered events).
   /* default TEXT color */
   text-decoration: none;
   /* if <a> has an href */
-***REMOVED***
+}
 .fc-event[href],
 .fc-event.fc-draggable {
   cursor: pointer;
   /* give events with links and draggable events a hand mouse pointer */
-***REMOVED***
+}
 .fc-not-allowed,
 .fc-not-allowed .fc-event {
   /* to override an event's custom cursor */
   cursor: not-allowed;
-***REMOVED***
+}
 /* DayGrid events
 ----------------------------------------------------------------------------------------------------
 We use the full "fc-day-grid-event" class instead of using descendants because the event won't
@@ -998,7 +998,7 @@ be a descendant of the grid when it is being dragged.
   margin: 1px 2px 0;
   /* spacing between events and edges */
   padding: 0 1px;
-***REMOVED***
+}
 /* events that are continuing to/from another week. kill rounded corners and butt up against edge */
 .fc-ltr .fc-day-grid-event.fc-not-start,
 .fc-rtl .fc-day-grid-event.fc-not-end {
@@ -1008,7 +1008,7 @@ be a descendant of the grid when it is being dragged.
   /* replace the border with padding */
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-***REMOVED***
+}
 .fc-ltr .fc-day-grid-event.fc-not-end,
 .fc-rtl .fc-day-grid-event.fc-not-start {
   margin-right: 0;
@@ -1017,30 +1017,30 @@ be a descendant of the grid when it is being dragged.
   /* replace the border with padding */
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-***REMOVED***
+}
 .fc-day-grid-event > .fc-content {
   /* force events to be one-line tall */
   white-space: nowrap;
   overflow: hidden;
-***REMOVED***
+}
 .fc-day-grid-event .fc-time {
   font-weight: bold;
-***REMOVED***
+}
 /* resize handle (outside of fc-content, so can go outside of bounds) */
 .fc-day-grid-event .fc-resizer {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 7px;
-***REMOVED***
+}
 .fc-ltr .fc-day-grid-event .fc-resizer {
   right: -3px;
   cursor: e-resize;
-***REMOVED***
+}
 .fc-rtl .fc-day-grid-event .fc-resizer {
   left: -3px;
   cursor: w-resize;
-***REMOVED***
+}
 /* Event Limiting
 --------------------------------------------------------------------------------------------------*/
 /* "more" link that represents hidden events */
@@ -1049,74 +1049,74 @@ a.fc-more {
   font-size: .85em;
   cursor: pointer;
   text-decoration: none;
-***REMOVED***
+}
 a.fc-more:hover {
   text-decoration: underline;
-***REMOVED***
+}
 .fc-limited {
   /* rows and cells that are hidden because of a "more" link */
   display: none;
-***REMOVED***
+}
 /* popover that appears when "more" link is clicked */
 .fc-day-grid .fc-row {
   z-index: 1;
   /* make the "more" popover one higher than this */
-***REMOVED***
+}
 .fc-more-popover {
   z-index: 2;
   width: 220px;
-***REMOVED***
+}
 .fc-more-popover .fc-event-container {
   padding: 10px;
-***REMOVED***
+}
 /* Toolbar
 --------------------------------------------------------------------------------------------------*/
 .fc-toolbar {
   text-align: center;
   margin-bottom: 1em;
-***REMOVED***
+}
 .fc-toolbar .fc-left {
   float: left;
-***REMOVED***
+}
 .fc-toolbar .fc-right {
   float: right;
-***REMOVED***
+}
 .fc-toolbar .fc-center {
   display: inline-block;
-***REMOVED***
+}
 /* the things within each left/right/center section */
 .fc .fc-toolbar > * > * {
   /* extra precedence to override button border margins */
   float: left;
   margin-left: .75em;
-***REMOVED***
+}
 /* the first thing within each left/center/right section */
 .fc .fc-toolbar > * > :first-child {
   /* extra precedence to override button border margins */
   margin-left: 0;
-***REMOVED***
+}
 /* title text */
 .fc-toolbar h2 {
   margin: 0;
-***REMOVED***
+}
 /* button layering (for border precedence) */
 .fc-toolbar button {
   position: relative;
-***REMOVED***
+}
 .fc-toolbar .fc-state-hover,
 .fc-toolbar .ui-state-hover {
   z-index: 2;
-***REMOVED***
+}
 .fc-toolbar .fc-state-down {
   z-index: 3;
-***REMOVED***
+}
 .fc-toolbar .fc-state-active,
 .fc-toolbar .ui-state-active {
   z-index: 4;
-***REMOVED***
+}
 .fc-toolbar button:focus {
   z-index: 5;
-***REMOVED***
+}
 /* View Structure
 --------------------------------------------------------------------------------------------------*/
 /* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
@@ -1127,13 +1127,13 @@ a.fc-more:hover {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-***REMOVED***
+}
 .fc-view,
 .fc-view > table {
   /* so dragged elements can be above the view's main element */
   position: relative;
   z-index: 1;
-***REMOVED***
+}
 /* BasicView
 --------------------------------------------------------------------------------------------------*/
 /* day row structure */
@@ -1144,45 +1144,45 @@ a.fc-more:hover {
   /* add a pixel to make sure there are 2px padding above events */
   padding-bottom: 1em;
   /* ensure a space at bottom of cell for user selecting/clicking */
-***REMOVED***
+}
 .fc-basic-view tbody .fc-row {
   min-height: 4em;
   /* ensure that all rows are at least this tall */
-***REMOVED***
+}
 /* a "rigid" row will take up a constant amount of height because content-skeleton is absolute */
 .fc-row.fc-rigid {
   overflow: hidden;
-***REMOVED***
+}
 .fc-row.fc-rigid .fc-content-skeleton {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-***REMOVED***
+}
 /* week and day number styling */
 .fc-basic-view .fc-week-number,
 .fc-basic-view .fc-day-number {
   padding: 0 2px;
-***REMOVED***
+}
 .fc-basic-view td.fc-week-number span,
 .fc-basic-view td.fc-day-number {
   padding-top: 2px;
   padding-bottom: 2px;
-***REMOVED***
+}
 .fc-basic-view .fc-week-number {
   text-align: center;
-***REMOVED***
+}
 .fc-basic-view .fc-week-number span {
   /* work around the way we do column resizing and ensure a minimum width */
   display: inline-block;
   min-width: 1.25em;
-***REMOVED***
+}
 .fc-ltr .fc-basic-view .fc-day-number {
   text-align: right;
-***REMOVED***
+}
 .fc-rtl .fc-basic-view .fc-day-number {
   text-align: left;
-***REMOVED***
+}
 .fc-day-number.fc-other-month {
   opacity: 0.3;
   filter: alpha(opacity=30);
@@ -1190,24 +1190,24 @@ a.fc-more:hover {
   /* opacity with small font can sometimes look too faded
 	   might want to set the 'color' property instead
 	   making day-numbers bold also fixes the problem */
-***REMOVED***
+}
 /* AgendaView all-day area
 --------------------------------------------------------------------------------------------------*/
 .fc-agenda-view .fc-day-grid {
   position: relative;
   z-index: 2;
   /* so the "more.." popover will be over the time grid */
-***REMOVED***
+}
 .fc-agenda-view .fc-day-grid .fc-row {
   min-height: 3em;
   /* all-day section will never get shorter than this */
-***REMOVED***
+}
 .fc-agenda-view .fc-day-grid .fc-row .fc-content-skeleton {
   padding-top: 1px;
   /* add a pixel to make sure there are 2px padding above events */
   padding-bottom: 1em;
   /* give space underneath events for clicking/selecting days */
-***REMOVED***
+}
 /* TimeGrid axis running down the side (for both the all-day area and the slot area)
 --------------------------------------------------------------------------------------------------*/
 .fc .fc-axis {
@@ -1215,17 +1215,17 @@ a.fc-more:hover {
   vertical-align: middle;
   padding: 0 4px;
   white-space: nowrap;
-***REMOVED***
+}
 .fc-ltr .fc-axis {
   text-align: right;
-***REMOVED***
+}
 .fc-rtl .fc-axis {
   text-align: left;
-***REMOVED***
+}
 .ui-widget td.fc-axis {
   font-weight: normal;
   /* overcome jqui theme making it bold */
-***REMOVED***
+}
 /* TimeGrid Structure
 --------------------------------------------------------------------------------------------------*/
 .fc-time-grid-container,
@@ -1233,97 +1233,97 @@ a.fc-more:hover {
   /* so slats/bg/content/etc positions get scoped within here */
   position: relative;
   z-index: 1;
-***REMOVED***
+}
 .fc-time-grid {
   min-height: 100%;
   /* so if height setting is 'auto', .fc-bg stretches to fill height */
-***REMOVED***
+}
 .fc-time-grid table {
   /* don't put outer borders on slats/bg/content/etc */
   border: 0 hidden transparent;
-***REMOVED***
+}
 .fc-time-grid > .fc-bg {
   z-index: 1;
-***REMOVED***
+}
 .fc-time-grid .fc-slats,
 .fc-time-grid > hr {
   /* the <hr> AgendaView injects when grid is shorter than scroller */
   position: relative;
   z-index: 2;
-***REMOVED***
+}
 .fc-time-grid .fc-bgevent-skeleton,
 .fc-time-grid .fc-content-skeleton {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-***REMOVED***
+}
 .fc-time-grid .fc-bgevent-skeleton {
   z-index: 3;
-***REMOVED***
+}
 .fc-time-grid .fc-highlight-skeleton {
   z-index: 4;
-***REMOVED***
+}
 .fc-time-grid .fc-content-skeleton {
   z-index: 5;
-***REMOVED***
+}
 .fc-time-grid .fc-helper-skeleton {
   z-index: 6;
-***REMOVED***
+}
 /* TimeGrid Slats (lines that run horizontally)
 --------------------------------------------------------------------------------------------------*/
 .fc-slats td {
   height: 1.5em;
   border-bottom: 0;
   /* each cell is responsible for its top border */
-***REMOVED***
+}
 .fc-slats .fc-minor td {
   border-top-style: dotted;
-***REMOVED***
+}
 .fc-slats .ui-widget-content {
   /* for jqui theme */
   background: none;
   /* see through to fc-bg */
-***REMOVED***
+}
 /* TimeGrid Highlighting Slots
 --------------------------------------------------------------------------------------------------*/
 .fc-time-grid .fc-highlight-container {
   /* a div within a cell within the fc-highlight-skeleton */
   position: relative;
   /* scopes the left/right of the fc-highlight to be in the column */
-***REMOVED***
+}
 .fc-time-grid .fc-highlight {
   position: absolute;
   left: 0;
   right: 0;
   /* top and bottom will be in by JS */
-***REMOVED***
+}
 /* TimeGrid Event Containment
 --------------------------------------------------------------------------------------------------*/
 .fc-time-grid .fc-event-container,
 .fc-time-grid .fc-bgevent-container {
   /* a div within a cell within the fc-bgevent-skeleton */
   position: relative;
-***REMOVED***
+}
 .fc-ltr .fc-time-grid .fc-event-container {
   /* space on the sides of events for LTR (default) */
   margin: 0 2.5% 0 2px;
-***REMOVED***
+}
 .fc-rtl .fc-time-grid .fc-event-container {
   /* space on the sides of events for RTL */
   margin: 0 2px 0 2.5%;
-***REMOVED***
+}
 .fc-time-grid .fc-event,
 .fc-time-grid .fc-bgevent {
   position: absolute;
   z-index: 1;
   /* scope inner z-index's */
-***REMOVED***
+}
 .fc-time-grid .fc-bgevent {
   /* background events always span full width */
   left: 0;
   right: 0;
-***REMOVED***
+}
 /* TimeGrid Event Styling
 ----------------------------------------------------------------------------------------------------
 We use the full "fc-time-grid-event" class instead of using descendants because the event won't
@@ -1337,7 +1337,7 @@ be a descendant of the grid when it is being dragged.
   /* remove top rounded corners */
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-***REMOVED***
+}
 .fc-time-grid-event.fc-not-end {
   /* replace space made by the top border with padding */
   border-bottom-width: 0;
@@ -1345,61 +1345,61 @@ be a descendant of the grid when it is being dragged.
   /* remove bottom rounded corners */
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-***REMOVED***
+}
 .fc-time-grid-event {
   overflow: hidden;
   /* don't let the bg flow over rounded corners */
-***REMOVED***
+}
 .fc-time-grid-event > .fc-content {
   /* contains the time and title, but no bg and resizer */
   position: relative;
   z-index: 2;
   /* above the bg */
-***REMOVED***
+}
 .fc-time-grid-event .fc-time,
 .fc-time-grid-event .fc-title {
   padding: 0 1px;
-***REMOVED***
+}
 .fc-time-grid-event .fc-time {
   font-size: .85em;
   white-space: nowrap;
-***REMOVED***
+}
 .fc-time-grid-event .fc-bg {
   z-index: 1;
   background: #fff;
   opacity: .25;
   filter: alpha(opacity=25);
   /* for IE */
-***REMOVED***
+}
 /* short mode, where time and title are on the same line */
 .fc-time-grid-event.fc-short .fc-content {
   /* don't wrap to second line (now that contents will be inline) */
   white-space: nowrap;
-***REMOVED***
+}
 .fc-time-grid-event.fc-short .fc-time,
 .fc-time-grid-event.fc-short .fc-title {
   /* put the time and title on the same line */
   display: inline-block;
   vertical-align: top;
-***REMOVED***
+}
 .fc-time-grid-event.fc-short .fc-time span {
   display: none;
   /* don't display the full time text... */
-***REMOVED***
+}
 .fc-time-grid-event.fc-short .fc-time:before {
   content: attr(data-start);
   /* ...instead, display only the start time */
-***REMOVED***
+}
 .fc-time-grid-event.fc-short .fc-time:after {
   content: "\000A0-\000A0";
   /* seperate with a dash, wrapped in nbsp's */
-***REMOVED***
+}
 .fc-time-grid-event.fc-short .fc-title {
   font-size: .85em;
   /* make the title text the same size as the time */
   padding: 0;
   /* undo padding from above */
-***REMOVED***
+}
 /* resizer */
 .fc-time-grid-event .fc-resizer {
   position: absolute;
@@ -1415,22 +1415,22 @@ be a descendant of the grid when it is being dragged.
   font-family: monospace;
   text-align: center;
   cursor: s-resize;
-***REMOVED***
+}
 .fc-time-grid-event .fc-resizer:after {
   content: "=";
-***REMOVED***
+}
 .fc-unthemed .fc-widget-header thead {
   opacity: 0.6;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 500;
-***REMOVED***
+}
 .fc-unthemed .fc-widget-header thead .fc-day-header {
   padding: 8px 4px;
-***REMOVED***
+}
 .fc-unthemed .fc-widget-header thead th {
   border-color: transparent;
-***REMOVED***
+}
 .fc-unthemed th,
 .fc-unthemed td,
 .fc-unthemed hr,
@@ -1439,32 +1439,32 @@ be a descendant of the grid when it is being dragged.
 .fc-unthemed .fc-row,
 .fc-unthemed .fc-popover {
   border-color: #e6e6e5;
-***REMOVED***
+}
 .fc-unthemed .fc-today {
   background: rgba(139, 195, 74, 0.07);
-***REMOVED***
+}
 .fc-unthemed .fc-event {
   border-color: #8bc34a;
   background-color: #8bc34a;
-***REMOVED***
+}
 .fc-event.event-danger {
   border-color: #f44336;
   background-color: #f44336;
-***REMOVED***
+}
 .fc-event.event-warning {
   border-color: #ff9800;
   background-color: #ff9800;
-***REMOVED***
+}
 .fc-event.event-success {
   border-color: #4caf50;
   background-color: #4caf50;
-***REMOVED***
+}
 .fc-event.event-info {
   border-color: #2196f3;
   background-color: #2196f3;
-***REMOVED***
+}
 .fc-event.event-default {
   border-color: #999c96;
   background-color: #999c96;
-***REMOVED***
+}
 

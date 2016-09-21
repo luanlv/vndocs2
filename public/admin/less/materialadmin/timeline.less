@@ -23,8 +23,8 @@
 		.timeline-hairline& {
 			width: 2px;
 			margin-left: -1px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	li {
 		position: relative;
@@ -35,8 +35,8 @@
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 // Timeline entry
 
@@ -55,8 +55,8 @@
 
 		img, .fa, .md, .glyphicon {
 			margin-right: 10px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Inverted entry
 
@@ -67,9 +67,9 @@
 			margin-left: 30px;
 			margin-bottom: 15px;
 			margin-right: 0;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 // Timeline arrows
 
@@ -89,8 +89,8 @@
 			right: auto;
 			left: -(@timeline-arrow-size - 1);
 			.rotate(180deg);
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Arrow colors
 	.timeline-variant(style-default-dark,	@brand-default-dark);
@@ -112,7 +112,7 @@
 	.timeline-variant(style-warning,		@brand-warning);
 	.timeline-variant(style-danger,			@brand-danger);
 	.timeline-variant(style-info,			@brand-info);
-***REMOVED***
+}
 
 
 // Timeline circle icons
@@ -137,7 +137,7 @@
 	.glyphicon, .fa, .md {
 		top: 0;
 		margin: 0;
-	***REMOVED***
+	}
 
 	&.circ-lg {
 		top: 10px;
@@ -148,8 +148,8 @@
 		.glyphicon, .fa, .md {
 			font-size: 14px;
 			line-height: 24px;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 	&.circ-xl {
 		top: 6px;
 		width: 38px;
@@ -159,9 +159,9 @@
 		.glyphicon, .fa, .md {
 			font-size: 18px;
 			line-height: 32px;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // No shadow
@@ -170,13 +170,13 @@
 	.card,
 	.timeline-circ {
 		.box-shadow(none);
-	***REMOVED***
-***REMOVED***
+	}
+}
 .timeline.no-card-shadow {
 	.card {
 		.box-shadow(none);
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Up to Extra Small Devices
@@ -184,21 +184,21 @@
 
 @media (max-width: @screen-xs-max) {
 	.collapse-timeline(collapse-xs);
-***REMOVED***
+}
 
 // Up to Small Devices
 // -------------------------
 
 @media (max-width: @screen-sm-max) {
 	.collapse-timeline(collapse-sm);
-***REMOVED***
+}
 
 // Up to Medium Devices
 // -------------------------
 
 @media (max-width: @screen-md-max) {
 	.collapse-timeline(collapse-md);
-***REMOVED***
+}
 
 // Up to Large Devices
 // -------------------------
@@ -209,17 +209,17 @@
 // -------------------------
 
 .collapse-timeline (@name) {
-	.timeline.@{name***REMOVED*** {
+	.timeline.@{name} {
 		left: 0;
 
 		&:before {
 			left: (@timeline-circle-size / 2);
-		***REMOVED***
+		}
 
 		li {
 			left: 0;
 			width: 100%;
-		***REMOVED***
+		}
 
 
 		.timeline-entry {
@@ -233,12 +233,12 @@
 					right: auto;
 					left: -(@timeline-arrow-size - 1);
 					.rotate(180deg);
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 
 		.timeline-circ {
 			left: (@timeline-circle-size / 2);
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}

@@ -7,7 +7,7 @@ $.extend($.fn, {
 			var target = $(event.target);
 			if ( target.is(delegate) ) {
 				return handler.apply(target, arguments);
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***
-***REMOVED***);
+			}
+		});
+	}
+});

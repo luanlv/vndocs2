@@ -12,4 +12,4 @@ import play.filters.headers.SecurityHeadersFilter
  */
 class Filters @Inject() (csrfFilter: CSRFFilter, securityHeadersFilter: SecurityHeadersFilter) extends HttpFilters {
   override def filters: Seq[EssentialFilter] = Seq(csrfFilter, securityHeadersFilter)
-***REMOVED***
+}

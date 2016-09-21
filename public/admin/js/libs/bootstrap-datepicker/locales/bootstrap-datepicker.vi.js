@@ -12,5 +12,5 @@
 		today: "Hôm nay",
 		clear: "Xóa",
 		format: "dd/mm/yyyy"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

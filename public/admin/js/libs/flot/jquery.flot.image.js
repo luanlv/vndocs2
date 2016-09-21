@@ -30,14 +30,14 @@ The plugin supports these options:
 			show: boolean
 			anchor: "corner" or "center"
 			alpha: [ 0, 1 ]
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 They can be specified for a specific series:
 
 	$.plot( $("#placeholder"), [{
 		data: [ ... ],
-		images: { ... ***REMOVED***
+		images: { ... }
 	])
 
 Note that because the data format is different from usual data points, you
@@ -59,11 +59,11 @@ Google Maps).
                 show: false,
                 alpha: 1,
                 anchor: "corner" // or "center"
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***;
+            }
+        }
+    };
 
-    $.plot.image = {***REMOVED***;
+    $.plot.image = {};
 
     $.plot.image.loadDataImages = function (series, options, callback) {
         var urls = [], points = [];
@@ -81,25 +81,25 @@ Google Maps).
                 if (typeof p[0] == "string") {
                     urls.push(p[0]);
                     points.push(p);
-              ***REMOVED***
-          ***REMOVED***);
-      ***REMOVED***);
+                }
+            });
+        });
 
         $.plot.image.load(urls, function (loadedImages) {
             $.each(points, function (i, p) {
                 var url = p[0];
                 if (loadedImages[url])
                     p[0] = loadedImages[url];
-          ***REMOVED***);
+            });
 
             callback();
-      ***REMOVED***);
-  ***REMOVED***
+        });
+    }
     
     $.plot.image.load = function (urls, callback) {
-        var missing = urls.length, loaded = {***REMOVED***;
+        var missing = urls.length, loaded = {};
         if (missing == 0)
-            callback({***REMOVED***);
+            callback({});
 
         $.each(urls, function (i, url) {
             var handler = function () {
@@ -109,11 +109,11 @@ Google Maps).
                 
                 if (missing == 0)
                     callback(loaded);
-          ***REMOVED***;
+            };
 
             $('<img />').load(handler).error(handler).attr('src', url);
-      ***REMOVED***);
-  ***REMOVED***;
+        });
+    };
     
     function drawSeries(plot, ctx, series) {
         var plotOffset = plot.getPlotOffset();
@@ -141,12 +141,12 @@ Google Maps).
                 tmp = x2;
                 x2 = x1;
                 x1 = tmp;
-          ***REMOVED***
+            }
             if (y1 > y2) {
                 tmp = y2;
                 y2 = y1;
                 y1 = tmp;
-          ***REMOVED***
+            }
             
             // if the anchor is at the center of the pixel, expand the 
             // image by 1/2 pixel in each direction
@@ -157,7 +157,7 @@ Google Maps).
                 tmp = 0.5 * (y2-y1) / (img.height - 1);
                 y1 -= tmp;
                 y2 += tmp;
-          ***REMOVED***
+            }
             
             // clip
             if (x1 == x2 || y1 == y2 ||
@@ -169,22 +169,22 @@ Google Maps).
             if (x1 < xaxis.min) {
                 sx1 += (sx2 - sx1) * (xaxis.min - x1) / (x2 - x1);
                 x1 = xaxis.min;
-          ***REMOVED***
+            }
 
             if (x2 > xaxis.max) {
                 sx2 += (sx2 - sx1) * (xaxis.max - x2) / (x2 - x1);
                 x2 = xaxis.max;
-          ***REMOVED***
+            }
 
             if (y1 < yaxis.min) {
                 sy2 += (sy1 - sy2) * (yaxis.min - y1) / (y2 - y1);
                 y1 = yaxis.min;
-          ***REMOVED***
+            }
 
             if (y2 > yaxis.max) {
                 sy1 += (sy1 - sy2) * (yaxis.max - y2) / (y2 - y1);
                 y2 = yaxis.max;
-          ***REMOVED***
+            }
             
             x1 = xaxis.p2c(x1);
             x2 = xaxis.p2c(x2);
@@ -196,12 +196,12 @@ Google Maps).
                 tmp = x2;
                 x2 = x1;
                 x1 = tmp;
-          ***REMOVED***
+            }
             if (y1 > y2) {
                 tmp = y2;
                 y2 = y1;
                 y1 = tmp;
-          ***REMOVED***
+            }
 
             tmp = ctx.globalAlpha;
             ctx.globalAlpha *= series.images.alpha;
@@ -210,8 +210,8 @@ Google Maps).
                           x1 + plotOffset.left, y1 + plotOffset.top,
                           x2 - x1, y2 - y1);
             ctx.globalAlpha = tmp;
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
 
     function processRawData(plot, series, data, datapoints) {
         if (!series.images.show)
@@ -219,23 +219,23 @@ Google Maps).
 
         // format is Image, x1, y1, x2, y2 (opposite corners)
         datapoints.format = [
-            { required: true ***REMOVED***,
-            { x: true, number: true, required: true ***REMOVED***,
-            { y: true, number: true, required: true ***REMOVED***,
-            { x: true, number: true, required: true ***REMOVED***,
-            { y: true, number: true, required: true ***REMOVED***
-      ***REMOVED***;
-  ***REMOVED***
+            { required: true },
+            { x: true, number: true, required: true },
+            { y: true, number: true, required: true },
+            { x: true, number: true, required: true },
+            { y: true, number: true, required: true }
+        ];
+    }
     
     function init(plot) {
         plot.hooks.processRawData.push(processRawData);
         plot.hooks.drawSeries.push(drawSeries);
-  ***REMOVED***
+    }
     
     $.plot.plugins.push({
         init: init,
         options: options,
         name: 'image',
         version: '1.1'
-  ***REMOVED***);
-***REMOVED***)(jQuery);
+    });
+})(jQuery);

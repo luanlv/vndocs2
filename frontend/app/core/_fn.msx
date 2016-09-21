@@ -1,4 +1,4 @@
-var fn ={***REMOVED***;
+var fn ={};
 
 
 fn.cache = undefined;
@@ -11,96 +11,118 @@ fn.checkMenu = function(link){
     var partLink = link.replace('https://', '').replace('http://', '').split('/');
     if(!(partLink[1] === "c" || partLink[1] === "p")){
         return false;
-  ***REMOVED***
+    }
     for(var i = 2; i < partLink.length; i++){
         if(partLink[i] != partRoute[i]){
             result = false;
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
     return result;
-***REMOVED***;
+};
 
 fn.createMenu = function(menuJson, level){
     return m('ul.level' + level, [
         menuJson.map(function(child){
             return m('li',  [
-                m('a', {title: child.title, href: child.http, config: m.route***REMOVED*** ,m('span', child.title)),
+                m('a', {title: child.title, href: child.http, config: m.route} ,m('span', child.title)),
                 (level > 1 )?<sup className="norm">6431</sup>:"",
                 (child.children !== undefined)?fn.createMenu(child.children, level + 1):''
-          ***REMOVED***)
-      ***REMOVED***)
-  ***REMOVED***)
-***REMOVED***;
+            ])
+        })
+    ])
+};
 
 fn.runCreateMenu = function(menuJson, level){
 
     if(fn.cache !== undefined){
         return fn.cache;
-  ***REMOVED*** else {
+    } else {
         if(menuJson !== undefined) {
             fn.cache = fn.createMenu(menuJson, level);
             return fn.cache;
-      ***REMOVED***
-  ***REMOVED***
-***REMOVED***;
+        }
+    }
+};
 
 
 fn.toggleClass =  function(el, className){
     if(el.classList){
         if(el.classList.contains(className)) {
             el.classList.remove(className);
-      ***REMOVED*** else {
+        } else {
             el.classList.add(className);
-      ***REMOVED***
+        }
 
-  ***REMOVED*** else {
+    } else {
         el.className += ' ' + className;
-  ***REMOVED***
-***REMOVED***;
+    }
+};
 
 fn.requestWithFeedback = function(args, bind, fn) {
     var data = m.prop();
     var completed = m.prop(false);
     var complete = function() {
         completed(true)
-  ***REMOVED***;
+    };
     args.background = true;
     args.config = function(xhr) {
         xhr.timeout = 4000;
         xhr.ontimeout = function() {
             complete();
             m.redraw();
-      ***REMOVED***
-  ***REMOVED***;
+        }
+    };
     return {
         request: m.request(args).then(data).then(function(data){
             if(bind !== undefined) bind(data);
             if(fn !== undefined) fn();
             complete();
             m.redraw();
-      ***REMOVED***),
+        }),
         data: data,
         ready: completed
-  ***REMOVED***
-***REMOVED***;
+    }
+};
 
 fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     if(currentCategory === "NONE") {
-        result.push(" » " ,<a href="/" config={m.route***REMOVED***>Trang chủ</a> );
+        result.push(" » " ,<a href="/" config={m.route}>Trang chủ</a> );
         return result.reverse();
-  ***REMOVED***
-    var jsonCategory = category.getItemByParam({slug: currentCategory***REMOVED***);
-    result.push(" » " ,<a href={"/category/" + currentCategory***REMOVED*** config={m.route***REMOVED***> {jsonCategory.name***REMOVED*** </a>);
+    }
+    var jsonCategory = category.getItemByParam({slug: currentCategory});
+    result.push(" » " ,<a href={"/category/" + currentCategory} config={m.route}> {jsonCategory.name} </a>);
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
-***REMOVED***;
+};
 
-fn.changeUrl = function(title, url) {
-    if (typeof (history.pushState) != "undefined") {
-        var obj = { Title: title, Url: url ***REMOVED***;
-        history.pushState(obj, obj.Title, obj.Url);
-  ***REMOVED*** else {
-        alert("Browser does not support HTML5.");
-  ***REMOVED***
-***REMOVED***
+fn.changePageUrl = function(title, pageOld, pageNew, id) {
+    if(m.route().indexOf("?p=") >=0){
+        var Old = "?p=" + pageOld;
+        var New = "?p=" + pageNew;
+        var newUrl = m.route().replace(Old, New);
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Title: title, Url: newUrl };
+            history.pushState(obj, obj.Title, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    } else {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Title: title, Url:  m.route()+"?p=" + pageNew };
+            history.pushState(obj, obj.Title, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
+    
+    if(id != undefined){
+        console.log('scroll to ID:' + id);
+        scroll(id);
+    }
+};
+
+function scroll(element){
+    var ele = document.getElementById(element);
+    window.scrollTo(ele.offsetLeft,ele.offsetTop);
+}
 
 module.exports = fn;

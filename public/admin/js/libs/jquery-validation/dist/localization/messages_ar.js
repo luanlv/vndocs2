@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "رجاء إدخال رقم بطاقة ائتمان صحيح",
 	equalTo: "رجاء إدخال نفس القيمة",
 	extension: "رجاء إدخال ملف بامتداد موافق عليه",
-	maxlength: $.validator.format("الحد الأقصى لعدد الحروف هو {0***REMOVED***"),
-	minlength: $.validator.format("الحد الأدنى لعدد الحروف هو {0***REMOVED***"),
-	rangelength: $.validator.format("عدد الحروف يجب أن يكون بين {0***REMOVED*** و {1***REMOVED***"),
-	range: $.validator.format("رجاء إدخال عدد قيمته بين {0***REMOVED*** و {1***REMOVED***"),
-	max: $.validator.format("رجاء إدخال عدد أقل من أو يساوي (0***REMOVED***"),
-	min: $.validator.format("رجاء إدخال عدد أكبر من أو يساوي (0***REMOVED***")
-***REMOVED***);
+	maxlength: $.validator.format("الحد الأقصى لعدد الحروف هو {0}"),
+	minlength: $.validator.format("الحد الأدنى لعدد الحروف هو {0}"),
+	rangelength: $.validator.format("عدد الحروف يجب أن يكون بين {0} و {1}"),
+	range: $.validator.format("رجاء إدخال عدد قيمته بين {0} و {1}"),
+	max: $.validator.format("رجاء إدخال عدد أقل من أو يساوي (0}"),
+	min: $.validator.format("رجاء إدخال عدد أكبر من أو يساوي (0}")
+});
 
-***REMOVED***));
+}));

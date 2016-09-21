@@ -2,32 +2,32 @@
 
 /// Provides a quick method for setting an element’s position. Use a `null` value to “skip” a side.
 ///
-/// @param {Position***REMOVED*** $position [relative]
+/// @param {Position} $position [relative]
 ///   A CSS position value
 ///
-/// @param {Arglist***REMOVED*** $coordinates [null null null null]
+/// @param {Arglist} $coordinates [null null null null]
 ///   List of values that correspond to the 4-value syntax for the edges of a box
 ///
 /// @example scss - Usage
 ///   .element {
 ///     @include position(absolute, 0 null null 10em);
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element {
 ///     left: 10em;
 ///     position: absolute;
 ///     top: 0;
-/// ***REMOVED***
+///   }
 ///
-/// @require {function***REMOVED*** is-length
-/// @require {function***REMOVED*** unpack
+/// @require {function} is-length
+/// @require {function} unpack
 
 @mixin position($position: relative, $coordinates: null null null null) {
   @if type-of($position) == list {
     $coordinates: $position;
     $position: relative;
-***REMOVED***
+  }
 
   $coordinates: unpack($coordinates);
 
@@ -42,7 +42,7 @@
 
   @each $offset, $value in $offsets {
     @if is-length($value) {
-      #{$offset***REMOVED***: $value;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      #{$offset}: $value;
+    }
+  }
+}

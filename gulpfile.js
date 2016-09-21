@@ -23,41 +23,41 @@ gulp.task('sass', function () {
       .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
-    ***REMOVED***))
+      }))
       // .pipe(cleanCSS())
       // .pipe(rename('style.min.css'))
       .pipe(rename('style.css'))
       // .pipe(gulp.dest('public/stylesheets'));
       .pipe(gulp.dest('file/'));
-***REMOVED***);
+});
 
 gulp.task('app', function() {
   var cmd = new run.Command('optimize-js ./file/app-tmp.js > ./file/app.js');
   gulp.src('frontend/app/main.msx')
       .pipe(browserify({
         transform: ['mithrilify']
-    ***REMOVED***))
+      }))
       .pipe(rename('app-tmp.js'))
-      // .pipe(minify({***REMOVED***))
+      // .pipe(minify({}))
       .pipe(gulp.dest('file/'))
       .on('end', function(){
         cmd.exec('');
-    ***REMOVED***);
-***REMOVED***);
+      });
+});
 
 gulp.task('admin', function() {
   var cmd = new run.Command('optimize-js ./file/admin-tmp.js > ./file/admin.js');
   gulp.src('frontend/admin/main.msx')
       .pipe(browserify({
         transform: ['mithrilify']
-    ***REMOVED***))
+      }))
       .pipe(rename('admin-tmp.js'))
       // .pipe(gulp.dest('public/js/'))
       .pipe(gulp.dest('file/'))
       .on('end', function(){
         cmd.exec('');
-    ***REMOVED***);
-***REMOVED***);
+      });
+});
 
 
 //
@@ -72,24 +72,24 @@ gulp.task('serve', function () {
     // not the path on the url
     files: ['public/stylesheets/*.css',
       'public/javascripts/*.js',
-      'app/views/{,*/***REMOVED****.html',
-      'app/views/{,*/***REMOVED***{,*/***REMOVED****.html',
-      'app/views/{,*/***REMOVED***/{,*/***REMOVED***{,*/***REMOVED****.html',
-      'app/views/{,*/***REMOVED****.stream',
-      'app/controllers/{,*/***REMOVED****.scala',
+      'app/views/{,*/}*.html',
+      'app/views/{,*/}{,*/}*.html',
+      'app/views/{,*/}/{,*/}{,*/}*.html',
+      'app/views/{,*/}*.stream',
+      'app/controllers/{,*/}*.scala',
       'conf/routes',
-  ***REMOVED***,
+    ],
     open: false
-***REMOVED***);
-***REMOVED***);
+  });
+});
 
 gulp.task('watcher', ['app'], function () {
-  gulp.watch('frontend/app/{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED****.msx', ['app']);
-  gulp.watch('frontend/app/{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED****.js', ['app']);
-  gulp.watch('frontend/scss/{,*/***REMOVED****.scss', ['sass']);
-  gulp.watch('frontend/admin/{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED****.msx', ['admin']);
-  gulp.watch('frontend/admin/{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED***{,*/***REMOVED****.js', ['admin']);
-***REMOVED***);
+  gulp.watch('frontend/app/{,*/}{,*/}{,*/}{,*/}*.msx', ['app']);
+  gulp.watch('frontend/app/{,*/}{,*/}{,*/}{,*/}*.js', ['app']);
+  gulp.watch('frontend/scss/{,*/}*.scss', ['sass']);
+  gulp.watch('frontend/admin/{,*/}{,*/}{,*/}{,*/}*.msx', ['admin']);
+  gulp.watch('frontend/admin/{,*/}{,*/}{,*/}{,*/}*.js', ['admin']);
+});
 
 
 

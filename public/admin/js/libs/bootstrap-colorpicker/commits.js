@@ -13,14 +13,14 @@
         "repo_name": "mjaalnir/bootstrap-colorpicker",
         "cache_enabled": true, //cache api responses?
         "cache_ttl": (2 * 60 * 60), // 2h (in seconds)
-        "onload": {***REMOVED***,
+        "onload": {},
         "callback": function() {
-      ***REMOVED***,
+        },
         "load": function(count, onload) {
             var $self = this;
             count = count || 10;
             $self.onload = onload || function() {
-          ***REMOVED***;
+            };
 
             if ($self.cache_enabled && root["localStorage"]) {
                 var cache_key = "repo_commits";
@@ -29,7 +29,7 @@
                     localStorage.removeItem(cache_key);
                     localStorage.removeItem(cache_key + "_expiration");
                     expiration = false;
-              ***REMOVED***
+                }
                 var commits = localStorage.getItem(cache_key);
                 if (commits) {
                     if (root["console"])
@@ -37,29 +37,29 @@
                     $self.store(JSON.parse(commits), false);
                     $self.onload($self.data);
                     return;
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
             $self.query(count);
-      ***REMOVED***,
+        },
         "store": function(commitsJson, cache) {
             var $self = this;
             $self.data = commitsJson;
             if (cache && root["localStorage"]) {
                 localStorage.setItem("repo_commits", JSON.stringify(commitsJson));
                 localStorage.setItem("repo_commits_expiration", +new Date() + 1000 * $self.cache_ttl);
-          ***REMOVED***
-      ***REMOVED***,
+            }
+        },
         "query": function(count) {
             var $self = this;
             var query_url = 'https://api.github.com/repos/' + $self.repo_name + '/commits?per_page=' + count;
             console.info("Fetching commit data from " + query_url);
-            $.ajax({'dataType': "jsonp", 'url': query_url, 'jsonpCallback': 'ghcommits._jsonpcb'***REMOVED***);
-      ***REMOVED***,
+            $.ajax({'dataType': "jsonp", 'url': query_url, 'jsonpCallback': 'ghcommits._jsonpcb'});
+        },
         "_jsonpcb": function(jsonpresp) {
             ghcommits.store(jsonpresp.data, ghcommits.cache_enabled);
             ghcommits.onload(ghcommits.data);
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
 
     $(function() {
         try {
@@ -70,12 +70,12 @@
                         $("#changelog ul").append($('<li>').html("<b>" + item.commit.author
                                 .date.replace("T", " ").replace("Z", "") +
                                 ":</b> " + item.commit.message));
-                  ***REMOVED***);
-              ***REMOVED***
+                    });
+                }
 
-          ***REMOVED***);
-      ***REMOVED*** catch (err) {
+            });
+        } catch (err) {
             // noop
-      ***REMOVED***
-  ***REMOVED***);
-***REMOVED***(window, window.jQuery);
+        }
+    });
+}(window, window.jQuery);

@@ -12,23 +12,23 @@
     $.fn.select2.locales['pl'] = {
         formatNoMatches: function() {
             return "Brak wyników";
-      ***REMOVED***,
+        },
         formatInputTooShort: function(input, min) {
             return "Wpisz co najmniej" + character(min - input.length, "znak", "i");
-      ***REMOVED***,
+        },
         formatInputTooLong: function(input, max) {
             return "Wpisana fraza jest za długa o" + character(input.length - max, "znak", "i");
-      ***REMOVED***,
+        },
         formatSelectionTooBig: function(limit) {
             return "Możesz zaznaczyć najwyżej" + character(limit, "element", "y");
-      ***REMOVED***,
+        },
         formatLoadMore: function(pageNumber) {
             return "Ładowanie wyników…";
-      ***REMOVED***,
+        },
         formatSearching: function() {
             return "Szukanie…";
-      ***REMOVED***
-  ***REMOVED***;
+        }
+    };
 
     $.extend($.fn.select2.defaults, $.fn.select2.locales['pl']);
 
@@ -42,13 +42,13 @@
             //Dwa znaki, trzy znaki, cztery znaki.
             //Dwa elementy, trzy elementy, cztery elementy
             suffix = pluralSuffix;
-      ***REMOVED*** else if (n == 0 || n >= 5) {
+        } else if (n == 0 || n >= 5) {
             //Ilość 0 suffiks ów
             //Liczaba mnoga w ilości 5 i więcej - suffiks ów (nie poprawny dla wszystkich wyrazów, np. 100 wiadomości)
             //Zero znaków, Pięć znaków, sześć znaków, siedem znaków, osiem znaków.
             //Zero elementów Pięć elementów, sześć elementów, siedem elementów, osiem elementów.
             suffix = 'ów';
-      ***REMOVED***
+        }
         return " " + n + " " + word + suffix;
-  ***REMOVED***
-***REMOVED***)(jQuery);
+    }
+})(jQuery);

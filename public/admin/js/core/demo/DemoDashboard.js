@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoDashboard.prototype;
 
 	// =========================================================================
@@ -31,7 +31,7 @@
 		this._initRickshaw();
 		this._initKnob();
 		this._initFlotRegistration();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// Sparklines
@@ -48,7 +48,7 @@
 			options.height = $('.sparkline-revenue').height() + 'px';
 			options.fillColor = false;
 			$('.sparkline-revenue').sparkline(points, options);
-		***REMOVED***);
+		});
 
 		materialadmin.App.callOnResize(function () {
 			var parent = $('.sparkline-visits').closest('.card-body');
@@ -62,8 +62,8 @@
 			options.height = $('.sparkline-visits').height() + 'px';
 			options.fillColor = false;
 			$('.sparkline-visits').sparkline(points, options);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 	
 	// =========================================================================
 	// FLOT
@@ -76,7 +76,7 @@
 		// Elements check
 		if (!$.isFunction($.fn.plot) || chart.length === 0) {
 			return;
-		***REMOVED***
+		}
 		
 		// Chart data
 		var data = [
@@ -92,7 +92,7 @@
 					[moment().valueOf(), 20]
 				],
 				last: true
-			***REMOVED***,
+			},
 			{
 				label: 'Visitors',
 				data: [
@@ -104,7 +104,7 @@
 					[moment().valueOf(), 20]
 				],
 				last: true
-			***REMOVED***
+			}
 		];
 		
 		// Chart options
@@ -117,30 +117,30 @@
 					show: true,
 					lineWidth: false,
 					fill: true
-				***REMOVED***,
+				},
 				curvedLines: {
 					apply: true,
 					active: true,
 					monotonicFit: false
-			 ***REMOVED***
-			***REMOVED***,
+			   }
+			},
 			legend: {
 				container: $('#flot-visitors-legend')
-			***REMOVED***,
+			},
 			xaxis: {
 				mode: "time",
 				timeformat: "%d %b",
-				font: {color: labelColor***REMOVED***
-			***REMOVED***,
+				font: {color: labelColor}
+			},
 			yaxis: {
-				font: {color: labelColor***REMOVED***
-			***REMOVED***,
+				font: {color: labelColor}
+			},
 			grid: {
 				borderWidth: 0,
 				color: labelColor,
 				hoverable: true
-			***REMOVED***
-		***REMOVED***;
+			}
+		};
 		chart.width('100%');
 		
 		// Create chart
@@ -160,19 +160,19 @@
 
 					if (tip !== undefined) {
 						$(tip).popover('destroy');
-					***REMOVED***
-					tip = $('<div></div>').appendTo('body').css({left: item.pageX, top: item.pageY - 5, position: 'absolute'***REMOVED***);
-					tip.popover({html: true, title: tipLabel, content: tipContent, placement: 'top'***REMOVED***).popover('show');
-				***REMOVED***
-			***REMOVED***
+					}
+					tip = $('<div></div>').appendTo('body').css({left: item.pageX, top: item.pageY - 5, position: 'absolute'});
+					tip.popover({html: true, title: tipLabel, content: tipContent, placement: 'top'}).popover('show');
+				}
+			}
 			else {
 				if (tip !== undefined) {
 					$(tip).popover('destroy');
-				***REMOVED***
+				}
 				previousPoint = null;
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***;
+			}
+		});
+	};
 
 	// =========================================================================
 	// Rickshaw
@@ -182,7 +182,7 @@
 		// Don't init a rickshaw graph twice
 		if (this.rickshawGraph !== null) {
 			return;
-		***REMOVED***
+		}
 
 		var o = this;
 
@@ -190,7 +190,7 @@
 		this.rickshawRandomData = new Rickshaw.Fixtures.RandomData(50);
 		for (var i = 0; i < 75; i++) {
 			this.rickshawRandomData.addData(this.rickshawSeries);
-		***REMOVED***
+		}
 		
 		// Update knob charts
 		this._updateKnob();
@@ -207,18 +207,18 @@
 					data: this.rickshawSeries[0],
 					color: $('#rickshawGraph').data('color1'),
 					name: 'temperature'
-				***REMOVED***, {
+				}, {
 					data: this.rickshawSeries[1],
 					color: $('#rickshawGraph').data('color2'),
 					name: 'heat index'
-				***REMOVED***
+				}
 			]
-		***REMOVED***);
+		});
 
 		// Add hover info
 		var hoverDetail = new Rickshaw.Graph.HoverDetail({
 			graph: this.rickshawGraph
-		***REMOVED***);
+		});
 
 		// Render graph
 		this.rickshawGraph.render();
@@ -227,23 +227,23 @@
 		clearInterval(this.rickshawTimer);
 		this.rickshawTimer = setInterval(function () {
 			o._refreshRickshaw();
-		***REMOVED***, 2000);
+		}, 2000);
 
 		materialadmin.App.callOnResize(function () {
 			o.rickshawGraph.configure({
 				height: $('#rickshawGraph').height(),
 				width: $('#rickshawGraph').closest('.card-body').outerWidth()
-			***REMOVED***);
+			});
 			o.rickshawGraph.render();
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	p._refreshRickshaw = function () {
 		this.rickshawRandomData.removeData(this.rickshawSeries);
 		this.rickshawRandomData.addData(this.rickshawSeries);
 		this.rickshawGraph.update();
 		this._updateKnob();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// KNOB
@@ -252,26 +252,26 @@
 	p._initKnob = function () {
 		if (!$.isFunction($.fn.knob)) {
 			return;
-		***REMOVED***
+		}
 
 		$('.dial').each(function () {
 			var options = materialadmin.App.getKnobStyle($(this));
 			$(this).knob(options);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	p._updateKnob = function () {
 		var val1 = this.rickshawSeries[0][this.rickshawSeries[0].length - 2];
 		var val2 = this.rickshawSeries[0][this.rickshawSeries[0].length - 1];
 
-		$({animatedVal: val1.y***REMOVED***).animate({animatedVal: val2.y***REMOVED***, {
+		$({animatedVal: val1.y}).animate({animatedVal: val2.y}, {
 			duration: 1200,
 			easing: "swing",
 			step: function () {
 				$('#serverStatusKnob input').val(Math.ceil(this.animatedVal)).trigger("change");
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***;
+			}
+		});
+	};
 	
 	// =========================================================================
 	// FLOT
@@ -284,7 +284,7 @@
 		// Elements check
 		if (!$.isFunction($.fn.plot) || chart.length === 0) {
 			return;
-		***REMOVED***
+		}
 		
 		// Chart data
 		var data = [
@@ -305,7 +305,7 @@
 					[moment().valueOf(), 7805]
 				],
 				last: true
-			***REMOVED***
+			}
 		];
 
 		// Chart options
@@ -317,31 +317,31 @@
 				lines: {
 					show: true,
 					lineWidth: 2
-				***REMOVED***,
+				},
 				points: {
 					show: true,
 					radius: 3,
 					lineWidth: 2
-				***REMOVED***
-			***REMOVED***,
+				}
+			},
 			legend: {
 				show: false
-			***REMOVED***,
+			},
 			xaxis: {
 				mode: "time",
 				timeformat: "%b %y",
 				color: 'rgba(0, 0, 0, 0)',
-				font: {color: labelColor***REMOVED***
-			***REMOVED***,
+				font: {color: labelColor}
+			},
 			yaxis: {
-				font: {color: labelColor***REMOVED***
-			***REMOVED***,
+				font: {color: labelColor}
+			},
 			grid: {
 				borderWidth: 0,
 				color: labelColor,
 				hoverable: true
-			***REMOVED***
-		***REMOVED***;
+			}
+		};
 		chart.width('100%');
 		
 		// Create chart
@@ -361,20 +361,20 @@
 
 					if (tip !== undefined) {
 						$(tip).popover('destroy');
-					***REMOVED***
-					tip = $('<div></div>').appendTo('body').css({left: item.pageX, top: item.pageY - 5, position: 'absolute'***REMOVED***);
-					tip.popover({html: true, title: tipLabel, content: tipContent, placement: 'top'***REMOVED***).popover('show');
-				***REMOVED***
-			***REMOVED***
+					}
+					tip = $('<div></div>').appendTo('body').css({left: item.pageX, top: item.pageY - 5, position: 'absolute'});
+					tip.popover({html: true, title: tipLabel, content: tipContent, placement: 'top'}).popover('show');
+				}
+			}
 			else {
 				if (tip !== undefined) {
 					$(tip).popover('destroy');
-				***REMOVED***
+				}
 				previousPoint = null;
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***;
+			}
+		});
+	};
 
 	// =========================================================================
 	namespace.DemoDashboard = new DemoDashboard;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

@@ -4,9 +4,9 @@
  */
 $.extend($.validator.methods, {
 	date: function(value, element) {
-		return this.optional(element) || /^\d{1,2***REMOVED***\.\d{1,2***REMOVED***\.\d{4***REMOVED***$/.test(value);
-	***REMOVED***,
+		return this.optional(element) || /^\d{1,2}\.\d{1,2}\.\d{4}$/.test(value);
+	},
 	number: function(value, element) {
 		return this.optional(element) || /^-?(?:\d+)(?:,\d+)?$/.test(value);
-	***REMOVED***
-***REMOVED***);
+	}
+});

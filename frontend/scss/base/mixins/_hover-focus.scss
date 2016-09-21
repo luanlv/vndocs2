@@ -8,6 +8,6 @@
 
 @mixin hoverFocus($property, $value) {
   &:hover, &:focus {
-    #{$property***REMOVED***: $value;
-***REMOVED***
-***REMOVED***
+    #{$property}: $value;
+  }
+}

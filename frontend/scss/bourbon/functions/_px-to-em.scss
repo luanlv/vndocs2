@@ -5,9 +5,9 @@
 @function em($pxval, $base: $em-base) {
   @if not unitless($pxval) {
     $pxval: strip-units($pxval);
-***REMOVED***
+  }
   @if not unitless($base) {
     $base: strip-units($base);
-***REMOVED***
+  }
   @return ($pxval / $base) * 1em;
-***REMOVED***
+}

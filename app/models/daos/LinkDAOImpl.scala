@@ -1,14 +1,14 @@
 package models.daos
 
-import javax.inject.{ Inject, Singleton ***REMOVED***
+import javax.inject.{ Inject, Singleton }
 
 import scala.util.Try
 import java.util.UUID
 
 import com.mohiva.play.silhouette.api.LoginInfo
-import models.{ Image, Link, Setup, User ***REMOVED***
+import models.{ Image, Link, Setup, User }
 import models.daos.UserDAOImpl._
-import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
+import play.api.libs.json.{ JsObject, JsValue, Json }
 import reactivemongo.bson.BSONObjectID
 
 import scala.collection.mutable
@@ -27,13 +27,13 @@ class LinkDAOImpl @Inject() (repository: LinkRepository) extends LinkDAO {
   def save(data: Link) = {
     repository.insert(data)
     //    Future.successful(data)
-***REMOVED***
+  }
 
-***REMOVED***
+}
 
 /**
  * The companion object.
  */
 object LinkDAOImpl {
 
-***REMOVED***
+}

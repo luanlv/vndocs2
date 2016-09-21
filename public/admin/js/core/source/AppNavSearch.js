@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function () {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = AppNavSearch.prototype;
 
 	// =========================================================================
@@ -24,7 +24,7 @@
 
 	p.initialize = function () {
 		this._enableEvents();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// EVENTS
@@ -37,13 +37,13 @@
 		// Listen for the nav search button click
 		$('.navbar-search .btn').on('click', function (e) {
 			o._handleButtonClick(e);
-		***REMOVED***);
+		});
 
 		// When the search field loses focus
 		$('.navbar-search input').on('blur', function (e) {
 			o._handleFieldBlur(e);
-		***REMOVED***);
-	***REMOVED***;
+		});
+	};
 
 	// =========================================================================
 	// NAV SEARCH
@@ -60,7 +60,7 @@
 			// When there is no keyword, just open the bar
 			form.addClass('expanded');
 			input.focus();
-		***REMOVED***
+		}
 		else {
 			// When there is a keyword, submit the keyword
 			form.addClass('expanded');
@@ -68,8 +68,8 @@
 
 			// Clear the timer that removes the keyword
 			clearTimeout(this._clearSearchTimer);
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// =========================================================================
 	// FIELD BLUR
@@ -87,12 +87,12 @@
 		clearTimeout(this._clearSearchTimer);
 		this._clearSearchTimer = setTimeout(function () {
 			input.val('');
-		***REMOVED***, 300);
-	***REMOVED***;
+		}, 300);
+	};
 
 	// =========================================================================
 	// DEFINE NAMESPACE
 	// =========================================================================
 
 	window.materialadmin.AppNavSearch = new AppNavSearch;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

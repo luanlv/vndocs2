@@ -7,11 +7,11 @@
 (function(factory) {
 	if (typeof define === 'function' && define.amd) {
 		define([ 'jquery' ], factory);
-	***REMOVED***
+	}
 	else {
 		factory(jQuery);
-	***REMOVED***
-***REMOVED***)(function($) {
+	}
+})(function($) {
 
 
 var API_BASE = 'https://www.googleapis.com/calendar/v3/calendars';
@@ -31,19 +31,19 @@ fc.sourceNormalizers.push(function(sourceOptions) {
 		// will match calendars like "asdf1234@calendar.google.com" in addition to person email calendars.
 		if ((match = /^[^\/]+@([^\/\.]+\.)*(google|googlemail|gmail)\.com$/.test(url))) {
 			googleCalendarId = url;
-		***REMOVED***
+		}
 		// try to scrape it out of a V1 or V3 API feed URL
 		else if (
 			(match = /^https:\/\/www.googleapis.com\/calendar\/v3\/calendars\/([^\/]*)/.exec(url)) ||
 			(match = /^https?:\/\/www.google.com\/calendar\/feeds\/([^\/]*)/.exec(url))
 		) {
 			googleCalendarId = decodeURIComponent(match[1]);
-		***REMOVED***
+		}
 
 		if (googleCalendarId) {
 			sourceOptions.googleCalendarId = googleCalendarId;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	if (googleCalendarId) { // is this a Google Calendar?
@@ -51,21 +51,21 @@ fc.sourceNormalizers.push(function(sourceOptions) {
 		// make each Google Calendar source uneditable by default
 		if (sourceOptions.editable == null) {
 			sourceOptions.editable = false;
-		***REMOVED***
+		}
 
 		// We want removeEventSource to work, but it won't know about the googleCalendarId primitive.
 		// Shoehorn it into the url, which will function as the unique primitive. Won't cause side effects.
 		// This hack is obsolete since 2.2.3, but keep it so this plugin file is compatible with old versions.
 		sourceOptions.url = googleCalendarId;
-	***REMOVED***
-***REMOVED***);
+	}
+});
 
 
 fc.sourceFetchers.push(function(sourceOptions, start, end, timezone) {
 	if (sourceOptions.googleCalendarId) {
 		return transformOptions(sourceOptions, start, end, timezone, this); // `this` is the calendar
-	***REMOVED***
-***REMOVED***);
+	}
+});
 
 
 function transformOptions(sourceOptions, start, end, timezone, calendar) {
@@ -76,7 +76,7 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 	var timezoneArg; // populated when a specific timezone. escaped to Google's liking
 
 	function reportError(message, apiErrorObjs) {
-		var errorObjs = apiErrorObjs || [ { message: message ***REMOVED*** ]; // to be passed into error handlers
+		var errorObjs = apiErrorObjs || [ { message: message } ]; // to be passed into error handlers
 		var consoleObj = window.console;
 		var consoleWarnFunc = consoleObj ? (consoleObj.warn || consoleObj.log) : null;
 
@@ -87,13 +87,13 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 		// print error to debug console
 		if (consoleWarnFunc) {
 			consoleWarnFunc.apply(consoleObj, [ message ].concat(apiErrorObjs || []));
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	if (!apiKey) {
 		reportError("Specify a googleCalendarApiKey. See http://fullcalendar.io/docs/google_calendar/");
-		return {***REMOVED***; // an empty source to use instead. won't fetch anything.
-	***REMOVED***
+		return {}; // an empty source to use instead. won't fetch anything.
+	}
 
 	// The API expects an ISO8601 datetime with a time and timezone part.
 	// Since the calendar's timezone offset isn't always known, request the date in UTC and pad it by a day on each
@@ -101,26 +101,26 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 	// .utc() will set a zone and give it a 00:00:00 time.
 	if (!start.hasZone()) {
 		start = start.clone().utc().add(-1, 'day');
-	***REMOVED***
+	}
 	if (!end.hasZone()) {
 		end = end.clone().utc().add(1, 'day');
-	***REMOVED***
+	}
 
 	// when sending timezone names to Google, only accepts underscores, not spaces
 	if (timezone && timezone != 'local') {
 		timezoneArg = timezone.replace(' ', '_');
-	***REMOVED***
+	}
 
-	data = $.extend({***REMOVED***, sourceOptions.data || {***REMOVED***, {
+	data = $.extend({}, sourceOptions.data || {}, {
 		key: apiKey,
 		timeMin: start.format(),
 		timeMax: end.format(),
 		timeZone: timezoneArg,
 		singleEvents: true,
 		maxResults: 9999
-	***REMOVED***);
+	});
 
-	return $.extend({***REMOVED***, sourceOptions, {
+	return $.extend({}, sourceOptions, {
 		googleCalendarId: null, // prevents source-normalizing from happening again
 		url: url,
 		data: data,
@@ -134,7 +134,7 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 
 			if (data.error) {
 				reportError('Google Calendar API: ' + data.error.message, data.error.errors);
-			***REMOVED***
+			}
 			else if (data.items) {
 				$.each(data.items, function(i, entry) {
 					var url = entry.htmlLink;
@@ -142,7 +142,7 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 					// make the URLs for each event show times in the correct timezone
 					if (timezoneArg) {
 						url = injectQsComponent(url, 'ctz=' + timezoneArg);
-					***REMOVED***
+					}
 
 					events.push({
 						id: entry.id,
@@ -152,21 +152,21 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 						url: url,
 						location: entry.location,
 						description: entry.description
-					***REMOVED***);
-				***REMOVED***);
+					});
+				});
 
 				// call the success handler(s) and allow it to return a new events array
 				successArgs = [ events ].concat(Array.prototype.slice.call(arguments, 1)); // forward other jq args
 				successRes = applyAll(success, this, successArgs);
 				if ($.isArray(successRes)) {
 					return successRes;
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			return events;
-		***REMOVED***
-	***REMOVED***);
-***REMOVED***
+		}
+	});
+}
 
 
 // Injects a string like "arg=value" into the querystring of a URL
@@ -174,8 +174,8 @@ function injectQsComponent(url, component) {
 	// inject it after the querystring but before the fragment
 	return url.replace(/(\?.*?)?(#|$)/, function(whole, qs, hash) {
 		return (qs ? qs + '&' : '?') + component + hash;
-	***REMOVED***);
-***REMOVED***
+	});
+}
 
 
-***REMOVED***);
+});

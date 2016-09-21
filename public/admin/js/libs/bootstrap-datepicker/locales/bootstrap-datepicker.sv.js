@@ -12,5 +12,5 @@
 		today: "Idag",
 		format: "yyyy-mm-dd",
 		weekStart: 1
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

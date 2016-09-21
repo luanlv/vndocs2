@@ -25,10 +25,10 @@ The plugin supports these options:
 				lowerCap: null or "-" or function,
 				color: null or color,
 				radius: null or number
-			***REMOVED***,
-			yerr: { same options as xerr ***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			},
+			yerr: { same options as xerr }
+		}
+	}
 
 Each data point array is expected to be of the type:
 
@@ -52,7 +52,7 @@ user-defined drawing function, with (ctx, x, y, radius) as parameters, as eg.
 		ctx.moveTo( x - radius, y );
 		ctx.lineTo( x + radius, y );
 		ctx.stroke();
-	***REMOVED***
+	}
 
 Color and radius both default to the same ones of the points series if not
 set. The independent radius parameter on xerr/yerr is useful for the case when
@@ -67,11 +67,11 @@ shadowSize and lineWidth are derived as well from the points series.
         series: {
             points: {
                 errorbars: null, //should be 'x', 'y' or 'xy'
-                xerr: { err: 'x', show: null, asymmetric: null, upperCap: null, lowerCap: null, color: null, radius: null***REMOVED***,
-                yerr: { err: 'y', show: null, asymmetric: null, upperCap: null, lowerCap: null, color: null, radius: null***REMOVED***
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***;
+                xerr: { err: 'x', show: null, asymmetric: null, upperCap: null, lowerCap: null, color: null, radius: null},
+                yerr: { err: 'y', show: null, asymmetric: null, upperCap: null, lowerCap: null, color: null, radius: null}
+            }
+        }
+    };
 
     function processRawData(plot, series, data, datapoints){
         if (!series.points.errorbars)
@@ -79,30 +79,30 @@ shadowSize and lineWidth are derived as well from the points series.
 
         // x,y values
         var format = [
-            { x: true, number: true, required: true ***REMOVED***,
-            { y: true, number: true, required: true ***REMOVED***
-      ***REMOVED***;
+            { x: true, number: true, required: true },
+            { y: true, number: true, required: true }
+        ];
 
         var errors = series.points.errorbars;
         // error bars - first X then Y
         if (errors == 'x' || errors == 'xy') {
             // lower / upper error
             if (series.points.xerr.asymmetric) {
-                format.push({ x: true, number: true, required: true ***REMOVED***);
-                format.push({ x: true, number: true, required: true ***REMOVED***);
-          ***REMOVED*** else
-                format.push({ x: true, number: true, required: true ***REMOVED***);
-      ***REMOVED***
+                format.push({ x: true, number: true, required: true });
+                format.push({ x: true, number: true, required: true });
+            } else
+                format.push({ x: true, number: true, required: true });
+        }
         if (errors == 'y' || errors == 'xy') {
             // lower / upper error
             if (series.points.yerr.asymmetric) {
-                format.push({ y: true, number: true, required: true ***REMOVED***);
-                format.push({ y: true, number: true, required: true ***REMOVED***);
-          ***REMOVED*** else
-                format.push({ y: true, number: true, required: true ***REMOVED***);
-      ***REMOVED***
+                format.push({ y: true, number: true, required: true });
+                format.push({ y: true, number: true, required: true });
+            } else
+                format.push({ y: true, number: true, required: true });
+        }
         datapoints.format = format;
-  ***REMOVED***
+    }
 
     function parseErrors(series, i){
 
@@ -126,21 +126,21 @@ shadowSize and lineWidth are derived as well from the points series.
                     if (yerr.asymmetric){
                         eyl = points[i + 4];
                         eyu = points[i + 5];
-                  ***REMOVED*** else eyl = points[i + 4];
-          ***REMOVED*** else {
+                    } else eyl = points[i + 4];
+            } else {
                 exl = points[i + 2];
                 if (eb == 'xy')
                     if (yerr.asymmetric) {
                         eyl = points[i + 3];
                         eyu = points[i + 4];
-                  ***REMOVED*** else eyl = points[i + 3];
-          ***REMOVED***
+                    } else eyl = points[i + 3];
+            }
         // only Y
-      ***REMOVED*** else if (eb == 'y')
+        } else if (eb == 'y')
             if (yerr.asymmetric) {
                 eyl = points[i + 2];
                 eyu = points[i + 3];
-          ***REMOVED*** else eyl = points[i + 2];
+            } else eyl = points[i + 2];
 
         // symmetric errors?
         if (exu == null) exu = exl;
@@ -151,13 +151,13 @@ shadowSize and lineWidth are derived as well from the points series.
         if (!xerr.show){
             errRanges[0] = null;
             errRanges[1] = null;
-      ***REMOVED***
+        }
         if (!yerr.show){
             errRanges[2] = null;
             errRanges[3] = null;
-      ***REMOVED***
+        }
         return errRanges;
-  ***REMOVED***
+    }
 
     function drawSeriesErrors(plot, ctx, s){
 
@@ -174,7 +174,7 @@ shadowSize and lineWidth are derived as well from the points series.
             var tmp = err[0].lowerCap;
             err[0].lowerCap = err[0].upperCap;
             err[0].upperCap = tmp;
-      ***REMOVED***
+        }
 
         var invertY = false;
         if (ax[1].p2c(ax[1].min) < ax[1].p2c(ax[1].max)) {
@@ -182,7 +182,7 @@ shadowSize and lineWidth are derived as well from the points series.
             var tmp = err[1].lowerCap;
             err[1].lowerCap = err[1].upperCap;
             err[1].upperCap = tmp;
-      ***REMOVED***
+        }
 
         for (var i = 0; i < s.datapoints.points.length; i += ps) {
 
@@ -220,11 +220,11 @@ shadowSize and lineWidth are derived as well from the points series.
                     if (upper > minmax[1]) {
                         drawUpper = false;
                         upper = minmax[1];
-                  ***REMOVED***
+                    }
                     if (lower < minmax[0]) {
                         drawLower = false;
                         lower = minmax[0];
-                  ***REMOVED***
+                    }
 
                     //sanity check, in case some inverted axis hack is applied to flot
                     if ((err[e].err == 'x' && invertX) || (err[e].err == 'y' && invertY)) {
@@ -238,7 +238,7 @@ shadowSize and lineWidth are derived as well from the points series.
                         tmp = minmax[0];
                         minmax[0] = minmax[1];
                         minmax[1] = tmp;
-                  ***REMOVED***
+                    }
 
                     // convert to pixels
                     x = ax[0].p2c(x),
@@ -261,16 +261,16 @@ shadowSize and lineWidth are derived as well from the points series.
 
                         ctx.strokeStyle = "rgba(0,0,0,0.2)";
                         drawError(ctx, err[e], x, y, upper, lower, drawUpper, drawLower, radius, w/2, minmax);
-                  ***REMOVED***
+                    }
 
                     ctx.strokeStyle = err[e].color? err[e].color: s.color;
                     ctx.lineWidth = lw;
                     //draw it
                     drawError(ctx, err[e], x, y, upper, lower, drawUpper, drawLower, radius, 0, minmax);
-              ***REMOVED***
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***
+                }
+            }
+        }
+    }
 
     function drawError(ctx,err,x,y,upper,lower,drawUpper,drawLower,radius,offset,minmax){
 
@@ -285,13 +285,13 @@ shadowSize and lineWidth are derived as well from the points series.
             else drawUpper = false;
             if (lower < x - radius) drawPath(ctx, [[Math.min(x - radius,minmax[1]),y],[lower,y]] );
             else drawLower = false;
-      ***REMOVED***
+        }
         else {
             if (upper < y - radius) drawPath(ctx, [[x,upper],[x,Math.min(y - radius,minmax[0])]] );
             else drawUpper = false;
             if (lower > y + radius) drawPath(ctx, [[x,Math.max(y + radius,minmax[1])],[x,lower]] );
             else drawLower = false;
-      ***REMOVED***
+        }
 
         //internal radius value in errorbar, allows to plot radius 0 points and still keep proper sized caps
         //this is a way to get errorbars on lines without visible connecting dots
@@ -302,22 +302,22 @@ shadowSize and lineWidth are derived as well from the points series.
             if (err.upperCap == '-'){
                 if (err.err=='x') drawPath(ctx, [[upper,y - radius],[upper,y + radius]] );
                 else drawPath(ctx, [[x - radius,upper],[x + radius,upper]] );
-          ***REMOVED*** else if ($.isFunction(err.upperCap)){
+            } else if ($.isFunction(err.upperCap)){
                 if (err.err=='x') err.upperCap(ctx, upper, y, radius);
                 else err.upperCap(ctx, x, upper, radius);
-          ***REMOVED***
-      ***REMOVED***
+            }
+        }
         // lower cap
         if (drawLower) {
             if (err.lowerCap == '-'){
                 if (err.err=='x') drawPath(ctx, [[lower,y - radius],[lower,y + radius]] );
                 else drawPath(ctx, [[x - radius,lower],[x + radius,lower]] );
-          ***REMOVED*** else if ($.isFunction(err.lowerCap)){
+            } else if ($.isFunction(err.lowerCap)){
                 if (err.err=='x') err.lowerCap(ctx, lower, y, radius);
                 else err.lowerCap(ctx, x, lower, radius);
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***
+            }
+        }
+    }
 
     function drawPath(ctx, pts){
         ctx.beginPath();
@@ -325,7 +325,7 @@ shadowSize and lineWidth are derived as well from the points series.
         for (var p=1; p < pts.length; p++)
             ctx.lineTo(pts[p][0], pts[p][1]);
         ctx.stroke();
-  ***REMOVED***
+    }
 
     function draw(plot, ctx){
         var plotOffset = plot.getPlotOffset();
@@ -335,19 +335,19 @@ shadowSize and lineWidth are derived as well from the points series.
         $.each(plot.getData(), function (i, s) {
             if (s.points.errorbars && (s.points.xerr.show || s.points.yerr.show))
                 drawSeriesErrors(plot, ctx, s);
-      ***REMOVED***);
+        });
         ctx.restore();
-  ***REMOVED***
+    }
 
     function init(plot) {
         plot.hooks.processRawData.push(processRawData);
         plot.hooks.draw.push(draw);
-  ***REMOVED***
+    }
 
     $.plot.plugins.push({
                 init: init,
                 options: options,
                 name: 'errorbars',
                 version: '1.0'
-          ***REMOVED***);
-***REMOVED***)(jQuery);
+            });
+})(jQuery);

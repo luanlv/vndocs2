@@ -11,11 +11,11 @@ plugin to compute it for you.
 In order to name the other series, you need to give it an id, like this:
 
 	var dataset = [
-		{ data: [ ... ], id: "foo" ***REMOVED*** ,         // use default bottom
-		{ data: [ ... ], fillBetween: "foo" ***REMOVED***, // use first dataset as bottom
+		{ data: [ ... ], id: "foo" } ,         // use default bottom
+		{ data: [ ... ], fillBetween: "foo" }, // use first dataset as bottom
 	];
 
-	$.plot($("#placeholder"), dataset, { lines: { show: true, fill: true ***REMOVED******REMOVED***);
+	$.plot($("#placeholder"), dataset, { lines: { show: true, fill: true }});
 
 As a convenience, if the id given is a number that doesn't appear as an id in
 the series, it is interpreted as the index in the array instead (so fillBetween:
@@ -34,8 +34,8 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 	var options = {
 		series: {
 			fillBetween: null	// or number
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	function init( plot ) {
 
@@ -46,30 +46,30 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 			for ( i = 0; i < allseries.length; ++i ) {
 				if ( allseries[ i ].id === s.fillBetween ) {
 					return allseries[ i ];
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			if ( typeof s.fillBetween === "number" ) {
 				if ( s.fillBetween < 0 || s.fillBetween >= allseries.length ) {
 					return null;
-				***REMOVED***
+				}
 				return allseries[ s.fillBetween ];
-			***REMOVED***
+			}
 
 			return null;
-		***REMOVED***
+		}
 
 		function computeFillBottoms( plot, s, datapoints ) {
 
 			if ( s.fillBetween == null ) {
 				return;
-			***REMOVED***
+			}
 
 			var other = findBottomSeries( s, plot.getData() );
 
 			if ( !other ) {
 				return;
-			***REMOVED***
+			}
 
 			var ps = datapoints.pointsize,
 				points = datapoints.points,
@@ -89,7 +89,7 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 
 				if ( i >= points.length ) {
 					break;
-				***REMOVED***
+				}
 
 				l = newpoints.length;
 
@@ -99,34 +99,34 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 
 					for ( m = 0; m < ps; ++m ) {
 						newpoints.push( points[ i + m ] );
-					***REMOVED***
+					}
 
 					i += ps;
 
-				***REMOVED*** else if ( j >= otherpoints.length ) {
+				} else if ( j >= otherpoints.length ) {
 
 					// for lines, we can't use the rest of the points
 
 					if ( !withlines ) {
 						for ( m = 0; m < ps; ++m ) {
 							newpoints.push( points[ i + m ] );
-						***REMOVED***
-					***REMOVED***
+						}
+					}
 
 					i += ps;
 
-				***REMOVED*** else if ( otherpoints[ j ] == null ) {
+				} else if ( otherpoints[ j ] == null ) {
 
 					// oops, got a gap
 
 					for ( m = 0; m < ps; ++m ) {
 						newpoints.push( null );
-					***REMOVED***
+					}
 
 					fromgap = true;
 					j += otherps;
 
-				***REMOVED*** else {
+				} else {
 
 					// cases where we actually got two points
 
@@ -140,7 +140,7 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 
 						for ( m = 0; m < ps; ++m ) {
 							newpoints.push( points[ i + m ] );
-						***REMOVED***
+						}
 
 						//newpoints[ l + 1 ] += qy;
 						bottom = qy;
@@ -148,7 +148,7 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 						i += ps;
 						j += otherps;
 
-					***REMOVED*** else if ( px > qx ) {
+					} else if ( px > qx ) {
 
 						// we got past point below, might need to
 						// insert interpolated extra point
@@ -159,43 +159,43 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 							newpoints.push( intery );
 							for ( m = 2; m < ps; ++m ) {
 								newpoints.push( points[ i + m ] );
-							***REMOVED***
+							}
 							bottom = qy;
-						***REMOVED***
+						}
 
 						j += otherps;
 
-					***REMOVED*** else { // px < qx
+					} else { // px < qx
 
 						// if we come from a gap, we just skip this point
 
 						if ( fromgap && withlines ) {
 							i += ps;
 							continue;
-						***REMOVED***
+						}
 
 						for ( m = 0; m < ps; ++m ) {
 							newpoints.push( points[ i + m ] );
-						***REMOVED***
+						}
 
 						// we might be able to interpolate a point below,
 						// this can give us a better y
 
 						if ( withlines && j > 0 && otherpoints[ j - otherps ] != null ) {
 							bottom = qy + ( otherpoints[ j - otherps + 1 ] - qy ) * ( px - qx ) / ( otherpoints[ j - otherps ] - qx );
-						***REMOVED***
+						}
 
 						//newpoints[l + 1] += bottom;
 
 						i += ps;
-					***REMOVED***
+					}
 
 					fromgap = false;
 
 					if ( l !== newpoints.length && withbottom ) {
 						newpoints[ l + 2 ] = bottom;
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 
 				// maintain the line steps invariant
 
@@ -205,22 +205,22 @@ jquery.flot.stack.js plugin, possibly some code could be shared.
 					newpoints[ l + 1 ] !== newpoints[ l - ps + 1 ] ) {
 					for (m = 0; m < ps; ++m) {
 						newpoints[ l + ps + m ] = newpoints[ l + m ];
-					***REMOVED***
+					}
 					newpoints[ l + 1 ] = newpoints[ l - ps + 1 ];
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			datapoints.points = newpoints;
-		***REMOVED***
+		}
 
 		plot.hooks.processDatapoints.push( computeFillBottoms );
-	***REMOVED***
+	}
 
 	$.plot.plugins.push({
 		init: init,
 		options: options,
 		name: "fillbetween",
 		version: "1.0"
-	***REMOVED***);
+	});
 
-***REMOVED***)(jQuery);
+})(jQuery);

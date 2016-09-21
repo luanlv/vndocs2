@@ -1,14 +1,14 @@
 package models.daos
 
-import javax.inject.{ Inject, Singleton ***REMOVED***
+import javax.inject.{ Inject, Singleton }
 
 import scala.util.Try
 import java.util.UUID
 
 import com.mohiva.play.silhouette.api.LoginInfo
-import models.{ Image, User ***REMOVED***
+import models.{ Image, User }
 import models.daos.UserDAOImpl._
-import play.api.libs.json.{ JsObject, Json ***REMOVED***
+import play.api.libs.json.{ JsObject, Json }
 
 import scala.collection.mutable
 import scala.concurrent.Future
@@ -26,17 +26,17 @@ class ImageDAOImpl @Inject() (repository: ImageRepository) extends ImageDAO {
   def save(image: Image) = {
     repository.insert(image)
     Future.successful(image)
-***REMOVED***
+  }
 
   def getList(page: Int) = {
     repository.findImage(sort = Json.obj("createAt" -> -1), page = page, num = 20)
-***REMOVED***
+  }
 
-***REMOVED***
+}
 
 /**
  * The companion object.
  */
 object ImageDAOImpl {
 
-***REMOVED***
+}

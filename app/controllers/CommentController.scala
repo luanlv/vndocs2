@@ -1,16 +1,16 @@
 package controllers
 
-import com.google.inject.{ Inject, Singleton ***REMOVED***
+import com.google.inject.{ Inject, Singleton }
 import com.mohiva.play.silhouette.api.Silhouette
-import models.{ Comment, LightUser ***REMOVED***
-import models.services.{ ArticleService, CommentService, PostService ***REMOVED***
+import models.{ Comment, LightUser }
+import models.services.{ ArticleService, CommentService, PostService }
 import play.api.i18n.MessagesApi
-import play.api.libs.json.{ JsObject, Json ***REMOVED***
-import utils.silhouette.{ AuthController, MyEnv, WithService ***REMOVED***
+import play.api.libs.json.{ JsObject, Json }
+import utils.silhouette.{ AuthController, MyEnv, WithService }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
-import scala.util.{ Failure, Success ***REMOVED***
+import scala.util.{ Failure, Success }
 
 @Singleton
 class CommentController @Inject() (
@@ -37,25 +37,25 @@ class CommentController @Inject() (
                 case Success(comment) => {
                   if ((request.body \ "type").as[String] == "post") {
                     postService.incComment(parrentID)
-                ***REMOVED*** else if ((request.body \ "type").as[String] == "article") {
+                  } else if ((request.body \ "type").as[String] == "article") {
                     articleService.incComment(parrentID)
-                ***REMOVED***
+                  }
                   Ok(Json.toJson(comment))
-              ***REMOVED***
-                case Failure(ex) => BadRequest(s"Error: ${ex.getMessage***REMOVED***")
-            ***REMOVED***
-        ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***.getOrElse {
+                }
+                case Failure(ex) => BadRequest(s"Error: ${ex.getMessage}")
+              }
+          }
+        }
+    }.getOrElse {
       Future.successful(BadRequest("not json"))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def getList(postID: String, page: Int) = silhouette.UserAwareAction.async { implicit request =>
     commentService.getList(postID, page).map {
       listComments =>
         Ok(Json.toJson(listComments))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
-***REMOVED***
+}

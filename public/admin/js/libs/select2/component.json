@@ -6,12 +6,12 @@
   "demo": "http://ivaynberg.github.io/select2/",
   "keywords": [
     "jquery"
-***REMOVED***,
+  ],
   "main": "select2.js",
   "styles": [
     "select2.css",
     "select2-bootstrap.css"
-***REMOVED***,
+  ],
   "scripts": [
     "select2.js",
     "select2_locale_ar.js",
@@ -56,11 +56,11 @@
     "select2_locale_vi.js",
     "select2_locale_zh-CN.js",
     "select2_locale_zh-TW.js"
-***REMOVED***,
+  ],
   "images": [
     "select2-spinner.gif",
     "select2.png",
     "select2x2.png"
-***REMOVED***,
+  ],
   "license": "MIT"
-***REMOVED***
+}

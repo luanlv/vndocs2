@@ -5,8 +5,8 @@ import javax.inject.Inject
 
 import com.mohiva.play.silhouette.api.LoginInfo
 import com.mohiva.play.silhouette.impl.providers.CommonSocialProfile
-import models.{ Post, User ***REMOVED***
-import models.daos.{ PostDAO, UserDAO ***REMOVED***
+import models.{ Post, User }
+import models.daos.{ PostDAO, UserDAO }
 import play.api.libs.concurrent.Execution.Implicits._
 
 import scala.concurrent.Future
@@ -24,7 +24,7 @@ class PostServiceImpl @Inject() (postDAO: PostDAO) extends PostService {
 
   def count: Future[Int] = {
     postDAO.count
-***REMOVED***
+  }
 
   def getList(page: Int) = postDAO.getList(page)
 
@@ -38,4 +38,4 @@ class PostServiceImpl @Inject() (postDAO: PostDAO) extends PostService {
    * @return The user for whom the profile was saved.
    */
 
-***REMOVED***
+}

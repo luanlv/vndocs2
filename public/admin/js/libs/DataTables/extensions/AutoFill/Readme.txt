@@ -22,7 +22,7 @@ AutoFill is initialised using the `$.fn.dataTable.AutoFill` constructor. For exa
 $(document).ready( function () {
     var table = $('#example').dataTable();
     new $.fn.dataTable.AutoFill( table );
-***REMOVED*** );
+} );
 ```
 
 

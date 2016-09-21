@@ -19,8 +19,8 @@ case class DBServiceException(
 object DBServiceException {
   def apply(lastError: LastError): ServiceException = {
     DBServiceException(lastError.errmsg.getOrElse(lastError.message), Some(lastError))
-***REMOVED***
-***REMOVED***
+  }
+}
 
 case class DuplicateResourceException(
   message: String = "error.duplicate.resource",

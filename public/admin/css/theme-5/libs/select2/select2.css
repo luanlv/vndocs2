@@ -1,43 +1,43 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -48,14 +48,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -66,14 +66,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -84,14 +84,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -102,14 +102,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -120,14 +120,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -138,14 +138,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -156,14 +156,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -174,14 +174,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -192,14 +192,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -210,14 +210,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -225,15 +225,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -241,15 +241,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -257,15 +257,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -273,15 +273,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -289,15 +289,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -305,15 +305,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -321,15 +321,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -337,15 +337,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -353,15 +353,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -369,15 +369,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -385,15 +385,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -401,15 +401,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -417,15 +417,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -433,15 +433,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -449,15 +449,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -465,15 +465,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -481,15 +481,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -497,15 +497,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -513,15 +513,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -529,15 +529,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 /*
 // Example usage
 
@@ -552,7 +552,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -562,7 +562,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -572,7 +572,7 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */
 /*
 Version: 3.5.2 Timestamp: Sat Nov  1 14:43:36 EDT 2014
@@ -585,11 +585,11 @@ Version: 3.5.2 Timestamp: Sat Nov  1 14:43:36 EDT 2014
   zoom: 1;
   *display: inline;
   vertical-align: middle;
-***REMOVED***
+}
 .select2-container.form-control {
   padding: 0;
   height: auto;
-***REMOVED***
+}
 .select2-container,
 .select2-drop,
 .select2-search,
@@ -605,7 +605,7 @@ Version: 3.5.2 Timestamp: Sat Nov  1 14:43:36 EDT 2014
   /* firefox */
   box-sizing: border-box;
   /* css3 */
-***REMOVED***
+}
 .select2-container .select2-choice {
   display: block;
   height: 36px;
@@ -623,17 +623,17 @@ Version: 3.5.2 Timestamp: Sat Nov  1 14:43:36 EDT 2014
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container .select2-choice {
   padding: 0 8px 0 0;
-***REMOVED***
+}
 .select2-container.select2-drop-above .select2-choice {
   border-bottom-color: rgba(12, 12, 12, 0.12);
   border-radius: 0 0 2px 2px;
-***REMOVED***
+}
 .select2-container.select2-allowclear .select2-choice .select2-chosen {
   margin-right: 42px;
-***REMOVED***
+}
 .select2-container .select2-choice > .select2-chosen {
   margin-right: 26px;
   display: block;
@@ -642,11 +642,11 @@ html[dir="rtl"] .select2-container .select2-choice {
   text-overflow: ellipsis;
   float: none;
   width: auto;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   margin-left: 26px;
   margin-right: 0;
-***REMOVED***
+}
 .select2-container .select2-choice abbr {
   display: none;
   width: 12px;
@@ -659,7 +659,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   cursor: pointer;
   outline: 0;
   background: transparent;
-***REMOVED***
+}
 .select2-container .select2-choice abbr:before {
   display: none;
   font-family: FontAwesome;
@@ -671,20 +671,20 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   content: "\f00d";
   text-align: center;
   color: #606060;
-***REMOVED***
+}
 .select2-container .select2-choice abbr:hover {
   text-decoration: none;
-***REMOVED***
+}
 .select2-container.select2-allowclear .select2-choice abbr {
   display: inline-block;
-***REMOVED***
+}
 .select2-container.select2-allowclear .select2-choice abbr:before {
   display: inline-block;
-***REMOVED***
+}
 .select2-container .select2-choice abbr:hover {
   background-position: right -11px;
   cursor: pointer;
-***REMOVED***
+}
 .select2-drop-mask {
   border: 0;
   margin: 0;
@@ -701,7 +701,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   /* styles required for IE to work */
   background-color: #fff;
   filter: alpha(opacity=0);
-***REMOVED***
+}
 .select2-drop {
   width: 100%;
   margin-top: 0;
@@ -715,7 +715,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   border-radius: 0 0 2px 2px;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
-***REMOVED***
+}
 .select2-drop.select2-drop-above {
   margin-top: 1px;
   border-top: 1px solid #aaa;
@@ -723,21 +723,21 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   border-radius: 2px 2px 0 0;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
-***REMOVED***
+}
 .select2-drop-active {
   border: 1px solid rgba(12, 12, 12, 0.12);
   border-top: none;
-***REMOVED***
+}
 .select2-drop.select2-drop-above.select2-drop-active {
   border-top: 1px solid rgba(12, 12, 12, 0.12);
-***REMOVED***
+}
 .select2-drop-auto-width {
   border-top: 1px solid #aaa;
   width: auto;
-***REMOVED***
+}
 .select2-drop-auto-width .select2-search {
   padding-top: 4px;
-***REMOVED***
+}
 .select2-container .select2-choice .select2-arrow {
   display: inline-block;
   width: 18px;
@@ -747,14 +747,14 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   top: 0;
   border-radius: 0 4px 4px 0;
   background-clip: padding-box;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
   left: 0;
   right: auto;
   border-left: none;
   border-right: 1px solid #aaa;
   border-radius: 4px 0 0 4px;
-***REMOVED***
+}
 .select2-container .select2-choice .select2-arrow b:before {
   display: block;
   font-family: FontAwesome;
@@ -766,10 +766,10 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
   content: "\f078";
   text-align: center;
   color: #606060;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
   background-position: 2px 1px;
-***REMOVED***
+}
 .select2-search {
   display: inline-block;
   width: 100%;
@@ -780,7 +780,7 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
   position: relative;
   z-index: 10000;
   white-space: nowrap;
-***REMOVED***
+}
 .select2-search input {
   width: 100%;
   height: auto !important;
@@ -794,7 +794,7 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-***REMOVED***
+}
 html[dir="rtl"] .select2-search input {
   padding: 4px 5px 4px 20px;
   background: #ffffff url('select2.png') no-repeat -37px -22px;
@@ -802,21 +802,21 @@ html[dir="rtl"] .select2-search input {
   background: url('select2.png') no-repeat -37px -22px, -webkit-linear-gradient(center bottom, #ffffff 85%, #eeeeee 99%);
   background: url('select2.png') no-repeat -37px -22px, -moz-linear-gradient(center bottom, #ffffff 85%, #eeeeee 99%);
   background: url('select2.png') no-repeat -37px -22px, linear-gradient(to bottom, #ffffff 85%, #eeeeee 99%) 0 0;
-***REMOVED***
+}
 .select2-drop.select2-drop-above .select2-search input {
   margin-top: 4px;
-***REMOVED***
+}
 .select2-search input.select2-active {
   background: #ffffff url('select2-spinner.gif') no-repeat 100%;
   background: url('select2-spinner.gif') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #ffffff), color-stop(0.99, #eeeeee));
   background: url('select2-spinner.gif') no-repeat 100%, -webkit-linear-gradient(center bottom, #ffffff 85%, #eeeeee 99%);
   background: url('select2-spinner.gif') no-repeat 100%, -moz-linear-gradient(center bottom, #ffffff 85%, #eeeeee 99%);
   background: url('select2-spinner.gif') no-repeat 100%, linear-gradient(to bottom, #ffffff 85%, #eeeeee 99%) 0 0;
-***REMOVED***
+}
 .select2-container-active .select2-choice,
 .select2-container-active .select2-choices {
   outline: none;
-***REMOVED***
+}
 .select2-dropdown-open .select2-choice {
   border: 1px solid transparent;
   -webkit-box-shadow: none;
@@ -824,31 +824,31 @@ html[dir="rtl"] .select2-search input {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background: #fff;
-***REMOVED***
+}
 .select2-dropdown-open.form-control {
   border-bottom-color: #eb0038;
-***REMOVED***
+}
 .select2-dropdown-open.select2-drop-above .select2-choice,
 .select2-dropdown-open.select2-drop-above .select2-choices {
   border: 1px solid rgba(12, 12, 12, 0.12);
   border-top-color: transparent;
   border-bottom-color: transparent;
   background: #fff;
-***REMOVED***
+}
 .select2-dropdown-open .select2-choice .select2-arrow {
   background: transparent;
   border-left: none;
   filter: none;
-***REMOVED***
+}
 html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow {
   border-right: none;
-***REMOVED***
+}
 .select2-dropdown-open .select2-choice .select2-arrow b {
   background-position: -18px 1px;
-***REMOVED***
+}
 html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
   background-position: -16px 1px;
-***REMOVED***
+}
 .select2-hidden-accessible {
   border: 0;
   clip: rect(0 0 0 0);
@@ -858,7 +858,7 @@ html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
   padding: 0;
   position: absolute;
   width: 1px;
-***REMOVED***
+}
 /* results */
 .select2-results {
   max-height: 200px;
@@ -868,23 +868,23 @@ html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-***REMOVED***
+}
 html[dir="rtl"] .select2-results {
   padding: 0 4px 0 0;
   margin: 4px 0 4px 4px;
-***REMOVED***
+}
 .select2-results ul.select2-result-sub {
   margin: 0;
   padding-left: 0;
-***REMOVED***
+}
 .select2-results li {
   list-style: none;
   display: list-item;
   background-image: none;
-***REMOVED***
+}
 .select2-results li.select2-result-with-children > .select2-result-label {
   font-weight: bold;
-***REMOVED***
+}
 .select2-results .select2-result-label {
   padding: 3px 7px 4px;
   margin: 0;
@@ -895,43 +895,43 @@ html[dir="rtl"] .select2-results {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-***REMOVED***
+}
 .select2-results-dept-1 .select2-result-label {
   padding-left: 20px;
-***REMOVED***
+}
 .select2-results-dept-2 .select2-result-label {
   padding-left: 40px;
-***REMOVED***
+}
 .select2-results-dept-3 .select2-result-label {
   padding-left: 60px;
-***REMOVED***
+}
 .select2-results-dept-4 .select2-result-label {
   padding-left: 80px;
-***REMOVED***
+}
 .select2-results-dept-5 .select2-result-label {
   padding-left: 100px;
-***REMOVED***
+}
 .select2-results-dept-6 .select2-result-label {
   padding-left: 110px;
-***REMOVED***
+}
 .select2-results-dept-7 .select2-result-label {
   padding-left: 120px;
-***REMOVED***
+}
 .select2-results .select2-highlighted {
   background: #3875d7;
   color: #fff;
-***REMOVED***
+}
 .select2-results li em {
   background: #feffde;
   font-style: normal;
-***REMOVED***
+}
 .select2-results .select2-highlighted em {
   background: transparent;
-***REMOVED***
+}
 .select2-results .select2-highlighted ul {
   background: #fff;
   color: #000;
-***REMOVED***
+}
 .select2-results .select2-no-results,
 .select2-results .select2-searching,
 .select2-results .select2-ajax-error,
@@ -939,7 +939,7 @@ html[dir="rtl"] .select2-results {
   background: #f4f4f4;
   display: list-item;
   padding-left: 5px;
-***REMOVED***
+}
 /*
 disabled look for disabled choices in the results dropdown
 */
@@ -948,40 +948,40 @@ disabled look for disabled choices in the results dropdown
   background: #f4f4f4;
   display: list-item;
   cursor: default;
-***REMOVED***
+}
 .select2-results .select2-disabled {
   background: #f4f4f4;
   display: list-item;
   cursor: default;
-***REMOVED***
+}
 .select2-results .select2-selected {
   display: none;
-***REMOVED***
+}
 .select2-more-results.select2-active {
   background: #f4f4f4 url('select2-spinner.gif') no-repeat 100%;
-***REMOVED***
+}
 .select2-results .select2-ajax-error {
   background: rgba(255, 50, 50, 0.2);
-***REMOVED***
+}
 .select2-more-results {
   background: #f4f4f4;
   display: list-item;
-***REMOVED***
+}
 /* disabled styles */
 .select2-container.select2-container-disabled .select2-choice {
   background-color: #f4f4f4;
   background-image: none;
   border: 1px solid #ddd;
   cursor: default;
-***REMOVED***
+}
 .select2-container.select2-container-disabled .select2-choice .select2-arrow {
   background-color: #f4f4f4;
   background-image: none;
   border-left: 0;
-***REMOVED***
+}
 .select2-container.select2-container-disabled .select2-choice abbr {
   display: none;
-***REMOVED***
+}
 /* multiselect */
 .select2-container-multi .select2-choices {
   height: auto !important;
@@ -992,34 +992,34 @@ disabled look for disabled choices in the results dropdown
   border: 1px solid transparent;
   cursor: text;
   overflow: hidden;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container-multi .select2-choices {
   padding: 0 0 0 5px;
-***REMOVED***
+}
 .select2-locked {
   padding: 3px 5px 3px 5px !important;
-***REMOVED***
+}
 .select2-container-multi .select2-choices {
   min-height: 36px;
-***REMOVED***
+}
 .select2-container-multi.select2-container-active .select2-choices {
   border: 1px solid transparent;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-***REMOVED***
+}
 .select2-container-multi .select2-choices li {
   float: left;
   list-style: none;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container-multi .select2-choices li {
   float: right;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-field {
   margin: 0;
   padding: 0;
   white-space: nowrap;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-field input {
   padding: 0;
   margin: 0;
@@ -1032,13 +1032,13 @@ html[dir="rtl"] .select2-container-multi .select2-choices li {
   box-shadow: none;
   background: transparent !important;
   outline: 0;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
   background: #ffffff url('select2-spinner.gif') no-repeat 100% !important;
-***REMOVED***
+}
 .select2-default {
   color: #999 !important;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-choice {
   padding: 6px 5px 6px 18px;
   margin: 4px 4px 3px 0;
@@ -1056,17 +1056,17 @@ html[dir="rtl"] .select2-container-multi .select2-choices li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice {
   margin: 3px 5px 3px 0;
   padding: 3px 18px 3px 5px;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-choice .select2-chosen {
   cursor: default;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-choice-focus {
   background: #d4d4d4;
-***REMOVED***
+}
 .select2-search-choice-close {
   display: block;
   width: 16px;
@@ -1075,7 +1075,7 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
   right: 3px;
   top: 0;
   outline: none;
-***REMOVED***
+}
 .select2-search-choice-close:before {
   display: block;
   font-family: FontAwesome;
@@ -1088,50 +1088,50 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
   content: "\f00d";
   text-align: center;
   color: #fff;
-***REMOVED***
+}
 .select2-search-choice-close:hover {
   background: red;
   text-decoration: none;
-***REMOVED***
+}
 html[dir="rtl"] .select2-search-choice-close {
   right: auto;
   left: 3px;
-***REMOVED***
+}
 .select2-container-multi .select2-search-choice-close {
   left: 0;
-***REMOVED***
+}
 html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   left: auto;
   right: 2px;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover {
   background-position: right -11px;
-***REMOVED***
+}
 .select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close {
   background-position: right -11px;
-***REMOVED***
+}
 /* disabled styles */
 .select2-container-multi.select2-container-disabled .select2-choices {
   background-color: #f4f4f4;
   background-image: none;
   border: 1px solid #ddd;
   cursor: default;
-***REMOVED***
+}
 .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
   padding: 3px 5px 3px 5px;
   border: 1px solid #ddd;
   background-image: none;
   background-color: #f4f4f4;
-***REMOVED***
+}
 .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
   display: none;
   background: none;
-***REMOVED***
+}
 /* end multiselect */
 .select2-result-selectable .select2-match,
 .select2-result-unselectable .select2-match {
   text-decoration: underline;
-***REMOVED***
+}
 .select2-offscreen,
 .select2-offscreen:focus {
   clip: rect(0 0 0 0) !important;
@@ -1145,10 +1145,10 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   outline: 0 !important;
   left: 0px !important;
   top: 0px !important;
-***REMOVED***
+}
 .select2-display-none {
   display: none;
-***REMOVED***
+}
 .select2-measure-scrollbar {
   position: absolute;
   top: -10000px;
@@ -1156,7 +1156,7 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   width: 100px;
   height: 100px;
   overflow: scroll;
-***REMOVED***
+}
 /* Retina-ize icons */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
   .select2-search input,
@@ -1166,9 +1166,9 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
     background-image: url('select2x2.png') !important;
     background-repeat: no-repeat !important;
     background-size: 60px 40px !important;
-***REMOVED***
+  }
   .select2-search input {
     background-position: 100% -21px !important;
-***REMOVED***
-***REMOVED***
+  }
+}
 

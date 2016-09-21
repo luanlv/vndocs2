@@ -19,27 +19,27 @@
 
     if(raf && caf) {
       requestInterval = function(fn, delay) {
-        var handle = {value: null***REMOVED***;
+        var handle = {value: null};
 
         function loop() {
           handle.value = raf(loop);
           fn();
-      ***REMOVED***
+        }
 
         loop();
         return handle;
-    ***REMOVED***;
+      };
 
       cancelInterval = function(handle) {
         caf(handle.value);
-    ***REMOVED***;
-  ***REMOVED***
+      };
+    }
 
     else {
       requestInterval = setInterval;
       cancelInterval = clearInterval;
-  ***REMOVED***
-***REMOVED***());
+    }
+  }());
 
   /* Catmull-rom spline stuffs. */
   /*
@@ -58,7 +58,7 @@
       ax = bx;
       bx = cx;
       cx = dx;
-      dx = spline[i  ***REMOVED***;
+      dx = spline[i    ];
       px = -0.5 * ax + 1.5 * bx - 1.5 * cx + 0.5 * dx;
       qx =        ax - 2.5 * bx + 2.0 * cx - 0.5 * dx;
       rx = -0.5 * ax            + 0.5 * cx           ;
@@ -80,8 +80,8 @@
           ((px * t + qx) * t + rx) * t + sx,
           ((py * t + qy) * t + ry) * t + sy
         );
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
     polyline.push(
       px + qx + rx + sx,
@@ -89,17 +89,17 @@
     );
 
     return polyline;
-***REMOVED***
+  }
 
   function downsample(n, polyline) {
     var len = 0,
         i, dx, dy;
 
     for(i = 2; i !== polyline.length; i += 2) {
-      dx = polyline[i  ***REMOVED*** - polyline[i - 2];
+      dx = polyline[i    ] - polyline[i - 2];
       dy = polyline[i + 1] - polyline[i - 1];
       len += Math.sqrt(dx * dx + dy * dy);
-  ***REMOVED***
+    }
 
     len /= n;
 
@@ -111,7 +111,7 @@
     small.push(polyline[0], polyline[1]);
 
     for(i = 2; i !== polyline.length; i += 2) {
-      dx = polyline[i  ***REMOVED*** - polyline[i - 2];
+      dx = polyline[i    ] - polyline[i - 2];
       dy = polyline[i + 1] - polyline[i - 1];
       max = min + Math.sqrt(dx * dx + dy * dy);
 
@@ -124,15 +124,15 @@
         );
 
         target += len;
-    ***REMOVED***
+      }
 
       min = max;
-  ***REMOVED***
+    }
 
     small.push(polyline[polyline.length - 2], polyline[polyline.length - 1]);
 
     return small;
-***REMOVED***
+  }
   */
 
   /* Define skycon things. */
@@ -147,14 +147,14 @@
     ctx.beginPath();
     ctx.arc(x, y, r, 0, TAU, false);
     ctx.fill();
-***REMOVED***
+  }
 
   function line(ctx, ax, ay, bx, by) {
     ctx.beginPath();
     ctx.moveTo(ax, ay);
     ctx.lineTo(bx, by);
     ctx.stroke();
-***REMOVED***
+  }
 
   function puff(ctx, t, cx, cy, rx, ry, rmin, rmax) {
     var c = Math.cos(t * TAU),
@@ -168,14 +168,14 @@
       cy + c * ry + rmax * 0.5,
       rmin + (1 - c * 0.5) * rmax
     );
-***REMOVED***
+  }
 
   function puffs(ctx, t, cx, cy, rx, ry, rmin, rmax) {
     var i;
 
     for(i = 5; i--; )
       puff(ctx, t + i / 5, cx, cy, rx, ry, rmin, rmax);
-***REMOVED***
+  }
 
   function cloud(ctx, t, cx, cy, cw, s, color) {
     t /= 30000;
@@ -191,7 +191,7 @@
     ctx.globalCompositeOperation = 'destination-out';
     puffs(ctx, t, cx, cy, a, b, c - s, d - s);
     ctx.globalCompositeOperation = 'source-over';
-***REMOVED***
+  }
 
   function sun(ctx, t, cx, cy, cw, s, color) {
     t /= 120000;
@@ -215,8 +215,8 @@
       cos = Math.cos(p);
       sin = Math.sin(p);
       line(ctx, cx + cos * b, cy + sin * b, cx + cos * c, cy + sin * c);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   function moon(ctx, t, cx, cy, cw, s, color) {
     t /= 15000;
@@ -238,7 +238,7 @@
     ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TAU * 5 / 8, p + TAU * 3 / 8, true);
     ctx.closePath();
     ctx.stroke();
-***REMOVED***
+  }
 
   function rain(ctx, t, cx, cy, cw, s, color) {
     t /= 1350;
@@ -258,8 +258,8 @@
       ctx.moveTo(x, y - s * 1.5);
       ctx.arc(x, y, s * 0.75, b, c, false);
       ctx.fill();
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   function sleet(ctx, t, cx, cy, cw, s, color) {
     t /= 750;
@@ -279,8 +279,8 @@
       x = Math.floor(cx + ((i - 1.5) / 1.5) * (i === 1 || i === 2 ? -1 : 1) * a) + 0.5;
       y = cy + p * cw;
       line(ctx, x, y - s * 1.5, x, y + s * 1.5);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   function snow(ctx, t, cx, cy, cw, s, color) {
     t /= 3000;
@@ -311,8 +311,8 @@
       line(ctx, x - ux, y - uy, x + ux, y + uy);
       line(ctx, x - vx, y - vy, x + vx, y + vy);
       line(ctx, x - wx, y - wy, x + wx, y + wy);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   function fogbank(ctx, t, cx, cy, cw, s, color) {
     t /= 30000;
@@ -328,7 +328,7 @@
     ctx.globalCompositeOperation = 'destination-out';
     puffs(ctx, t, cx, cy, a, b, c - s, d - s);
     ctx.globalCompositeOperation = 'source-over';
-***REMOVED***
+  }
 
   /*
   var WIND_PATHS = [
@@ -347,7 +347,7 @@
            0.50,  0.07,
            0.75,  0.18,
            1.00,  0.28
-      ***REMOVED***)),
+        ])),
         downsample(31, upsample(16, [
           -1.00, -0.10,
           -0.75,  0.00,
@@ -358,8 +358,8 @@
            0.50, -0.10,
            0.75, -0.14,
            1.00, -0.10
-      ***REMOVED***))
-    ***REMOVED***;
+        ]))
+      ];
   */
 
   var WIND_PATHS = [
@@ -386,7 +386,7 @@
            0.5398,  0.0766,  0.5768,  0.0890,  0.6123,  0.1055,
            0.6466,  0.1244,  0.6805,  0.1440,  0.7147,  0.1630,
            0.7500,  0.1800
-      ***REMOVED***,
+        ],
         [
           -0.7500,  0.0000, -0.7033,  0.0195, -0.6569,  0.0399,
           -0.6104,  0.0600, -0.5634,  0.0789, -0.5155,  0.0954,
@@ -399,12 +399,12 @@
            0.4052, -0.0665,  0.4525, -0.0847,  0.5007, -0.1002,
            0.5497, -0.1130,  0.5991, -0.1240,  0.6491, -0.1325,
            0.6994, -0.1380,  0.7500, -0.1400
-      ***REMOVED***
-    ***REMOVED***,
+        ]
+      ],
       WIND_OFFSETS = [
-        {start: 0.36, end: 0.11***REMOVED***,
-        {start: 0.56, end: 0.16***REMOVED***
-    ***REMOVED***;
+        {start: 0.36, end: 0.11},
+        {start: 0.56, end: 0.16}
+      ];
 
   function leaf(ctx, t, x, y, cw, s, color) {
     var a = cw / 8,
@@ -428,7 +428,7 @@
     ctx.fill();
     ctx.globalCompositeOperation = 'source-over';
     ctx.stroke();
-***REMOVED***
+  }
 
   function swoosh(ctx, t, cx, cy, cw, s, index, total, color) {
     t /= 2500;
@@ -454,7 +454,7 @@
       b += 2;
 
       ctx.moveTo(
-        cx + (path[b - 2] * (1 - a) + path[b  ***REMOVED*** * a) * cw,
+        cx + (path[b - 2] * (1 - a) + path[b    ] * a) * cw,
         cy + (path[b - 1] * (1 - a) + path[b + 1] * a) * cw
       );
 
@@ -469,17 +469,17 @@
           ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
 
         ctx.lineTo(
-          cx + (path[d - 2] * (1 - c) + path[d  ***REMOVED*** * c) * cw,
+          cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
           cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
         );
-    ***REMOVED***
+      }
 
       else
         for(i = b; i !== path.length; i += 2)
           ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
 
       ctx.stroke();
-  ***REMOVED***
+    }
 
     else if(c < 1) {
       ctx.beginPath();
@@ -496,12 +496,12 @@
         ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
 
       ctx.lineTo(
-        cx + (path[d - 2] * (1 - c) + path[d  ***REMOVED*** * c) * cw,
+        cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
         cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
       );
 
       ctx.stroke();
-  ***REMOVED***
+    }
 
     if(e < 1) {
       e *= path.length / 2 - 1;
@@ -513,21 +513,21 @@
       leaf(
         ctx,
         t,
-        cx + (path[f - 2] * (1 - e) + path[f  ***REMOVED*** * e) * cw,
+        cx + (path[f - 2] * (1 - e) + path[f    ] * e) * cw,
         cy + (path[f - 1] * (1 - e) + path[f + 1] * e) * cw,
         cw,
         s,
         color
       );
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   var Skycons = function(opts) {
         this.list        = [];
         this.interval    = null;
         this.color       = opts && opts.color ? opts.color : "black";
         this.resizeClear = !!(opts && opts.resizeClear);
-    ***REMOVED***;
+      };
 
   Skycons.CLEAR_DAY = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -535,7 +535,7 @@
         s = Math.min(w, h);
 
     sun(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.CLEAR_NIGHT = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -543,7 +543,7 @@
         s = Math.min(w, h);
 
     moon(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.PARTLY_CLOUDY_DAY = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -552,7 +552,7 @@
 
     sun(ctx, t, w * 0.625, h * 0.375, s * 0.75, s * STROKE, color);
     cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.PARTLY_CLOUDY_NIGHT = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -561,7 +561,7 @@
 
     moon(ctx, t, w * 0.667, h * 0.375, s * 0.75, s * STROKE, color);
     cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.CLOUDY = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -569,7 +569,7 @@
         s = Math.min(w, h);
 
     cloud(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.RAIN = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -578,7 +578,7 @@
 
     rain(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
     cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.SLEET = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -587,7 +587,7 @@
 
     sleet(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
     cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.SNOW = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -596,7 +596,7 @@
 
     snow(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
     cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
-***REMOVED***;
+  };
 
   Skycons.WIND = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -605,7 +605,7 @@
 
     swoosh(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, 0, 2, color);
     swoosh(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, 1, 2, color);
-***REMOVED***;
+  };
 
   Skycons.FOG = function(ctx, t, color) {
     var w = ctx.canvas.width,
@@ -632,7 +632,7 @@
 
     line(ctx, a + w * 0.2 + k * 0.5, e, b + w * 0.8 - k * 0.5, e);
     line(ctx, c + w * 0.2 + k * 0.5, f, d + w * 0.8 - k * 0.5, f);
-***REMOVED***;
+  };
 
   Skycons.prototype = {
     _determineDrawingFunction: function(draw) {
@@ -640,7 +640,7 @@
         draw = Skycons[draw.toUpperCase().replace(/-/g, "_")] || null;
 
       return draw;
-  ***REMOVED***,
+    },
     add: function(el, draw) {
       var obj;
 
@@ -661,11 +661,11 @@
         element: el,
         context: el.getContext("2d"),
         drawing: draw
-    ***REMOVED***;
+      };
 
       this.list.push(obj);
       this.draw(obj, KEYFRAME);
-  ***REMOVED***,
+    },
     set: function(el, draw) {
       var i;
 
@@ -677,10 +677,10 @@
           this.list[i].drawing = this._determineDrawingFunction(draw);
           this.draw(this.list[i], KEYFRAME);
           return;
-      ***REMOVED***
+        }
 
       this.add(el, draw);
-  ***REMOVED***,
+    },
     remove: function(el) {
       var i;
 
@@ -691,8 +691,8 @@
         if(this.list[i].element === el) {
           this.list.splice(i, 1);
           return;
-      ***REMOVED***
-  ***REMOVED***,
+        }
+    },
     draw: function(obj, time) {
       var canvas = obj.context.canvas;
 
@@ -703,7 +703,7 @@
         obj.context.clearRect(0, 0, canvas.width, canvas.height);
 
       obj.drawing(obj.context, time, this.color);
-  ***REMOVED***,
+    },
     play: function() {
       var self = this;
 
@@ -714,17 +714,17 @@
 
         for(i = self.list.length; i--; )
           self.draw(self.list[i], now);
-    ***REMOVED***, 1000 / 60);
-  ***REMOVED***,
+      }, 1000 / 60);
+    },
     pause: function() {
       var i;
 
       if(this.interval) {
         cancelInterval(this.interval);
         this.interval = null;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***;
+      }
+    }
+  };
 
   global.Skycons = Skycons;
-***REMOVED***(this));
+}(this));

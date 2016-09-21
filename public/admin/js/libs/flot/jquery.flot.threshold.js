@@ -9,25 +9,25 @@ The plugin supports these options:
 		threshold: {
 			below: number
 			color: colorspec
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 It can also be applied to a single series, like this:
 
 	$.plot( $("#placeholder"), [{
 		data: [ ... ],
-		threshold: { ... ***REMOVED***
-	***REMOVED***])
+		threshold: { ... }
+	}])
 
 An array can be passed for multiple thresholding, like this:
 
 	threshold: [{
 		below: number1
 		color: color1
-	***REMOVED***,{
+	},{
 		below: number2
 		color: color2
-	***REMOVED***]
+	}]
 
 These multiple threshold objects can be passed in any order since they are
 sorted by the processing function.
@@ -44,15 +44,15 @@ You may need to check for this in hover events.
 
 (function ($) {
     var options = {
-        series: { threshold: null ***REMOVED*** // or { below: number, color: color spec***REMOVED***
-  ***REMOVED***;
+        series: { threshold: null } // or { below: number, color: color spec}
+    };
     
     function init(plot) {
         function thresholdData(plot, s, datapoints, below, color) {
             var ps = datapoints.pointsize, i, x, y, p, prevp,
-                thresholded = $.extend({***REMOVED***, s); // note: shallow copy
+                thresholded = $.extend({}, s); // note: shallow copy
 
-            thresholded.datapoints = { points: [], pointsize: ps, format: datapoints.format ***REMOVED***;
+            thresholded.datapoints = { points: [], pointsize: ps, format: datapoints.format };
             thresholded.label = null;
             thresholded.color = color;
             thresholded.threshold = null;
@@ -92,13 +92,13 @@ You may need to check for this in hover events.
                     p.push(below);
                     for (m = 2; m < ps; ++m)
                         p.push(origpoints[i + m]);
-              ***REMOVED***
+                }
 
                 p.push(x);
                 p.push(y);
                 for (m = 2; m < ps; ++m)
                     p.push(origpoints[i + m]);
-          ***REMOVED***
+            }
 
             datapoints.points = newpoints;
             thresholded.datapoints.points = threspoints;
@@ -107,10 +107,10 @@ You may need to check for this in hover events.
                 var origIndex = $.inArray(s, plot.getData());
                 // Insert newly-generated series right after original one (to prevent it from becoming top-most)
                 plot.getData().splice(origIndex + 1, 0, thresholded);
-          ***REMOVED***
+            }
                 
             // FIXME: there are probably some edge cases left in bars
-      ***REMOVED***
+        }
         
         function processThresholds(plot, s, datapoints) {
             if (!s.threshold)
@@ -119,24 +119,24 @@ You may need to check for this in hover events.
             if (s.threshold instanceof Array) {
                 s.threshold.sort(function(a, b) {
                     return a.below - b.below;
-              ***REMOVED***);
+                });
                 
                 $(s.threshold).each(function(i, th) {
                     thresholdData(plot, s, datapoints, th.below, th.color);
-              ***REMOVED***);
-          ***REMOVED***
+                });
+            }
             else {
                 thresholdData(plot, s, datapoints, s.threshold.below, s.threshold.color);
-          ***REMOVED***
-      ***REMOVED***
+            }
+        }
         
         plot.hooks.processDatapoints.push(processThresholds);
-  ***REMOVED***
+    }
     
     $.plot.plugins.push({
         init: init,
         options: options,
         name: 'threshold',
         version: '1.2'
-  ***REMOVED***);
-***REMOVED***)(jQuery);
+    });
+})(jQuery);

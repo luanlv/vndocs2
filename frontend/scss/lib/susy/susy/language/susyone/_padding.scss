@@ -15,8 +15,8 @@
   $style    : fix-static-misalignment()
 ) {
   $from           : unquote($from);
-  padding-#{$from***REMOVED***: space($columns, $context, $style);
-***REMOVED***
+  padding-#{$from}: space($columns, $context, $style);
+}
 
 // add empty colums as padding after an element.
 // $columns : The number of columns to suffix.
@@ -33,8 +33,8 @@
 ) {
   $from         : unquote($from);
   $to           : opposite-position($from);
-  padding-#{$to***REMOVED***: space($columns, $context, $style);
-***REMOVED***
+  padding-#{$to}: space($columns, $context, $style);
+}
 
 // add empty colums as padding before and after an element.
 // $columns : The number of columns to pad.
@@ -53,11 +53,11 @@
   $from     : unquote($from);
   @if $prefix {
     @include prefix($prefix, $context, $from, $style);
-***REMOVED***
+  }
   @if $suffix {
     @include suffix($suffix, $context, $from, $style);
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Bleed into colums with margin/padding on any side of an element.
 // $width   : The side of the bleed.
@@ -71,22 +71,22 @@
   $sides: left right,
   $style: fix-static-misalignment()
 ) {
-  @if $border-box-sizing { @include box-sizing(content-box) ***REMOVED***
+  @if $border-box-sizing { @include box-sizing(content-box) }
 
   @if type-of($width) == 'list' {
     $width: filter($width, of);
     $width: space(nth($width,1), nth($width,2), $style);
-***REMOVED*** @else if unitless($width) {
+  } @else if unitless($width) {
     $width: space($width, $style: $style);
-***REMOVED***
+  }
 
   @if $sides == 'all' {
     margin: - $width;
     padding: $width;
-***REMOVED*** @else {
+  } @else {
     @each $side in $sides {
-      margin-#{$side***REMOVED***: - $width;
-      padding-#{$side***REMOVED***: $width;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      margin-#{$side}: - $width;
+      padding-#{$side}: $width;
+    }
+  }
+}

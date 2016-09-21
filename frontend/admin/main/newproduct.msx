@@ -1,11 +1,11 @@
-var Product = {***REMOVED***;
+var Product = {};
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
 var NewProduct = require('./_newproduct.msx');
 var Right = require('./_right.msx');
 var fn = require('./fn.msx');
 
-var postData = {"ok": "data"***REMOVED***
+var postData = {"ok": "data"}
 
 Product.controller = function(){
   console.log("new product");
@@ -17,18 +17,18 @@ Product.controller = function(){
     ctrl.imgList(ctrl.request2.data());
     ctrl.showImgList = true;
     m.redraw();
-***REMOVED***;
+  };
   
   ctrl.setup = function(){
     ctrl.categories(ctrl.request.data());
     m.redraw();
-***REMOVED***;
+  };
   
   
   ctrl.categories = m.prop([]);
-  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"***REMOVED***, ctrl.categories, ctrl.setup);
+  ctrl.request = fn.requestWithFeedback({method: "GET", url: "/admin/category/listParent"}, ctrl.categories, ctrl.setup);
   
-***REMOVED***;
+};
 
 
 
@@ -37,15 +37,15 @@ Product.view = function(ctrl){
     Header(ctrl),
     <div id="base">
       
-      {NewProduct(ctrl)***REMOVED***
+      {NewProduct(ctrl)}
       
-      {Menu(ctrl)***REMOVED***
+      {Menu(ctrl)}
       
-      {Right(ctrl)***REMOVED***
+      {Right(ctrl)}
     
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 
 module.exports = Product;

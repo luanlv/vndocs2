@@ -7,14 +7,14 @@
     display: inline;
     font-weight: bold;
     font-size: 12px;
-***REMOVED***
+  }
   div.current {
     font-style: italic;
-***REMOVED***
+  }
   a {
     color: $active-menu-level2-color;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .pt-left {
   width: 300px;
@@ -28,11 +28,11 @@
     padding: 15px;
     cursor: -webkit-zoom-in;
     cursor: -moz-zoom-in;
-***REMOVED***
+  }
   .zoomWr{
     position: relative;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .pt-right {
   width: 500px;
@@ -45,24 +45,24 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-***REMOVED***
+  }
   div {
     margin-bottom: 5px;
-***REMOVED***
+  }
   .msp > span {
     font-weight: bold;
     //font-size: 16px;
-***REMOVED***
+  }
   .price > span {
     font-weight: bold;
     //font-size: 16px;
     color: #FF4136;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .productWr {
   position: relative;
-***REMOVED***
+}
 
 .zoomWr {
   position: fixed;
@@ -72,7 +72,7 @@
   right: 0;
   overflow: auto;
   background: rgba(192, 192, 192, 0.4);
-***REMOVED***
+}
 .zoomImageWr{
   overflow: hidden;
   display: flex;
@@ -87,8 +87,8 @@
     border: 1px solid #ddd;
     cursor: -webkit-zoom-out;
     cursor: -moz-zoom-out;
-***REMOVED***
+  }
 
 
 
-***REMOVED***
+}

@@ -18,25 +18,25 @@
       @if $url-str == "url" {
         $webkit-image: $image;
         $spec-image:   $image;
-    ***REMOVED***
+      }
 
       @else if $gradient-type == "linear" {
         $gradients: _linear-gradient-parser($image);
         $webkit-image:  map-get($gradients, webkit-image);
         $spec-image:    map-get($gradients, spec-image);
-    ***REMOVED***
+      }
 
       @else if $gradient-type == "radial" {
         $gradients: _radial-gradient-parser($image);
         $webkit-image: map-get($gradients, webkit-image);
         $spec-image:   map-get($gradients, spec-image);
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
     $webkit-images: append($webkit-images, $webkit-image, comma);
     $spec-images:   append($spec-images,   $spec-image,   comma);
-***REMOVED***
+  }
 
   background-image: $webkit-images;
   background-image: $spec-images;
-***REMOVED***
+}

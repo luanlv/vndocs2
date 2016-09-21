@@ -5,7 +5,7 @@ $(function() {
     2: "Weak",
     3: "Good",
     4: "Strong"
-***REMOVED***;
+  };
 
   var password = $('[data-pwd="true"]');
   var meter = $('#password-strength-meter');
@@ -21,11 +21,11 @@ $(function() {
     // Update the text indicator
     if (val !== "") {
       msg.text("Strength: " + strength[result.score]);
-  ***REMOVED*** else {
+    } else {
       msg.text("");
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   password.change(showFeedback);
   password.keyup(showFeedback);
-***REMOVED***);
+});

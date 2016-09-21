@@ -18,29 +18,29 @@ class PasswordInfoDAO @Inject() (userDAO: UserDAO) extends DelegableAuthInfoDAO[
     {
       println("running password info ==============================")
       update(loginInfo, authInfo)
-  ***REMOVED***
+    }
 
   def find(loginInfo: LoginInfo): Future[Option[PasswordInfo]] =
     userDAO.find(loginInfo).map {
       case Some(user) if user.activated => Some(user.password)
       case _ => None
-  ***REMOVED***
+    }
 
-  def remove(loginInfo: LoginInfo): Future[Unit] = userDAO.remove(loginInfo).map { result => Unit ***REMOVED***
+  def remove(loginInfo: LoginInfo): Future[Unit] = userDAO.remove(loginInfo).map { result => Unit }
 
   def save(loginInfo: LoginInfo, authInfo: PasswordInfo): Future[PasswordInfo] =
     find(loginInfo).flatMap {
       case Some(_) => update(loginInfo, authInfo)
       case None => add(loginInfo, authInfo)
-  ***REMOVED***
+    }
 
   def update(loginInfo: LoginInfo, authInfo: PasswordInfo): Future[PasswordInfo] =
     userDAO.find(loginInfo).map {
       case Some(user) => {
         userDAO.save(user.copy(password = authInfo))
         authInfo
-    ***REMOVED***
+      }
       case _ => throw new Exception("PasswordInfoDAO - update : the user must exists to update its password")
-  ***REMOVED***
+    }
 
-***REMOVED***
+}

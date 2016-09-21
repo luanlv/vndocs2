@@ -3,13 +3,13 @@
 @if $border-box-sizing == true {
   html { // http://bit.ly/1qk2tVR
     box-sizing: border-box;
-***REMOVED***
+  }
 
   * {
     &,
     &::after,
     &::before {
       box-sizing: inherit;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

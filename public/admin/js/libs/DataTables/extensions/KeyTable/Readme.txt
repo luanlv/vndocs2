@@ -20,7 +20,7 @@ KeyTable is initialised using the `C` option that it adds to DataTables' `dom` o
 $(document).ready( function () {
 	var table = $('#example').DataTable();
 	new $.fn.dataTable.KeyTable( table );
-***REMOVED*** );
+} );
 ```
 
 

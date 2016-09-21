@@ -4,13 +4,13 @@
   display: inline-block;
 
   @warn "The inline-block mixin is deprecated and will be removed in the next major version release";
-***REMOVED***
+}
 
 @mixin button ($style: simple, $base-color: #4294f0, $text-size: inherit, $padding: 7px 18px) {
 
   @if type-of($style) == string and type-of($base-color) == color {
     @include buttonstyle($style, $base-color, $text-size, $padding);
-***REMOVED***
+  }
 
   @if type-of($style) == string and type-of($base-color) == number {
     $padding: $text-size;
@@ -19,16 +19,16 @@
 
     @if $padding == inherit {
       $padding: 7px 18px;
-  ***REMOVED***
+    }
 
     @include buttonstyle($style, $base-color, $text-size, $padding);
-***REMOVED***
+  }
 
   @if type-of($style) == color and type-of($base-color) == color {
     $base-color: $style;
     $style: simple;
     @include buttonstyle($style, $base-color, $text-size, $padding);
-***REMOVED***
+  }
 
   @if type-of($style) == color and type-of($base-color) == number {
     $padding: $text-size;
@@ -38,10 +38,10 @@
 
     @if $padding == inherit {
       $padding: 7px 18px;
-  ***REMOVED***
+    }
 
     @include buttonstyle($style, $base-color, $text-size, $padding);
-***REMOVED***
+  }
 
   @if type-of($style) == number {
     $padding: $base-color;
@@ -51,55 +51,55 @@
 
     @if $padding == #4294f0 {
       $padding: 7px 18px;
-  ***REMOVED***
+    }
 
     @include buttonstyle($style, $base-color, $text-size, $padding);
-***REMOVED***
+  }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-***REMOVED***
+  }
 
   @warn "The button mixin is deprecated and will be removed in the next major version release";
-***REMOVED***
+}
 
 // Selector Style Button
 @mixin buttonstyle($type, $b-color, $t-size, $pad) {
   // Grayscale button
   @if $type == simple and $b-color == grayscale($b-color) {
     @include simple($b-color, true, $t-size, $pad);
-***REMOVED***
+  }
 
   @if $type == shiny and $b-color == grayscale($b-color) {
     @include shiny($b-color, true, $t-size, $pad);
-***REMOVED***
+  }
 
   @if $type == pill and $b-color == grayscale($b-color) {
     @include pill($b-color, true, $t-size, $pad);
-***REMOVED***
+  }
 
   @if $type == flat and $b-color == grayscale($b-color) {
     @include flat($b-color, true, $t-size, $pad);
-***REMOVED***
+  }
 
   // Colored button
   @if $type == simple {
     @include simple($b-color, false, $t-size, $pad);
-***REMOVED***
+  }
 
   @else if $type == shiny {
     @include shiny($b-color, false, $t-size, $pad);
-***REMOVED***
+  }
 
   @else if $type == pill {
     @include pill($b-color, false, $t-size, $pad);
-***REMOVED***
+  }
 
   @else if $type == flat {
     @include flat($b-color, false, $t-size, $pad);
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Simple Button
 @mixin simple($base-color, $grayscale: false, $textsize: inherit, $padding: 7px 18px) {
@@ -112,14 +112,14 @@
   @if is-light($base-color) {
     $color:       hsl(0, 0, 20%);
     $text-shadow: adjust-color($base-color, $saturation: 10%, $lightness: 4%);
-***REMOVED***
+  }
 
   @if $grayscale == true {
     $border:        grayscale($border);
     $inset-shadow:  grayscale($inset-shadow);
     $stop-gradient: grayscale($stop-gradient);
     $text-shadow:   grayscale($text-shadow);
-***REMOVED***
+  }
 
   border: 1px solid $border;
   border-radius: 3px;
@@ -143,13 +143,13 @@
       $base-color-hover:    grayscale($base-color-hover);
       $inset-shadow-hover:  grayscale($inset-shadow-hover);
       $stop-gradient-hover: grayscale($stop-gradient-hover);
-  ***REMOVED***
+    }
 
     @include linear-gradient ($base-color-hover, $stop-gradient-hover);
 
     box-shadow: inset 0 1px 0 0 $inset-shadow-hover;
     cursor: pointer;
-***REMOVED***
+  }
 
   &:active:not(:disabled),
   &:focus:not(:disabled) {
@@ -159,12 +159,12 @@
     @if $grayscale == true {
       $border-active:       grayscale($border-active);
       $inset-shadow-active: grayscale($inset-shadow-active);
-  ***REMOVED***
+    }
 
     border: 1px solid $border-active;
     box-shadow: inset 0 0 8px 4px $inset-shadow-active, inset 0 0 8px 4px $inset-shadow-active;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Shiny Button
 @mixin shiny($base-color, $grayscale: false, $textsize: inherit, $padding: 7px 18px) {
@@ -180,7 +180,7 @@
   @if is-light($base-color) {
     $color:       hsl(0, 0, 20%);
     $text-shadow: adjust-color($base-color, $saturation: 10%, $lightness: 4%);
-***REMOVED***
+  }
 
   @if $grayscale == true {
     $border:        grayscale($border);
@@ -190,7 +190,7 @@
     $second-stop:   grayscale($second-stop);
     $text-shadow:   grayscale($text-shadow);
     $third-stop:    grayscale($third-stop);
-***REMOVED***
+  }
 
   @include linear-gradient(top, $base-color 0%, $second-stop 50%, $third-stop 50%, $fourth-stop 100%);
 
@@ -218,14 +218,14 @@
       $second-stop-hover: grayscale($second-stop-hover);
       $third-stop-hover:  grayscale($third-stop-hover);
       $fourth-stop-hover: grayscale($fourth-stop-hover);
-  ***REMOVED***
+    }
 
     @include linear-gradient(top, $first-stop-hover  0%,
                                   $second-stop-hover 50%,
                                   $third-stop-hover  50%,
                                   $fourth-stop-hover 100%);
     cursor: pointer;
-***REMOVED***
+  }
 
   &:active:not(:disabled),
   &:focus:not(:disabled) {
@@ -233,11 +233,11 @@
 
     @if $grayscale == true {
       $inset-shadow-active: grayscale($inset-shadow-active);
-  ***REMOVED***
+    }
 
     box-shadow: inset 0 0 20px 0 $inset-shadow-active;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Pill Button
 @mixin pill($base-color, $grayscale: false, $textsize: inherit, $padding: 7px 18px) {
@@ -252,7 +252,7 @@
   @if is-light($base-color) {
     $color:       hsl(0, 0, 20%);
     $text-shadow: adjust-color($base-color, $saturation: 10%, $lightness: 4%);
-***REMOVED***
+  }
 
   @if $grayscale == true {
     $border-bottom: grayscale($border-bottom);
@@ -261,7 +261,7 @@
     $inset-shadow:  grayscale($inset-shadow);
     $stop-gradient: grayscale($stop-gradient);
     $text-shadow:   grayscale($text-shadow);
-***REMOVED***
+  }
 
   border: 1px solid $border-top;
   border-color: $border-top $border-sides $border-bottom;
@@ -296,7 +296,7 @@
       $inset-shadow-hover:  grayscale($inset-shadow-hover);
       $stop-gradient-hover: grayscale($stop-gradient-hover);
       $text-shadow-hover:   grayscale($text-shadow-hover);
-  ***REMOVED***
+    }
 
     @include linear-gradient ($base-color-hover, $stop-gradient-hover);
 
@@ -306,7 +306,7 @@
     box-shadow: inset 0 1px 0 0 $inset-shadow-hover;
     cursor: pointer;
     text-shadow: 0 -1px 1px $text-shadow-hover;
-***REMOVED***
+  }
 
   &:active:not(:disabled),
   &:focus:not(:disabled) {
@@ -322,15 +322,15 @@
       $border-bottom-active: grayscale($border-bottom-active);
       $inset-shadow-active:  grayscale($inset-shadow-active);
       $text-shadow-active:   grayscale($text-shadow-active);
-  ***REMOVED***
+    }
 
     background: $active-color;
     border: 1px solid $border-active;
     border-bottom: 1px solid $border-bottom-active;
     box-shadow: inset 0 0 6px 3px $inset-shadow-active;
     text-shadow: 0 -1px 1px $text-shadow-active;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Flat Button
 @mixin flat($base-color, $grayscale: false, $textsize: inherit, $padding: 7px 18px) {
@@ -338,7 +338,7 @@
 
   @if is-light($base-color) {
     $color:       hsl(0, 0, 20%);
-***REMOVED***
+  }
 
   background-color: $base-color;
   border-radius: 3px;
@@ -356,11 +356,11 @@
 
     @if $grayscale == true {
       $base-color-hover: grayscale($base-color-hover);
-  ***REMOVED***
+    }
 
     background-color: $base-color-hover;
     cursor: pointer;
-***REMOVED***
+  }
 
   &:active:not(:disabled),
   &:focus:not(:disabled) {
@@ -368,12 +368,12 @@
 
     @if $grayscale == true {
       $base-color-active: grayscale($base-color-active);
-  ***REMOVED***
+    }
 
     background-color: $base-color-active;
     cursor: pointer;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Flexible grid
 @function flex-grid($columns, $container-columns: $fg-max-columns) {
@@ -382,7 +382,7 @@
   @return percentage($width / $container-width);
 
   @warn "The flex-grid function is deprecated and will be removed in the next major version release";
-***REMOVED***
+}
 
 // Flexible gutter
 @function flex-gutter($container-columns: $fg-max-columns, $gutter: $fg-gutter) {
@@ -390,22 +390,22 @@
   @return percentage($gutter / $container-width);
 
   @warn "The flex-gutter function is deprecated and will be removed in the next major version release";
-***REMOVED***
+}
 
 @function grid-width($n) {
   @return $n * $gw-column + ($n - 1) * $gw-gutter;
 
   @warn "The grid-width function is deprecated and will be removed in the next major version release";
-***REMOVED***
+}
 
 @function golden-ratio($value, $increment) {
   @return modular-scale($increment, $value, $ratio: $golden);
 
   @warn "The golden-ratio function is deprecated and will be removed in the next major version release. Please use the modular-scale function, instead.";
-***REMOVED***
+}
 
 @mixin box-sizing($box) {
   @include prefixer(box-sizing, $box, webkit moz spec);
 
   @warn "The box-sizing mixin is deprecated and will be removed in the next major version release. This property can now be used un-prefixed.";
-***REMOVED***
+}

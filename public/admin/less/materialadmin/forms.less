@@ -22,40 +22,40 @@ legend {
 		bottom: -7px;
 		white-space: nowrap;
 		opacity: 0.8;
-	***REMOVED***
+	}
 	&:before, &:after {
 		content: '';
 
 		display: table-cell;
 		border-bottom: 1px solid fade(@black, 25);
-	***REMOVED***
+	}
 	&:before {
 		width: 0%;
-	***REMOVED***
+	}
 	&:after {
 		width: 100%;
-	***REMOVED***
+	}
 
 	&.text-center {
 		span {
 			padding: 0 10px;
-		***REMOVED***
+		}
 		&:before, &:after {
 			width: 50%;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 	&.text-right {
 		span {
 			padding: 0 0 0 10px;
-		***REMOVED***
+		}
 		&:before {
 			width: 100%;
-		***REMOVED***
+		}
 		&:after {
 			width: 0%;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // Label
@@ -63,7 +63,7 @@ legend {
 
 label {
 	font-weight: @weight-normal;
-***REMOVED***
+}
 
 .form-group {
 	> label,
@@ -71,8 +71,8 @@ label {
 		font-size: @font-size-small;
 		opacity: @form-label-opacity;
 		margin-bottom: 0;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 // Position the label absolute only in the .form and .form-inline layouts
 .form,
@@ -81,8 +81,8 @@ label {
 		position: absolute;
 		top: 0;
 		left: 0;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Form control static
@@ -90,7 +90,7 @@ label {
 
 .form-control-static {
 	font-size: 16px;
-***REMOVED***
+}
 
 
 // Form control feedback
@@ -100,7 +100,7 @@ label {
 .form-control-feedback {
 	top: auto;
 	bottom: 0;
-***REMOVED***
+}
 
 
 // Common form controls
@@ -123,8 +123,8 @@ label {
 		color: @input-color-placeholder;
 		option {
 			color: @input-color;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Disabled and read-only inputs
 	&[disabled],
@@ -139,17 +139,17 @@ label {
 		// Hide the bottom line when its a readonly
 		~ label:after, ~ .form-control-line:after {
 			display: none;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 // Textarea
 textarea.form-control {
 	padding: 4px 0 4px 0;
-***REMOVED***
+}
 textarea.autosize {
 	min-height: 38px;
-***REMOVED***
+}
 
 
 // Form groups controls
@@ -159,8 +159,8 @@ textarea.autosize {
 .form-inline {
 	.form-group {
 		padding-top: 16px;
-	***REMOVED***
-***REMOVED***
+	}
+}
 .form-group {
 	position: relative;
 	margin-bottom: 19px;
@@ -170,8 +170,8 @@ textarea.autosize {
 		~ label,
 		~ .form-control-line {
 			.transition(0.2s ease all);
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Add styling for the bottom input line
 	.form-control {
@@ -193,8 +193,8 @@ textarea.autosize {
 				visibility: hidden;
 				background-color: @input-border-focus;
 				.transition(0.2s ease all);
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Basic label styling
 		~ label {
@@ -202,7 +202,7 @@ textarea.autosize {
 			margin-bottom: 0;
 			font-size: @font-size-small;
 			opacity: @form-label-opacity;
-		***REMOVED***
+		}
 
 		&:focus {
 			border-color: @input-border;
@@ -210,9 +210,9 @@ textarea.autosize {
 			~ label {
 				color: @form-label-focus;
 				opacity: @form-label-focus-opacity;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 	// Expand the line when the input is focused
 	.form-control:focus {
@@ -220,9 +220,9 @@ textarea.autosize {
 			visibility: visible;
 			width: 100%;
 			left: 0;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // Floating labels
@@ -233,14 +233,14 @@ textarea.autosize {
 	.form-control ~ label {
 		top: 19px;
 		font-size: 16px;
-	***REMOVED***
+	}
 
 	// Expand the line when the input is focused or dirty
 	.form-control:focus ~ label, .form-control.dirty ~ label {
 		top: 0px;
 		font-size: @font-size-small !important;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Form control sizing
@@ -248,44 +248,44 @@ textarea.autosize {
 
 .input-sm {
 	.input-size(@input-height-small; 0; 0; 1em; @line-height-small; @border-radius-small);
-***REMOVED***
+}
 
 .input-lg {
 	.input-size(@input-height-large; 0; 0; 1.6em; @line-height-large; @border-radius-large);
-***REMOVED***
+}
 
 
 // Fixed control sizes
 // -------------------------
 
 .form-group {
-	&.control-width-tiny {		max-width: (@gutter-size * 10); ***REMOVED***
-	&.control-width-mini {		max-width: (@gutter-size * 18); ***REMOVED***
-	&.control-width-small {		max-width: (@gutter-size * 34); ***REMOVED***
-	&.control-width-medium {	max-width: (@gutter-size * 50); ***REMOVED***
-	&.control-width-normal {	max-width: (@gutter-size * 75); ***REMOVED***
-	&.control-width-large {		max-width: (@gutter-size * 125); ***REMOVED***
-	&.control-width-xlarge {	max-width: (@gutter-size * 200); ***REMOVED***
-	&.control-width-xxlarge {	max-width: (@gutter-size * 300); ***REMOVED***
-***REMOVED***
+	&.control-width-tiny {		max-width: (@gutter-size * 10); }
+	&.control-width-mini {		max-width: (@gutter-size * 18); }
+	&.control-width-small {		max-width: (@gutter-size * 34); }
+	&.control-width-medium {	max-width: (@gutter-size * 50); }
+	&.control-width-normal {	max-width: (@gutter-size * 75); }
+	&.control-width-large {		max-width: (@gutter-size * 125); }
+	&.control-width-xlarge {	max-width: (@gutter-size * 200); }
+	&.control-width-xxlarge {	max-width: (@gutter-size * 300); }
+}
 
 textarea {
-	&.control-2-rows {			height: (32px * 2); ***REMOVED***
-	&.control-3-rows {			height: (32px * 3); ***REMOVED***
-	&.control-4-rows {			height: (32px * 4); ***REMOVED***
-	&.control-5-rows {			height: (32px * 5); ***REMOVED***
-	&.control-6-rows {			height: (32px * 6); ***REMOVED***
-	&.control-7-rows {			height: (32px * 7); ***REMOVED***
-	&.control-8-rows {			height: (32px * 8); ***REMOVED***
-	&.control-9-rows {			height: (32px * 9); ***REMOVED***
-	&.control-10-rows {			height: (32px * 10); ***REMOVED***
-	&.control-11-rows {			height: (32px * 11); ***REMOVED***
-	&.control-12-rows {			height: (32px * 12); ***REMOVED***
-***REMOVED***
+	&.control-2-rows {			height: (32px * 2); }
+	&.control-3-rows {			height: (32px * 3); }
+	&.control-4-rows {			height: (32px * 4); }
+	&.control-5-rows {			height: (32px * 5); }
+	&.control-6-rows {			height: (32px * 6); }
+	&.control-7-rows {			height: (32px * 7); }
+	&.control-8-rows {			height: (32px * 8); }
+	&.control-9-rows {			height: (32px * 9); }
+	&.control-10-rows {			height: (32px * 10); }
+	&.control-11-rows {			height: (32px * 11); }
+	&.control-12-rows {			height: (32px * 12); }
+}
 
 textarea.no-resize {
 	resize: none;
-***REMOVED***
+}
 
 
 // Horizontal forms
@@ -295,19 +295,19 @@ textarea.no-resize {
 	.form-group {
 		padding-top: 0;
 		margin-bottom: 11px;
-	***REMOVED***
+	}
 	.form-control ~ .form-control-line {
 		left: (@grid-gutter-width / 2);
 		right: (@grid-gutter-width / 2);
 		width: auto;
-	***REMOVED***
+	}
 	.input-group {
 		.form-control ~ .form-control-line {
 			left: 0;
 			right: 0;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // Inline forms
@@ -319,16 +319,16 @@ textarea.no-resize {
 	@media (min-width: @screen-sm-min) {
 		.form-group {
 			margin-right: (@gutter-size * 3);
-		***REMOVED***
+		}
 
 		.radio,
 		.checkbox,
 		.btn {
 			margin-top: 16px;
 			margin-right: (@gutter-size * 3);
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // Help text
@@ -346,15 +346,15 @@ textarea.no-resize {
 	.form-horizontal & {
 		bottom: -20px;
 		right: 10px;
-	***REMOVED***
-***REMOVED***
+	}
+}
 // Error messages
 span.help-block {
 	right: auto;
 	.form-horizontal & {
 		right: auto;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Inversed Form
@@ -371,30 +371,30 @@ span.help-block {
 
 		~ label:after, ~ .form-control-line:after {
 			background-color: @inverse-input-border-focus;
-		***REMOVED***
+		}
 
 		&:focus {
 			border-color: @inverse-input-border;
 
 			~ label {
 				color: @inverse-form-label-focus;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Disabled and read-only inputs
 		&[disabled],
 		&[readonly],
 		fieldset[disabled] & {
 			border-bottom-color: @inverse-input-border-disabled;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Select needs the following marking so it will be visible in dark forms
 	select:focus {
 		background: @white;
 		color: @text-color !important;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // States
@@ -405,19 +405,19 @@ span.help-block {
 	.alert-variant(@input-border-warning-focus);
 	.form-inverse & {
 		.alert-variant(@inverse-input-border-warning-focus);
-	***REMOVED***
-***REMOVED***
+	}
+}
 // Error
 .has-error {
 	.alert-variant(@input-border-danger-focus);
 	.form-inverse & {
 		.alert-variant(@inverse-input-border-danger-focus);
-	***REMOVED***
-***REMOVED***
+	}
+}
 // Success
 .has-success {
 	.alert-variant(@input-border-success-focus);
 	.form-inverse & {
 		.alert-variant(@inverse-input-border-success-focus);
-	***REMOVED***
-***REMOVED***
+	}
+}

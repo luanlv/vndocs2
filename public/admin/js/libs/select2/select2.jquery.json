@@ -10,27 +10,27 @@
         "multiselect",
         "tag",
         "tagging"
-  ***REMOVED***,
+    ],
     "version": "3.5.2",
     "author": {
         "name": "Igor Vaynberg",
         "url": "https://github.com/ivaynberg"
-  ***REMOVED***,
+    },
     "licenses": [
         {
             "type": "Apache",
             "url": "http://www.apache.org/licenses/LICENSE-2.0"
-      ***REMOVED***,
+        },
         {
             "type": "GPL v2",
             "url": "http://www.gnu.org/licenses/gpl-2.0.html"
-      ***REMOVED***
-  ***REMOVED***,
+        }
+    ],
     "bugs": "https://github.com/ivaynberg/select2/issues",
     "homepage": "http://ivaynberg.github.com/select2",
     "docs": "http://ivaynberg.github.com/select2/",
     "download": "https://github.com/ivaynberg/select2/tags",
     "dependencies": {
         "jquery": ">=1.7.1"
-  ***REMOVED***
-***REMOVED***
+    }
+}

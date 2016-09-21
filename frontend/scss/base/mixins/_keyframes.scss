@@ -4,22 +4,22 @@
 
 // ----------------------------------------------------------------------
 
-// example: @include keyframes(slide-down) {0%{ opacity:1; ***REMOVED*** 90%{ opacity:0; ***REMOVED******REMOVED***
+// example: @include keyframes(slide-down) {0%{ opacity:1; } 90%{ opacity:0; }}
 
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name***REMOVED*** {
+  @-webkit-keyframes #{$animation-name} {
     @content;
-***REMOVED***
-  @-moz-keyframes #{$animation-name***REMOVED*** {
+  }
+  @-moz-keyframes #{$animation-name} {
     @content;
-***REMOVED***
-  @-ms-keyframes #{$animation-name***REMOVED*** {
+  }
+  @-ms-keyframes #{$animation-name} {
     @content;
-***REMOVED***
-  @-o-keyframes #{$animation-name***REMOVED*** {
+  }
+  @-o-keyframes #{$animation-name} {
     @content;
-***REMOVED***
-  @keyframes #{$animation-name***REMOVED*** {
+  }
+  @keyframes #{$animation-name} {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}

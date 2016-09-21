@@ -9,44 +9,44 @@
 	<style>
 	.cmxform fieldset p.error label {
 		color: red;
-	***REMOVED***
+	}
 	div.container {
 		background-color: #eee;
 		border: 1px solid red;
 		margin: 5px;
 		padding: 5px;
-	***REMOVED***
+	}
 	div.container ol li {
 		list-style-type: disc;
 		margin-left: 20px;
-	***REMOVED***
+	}
 	div.container {
 		display: none
-	***REMOVED***
+	}
 	.container label.error {
 		display: inline;
-	***REMOVED***
+	}
 	form.cmxform {
 		width: 30em;
-	***REMOVED***
+	}
 	form.cmxform label.error {
 		display: block;
 		margin-left: 1em;
 		width: auto;
-	***REMOVED***
+	}
 	</style>
 	<script>
 	// only for demo purposes
 	$.validator.setDefaults({
 		submitHandler: function() {
 			alert("submitted! (skipping validation for cancel button)");
-		***REMOVED***
-	***REMOVED***);
+		}
+	});
 
 	$().ready(function() {
 		$("#form1").validate({
 			errorLabelContainer: $("#form1 div.error")
-		***REMOVED***);
+		});
 
 		var container = $('div.container');
 		// validate the form when it is submitted
@@ -54,12 +54,12 @@
 			errorContainer: container,
 			errorLabelContainer: $("ol", container),
 			wrapper: 'li'
-		***REMOVED***);
+		});
 
 		$(".cancel").click(function() {
 			validator.resetForm();
-		***REMOVED***);
-	***REMOVED***);
+		});
+	});
 	</script>
 </head>
 

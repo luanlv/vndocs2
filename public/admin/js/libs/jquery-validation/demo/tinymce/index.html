@@ -14,27 +14,27 @@
 		onchange_callback: function(editor) {
 			tinyMCE.triggerSave();
 			$("#" + editor.id).valid();
-		***REMOVED***
-	***REMOVED***);
+		}
+	});
 	$(function() {
 		var validator = $("#myform").submit(function() {
 			// update underlying textarea before submit validation
 			tinyMCE.triggerSave();
-		***REMOVED***).validate({
+		}).validate({
 			ignore: "",
 			rules: {
 				title: "required",
 				content: "required"
-			***REMOVED***,
+			},
 			errorPlacement: function(label, element) {
 				// position error label after generated textarea
 				if (element.is("textarea")) {
 					label.insertAfter(element.next());
-				***REMOVED*** else {
+				} else {
 					label.insertAfter(element)
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***);
+				}
+			}
+		});
 		validator.focusInvalid = function() {
 			// put focus on tinymce on submit validation
 			if (this.settings.focusInvalid) {
@@ -42,15 +42,15 @@
 					var toFocus = $(this.findLastActive() || this.errorList.length && this.errorList[0].element || []);
 					if (toFocus.is("textarea")) {
 						tinyMCE.get(toFocus.attr("id")).focus();
-					***REMOVED*** else {
+					} else {
 						toFocus.filter(":visible").focus();
-					***REMOVED***
-				***REMOVED*** catch (e) {
+					}
+				} catch (e) {
 					// ignore IE throwing errors when focusing hidden elements
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***)
+				}
+			}
+		}
+	})
 	</script>
 	<!-- /TinyMCE -->
 </head>

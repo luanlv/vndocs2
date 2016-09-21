@@ -7,10 +7,10 @@ $(document).ready(function(){
 			this.responseText = "true";
 			if ( $.inArray( email, emails ) !== -1 ) {
 				this.responseText = "false";
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		responseTime: 500
-	***REMOVED***);
+	});
 
 	jQuery.validator.addMethod("password", function( value, element ) {
 		var result = this.optional(element) || value.length >= 6 && /\d/.test(value) && /[a-z]/i.test(value);
@@ -21,21 +21,21 @@ $(document).ready(function(){
 				validator.blockFocusCleanup = true;
 				element.focus();
 				validator.blockFocusCleanup = false;
-			***REMOVED***, 1);
-		***REMOVED***
+			}, 1);
+		}
 		return result;
-	***REMOVED***, "Your password must be at least 6 characters long and contain at least one number and one character.");
+	}, "Your password must be at least 6 characters long and contain at least one number and one character.");
 
 	// a custom method making the default value for companyurl ("http://") invalid, without displaying the "invalid url" message
 	jQuery.validator.addMethod("defaultInvalid", function(value, element) {
 		return value != element.defaultValue;
-	***REMOVED***, "");
+	}, "");
 
 	jQuery.validator.addMethod("billingRequired", function(value, element) {
 		if ($("#bill_to_co").is(":checked"))
 			return $(element).parents(".subTable").length;
 		return !this.optional(element);
-	***REMOVED***, "");
+	}, "");
 
 	jQuery.validator.messages.required = "";
 	$("form").validate({
@@ -47,28 +47,28 @@ $(document).ready(function(){
 					: 'You missed ' + errors + ' fields.  They have been highlighted below';
 				$("div.error span").html(message);
 				$("div.error").show();
-			***REMOVED*** else {
+			} else {
 				$("div.error").hide();
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		onkeyup: false,
 		submitHandler: function() {
 			$("div.error").hide();
 			alert("submit! use link below to go to the other step");
-		***REMOVED***,
+		},
 		messages: {
 			password2: {
 				required: " ",
 				equalTo: "Please enter the same password as above"
-			***REMOVED***,
+			},
 			email: {
 				required: " ",
 				email: "Please enter a valid email address, example: you@yourdomain.com",
-				remote: jQuery.validator.format("{0***REMOVED*** is already taken, please enter a different address.")
-			***REMOVED***
-		***REMOVED***,
+				remote: jQuery.validator.format("{0} is already taken, please enter a different address.")
+			}
+		},
 		debug:true
-	***REMOVED***);
+	});
 
   $(".resize").vjustify();
   $("div.buttonSubmit").hoverClass("buttonSubmitHover");
@@ -86,8 +86,8 @@ $(document).ready(function(){
         default:
           creditcard.unmask().mask("9999 9999 9999 9999");
           break;
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
   );
 
   // toggle optional billing address
@@ -100,13 +100,13 @@ $(document).ready(function(){
       if (this.checked == true) {
         subTableDiv.slideUp("medium");
         $("form").valid();
-    ***REMOVED*** else {
+      } else {
         subTableDiv.slideDown("medium");
-    ***REMOVED***
-***REMOVED***);
+      }
+  });
 
 
-***REMOVED***);
+});
 
 $.fn.vjustify = function() {
     var maxHeight=0;
@@ -114,20 +114,20 @@ $.fn.vjustify = function() {
     this.each(function(){
         if (this.offsetHeight > maxHeight) {
           maxHeight = this.offsetHeight;
-      ***REMOVED***
-  ***REMOVED***);
+        }
+    });
     this.each(function(){
         $(this).height(maxHeight);
         if (this.offsetHeight > maxHeight) {
             $(this).height((maxHeight-(this.offsetHeight-maxHeight)));
-      ***REMOVED***
-  ***REMOVED***);
-***REMOVED***;
+        }
+    });
+};
 
 $.fn.hoverClass = function(classname) {
 	return this.hover(function() {
 		$(this).addClass(classname);
-	***REMOVED***, function() {
+	}, function() {
 		$(this).removeClass(classname);
-	***REMOVED***);
-***REMOVED***;
+	});
+};

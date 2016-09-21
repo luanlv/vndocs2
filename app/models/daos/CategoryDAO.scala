@@ -1,6 +1,6 @@
 package models.daos
 
-import models.{ Category, Image ***REMOVED***
+import models.{ Category, Image }
 
 import scala.concurrent.Future
 
@@ -15,4 +15,4 @@ trait CategoryDAO {
 
   def save(category: Category): Future[Category]
 
-***REMOVED***
+}

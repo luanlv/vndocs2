@@ -2,56 +2,56 @@
 *:after,
 *:before {
   @include box-sizing(border-box);
-***REMOVED***
+}
 
 
-.mh500{  min-height: 500px;***REMOVED***
-.mh1000 {  min-height: 1000px; ***REMOVED***
-.mh800 {  min-height: 800px; ***REMOVED***
-.mh700 {  min-height: 700px; ***REMOVED***
-.mh600 {  min-height: 600px; ***REMOVED***
-.mh300 {  min-height: 300px; ***REMOVED***
+.mh500{  min-height: 500px;  }
+.mh1000 {  min-height: 1000px; }
+.mh800 {  min-height: 800px; }
+.mh700 {  min-height: 700px; }
+.mh600 {  min-height: 600px; }
+.mh300 {  min-height: 300px; }
 
 .bg1 {
   background: $aqua;
-***REMOVED***
+}
 .bg2 {
   background: $blue;
-***REMOVED***
+}
 .bg3 {
   background: $yellow;
-***REMOVED***
+}
 .bg4 {
   background: $silver;
-***REMOVED***
+}
 
 a:hover {
   color: $orange;
-***REMOVED***
+}
 .cf {
   @include clearfix();
-***REMOVED***
+}
 
 body {
   background: #f6f8f9;
-***REMOVED***
+}
 
 .container {
   @include container(100%);
   max-width: 1000px;
   position: relative;
-***REMOVED***
+}
 //
 //body {
 //  font-family: 'Roboto', sans-serif;
 //  //font-size: 48px;
-//***REMOVED***
+//}
 
 
 
 .bodyWr{
   position: relative;
-***REMOVED***
+}
 
 .menu {
   position: absolute;
@@ -62,22 +62,22 @@ body {
     left: -200px;
     top: 5px;
     border: none;
-***REMOVED***
+  }
 
   @include breakpoint($mobile){
     width: span(200px static);
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .content {
   padding-left: span(200px static wide);
   @include breakpoint($mobile){
     padding: 0px;
-***REMOVED***
+  }
   @include min-breakpoint($table){
     padding-right: span(200px static wide);
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .side {
   display: none;
@@ -91,19 +91,19 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 .containerBor {
   @include min-breakpoint($mobile){
     border: 1px solid $border-light-blue;
-***REMOVED***
+  }
   @include min-breakpoint(888){
     border-radius: 10px 10px 0 0;
     box-shadow: 0px 5px 5px 0px rgba(23,22,23,0.3);
-***REMOVED***
+  }
 
   @include clearfix();
   background: white;
-***REMOVED***
+}
 

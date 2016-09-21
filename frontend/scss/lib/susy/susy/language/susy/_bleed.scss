@@ -13,11 +13,11 @@
 
   @if susy-get(global-box-sizing) != content-box {
     $output: map-merge((box-sizing: content-box), $output);
-***REMOVED***
+  }
 
   @include susy-inspect(bleed, $inspect);
   @include output($output);
-***REMOVED***
+}
 
 
 // Bleed-x
@@ -32,14 +32,14 @@
 
   @if length($trbl) == 1 {
     $bleed: map-merge($bleed, (span: 0 nth($trbl, 1)));
-***REMOVED*** @else if length($trbl) == 2 {
+  } @else if length($trbl) == 2 {
     $bleed: map-merge($bleed, (span: 0 nth($trbl, 2) 0 nth($trbl, 1)));
-***REMOVED*** @else {
-    @warn 'bleed-x only takes 2 lengths, but #{length($trbl)***REMOVED*** were passed.';
-***REMOVED***
+  } @else {
+    @warn 'bleed-x only takes 2 lengths, but #{length($trbl)} were passed.';
+  }
 
   @include bleed($bleed);
-***REMOVED***
+}
 
 
 // Bleed-y
@@ -54,14 +54,14 @@
 
   @if length($trbl) == 1 {
     $bleed: map-merge($bleed, (span: nth($trbl, 1) 0));
-***REMOVED*** @else if length($trbl) == 2 {
+  } @else if length($trbl) == 2 {
     $bleed: map-merge($bleed, (span: nth($trbl, 1) 0 nth($trbl, 2) 0));
-***REMOVED*** @else {
-    @warn 'bleed-y only takes 2 lengths, but #{length($trbl)***REMOVED*** were passed.';
-***REMOVED***
+  } @else {
+    @warn 'bleed-y only takes 2 lengths, but #{length($trbl)} were passed.';
+  }
 
   @include bleed($bleed);
-***REMOVED***
+}
 
 
 // Get Bleed
@@ -88,7 +88,7 @@
       $margin: span($this);
       $padding: $margin;
       $padding-x: $padding;
-  ***REMOVED***
+    }
 
     @if $margin and $margin > 0 {
       $margin: - $margin;
@@ -97,8 +97,8 @@
         $gutter: gutter($this);
         $join: if($gutter and comparable($padding, $gutter), true, false);
         $padding-x: if($join and $padding > 0, $padding + $gutter, $padding);
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
     @if $i == 1 {
       $new: (
@@ -111,34 +111,34 @@
         margin-left: $margin,
         padding-left: $padding-x,
       );
-  ***REMOVED*** @else if $i == 2 {
+    } @else if $i == 2 {
       $new: (
         margin-right: $margin,
         padding-right: $padding-x,
         margin-left: $margin,
         padding-left: $padding-x,
       );
-  ***REMOVED*** @else if $i == 3 {
+    } @else if $i == 3 {
       $new: (
         margin-bottom: $margin,
         padding-bottom: $padding,
       );
-  ***REMOVED*** @else if $i == 4 {
+    } @else if $i == 4 {
       $new: (
         margin-left: $margin,
         padding-left: $padding-x,
       );
-  ***REMOVED***
+    }
 
     $output: map-merge($output, $new);
-***REMOVED***
+  }
 
   @each $prop, $value in $output {
     $output: if($value == 0, map-merge($output, ($prop: null)), $output);
-***REMOVED***
+  }
 
   @return bleed-shorthand($output);
-***REMOVED***
+}
 
 // Bleed Shorthand
 // ---------------
@@ -154,10 +154,10 @@
   @each $key, $value in $bleed {
     @if str-index($key, margin) {
       $margin: map-merge($margin, ($key: $value));
-  ***REMOVED*** @else if str-index($key, padding) > 0 {
+    } @else if str-index($key, padding) > 0 {
       $padding: map-merge($padding, ($key: $value));
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   $props: (
     margin: $margin,
@@ -169,10 +169,10 @@
     $null: if(index(map-values($map), null), true, false);
 
     @if $four and not($null) {
-      $top: map-get($map, '#{$name***REMOVED***-top');
-      $right: map-get($map, '#{$name***REMOVED***-right');
-      $bottom: map-get($map, '#{$name***REMOVED***-bottom');
-      $left: map-get($map, '#{$name***REMOVED***-left');
+      $top: map-get($map, '#{$name}-top');
+      $right: map-get($map, '#{$name}-right');
+      $bottom: map-get($map, '#{$name}-bottom');
+      $left: map-get($map, '#{$name}-left');
 
       $tb: if($top == $bottom, $top, null);
       $rl: if($right == $left, $right, null);
@@ -183,18 +183,18 @@
       @if not($new) {
         @if $tb and $rl {
           $new: $tb $rl;
-      ***REMOVED*** @else if $rl {
+        } @else if $rl {
           $new: $top $rl $bottom;
-      ***REMOVED*** @else {
+        } @else {
           $new: $top $right $bottom $left;
-      ***REMOVED***
-    ***REMOVED***
+        }
+      }
 
       $return: map-merge($return, ($name: $new));
-  ***REMOVED*** @else {
+    } @else {
       $return: map-merge($return, $map);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $return;
-***REMOVED***
+}

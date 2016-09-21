@@ -13,13 +13,13 @@
 	<style type="text/css" class="init">
 
 	/* Ensure that the demo table scrolls */
-	th, td { white-space: nowrap; ***REMOVED***
+	th, td { white-space: nowrap; }
 	div.dataTables_wrapper {
 		width: 800px;
 		margin: 0 auto;
-	***REMOVED***
+	}
 
-	tr { height: 50px; ***REMOVED***
+	tr { height: 50px; }
 
 	</style>
 	<script type="text/javascript" language="javascript" src="../../../media/js/jquery.js"></script>
@@ -36,12 +36,12 @@ $(document).ready(function() {
 		scrollX:        true,
 		scrollCollapse: true,
 		paging:         false
-	***REMOVED*** );
+	} );
 
 	new $.fn.dataTable.FixedColumns( table, {
 		heightMatch: 'none'
-	***REMOVED*** );
-***REMOVED*** );
+	} );
+} );
 
 
 	</script>
@@ -70,7 +70,7 @@ $(document).ready(function() {
 				</ul>
 
 				<p>This example shows row height matching switched off but there is a CSS statement of <code>tr {
-				height: 50px ***REMOVED***</code> to force all rows to the same height.</p>
+				height: 50px }</code> to force all rows to the same height.</p>
 			</div>
 
 			<table id="example" class="stripe row-border order-column" cellspacing="0" width="100%">
@@ -736,12 +736,12 @@ $(document).ready(function() {
 		scrollX:        true,
 		scrollCollapse: true,
 		paging:         false
-	***REMOVED*** );
+	} );
 
 	new $.fn.dataTable.FixedColumns( table, {
 		heightMatch: 'none'
-	***REMOVED*** );
-***REMOVED*** );</code>
+	} );
+} );</code>
 
 					<p>In addition to the above code, the following Javascript library files are loaded for use in this
 					example:</p>
@@ -764,13 +764,13 @@ $(document).ready(function() {
 						<p>This example uses a little bit of additional CSS beyond what is loaded from the library
 						files (below), in order to correctly display the table. The additional CSS used is shown
 						below:</p><code class="multiline brush: js;">/* Ensure that the demo table scrolls */
-	th, td { white-space: nowrap; ***REMOVED***
+	th, td { white-space: nowrap; }
 	div.dataTables_wrapper {
 		width: 800px;
 		margin: 0 auto;
-	***REMOVED***
+	}
 
-	tr { height: 50px; ***REMOVED***</code>
+	tr { height: 50px; }</code>
 					</div>
 
 					<p>The following CSS library files are loaded for use in this example to provide the styling of the

@@ -22,12 +22,12 @@ $_susy-media-context: ();
     @if $layout {
       @include with-layout($layout) {
         @content;
-    ***REMOVED***
-  ***REMOVED*** @else {
+      }
+    } @else {
       @content;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 
 // Susy Media
@@ -47,20 +47,20 @@ $_susy-media-context: ();
 
   @if $no-query and type-of($no-query) != string {
     @content;
-***REMOVED*** @else {
-    @media #{susy-render-media($query)***REMOVED*** {
+  } @else {
+    @media #{susy-render-media($query)} {
       @content;
-  ***REMOVED***
+    }
 
     @if type-of($no-query) == string {
-      #{$no-query***REMOVED*** & {
+      #{$no-query} & {
         @content;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   @include susy-media-context($old-context, $clean: true);
-***REMOVED***
+}
 
 
 // Media Router
@@ -73,13 +73,13 @@ $_susy-media-context: ();
   @if susy-support(breakpoint, (mixin: breakpoint), $warn: false) {
     @include breakpoint($query, $no-query) {
       @content;
-  ***REMOVED***
-***REMOVED*** @else {
+    }
+  } @else {
     @include susy-media($query, $no-query) {
       @content;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 
 // Update Context
@@ -94,10 +94,10 @@ $_susy-media-context: ();
 
   @if $clean {
     $_susy-media-context: $query !global;
-***REMOVED*** @else {
+  } @else {
     $_susy-media-context: map-merge($_susy-media-context, $query) !global;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 
 // Media Context
@@ -108,10 +108,10 @@ $_susy-media-context: ();
 ) {
   @if $property {
     @return map-get($_susy-media-context, $property);
-***REMOVED*** @else {
+  } @else {
     @return $_susy-media-context;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 
 // Get Media
@@ -125,13 +125,13 @@ $_susy-media-context: ();
     $map-value: map-get($susy-media, $name);
     @if ($name == $map-value) {
       $name: $map-value;
-  ***REMOVED*** @else {
+    } @else {
       $name: susy-get-media($map-value);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $name;
-***REMOVED***
+}
 
 
 // Render Media
@@ -146,15 +146,15 @@ $_susy-media-context: ();
 
     @if $property == media {
       $string: $value;
-  ***REMOVED*** @else {
-      $string: '(#{$property***REMOVED***: #{$value***REMOVED***)';
-  ***REMOVED***
+    } @else {
+      $string: '(#{$property}: #{$value})';
+    }
 
-    $output: if($output, '#{$output***REMOVED*** and #{$string***REMOVED***', $string);
-***REMOVED***
+    $output: if($output, '#{$output} and #{$string}', $string);
+  }
 
   @return $output;
-***REMOVED***
+}
 
 
 // Parse Media
@@ -166,20 +166,20 @@ $_susy-media-context: ();
   $mq: null;
   @if type-of($query) == map {
     $mq: $query;
-***REMOVED*** @else if type-of($query) == number {
+  } @else if type-of($query) == number {
     $mq: (min-width: $query);
-***REMOVED*** @else if type-of($query) == list and length($query) == 2 {
+  } @else if type-of($query) == list and length($query) == 2 {
     @if type-of(nth($query, 1)) == number {
       $mq: (
         min-width: min($query...),
         max-width: max($query...),
       );
-  ***REMOVED*** @else {
+    } @else {
       $mq: (nth($query, 1): nth($query, 2));
-  ***REMOVED***
-***REMOVED*** @else {
-    $mq: (media: '#{$query***REMOVED***');
-***REMOVED***
+    }
+  } @else {
+    $mq: (media: '#{$query}');
+  }
 
   @return $mq;
-***REMOVED***
+}

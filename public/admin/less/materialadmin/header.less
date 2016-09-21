@@ -16,12 +16,12 @@
 
 	.header-fixed & {
 		position: fixed;
-	***REMOVED***
+	}
 
 	.no-sidebar & {
 		right: @menubar-gap;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Headerbar
@@ -36,9 +36,9 @@
 		display: block;
 		width: 20px;
 		height: 5px;
-	***REMOVED***
+	}
 
-***REMOVED***
+}
 
 // Header nav left
 // --------------------------------------------------
@@ -48,12 +48,12 @@
 
 	a {
 		float: left;
-	***REMOVED***
+	}
 
 	.header-nav {
 		margin-left: @header-gutter-width;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Header nav right
@@ -65,17 +65,17 @@
 	.header-nav {
 		display: inline-block;
 		float: left;
-	***REMOVED***
+	}
 
 	.dropdown-menu {
 		left: auto;
 		right: 0;
-	***REMOVED***
+	}
 
 	.header-nav-toggle {
 		margin-left: 0;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Header nav
@@ -95,7 +95,7 @@
 
 		&:first-child {
 			padding-left: 0;
-		***REMOVED***
+		}
 
 		> a {
 			position: relative;
@@ -104,8 +104,8 @@
 			&:hover, &:focus {
 				text-decoration: none;
 				background-color: @headerbar-link-hover;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Disabled state sets text to gray and nukes hover/tab effects
 		&.disabled > a {
@@ -117,35 +117,35 @@
 				text-decoration: none;
 				background-color: transparent;
 				cursor: not-allowed;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 	// Open dropdowns
 	.open > a {
 		&, &:hover, &:focus {
 			background-color: @nav-link-hover-bg;
 			border-color: @link-color;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Prevent IE8 from misplacing imgs
 	// See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
 	> li > a > img {
 		max-width: none;
-	***REMOVED***
+	}
 
 	// General style for the ico buttons
 	.btn-icon-toggle {
 		&:hover {
 			background-color: @headerbar-link-hover;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	.navbar-search {
 		float: right;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // Header brand
@@ -160,17 +160,17 @@
 		.brand-holder {
 			display: table-cell;
 			vertical-align: middle;
-		***REMOVED***
+		}
 
 		a {
 			text-decoration: none;
-		***REMOVED***
+		}
 
 		img {
 			max-height: (@headerbar-height - (@gutter-size * 4))
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // Header nav profile
@@ -199,17 +199,17 @@
 				font-style: normal;
 				text-decoration: inherit;
 				-webkit-font-smoothing: antialiased;
-			***REMOVED***
+			}
 
 			.ink {
 				background-color: fade(@gray, 15);
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		img {
 			width: @menubar-icon-width;
 			height: @menubar-icon-width;
 			border-radius: @menubar-icon-width;
-		***REMOVED***
+		}
 		.profile-info {
 			display: inline-block;
 			vertical-align: middle;
@@ -219,13 +219,13 @@
 			small {
 				display: block;
 				opacity: 0.5;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Menu
 		.dropdown-menu {
 			min-width: 100%;
-		***REMOVED***
+		}
 
 		// When open
 		&.open {
@@ -242,15 +242,15 @@
 				&:after {
 					top: (22px - (@menubar-gap / 2));
 					.rotate(180deg);
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 			.dropdown-menu {
 				margin-top: -1px;
 				border-top: none;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			}
+		}
+	}
+}
 
 
 // Header nav options
@@ -265,15 +265,15 @@
 				font-size: 10px;
 				top: -1px;
 				right: 4px;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Menu
 		.dropdown-menu {
 			top: 14px;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 
 // Responsive classes
@@ -290,15 +290,15 @@
 				// Hide the header brand when the menu is both pinnen and first
 				.header-nav-brand {
 					display: none;
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 			// Adjust header left alignment
 			#header {
 				left: @menubar-width;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			}
+		}
+	}
+}
 
 
 // Medium and Large Devices
@@ -309,24 +309,24 @@
 		// Hide the menu tggler when the menu is first
 		#header .menubar-toggle {
 			display: none;
-		***REMOVED***
+		}
 
 		// Adjust header left alignment
 		#header {
 			left: @menubar-width-collapsed;
-		***REMOVED***
+		}
 
 		&.menubar-pin {
 			.header-nav {
 				// Hide the header brand when the menu is both pinnen and first
 				.header-nav-brand {
 					//display: none;
-				***REMOVED***
+				}
 
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			}
+		}
+	}
+}
 
 
 // Extra Small Devices Only
@@ -351,9 +351,9 @@
 				width: 100%;
 				height: @headerbar-height;
 				.box-shadow(@z-height-1);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 
 	// Left header bar
@@ -366,12 +366,12 @@
 		background: @headerbar-bg;
 		border-bottom: 1px solid @gray-lighter;
 
-	***REMOVED***
+	}
 	.header-fixed {
 		.headerbar-left {
 			position: fixed;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 
 	// Right header bar
@@ -390,11 +390,11 @@
 		.header-nav-options {
 			margin-right: @header-gutter-width-sm;
 			float: right;
-		***REMOVED***
+		}
 		.header-nav-profile {
 			position: absolute;
 			float: left;
-		***REMOVED***
+		}
 
 		//.sidebar-toggle
 		.header-nav-toggle {
@@ -406,9 +406,9 @@
 			.header-fixed & {
 				position: fixed;
 				top: 0;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 	
 	// Left header bar
 	// ---------------------------
@@ -416,28 +416,28 @@
 	.headerbar-left {
 		.header-nav {
 			margin-left: @header-gutter-width-sm;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	.header-nav-profile {
 		.dropdown {
 			img {
 				width: 0px;
 				opacity: 0;
-			***REMOVED***
+			}
 			.profile-info {
 				padding-left: 0;
 				padding-right: 30px;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 
 	.navbar-search {
 		position: relative;
 		z-index: 1;
-	***REMOVED***
+	}
 	.navbar-search.expanded .form-group {
 		max-width: 100%;
 		width: @screen-xs;
-	***REMOVED***
-***REMOVED***
+	}
+}

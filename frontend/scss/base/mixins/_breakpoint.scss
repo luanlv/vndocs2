@@ -4,8 +4,8 @@
 
 // ----------------------------------------------------------------------
 
-// example @include breakpoint(940) { width:80%; ***REMOVED***
+// example @include breakpoint(940) { width:80%; }
 
 @mixin breakpoint($size) {
-  @media only screen and (max-width: $size + px) { @content; ***REMOVED***
-***REMOVED***
+  @media only screen and (max-width: $size + px) { @content; }
+}

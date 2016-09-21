@@ -16,13 +16,13 @@
     $itemVal: (nth($values, $i));
     @if $type == "rotate" or $type == "rotateY" or $type == "rotateX" {
       $originVal: append($originVal, $itemVal + deg);
-  ***REMOVED*** @else {
+    } @else {
       $originVal: append($originVal, $itemVal + px);
-  ***REMOVED***
+    }
 
     $i: $i + 1;
-***REMOVED***
-  -webkit-transform: #{$type***REMOVED***($originVal);
-     -moz-transform: #{$type***REMOVED***($originVal);
-          transform: #{$type***REMOVED***($originVal);
-***REMOVED***
+  }
+  -webkit-transform: #{$type}($originVal);
+     -moz-transform: #{$type}($originVal);
+          transform: #{$type}($originVal);
+}

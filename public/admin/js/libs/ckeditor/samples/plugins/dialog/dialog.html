@@ -17,12 +17,12 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 		.cke_button__mybutton_icon
 		{
 			display: none !important;
-		***REMOVED***
+		}
 
 		.cke_button__mybutton_label
 		{
 			display: inline !important;
-		***REMOVED***
+		}
 
 	</style>
 	<script>
@@ -47,7 +47,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 
 					// Finally, register the dialog.
 					CKEDITOR.dialog.add( 'myDialog', href );
-				***REMOVED***
+				}
 
 				// Register the command used to open the dialog.
 				editor.addCommand( 'myDialogCmd', new CKEDITOR.dialogCommand( 'myDialog' ) );
@@ -57,9 +57,9 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 				editor.ui.add( 'MyButton', CKEDITOR.UI_BUTTON, {
 					label: 'My Dialog',
 					command: 'myDialogCmd'
-				***REMOVED***);
-			***REMOVED***);
-		***REMOVED***);
+				});
+			});
+		});
 
 		// When opening a dialog, its "definition" is created for it, for
 		// each editor instance. The "dialogDefinition" event is then
@@ -85,8 +85,8 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 					validate: function() {
 						if ( ( /\d/ ).test( this.getValue() ) )
 							return 'My Custom Field must not contain digits';
-					***REMOVED***
-				***REMOVED***);
+					}
+				});
 
 				// Remove the "select1" field from the "tab1" tab.
 				infoTab.remove( 'select1' );
@@ -108,27 +108,27 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 							id: 'myField1',
 							type: 'text',
 							label: 'My Text Field'
-						***REMOVED***,
+						},
 						{
 							id: 'myField2',
 							type: 'text',
 							label: 'Another Text Field'
-						***REMOVED***
+						}
 					]
-				***REMOVED***);
+				});
 
 				// Provide the focus handler to start initial focus in "customField" field.
 				dialogDefinition.onFocus = function() {
 					var urlField = this.getContentElement( 'tab1', 'customField' );
 					urlField.select();
-				***REMOVED***;
-			***REMOVED***
-		***REMOVED***);
+				};
+			}
+		});
 
 		var config = {
 			extraPlugins: 'dialog',
 			toolbar: [ [ 'MyButton' ] ]
-		***REMOVED***;
+		};
 
 	</script>
 </head>

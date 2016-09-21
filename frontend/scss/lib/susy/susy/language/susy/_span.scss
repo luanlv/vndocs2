@@ -20,20 +20,20 @@
 
   @if $clear == break {
     @include break;
-***REMOVED*** @else if $clear == nobreak {
+  } @else if $clear == nobreak {
     @include nobreak;
-***REMOVED***
+  }
 
   @include susy-inspect(span, $inspect);
   @include output((box-sizing: $box));
   @include float-span-output($output...);
 
   @if valid-columns($nesting, silent) {
-    @include nested($span) { @content; ***REMOVED***
-***REMOVED*** @else {
+    @include nested($span) { @content; }
+  } @else {
     @content;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 // Span [function]
 // ---------------
@@ -43,7 +43,7 @@
   $span
 ) {
   @return get-span-width($span);
-***REMOVED***
+}
 
 // Span Math
 // ---------
@@ -74,36 +74,36 @@
     @if not(susy-get(role, $span)) {
       $padding-before: map-get($gutters, before);
       $padding-after: map-get($gutters, after);
-  ***REMOVED***
-***REMOVED*** @else {
+    }
+  } @else {
     @if not($split-nest) {
       $margin-before: map-get($gutters, before);
       $margin-after: map-get($gutters, after);
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   // special margin handling
   @if susy-get(output, $span) == isolate and $location {
     $margin-before: get-isolation($span);
     $margin-after: -100%;
-***REMOVED*** @else if $edge {
+  } @else if $edge {
     $is-split: is-split($span);
     $pos: susy-get(gutter-position, $span);
 
     @if $edge == last {
       $float: susy-get(last-flow, $span);
-  ***REMOVED***
+    }
 
     @if not($is-split) {
       @if $edge == full or ($edge == first and $pos == before) {
         $margin-before: 0;
-    ***REMOVED***
+      }
       @if $edge == full or ($edge == last and $pos == after) {
         $margin-after: 0;
-    ***REMOVED***
-  ***REMOVED***
+      }
+    }
 
-***REMOVED***
+  }
 
   @return (
     width           : $width,
@@ -114,7 +114,7 @@
     padding-after   : $padding-after,
     flow            : susy-get(flow, $span),
   );
-***REMOVED***
+}
 
 // Get Span Width
 // --------------
@@ -139,11 +139,11 @@
     $pos: susy-get(gutter-position, $span);
     $role: susy-get(role, $span);
     $n: if($pos == split and $role != nest, susy-count($columns), 100%);
-***REMOVED***
+  }
 
   @if type-of($n) != number {
-    @warn "(#{type-of($n)***REMOVED***) #{$n***REMOVED*** is not a valid span.";
-***REMOVED*** @else if unitless($n) {
+    @warn "(#{type-of($n)}) #{$n} is not a valid span.";
+  } @else if unitless($n) {
     $context: susy-sum($columns, $gutters, if(is-split($span), wide, narrow));
     $spread: if(is-inside($span), $spread or wide, $spread);
     $span-sum: susy($n, $location, $columns, $gutters, $spread);
@@ -152,12 +152,12 @@
     $_column-width: susy-get(column-width, $span);
     @if $_math == static {
       $width: $span-sum * valid-column-math($_math, $_column-width);
-  ***REMOVED*** @else {
+    } @else {
       $width: percentage($span-sum / $context);
-  ***REMOVED***
-***REMOVED*** @else {
+    }
+  } @else {
     $width: $n;
-***REMOVED***
+  }
 
   @return $width;
-***REMOVED***
+}

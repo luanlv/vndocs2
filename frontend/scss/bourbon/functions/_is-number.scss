@@ -2,10 +2,10 @@
 
 /// Checks for a valid number.
 ///
-/// @param {Number***REMOVED*** $value
+/// @param {Number} $value
 ///
-/// @require {function***REMOVED*** contains
+/// @require {function} contains
 
 @function is-number($value) {
   @return contains("0" "1" "2" "3" "4" "5" "6" "7" "8" "9" 0 1 2 3 4 5 6 7 8 9, $value);
-***REMOVED***
+}

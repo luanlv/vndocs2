@@ -17,14 +17,14 @@
             docEl = document.documentElement;
         if (!('pointerEvents' in el.style)) {
             return false;
-      ***REMOVED***
+        }
         el.style.pointerEvents = 'auto';
         el.style.pointerEvents = 'x';
         docEl.appendChild(el);
         var supports = window.getComputedStyle && window.getComputedStyle(el, '').pointerEvents === 'auto';
         docEl.removeChild(el);
         return !!supports;
-  ***REMOVED***)();
+    })();
 
     var defaults = {
             listNodeName    : 'ol',
@@ -43,15 +43,15 @@
             group           : 0,
             maxDepth        : 5,
             threshold       : 20
-      ***REMOVED***;
+        };
 
     function Plugin(element, options)
     {
         this.w  = $(document);
         this.el = $(element);
-        this.options = $.extend({***REMOVED***, defaults, options);
+        this.options = $.extend({}, defaults, options);
         this.init();
-  ***REMOVED***
+    }
 
     Plugin.prototype = {
 
@@ -67,22 +67,22 @@
 
             $.each(this.el.find(list.options.itemNodeName), function(k, el) {
                 list.setParent($(el));
-          ***REMOVED***);
+            });
 
             list.el.on('click', 'button', function(e) {
                 if (list.dragEl) {
                     return;
-              ***REMOVED***
+                }
                 var target = $(e.currentTarget),
                     action = target.data('action'),
                     item   = target.parent(list.options.itemNodeName);
                 if (action === 'collapse') {
                     list.collapseItem(item);
-              ***REMOVED***
+                }
                 if (action === 'expand') {
                     list.expandItem(item);
-              ***REMOVED***
-          ***REMOVED***);
+                }
+            });
 
             var onStartEvent = function(e)
             {
@@ -90,51 +90,51 @@
                 if (!handle.hasClass(list.options.handleClass)) {
                     if (handle.closest('.' + list.options.noDragClass).length) {
                         return;
-                  ***REMOVED***
+                    }
                     handle = handle.closest('.' + list.options.handleClass);
-              ***REMOVED***
+                }
 
                 if (!handle.length || list.dragEl) {
                     return;
-              ***REMOVED***
+                }
 
                 list.isTouch = /^touch/.test(e.type);
                 if (list.isTouch && e.touches.length !== 1) {
                     return;
-              ***REMOVED***
+                }
 
                 e.preventDefault();
                 list.dragStart(e.touches ? e.touches[0] : e);
-          ***REMOVED***;
+            };
 
             var onMoveEvent = function(e)
             {
                 if (list.dragEl) {
                     e.preventDefault();
                     list.dragMove(e.touches ? e.touches[0] : e);
-              ***REMOVED***
-          ***REMOVED***;
+                }
+            };
 
             var onEndEvent = function(e)
             {
                 if (list.dragEl) {
                     e.preventDefault();
                     list.dragStop(e.touches ? e.touches[0] : e);
-              ***REMOVED***
-          ***REMOVED***;
+                }
+            };
 
             if (hasTouch) {
                 list.el[0].addEventListener('touchstart', onStartEvent, false);
                 window.addEventListener('touchmove', onMoveEvent, false);
                 window.addEventListener('touchend', onEndEvent, false);
                 window.addEventListener('touchcancel', onEndEvent, false);
-          ***REMOVED***
+            }
 
             list.el.on('mousedown', onStartEvent);
             list.w.on('mousemove', onMoveEvent);
             list.w.on('mouseup', onEndEvent);
 
-      ***REMOVED***,
+        },
 
         serialize: function()
         {
@@ -148,23 +148,23 @@
                     items.each(function()
                     {
                         var li   = $(this),
-                            item = $.extend({***REMOVED***, li.data()),
+                            item = $.extend({}, li.data()),
                             sub  = li.children(list.options.listNodeName);
                         if (sub.length) {
                             item.children = step(sub, depth + 1);
-                      ***REMOVED***
+                        }
                         array.push(item);
-                  ***REMOVED***);
+                    });
                     return array;
-              ***REMOVED***;
+                };
             data = step(list.el.find(list.options.listNodeName).first(), depth);
             return data;
-      ***REMOVED***,
+        },
 
         serialise: function()
         {
             return this.serialize();
-      ***REMOVED***,
+        },
 
         reset: function()
         {
@@ -186,7 +186,7 @@
                 lastDirY  : 0,
                 distAxX   : 0,
                 distAxY   : 0
-          ***REMOVED***;
+            };
             this.isTouch    = false;
             this.moving     = false;
             this.dragEl     = null;
@@ -194,7 +194,7 @@
             this.dragDepth  = 0;
             this.hasNewRoot = false;
             this.pointEl    = null;
-      ***REMOVED***,
+        },
 
         expandItem: function(li)
         {
@@ -202,7 +202,7 @@
             li.children('[data-action="expand"]').hide();
             li.children('[data-action="collapse"]').show();
             li.children(this.options.listNodeName).show();
-      ***REMOVED***,
+        },
 
         collapseItem: function(li)
         {
@@ -212,40 +212,40 @@
                 li.children('[data-action="collapse"]').hide();
                 li.children('[data-action="expand"]').show();
                 li.children(this.options.listNodeName).hide();
-          ***REMOVED***
-      ***REMOVED***,
+            }
+        },
 
         expandAll: function()
         {
             var list = this;
             list.el.find(list.options.itemNodeName).each(function() {
                 list.expandItem($(this));
-          ***REMOVED***);
-      ***REMOVED***,
+            });
+        },
 
         collapseAll: function()
         {
             var list = this;
             list.el.find(list.options.itemNodeName).each(function() {
                 list.collapseItem($(this));
-          ***REMOVED***);
-      ***REMOVED***,
+            });
+        },
 
         setParent: function(li)
         {
             if (li.children(this.options.listNodeName).length) {
                 li.prepend($(this.options.expandBtnHTML));
                 li.prepend($(this.options.collapseBtnHTML));
-          ***REMOVED***
+            }
             li.children('[data-action="expand"]').hide();
-      ***REMOVED***,
+        },
 
         unsetParent: function(li)
         {
             li.removeClass(this.options.collapsedClass);
             li.children('[data-action]').remove();
             li.children(this.options.listNodeName).remove();
-      ***REMOVED***,
+        },
 
         dragStart: function(e)
         {
@@ -273,7 +273,7 @@
             this.dragEl.css({
                 'left' : e.pageX - mouse.offsetX,
                 'top'  : e.pageY - mouse.offsetY
-          ***REMOVED***);
+            });
             // total depth of dragging item
             var i, depth,
                 items = this.dragEl.find(this.options.itemNodeName);
@@ -281,9 +281,9 @@
                 depth = $(items[i]).parents(this.options.listNodeName).length;
                 if (depth > this.dragDepth) {
                     this.dragDepth = depth;
-              ***REMOVED***
-          ***REMOVED***
-      ***REMOVED***,
+                }
+            }
+        },
 
         dragStop: function(e)
         {
@@ -295,9 +295,9 @@
             this.el.trigger('change');
             if (this.hasNewRoot) {
                 this.dragRootEl.trigger('change');
-          ***REMOVED***
+            }
             this.reset();
-      ***REMOVED***,
+        },
 
         dragMove: function(e)
         {
@@ -308,7 +308,7 @@
             this.dragEl.css({
                 'left' : e.pageX - mouse.offsetX,
                 'top'  : e.pageY - mouse.offsetY
-          ***REMOVED***);
+            });
 
             // mouse position last events
             mouse.lastX = mouse.nowX;
@@ -333,22 +333,22 @@
                 mouse.dirAx  = newAx;
                 mouse.moving = true;
                 return;
-          ***REMOVED***
+            }
 
             // calc distance moved on this axis (and direction)
             if (mouse.dirAx !== newAx) {
                 mouse.distAxX = 0;
                 mouse.distAxY = 0;
-          ***REMOVED*** else {
+            } else {
                 mouse.distAxX += Math.abs(mouse.distX);
                 if (mouse.dirX !== 0 && mouse.dirX !== mouse.lastDirX) {
                     mouse.distAxX = 0;
-              ***REMOVED***
+                }
                 mouse.distAxY += Math.abs(mouse.distY);
                 if (mouse.dirY !== 0 && mouse.dirY !== mouse.lastDirY) {
                     mouse.distAxY = 0;
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
             mouse.dirAx = newAx;
 
             /**
@@ -371,13 +371,13 @@
                             list.append(this.placeEl);
                             prev.append(list);
                             this.setParent(prev);
-                      ***REMOVED*** else {
+                        } else {
                             // else append to next level up
                             list = prev.children(opt.listNodeName).last();
                             list.append(this.placeEl);
-                      ***REMOVED***
-                  ***REMOVED***
-              ***REMOVED***
+                        }
+                    }
+                }
                 // decrease horizontal level
                 if (mouse.distX < 0) {
                     // we can't decrease a level if an item preceeds the current one
@@ -387,30 +387,30 @@
                         this.placeEl.closest(opt.itemNodeName).after(this.placeEl);
                         if (!parent.children().length) {
                             this.unsetParent(parent.parent());
-                      ***REMOVED***
-                  ***REMOVED***
-              ***REMOVED***
-          ***REMOVED***
+                        }
+                    }
+                }
+            }
 
             var isEmpty = false;
 
             // find list item under cursor
             if (!hasPointerEvents) {
                 this.dragEl[0].style.visibility = 'hidden';
-          ***REMOVED***
+            }
             this.pointEl = $(document.elementFromPoint(e.pageX - document.body.scrollLeft, e.pageY - (window.pageYOffset || document.documentElement.scrollTop)));
             if (!hasPointerEvents) {
                 this.dragEl[0].style.visibility = 'visible';
-          ***REMOVED***
+            }
             if (this.pointEl.hasClass(opt.handleClass)) {
                 this.pointEl = this.pointEl.parent(opt.itemNodeName);
-          ***REMOVED***
+            }
             if (this.pointEl.hasClass(opt.emptyClass)) {
                 isEmpty = true;
-          ***REMOVED***
+            }
             else if (!this.pointEl.length || !this.pointEl.hasClass(opt.itemClass)) {
                 return;
-          ***REMOVED***
+            }
 
             // find parent list of item under cursor
             var pointElRoot = this.pointEl.closest('.' + opt.rootClass),
@@ -423,12 +423,12 @@
                 // check if groups match if dragging over new root
                 if (isNewRoot && opt.group !== pointElRoot.data('nestable-group')) {
                     return;
-              ***REMOVED***
+                }
                 // check depth limit
                 depth = this.dragDepth - 1 + this.pointEl.parents(opt.listNodeName).length;
                 if (depth > opt.maxDepth) {
                     return;
-              ***REMOVED***
+                }
                 var before = e.pageY < (this.pointEl.offset().top + this.pointEl.height() / 2);
                     parent = this.placeEl.parent();
                 // if empty create new list to replace empty placeholder
@@ -436,28 +436,28 @@
                     list = $(document.createElement(opt.listNodeName)).addClass(opt.listClass);
                     list.append(this.placeEl);
                     this.pointEl.replaceWith(list);
-              ***REMOVED***
+                }
                 else if (before) {
                     this.pointEl.before(this.placeEl);
-              ***REMOVED***
+                }
                 else {
                     this.pointEl.after(this.placeEl);
-              ***REMOVED***
+                }
                 if (!parent.children().length) {
                     this.unsetParent(parent.parent());
-              ***REMOVED***
+                }
                 if (!this.dragRootEl.find(opt.itemNodeName).length) {
                     this.dragRootEl.append('<div class="' + opt.emptyClass + '"/>');
-              ***REMOVED***
+                }
                 // parent root list has changed
                 if (isNewRoot) {
                     this.dragRootEl = pointElRoot;
                     this.hasNewRoot = this.el[0] !== this.dragRootEl[0];
-              ***REMOVED***
-          ***REMOVED***
-      ***REMOVED***
+                }
+            }
+        }
 
-  ***REMOVED***;
+    };
 
     $.fn.nestable = function(params)
     {
@@ -471,14 +471,14 @@
             if (!plugin) {
                 $(this).data("nestable", new Plugin(this, params));
                 $(this).data("nestable-id", new Date().getTime());
-          ***REMOVED*** else {
+            } else {
                 if (typeof params === 'string' && typeof plugin[params] === 'function') {
                     retval = plugin[params]();
-              ***REMOVED***
-          ***REMOVED***
-      ***REMOVED***);
+                }
+            }
+        });
 
         return retval || lists;
-  ***REMOVED***;
+    };
 
-***REMOVED***)(window.jQuery || window.Zepto, window, document);
+})(window.jQuery || window.Zepto, window, document);

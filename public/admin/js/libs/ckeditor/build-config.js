@@ -71,7 +71,7 @@ var CKBUILDER_CONFIG = {
 		'indent' : 1,
 		'fakeobjects' : 1,
 		'menubutton' : 1
-	***REMOVED***,
+	},
 	languages : {
 		'af' : 1,
 		'sq' : 1,
@@ -138,5 +138,5 @@ var CKBUILDER_CONFIG = {
 		'uk' : 1,
 		'vi' : 1,
 		'cy' : 1
-	***REMOVED***
-***REMOVED***;
+	}
+};

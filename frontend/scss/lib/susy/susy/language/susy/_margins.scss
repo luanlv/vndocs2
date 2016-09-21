@@ -18,7 +18,7 @@
 
   @include susy-inspect(pre, $inspect);
   @include margin-output($width, null, $flow);
-***REMOVED***
+}
 
 // Post
 // ----
@@ -35,7 +35,7 @@
 
   @include susy-inspect(post, $inspect);
   @include margin-output(null, $width, $flow);
-***REMOVED***
+}
 
 // Push
 // ----
@@ -45,7 +45,7 @@
   $span
 ) {
   @include pre($span);
-***REMOVED***
+}
 
 // Pull
 // ----
@@ -62,7 +62,7 @@
 
   @include susy-inspect(pull, $inspect);
   @include margin-output($width, null, $flow);
-***REMOVED***
+}
 
 // Squish
 // ------
@@ -78,17 +78,17 @@
 
   @if $post {
     $post: map-merge((spread: wide), parse-span($post));
-***REMOVED*** @else {
+  } @else {
     $span: susy-get(span, $pre);
     @if length($span) > 1 {
       $pre: map-merge($pre, (span: nth($span, 1)));
       $post: map-merge($pre, (span: nth($span, 2)));
-  ***REMOVED*** @else {
+    } @else {
       $post: $pre;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @include susy-inspect(squish, $inspect);
   @include pre($pre);
   @include post($post);
-***REMOVED***
+}

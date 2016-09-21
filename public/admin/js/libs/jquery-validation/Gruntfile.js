@@ -25,12 +25,12 @@ banner = "/*!\n" +
 umdStart = "(function( factory ) {\n" +
 	"\tif ( typeof define === \"function\" && define.amd ) {\n";
 
-umdMiddle = "\t***REMOVED*** else {\n" +
+umdMiddle = "\t} else {\n" +
 	"\t\tfactory( jQuery );\n" +
-	"\t***REMOVED***\n" +
-	"***REMOVED***(function( $ ) {\n\n";
+	"\t}\n" +
+	"}(function( $ ) {\n\n";
 
-umdEnd = "\n***REMOVED***));";
+umdEnd = "\n}));";
 
 umdStandardDefine = "\t\tdefine( [\"jquery\"], factory );\n";
 umdAdditionalDefine = "\t\tdefine( [\"jquery\", \"./jquery.validate\"], factory );\n";
@@ -47,11 +47,11 @@ grunt.initConfig({
 					umdStandardDefine +
 					umdMiddle,
 				footer: umdEnd
-			***REMOVED***,
+			},
 			files: {
 				"dist/jquery.validate.js": [ "src/core.js", "src/*.js" ]
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		extra: {
 			options: {
 				banner: banner +
@@ -59,12 +59,12 @@ grunt.initConfig({
 					umdAdditionalDefine +
 					umdMiddle,
 				footer: umdEnd
-			***REMOVED***,
+			},
 			files: {
 				"dist/additional-methods.js": [ "src/additional/additional.js", "src/additional/*.js" ]
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***,
+			}
+		}
+	},
 	uglify: {
 		options: {
 			preserveComments: false,
@@ -73,21 +73,21 @@ grunt.initConfig({
 				" * <%= pkg.homepage %>\n" +
 				" * Copyright (c) <%= grunt.template.today('yyyy') %> <%= pkg.author.name %>;" +
 				" Licensed <%= _.pluck(pkg.licenses, 'type').join(', ') %> */\n"
-		***REMOVED***,
+		},
 		dist: {
 			files: {
 				"dist/additional-methods.min.js": "dist/additional-methods.js",
 				"dist/jquery.validate.min.js": "dist/jquery.validate.js"
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 		all: {
 			expand: true,
 			cwd: "dist/localization",
 			src: "**/*.js",
 			dest: "dist/localization",
 			ext: ".min.js"
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 	compress: {
 		dist: {
 			options: {
@@ -95,7 +95,7 @@ grunt.initConfig({
 				level: 1,
 				archive: "dist/<%= pkg.name %>-<%= pkg.version %>.zip",
 				pretty: true
-			***REMOVED***,
+			},
 			src: [
 				"changelog.txt",
 				"demo/**/*.*",
@@ -107,54 +107,54 @@ grunt.initConfig({
 				"src/**/*.*",
 				"test/**/*.*"
 			]
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 	qunit: {
 		files: "test/index.html"
-	***REMOVED***,
+	},
 	jshint: {
 		options: {
 			jshintrc: true
-		***REMOVED***,
+		},
 		core: {
 			src: "src/**/*.js"
-		***REMOVED***,
+		},
 		test: {
 			src: "test/*.js"
-		***REMOVED***,
+		},
 		grunt: {
 			src: "Gruntfile.js"
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 	watch: {
 		options: {
 			atBegin: true
-		***REMOVED***,
+		},
 		src: {
 			files: "<%= jshint.core.src %>",
 			tasks: [
 				"concat"
 			]
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 	jscs: {
 		all: [ "<%= jshint.core.src %>", "<%= jshint.test.src %>", "<%= jshint.grunt.src %>" ]
-	***REMOVED***,
+	},
 	copy: {
 		dist: {
 			options: {
 				// append UMD wrapper
 				process: function( content ) {
 					return umdStart + umdLocalizationDefine + umdMiddle + content + umdEnd;
-				***REMOVED***
-			***REMOVED***,
+				}
+			},
 			src: "src/localization/*",
 			dest: "dist/localization",
 			expand: true,
 			flatten: true,
 			filter: "isFile"
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 	replace: {
 		dist: {
 			src: "dist/**/*.min.js",
@@ -163,11 +163,11 @@ grunt.initConfig({
 				{
 					from: "./jquery.validate",
 					to: "./jquery.validate.min"
-				***REMOVED***
+				}
 			]
-		***REMOVED***
-	***REMOVED***
-***REMOVED***);
+		}
+	}
+});
 
 grunt.loadNpmTasks("grunt-contrib-jshint");
 grunt.loadNpmTasks("grunt-contrib-qunit");
@@ -183,4 +183,4 @@ grunt.registerTask("default", [ "concat", "copy", "jscs", "jshint", "qunit" ]);
 grunt.registerTask("release", [ "default", "uglify", "replace", "compress" ]);
 grunt.registerTask("start", [ "concat", "watch" ]);
 
-***REMOVED***;
+};

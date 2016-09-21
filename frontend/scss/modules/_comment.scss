@@ -2,12 +2,12 @@
 
   .notUser {
     color: red;
-***REMOVED***
+  }
   .isUser {
     color: $blue;
-***REMOVED***
+  }
 
-  .icon { height: 50px; width: 50px; border-radius: 7px; ***REMOVED***
+  .icon { height: 50px; width: 50px; border-radius: 7px; }
 
   span.poster {
     float: left; width: 80px; text-align: center; font-size: 12px;
@@ -16,12 +16,12 @@
     padding-top: 5px; padding-right: 5px;
     //border: 1px solid #bbb;
     //border-radius: 10px 0px 0px 10px;
-***REMOVED***
+  }
 
-  span.info { display: block; border-bottom: 1px solid #ddd; margin: -4px 0px 3px 0px; font-size: 13px; font-style: italic; ***REMOVED***
+  span.info { display: block; border-bottom: 1px solid #ddd; margin: -4px 0px 3px 0px; font-size: 13px; font-style: italic; }
 
 
-  span.buttons { position: absolute; right: 20px; ***REMOVED***
+  span.buttons { position: absolute; right: 20px; }
 
   .comment {
     white-space: pre-wrap;
@@ -35,7 +35,7 @@
     border-radius: 5px 5px 10px 5px;
     border: #bbb solid 1px;
     border-width: 1px 1px 3px 1px;
-***REMOVED***
+  }
 
   .comment::after {
     content: '';
@@ -46,7 +46,7 @@
     margin-top: -8px;
     left: -10px;
     top: 28px;
-***REMOVED***
+  }
 
   .comment::before {
     content: '';
@@ -58,26 +58,26 @@
     margin-top: -8px;
     left: -10px;
     top: 28px;
-***REMOVED***
+  }
 
-  .comment:nth-of-type(even) { background: #eee; border-color: #999; ***REMOVED***
-  .comment:nth-of-type(even) span.info { border-color: #ccc; ***REMOVED***
-  .comment:nth-of-type(even)::after { border-color: transparent #eee; ***REMOVED***
-  .comment:nth-of-type(even)::before { border-color: transparent #999; ***REMOVED***
-  .poster:nth-of-type(even) { background: #ddd; border-color: #aaa; ***REMOVED***
+  .comment:nth-of-type(even) { background: #eee; border-color: #999; }
+  .comment:nth-of-type(even) span.info { border-color: #ccc; }
+  .comment:nth-of-type(even)::after { border-color: transparent #eee; }
+  .comment:nth-of-type(even)::before { border-color: transparent #999; }
+  .poster:nth-of-type(even) { background: #ddd; border-color: #aaa; }
 
 
   .commentBox {
     textarea {
       min-height: 50px;
-  ***REMOVED***
+    }
     textarea, textarea:focus {
       resize: none;
       width: 100%;
       border: none;
       outline:none;
       border-bottom: 1px solid #ddd;
-  ***REMOVED***
+    }
     .submit {
       position: absolute;
       right: 20px;
@@ -86,11 +86,11 @@
       a {
         text-decoration: none;
         color: #666;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   .userName {
     color: $blue;
-***REMOVED***
-***REMOVED***
+  }
+}

@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Илтимос, кредит карди саҳеҳ ворид кунед.",
 	equalTo: "Илтимос, миқдори баробар ворид кунед.",
 	extension: "Илтимос, қофияи файлро дуруст интихоб кунед",
-	maxlength: $.validator.format("Илтимос, бештар аз {0***REMOVED*** рамз ворид накунед."),
-	minlength: $.validator.format("Илтимос, камтар аз {0***REMOVED*** рамз ворид накунед."),
-	rangelength: $.validator.format("Илтимос, камтар аз {0***REMOVED*** ва зиёда аз {1***REMOVED*** рамз ворид кунед."),
-	range: $.validator.format("Илтимос, аз {0***REMOVED*** то {1***REMOVED*** рақам зиёд ворид кунед."),
-	max: $.validator.format("Илтимос, бештар аз {0***REMOVED*** рақам ворид накунед."),
-	min: $.validator.format("Илтимос, камтар аз {0***REMOVED*** рақам ворид накунед.")
-***REMOVED***);
+	maxlength: $.validator.format("Илтимос, бештар аз {0} рамз ворид накунед."),
+	minlength: $.validator.format("Илтимос, камтар аз {0} рамз ворид накунед."),
+	rangelength: $.validator.format("Илтимос, камтар аз {0} ва зиёда аз {1} рамз ворид кунед."),
+	range: $.validator.format("Илтимос, аз {0} то {1} рақам зиёд ворид кунед."),
+	max: $.validator.format("Илтимос, бештар аз {0} рақам ворид накунед."),
+	min: $.validator.format("Илтимос, камтар аз {0} рақам ворид накунед.")
+});
 
-***REMOVED***));
+}));

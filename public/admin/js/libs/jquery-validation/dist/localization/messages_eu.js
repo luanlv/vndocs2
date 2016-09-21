@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Mesedez, idatzi baliozko txartel zenbaki bat.",
 	equalTo: "Mesedez, idatzi berdina berriro ere.",
 	extension: "Mesedez, idatzi onartutako luzapena duen balio bat.",
-	maxlength: $.validator.format("Mesedez, ez idatzi {0***REMOVED*** karaktere baino gehiago."),
-	minlength: $.validator.format("Mesedez, ez idatzi {0***REMOVED*** karaktere baino gutxiago."),
-	rangelength: $.validator.format("Mesedez, idatzi {0***REMOVED*** eta {1***REMOVED*** karaktere arteko balio bat."),
-	range: $.validator.format("Mesedez, idatzi {0***REMOVED*** eta {1***REMOVED*** arteko balio bat."),
-	max: $.validator.format("Mesedez, idatzi {0***REMOVED*** edo txikiagoa den balio bat."),
-	min: $.validator.format("Mesedez, idatzi {0***REMOVED*** edo handiagoa den balio bat.")
-***REMOVED***);
+	maxlength: $.validator.format("Mesedez, ez idatzi {0} karaktere baino gehiago."),
+	minlength: $.validator.format("Mesedez, ez idatzi {0} karaktere baino gutxiago."),
+	rangelength: $.validator.format("Mesedez, idatzi {0} eta {1} karaktere arteko balio bat."),
+	range: $.validator.format("Mesedez, idatzi {0} eta {1} arteko balio bat."),
+	max: $.validator.format("Mesedez, idatzi {0} edo txikiagoa den balio bat."),
+	min: $.validator.format("Mesedez, idatzi {0} edo handiagoa den balio bat.")
+});
 
-***REMOVED***));
+}));

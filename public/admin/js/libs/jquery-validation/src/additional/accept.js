@@ -8,7 +8,7 @@ $.validator.addMethod("accept", function(value, element, param) {
 	// Element is optional
 	if (optionalValue) {
 		return optionalValue;
-	***REMOVED***
+	}
 
 	if ($(element).attr("type") === "file") {
 		// If we are using a wildcard, make it regex friendly
@@ -22,12 +22,12 @@ $.validator.addMethod("accept", function(value, element, param) {
 				// Grab the mimetype from the loaded file, verify it matches
 				if (!file.type.match(new RegExp( ".?(" + typeParam + ")$", "i"))) {
 					return false;
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+				}
+			}
+		}
+	}
 
 	// Either return true because we've validated each file, or because the
 	// browser does not support element.files and the FileList feature
 	return true;
-***REMOVED***, $.validator.format("Please enter a value with a valid mimetype."));
+}, $.validator.format("Please enter a value with a valid mimetype."));

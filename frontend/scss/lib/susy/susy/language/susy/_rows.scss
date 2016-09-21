@@ -6,7 +6,7 @@
 // Apply to any element that should force a line break.
 @mixin break {
   @include output((clear: both));
-***REMOVED***
+}
 
 
 // NoBreak
@@ -14,7 +14,7 @@
 // Cancel the break() effect, e.g. when using media queries.
 @mixin nobreak {
   @include output((clear: none));
-***REMOVED***
+}
 
 
 // Full
@@ -26,7 +26,7 @@
   $inspect : $context;
   @include susy-inspect(full, $inspect);
   @include span(full of parse-grid($context) break);
-***REMOVED***
+}
 
 
 // First
@@ -42,14 +42,14 @@
   @include susy-inspect(first, $inspect);
   @if not(is-split($context)) {
     @include float-first($flow);
-***REMOVED***
-***REMOVED***
+  }
+}
 
 @mixin alpha(
   $context: $susy
 ) {
   @include first($context);
-***REMOVED***
+}
 
 
 // Last
@@ -70,13 +70,13 @@
   );
 
   @include float-last($output...);
-***REMOVED***
+}
 
 @mixin omega(
   $context: $susy
 ) {
   @include last($context);
-***REMOVED***
+}
 
 
 // Get Edge
@@ -98,21 +98,21 @@
 
     @if $n == $count {
       $edge: full;
-  ***REMOVED*** @else if $location and $n and $index {
+    } @else if $location and $n and $index {
       @if $location == 1 {
         $edge: if($n == $count, full, first);
-    ***REMOVED*** @else if $location + $n - 1 == $count {
+      } @else if $location + $n - 1 == $count {
         $edge: last;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   @if $edge == alpha or $edge == omega {
     $edge: if($edge == alpha, first, last);
-***REMOVED***
+  }
 
   @return $edge;
-***REMOVED***
+}
 
 
 // Get Location
@@ -129,10 +129,10 @@
   @if $edge and not($location) and type-of($n) == number and unitless($n) {
     @if $edge == first {
       $location: 1;
-  ***REMOVED*** @else if $edge == last {
+    } @else if $edge == last {
       $location: susy-count(susy-get(columns, $span)) - $n + 1;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $location
-***REMOVED***
+}

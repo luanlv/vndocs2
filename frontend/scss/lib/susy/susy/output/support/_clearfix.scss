@@ -8,11 +8,11 @@
 @mixin susy-clearfix {
   @if susy-support(clearfix, (mixin: clearfix)) {
     @include clearfix;
-***REMOVED*** @else {
+  } @else {
     &:after {
       content: " ";
       display: block;
       clear: both;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

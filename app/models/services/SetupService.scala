@@ -1,6 +1,6 @@
 package models.services
 
-import models.{ Image, Setup ***REMOVED***
+import models.{ Image, Setup }
 import play.api.libs.json.JsValue
 
 import scala.concurrent.Future
@@ -15,4 +15,4 @@ trait SetupService {
 
   def save(data: Setup): Future[Try[Setup]]
 
-***REMOVED***
+}

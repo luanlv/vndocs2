@@ -42,4 +42,4 @@ trait AuthTokenDAO {
    * @return A future to wait for the process to be completed.
    */
   def remove(id: UUID): Future[Unit]
-***REMOVED***
+}

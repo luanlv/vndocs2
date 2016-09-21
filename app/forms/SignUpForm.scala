@@ -33,4 +33,4 @@ object SignUpForm {
     lastName: String,
     email: String,
     password: String)
-***REMOVED***
+}

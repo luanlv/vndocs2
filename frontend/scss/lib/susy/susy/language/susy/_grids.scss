@@ -15,7 +15,7 @@
   $susy     : _get-layout($layout, $clean) !global;
 
   @include susy-inspect(layout, $inspect);
-***REMOVED***
+}
 
 
 // Use Grid
@@ -36,7 +36,7 @@
   @content;
 
   $susy: $old !global;
-***REMOVED***
+}
 
 
 // Layout
@@ -47,7 +47,7 @@
   $layout: $susy
 ) {
   @return parse-grid($layout);
-***REMOVED***
+}
 
 
 // Get Layout
@@ -61,4 +61,4 @@
 ) {
   $layout: layout($layout);
   @return if($clean, $layout, _susy-deep-merge($susy, $layout));
-***REMOVED***
+}

@@ -21,7 +21,7 @@
     border-top: $remSize solid transparent;
     border-right: $remSize solid $color;
     border-bottom: $remSize solid transparent;
-***REMOVED***@else if $direction == "right"{
+  }@else if $direction == "right"{
     border-top: $pxSize solid transparent;
     border-bottom: $pxSize solid transparent;
     border-left: $pxSize solid $color;
@@ -29,7 +29,7 @@
     border-top: $remSize solid transparent;
     border-bottom: $remSize solid transparent;
     border-left: $remSize solid $color;
-***REMOVED***@else if $direction == "up"{
+  }@else if $direction == "up"{
     border-left: $pxSize solid transparent;
     border-right: $pxSize solid transparent;
     border-bottom: $pxSize solid $color;
@@ -37,7 +37,7 @@
     border-left: $remSize solid transparent;
     border-right: $remSize solid transparent;
     border-bottom: $remSize solid $color;
-***REMOVED***@else if $direction == "down"{
+  }@else if $direction == "down"{
     border-left: $pxSize solid transparent;
     border-right: $pxSize solid transparent;
     border-top: $pxSize solid $color;
@@ -45,6 +45,6 @@
     border-left: $remSize solid transparent;
     border-right: $remSize solid transparent;
     border-top: $remSize solid $color;
-***REMOVED***
+  }
 
-***REMOVED***
+}

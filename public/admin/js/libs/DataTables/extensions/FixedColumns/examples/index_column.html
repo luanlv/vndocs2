@@ -13,11 +13,11 @@
 	<style type="text/css" class="init">
 
 	/* Ensure that the demo table scrolls */
-	th, td { white-space: nowrap; ***REMOVED***
+	th, td { white-space: nowrap; }
 	div.dataTables_wrapper {
 		width: 800px;
 		margin: 0 auto;
-	***REMOVED***
+	}
 
 	/* Styling for the index columns */
 	th.index,
@@ -25,19 +25,19 @@
 		background-color: white !important;
 		border-top: 1px solid white !important;
 		border-bottom: none !important;
-	***REMOVED***
+	}
 	div.DTFC_LeftHeadWrapper table {
 		border-bottom: 1px solid white !important;
-	***REMOVED***
+	}
 	div.DTFC_LeftHeadWrapper th {
 		border-bottom: 1px solid white !important;
-	***REMOVED***
+	}
 	div.DTFC_LeftBodyWrapper {
 		border-right: 1px solid black;
-	***REMOVED***
+	}
 	div.DTFC_LeftFootWrapper th {
 		border-top: 1px solid white !important;
-	***REMOVED***
+	}
 
 	</style>
 	<script type="text/javascript" language="javascript" src="../../../media/js/jquery.js"></script>
@@ -58,18 +58,18 @@ $(document).ready(function() {
 			sortable: false,
 			"class": "index",
 			targets: 0
-		***REMOVED*** ],
+		} ],
 		order: [[ 1, 'asc' ]]
-	***REMOVED*** );
+	} );
 
 	table.on( 'order.dt search.dt', function () {
-		table.column(0, {search:'applied', order:'applied'***REMOVED***).nodes().each( function (cell, i) {
+		table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
 			cell.innerHTML = i+1;
-		***REMOVED*** );
-	***REMOVED*** ).draw();
+		} );
+	} ).draw();
 
 	new $.fn.dataTable.FixedColumns( table );
-***REMOVED*** );
+} );
 
 
 	</script>
@@ -812,18 +812,18 @@ $(document).ready(function() {
 			sortable: false,
 			&quot;class&quot;: &quot;index&quot;,
 			targets: 0
-		***REMOVED*** ],
+		} ],
 		order: [[ 1, 'asc' ]]
-	***REMOVED*** );
+	} );
 
 	table.on( 'order.dt search.dt', function () {
-		table.column(0, {search:'applied', order:'applied'***REMOVED***).nodes().each( function (cell, i) {
+		table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
 			cell.innerHTML = i+1;
-		***REMOVED*** );
-	***REMOVED*** ).draw();
+		} );
+	} ).draw();
 
 	new $.fn.dataTable.FixedColumns( table );
-***REMOVED*** );</code>
+} );</code>
 
 					<p>In addition to the above code, the following Javascript library files are loaded for use in this
 					example:</p>
@@ -846,11 +846,11 @@ $(document).ready(function() {
 						<p>This example uses a little bit of additional CSS beyond what is loaded from the library
 						files (below), in order to correctly display the table. The additional CSS used is shown
 						below:</p><code class="multiline brush: js;">/* Ensure that the demo table scrolls */
-	th, td { white-space: nowrap; ***REMOVED***
+	th, td { white-space: nowrap; }
 	div.dataTables_wrapper {
 		width: 800px;
 		margin: 0 auto;
-	***REMOVED***
+	}
 
 	/* Styling for the index columns */
 	th.index,
@@ -858,19 +858,19 @@ $(document).ready(function() {
 		background-color: white !important;
 		border-top: 1px solid white !important;
 		border-bottom: none !important;
-	***REMOVED***
+	}
 	div.DTFC_LeftHeadWrapper table {
 		border-bottom: 1px solid white !important;
-	***REMOVED***
+	}
 	div.DTFC_LeftHeadWrapper th {
 		border-bottom: 1px solid white !important;
-	***REMOVED***
+	}
 	div.DTFC_LeftBodyWrapper {
 		border-right: 1px solid black;
-	***REMOVED***
+	}
 	div.DTFC_LeftFootWrapper th {
 		border-top: 1px solid white !important;
-	***REMOVED***</code>
+	}</code>
 					</div>
 
 					<p>The following CSS library files are loaded for use in this example to provide the styling of the

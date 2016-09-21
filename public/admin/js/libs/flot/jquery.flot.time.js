@@ -16,14 +16,14 @@ API.txt for details.
 			timeformat: null,	// format string to use
 			twelveHourClock: false,	// 12 or 24 time in time mode
 			monthNames: null	// list of names of months
-		***REMOVED***
-	***REMOVED***;
+		}
+	};
 
 	// round to nearby lower multiple of base
 
 	function floorInBase(n, base) {
 		return base * Math.floor(n / base);
-	***REMOVED***
+	}
 
 	// Returns a string with the date d formatted according to fmt.
 	// A subset of the Open Group's strftime format is supported.
@@ -32,13 +32,13 @@ API.txt for details.
 
 		if (typeof d.strftime == "function") {
 			return d.strftime(fmt);
-		***REMOVED***
+		}
 
 		var leftPad = function(n, pad) {
 			n = "" + n;
 			pad = "" + (pad == null ? "0" : pad);
 			return n.length == 1 ? pad + n : n;
-		***REMOVED***;
+		};
 
 		var r = [];
 		var escape = false;
@@ -47,21 +47,21 @@ API.txt for details.
 
 		if (monthNames == null) {
 			monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-		***REMOVED***
+		}
 
 		if (dayNames == null) {
 			dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-		***REMOVED***
+		}
 
 		var hours12;
 
 		if (hours > 12) {
 			hours12 = hours - 12;
-		***REMOVED*** else if (hours == 0) {
+		} else if (hours == 0) {
 			hours12 = 12;
-		***REMOVED*** else {
+		} else {
 			hours12 = hours;
-		***REMOVED***
+		}
 
 		for (var i = 0; i < fmt.length; ++i) {
 
@@ -88,20 +88,20 @@ API.txt for details.
 					case 'p': c = (isAM) ? ("" + "am") : ("" + "pm"); break;
 					case 'P': c = (isAM) ? ("" + "AM") : ("" + "PM"); break;
 					case 'w': c = "" + d.getDay(); break;
-				***REMOVED***
+				}
 				r.push(c);
 				escape = false;
-			***REMOVED*** else {
+			} else {
 				if (c == "%") {
 					escape = true;
-				***REMOVED*** else {
+				} else {
 					r.push(c);
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 
 		return r.join("");
-	***REMOVED***
+	}
 
 	// To have a consistent view of time-based data independent of which time
 	// zone the client happens to be in we need a date-like object independent
@@ -113,18 +113,18 @@ API.txt for details.
 		function addProxyMethod(sourceObj, sourceMethod, targetObj, targetMethod) {
 			sourceObj[sourceMethod] = function() {
 				return targetObj[targetMethod].apply(targetObj, arguments);
-			***REMOVED***;
-		***REMOVED***;
+			};
+		};
 
 		var utc = {
 			date: d
-		***REMOVED***;
+		};
 
 		// support strftime, if found
 
 		if (d.strftime != undefined) {
 			addProxyMethod(utc, "strftime", d, "strftime");
-		***REMOVED***
+		}
 
 		addProxyMethod(utc, "getTime", d, "getTime");
 		addProxyMethod(utc, "setTime", d, "setTime");
@@ -134,10 +134,10 @@ API.txt for details.
 		for (var p = 0; p < props.length; p++) {
 			addProxyMethod(utc, "get" + props[p], d, "getUTC" + props[p]);
 			addProxyMethod(utc, "set" + props[p], d, "setUTC" + props[p]);
-		***REMOVED***
+		}
 
 		return utc;
-	***REMOVED***;
+	};
 
 	// select time zone strategy.  This returns a date-like object tied to the
 	// desired timezone
@@ -145,19 +145,19 @@ API.txt for details.
 	function dateGenerator(ts, opts) {
 		if (opts.timezone == "browser") {
 			return new Date(ts);
-		***REMOVED*** else if (!opts.timezone || opts.timezone == "utc") {
+		} else if (!opts.timezone || opts.timezone == "utc") {
 			return makeUtcWrapper(new Date(ts));
-		***REMOVED*** else if (typeof timezoneJS != "undefined" && typeof timezoneJS.Date != "undefined") {
+		} else if (typeof timezoneJS != "undefined" && typeof timezoneJS.Date != "undefined") {
 			var d = new timezoneJS.Date();
 			// timezone-js is fickle, so be sure to set the time zone before
 			// setting the time.
 			d.setTimezone(opts.timezone);
 			d.setTime(ts);
 			return d;
-		***REMOVED*** else {
+		} else {
 			return makeUtcWrapper(new Date(ts));
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 	
 	// map of app. size of time units in milliseconds
 
@@ -169,7 +169,7 @@ API.txt for details.
 		"month": 30 * 24 * 60 * 60 * 1000,
 		"quarter": 3 * 30 * 24 * 60 * 60 * 1000,
 		"year": 365.2425 * 24 * 60 * 60 * 1000
-	***REMOVED***;
+	};
 
 	// the allowed tick sizes, after 1 year we use
 	// an integer algorithm
@@ -218,18 +218,18 @@ API.txt for details.
 						if (opts.minTickSize != null) {
 							if (typeof opts.tickSize == "number") {
 								minSize = opts.tickSize;
-							***REMOVED*** else {
+							} else {
 								minSize = opts.minTickSize[0] * timeUnitSize[opts.minTickSize[1]];
-							***REMOVED***
-						***REMOVED***
+							}
+						}
 
 						for (var i = 0; i < spec.length - 1; ++i) {
 							if (axis.delta < (spec[i][0] * timeUnitSize[spec[i][1]]
 											  + spec[i + 1][0] * timeUnitSize[spec[i + 1][1]]) / 2
 								&& spec[i][0] * timeUnitSize[spec[i][1]] >= minSize) {
 								break;
-							***REMOVED***
-						***REMOVED***
+							}
+						}
 
 						var size = spec[i][0];
 						var unit = spec[i][1];
@@ -243,30 +243,30 @@ API.txt for details.
 
 							if (opts.minTickSize != null && opts.minTickSize[1] == "year") {
 								size = Math.floor(opts.minTickSize[0]);
-							***REMOVED*** else {
+							} else {
 
 								var magn = Math.pow(10, Math.floor(Math.log(axis.delta / timeUnitSize.year) / Math.LN10));
 								var norm = (axis.delta / timeUnitSize.year) / magn;
 
 								if (norm < 1.5) {
 									size = 1;
-								***REMOVED*** else if (norm < 3) {
+								} else if (norm < 3) {
 									size = 2;
-								***REMOVED*** else if (norm < 7.5) {
+								} else if (norm < 7.5) {
 									size = 5;
-								***REMOVED*** else {
+								} else {
 									size = 10;
-								***REMOVED***
+								}
 
 								size *= magn;
-							***REMOVED***
+							}
 
 							// minimum size for years is 1
 
 							if (size < 1) {
 								size = 1;
-							***REMOVED***
-						***REMOVED***
+							}
+						}
 
 						axis.tickSize = opts.tickSize || [size, unit];
 						var tickSize = axis.tickSize[0];
@@ -276,18 +276,18 @@ API.txt for details.
 
 						if (unit == "second") {
 							d.setSeconds(floorInBase(d.getSeconds(), tickSize));
-						***REMOVED*** else if (unit == "minute") {
+						} else if (unit == "minute") {
 							d.setMinutes(floorInBase(d.getMinutes(), tickSize));
-						***REMOVED*** else if (unit == "hour") {
+						} else if (unit == "hour") {
 							d.setHours(floorInBase(d.getHours(), tickSize));
-						***REMOVED*** else if (unit == "month") {
+						} else if (unit == "month") {
 							d.setMonth(floorInBase(d.getMonth(), tickSize));
-						***REMOVED*** else if (unit == "quarter") {
+						} else if (unit == "quarter") {
 							d.setMonth(3 * floorInBase(d.getMonth() / 3,
 								tickSize));
-						***REMOVED*** else if (unit == "year") {
+						} else if (unit == "year") {
 							d.setFullYear(floorInBase(d.getFullYear(), tickSize));
-						***REMOVED***
+						}
 
 						// reset smaller components
 
@@ -295,25 +295,25 @@ API.txt for details.
 
 						if (step >= timeUnitSize.minute) {
 							d.setSeconds(0);
-						***REMOVED***
+						}
 						if (step >= timeUnitSize.hour) {
 							d.setMinutes(0);
-						***REMOVED***
+						}
 						if (step >= timeUnitSize.day) {
 							d.setHours(0);
-						***REMOVED***
+						}
 						if (step >= timeUnitSize.day * 4) {
 							d.setDate(1);
-						***REMOVED***
+						}
 						if (step >= timeUnitSize.month * 2) {
 							d.setMonth(floorInBase(d.getMonth(), 3));
-						***REMOVED***
+						}
 						if (step >= timeUnitSize.quarter * 2) {
 							d.setMonth(floorInBase(d.getMonth(), 6));
-						***REMOVED***
+						}
 						if (step >= timeUnitSize.year) {
 							d.setMonth(0);
-						***REMOVED***
+						}
 
 						var carry = 0;
 						var v = Number.NaN;
@@ -341,19 +341,19 @@ API.txt for details.
 									d.setTime(v + carry * timeUnitSize.hour + (end - start) * tickSize);
 									carry = d.getHours();
 									d.setHours(0);
-								***REMOVED*** else {
+								} else {
 									d.setMonth(d.getMonth() +
 										tickSize * (unit == "quarter" ? 3 : 1));
-								***REMOVED***
-							***REMOVED*** else if (unit == "year") {
+								}
+							} else if (unit == "year") {
 								d.setFullYear(d.getFullYear() + tickSize);
-							***REMOVED*** else {
+							} else {
 								d.setTime(v + step);
-							***REMOVED***
-						***REMOVED*** while (v < axis.max && v != prev);
+							}
+						} while (v < axis.max && v != prev);
 
 						return ticks;
-					***REMOVED***;
+					};
 
 					axis.tickFormatter = function (v, axis) {
 
@@ -363,7 +363,7 @@ API.txt for details.
 
 						if (opts.timeformat != null) {
 							return formatDate(d, opts.timeformat, opts.monthNames, opts.dayNames);
-						***REMOVED***
+						}
 
 						// possibly use quarters if quarters are mentioned in
 						// any of these places
@@ -381,46 +381,46 @@ API.txt for details.
 
 						if (t < timeUnitSize.minute) {
 							fmt = hourCode + ":%M:%S" + suffix;
-						***REMOVED*** else if (t < timeUnitSize.day) {
+						} else if (t < timeUnitSize.day) {
 							if (span < 2 * timeUnitSize.day) {
 								fmt = hourCode + ":%M" + suffix;
-							***REMOVED*** else {
+							} else {
 								fmt = "%b %d " + hourCode + ":%M" + suffix;
-							***REMOVED***
-						***REMOVED*** else if (t < timeUnitSize.month) {
+							}
+						} else if (t < timeUnitSize.month) {
 							fmt = "%b %d";
-						***REMOVED*** else if ((useQuarters && t < timeUnitSize.quarter) ||
+						} else if ((useQuarters && t < timeUnitSize.quarter) ||
 							(!useQuarters && t < timeUnitSize.year)) {
 							if (span < timeUnitSize.year) {
 								fmt = "%b";
-							***REMOVED*** else {
+							} else {
 								fmt = "%b %Y";
-							***REMOVED***
-						***REMOVED*** else if (useQuarters && t < timeUnitSize.year) {
+							}
+						} else if (useQuarters && t < timeUnitSize.year) {
 							if (span < timeUnitSize.year) {
 								fmt = "Q%q";
-							***REMOVED*** else {
+							} else {
 								fmt = "Q%q %Y";
-							***REMOVED***
-						***REMOVED*** else {
+							}
+						} else {
 							fmt = "%Y";
-						***REMOVED***
+						}
 
 						var rt = formatDate(d, fmt, opts.monthNames, opts.dayNames);
 
 						return rt;
-					***REMOVED***;
-				***REMOVED***
-			***REMOVED***);
-		***REMOVED***);
-	***REMOVED***
+					};
+				}
+			});
+		});
+	}
 
 	$.plot.plugins.push({
 		init: init,
 		options: options,
 		name: 'time',
 		version: '1.0'
-	***REMOVED***);
+	});
 
 	// Time-axis support used to be in Flot core, which exposed the
 	// formatDate function on the plot object.  Various plugins depend
@@ -429,4 +429,4 @@ API.txt for details.
 	$.plot.formatDate = formatDate;
 	$.plot.dateGenerator = dateGenerator;
 
-***REMOVED***)(jQuery);
+})(jQuery);

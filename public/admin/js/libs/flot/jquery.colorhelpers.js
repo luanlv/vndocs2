@@ -21,11 +21,11 @@
  */ 
 
 (function($) {
-    $.color = {***REMOVED***;
+    $.color = {};
 
     // construct color object with some convenient chainable helpers
     $.color.make = function (r, g, b, a) {
-        var o = {***REMOVED***;
+        var o = {};
         o.r = r || 0;
         o.g = g || 0;
         o.b = b || 0;
@@ -35,40 +35,40 @@
             for (var i = 0; i < c.length; ++i)
                 o[c.charAt(i)] += d;
             return o.normalize();
-      ***REMOVED***;
+        };
         
         o.scale = function (c, f) {
             for (var i = 0; i < c.length; ++i)
                 o[c.charAt(i)] *= f;
             return o.normalize();
-      ***REMOVED***;
+        };
         
         o.toString = function () {
             if (o.a >= 1.0) {
                 return "rgb("+[o.r, o.g, o.b].join(",")+")";
-          ***REMOVED*** else {
+            } else {
                 return "rgba("+[o.r, o.g, o.b, o.a].join(",")+")";
-          ***REMOVED***
-      ***REMOVED***;
+            }
+        };
 
         o.normalize = function () {
             function clamp(min, value, max) {
                 return value < min ? min: (value > max ? max: value);
-          ***REMOVED***
+            }
             
             o.r = clamp(0, parseInt(o.r), 255);
             o.g = clamp(0, parseInt(o.g), 255);
             o.b = clamp(0, parseInt(o.b), 255);
             o.a = clamp(0, o.a, 1);
             return o;
-      ***REMOVED***;
+        };
 
         o.clone = function () {
             return $.color.make(o.r, o.b, o.g, o.a);
-      ***REMOVED***;
+        };
 
         return o.normalize();
-  ***REMOVED***
+    }
 
     // extract CSS color property from element, going up in the DOM
     // if it's "transparent"
@@ -82,14 +82,14 @@
             if (c != '' && c != 'transparent')
                 break;
             elem = elem.parent();
-      ***REMOVED*** while (elem.length && !$.nodeName(elem.get(0), "body"));
+        } while (elem.length && !$.nodeName(elem.get(0), "body"));
 
         // catch Safari's way of signalling transparent
         if (c == "rgba(0, 0, 0, 0)")
             c = "transparent";
         
         return $.color.parse(c);
-  ***REMOVED***
+    }
     
     // parse CSS color string (like "rgb(10, 32, 43)" or "#fff"),
     // returns color object, if parsing failed, you get black (0, 0,
@@ -98,11 +98,11 @@
         var res, m = $.color.make;
 
         // Look for rgb(num,num,num)
-        if (res = /rgb\(\s*([0-9]{1,3***REMOVED***)\s*,\s*([0-9]{1,3***REMOVED***)\s*,\s*([0-9]{1,3***REMOVED***)\s*\)/.exec(str))
+        if (res = /rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/.exec(str))
             return m(parseInt(res[1], 10), parseInt(res[2], 10), parseInt(res[3], 10));
         
         // Look for rgba(num,num,num,num)
-        if (res = /rgba\(\s*([0-9]{1,3***REMOVED***)\s*,\s*([0-9]{1,3***REMOVED***)\s*,\s*([0-9]{1,3***REMOVED***)\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)/.exec(str))
+        if (res = /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)/.exec(str))
             return m(parseInt(res[1], 10), parseInt(res[2], 10), parseInt(res[3], 10), parseFloat(res[4]));
             
         // Look for rgb(num%,num%,num%)
@@ -114,7 +114,7 @@
             return m(parseFloat(res[1])*2.55, parseFloat(res[2])*2.55, parseFloat(res[3])*2.55, parseFloat(res[4]));
         
         // Look for #a0b1c2
-        if (res = /#([a-fA-F0-9]{2***REMOVED***)([a-fA-F0-9]{2***REMOVED***)([a-fA-F0-9]{2***REMOVED***)/.exec(str))
+        if (res = /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(str))
             return m(parseInt(res[1], 16), parseInt(res[2], 16), parseInt(res[3], 16));
 
         // Look for #fff
@@ -129,8 +129,8 @@
             // default to black
             res = lookupColors[name] || [0, 0, 0];
             return m(res[0], res[1], res[2]);
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
     
     var lookupColors = {
         aqua:[0,255,255],
@@ -176,5 +176,5 @@
         silver:[192,192,192],
         white:[255,255,255],
         yellow:[255,255,0]
-  ***REMOVED***;
-***REMOVED***)(jQuery);
+    };
+})(jQuery);

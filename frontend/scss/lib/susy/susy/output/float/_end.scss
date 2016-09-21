@@ -20,11 +20,11 @@
 
   $output: (
     float: if($last-flow == to, $to, null),
-    margin-#{$to***REMOVED***: $margin,
+    margin-#{$to}: $margin,
   );
 
   @include output($output);
-***REMOVED***
+}
 
 // Float First
 // -----------
@@ -33,8 +33,8 @@
   $flow: map-get($susy-defaults, flow)
 ) {
   $output: (
-    margin-#{from($flow)***REMOVED***: 0,
+    margin-#{from($flow)}: 0,
   );
 
   @include output($output);
-***REMOVED***
+}

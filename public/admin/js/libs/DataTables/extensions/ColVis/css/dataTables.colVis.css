@@ -5,7 +5,7 @@
 div.ColVis {
 	float: right;
 	margin-bottom: 1em;
-***REMOVED***
+}
 
 button.ColVis_Button,
 ul.ColVis_collection li {
@@ -40,7 +40,7 @@ ul.ColVis_collection li {
 	background:      -o-linear-gradient(top, #ffffff 0%,#f3f3f3 89%,#f9f9f9 100%); /* Opera 11.10+ */
 	background:         linear-gradient(top, #ffffff 0%,#f3f3f3 89%,#f9f9f9 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
-***REMOVED***
+}
 
 .ColVis_Button:hover,
 ul.ColVis_collection li:hover {
@@ -60,21 +60,21 @@ ul.ColVis_collection li:hover {
 	background:      -o-linear-gradient(top, #f3f3f3 0%,#e2e2e2 89%,#f4f4f4 100%); /* Opera 11.10+ */
 	background:         linear-gradient(top, #f3f3f3 0%,#e2e2e2 89%,#f4f4f4 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
-***REMOVED***
+}
 
 button.ColVis_Button {
 	height: 30px;
 	padding: 3px 8px;
-***REMOVED***
+}
 
 button.ColVis_Button::-moz-focus-inner { 
 	border: none !important;
 	padding: 0;
-***REMOVED***
+}
 
 button.ColVis_Button:active { 
 	outline: none;
-***REMOVED***
+}
 
 
 div.ColVis_collectionBackground {
@@ -85,7 +85,7 @@ div.ColVis_collectionBackground {
 	width: 100%;
 	background-color: black;
 	z-index: 1100;
-***REMOVED***
+}
 
 ul.ColVis_collection {
 	list-style: none;
@@ -110,7 +110,7 @@ ul.ColVis_collection {
 	    -ms-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 	     -o-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 	        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-***REMOVED***
+}
 
 ul.ColVis_collection li {
 	position: relative;
@@ -128,22 +128,22 @@ ul.ColVis_collection li {
 	    -ms-box-shadow: 1px 1px 3px #999;
 	     -o-box-shadow: 1px 1px 3px #999;
 	        box-shadow: 1px 1px 3px #999;
-***REMOVED***
+}
 
 ul.ColVis_collection li {
 	text-align: left;
-***REMOVED***
+}
 
 ul.ColVis_collection li.ColVis_Button:hover {
 	border: 1px solid #999;
 	background-color: #f0f0f0;
-***REMOVED***
+}
 
 ul.ColVis_collection li span {
 	display: inline-block;
 	padding-left: 0.5em;
 	cursor: pointer;
-***REMOVED***
+}
 
 
 ul.ColVis_collection li.ColVis_Special {
@@ -155,7 +155,7 @@ ul.ColVis_collection li.ColVis_Special {
 	background:      -o-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(214,214,214,1) 77%,rgba(232,232,232,1) 100%); /* Opera 11.10+ */
 	background:         linear-gradient(to bottom, rgba(237,237,237,1) 0%,rgba(214,214,214,1) 77%,rgba(232,232,232,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
-***REMOVED***
+}
 
 ul.ColVis_collection li.ColVis_Special:hover {
 	background: #e2e2e2; /* Old browsers */
@@ -165,21 +165,21 @@ ul.ColVis_collection li.ColVis_Special:hover {
 	background:      -o-linear-gradient(top, #d0d0d0 0%,#d5d5d5 89%,#e2e2e2 100%); /* Opera 11.10+ */
 	background:         linear-gradient(top, #d0d0d0 0%,#d5d5d5 89%,#e2e2e2 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
-***REMOVED***
+}
 
 
 span.ColVis_radio {
 	display: inline-block;
 	width: 20px;
-***REMOVED***
+}
 
 div.ColVis_catcher {
 	position: absolute;
 	z-index: 1101;
-***REMOVED***
+}
 
 .disabled {
 	color: #999;
-***REMOVED***
+}
 
 

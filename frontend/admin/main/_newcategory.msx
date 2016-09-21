@@ -10,8 +10,8 @@ var data = m.prop({
     "parent_id" : "NONE",
     "name" : "NONE",
     "slug" : "NONE"
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 var NewCategory = function(ctrl){
   return [
@@ -25,7 +25,7 @@ var NewCategory = function(ctrl){
                 <button type="button" className="btn ink-reaction btn-raised btn-primary" style="float: right"
                   onclick={function(){
                     console.log(data());
-                    {/*delete data().time;*/***REMOVED***
+                    {/*delete data().time;*/}
                     $.ajax({
                       type: "POST",
                       url: "/admin/newCategory",
@@ -33,10 +33,10 @@ var NewCategory = function(ctrl){
                       contentType: "application/json",
                       dataType: "json",
                       success: function(data){
-                    ***REMOVED***
-                  ***REMOVED***);
+                      }
+                    });
                     
-                ***REMOVED******REMOVED***
+                  }}
                 >Publish</button>
                 <button type="button" className="btn ink-reaction btn-raised" style="float: right; margin-right: 20px;">Save</button>
                 <br/>
@@ -48,8 +48,8 @@ var NewCategory = function(ctrl){
                       <input type="text" className="form-control" id="url" name="title"
                              onchange={function(el){
                                data().slug = $(el.target).val()
-                           ***REMOVED******REMOVED***
-                             value={data().slug***REMOVED***
+                             }}
+                             value={data().slug}
                       />
                   <div className="form-control-line"></div>
                   </div>
@@ -62,8 +62,8 @@ var NewCategory = function(ctrl){
                              onchange={function(el){
                                data().name = $(el.target).val();
                                data().slug = fn.slug(data().name);
-                           ***REMOVED******REMOVED***
-                             value={(data().name === undefined)?"":(data().name)***REMOVED***
+                             }}
+                             value={(data().name === undefined)?"":(data().name)}
                       />
                     <div className="form-control-line"></div>
                   </div>
@@ -76,11 +76,11 @@ var NewCategory = function(ctrl){
                               config={function(el, isInit, ctx){
                                 if(!isInit) {
                                   $(el).val(data().description)
-                              ***REMOVED***
-                            ***REMOVED******REMOVED***
+                                }
+                              }}
                               onkeydown={function(el){
                                 data().description = $(el.target).val();
-                            ***REMOVED******REMOVED***
+                              }}
                     ></textarea>
       
                     <div className="form-control-line"></div>
@@ -94,22 +94,22 @@ var NewCategory = function(ctrl){
                     <select className="form-control" size="7" id="categories" name="categories"
                             onchange={function(el){
                               
-                          ***REMOVED******REMOVED***
+                            }}
                     >
                       {
                         ctrl.categories().map(function(el){
                           return <option
-                              value={el._id***REMOVED***
+                              value={el._id}
                               onclick = {function(){
                                 data().sku = {
                                   "parent_id": el.slug,
                                   "name": el.name,
                                   "slug": el.slug
-                              ***REMOVED***;
-                            ***REMOVED******REMOVED***
-                          > {el.name***REMOVED*** </option>
-                      ***REMOVED***)
-                    ***REMOVED***
+                                };
+                              }}
+                          > {el.name} </option>
+                        })
+                      }
                     </select>
                   </div>
                  
@@ -125,14 +125,14 @@ var NewCategory = function(ctrl){
           </div>
   
           <div className="offcanvas">
-            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
+            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")} style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))}>
             <div className="offcanvas-head">
               <header>Images controller </header>
               <div className="offcanvas-tools">
                 <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
                   onclick={function(){
-                    {/*ctrl.showImgList = false;*/***REMOVED***
-                ***REMOVED******REMOVED***
+                    {/*ctrl.showImgList = false;*/}
+                  }}
                 >
                   <i className="md md-close"></i>
                 </a>
@@ -159,27 +159,27 @@ var NewCategory = function(ctrl){
     ctrl.showImgList?(<div className="backdrop"
       onclick={function(){
         ctrl.showImgList = false;
-    ***REMOVED******REMOVED***
+      }}
     ></div>):""
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 var categories = [
   {
     "slug": "1",
     "name": "mot",
     "description": "abc",
-***REMOVED***,
+  },
   {
     "slug": "2",
     "name": "hai",
     "description": "abc",
-***REMOVED***,
+  },
   {
     "slug": "3",
     "name": "ba",
     "description": "abc",
-***REMOVED***
+  }
 ]
 
 

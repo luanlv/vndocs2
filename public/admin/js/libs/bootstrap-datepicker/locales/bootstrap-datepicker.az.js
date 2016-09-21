@@ -8,5 +8,5 @@
         monthsShort: ["Yan", "Fev", "Mar", "Apr", "May", "İyun", "İyul", "Avq", "Sen", "Okt", "Noy", "Dek"],
         today: "Bu gün",
         weekStart: 1
-  ***REMOVED***;
-***REMOVED***(jQuery));
+    };
+}(jQuery));

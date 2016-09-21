@@ -20,7 +20,7 @@ FixedHeader is initialised using the `$.fn.dataTable.FixedHeader()` object. For 
 $(document).ready( function () {
     var table = $('#example').dataTable();
     new $.fn.dataTable.FixedHeader( table );
-***REMOVED*** );
+} );
 ```
 
 

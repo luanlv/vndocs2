@@ -1,10 +1,10 @@
 /**
 * Return true if the field value matches the given format RegExp
 *
-* @example $.validator.methods.pattern("AR1004",element,/^AR\d{4***REMOVED***$/)
+* @example $.validator.methods.pattern("AR1004",element,/^AR\d{4}$/)
 * @result true
 *
-* @example $.validator.methods.pattern("BR1004",element,/^AR\d{4***REMOVED***$/)
+* @example $.validator.methods.pattern("BR1004",element,/^AR\d{4}$/)
 * @result false
 *
 * @name $.validator.methods.pattern
@@ -14,9 +14,9 @@
 $.validator.addMethod("pattern", function(value, element, param) {
 	if (this.optional(element)) {
 		return true;
-	***REMOVED***
+	}
 	if (typeof param === "string") {
 		param = new RegExp("^(?:" + param + ")$");
-	***REMOVED***
+	}
 	return param.test(value);
-***REMOVED***, "Invalid format.");
+}, "Invalid format.");

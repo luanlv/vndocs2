@@ -1,11 +1,11 @@
-var Article = {***REMOVED***;
+var Article = {};
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
 var NewArticle = require('./_newarticle.msx');
 var Right = require('./_right.msx');
 var fn = require('./fn.msx');
 
-var postData = {"ok": "data"***REMOVED***
+var postData = {"ok": "data"}
 
 Article.controller = function(){
   console.log("new article");
@@ -17,9 +17,9 @@ Article.controller = function(){
     ctrl.imgList(ctrl.request2.data());
     ctrl.showImgList = true;
     m.redraw();
-***REMOVED***;
+  };
 
-***REMOVED***;
+};
 
 
 
@@ -28,15 +28,15 @@ Article.view = function(ctrl){
     Header(ctrl),
     <div id="base">
       
-      {NewArticle(ctrl)***REMOVED***
+      {NewArticle(ctrl)}
       
-      {Menu(ctrl)***REMOVED***
+      {Menu(ctrl)}
       
-      {Right(ctrl)***REMOVED***
+      {Right(ctrl)}
     
     </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 
 module.exports = Article;

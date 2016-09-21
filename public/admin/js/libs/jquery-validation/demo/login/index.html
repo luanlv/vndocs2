@@ -12,20 +12,20 @@
 		var elements = $("input[type!='submit'], textarea, select");
 		elements.focus(function() {
 			$(this).parents('li').addClass('highlight');
-		***REMOVED***);
+		});
 		elements.blur(function() {
 			$(this).parents('li').removeClass('highlight');
-		***REMOVED***);
+		});
 
 		$("#forgotpassword").click(function() {
 			$("#password").removeClass("required");
 			$("#login").submit();
 			$("#password").addClass("required");
 			return false;
-		***REMOVED***);
+		});
 
 		$("#login").validate()
-	***REMOVED***);
+	});
 	</script>
 </head>
 <body>

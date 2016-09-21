@@ -8,4 +8,4 @@ trait ServiceException extends Exception {
   val message: String
   val nestedException: Throwable
 
-***REMOVED***
+}

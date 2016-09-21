@@ -15,4 +15,4 @@ trait ArticleDAO {
   def incComment(id: String): Future[Try[String]]
 
   def getList(page: Int): Future[List[Article]]
-***REMOVED***
+}

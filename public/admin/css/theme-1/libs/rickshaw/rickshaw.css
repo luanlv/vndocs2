@@ -1,43 +1,43 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-***REMOVED***
+  }
   to {
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -48,14 +48,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -66,14 +66,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -84,14 +84,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -102,14 +102,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-down {
   from {
     -webkit-transform-origin: top;
@@ -120,14 +120,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -138,14 +138,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -156,14 +156,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -174,14 +174,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -192,14 +192,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes zoom-up {
   from {
     -webkit-transform-origin: bottom;
@@ -210,14 +210,14 @@
     -ms-transform: scale(0, 0);
     -o-transform: scale(0, 0);
     transform: scale(0, 0);
-***REMOVED***
+  }
   to {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     transform: scale(1, 1);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -225,15 +225,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -241,15 +241,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -257,15 +257,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -273,15 +273,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-right {
   from {
     -webkit-transform: translate(-20px, 0);
@@ -289,15 +289,15 @@
     -o-transform: translate(-20px, 0);
     transform: translate(-20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -305,15 +305,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -321,15 +321,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -337,15 +337,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -353,15 +353,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-left {
   from {
     -webkit-transform: translate(20px, 0);
@@ -369,15 +369,15 @@
     -o-transform: translate(20px, 0);
     transform: translate(20px, 0);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -385,15 +385,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -401,15 +401,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -417,15 +417,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -433,15 +433,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-down {
   from {
     -webkit-transform: translate(0, -20px);
@@ -449,15 +449,15 @@
     -o-transform: translate(0, -20px);
     transform: translate(0, -20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -465,15 +465,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-moz-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -481,15 +481,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-o-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -497,15 +497,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @-ms-keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -513,15 +513,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes slide-up {
   from {
     -webkit-transform: translate(0, 20px);
@@ -529,15 +529,15 @@
     -o-transform: translate(0, 20px);
     transform: translate(0, 20px);
     opacity: 0;
-***REMOVED***
+  }
   to {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     transform: translate(0, 0);
     opacity: 1;
-***REMOVED***
-***REMOVED***
+  }
+}
 /*
 // Example usage
 
@@ -552,7 +552,7 @@
 @media (min-width: @screen-sm-min) {
 	.make-ratio(sm, 2, 1);
 	.make-ratio(sm, 3, 1);
-***REMOVED***
+}
 
 
 // Medium grid
@@ -562,7 +562,7 @@
 @media (min-width: @screen-md-min) {
 	.make-ratio(md, 2, 1);
 	.make-ratio(md, 3, 1);
-***REMOVED***
+}
 
 
 // Large grid
@@ -572,7 +572,7 @@
 @media (min-width: @screen-lg-min) {
 	.make-ratio(lg, 2, 1);
 	.make-ratio(lg, 3, 1);
-***REMOVED***
+}
 */
 .rickshaw_graph .detail {
   pointer-events: none;
@@ -586,13 +586,13 @@
   -moz-transition: opacity 0.25s linear;
   -o-transition: opacity 0.25s linear;
   -webkit-transition: opacity 0.25s linear;
-***REMOVED***
+}
 .rickshaw_graph .detail.inactive {
   opacity: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .item.active {
   opacity: 1;
-***REMOVED***
+}
 .rickshaw_graph .detail .x_label {
   font-family: Arial, sans-serif;
   border-radius: 3px;
@@ -603,13 +603,13 @@
   position: absolute;
   background: white;
   white-space: nowrap;
-***REMOVED***
+}
 .rickshaw_graph .detail .x_label.left {
   left: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .x_label.right {
   right: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .item {
   position: absolute;
   z-index: 2;
@@ -625,17 +625,17 @@
   margin-right: 1em;
   margin-top: -1em;
   white-space: nowrap;
-***REMOVED***
+}
 .rickshaw_graph .detail .item.left {
   left: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .item.right {
   right: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .item.active {
   opacity: 1;
   background: rgba(0, 0, 0, 0.8);
-***REMOVED***
+}
 .rickshaw_graph .detail .item:after {
   position: absolute;
   display: block;
@@ -643,21 +643,21 @@
   height: 0;
   content: "";
   border: 5px solid transparent;
-***REMOVED***
+}
 .rickshaw_graph .detail .item.left:after {
   top: 1em;
   left: -5px;
   margin-top: -5px;
   border-right-color: rgba(0, 0, 0, 0.8);
   border-left-width: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .item.right:after {
   top: 1em;
   right: -5px;
   margin-top: -5px;
   border-left-color: rgba(0, 0, 0, 0.8);
   border-right-width: 0;
-***REMOVED***
+}
 .rickshaw_graph .detail .dot {
   width: 4px;
   height: 4px;
@@ -673,18 +673,18 @@
   border-style: solid;
   display: none;
   background-clip: padding-box;
-***REMOVED***
+}
 .rickshaw_graph .detail .dot.active {
   display: block;
-***REMOVED***
+}
 /* graph */
 .rickshaw_graph {
   position: relative;
-***REMOVED***
+}
 .rickshaw_graph svg {
   display: block;
   overflow: hidden;
-***REMOVED***
+}
 /* ticks */
 .rickshaw_graph .x_tick {
   position: absolute;
@@ -693,7 +693,7 @@
   width: 0px;
   border-left: 1px dotted rgba(0, 0, 0, 0.2);
   pointer-events: none;
-***REMOVED***
+}
 .rickshaw_graph .x_tick .title {
   position: absolute;
   font-size: 12px;
@@ -702,14 +702,14 @@
   white-space: nowrap;
   margin-left: 3px;
   bottom: 1px;
-***REMOVED***
+}
 /* annotations */
 .rickshaw_annotation_timeline {
   height: 1px;
   border-top: 1px solid #e0e0e0;
   margin-top: 10px;
   position: relative;
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation {
   position: absolute;
   height: 6px;
@@ -718,7 +718,7 @@
   top: -3px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.25);
-***REMOVED***
+}
 .rickshaw_graph .annotation_line {
   position: absolute;
   top: 0;
@@ -726,23 +726,23 @@
   width: 0px;
   border-left: 2px solid rgba(0, 0, 0, 0.3);
   display: none;
-***REMOVED***
+}
 .rickshaw_graph .annotation_line.active {
   display: block;
-***REMOVED***
+}
 .rickshaw_graph .annotation_range {
   background: rgba(0, 0, 0, 0.1);
   display: none;
   position: absolute;
   top: 0;
   bottom: -6px;
-***REMOVED***
+}
 .rickshaw_graph .annotation_range.active {
   display: block;
-***REMOVED***
+}
 .rickshaw_graph .annotation_range.active.offscreen {
   display: none;
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation .content {
   background: white;
   color: black;
@@ -759,78 +759,78 @@
   width: 160px;
   display: none;
   cursor: pointer;
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation .content:before {
   content: "\25b2";
   position: absolute;
   top: -11px;
   color: white;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation.active,
 .rickshaw_annotation_timeline .annotation:hover {
   background-color: rgba(0, 0, 0, 0.8);
   cursor: none;
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation .content:hover {
   z-index: 50;
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation.active .content {
   display: block;
-***REMOVED***
+}
 .rickshaw_annotation_timeline .annotation:hover .content {
   display: block;
   z-index: 50;
-***REMOVED***
+}
 .rickshaw_graph .y_axis,
 .rickshaw_graph .x_axis_d3 {
   fill: none;
-***REMOVED***
+}
 .rickshaw_graph .y_ticks .tick line,
 .rickshaw_graph .x_ticks_d3 .tick {
   stroke: rgba(0, 0, 0, 0.16);
   stroke-width: 2px;
   shape-rendering: crisp-edges;
   pointer-events: none;
-***REMOVED***
+}
 .rickshaw_graph .y_grid .tick,
 .rickshaw_graph .x_grid_d3 .tick {
   z-index: -1;
   stroke: rgba(0, 0, 0, 0.2);
   stroke-width: 1px;
   stroke-dasharray: 1 1;
-***REMOVED***
+}
 .rickshaw_graph .y_grid .tick[data-y-value="0"] {
   stroke-dasharray: 1 0;
-***REMOVED***
+}
 .rickshaw_graph .y_grid path,
 .rickshaw_graph .x_grid_d3 path {
   fill: none;
   stroke: none;
-***REMOVED***
+}
 .rickshaw_graph .y_ticks path,
 .rickshaw_graph .x_ticks_d3 path {
   fill: none;
   stroke: #808080;
-***REMOVED***
+}
 .rickshaw_graph .y_ticks text,
 .rickshaw_graph .x_ticks_d3 text {
   opacity: 0.5;
   font-size: 12px;
   pointer-events: none;
-***REMOVED***
+}
 .rickshaw_graph .x_tick.glow .title,
 .rickshaw_graph .y_ticks.glow text {
   fill: black;
   color: black;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.1), 1px -1px 0 rgba(255, 255, 255, 0.1), 1px 1px 0 rgba(255, 255, 255, 0.1), 0px 1px 0 rgba(255, 255, 255, 0.1), 0px -1px 0 rgba(255, 255, 255, 0.1), 1px 0px 0 rgba(255, 255, 255, 0.1), -1px 0px 0 rgba(255, 255, 255, 0.1), -1px -1px 0 rgba(255, 255, 255, 0.1);
-***REMOVED***
+}
 .rickshaw_graph .x_tick.inverse .title,
 .rickshaw_graph .y_ticks.inverse text {
   fill: white;
   color: white;
   text-shadow: -1px 1px 0 rgba(0, 0, 0, 0.8), 1px -1px 0 rgba(0, 0, 0, 0.8), 1px 1px 0 rgba(0, 0, 0, 0.8), 0px 1px 0 rgba(0, 0, 0, 0.8), 0px -1px 0 rgba(0, 0, 0, 0.8), 1px 0px 0 rgba(0, 0, 0, 0.8), -1px 0px 0 rgba(0, 0, 0, 0.8), -1px -1px 0 rgba(0, 0, 0, 0.8);
-***REMOVED***
+}
 .rickshaw_legend {
   font-family: Arial;
   font-size: 12px;
@@ -840,25 +840,25 @@
   padding: 12px 5px;
   border-radius: 2px;
   position: relative;
-***REMOVED***
+}
 .rickshaw_legend:hover {
   z-index: 10;
-***REMOVED***
+}
 .rickshaw_legend .swatch {
   width: 10px;
   height: 10px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-***REMOVED***
+}
 .rickshaw_legend .line {
   clear: both;
   line-height: 140%;
   padding-right: 15px;
-***REMOVED***
+}
 .rickshaw_legend .line .swatch {
   display: inline-block;
   margin-right: 3px;
   border-radius: 2px;
-***REMOVED***
+}
 .rickshaw_legend .label {
   margin: 0;
   white-space: nowrap;
@@ -870,38 +870,38 @@
   line-height: normal;
   padding: 0px;
   text-shadow: none;
-***REMOVED***
+}
 .rickshaw_legend .action:hover {
   opacity: 0.6;
-***REMOVED***
+}
 .rickshaw_legend .action {
   margin-right: 0.2em;
   font-size: 10px;
   opacity: 0.2;
   cursor: pointer;
   font-size: 14px;
-***REMOVED***
+}
 .rickshaw_legend .line.disabled {
   opacity: 0.4;
-***REMOVED***
+}
 .rickshaw_legend ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin: 2px;
   cursor: pointer;
-***REMOVED***
+}
 .rickshaw_legend li {
   padding: 0 0 0 2px;
   min-width: 80px;
   white-space: nowrap;
-***REMOVED***
+}
 .rickshaw_legend li:hover {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
-***REMOVED***
+}
 .rickshaw_legend li:active {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
-***REMOVED***
+}
 

@@ -31,7 +31,7 @@ class AuthTokenServiceImpl @Inject() (authTokenDAO: AuthTokenDAO, clock: Clock) 
   def create(userID: UUID, expiry: FiniteDuration = 5 minutes) = {
     val token = AuthToken(UUID.randomUUID(), userID, clock.now.withZone(DateTimeZone.UTC).plusSeconds(expiry.toSeconds.toInt))
     authTokenDAO.save(token)
-***REMOVED***
+  }
 
   /**
    * Validates a token ID.
@@ -49,6 +49,6 @@ class AuthTokenServiceImpl @Inject() (authTokenDAO: AuthTokenDAO, clock: Clock) 
   def clean = authTokenDAO.findExpired(clock.now.withZone(DateTimeZone.UTC)).flatMap { tokens =>
     Future.sequence(tokens.map { token =>
       authTokenDAO.remove(token.id).map(_ => token)
-  ***REMOVED***)
-***REMOVED***
-***REMOVED***
+    })
+  }
+}

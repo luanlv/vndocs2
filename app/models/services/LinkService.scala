@@ -1,6 +1,6 @@
 package models.services
 
-import models.{ Image, Link, Setup ***REMOVED***
+import models.{ Image, Link, Setup }
 import play.api.libs.json.JsValue
 
 import scala.concurrent.Future
@@ -15,4 +15,4 @@ trait LinkService {
 
   def save(data: models.Link): Future[Try[models.Link]]
 
-***REMOVED***
+}

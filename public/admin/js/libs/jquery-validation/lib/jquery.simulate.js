@@ -17,8 +17,8 @@ var rkeyEvent = /^key/,
 $.fn.simulate = function( type, options ) {
 	return this.each(function() {
 		new $.simulate( this, type, options );
-	***REMOVED***);
-***REMOVED***;
+	});
+};
 
 $.simulate = function( elem, type, options ) {
 	var method = $.camelCase( "simulate-" + type );
@@ -28,10 +28,10 @@ $.simulate = function( elem, type, options ) {
 
 	if ( this[ method ] ) {
 		this[ method ]();
-	***REMOVED*** else {
+	} else {
 		this.simulateEvent( elem, type, options );
-	***REMOVED***
-***REMOVED***;
+	}
+};
 
 $.extend( $.simulate, {
 
@@ -58,31 +58,31 @@ $.extend( $.simulate, {
 		SPACE: 32,
 		TAB: 9,
 		UP: 38
-	***REMOVED***,
+	},
 
 	buttonCode: {
 		LEFT: 0,
 		MIDDLE: 1,
 		RIGHT: 2
-	***REMOVED***
-***REMOVED***);
+	}
+});
 
 $.extend( $.simulate.prototype, {
 
 	simulateEvent: function( elem, type, options ) {
 		var event = this.createEvent( type, options );
 		this.dispatchEvent( elem, type, event, options );
-	***REMOVED***,
+	},
 
 	createEvent: function( type, options ) {
 		if ( rkeyEvent.test( type ) ) {
 			return this.keyEvent( type, options );
-		***REMOVED***
+		}
 
 		if ( rmouseEvent.test( type ) ) {
 			return this.mouseEvent( type, options );
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
 	mouseEvent: function( type, options ) {
 		var event, eventDoc, doc, body;
@@ -101,7 +101,7 @@ $.extend( $.simulate.prototype, {
 			metaKey: false,
 			button: 0,
 			relatedTarget: undefined
-		***REMOVED***, options );
+		}, options );
 
 		if ( document.createEvent ) {
 			event = document.createEvent( "MouseEvents" );
@@ -124,17 +124,17 @@ $.extend( $.simulate.prototype, {
 						return options.clientX +
 							( doc && doc.scrollLeft || body && body.scrollLeft || 0 ) -
 							( doc && doc.clientLeft || body && body.clientLeft || 0 );
-					***REMOVED***
-				***REMOVED***);
+					}
+				});
 				Object.defineProperty( event, "pageY", {
 					get: function() {
 						return options.clientY +
 							( doc && doc.scrollTop || body && body.scrollTop || 0 ) -
 							( doc && doc.clientTop || body && body.clientTop || 0 );
-					***REMOVED***
-				***REMOVED***);
-			***REMOVED***
-		***REMOVED*** else if ( document.createEventObject ) {
+					}
+				});
+			}
+		} else if ( document.createEventObject ) {
 			event = document.createEventObject();
 			$.extend( event, options );
 			// standards event.button uses constants defined here: http://msdn.microsoft.com/en-us/library/ie/ff974877(v=vs.85).aspx
@@ -144,11 +144,11 @@ $.extend( $.simulate.prototype, {
 				0: 1,
 				1: 4,
 				2: 2
-			***REMOVED***[ event.button ] || event.button;
-		***REMOVED***
+			}[ event.button ] || event.button;
+		}
 
 		return event;
-	***REMOVED***,
+	},
 
 	keyEvent: function( type, options ) {
 		var event;
@@ -162,7 +162,7 @@ $.extend( $.simulate.prototype, {
 			metaKey: false,
 			keyCode: 0,
 			charCode: undefined
-		***REMOVED***, options );
+		}, options );
 
 		if ( document.createEvent ) {
 			try {
@@ -174,7 +174,7 @@ $.extend( $.simulate.prototype, {
 			// see: http://stackoverflow.com/questions/6406784/initkeyevent-keypress-only-works-in-firefox-need-a-cross-browser-solution
 			// and also https://bugs.webkit.org/show_bug.cgi?id=13368
 			// fall back to a generic event until we decide to implement initKeyboardEvent
-			***REMOVED*** catch( err ) {
+			} catch( err ) {
 				event = document.createEvent( "Events" );
 				event.initEvent( type, options.bubbles, options.cancelable );
 				$.extend( event, {
@@ -185,30 +185,30 @@ $.extend( $.simulate.prototype, {
 					metaKey: options.metaKey,
 					keyCode: options.keyCode,
 					charCode: options.charCode
-				***REMOVED***);
-			***REMOVED***
-		***REMOVED*** else if ( document.createEventObject ) {
+				});
+			}
+		} else if ( document.createEventObject ) {
 			event = document.createEventObject();
 			$.extend( event, options );
-		***REMOVED***
+		}
 
-		if ( !!/msie [\w.]+/.exec( navigator.userAgent.toLowerCase() ) || (({***REMOVED***).toString.call( window.opera ) === "[object Opera]") ) {
+		if ( !!/msie [\w.]+/.exec( navigator.userAgent.toLowerCase() ) || (({}).toString.call( window.opera ) === "[object Opera]") ) {
 			event.keyCode = (options.charCode > 0) ? options.charCode : options.keyCode;
 			event.charCode = undefined;
-		***REMOVED***
+		}
 
 		return event;
-	***REMOVED***,
+	},
 
 	dispatchEvent: function( elem, type, event ) {
 		if ( elem[ type ] ) {
 			elem[ type ]();
-		***REMOVED*** else if ( elem.dispatchEvent ) {
+		} else if ( elem.dispatchEvent ) {
 			elem.dispatchEvent( event );
-		***REMOVED*** else if ( elem.fireEvent ) {
+		} else if ( elem.fireEvent ) {
 			elem.fireEvent( "on" + type, event );
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
 	simulateFocus: function() {
 		var focusinEvent,
@@ -217,7 +217,7 @@ $.extend( $.simulate.prototype, {
 
 		function trigger() {
 			triggered = true;
-		***REMOVED***
+		}
 
 		element.bind( "focus", trigger );
 		element[ 0 ].focus();
@@ -227,9 +227,9 @@ $.extend( $.simulate.prototype, {
 			focusinEvent.preventDefault();
 			element.trigger( focusinEvent );
 			element.triggerHandler( "focus" );
-		***REMOVED***
+		}
 		element.unbind( "focus", trigger );
-	***REMOVED***,
+	},
 
 	simulateBlur: function() {
 		var focusoutEvent,
@@ -238,7 +238,7 @@ $.extend( $.simulate.prototype, {
 
 		function trigger() {
 			triggered = true;
-		***REMOVED***
+		}
 
 		element.bind( "blur", trigger );
 		element[ 0 ].blur();
@@ -248,7 +248,7 @@ $.extend( $.simulate.prototype, {
 			// IE won't let the blur occur if the window is inactive
 			if ( element[ 0 ].ownerDocument.activeElement === element[ 0 ] ) {
 				element[ 0 ].ownerDocument.body.focus();
-			***REMOVED***
+			}
 
 			// Firefox won't trigger events if the window is inactive
 			// IE doesn't trigger events if we had to manually focus the body
@@ -257,11 +257,11 @@ $.extend( $.simulate.prototype, {
 				focusoutEvent.preventDefault();
 				element.trigger( focusoutEvent );
 				element.triggerHandler( "blur" );
-			***REMOVED***
+			}
 			element.unbind( "blur", trigger );
-		***REMOVED***, 1 );
-	***REMOVED***
-***REMOVED***);
+		}, 1 );
+	}
+});
 
 
 
@@ -276,8 +276,8 @@ function findCenter( elem ) {
 	return {
 		x: offset.left + elem.outerWidth() / 2 - document.scrollLeft(),
 		y: offset.top + elem.outerHeight() / 2 - document.scrollTop()
-	***REMOVED***;
-***REMOVED***
+	};
+}
 
 $.extend( $.simulate.prototype, {
 	simulateDrag: function() {
@@ -290,7 +290,7 @@ $.extend( $.simulate.prototype, {
 			dx = options.dx || 0,
 			dy = options.dy || 0,
 			moves = options.moves || 3,
-			coord = { clientX: x, clientY: y ***REMOVED***;
+			coord = { clientX: x, clientY: y };
 
 		this.simulateEvent( target, "mousedown", coord );
 
@@ -301,14 +301,14 @@ $.extend( $.simulate.prototype, {
 			coord = {
 				clientX: Math.round( x ),
 				clientY: Math.round( y )
-			***REMOVED***;
+			};
 
 			this.simulateEvent( document, "mousemove", coord );
-		***REMOVED***
+		}
 
 		this.simulateEvent( target, "mouseup", coord );
 		this.simulateEvent( target, "click", coord );
-	***REMOVED***
-***REMOVED***);
+	}
+});
 
-***REMOVED***)( jQuery );
+})( jQuery );

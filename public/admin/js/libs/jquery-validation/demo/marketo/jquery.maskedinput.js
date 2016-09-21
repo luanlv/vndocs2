@@ -10,7 +10,7 @@
         name = 'onpaste';
     el.setAttribute(name, '');
     return (typeof el[name] === 'function')?'paste':'input';
-***REMOVED***
+}
 
 var pasteEventName = getPasteEvent() + ".mask",
 	ua = navigator.userAgent,
@@ -24,10 +24,10 @@ $.mask = {
 		'9': "[0-9]",
 		'a': "[A-Za-z]",
 		'*': "[A-Za-z0-9]"
-	***REMOVED***,
+	},
 	dataName: "rawMaskFn",
 	placeholder: '_',
-***REMOVED***;
+};
 
 $.fn.extend({
 	//Helper Function for Caret positioning
@@ -36,36 +36,36 @@ $.fn.extend({
 
 		if (this.length === 0 || this.is(":hidden")) {
 			return;
-		***REMOVED***
+		}
 
 		if (typeof begin == 'number') {
 			end = (typeof end === 'number') ? end : begin;
 			return this.each(function() {
 				if (this.setSelectionRange) {
 					this.setSelectionRange(begin, end);
-				***REMOVED*** else if (this.createTextRange) {
+				} else if (this.createTextRange) {
 					range = this.createTextRange();
 					range.collapse(true);
 					range.moveEnd('character', end);
 					range.moveStart('character', begin);
 					range.select();
-				***REMOVED***
-			***REMOVED***);
-		***REMOVED*** else {
+				}
+			});
+		} else {
 			if (this[0].setSelectionRange) {
 				begin = this[0].selectionStart;
 				end = this[0].selectionEnd;
-			***REMOVED*** else if (document.selection && document.selection.createRange) {
+			} else if (document.selection && document.selection.createRange) {
 				range = document.selection.createRange();
 				begin = 0 - range.duplicate().moveStart('character', -100000);
 				end = begin + range.text.length;
-			***REMOVED***
-			return { begin: begin, end: end ***REMOVED***;
-		***REMOVED***
-	***REMOVED***,
+			}
+			return { begin: begin, end: end };
+		}
+	},
 	unmask: function() {
 		return this.trigger("unmask");
-	***REMOVED***,
+	},
 	mask: function(mask, settings) {
 		var input,
 			defs,
@@ -77,11 +77,11 @@ $.fn.extend({
 		if (!mask && this.length > 0) {
 			input = $(this[0]);
 			return input.data($.mask.dataName)();
-		***REMOVED***
+		}
 		settings = $.extend({
 			placeholder: $.mask.placeholder, // Load default placeholder
 			completed: null
-		***REMOVED***, settings);
+		}, settings);
 
 
 		defs = $.mask.definitions;
@@ -93,15 +93,15 @@ $.fn.extend({
 			if (c == '?') {
 				len--;
 				partialPosition = i;
-			***REMOVED*** else if (defs[c]) {
+			} else if (defs[c]) {
 				tests.push(new RegExp(defs[c]));
 				if (firstNonMaskPos === null) {
 					firstNonMaskPos = tests.length - 1;
-				***REMOVED***
-			***REMOVED*** else {
+				}
+			} else {
 				tests.push(null);
-			***REMOVED***
-		***REMOVED***);
+			}
+		});
 
 		return this.trigger("unmask").each(function() {
 			var input = $(this),
@@ -110,19 +110,19 @@ $.fn.extend({
 				function(c, i) {
 					if (c != '?') {
 						return defs[c] ? settings.placeholder : c;
-					***REMOVED***
-				***REMOVED***),
+					}
+				}),
 				focusText = input.val();
 
 			function seekNext(pos) {
 				while (++pos < len && !tests[pos]);
 				return pos;
-			***REMOVED***
+			}
 
 			function seekPrev(pos) {
 				while (--pos >= 0 && !tests[pos]);
 				return pos;
-			***REMOVED***
+			}
 
 			function shiftL(begin,end) {
 				var i,
@@ -130,23 +130,23 @@ $.fn.extend({
 
 				if (begin<0) {
 					return;
-				***REMOVED***
+				}
 
 				for (i = begin, j = seekNext(end); i < len; i++) {
 					if (tests[i]) {
 						if (j < len && tests[i].test(buffer[j])) {
 							buffer[i] = buffer[j];
 							buffer[j] = settings.placeholder;
-						***REMOVED*** else {
+						} else {
 							break;
-						***REMOVED***
+						}
 
 						j = seekNext(j);
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 				writeBuffer();
 				input.caret(Math.max(firstNonMaskPos, begin));
-			***REMOVED***
+			}
 
 			function shiftR(pos) {
 				var i,
@@ -161,12 +161,12 @@ $.fn.extend({
 						buffer[i] = c;
 						if (j < len && tests[j].test(t)) {
 							c = t;
-						***REMOVED*** else {
+						} else {
 							break;
-						***REMOVED***
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
+						}
+					}
+				}
+			}
 
 			function keydownEvent(e) {
 				var k = e.which,
@@ -183,17 +183,17 @@ $.fn.extend({
 					if (end - begin === 0) {
 						begin=k!==46?seekPrev(begin):(end=seekNext(begin-1));
 						end=k===46?seekNext(end):end;
-					***REMOVED***
+					}
 					clearBuffer(begin, end);
 					shiftL(begin, end - 1);
 
 					e.preventDefault();
-				***REMOVED*** else if (k == 27) {//escape
+				} else if (k == 27) {//escape
 					input.val(focusText);
 					input.caret(0, checkVal());
 					e.preventDefault();
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			function keypressEvent(e) {
 				var k = e.which,
@@ -204,11 +204,11 @@ $.fn.extend({
 
 				if (e.ctrlKey || e.altKey || e.metaKey || k < 32) {//Ignore
 					return;
-				***REMOVED*** else if (k) {
+				} else if (k) {
 					if (pos.end - pos.begin !== 0){
 						clearBuffer(pos.begin, pos.end);
 						shiftL(pos.begin, pos.end-1);
-					***REMOVED***
+					}
 
 					p = seekNext(pos.begin - 1);
 					if (p < len) {
@@ -222,29 +222,29 @@ $.fn.extend({
 
 							if(android){
 								setTimeout($.proxy($.fn.caret,input,next),0);
-							***REMOVED***else{
+							}else{
 								input.caret(next);
-							***REMOVED***
+							}
 
 							if (settings.completed && next >= len) {
 								settings.completed.call(input);
-							***REMOVED***
-						***REMOVED***
-					***REMOVED***
+							}
+						}
+					}
 					e.preventDefault();
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			function clearBuffer(start, end) {
 				var i;
 				for (i = start; i < end && i < len; i++) {
 					if (tests[i]) {
 						buffer[i] = settings.placeholder;
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
+					}
+				}
+			}
 
-			function writeBuffer() { input.val(buffer.join('')); ***REMOVED***
+			function writeBuffer() { input.val(buffer.join('')); }
 
 			function checkVal(allow) {
 				//try to place characters where they belong
@@ -262,33 +262,33 @@ $.fn.extend({
 								buffer[i] = c;
 								lastMatch = i;
 								break;
-							***REMOVED***
-						***REMOVED***
+							}
+						}
 						if (pos > test.length) {
 							break;
-						***REMOVED***
-					***REMOVED*** else if (buffer[i] === test.charAt(pos) && i !== partialPosition) {
+						}
+					} else if (buffer[i] === test.charAt(pos) && i !== partialPosition) {
 						pos++;
 						lastMatch = i;
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 				if (allow) {
 					writeBuffer();
-				***REMOVED*** else if (lastMatch + 1 < partialPosition) {
+				} else if (lastMatch + 1 < partialPosition) {
 					input.val("");
 					clearBuffer(0, len);
-				***REMOVED*** else {
+				} else {
 					writeBuffer();
 					input.val(input.val().substring(0, lastMatch + 1));
-				***REMOVED***
+				}
 				return (partialPosition ? i : firstNonMaskPos);
-			***REMOVED***
+			}
 
 			input.data($.mask.dataName,function(){
 				return $.map(buffer, function(c, i) {
 					return tests[i]&&c!=settings.placeholder ? c : null;
-				***REMOVED***).join('');
-			***REMOVED***);
+				}).join('');
+			});
 
 			if (!input.attr("readonly"))
 				input
@@ -296,7 +296,7 @@ $.fn.extend({
 					input
 						.unbind(".mask")
 						.removeData($.mask.dataName);
-				***REMOVED***)
+				})
 				.bind("focus.mask", function() {
 					clearTimeout(caretTimeoutId);
 					var pos,
@@ -309,16 +309,16 @@ $.fn.extend({
 						writeBuffer();
 						if (pos == mask.length) {
 							input.caret(0, pos);
-						***REMOVED*** else {
+						} else {
 							input.caret(pos);
-						***REMOVED***
-					***REMOVED***, 10);
-				***REMOVED***)
+						}
+					}, 10);
+				})
 				.bind("blur.mask", function() {
 					checkVal();
 					if (input.val() != focusText)
 						input.change();
-				***REMOVED***)
+				})
 				.bind("keydown.mask", keydownEvent)
 				.bind("keypress.mask", keypressEvent)
 				.bind(pasteEventName, function() {
@@ -327,12 +327,12 @@ $.fn.extend({
 						input.caret(pos);
 						if (settings.completed && pos == input.val().length)
 							settings.completed.call(input);
-					***REMOVED***, 0);
-				***REMOVED***);
+					}, 0);
+				});
 			checkVal(); //Perform initial check for existing values
-		***REMOVED***);
-	***REMOVED***
-***REMOVED***);
+		});
+	}
+});
 
 
-***REMOVED***)(jQuery);
+})(jQuery);

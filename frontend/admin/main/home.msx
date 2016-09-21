@@ -1,11 +1,11 @@
-var Home = {***REMOVED***;
+var Home = {};
 var Header = require('./_header.msx');
 var Menu = require('./_menu.msx');
 var Content = require('./_content.msx');
 var Right = require('./_right.msx');
 Home.controller = function(){
   console.log("run home")
-***REMOVED***;
+};
 
 Home.view = function(ctrl){
   return  [
@@ -13,15 +13,15 @@ Home.view = function(ctrl){
       <div id="base">
         <div className="offcanvas"></div>
 
-        {Content(ctrl)***REMOVED***
+        {Content(ctrl)}
         
-        {Menu(ctrl)***REMOVED***
+        {Menu(ctrl)}
   
-        {Right(ctrl)***REMOVED***
+        {Right(ctrl)}
         
       </div>
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 
 module.exports = Home;

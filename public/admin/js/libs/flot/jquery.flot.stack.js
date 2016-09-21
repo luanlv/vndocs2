@@ -16,14 +16,14 @@ stack, you can set the stack option like this:
 
 	series: {
 		stack: null/false, true, or a key (number/string)
-	***REMOVED***
+	}
 
 You can also specify it for a single series, like this:
 
 	$.plot( $("#placeholder"), [{
 		data: [ ... ],
 		stack: true
-	***REMOVED***])
+	}])
 
 The stacking order is determined by the order of the data series in the array
 (later series end up on top of the previous).
@@ -37,8 +37,8 @@ charts or filled areas).
 
 (function ($) {
     var options = {
-        series: { stack: null ***REMOVED*** // or number/string
-  ***REMOVED***;
+        series: { stack: null } // or number/string
+    };
     
     function init(plot) {
         function findMatchingSeries(s, allseries) {
@@ -49,10 +49,10 @@ charts or filled areas).
                 
                 if (allseries[i].stack == s.stack)
                     res = allseries[i];
-          ***REMOVED***
+            }
             
             return res;
-      ***REMOVED***
+        }
         
         function stackData(plot, s, datapoints) {
             if (s.stack == null || s.stack === false)
@@ -88,22 +88,22 @@ charts or filled areas).
                     for (m = 0; m < ps; ++m)
                         newpoints.push(points[i + m]);
                     i += ps;
-              ***REMOVED***
+                }
                 else if (j >= otherpoints.length) {
                     // for lines, we can't use the rest of the points
                     if (!withlines) {
                         for (m = 0; m < ps; ++m)
                             newpoints.push(points[i + m]);
-                  ***REMOVED***
+                    }
                     i += ps;
-              ***REMOVED***
+                }
                 else if (otherpoints[j] == null) {
                     // oops, got a gap
                     for (m = 0; m < ps; ++m)
                         newpoints.push(null);
                     fromgap = true;
                     j += otherps;
-              ***REMOVED***
+                }
                 else {
                     // cases where we actually got two points
                     px = points[i + keyOffset];
@@ -121,7 +121,7 @@ charts or filled areas).
                         
                         i += ps;
                         j += otherps;
-                  ***REMOVED***
+                    }
                     else if (px > qx) {
                         // we got past point below, might need to
                         // insert interpolated extra point
@@ -132,16 +132,16 @@ charts or filled areas).
                             for (m = 2; m < ps; ++m)
                                 newpoints.push(points[i + m]);
                             bottom = qy; 
-                      ***REMOVED***
+                        }
 
                         j += otherps;
-                  ***REMOVED***
+                    }
                     else { // px < qx
                         if (fromgap && withlines) {
                             // if we come from a gap, we just skip this point
                             i += ps;
                             continue;
-                      ***REMOVED***
+                        }
                             
                         for (m = 0; m < ps; ++m)
                             newpoints.push(points[i + m]);
@@ -154,13 +154,13 @@ charts or filled areas).
                         newpoints[l + accumulateOffset] += bottom;
                         
                         i += ps;
-                  ***REMOVED***
+                    }
 
                     fromgap = false;
                     
                     if (l != newpoints.length && withbottom)
                         newpoints[l + 2] += bottom;
-              ***REMOVED***
+                }
 
                 // maintain the line steps invariant
                 if (withsteps && l != newpoints.length && l > 0
@@ -170,19 +170,19 @@ charts or filled areas).
                     for (m = 0; m < ps; ++m)
                         newpoints[l + ps + m] = newpoints[l + m];
                     newpoints[l + 1] = newpoints[l - ps + 1];
-              ***REMOVED***
-          ***REMOVED***
+                }
+            }
 
             datapoints.points = newpoints;
-      ***REMOVED***
+        }
         
         plot.hooks.processDatapoints.push(stackData);
-  ***REMOVED***
+    }
     
     $.plot.plugins.push({
         init: init,
         options: options,
         name: 'stack',
         version: '1.2'
-  ***REMOVED***);
-***REMOVED***)(jQuery);
+    });
+})(jQuery);

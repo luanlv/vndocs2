@@ -22,14 +22,14 @@
 		.menubar-visible &,
 		.menubar-pin & {
 			color: @menubar-color;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 	// First GUI header has no top margin
 	li { 
 		&:first-child > small {
 			margin-top: 0;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Tree badge markup
 	.badge {
@@ -39,8 +39,8 @@
 		border-radius: 2px;
 		padding: 2px 4px;
 		font-size: 10px;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 
 // GUI items
@@ -54,8 +54,8 @@
 		// GUI item titles
 		&.gui-folder > a {
 			cursor: pointer;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	> li {
 		// First level menu items
@@ -75,8 +75,8 @@
 
 			&:focus {
 				outline: none;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// General menu link markup
 		ul {
@@ -91,20 +91,20 @@
 
 					&:active, &.active {
 						background-color: @menubar-link-active;
-					***REMOVED***
+					}
 					&:hover, &:focus {
 						background-color: @menubar-link-hover;
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+					}
+				}
+			}
+		}
+	}
 
 	// Overide default bootstrap behavior, for docs display
 	&.nav > li > a:hover {
 		background: inherit;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 // Markup for a first level item when it is selected and the menu is opened
 .expanded-menu-item-markup {
@@ -113,20 +113,20 @@
 			// First level menu item hover style 
 			&:not(.gui-folder) > a:hover {
 				background-color: @menubar-link-hover;
-			***REMOVED***
+			}
 
 			// First level menu item active style 
 			&.active:not(.gui-folder) > a {
 				background-color: @menubar-link-active;
 				.transition(background 0.3s linear);
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			}
+		}
+	}
+}
 
 .menubar-visible {
 	.expanded-menu-item-markup();
-***REMOVED***
+}
 
 // Submenu markup / tree indents
 // -------------------------
@@ -137,44 +137,44 @@
 		ul {
 			padding: 0;
 			display: none;
-		***REMOVED***
+		}
 		&.expanded > ul {
 			display: block;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	// Tree Level specific styles
 	> li {
 
 		// Treelevel 2 markup
-		> ul > li > ul li:before { left: @menubar-tree-indent-level2; ***REMOVED***
+		> ul > li > ul li:before { left: @menubar-tree-indent-level2; }
 		> ul > li > ul a {
 			padding-left: @menubar-tree-indent + @menubar-tree-width;
-			&:before { left: @menubar-tree-indent-level2; ***REMOVED***
-		***REMOVED***
+			&:before { left: @menubar-tree-indent-level2; }
+		}
 
 		// Treelevel 3 markup
-		> ul > li > ul > li > ul li:before { left: @menubar-tree-indent-level3; ***REMOVED***
+		> ul > li > ul > li > ul li:before { left: @menubar-tree-indent-level3; }
 		> ul > li > ul > li > ul a {
 			padding-left: @menubar-tree-indent + (@menubar-tree-width * 2);
-			&:before { left: @menubar-tree-indent-level3; ***REMOVED***
-		***REMOVED***
+			&:before { left: @menubar-tree-indent-level3; }
+		}
 
 		// Treelevel 4 markup
-		> ul > li > ul > li > ul > li > ul li:before { left: @menubar-tree-indent-level4; ***REMOVED***
+		> ul > li > ul > li > ul > li > ul li:before { left: @menubar-tree-indent-level4; }
 		> ul > li > ul > li > ul > li > ul a {
 			padding-left: @menubar-tree-indent + (@menubar-tree-width * 3);
-			&:before { left: @menubar-tree-indent-level4; ***REMOVED***
-		***REMOVED***
+			&:before { left: @menubar-tree-indent-level4; }
+		}
 
 		// Treelevel 5 markup
-		> ul > li > ul > li > ul > li > ul > li > ul li:before { left: @menubar-tree-indent-level5; ***REMOVED***
+		> ul > li > ul > li > ul > li > ul > li > ul li:before { left: @menubar-tree-indent-level5; }
 		> ul > li > ul > li > ul > li > ul > li > ul a {
 			padding-left: @menubar-tree-indent + (@menubar-tree-width * 4);
-			&:before { left: @menubar-tree-indent-level5; ***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			&:before { left: @menubar-tree-indent-level5; }
+		}
+	}
+}
 
 
 // Dashed menu lines
@@ -195,14 +195,14 @@
 					width: 1px;
 					border-left: 1px dashed @menubar-tree-border-color;
 					z-index: 1;
-				***REMOVED***
+				}
 				&:first-child:before {
 					top: 0;
-				***REMOVED***
+				}
 				&:last-child:before,
 					&.last-child:before {
 					display: none;
-				***REMOVED***
+				}
 				> a:before {
 					content: "";
 					left: @menubar-tree-indent-level1; top: 15px;
@@ -211,11 +211,11 @@
 					width: @menubar-tree-width;
 					border-bottom: 1px dashed @menubar-tree-border-color; 
 					z-index: 1;
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+				}
+			}
+		}
+	}
+}
 
 
 // Titles
@@ -235,40 +235,40 @@
 			opacity: 0;
 			.textshadowguard(@menubar-color);
 			.transition(all @menubar-collapse-speed @menubar-collapse-ease);
-		***REMOVED***
+		}
 		> a:hover {
 			.title { 
 				color: @menubar-link-hover-color; 
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 		&.active > a {
 			.title { 
 				color: @menubar-link-active-color; 
 				font-weight: @weight-medium;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Folder title markup 
 		&.gui-folder > a {
 			.title {
 				font-style: italic;
 				color: @menubar-folder-color;
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Folder title markup when expanded/active
 		&.gui-folder.expanded > a .title,
 		&.gui-folder.active > a .title {
 			color: @menubar-color;
-		***REMOVED***
-	***REMOVED***
+		}
+	}
 
 	> li {
 		> a .title {
 			margin-left: @menubar-tree-indent;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 // Markup for the title when the menu is visible
 .expanded-menu-title { 
@@ -278,14 +278,14 @@
 			.title {
 				left: 0;
 				opacity: 1;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+			}
+		}
+	}
+}
 
 .menubar-visible {
 	.expanded-menu-title();
-***REMOVED***
+}
 
 
 // Folder - Collapse/Expand sign
@@ -304,7 +304,7 @@
 		opacity: 0;
 		.rotate(0deg);
 		.transition(all .15s linear);
-	***REMOVED***
+	}
 	&.expanding, &.expanded {
 		> a:after {
 			font-size: 16px;
@@ -313,9 +313,9 @@
 			margin-left: -12px;
 			.rotate(-45deg);
 			.transition(all 0.10s linear);
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 // Main level collapse/Expand signs
 .gui-controls { 
@@ -323,26 +323,26 @@
 		> a:after {
 			top: 12px;
 			margin-left: 2px;
-		***REMOVED***
+		}
 		&.expanding > a:after, &.expanded > a:after {
 			color: fade(@menubar-color, 40%);
 			margin-left: 0;
 			.rotate(-45deg);
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 .expanded-menu-sign {
 	.gui-folder {
 		> a:after {
 			opacity: 1;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 .menubar-visible {
 	.expanded-menu-sign();
-***REMOVED***
+}
 
 
 // GUI icon
@@ -367,7 +367,7 @@
 		//height: 16px;
 		line-height: 40px;
 		width: 1em;
-	***REMOVED***
+	}
 
 	&:hover {
 		background-color: @menubar-icon-bg-hover;
@@ -378,23 +378,23 @@
 			top: -5px;
 			width: @menubar-icon-width + 10;
 			height: @menubar-icon-width + 10;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***
+		}
+	}
+}
 
 .gui-controls { 
 	a.expanded .gui-icon,
 	li.active .gui-icon,
 	li.active .gui-icon:hover {
 		.gui-icon-active();
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 .gui-icon-active {
 	background-color: @menubar-icon-bg-active;
 	border-color: @white;
 	color: @menubar-icon-color-active;
-***REMOVED***
+}
 
 // Markup for icons when the menu is expanded
 .expanded-menu-icon {
@@ -402,21 +402,21 @@
 	.gui-folder:hover:not(.active) .gui-icon {
 		background-color: @menubar-icon-bg-hover;
 		color: @menubar-icon-color-hover;
-	***REMOVED***
+	}
 	.gui-controls {
 		> li:not(.gui-folder) {
 			.gui-icon:hover {
 				background: inherit;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***
+			}
+		}
+	}
 	.gui-icon:hover {
 		background: inherit;
-	***REMOVED***
-***REMOVED***
+	}
+}
 .menubar-visible {
 	.expanded-menu-icon();
-***REMOVED***
+}
 
 
 // Animations
@@ -425,20 +425,20 @@
 .gui-controls {
 	a.blink .gui-icon {
 		.animation(normal 1.4s 4 blink cubic-bezier(.9,0,0.1,1));
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 @-moz-keyframes blink {
-	50% { .gui-icon-active(); ***REMOVED***
-***REMOVED***
+	50% { .gui-icon-active(); }
+}
 
 @-webkit-keyframes blink {
-	50% { .gui-icon-active(); ***REMOVED***
-***REMOVED***
+	50% { .gui-icon-active(); }
+}
 
 @keyframes blink {
-	50% { .gui-icon-active(); ***REMOVED***
-***REMOVED***
+	50% { .gui-icon-active(); }
+}
 
 
 // Responsive classes
@@ -453,5 +453,5 @@
 		.expanded-menu-title();
 		.expanded-menu-sign();
 		.expanded-menu-icon();
-	***REMOVED***
-***REMOVED***
+	}
+}

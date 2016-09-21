@@ -7,19 +7,19 @@
 /// @example scss - Usage
 ///   .element {
 ///     @include clearfix;
-/// ***REMOVED***
+///   }
 ///
 /// @example css - CSS Output
 ///   .element::after {
 ///     clear: both;
 ///     content: "";
 ///     display: table;
-/// ***REMOVED***
+///   }
 
 @mixin clearfix {
   &::after {
     clear: both;
     content: "";
     display: table;
-***REMOVED***
-***REMOVED***
+  }
+}

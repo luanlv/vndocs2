@@ -11,8 +11,8 @@
 // and adjust the grid math appropriately.
 @mixin border-box-sizing {
   $border-box-sizing: true !global;
-  * { @include box-sizing(border-box); ***REMOVED***
-***REMOVED***
+  * { @include box-sizing(border-box); }
+}
 
 // ---------------------------------------------------------------------------
 // Container
@@ -30,35 +30,35 @@
   @if $style == 'static' {
     @if $px-vals == true {
       width: round(convert-length($width, px));
-  ***REMOVED*** @else {
+    } @else {
       @include rem(width, $width);
-  ***REMOVED***
-***REMOVED*** @else {
+    }
+  } @else {
     @if $style == 'fluid' {
       @if unit($width) == '%' {
         @if $px-vals == true {
           width: round(convert-length($width, px));
-      ***REMOVED*** @else {
+        } @else {
           @include rem(width, $width);
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED*** @else {
+        }
+      }
+    } @else {
       @if $px-vals == true {
         max-width: round(convert-length($width, px));
-    ***REMOVED*** @else {
+      } @else {
         @include rem(max-width, $width);
-    ***REMOVED***
+      }
 
       @include for-legacy-browser(ie,"6") {
         @if unit($width) == 'rem' {
           _width: round(convert-length($width, px));
-      ***REMOVED*** @else {
+        } @else {
           _width: $width;
-      ***REMOVED***
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+        }
+      }
+    }
+  }
+}
 
 // Set the outer grid-containing element(s).
 //
@@ -72,12 +72,12 @@
   @if $px-vals == true {
     padding-left: round(convert-length($grid-padding, px));
     padding-right: round(convert-length($grid-padding, px));
-***REMOVED*** @else {
+  } @else {
     @include rem(padding-left, $grid-padding);
     @include rem(padding-right, $grid-padding);
-***REMOVED***
-  margin: { left: auto; right: auto; ***REMOVED***
-***REMOVED***
+  }
+  margin: { left: auto; right: auto; }
+}
 
 // Set one or more layouts on a grid-containing element at any number of media-query breakpoints.
 //
@@ -93,13 +93,13 @@
   @each $ml in $media-layouts {
     @if is-default-layout($ml) {
       @include apply-container;
-  ***REMOVED*** @else {
+    } @else {
       @include at-breakpoint($ml) {
         @include apply-container;
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+    }
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Columns
@@ -133,29 +133,29 @@
 
     @if length($padding) > 1 {
       $pad-to: nth($padding, 2);
-  ***REMOVED*** @else {
+    } @else {
       $pad-to: $pad-from;
-  ***REMOVED***
+    }
 
     $pad-from : if($style == static, $pad-from, relative-width($pad-from, $context));
     $pad-to   : if($style == static, $pad-to, relative-width($pad-to, $context));
 
-    padding-#{$from***REMOVED***: $pad-from;
-    padding-#{$to***REMOVED***: $pad-to;
-***REMOVED***
+    padding-#{$from}: $pad-from;
+    padding-#{$to}: $pad-to;
+  }
 
   width: columns($cols, $context, $style) - if($border-box-sizing, 0, $pad-to + $pad-from);
 
   @if ($pos == 'omega') {
     @include omega($from);
-***REMOVED*** @else {
+  } @else {
     float: $from;
-    margin-#{$to***REMOVED***: gutter($context, $style);
+    margin-#{$to}: gutter($context, $style);
     @include for-legacy-browser(ie, "6") {
       display: inline;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 // Apply to elements spanning the last column, to account for the page edge.
 // Only needed as an override. Normally 'omega' can just be called by `columns`.
@@ -169,15 +169,15 @@
   $hack   : opposite-position($omega-float);
 
   float: $omega-float;
-  margin-#{$to***REMOVED***: 0;
+  margin-#{$to}: 0;
 
   @include for-legacy-browser(ie, "6", "7") {
-    *margin-#{$hack***REMOVED***: - $gutter-width;
+    *margin-#{$hack}: - $gutter-width;
     @include for-legacy-browser(ie, "6") {
       display: inline;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 // Shortcut to apply omega to a specific subset of elements.
 //
@@ -191,16 +191,16 @@
 ) {
   $from     : unquote($from);
 
-  &:#{format-nth($n,$selector)***REMOVED*** {
+  &:#{format-nth($n,$selector)} {
     @if $n == "first" {
       @include omega($from);
-  ***REMOVED*** @else {
+    } @else {
       @include with-browser-ranges(css-sel3) {
         @include omega($from);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+    }
+  }
+}
 
 
 
@@ -219,15 +219,15 @@
 
   float: none;
   width: auto;
-  margin-#{$to***REMOVED***: auto;
+  margin-#{$to}: auto;
 
   @include for-legacy-browser(ie, "6", "7") {
-    *margin-#{$hack***REMOVED***: auto;
+    *margin-#{$hack}: auto;
     @include for-legacy-browser(ie, "6") {
       display: block;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 // Apply to elements previously set as omega.
 // This will return floats and margins back to non-omega settigns.
@@ -245,12 +245,12 @@
   $hack   : opposite-position($omega-float);
 
   float: $from;
-  margin-#{$to***REMOVED***: gutter($context, $style);
+  margin-#{$to}: gutter($context, $style);
 
   @include for-legacy-browser(ie, "6", "7") {
-    *margin-#{$hack***REMOVED***: auto;
-***REMOVED***
-***REMOVED***
+    *margin-#{$hack}: auto;
+  }
+}
 
 // Shortcut to apply remove-omega to a specific subset of elements.
 //
@@ -268,16 +268,16 @@
 ) {
   $from     : unquote($from);
 
-  &:#{format-nth($n,$selector)***REMOVED*** {
+  &:#{format-nth($n,$selector)} {
     @if $n == "first" {
       @include remove-omega($context, $from, $style);
-  ***REMOVED*** @else {
+    } @else {
       @include with-browser-ranges(css-sel3) {
         @include remove-omega($context, $from, $style);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+    }
+  }
+}
 
 
 // ---------------------------------------------------------------------------
@@ -309,4 +309,4 @@
   $column-width: $default-width !global;
   $gutter-width: $default-gutter !global;
   $grid-padding: $default-padding !global;
-***REMOVED***
+}

@@ -9,8 +9,8 @@ var data = m.prop({
   "cover": {
     "id" : "ec97531f-6aa0-4374-87d4-77b6a030a854",
     "alt" : "anh dai dien"
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 var NewArticle = function(ctrl){
   return [
@@ -23,7 +23,7 @@ var NewArticle = function(ctrl){
               <form className="form-horizontal" role="form">
                 <button type="button" className="btn ink-reaction btn-raised btn-primary" style="float: right"
                   onclick={function(){
-                    {/*console.log(data());*/***REMOVED***
+                    {/*console.log(data());*/}
                     $.ajax({
                       type: "POST",
                       url: "/admin/article",
@@ -32,10 +32,10 @@ var NewArticle = function(ctrl){
                       dataType: "json",
                       success: function(data){
                         alert(data)
-                    ***REMOVED***
-                  ***REMOVED***);
+                      }
+                    });
                     
-                ***REMOVED******REMOVED***
+                  }}
                 >Publish</button>
                 <button type="button" className="btn ink-reaction btn-raised" style="float: right; margin-right: 20px;">Save</button>
                 <br/>
@@ -47,8 +47,8 @@ var NewArticle = function(ctrl){
                     <input type="text" className="form-control" id="_id" name="_id"
                            onchange={function(el){
                              data()._id = $(el.target).val()
-                         ***REMOVED******REMOVED***
-                           value={data()._id***REMOVED***
+                           }}
+                           value={data()._id}
                     />
                     <div className="form-control-line"></div>
                   </div>
@@ -61,8 +61,8 @@ var NewArticle = function(ctrl){
                         onchange={function(el){
                           data().title = $(el.target).val();
                           data()._id = fn.slug(data().title);
-                      ***REMOVED******REMOVED***
-                        value={data().title***REMOVED***
+                        }}
+                        value={data().title}
                       />
                     <div className="form-control-line"></div>
                   </div>
@@ -71,13 +71,13 @@ var NewArticle = function(ctrl){
                 <div className="form-group">
                   <label htmlFor="" className="col-sm-2 control-label">Cover image</label>
                   <div className="col-sm-10">
-                    <img src={"/cover/get/" + data().cover.id***REMOVED*** alt={data().cover.alt***REMOVED***
+                    <img src={"/cover/get/" + data().cover.id} alt={data().cover.alt}
                       style="cursor: pointer"
                       onclick={function(){
-                        ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
+                        ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"}, ctrl.imgList, ctrl.setup2);
                         ctrl.showImgList = true;
                         
-                    ***REMOVED******REMOVED***
+                      }}
                     />
                   </div>
                 </div>
@@ -92,15 +92,15 @@ var NewArticle = function(ctrl){
                         if(!isInited){
                           console.log("init")
                           $("select[multiple][data-role=tagsinput]").tagsinput();
-                      ***REMOVED***
-                    ***REMOVED******REMOVED***
+                        }
+                      }}
                       onchange={function(el){
                         data().tags = $(el.target).val()
-                    ***REMOVED******REMOVED***
+                      }}
                     >
                       {data().tags.map(function(el){
-                        return <option value={el***REMOVED***>{el***REMOVED***</option>
-                    ***REMOVED***)***REMOVED***
+                        return <option value={el}>{el}</option>
+                      })}
                       
                     </select>
                   </div>
@@ -123,15 +123,15 @@ var NewArticle = function(ctrl){
                            editor.getSession().on('change', function () {
                              data().body = editor.getSession().getValue();
                              m.redraw();
-                         ***REMOVED***);
-                           {/*input(editor.getSession().getValue());*/***REMOVED***
+                           });
+                           {/*input(editor.getSession().getValue());*/}
                            data().body = editor.getSession().getValue();
                            m.redraw();
                            editor.$blockScrolling = Infinity;
                            editor.setOptions({
                              maxLines: Infinity,
                              wrap: true
-                         ***REMOVED***);
+                           });
                            editor.focus();
   
                            document.getElementById('editor').style.fontSize='14px';
@@ -139,12 +139,12 @@ var NewArticle = function(ctrl){
   
                            fn.setupAce(editor);
                            
-                       ***REMOVED***
-                    ***REMOVED***
-                  ***REMOVED***
+                         }
+                      }
+                    }
                        
                   >
-                    {data().body***REMOVED***
+                    {data().body}
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ var NewArticle = function(ctrl){
                 <div id="render" className="card-body">
                   {
                     m("div", m.trust(marked(data().body)))
-                ***REMOVED***
+                  }
                 </div>
               </div>
   
@@ -169,14 +169,14 @@ var NewArticle = function(ctrl){
           </div>
   
           <div className="offcanvas">
-            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")***REMOVED*** style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))***REMOVED***>
+            <div id="offcanvas-demo-size4" className={"offcanvas-pane width-12 " + (ctrl.showImgList?"active":"")} style={"width: 800px; " + (ctrl.showImgList?"transform: translate(-800px, 0px)":(""))}>
             <div className="offcanvas-head">
               <header>Images controller </header>
               <div className="offcanvas-tools">
                 <a className="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas"
                   onclick={function(){
                     ctrl.showImgList = false;
-                ***REMOVED******REMOVED***
+                  }}
                 >
                   <i className="md md-close"></i>
                 </a>
@@ -192,10 +192,10 @@ var NewArticle = function(ctrl){
                           data().cover.id=el.id;
                           data().cover.alt=el.filename;
                           ctrl.showImgList = false;
-                      ***REMOVED***
-                      ***REMOVED***
-                      ><img  src={"/cover/get/" + el.id***REMOVED*** alt={el.filename***REMOVED***/></a>
-                  ***REMOVED***)***REMOVED***
+                        }
+                        }
+                      ><img  src={"/cover/get/" + el.id} alt={el.filename}/></a>
+                    })}
                   </div>
                   
                   
@@ -221,15 +221,15 @@ var NewArticle = function(ctrl){
                             processData: false,
                             beforeSend: function (data) {
                               alert('Are you sure you want to upload image?');
-                          ***REMOVED***,
+                            },
                             success: function (data) {
-                              ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"***REMOVED***, ctrl.imgList, ctrl.setup2);
-                          ***REMOVED***,
+                              ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/image/list/1"}, ctrl.imgList, ctrl.setup2);
+                            },
                             error: function (jqXHR, textStatus, errorThrown) {
                               alert(textStatus + ': ' + errorThrown);
-                          ***REMOVED***
-                        ***REMOVED***);
-                      ***REMOVED******REMOVED***
+                            }
+                          });
+                        }}
                       />
                   
                     </div>
@@ -248,10 +248,10 @@ var NewArticle = function(ctrl){
     ctrl.showImgList?(<div className="backdrop"
       onclick={function(){
         ctrl.showImgList = false;
-    ***REMOVED******REMOVED***
+      }}
     ></div>):""
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 
 module.exports = NewArticle;

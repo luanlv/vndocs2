@@ -4,10 +4,10 @@
 @function font-url-prefixer($asset-pipeline) {
   @if $asset-pipeline == true {
     @return font-url;
-***REMOVED*** @else {
+  } @else {
     @return url;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 @function font-source-declaration(
   $font-family,
@@ -19,11 +19,11 @@
   $src: ();
 
   $formats-map: (
-    eot:   "#{$file-path***REMOVED***.eot?#iefix" format("embedded-opentype"),
-    woff2: "#{$file-path***REMOVED***.woff2" format("woff2"),
-    woff:  "#{$file-path***REMOVED***.woff" format("woff"),
-    ttf:   "#{$file-path***REMOVED***.ttf" format("truetype"),
-    svg:   "#{$file-path***REMOVED***.svg##{$font-family***REMOVED***" format("svg")
+    eot:   "#{$file-path}.eot?#iefix" format("embedded-opentype"),
+    woff2: "#{$file-path}.woff2" format("woff2"),
+    woff:  "#{$file-path}.woff" format("woff"),
+    ttf:   "#{$file-path}.ttf" format("truetype"),
+    svg:   "#{$file-path}.svg##{$font-family}" format("svg")
   );
 
   @each $key, $values in $formats-map {
@@ -33,11 +33,11 @@
 
       @if $asset-pipeline == true {
         $src: append($src, font-url($file-path) $font-format, comma);
-    ***REMOVED*** @else {
+      } @else {
         $src: append($src, url($file-path) $font-format, comma);
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 
   @return $src;
-***REMOVED***
+}

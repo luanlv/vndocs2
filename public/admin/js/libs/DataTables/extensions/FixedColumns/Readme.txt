@@ -23,10 +23,10 @@ $(document).ready(function() {
 		scrollX:        true,
 		scrollCollapse: true,
 		paging:         false
-	***REMOVED*** );
+	} );
 
 	new $.fn.dataTable.FixedColumns( table );
-***REMOVED*** );
+} );
 ```
 
 

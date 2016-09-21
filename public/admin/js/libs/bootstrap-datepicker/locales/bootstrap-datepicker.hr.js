@@ -9,5 +9,5 @@
 		months: ["Siječanj", "Veljača", "Ožujak", "Travanj", "Svibanj", "Lipanj", "Srpanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac"],
 		monthsShort: ["Sij", "Velj", "Ožu", "Tra", "Svi", "Lip", "Srp", "Kol", "Ruj", "Lis", "Stu", "Pro"],
 		today: "Danas"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

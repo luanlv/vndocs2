@@ -45,9 +45,9 @@ ____________________________________________________
 
  var d1 = [[5,5],[7,3],[9,12]];
 
- var options = { series: { curvedLines: {  active: true ***REMOVED******REMOVED******REMOVED***;
+ var options = { series: { curvedLines: {  active: true }}};
 
- $.plot($("#placeholder"), [{data: d1, lines: { show: true***REMOVED***, curvedLines: {apply: true***REMOVED******REMOVED***], options);
+ $.plot($("#placeholder"), [{data: d1, lines: { show: true}, curvedLines: {apply: true}}], options);
 
  _____________________________________________________
 
@@ -70,7 +70,7 @@ ____________________________________________________
  	curvePointFactor	 int  		  defines how many "virtual" points are used per "real" data point to
  									  emulate the curvedLines (points total = real points * curvePointFactor)
  	fitPointDist: 	     int  		  defines the x axis distance of the additional two points that are used
- ***REMOVED***						   		   	  to enforce the min max condition.
+ }						   		   	  to enforce the min max condition.
  */
 
 /*
@@ -101,9 +101,9 @@ ____________________________________________________
 				tension : 0.5,
 				nrSplinePoints : 20,
 				legacyOverride : undefined
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***;
+			}
+		}
+	};
 
 	function init(plot) {
 
@@ -113,8 +113,8 @@ ____________________________________________________
 		function processOptions(plot, options) {
 			if (options.series.curvedLines.active) {
 				plot.hooks.processDatapoints.unshift(processDatapoints);
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		//only if the plugin is active
 		function processDatapoints(plot, series, datapoints) {
@@ -147,25 +147,25 @@ ____________________________________________________
 							j += ps;
 							i += ps;
 
-						***REMOVED*** else if (pointsTop[i] < pointsBottom[j]) {
+						} else if (pointsTop[i] < pointsBottom[j]) {
 							datapoints.points[k] = pointsTop[i];
 							datapoints.points[k + 1] = pointsTop[i + 1];
 							datapoints.points[k + 2] = k > 0 ? datapoints.points[k - 1] : null;
 							i += ps;
-						***REMOVED*** else {
+						} else {
 							datapoints.points[k] = pointsBottom[j];
 							datapoints.points[k + 1] = k > 1 ? datapoints.points[k - 2] : null;
 							datapoints.points[k + 2] = pointsBottom[j + 1];
 							j += ps;
-						***REMOVED***
+						}
 						k += 3;
-					***REMOVED***
-				***REMOVED*** else if (series.lines.lineWidth > 0) {
+					}
+				} else if (series.lines.lineWidth > 0) {
 					datapoints.points = calculateCurvePoints(datapoints, series.curvedLines, 1);
 					datapoints.pointsize = 2;
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+				}
+			}
+		}
 
 		function calculateCurvePoints(datapoints, curvedLinesOptions, yPos) {
 			if ( typeof curvedLinesOptions.legacyOverride != 'undefined' && curvedLinesOptions.legacyOverride != false) {
@@ -173,13 +173,13 @@ ____________________________________________________
 					fit : false,
 					curvePointFactor : 20,
 					fitPointDist : undefined
-				***REMOVED***;
+				};
 				var legacyOptions = jQuery.extend(defaultOptions, curvedLinesOptions.legacyOverride);
 				return calculateLegacyCurvePoints(datapoints, legacyOptions, yPos);
-			***REMOVED***
+			}
 
 			return calculateSplineCurvePoints(datapoints, curvedLinesOptions, yPos);
-		***REMOVED***
+		}
 
 		function calculateSplineCurvePoints(datapoints, curvedLinesOptions, yPos) {
 			var points = datapoints.points;
@@ -209,17 +209,17 @@ ____________________________________________________
 				for (var x = (xStart += xStep); x < xEnd; x += xStep) {
 					result.push(x);
 					result.push(splines[j](x));
-				***REMOVED***
+				}
 				
 				j++;
-			***REMOVED***
+			}
 
 			//add last point
 			result.push(points[points.length - ps]);
 			result.push(points[points.length - ps + yPos]);
 
 			return result;
-		***REMOVED***
+		}
 
 
 
@@ -233,7 +233,7 @@ ____________________________________________________
 			var points = datapoints.points;
 			var ps = datapoints.pointsize;
 			
-			// preparation get length (x_{k+1***REMOVED*** - x_k) and slope s=(p_{k+1***REMOVED*** - p_k) / (x_{k+1***REMOVED*** - x_k) of the segments
+			// preparation get length (x_{k+1} - x_k) and slope s=(p_{k+1} - p_k) / (x_{k+1} - x_k) of the segments
 			var segmentLengths = [];
 			var segmentSlopes = [];
 
@@ -245,7 +245,7 @@ ____________________________________________________
 							
 				segmentLengths.push(dx);
 				segmentSlopes.push(dy / dx);
-			***REMOVED***
+			}
 
 			//get the values for the desired gradients  m_k for all points k
 			//depending on the used method the formula is different
@@ -257,26 +257,26 @@ ____________________________________________________
 					var prev_slope = segmentSlopes[i - 1];
 					if (slope * prev_slope <= 0) { // sign(prev_slope) != sign(slpe)
 						gradients.push(0);
-					***REMOVED*** else {
+					} else {
 						var length = segmentLengths[i];
 						var prev_length = segmentLengths[i - 1];
 						var common = length + prev_length;
 						//m = 3 (prev_length + length) / ((2 length + prev_length) / prev_slope + (length + 2 prev_length) / slope)
 						gradients.push(3 * common / ((common + length) / prev_slope + (common + prev_length) / slope));
-					***REMOVED***
-				***REMOVED***
-			***REMOVED*** else {
+					}
+				}
+			} else {
 				// Cardinal spline with t € [0,1]
 				// Catmull-Rom for t = 0
 				for (var i = ps; i < points.length - ps; i += ps) {
 					var curX = i;
 					var curY = i + yPos;	
 					gradients.push(Number(curvedLinesOptions.tension) * (points[curY + ps] - points[curY - ps]) / (points[curX + ps] - points[curX - ps]));
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 			gradients.push(segmentSlopes[segmentSlopes.length - 1]);
 
-			//get the two major coefficients (c'_{oef1***REMOVED*** and c'_{oef2***REMOVED***) for each segment spline
+			//get the two major coefficients (c'_{oef1} and c'_{oef2}) for each segment spline
 			var coefs1 = [];
 			var coefs2 = [];
 			for (i = 0; i < segmentLengths.length; i++) {
@@ -288,7 +288,7 @@ ____________________________________________________
 				
 				coefs1.push(common * invLength * invLength);
 				coefs2.push((slope - common - m_k) * invLength);
-			***REMOVED***
+			}
 
 			//create functions with from the coefficients and capture the parameters
 			var ret = [];
@@ -299,14 +299,14 @@ ____________________________________________________
 						var diff = x - x_k;
 						var diffSq = diff * diff;
 						return coef1 * diff * diffSq + coef2 * diffSq + coef3 * diff + coef4;
-					***REMOVED***;
-				***REMOVED***;			
+					};
+				};			
 		
 				ret.push(spline(points[i * ps], coefs1[i], coefs2[i], gradients[i], points[i * ps + yPos]));
-			***REMOVED***
+			}
 			
 			return ret;
-		***REMOVED***;
+		};
 
 		//no real idea whats going on here code mainly from https://code.google.com/p/flot/issues/detail?id=226
 		//if fit option is selected additional datapoints get inserted before the curve calculations in nergal.dev s code.
@@ -334,10 +334,10 @@ ____________________________________________________
 					var maxX = points[points.length - ps];
 					fpDist = (maxX - minX) / (500 * 100);
 					//x range / (estimated pixel length of placeholder * factor)
-				***REMOVED*** else {
+				} else {
 					//use user defined value
 					fpDist = Number(curvedLinesOptions.fitPointDist);
-				***REMOVED***
+				}
 
 				for (var i = 0; i < points.length; i += ps) {
 
@@ -356,7 +356,7 @@ ____________________________________________________
 						frontX = points[curX] - (fpDist * factor);
 						backX = points[curX] + (fpDist * factor);
 						factor++;
-					***REMOVED***
+					}
 
 					//add curve points
 					xdata[j] = frontX;
@@ -370,8 +370,8 @@ ____________________________________________________
 					xdata[j] = backX;
 					ydata[j] = points[curY];
 					j++;
-				***REMOVED***
-			***REMOVED*** else {
+				}
+			} else {
 				//just use the datapoints
 				for (var i = 0; i < points.length; i += ps) {
 					curX = i;
@@ -380,8 +380,8 @@ ____________________________________________________
 					xdata[j] = points[curX];
 					ydata[j] = points[curY];
 					j++;
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			var n = xdata.length;
 
@@ -396,18 +396,18 @@ ____________________________________________________
 				if (d == 0) {
 					//point before current point and after current point need some space in between
 					return [];
-				***REMOVED***
+				}
 
 				var s = (xdata[i] - xdata[i - 1]) / d;
 				var p = s * y2[i - 1] + 2;
 				y2[i] = (s - 1) / p;
 				delta[i] = (ydata[i + 1] - ydata[i]) / (xdata[i + 1] - xdata[i]) - (ydata[i] - ydata[i - 1]) / (xdata[i] - xdata[i - 1]);
 				delta[i] = (6 * delta[i] / (xdata[i + 1] - xdata[i - 1]) - s * delta[i - 1]) / p;
-			***REMOVED***
+			}
 
 			for (var j = n - 2; j >= 0; --j) {
 				y2[j] = y2[j] * y2[j + 1] + delta[j];
-			***REMOVED***
+			}
 
 			//   xmax  - xmin  / #points
 			var step = (xdata[n - 1] - xdata[0]) / (num - 1);
@@ -433,10 +433,10 @@ ____________________________________________________
 					var k = Math.round((max + min) / 2);
 					if (xdata[k] > xnew[j]) {
 						max = k;
-					***REMOVED*** else {
+					} else {
 						min = k;
-					***REMOVED***
-				***REMOVED***
+					}
+				}
 
 				//found point one to the left and one to the right of generated new point
 				var h = (xdata[max] - xdata[min]);
@@ -444,7 +444,7 @@ ____________________________________________________
 				if (h == 0) {
 					//similar to above two points from original x data need some space between them
 					return [];
-				***REMOVED***
+				}
 
 				var a = (xdata[max] - xnew[j]) / h;
 				var b = (xnew[j] - xdata[min]) / h;
@@ -453,10 +453,10 @@ ____________________________________________________
 
 				result.push(xnew[j]);
 				result.push(ynew[j]);
-			***REMOVED***
+			}
 
 			return result;
-		***REMOVED***
+		}
 		
 		function hasInvalidParameters(curvedLinesOptions) {
 			if (typeof curvedLinesOptions.fit != 'undefined' ||
@@ -464,12 +464,12 @@ ____________________________________________________
 			    typeof curvedLinesOptions.fitPointDist != 'undefined') {
 			    	throw new Error("CurvedLines detected illegal parameters. The CurvedLines API changed with version 1.0.0 please check the options object.");
 			    	return true;
-			  ***REMOVED***
+			    }
 			return false;
-		***REMOVED***
+		}
 		
 
-	***REMOVED***//end init
+	}//end init
 
 
 	$.plot.plugins.push({
@@ -477,7 +477,7 @@ ____________________________________________________
 		options : options,
 		name : 'curvedLines',
 		version : '1.1.1'
-	***REMOVED***);
+	});
 
-***REMOVED***)(jQuery);
+})(jQuery);
 

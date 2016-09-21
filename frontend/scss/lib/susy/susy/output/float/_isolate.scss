@@ -14,9 +14,9 @@
 
   $output: (
     float: $from,
-    margin-#{$from***REMOVED***: $push,
-    margin-#{$to***REMOVED***: -100%,
+    margin-#{$from}: $push,
+    margin-#{$to}: -100%,
   );
 
   @include output($output);
-***REMOVED***
+}

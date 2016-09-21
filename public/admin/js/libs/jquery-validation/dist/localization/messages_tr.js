@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Lütfen geçerli bir kredi kartı giriniz.",
 	equalTo: "Lütfen aynı değeri tekrar giriniz.",
 	extension: "Lütfen geçerli uzantıya sahip bir değer giriniz.",
-	maxlength: $.validator.format("Lütfen en fazla {0***REMOVED*** karakter uzunluğunda bir değer giriniz."),
-	minlength: $.validator.format("Lütfen en az {0***REMOVED*** karakter uzunluğunda bir değer giriniz."),
-	rangelength: $.validator.format("Lütfen en az {0***REMOVED*** ve en fazla {1***REMOVED*** uzunluğunda bir değer giriniz."),
-	range: $.validator.format("Lütfen {0***REMOVED*** ile {1***REMOVED*** arasında bir değer giriniz."),
-	max: $.validator.format("Lütfen {0***REMOVED*** değerine eşit ya da daha küçük bir değer giriniz."),
-	min: $.validator.format("Lütfen {0***REMOVED*** değerine eşit ya da daha büyük bir değer giriniz.")
-***REMOVED***);
+	maxlength: $.validator.format("Lütfen en fazla {0} karakter uzunluğunda bir değer giriniz."),
+	minlength: $.validator.format("Lütfen en az {0} karakter uzunluğunda bir değer giriniz."),
+	rangelength: $.validator.format("Lütfen en az {0} ve en fazla {1} uzunluğunda bir değer giriniz."),
+	range: $.validator.format("Lütfen {0} ile {1} arasında bir değer giriniz."),
+	max: $.validator.format("Lütfen {0} değerine eşit ya da daha küçük bir değer giriniz."),
+	min: $.validator.format("Lütfen {0} değerine eşit ya da daha büyük bir değer giriniz.")
+});
 
-***REMOVED***));
+}));

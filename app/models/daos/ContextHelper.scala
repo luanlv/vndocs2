@@ -9,4 +9,4 @@ trait ContextHelper {
 
   implicit def ec: ExecutionContext = ExecutionContext.Implicits.global
 
-***REMOVED***
+}

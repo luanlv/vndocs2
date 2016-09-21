@@ -8,7 +8,7 @@
   src: url('../fonts/Material-Design-Iconic-Font.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../fonts/Material-Design-Iconic-Font.woff?v=1.0.1') format('woff'), url('../fonts/Material-Design-Iconic-Font.ttf?v=1.0.1') format('truetype'), url('../fonts/Material-Design-Iconic-Font.svg?v=1.0.1#Material-Design-Iconic-Font') format('svg');
   font-weight: normal;
   font-style: normal;
-***REMOVED***
+}
 [class^="md-"],
 [class*=" md-"] {
   display: inline-block;
@@ -18,2365 +18,2365 @@
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-***REMOVED***
+}
 .md {
   line-height: inherit;
   vertical-align: bottom;
-***REMOVED***
+}
 .md-lg {
   font-size: 1.5em;
   line-height: .5em;
   vertical-align: -35%;
-***REMOVED***
+}
 .md-2x {
   font-size: 2em;
-***REMOVED***
+}
 .md-3x {
   font-size: 3em;
-***REMOVED***
+}
 .md-4x {
   font-size: 4em;
-***REMOVED***
+}
 .md-5x {
   font-size: 5em;
-***REMOVED***
+}
 .md-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #808080;
   border-radius: .1em;
-***REMOVED***
+}
 .md-border-circle {
   padding: .2em .25em .15em;
   border: solid 0.08em #808080;
   border-radius: 50%;
-***REMOVED***
+}
 [class^="md-"].pull-left,
 [class*=" md-"].pull-left {
   float: left;
   margin-right: .3em;
-***REMOVED***
+}
 [class^="md-"].pull-right,
 [class*=" md-"].pull-right {
   float: right;
   margin-left: .3em;
-***REMOVED***
+}
 .md-spin {
   -webkit-animation: md-spin 1.5s infinite linear;
   animation: md-spin 1.5s infinite linear;
-***REMOVED***
+}
 .md-spin-reverse {
   -webkit-animation: md-spin-reverse 1.5s infinite linear;
   animation: md-spin-reverse 1.5s infinite linear;
-***REMOVED***
+}
 @-webkit-keyframes md-spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-***REMOVED***
+  }
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes md-spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-***REMOVED***
+  }
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
-***REMOVED***
-***REMOVED***
+  }
+}
 @-webkit-keyframes md-spin-reverse {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-***REMOVED***
+  }
   100% {
     -webkit-transform: rotate(-359deg);
     transform: rotate(-359deg);
-***REMOVED***
-***REMOVED***
+  }
+}
 @keyframes md-spin-reverse {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-***REMOVED***
+  }
   100% {
     -webkit-transform: rotate(-359deg);
     transform: rotate(-359deg);
-***REMOVED***
-***REMOVED***
+  }
+}
 .md-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-***REMOVED***
+}
 .md-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
-***REMOVED***
+}
 .md-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
-***REMOVED***
+}
 .md-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
-***REMOVED***
+}
 .md-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
-***REMOVED***
+}
 :root .md-rotate-90,
 :root .md-rotate-180,
 :root .md-rotate-270,
 :root .md-flip-horizontal,
 :root .md-flip-vertical {
   filter: none;
-***REMOVED***
+}
 /* Material Design Iconic Font uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
 /* If you do not want use all icons you can disable icon set here */
 .md-3d-rotation:before {
   content: "\f000";
-***REMOVED***
+}
 .md-accessibility:before {
   content: "\f001";
-***REMOVED***
+}
 .md-account-balance:before {
   content: "\f002";
-***REMOVED***
+}
 .md-account-balance-wallet:before {
   content: "\f003";
-***REMOVED***
+}
 .md-account-box:before {
   content: "\f004";
-***REMOVED***
+}
 .md-account-child:before {
   content: "\f005";
-***REMOVED***
+}
 .md-account-circle:before {
   content: "\f006";
-***REMOVED***
+}
 .md-add-shopping-cart:before {
   content: "\f007";
-***REMOVED***
+}
 .md-alarm:before {
   content: "\f008";
-***REMOVED***
+}
 .md-alarm-add:before {
   content: "\f009";
-***REMOVED***
+}
 .md-alarm-off:before {
   content: "\f00a";
-***REMOVED***
+}
 .md-alarm-on:before {
   content: "\f00b";
-***REMOVED***
+}
 .md-android:before {
   content: "\f00c";
-***REMOVED***
+}
 .md-announcement:before {
   content: "\f00d";
-***REMOVED***
+}
 .md-aspect-ratio:before {
   content: "\f00e";
-***REMOVED***
+}
 .md-assessment:before {
   content: "\f00f";
-***REMOVED***
+}
 .md-assignment:before {
   content: "\f010";
-***REMOVED***
+}
 .md-assignment-ind:before {
   content: "\f011";
-***REMOVED***
+}
 .md-assignment-late:before {
   content: "\f012";
-***REMOVED***
+}
 .md-assignment-return:before {
   content: "\f013";
-***REMOVED***
+}
 .md-assignment-returned:before {
   content: "\f014";
-***REMOVED***
+}
 .md-assignment-turned-in:before {
   content: "\f015";
-***REMOVED***
+}
 .md-autorenew:before {
   content: "\f016";
-***REMOVED***
+}
 .md-backup:before {
   content: "\f017";
-***REMOVED***
+}
 .md-book:before {
   content: "\f018";
-***REMOVED***
+}
 .md-bookmark:before {
   content: "\f019";
-***REMOVED***
+}
 .md-bookmark-outline:before {
   content: "\f01a";
-***REMOVED***
+}
 .md-bug-report:before {
   content: "\f01b";
-***REMOVED***
+}
 .md-cached:before {
   content: "\f01c";
-***REMOVED***
+}
 .md-class:before {
   content: "\f01d";
-***REMOVED***
+}
 .md-credit-card:before {
   content: "\f01e";
-***REMOVED***
+}
 .md-dashboard:before {
   content: "\f01f";
-***REMOVED***
+}
 .md-delete:before {
   content: "\f020";
-***REMOVED***
+}
 .md-description:before {
   content: "\f021";
-***REMOVED***
+}
 .md-dns:before {
   content: "\f022";
-***REMOVED***
+}
 .md-done:before {
   content: "\f023";
-***REMOVED***
+}
 .md-done-all:before {
   content: "\f024";
-***REMOVED***
+}
 .md-event:before {
   content: "\f025";
-***REMOVED***
+}
 .md-exit-to-app:before {
   content: "\f026";
-***REMOVED***
+}
 .md-explore:before {
   content: "\f027";
-***REMOVED***
+}
 .md-extension:before {
   content: "\f028";
-***REMOVED***
+}
 .md-face-unlock:before {
   content: "\f029";
-***REMOVED***
+}
 .md-favorite:before {
   content: "\f02a";
-***REMOVED***
+}
 .md-favorite-outline:before {
   content: "\f02b";
-***REMOVED***
+}
 .md-find-in-page:before {
   content: "\f02c";
-***REMOVED***
+}
 .md-find-replace:before {
   content: "\f02d";
-***REMOVED***
+}
 .md-flip-to-back:before {
   content: "\f02e";
-***REMOVED***
+}
 .md-flip-to-front:before {
   content: "\f02f";
-***REMOVED***
+}
 .md-get-app:before {
   content: "\f030";
-***REMOVED***
+}
 .md-grade:before {
   content: "\f031";
-***REMOVED***
+}
 .md-group-work:before {
   content: "\f032";
-***REMOVED***
+}
 .md-help:before {
   content: "\f033";
-***REMOVED***
+}
 .md-highlight-remove:before {
   content: "\f034";
-***REMOVED***
+}
 .md-history:before {
   content: "\f035";
-***REMOVED***
+}
 .md-home:before {
   content: "\f036";
-***REMOVED***
+}
 .md-https:before {
   content: "\f037";
-***REMOVED***
+}
 .md-info:before {
   content: "\f038";
-***REMOVED***
+}
 .md-info-outline:before {
   content: "\f039";
-***REMOVED***
+}
 .md-input:before {
   content: "\f03a";
-***REMOVED***
+}
 .md-invert-colors:before {
   content: "\f03b";
-***REMOVED***
+}
 .md-label:before {
   content: "\f03c";
-***REMOVED***
+}
 .md-label-outline:before {
   content: "\f03d";
-***REMOVED***
+}
 .md-language:before {
   content: "\f03e";
-***REMOVED***
+}
 .md-launch:before {
   content: "\f03f";
-***REMOVED***
+}
 .md-list:before {
   content: "\f040";
-***REMOVED***
+}
 .md-lock:before {
   content: "\f041";
-***REMOVED***
+}
 .md-lock-open:before {
   content: "\f042";
-***REMOVED***
+}
 .md-lock-outline:before {
   content: "\f043";
-***REMOVED***
+}
 .md-loyalty:before {
   content: "\f044";
-***REMOVED***
+}
 .md-markunread-mailbox:before {
   content: "\f045";
-***REMOVED***
+}
 .md-note-add:before {
   content: "\f046";
-***REMOVED***
+}
 .md-open-in-browser:before {
   content: "\f047";
-***REMOVED***
+}
 .md-open-in-new:before {
   content: "\f048";
-***REMOVED***
+}
 .md-open-with:before {
   content: "\f049";
-***REMOVED***
+}
 .md-pageview:before {
   content: "\f04a";
-***REMOVED***
+}
 .md-payment:before {
   content: "\f04b";
-***REMOVED***
+}
 .md-perm-camera-mic:before {
   content: "\f04c";
-***REMOVED***
+}
 .md-perm-contact-cal:before {
   content: "\f04d";
-***REMOVED***
+}
 .md-perm-data-setting:before {
   content: "\f04e";
-***REMOVED***
+}
 .md-perm-device-info:before {
   content: "\f04f";
-***REMOVED***
+}
 .md-perm-identity:before {
   content: "\f050";
-***REMOVED***
+}
 .md-perm-media:before {
   content: "\f051";
-***REMOVED***
+}
 .md-perm-phone-msg:before {
   content: "\f052";
-***REMOVED***
+}
 .md-perm-scan-wifi:before {
   content: "\f053";
-***REMOVED***
+}
 .md-picture-in-picture:before {
   content: "\f054";
-***REMOVED***
+}
 .md-polymer:before {
   content: "\f055";
-***REMOVED***
+}
 .md-print:before {
   content: "\f056";
-***REMOVED***
+}
 .md-query-builder:before {
   content: "\f057";
-***REMOVED***
+}
 .md-question-answer:before {
   content: "\f058";
-***REMOVED***
+}
 .md-receipt:before {
   content: "\f059";
-***REMOVED***
+}
 .md-redeem:before {
   content: "\f05a";
-***REMOVED***
+}
 .md-report-problem:before {
   content: "\f05b";
-***REMOVED***
+}
 .md-restore:before {
   content: "\f05c";
-***REMOVED***
+}
 .md-room:before {
   content: "\f05d";
-***REMOVED***
+}
 .md-schedule:before {
   content: "\f05e";
-***REMOVED***
+}
 .md-search:before {
   content: "\f05f";
-***REMOVED***
+}
 .md-settings:before {
   content: "\f060";
-***REMOVED***
+}
 .md-settings-applications:before {
   content: "\f061";
-***REMOVED***
+}
 .md-settings-backup-restore:before {
   content: "\f062";
-***REMOVED***
+}
 .md-settings-bluetooth:before {
   content: "\f063";
-***REMOVED***
+}
 .md-settings-cell:before {
   content: "\f064";
-***REMOVED***
+}
 .md-settings-display:before {
   content: "\f065";
-***REMOVED***
+}
 .md-settings-ethernet:before {
   content: "\f066";
-***REMOVED***
+}
 .md-settings-input-antenna:before {
   content: "\f067";
-***REMOVED***
+}
 .md-settings-input-component:before {
   content: "\f068";
-***REMOVED***
+}
 .md-settings-input-composite:before {
   content: "\f069";
-***REMOVED***
+}
 .md-settings-input-hdmi:before {
   content: "\f06a";
-***REMOVED***
+}
 .md-settings-input-svideo:before {
   content: "\f06b";
-***REMOVED***
+}
 .md-settings-overscan:before {
   content: "\f06c";
-***REMOVED***
+}
 .md-settings-phone:before {
   content: "\f06d";
-***REMOVED***
+}
 .md-settings-power:before {
   content: "\f06e";
-***REMOVED***
+}
 .md-settings-remote:before {
   content: "\f06f";
-***REMOVED***
+}
 .md-settings-voice:before {
   content: "\f070";
-***REMOVED***
+}
 .md-shop:before {
   content: "\f071";
-***REMOVED***
+}
 .md-shopping-basket:before {
   content: "\f072";
-***REMOVED***
+}
 .md-shopping-cart:before {
   content: "\f073";
-***REMOVED***
+}
 .md-shop-two:before {
   content: "\f074";
-***REMOVED***
+}
 .md-speaker-notes:before {
   content: "\f075";
-***REMOVED***
+}
 .md-spellcheck:before {
   content: "\f076";
-***REMOVED***
+}
 .md-star-rate:before {
   content: "\f077";
-***REMOVED***
+}
 .md-stars:before {
   content: "\f078";
-***REMOVED***
+}
 .md-store:before {
   content: "\f079";
-***REMOVED***
+}
 .md-subject:before {
   content: "\f07a";
-***REMOVED***
+}
 .md-swap-horiz:before {
   content: "\f07b";
-***REMOVED***
+}
 .md-swap-vert:before {
   content: "\f07c";
-***REMOVED***
+}
 .md-swap-vert-circle:before {
   content: "\f07d";
-***REMOVED***
+}
 .md-system-update-tv:before {
   content: "\f07e";
-***REMOVED***
+}
 .md-tab:before {
   content: "\f07f";
-***REMOVED***
+}
 .md-tab-unselected:before {
   content: "\f080";
-***REMOVED***
+}
 .md-theaters:before {
   content: "\f081";
-***REMOVED***
+}
 .md-thumb-down:before {
   content: "\f082";
-***REMOVED***
+}
 .md-thumbs-up-down:before {
   content: "\f083";
-***REMOVED***
+}
 .md-thumb-up:before {
   content: "\f084";
-***REMOVED***
+}
 .md-toc:before {
   content: "\f085";
-***REMOVED***
+}
 .md-today:before {
   content: "\f086";
-***REMOVED***
+}
 .md-track-changes:before {
   content: "\f087";
-***REMOVED***
+}
 .md-translate:before {
   content: "\f088";
-***REMOVED***
+}
 .md-trending-down:before {
   content: "\f089";
-***REMOVED***
+}
 .md-trending-neutral:before {
   content: "\f08a";
-***REMOVED***
+}
 .md-trending-up:before {
   content: "\f08b";
-***REMOVED***
+}
 .md-turned-in:before {
   content: "\f08c";
-***REMOVED***
+}
 .md-turned-in-not:before {
   content: "\f08d";
-***REMOVED***
+}
 .md-verified-user:before {
   content: "\f08e";
-***REMOVED***
+}
 .md-view-agenda:before {
   content: "\f08f";
-***REMOVED***
+}
 .md-view-array:before {
   content: "\f090";
-***REMOVED***
+}
 .md-view-carousel:before {
   content: "\f091";
-***REMOVED***
+}
 .md-view-column:before {
   content: "\f092";
-***REMOVED***
+}
 .md-view-day:before {
   content: "\f093";
-***REMOVED***
+}
 .md-view-headline:before {
   content: "\f094";
-***REMOVED***
+}
 .md-view-list:before {
   content: "\f095";
-***REMOVED***
+}
 .md-view-module:before {
   content: "\f096";
-***REMOVED***
+}
 .md-view-quilt:before {
   content: "\f097";
-***REMOVED***
+}
 .md-view-stream:before {
   content: "\f098";
-***REMOVED***
+}
 .md-view-week:before {
   content: "\f099";
-***REMOVED***
+}
 .md-visibility:before {
   content: "\f09a";
-***REMOVED***
+}
 .md-visibility-off:before {
   content: "\f09b";
-***REMOVED***
+}
 .md-wallet-giftcard:before {
   content: "\f09c";
-***REMOVED***
+}
 .md-wallet-membership:before {
   content: "\f09d";
-***REMOVED***
+}
 .md-wallet-travel:before {
   content: "\f09e";
-***REMOVED***
+}
 .md-work:before {
   content: "\f09f";
-***REMOVED***
+}
 .md-error:before {
   content: "\f0a0";
-***REMOVED***
+}
 .md-warning:before {
   content: "\f0a1";
-***REMOVED***
+}
 .md-album:before {
   content: "\f0a2";
-***REMOVED***
+}
 .md-av-timer:before {
   content: "\f0a3";
-***REMOVED***
+}
 .md-closed-caption:before {
   content: "\f0a4";
-***REMOVED***
+}
 .md-equalizer:before {
   content: "\f0a5";
-***REMOVED***
+}
 .md-explicit:before {
   content: "\f0a6";
-***REMOVED***
+}
 .md-fast-forward:before {
   content: "\f0a7";
-***REMOVED***
+}
 .md-fast-rewind:before {
   content: "\f0a8";
-***REMOVED***
+}
 .md-games:before {
   content: "\f0a9";
-***REMOVED***
+}
 .md-hearing:before {
   content: "\f0aa";
-***REMOVED***
+}
 .md-high-quality:before {
   content: "\f0ab";
-***REMOVED***
+}
 .md-loop:before {
   content: "\f0ac";
-***REMOVED***
+}
 .md-mic:before {
   content: "\f0ad";
-***REMOVED***
+}
 .md-mic-none:before {
   content: "\f0ae";
-***REMOVED***
+}
 .md-mic-off:before {
   content: "\f0af";
-***REMOVED***
+}
 .md-movie:before {
   content: "\f0b0";
-***REMOVED***
+}
 .md-my-library-add:before {
   content: "\f0b1";
-***REMOVED***
+}
 .md-my-library-books:before {
   content: "\f0b2";
-***REMOVED***
+}
 .md-my-library-music:before {
   content: "\f0b3";
-***REMOVED***
+}
 .md-new-releases:before {
   content: "\f0b4";
-***REMOVED***
+}
 .md-not-interested:before {
   content: "\f0b5";
-***REMOVED***
+}
 .md-pause:before {
   content: "\f0b6";
-***REMOVED***
+}
 .md-pause-circle-fill:before {
   content: "\f0b7";
-***REMOVED***
+}
 .md-pause-circle-outline:before {
   content: "\f0b8";
-***REMOVED***
+}
 .md-play-arrow:before {
   content: "\f0b9";
-***REMOVED***
+}
 .md-play-circle-fill:before {
   content: "\f0ba";
-***REMOVED***
+}
 .md-play-circle-outline:before {
   content: "\f0bb";
-***REMOVED***
+}
 .md-playlist-add:before {
   content: "\f0bc";
-***REMOVED***
+}
 .md-play-shopping-bag:before {
   content: "\f0bd";
-***REMOVED***
+}
 .md-queue:before {
   content: "\f0be";
-***REMOVED***
+}
 .md-queue-music:before {
   content: "\f0bf";
-***REMOVED***
+}
 .md-radio:before {
   content: "\f0c0";
-***REMOVED***
+}
 .md-recent-actors:before {
   content: "\f0c1";
-***REMOVED***
+}
 .md-repeat:before {
   content: "\f0c2";
-***REMOVED***
+}
 .md-repeat-one:before {
   content: "\f0c3";
-***REMOVED***
+}
 .md-replay:before {
   content: "\f0c4";
-***REMOVED***
+}
 .md-shuffle:before {
   content: "\f0c5";
-***REMOVED***
+}
 .md-skip-next:before {
   content: "\f0c6";
-***REMOVED***
+}
 .md-skip-previous:before {
   content: "\f0c7";
-***REMOVED***
+}
 .md-snooze:before {
   content: "\f0c8";
-***REMOVED***
+}
 .md-stop:before {
   content: "\f0c9";
-***REMOVED***
+}
 .md-subtitles:before {
   content: "\f0ca";
-***REMOVED***
+}
 .md-surround-sound:before {
   content: "\f0cb";
-***REMOVED***
+}
 .md-videocam:before {
   content: "\f0cc";
-***REMOVED***
+}
 .md-videocam-off:before {
   content: "\f0cd";
-***REMOVED***
+}
 .md-video-collection:before {
   content: "\f0ce";
-***REMOVED***
+}
 .md-volume-down:before {
   content: "\f0cf";
-***REMOVED***
+}
 .md-volume-mute:before {
   content: "\f0d0";
-***REMOVED***
+}
 .md-volume-off:before {
   content: "\f0d1";
-***REMOVED***
+}
 .md-volume-up:before {
   content: "\f0d2";
-***REMOVED***
+}
 .md-web:before {
   content: "\f0d3";
-***REMOVED***
+}
 .md-business:before {
   content: "\f0d4";
-***REMOVED***
+}
 .md-call:before {
   content: "\f0d5";
-***REMOVED***
+}
 .md-call-end:before {
   content: "\f0d6";
-***REMOVED***
+}
 .md-call-made:before {
   content: "\f0d7";
-***REMOVED***
+}
 .md-call-merge:before {
   content: "\f0d8";
-***REMOVED***
+}
 .md-call-missed:before {
   content: "\f0d9";
-***REMOVED***
+}
 .md-call-received:before {
   content: "\f0da";
-***REMOVED***
+}
 .md-call-split:before {
   content: "\f0db";
-***REMOVED***
+}
 .md-chat:before {
   content: "\f0dc";
-***REMOVED***
+}
 .md-clear-all:before {
   content: "\f0dd";
-***REMOVED***
+}
 .md-comment:before {
   content: "\f0de";
-***REMOVED***
+}
 .md-contacts:before {
   content: "\f0df";
-***REMOVED***
+}
 .md-dialer-sip:before {
   content: "\f0e0";
-***REMOVED***
+}
 .md-dialpad:before {
   content: "\f0e1";
-***REMOVED***
+}
 .md-dnd-on:before {
   content: "\f0e2";
-***REMOVED***
+}
 .md-email:before {
   content: "\f0e3";
-***REMOVED***
+}
 .md-forum:before {
   content: "\f0e4";
-***REMOVED***
+}
 .md-import-export:before {
   content: "\f0e5";
-***REMOVED***
+}
 .md-invert-colors-off:before {
   content: "\f0e6";
-***REMOVED***
+}
 .md-invert-colors-on:before {
   content: "\f0e7";
-***REMOVED***
+}
 .md-live-help:before {
   content: "\f0e8";
-***REMOVED***
+}
 .md-location-off:before {
   content: "\f0e9";
-***REMOVED***
+}
 .md-location-on:before {
   content: "\f0ea";
-***REMOVED***
+}
 .md-message:before {
   content: "\f0eb";
-***REMOVED***
+}
 .md-messenger:before {
   content: "\f0ec";
-***REMOVED***
+}
 .md-no-sim:before {
   content: "\f0ed";
-***REMOVED***
+}
 .md-phone:before {
   content: "\f0ee";
-***REMOVED***
+}
 .md-portable-wifi-off:before {
   content: "\f0ef";
-***REMOVED***
+}
 .md-quick-contacts-dialer:before {
   content: "\f0f0";
-***REMOVED***
+}
 .md-quick-contacts-mail:before {
   content: "\f0f1";
-***REMOVED***
+}
 .md-ring-volume:before {
   content: "\f0f2";
-***REMOVED***
+}
 .md-stay-current-landscape:before {
   content: "\f0f3";
-***REMOVED***
+}
 .md-stay-current-portrait:before {
   content: "\f0f4";
-***REMOVED***
+}
 .md-stay-primary-landscape:before {
   content: "\f0f5";
-***REMOVED***
+}
 .md-stay-primary-portrait:before {
   content: "\f0f6";
-***REMOVED***
+}
 .md-swap-calls:before {
   content: "\f0f7";
-***REMOVED***
+}
 .md-textsms:before {
   content: "\f0f8";
-***REMOVED***
+}
 .md-voicemail:before {
   content: "\f0f9";
-***REMOVED***
+}
 .md-vpn-key:before {
   content: "\f0fa";
-***REMOVED***
+}
 .md-add:before {
   content: "\f0fb";
-***REMOVED***
+}
 .md-add-box:before {
   content: "\f0fc";
-***REMOVED***
+}
 .md-add-circle:before {
   content: "\f0fd";
-***REMOVED***
+}
 .md-add-circle-outline:before {
   content: "\f0fe";
-***REMOVED***
+}
 .md-archive:before {
   content: "\f0ff";
-***REMOVED***
+}
 .md-backspace:before {
   content: "\f100";
-***REMOVED***
+}
 .md-block:before {
   content: "\f101";
-***REMOVED***
+}
 .md-clear:before {
   content: "\f102";
-***REMOVED***
+}
 .md-content-copy:before {
   content: "\f103";
-***REMOVED***
+}
 .md-content-cut:before {
   content: "\f104";
-***REMOVED***
+}
 .md-content-paste:before {
   content: "\f105";
-***REMOVED***
+}
 .md-create:before {
   content: "\f106";
-***REMOVED***
+}
 .md-drafts:before {
   content: "\f107";
-***REMOVED***
+}
 .md-filter-list:before {
   content: "\f108";
-***REMOVED***
+}
 .md-flag:before {
   content: "\f109";
-***REMOVED***
+}
 .md-forward:before {
   content: "\f10a";
-***REMOVED***
+}
 .md-gesture:before {
   content: "\f10b";
-***REMOVED***
+}
 .md-inbox:before {
   content: "\f10c";
-***REMOVED***
+}
 .md-link:before {
   content: "\f10d";
-***REMOVED***
+}
 .md-mail:before {
   content: "\f10e";
-***REMOVED***
+}
 .md-markunread:before {
   content: "\f10f";
-***REMOVED***
+}
 .md-redo:before {
   content: "\f110";
-***REMOVED***
+}
 .md-remove:before {
   content: "\f111";
-***REMOVED***
+}
 .md-remove-circle:before {
   content: "\f112";
-***REMOVED***
+}
 .md-remove-circle-outline:before {
   content: "\f113";
-***REMOVED***
+}
 .md-reply:before {
   content: "\f114";
-***REMOVED***
+}
 .md-reply-all:before {
   content: "\f115";
-***REMOVED***
+}
 .md-report:before {
   content: "\f116";
-***REMOVED***
+}
 .md-save:before {
   content: "\f117";
-***REMOVED***
+}
 .md-select-all:before {
   content: "\f118";
-***REMOVED***
+}
 .md-send:before {
   content: "\f119";
-***REMOVED***
+}
 .md-sort:before {
   content: "\f11a";
-***REMOVED***
+}
 .md-text-format:before {
   content: "\f11b";
-***REMOVED***
+}
 .md-undo:before {
   content: "\f11c";
-***REMOVED***
+}
 .md-access-alarm:before {
   content: "\f11d";
-***REMOVED***
+}
 .md-access-alarms:before {
   content: "\f11e";
-***REMOVED***
+}
 .md-access-time:before {
   content: "\f11f";
-***REMOVED***
+}
 .md-add-alarm:before {
   content: "\f120";
-***REMOVED***
+}
 .md-airplanemode-off:before {
   content: "\f121";
-***REMOVED***
+}
 .md-airplanemode-on:before {
   content: "\f122";
-***REMOVED***
+}
 .md-battery-20:before {
   content: "\f123";
-***REMOVED***
+}
 .md-battery-30:before {
   content: "\f124";
-***REMOVED***
+}
 .md-battery-50:before {
   content: "\f125";
-***REMOVED***
+}
 .md-battery-60:before {
   content: "\f126";
-***REMOVED***
+}
 .md-battery-80:before {
   content: "\f127";
-***REMOVED***
+}
 .md-battery-90:before {
   content: "\f128";
-***REMOVED***
+}
 .md-battery-alert:before {
   content: "\f129";
-***REMOVED***
+}
 .md-battery-charging-20:before {
   content: "\f12a";
-***REMOVED***
+}
 .md-battery-charging-30:before {
   content: "\f12b";
-***REMOVED***
+}
 .md-battery-charging-50:before {
   content: "\f12c";
-***REMOVED***
+}
 .md-battery-charging-60:before {
   content: "\f12d";
-***REMOVED***
+}
 .md-battery-charging-80:before {
   content: "\f12e";
-***REMOVED***
+}
 .md-battery-charging-90:before {
   content: "\f12f";
-***REMOVED***
+}
 .md-battery-charging-full:before {
   content: "\f130";
-***REMOVED***
+}
 .md-battery-full:before {
   content: "\f131";
-***REMOVED***
+}
 .md-battery-std:before {
   content: "\f132";
-***REMOVED***
+}
 .md-battery-unknown:before {
   content: "\f133";
-***REMOVED***
+}
 .md-bluetooth:before {
   content: "\f134";
-***REMOVED***
+}
 .md-bluetooth-connected:before {
   content: "\f135";
-***REMOVED***
+}
 .md-bluetooth-disabled:before {
   content: "\f136";
-***REMOVED***
+}
 .md-bluetooth-searching:before {
   content: "\f137";
-***REMOVED***
+}
 .md-brightness-auto:before {
   content: "\f138";
-***REMOVED***
+}
 .md-brightness-high:before {
   content: "\f139";
-***REMOVED***
+}
 .md-brightness-low:before {
   content: "\f13a";
-***REMOVED***
+}
 .md-brightness-medium:before {
   content: "\f13b";
-***REMOVED***
+}
 .md-data-usage:before {
   content: "\f13c";
-***REMOVED***
+}
 .md-developer-mode:before {
   content: "\f13d";
-***REMOVED***
+}
 .md-devices:before {
   content: "\f13e";
-***REMOVED***
+}
 .md-dvr:before {
   content: "\f13f";
-***REMOVED***
+}
 .md-gps-fixed:before {
   content: "\f140";
-***REMOVED***
+}
 .md-gps-not-fixed:before {
   content: "\f141";
-***REMOVED***
+}
 .md-gps-off:before {
   content: "\f142";
-***REMOVED***
+}
 .md-location-disabled:before {
   content: "\f143";
-***REMOVED***
+}
 .md-location-searching:before {
   content: "\f144";
-***REMOVED***
+}
 .md-multitrack-audio:before {
   content: "\f145";
-***REMOVED***
+}
 .md-network-cell:before {
   content: "\f146";
-***REMOVED***
+}
 .md-network-wifi:before {
   content: "\f147";
-***REMOVED***
+}
 .md-nfc:before {
   content: "\f148";
-***REMOVED***
+}
 .md-now-wallpaper:before {
   content: "\f149";
-***REMOVED***
+}
 .md-now-widgets:before {
   content: "\f14a";
-***REMOVED***
+}
 .md-screen-lock-landscape:before {
   content: "\f14b";
-***REMOVED***
+}
 .md-screen-lock-portrait:before {
   content: "\f14c";
-***REMOVED***
+}
 .md-screen-lock-rotation:before {
   content: "\f14d";
-***REMOVED***
+}
 .md-screen-rotation:before {
   content: "\f14e";
-***REMOVED***
+}
 .md-sd-storage:before {
   content: "\f14f";
-***REMOVED***
+}
 .md-settings-system-daydream:before {
   content: "\f150";
-***REMOVED***
+}
 .md-signal-cellular-0-bar:before {
   content: "\f151";
-***REMOVED***
+}
 .md-signal-cellular-1-bar:before {
   content: "\f152";
-***REMOVED***
+}
 .md-signal-cellular-2-bar:before {
   content: "\f153";
-***REMOVED***
+}
 .md-signal-cellular-3-bar:before {
   content: "\f154";
-***REMOVED***
+}
 .md-signal-cellular-4-bar:before {
   content: "\f155";
-***REMOVED***
+}
 .md-signal-cellular-connected-no-internet-0-bar:before {
   content: "\f156";
-***REMOVED***
+}
 .md-signal-cellular-connected-no-internet-1-bar:before {
   content: "\f157";
-***REMOVED***
+}
 .md-signal-cellular-connected-no-internet-2-bar:before {
   content: "\f158";
-***REMOVED***
+}
 .md-signal-cellular-connected-no-internet-3-bar:before {
   content: "\f159";
-***REMOVED***
+}
 .md-signal-cellular-connected-no-internet-4-bar:before {
   content: "\f15a";
-***REMOVED***
+}
 .md-signal-cellular-no-sim:before {
   content: "\f15b";
-***REMOVED***
+}
 .md-signal-cellular-null:before {
   content: "\f15c";
-***REMOVED***
+}
 .md-signal-cellular-off:before {
   content: "\f15d";
-***REMOVED***
+}
 .md-signal-wifi-0-bar:before {
   content: "\f15e";
-***REMOVED***
+}
 .md-signal-wifi-1-bar:before {
   content: "\f15f";
-***REMOVED***
+}
 .md-signal-wifi-2-bar:before {
   content: "\f160";
-***REMOVED***
+}
 .md-signal-wifi-3-bar:before {
   content: "\f161";
-***REMOVED***
+}
 .md-signal-wifi-4-bar:before {
   content: "\f162";
-***REMOVED***
+}
 .md-signal-wifi-off:before {
   content: "\f163";
-***REMOVED***
+}
 .md-storage:before {
   content: "\f164";
-***REMOVED***
+}
 .md-usb:before {
   content: "\f165";
-***REMOVED***
+}
 .md-wifi-lock:before {
   content: "\f166";
-***REMOVED***
+}
 .md-wifi-tethering:before {
   content: "\f167";
-***REMOVED***
+}
 .md-attach-file:before {
   content: "\f168";
-***REMOVED***
+}
 .md-attach-money:before {
   content: "\f169";
-***REMOVED***
+}
 .md-border-all:before {
   content: "\f16a";
-***REMOVED***
+}
 .md-border-bottom:before {
   content: "\f16b";
-***REMOVED***
+}
 .md-border-clear:before {
   content: "\f16c";
-***REMOVED***
+}
 .md-border-color:before {
   content: "\f16d";
-***REMOVED***
+}
 .md-border-horizontal:before {
   content: "\f16e";
-***REMOVED***
+}
 .md-border-inner:before {
   content: "\f16f";
-***REMOVED***
+}
 .md-border-left:before {
   content: "\f170";
-***REMOVED***
+}
 .md-border-outer:before {
   content: "\f171";
-***REMOVED***
+}
 .md-border-right:before {
   content: "\f172";
-***REMOVED***
+}
 .md-border-style:before {
   content: "\f173";
-***REMOVED***
+}
 .md-border-top:before {
   content: "\f174";
-***REMOVED***
+}
 .md-border-vertical:before {
   content: "\f175";
-***REMOVED***
+}
 .md-format-align-center:before {
   content: "\f176";
-***REMOVED***
+}
 .md-format-align-justify:before {
   content: "\f177";
-***REMOVED***
+}
 .md-format-align-left:before {
   content: "\f178";
-***REMOVED***
+}
 .md-format-align-right:before {
   content: "\f179";
-***REMOVED***
+}
 .md-format-bold:before {
   content: "\f17a";
-***REMOVED***
+}
 .md-format-clear:before {
   content: "\f17b";
-***REMOVED***
+}
 .md-format-color-fill:before {
   content: "\f17c";
-***REMOVED***
+}
 .md-format-color-reset:before {
   content: "\f17d";
-***REMOVED***
+}
 .md-format-color-text:before {
   content: "\f17e";
-***REMOVED***
+}
 .md-format-indent-decrease:before {
   content: "\f17f";
-***REMOVED***
+}
 .md-format-indent-increase:before {
   content: "\f180";
-***REMOVED***
+}
 .md-format-italic:before {
   content: "\f181";
-***REMOVED***
+}
 .md-format-line-spacing:before {
   content: "\f182";
-***REMOVED***
+}
 .md-format-list-bulleted:before {
   content: "\f183";
-***REMOVED***
+}
 .md-format-list-numbered:before {
   content: "\f184";
-***REMOVED***
+}
 .md-format-paint:before {
   content: "\f185";
-***REMOVED***
+}
 .md-format-quote:before {
   content: "\f186";
-***REMOVED***
+}
 .md-format-size:before {
   content: "\f187";
-***REMOVED***
+}
 .md-format-strikethrough:before {
   content: "\f188";
-***REMOVED***
+}
 .md-format-textdirection-l-to-r:before {
   content: "\f189";
-***REMOVED***
+}
 .md-format-textdirection-r-to-l:before {
   content: "\f18a";
-***REMOVED***
+}
 .md-format-underline:before {
   content: "\f18b";
-***REMOVED***
+}
 .md-functions:before {
   content: "\f18c";
-***REMOVED***
+}
 .md-insert-chart:before {
   content: "\f18d";
-***REMOVED***
+}
 .md-insert-comment:before {
   content: "\f18e";
-***REMOVED***
+}
 .md-insert-drive-file:before {
   content: "\f18f";
-***REMOVED***
+}
 .md-insert-emoticon:before {
   content: "\f190";
-***REMOVED***
+}
 .md-insert-invitation:before {
   content: "\f191";
-***REMOVED***
+}
 .md-insert-link:before {
   content: "\f192";
-***REMOVED***
+}
 .md-insert-photo:before {
   content: "\f193";
-***REMOVED***
+}
 .md-merge-type:before {
   content: "\f194";
-***REMOVED***
+}
 .md-mode-comment:before {
   content: "\f195";
-***REMOVED***
+}
 .md-mode-edit:before {
   content: "\f196";
-***REMOVED***
+}
 .md-publish:before {
   content: "\f197";
-***REMOVED***
+}
 .md-vertical-align-bottom:before {
   content: "\f198";
-***REMOVED***
+}
 .md-vertical-align-center:before {
   content: "\f199";
-***REMOVED***
+}
 .md-vertical-align-top:before {
   content: "\f19a";
-***REMOVED***
+}
 .md-wrap-text:before {
   content: "\f19b";
-***REMOVED***
+}
 .md-attachment:before {
   content: "\f19c";
-***REMOVED***
+}
 .md-cloud:before {
   content: "\f19d";
-***REMOVED***
+}
 .md-cloud-circle:before {
   content: "\f19e";
-***REMOVED***
+}
 .md-cloud-done:before {
   content: "\f19f";
-***REMOVED***
+}
 .md-cloud-download:before {
   content: "\f1a0";
-***REMOVED***
+}
 .md-cloud-off:before {
   content: "\f1a1";
-***REMOVED***
+}
 .md-cloud-queue:before {
   content: "\f1a2";
-***REMOVED***
+}
 .md-cloud-upload:before {
   content: "\f1a3";
-***REMOVED***
+}
 .md-file-download:before {
   content: "\f1a4";
-***REMOVED***
+}
 .md-file-upload:before {
   content: "\f1a5";
-***REMOVED***
+}
 .md-folder:before {
   content: "\f1a6";
-***REMOVED***
+}
 .md-folder-open:before {
   content: "\f1a7";
-***REMOVED***
+}
 .md-folder-shared:before {
   content: "\f1a8";
-***REMOVED***
+}
 .md-cast:before {
   content: "\f1a9";
-***REMOVED***
+}
 .md-cast-connected:before {
   content: "\f1aa";
-***REMOVED***
+}
 .md-computer:before {
   content: "\f1ab";
-***REMOVED***
+}
 .md-desktop-mac:before {
   content: "\f1ac";
-***REMOVED***
+}
 .md-desktop-windows:before {
   content: "\f1ad";
-***REMOVED***
+}
 .md-dock:before {
   content: "\f1ae";
-***REMOVED***
+}
 .md-gamepad:before {
   content: "\f1af";
-***REMOVED***
+}
 .md-headset:before {
   content: "\f1b0";
-***REMOVED***
+}
 .md-headset-mic:before {
   content: "\f1b1";
-***REMOVED***
+}
 .md-keyboard:before {
   content: "\f1b2";
-***REMOVED***
+}
 .md-keyboard-alt:before {
   content: "\f1b3";
-***REMOVED***
+}
 .md-keyboard-arrow-down:before {
   content: "\f1b4";
-***REMOVED***
+}
 .md-keyboard-arrow-left:before {
   content: "\f1b5";
-***REMOVED***
+}
 .md-keyboard-arrow-right:before {
   content: "\f1b6";
-***REMOVED***
+}
 .md-keyboard-arrow-up:before {
   content: "\f1b7";
-***REMOVED***
+}
 .md-keyboard-backspace:before {
   content: "\f1b8";
-***REMOVED***
+}
 .md-keyboard-capslock:before {
   content: "\f1b9";
-***REMOVED***
+}
 .md-keyboard-control:before {
   content: "\f1ba";
-***REMOVED***
+}
 .md-keyboard-hide:before {
   content: "\f1bb";
-***REMOVED***
+}
 .md-keyboard-return:before {
   content: "\f1bc";
-***REMOVED***
+}
 .md-keyboard-tab:before {
   content: "\f1bd";
-***REMOVED***
+}
 .md-keyboard-voice:before {
   content: "\f1be";
-***REMOVED***
+}
 .md-laptop:before {
   content: "\f1bf";
-***REMOVED***
+}
 .md-laptop-chromebook:before {
   content: "\f1c0";
-***REMOVED***
+}
 .md-laptop-mac:before {
   content: "\f1c1";
-***REMOVED***
+}
 .md-laptop-windows:before {
   content: "\f1c2";
-***REMOVED***
+}
 .md-memory:before {
   content: "\f1c3";
-***REMOVED***
+}
 .md-mouse:before {
   content: "\f1c4";
-***REMOVED***
+}
 .md-phone-android:before {
   content: "\f1c5";
-***REMOVED***
+}
 .md-phone-iphone:before {
   content: "\f1c6";
-***REMOVED***
+}
 .md-phonelink:before {
   content: "\f1c7";
-***REMOVED***
+}
 .md-phonelink-off:before {
   content: "\f1c8";
-***REMOVED***
+}
 .md-security:before {
   content: "\f1c9";
-***REMOVED***
+}
 .md-sim-card:before {
   content: "\f1ca";
-***REMOVED***
+}
 .md-smartphone:before {
   content: "\f1cb";
-***REMOVED***
+}
 .md-speaker:before {
   content: "\f1cc";
-***REMOVED***
+}
 .md-tablet:before {
   content: "\f1cd";
-***REMOVED***
+}
 .md-tablet-android:before {
   content: "\f1ce";
-***REMOVED***
+}
 .md-tablet-mac:before {
   content: "\f1cf";
-***REMOVED***
+}
 .md-tv:before {
   content: "\f1d0";
-***REMOVED***
+}
 .md-watch:before {
   content: "\f1d1";
-***REMOVED***
+}
 .md-add-to-photos:before {
   content: "\f1d2";
-***REMOVED***
+}
 .md-adjust:before {
   content: "\f1d3";
-***REMOVED***
+}
 .md-assistant-photo:before {
   content: "\f1d4";
-***REMOVED***
+}
 .md-audiotrack:before {
   content: "\f1d5";
-***REMOVED***
+}
 .md-blur-circular:before {
   content: "\f1d6";
-***REMOVED***
+}
 .md-blur-linear:before {
   content: "\f1d7";
-***REMOVED***
+}
 .md-blur-off:before {
   content: "\f1d8";
-***REMOVED***
+}
 .md-blur-on:before {
   content: "\f1d9";
-***REMOVED***
+}
 .md-brightness-1:before {
   content: "\f1da";
-***REMOVED***
+}
 .md-brightness-2:before {
   content: "\f1db";
-***REMOVED***
+}
 .md-brightness-3:before {
   content: "\f1dc";
-***REMOVED***
+}
 .md-brightness-4:before {
   content: "\f1dd";
-***REMOVED***
+}
 .md-brightness-5:before {
   content: "\f1de";
-***REMOVED***
+}
 .md-brightness-6:before {
   content: "\f1df";
-***REMOVED***
+}
 .md-brightness-7:before {
   content: "\f1e0";
-***REMOVED***
+}
 .md-brush:before {
   content: "\f1e1";
-***REMOVED***
+}
 .md-camera:before {
   content: "\f1e2";
-***REMOVED***
+}
 .md-camera-alt:before {
   content: "\f1e3";
-***REMOVED***
+}
 .md-camera-front:before {
   content: "\f1e4";
-***REMOVED***
+}
 .md-camera-rear:before {
   content: "\f1e5";
-***REMOVED***
+}
 .md-camera-roll:before {
   content: "\f1e6";
-***REMOVED***
+}
 .md-center-focus-strong:before {
   content: "\f1e7";
-***REMOVED***
+}
 .md-center-focus-weak:before {
   content: "\f1e8";
-***REMOVED***
+}
 .md-collections:before {
   content: "\f1e9";
-***REMOVED***
+}
 .md-colorize:before {
   content: "\f1ea";
-***REMOVED***
+}
 .md-color-lens:before {
   content: "\f1eb";
-***REMOVED***
+}
 .md-compare:before {
   content: "\f1ec";
-***REMOVED***
+}
 .md-control-point:before {
   content: "\f1ed";
-***REMOVED***
+}
 .md-control-point-duplicate:before {
   content: "\f1ee";
-***REMOVED***
+}
 .md-crop:before {
   content: "\f1ef";
-***REMOVED***
+}
 .md-crop-3-2:before {
   content: "\f1f0";
-***REMOVED***
+}
 .md-crop-5-4:before {
   content: "\f1f1";
-***REMOVED***
+}
 .md-crop-7-5:before {
   content: "\f1f2";
-***REMOVED***
+}
 .md-crop-16-9:before {
   content: "\f1f3";
-***REMOVED***
+}
 .md-crop-din:before {
   content: "\f1f4";
-***REMOVED***
+}
 .md-crop-free:before {
   content: "\f1f5";
-***REMOVED***
+}
 .md-crop-landscape:before {
   content: "\f1f6";
-***REMOVED***
+}
 .md-crop-original:before {
   content: "\f1f7";
-***REMOVED***
+}
 .md-crop-portrait:before {
   content: "\f1f8";
-***REMOVED***
+}
 .md-crop-square:before {
   content: "\f1f9";
-***REMOVED***
+}
 .md-dehaze:before {
   content: "\f1fa";
-***REMOVED***
+}
 .md-details:before {
   content: "\f1fb";
-***REMOVED***
+}
 .md-edit:before {
   content: "\f1fc";
-***REMOVED***
+}
 .md-exposure:before {
   content: "\f1fd";
-***REMOVED***
+}
 .md-exposure-minus-1:before {
   content: "\f1fe";
-***REMOVED***
+}
 .md-exposure-minus-2:before {
   content: "\f1ff";
-***REMOVED***
+}
 .md-exposure-zero:before {
   content: "\f200";
-***REMOVED***
+}
 .md-exposure-plus-1:before {
   content: "\f201";
-***REMOVED***
+}
 .md-exposure-plus-2:before {
   content: "\f202";
-***REMOVED***
+}
 .md-filter:before {
   content: "\f203";
-***REMOVED***
+}
 .md-filter-1:before {
   content: "\f204";
-***REMOVED***
+}
 .md-filter-2:before {
   content: "\f205";
-***REMOVED***
+}
 .md-filter-3:before {
   content: "\f206";
-***REMOVED***
+}
 .md-filter-4:before {
   content: "\f207";
-***REMOVED***
+}
 .md-filter-5:before {
   content: "\f208";
-***REMOVED***
+}
 .md-filter-6:before {
   content: "\f209";
-***REMOVED***
+}
 .md-filter-7:before {
   content: "\f20a";
-***REMOVED***
+}
 .md-filter-8:before {
   content: "\f20b";
-***REMOVED***
+}
 .md-filter-9:before {
   content: "\f20c";
-***REMOVED***
+}
 .md-filter-9-plus:before {
   content: "\f20d";
-***REMOVED***
+}
 .md-filter-b-and-w:before {
   content: "\f20e";
-***REMOVED***
+}
 .md-filter-center-focus:before {
   content: "\f20f";
-***REMOVED***
+}
 .md-filter-drama:before {
   content: "\f210";
-***REMOVED***
+}
 .md-filter-frames:before {
   content: "\f211";
-***REMOVED***
+}
 .md-filter-hdr:before {
   content: "\f212";
-***REMOVED***
+}
 .md-filter-none:before {
   content: "\f213";
-***REMOVED***
+}
 .md-filter-tilt-shift:before {
   content: "\f214";
-***REMOVED***
+}
 .md-filter-vintage:before {
   content: "\f215";
-***REMOVED***
+}
 .md-flare:before {
   content: "\f216";
-***REMOVED***
+}
 .md-flash-auto:before {
   content: "\f217";
-***REMOVED***
+}
 .md-flash-off:before {
   content: "\f218";
-***REMOVED***
+}
 .md-flash-on:before {
   content: "\f219";
-***REMOVED***
+}
 .md-flip:before {
   content: "\f21a";
-***REMOVED***
+}
 .md-gradient:before {
   content: "\f21b";
-***REMOVED***
+}
 .md-grain:before {
   content: "\f21c";
-***REMOVED***
+}
 .md-grid-off:before {
   content: "\f21d";
-***REMOVED***
+}
 .md-grid-on:before {
   content: "\f21e";
-***REMOVED***
+}
 .md-hdr-off:before {
   content: "\f21f";
-***REMOVED***
+}
 .md-hdr-on:before {
   content: "\f220";
-***REMOVED***
+}
 .md-hdr-strong:before {
   content: "\f221";
-***REMOVED***
+}
 .md-hdr-weak:before {
   content: "\f222";
-***REMOVED***
+}
 .md-healing:before {
   content: "\f223";
-***REMOVED***
+}
 .md-image:before {
   content: "\f224";
-***REMOVED***
+}
 .md-image-aspect-ratio:before {
   content: "\f225";
-***REMOVED***
+}
 .md-iso:before {
   content: "\f226";
-***REMOVED***
+}
 .md-landscape:before {
   content: "\f227";
-***REMOVED***
+}
 .md-leak-add:before {
   content: "\f228";
-***REMOVED***
+}
 .md-leak-remove:before {
   content: "\f229";
-***REMOVED***
+}
 .md-lens:before {
   content: "\f22a";
-***REMOVED***
+}
 .md-looks:before {
   content: "\f22b";
-***REMOVED***
+}
 .md-looks-1:before {
   content: "\f22c";
-***REMOVED***
+}
 .md-looks-2:before {
   content: "\f22d";
-***REMOVED***
+}
 .md-looks-3:before {
   content: "\f22e";
-***REMOVED***
+}
 .md-looks-4:before {
   content: "\f22f";
-***REMOVED***
+}
 .md-looks-5:before {
   content: "\f230";
-***REMOVED***
+}
 .md-looks-6:before {
   content: "\f231";
-***REMOVED***
+}
 .md-loupe:before {
   content: "\f232";
-***REMOVED***
+}
 .md-movie-creation:before {
   content: "\f233";
-***REMOVED***
+}
 .md-nature:before {
   content: "\f234";
-***REMOVED***
+}
 .md-nature-people:before {
   content: "\f235";
-***REMOVED***
+}
 .md-navigate-before:before {
   content: "\f236";
-***REMOVED***
+}
 .md-navigate-next:before {
   content: "\f237";
-***REMOVED***
+}
 .md-palette:before {
   content: "\f238";
-***REMOVED***
+}
 .md-panorama:before {
   content: "\f239";
-***REMOVED***
+}
 .md-panorama-fisheye:before {
   content: "\f23a";
-***REMOVED***
+}
 .md-panorama-horizontal:before {
   content: "\f23b";
-***REMOVED***
+}
 .md-panorama-vertical:before {
   content: "\f23c";
-***REMOVED***
+}
 .md-panorama-wide-angle:before {
   content: "\f23d";
-***REMOVED***
+}
 .md-photo:before {
   content: "\f23e";
-***REMOVED***
+}
 .md-photo-album:before {
   content: "\f23f";
-***REMOVED***
+}
 .md-photo-camera:before {
   content: "\f240";
-***REMOVED***
+}
 .md-photo-library:before {
   content: "\f241";
-***REMOVED***
+}
 .md-portrait:before {
   content: "\f242";
-***REMOVED***
+}
 .md-remove-red-eye:before {
   content: "\f243";
-***REMOVED***
+}
 .md-rotate-left:before {
   content: "\f244";
-***REMOVED***
+}
 .md-rotate-right:before {
   content: "\f245";
-***REMOVED***
+}
 .md-slideshow:before {
   content: "\f246";
-***REMOVED***
+}
 .md-straighten:before {
   content: "\f247";
-***REMOVED***
+}
 .md-style:before {
   content: "\f248";
-***REMOVED***
+}
 .md-switch-camera:before {
   content: "\f249";
-***REMOVED***
+}
 .md-switch-video:before {
   content: "\f24a";
-***REMOVED***
+}
 .md-tag-faces:before {
   content: "\f24b";
-***REMOVED***
+}
 .md-texture:before {
   content: "\f24c";
-***REMOVED***
+}
 .md-timelapse:before {
   content: "\f24d";
-***REMOVED***
+}
 .md-timer:before {
   content: "\f24e";
-***REMOVED***
+}
 .md-timer-3:before {
   content: "\f24f";
-***REMOVED***
+}
 .md-timer-10:before {
   content: "\f250";
-***REMOVED***
+}
 .md-timer-auto:before {
   content: "\f251";
-***REMOVED***
+}
 .md-timer-off:before {
   content: "\f252";
-***REMOVED***
+}
 .md-tonality:before {
   content: "\f253";
-***REMOVED***
+}
 .md-transform:before {
   content: "\f254";
-***REMOVED***
+}
 .md-tune:before {
   content: "\f255";
-***REMOVED***
+}
 .md-wb-auto:before {
   content: "\f256";
-***REMOVED***
+}
 .md-wb-cloudy:before {
   content: "\f257";
-***REMOVED***
+}
 .md-wb-incandescent:before {
   content: "\f258";
-***REMOVED***
+}
 .md-wb-irradescent:before {
   content: "\f259";
-***REMOVED***
+}
 .md-wb-sunny:before {
   content: "\f25a";
-***REMOVED***
+}
 .md-beenhere:before {
   content: "\f25b";
-***REMOVED***
+}
 .md-directions:before {
   content: "\f25c";
-***REMOVED***
+}
 .md-directions-bike:before {
   content: "\f25d";
-***REMOVED***
+}
 .md-directions-bus:before {
   content: "\f25e";
-***REMOVED***
+}
 .md-directions-car:before {
   content: "\f25f";
-***REMOVED***
+}
 .md-directions-ferry:before {
   content: "\f260";
-***REMOVED***
+}
 .md-directions-subway:before {
   content: "\f261";
-***REMOVED***
+}
 .md-directions-train:before {
   content: "\f262";
-***REMOVED***
+}
 .md-directions-transit:before {
   content: "\f263";
-***REMOVED***
+}
 .md-directions-walk:before {
   content: "\f264";
-***REMOVED***
+}
 .md-flight:before {
   content: "\f265";
-***REMOVED***
+}
 .md-hotel:before {
   content: "\f266";
-***REMOVED***
+}
 .md-layers:before {
   content: "\f267";
-***REMOVED***
+}
 .md-layers-clear:before {
   content: "\f268";
-***REMOVED***
+}
 .md-local-airport:before {
   content: "\f269";
-***REMOVED***
+}
 .md-local-atm:before {
   content: "\f26a";
-***REMOVED***
+}
 .md-local-attraction:before {
   content: "\f26b";
-***REMOVED***
+}
 .md-local-bar:before {
   content: "\f26c";
-***REMOVED***
+}
 .md-local-cafe:before {
   content: "\f26d";
-***REMOVED***
+}
 .md-local-car-wash:before {
   content: "\f26e";
-***REMOVED***
+}
 .md-local-convenience-store:before {
   content: "\f26f";
-***REMOVED***
+}
 .md-local-drink:before {
   content: "\f270";
-***REMOVED***
+}
 .md-local-florist:before {
   content: "\f271";
-***REMOVED***
+}
 .md-local-gas-station:before {
   content: "\f272";
-***REMOVED***
+}
 .md-local-grocery-store:before {
   content: "\f273";
-***REMOVED***
+}
 .md-local-hospital:before {
   content: "\f274";
-***REMOVED***
+}
 .md-local-hotel:before {
   content: "\f275";
-***REMOVED***
+}
 .md-local-laundry-service:before {
   content: "\f276";
-***REMOVED***
+}
 .md-local-library:before {
   content: "\f277";
-***REMOVED***
+}
 .md-local-mall:before {
   content: "\f278";
-***REMOVED***
+}
 .md-local-movies:before {
   content: "\f279";
-***REMOVED***
+}
 .md-local-offer:before {
   content: "\f27a";
-***REMOVED***
+}
 .md-local-parking:before {
   content: "\f27b";
-***REMOVED***
+}
 .md-local-pharmacy:before {
   content: "\f27c";
-***REMOVED***
+}
 .md-local-phone:before {
   content: "\f27d";
-***REMOVED***
+}
 .md-local-pizza:before {
   content: "\f27e";
-***REMOVED***
+}
 .md-local-play:before {
   content: "\f27f";
-***REMOVED***
+}
 .md-local-post-office:before {
   content: "\f280";
-***REMOVED***
+}
 .md-local-print-shop:before {
   content: "\f281";
-***REMOVED***
+}
 .md-local-restaurant:before {
   content: "\f282";
-***REMOVED***
+}
 .md-local-see:before {
   content: "\f283";
-***REMOVED***
+}
 .md-local-shipping:before {
   content: "\f284";
-***REMOVED***
+}
 .md-local-taxi:before {
   content: "\f285";
-***REMOVED***
+}
 .md-location-history:before {
   content: "\f286";
-***REMOVED***
+}
 .md-map:before {
   content: "\f287";
-***REMOVED***
+}
 .md-my-location:before {
   content: "\f288";
-***REMOVED***
+}
 .md-navigation:before {
   content: "\f289";
-***REMOVED***
+}
 .md-pin-drop:before {
   content: "\f28a";
-***REMOVED***
+}
 .md-place:before {
   content: "\f28b";
-***REMOVED***
+}
 .md-rate-review:before {
   content: "\f28c";
-***REMOVED***
+}
 .md-restaurant-menu:before {
   content: "\f28d";
-***REMOVED***
+}
 .md-satellite:before {
   content: "\f28e";
-***REMOVED***
+}
 .md-store-mall-directory:before {
   content: "\f28f";
-***REMOVED***
+}
 .md-terrain:before {
   content: "\f290";
-***REMOVED***
+}
 .md-traffic:before {
   content: "\f291";
-***REMOVED***
+}
 .md-apps:before {
   content: "\f292";
-***REMOVED***
+}
 .md-cancel:before {
   content: "\f293";
-***REMOVED***
+}
 .md-arrow-drop-down-circle:before {
   content: "\f294";
-***REMOVED***
+}
 .md-arrow-drop-down:before {
   content: "\f295";
-***REMOVED***
+}
 .md-arrow-drop-up:before {
   content: "\f296";
-***REMOVED***
+}
 .md-arrow-back:before {
   content: "\f297";
-***REMOVED***
+}
 .md-arrow-forward:before {
   content: "\f298";
-***REMOVED***
+}
 .md-check:before {
   content: "\f299";
-***REMOVED***
+}
 .md-close:before {
   content: "\f29a";
-***REMOVED***
+}
 .md-chevron-left:before {
   content: "\f29b";
-***REMOVED***
+}
 .md-chevron-right:before {
   content: "\f29c";
-***REMOVED***
+}
 .md-expand-less:before {
   content: "\f29d";
-***REMOVED***
+}
 .md-expand-more:before {
   content: "\f29e";
-***REMOVED***
+}
 .md-fullscreen:before {
   content: "\f29f";
-***REMOVED***
+}
 .md-fullscreen-exit:before {
   content: "\f2a0";
-***REMOVED***
+}
 .md-menu:before {
   content: "\f2a1";
-***REMOVED***
+}
 .md-more-horiz:before {
   content: "\f2a2";
-***REMOVED***
+}
 .md-more-vert:before {
   content: "\f2a3";
-***REMOVED***
+}
 .md-refresh:before {
   content: "\f2a4";
-***REMOVED***
+}
 .md-unfold-less:before {
   content: "\f2a5";
-***REMOVED***
+}
 .md-unfold-more:before {
   content: "\f2a6";
-***REMOVED***
+}
 .md-adb:before {
   content: "\f2a7";
-***REMOVED***
+}
 .md-bluetooth-audio:before {
   content: "\f2a8";
-***REMOVED***
+}
 .md-disc-full:before {
   content: "\f2a9";
-***REMOVED***
+}
 .md-dnd-forwardslash:before {
   content: "\f2aa";
-***REMOVED***
+}
 .md-do-not-disturb:before {
   content: "\f2ab";
-***REMOVED***
+}
 .md-drive-eta:before {
   content: "\f2ac";
-***REMOVED***
+}
 .md-event-available:before {
   content: "\f2ad";
-***REMOVED***
+}
 .md-event-busy:before {
   content: "\f2ae";
-***REMOVED***
+}
 .md-event-note:before {
   content: "\f2af";
-***REMOVED***
+}
 .md-folder-special:before {
   content: "\f2b0";
-***REMOVED***
+}
 .md-mms:before {
   content: "\f2b1";
-***REMOVED***
+}
 .md-more:before {
   content: "\f2b2";
-***REMOVED***
+}
 .md-network-locked:before {
   content: "\f2b3";
-***REMOVED***
+}
 .md-phone-bluetooth-speaker:before {
   content: "\f2b4";
-***REMOVED***
+}
 .md-phone-forwarded:before {
   content: "\f2b5";
-***REMOVED***
+}
 .md-phone-in-talk:before {
   content: "\f2b6";
-***REMOVED***
+}
 .md-phone-locked:before {
   content: "\f2b7";
-***REMOVED***
+}
 .md-phone-missed:before {
   content: "\f2b8";
-***REMOVED***
+}
 .md-phone-paused:before {
   content: "\f2b9";
-***REMOVED***
+}
 .md-play-download:before {
   content: "\f2ba";
-***REMOVED***
+}
 .md-play-install:before {
   content: "\f2bb";
-***REMOVED***
+}
 .md-sd-card:before {
   content: "\f2bc";
-***REMOVED***
+}
 .md-sim-card-alert:before {
   content: "\f2bd";
-***REMOVED***
+}
 .md-sms:before {
   content: "\f2be";
-***REMOVED***
+}
 .md-sms-failed:before {
   content: "\f2bf";
-***REMOVED***
+}
 .md-sync:before {
   content: "\f2c0";
-***REMOVED***
+}
 .md-sync-disabled:before {
   content: "\f2c1";
-***REMOVED***
+}
 .md-sync-problem:before {
   content: "\f2c2";
-***REMOVED***
+}
 .md-system-update:before {
   content: "\f2c3";
-***REMOVED***
+}
 .md-tap-and-play:before {
   content: "\f2c4";
-***REMOVED***
+}
 .md-time-to-leave:before {
   content: "\f2c5";
-***REMOVED***
+}
 .md-vibration:before {
   content: "\f2c6";
-***REMOVED***
+}
 .md-voice-chat:before {
   content: "\f2c7";
-***REMOVED***
+}
 .md-vpn-lock:before {
   content: "\f2c8";
-***REMOVED***
+}
 .md-cake:before {
   content: "\f2c9";
-***REMOVED***
+}
 .md-domain:before {
   content: "\f2ca";
-***REMOVED***
+}
 .md-location-city:before {
   content: "\f2cb";
-***REMOVED***
+}
 .md-mood:before {
   content: "\f2cc";
-***REMOVED***
+}
 .md-notifications-none:before {
   content: "\f2cd";
-***REMOVED***
+}
 .md-notifications:before {
   content: "\f2ce";
-***REMOVED***
+}
 .md-notifications-off:before {
   content: "\f2cf";
-***REMOVED***
+}
 .md-notifications-on:before {
   content: "\f2d0";
-***REMOVED***
+}
 .md-notifications-paused:before {
   content: "\f2d1";
-***REMOVED***
+}
 .md-pages:before {
   content: "\f2d2";
-***REMOVED***
+}
 .md-party-mode:before {
   content: "\f2d3";
-***REMOVED***
+}
 .md-group:before {
   content: "\f2d4";
-***REMOVED***
+}
 .md-group-add:before {
   content: "\f2d5";
-***REMOVED***
+}
 .md-people:before {
   content: "\f2d6";
-***REMOVED***
+}
 .md-people-outline:before {
   content: "\f2d7";
-***REMOVED***
+}
 .md-person:before {
   content: "\f2d8";
-***REMOVED***
+}
 .md-person-add:before {
   content: "\f2d9";
-***REMOVED***
+}
 .md-person-outline:before {
   content: "\f2da";
-***REMOVED***
+}
 .md-plus-one:before {
   content: "\f2db";
-***REMOVED***
+}
 .md-poll:before {
   content: "\f2dc";
-***REMOVED***
+}
 .md-public:before {
   content: "\f2dd";
-***REMOVED***
+}
 .md-school:before {
   content: "\f2de";
-***REMOVED***
+}
 .md-share:before {
   content: "\f2df";
-***REMOVED***
+}
 .md-whatshot:before {
   content: "\f2e0";
-***REMOVED***
+}
 .md-check-box:before {
   content: "\f2e1";
-***REMOVED***
+}
 .md-check-box-outline-blank:before {
   content: "\f2e2";
-***REMOVED***
+}
 .md-radio-button-off:before {
   content: "\f2e3";
-***REMOVED***
+}
 .md-radio-button-on:before {
   content: "\f2e4";
-***REMOVED***
+}
 .md-star:before {
   content: "\f2e5";
-***REMOVED***
+}
 .md-star-half:before {
   content: "\f2e6";
-***REMOVED***
+}
 .md-star-outline:before {
   content: "\f2e7";
-***REMOVED***
+}

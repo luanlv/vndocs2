@@ -9,14 +9,14 @@
   height: 38px;
   @include breakpoint($mobile){
     border-bottom: 1px solid #ddd;
-***REMOVED***
+  }
   @include min-breakpoint($mobile){
     background: #f6f8f9;
     min-height: 38px;
-***REMOVED***
+  }
   @include min-breakpoint(700){
     min-height: 70px;
-***REMOVED***
+  }
 
   img.logo {
     height: 40px;
@@ -28,17 +28,17 @@
       left: 0;
       right: 0;
       bottom: 0;
-  ***REMOVED***
+    }
 
     @include min-breakpoint(700) {
       position: absolute;
       left: 0px;
       top: 33px;
-  ***REMOVED***
+    }
     @include min-breakpoint($mobile){
       position: absolute;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   span.slogan {
     position: absolute;
     left: 200px;
@@ -51,19 +51,19 @@
     @include min-breakpoint(700) {
       top: 53px;
       display: block;
-  ***REMOVED***
+    }
     @include min-breakpoint($mobile){
       display: block;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   span.orange {
     color: $orange !important;
-***REMOVED***
+  }
   .free-logoWr {
     position: relative;
     margin-left: 520px;
     padding-top: 30px;
-***REMOVED***
+  }
   img.free-logo {
     height: 40px;
     width: 40px;
@@ -71,8 +71,8 @@
     display: none;
     @include min-breakpoint(700) {
       display: block;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   img.lookingfor {
     height: 25px;
     position: absolute;
@@ -80,13 +80,13 @@
     display: none;
     @include min-breakpoint(700) {
       display: block;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   .shareWr{
     float: right;
     position: relative;
-***REMOVED***
+  }
   img.share{
     position: absolute;
     height: 60px;
@@ -95,6 +95,6 @@
     display: none;
     @include min-breakpoint(888) {
       display: block;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+    }
+  }
+}

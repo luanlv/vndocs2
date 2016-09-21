@@ -41,12 +41,12 @@
                             <li><a href="@routes.ApplicationController.index">@u.name</a></li>
                             @if(u.loginInfo.providerID == com.mohiva.play.silhouette.impl.providers.CredentialsProvider.ID) {
                                 <li><a href="@routes.ChangePasswordController.view">@Messages("change.password")</a></li>
-                          ***REMOVED***
+                            }
                             <li><a href="@routes.ApplicationController.signOut">@Messages("sign.out")</a></li>
-                      ***REMOVED***.getOrElse {
+                        }.getOrElse {
                             <li><a href="@routes.SignInController.view">@Messages("sign.in")</a></li>
                             <li><a href="@routes.SignUpController.view">@Messages("sign.up")</a></li>
-                      ***REMOVED***
+                        }
                     </ul>
                 </nav>
             </div>
@@ -58,19 +58,19 @@
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <strong>@Messages("error")</strong> @msg
                     </div>
-              ***REMOVED***
+                }
                 @request.flash.get("info").map { msg =>
                     <div class="col-md-6 col-md-offset-3 alert alert-info">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <strong>@Messages("info")</strong> @msg
                     </div>
-              ***REMOVED***
+                }
                 @request.flash.get("success").map { msg =>
                     <div class="col-md-6 col-md-offset-3 alert alert-success">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
                         <strong>@Messages("success")</strong> @msg
                     </div>
-              ***REMOVED***
+                }
                 @content
             </div>
         </main>

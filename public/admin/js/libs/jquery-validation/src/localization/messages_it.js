@@ -14,13 +14,13 @@ $.extend($.validator.messages, {
 	creditcard: "Inserisci un numero di carta di credito valido.",
 	equalTo: "Il valore non corrisponde.",
 	extension: "Inserisci un valore con un&apos;estensione valida.",
-	maxlength: $.validator.format("Non inserire pi&ugrave; di {0***REMOVED*** caratteri."),
-	minlength: $.validator.format("Inserisci almeno {0***REMOVED*** caratteri."),
-	rangelength: $.validator.format("Inserisci un valore compreso tra {0***REMOVED*** e {1***REMOVED*** caratteri."),
-	range: $.validator.format("Inserisci un valore compreso tra {0***REMOVED*** e {1***REMOVED***."),
-	max: $.validator.format("Inserisci un valore minore o uguale a {0***REMOVED***."),
-	min: $.validator.format("Inserisci un valore maggiore o uguale a {0***REMOVED***."),
+	maxlength: $.validator.format("Non inserire pi&ugrave; di {0} caratteri."),
+	minlength: $.validator.format("Inserisci almeno {0} caratteri."),
+	rangelength: $.validator.format("Inserisci un valore compreso tra {0} e {1} caratteri."),
+	range: $.validator.format("Inserisci un valore compreso tra {0} e {1}."),
+	max: $.validator.format("Inserisci un valore minore o uguale a {0}."),
+	min: $.validator.format("Inserisci un valore maggiore o uguale a {0}."),
 	nifES: "Inserisci un NIF valido.",
 	nieES: "Inserisci un NIE valido.",
 	cifES: "Inserisci un CIF valido."
-***REMOVED***);
+});

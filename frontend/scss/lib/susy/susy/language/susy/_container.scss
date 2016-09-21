@@ -19,12 +19,12 @@
 
   @if $_box {
     @include output((box-sizing: $_box));
-***REMOVED***
+  }
 
   @include susy-inspect(container, $inspect);
   @include float-container($_width, $_justify, $_property);
   @include show-grid($layout);
-***REMOVED***
+}
 
 // Container [function]
 // --------------------
@@ -35,7 +35,7 @@
 ) {
   $layout: parse-grid($layout);
   @return get-container-width($layout);
-***REMOVED***
+}
 
 // Get Container Width
 // -------------------
@@ -55,13 +55,13 @@
       $_gutters   : susy-get(gutters, $layout);
       $_spread    : if(is-split($layout), wide, narrow);
       $_width     : susy-sum($_columns, $_gutters, $_spread) * $_column-width;
-  ***REMOVED*** @else {
+    } @else {
       $_width: 100%;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   @return $_width;
-***REMOVED***
+}
 
 // Parse Container Position
 // ------------------------
@@ -75,7 +75,7 @@
   @if not(index(left right center, $justify)) {
     $_return: nth($justify, 1);
     $_return: $_return if(length($justify) > 1, nth($justify, 2), $_return);
-***REMOVED***
+  }
 
   @return $_return;
-***REMOVED***
+}

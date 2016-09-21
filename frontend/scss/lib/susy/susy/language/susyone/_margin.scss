@@ -16,8 +16,8 @@
   $style    : fix-static-misalignment()
 ) {
   $from     : unquote($from);
-  margin-#{$from***REMOVED***: space($columns, $context, $style);
-***REMOVED***
+  margin-#{$from}: space($columns, $context, $style);
+}
 
 // 'push' is a synonymn for 'pre'
 @mixin push(
@@ -28,7 +28,7 @@
 ) {
   $from     : unquote($from);
   @include pre($columns, $context, $from, $style);
-***REMOVED***
+}
 
 // Apply negative 'columns' margin before an element to pull it along the grid.
 //
@@ -45,8 +45,8 @@
   $style    : fix-static-misalignment()
 ) {
   $from     : unquote($from);
-  margin-#{$from***REMOVED***: 0 - space($columns, $context, $style);
-***REMOVED***
+  margin-#{$from}: 0 - space($columns, $context, $style);
+}
 
 // Apply 'columns' margin after an element to contain it in a grid.
 //
@@ -64,8 +64,8 @@
 ) {
   $from     : unquote($from);
   $to : opposite-position($from);
-  margin-#{$to***REMOVED***: space($columns, $context, $style);
-***REMOVED***
+  margin-#{$to}: space($columns, $context, $style);
+}
 
 // Apply 'columns' before and/or after an element to contain it on a grid.
 //
@@ -86,8 +86,8 @@
   $from     : unquote($from);
   @if $pre {
     @include pre($pre, $context, $from, $style)
-***REMOVED***
+  }
   @if $post {
     @include post($post, $context, $from, $style)
-***REMOVED***
-***REMOVED***
+  }
+}

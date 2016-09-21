@@ -20,7 +20,7 @@
 	html
 		{
 		height: 100%;
-	***REMOVED***
+	}
 	
 	/* Zero default margin & padding around common elements */
 	body, dd, dl, dt, form, h1, h2, h3, h4, h5, h6, ul, ol, li, p
@@ -28,7 +28,7 @@
 		margin: 0;
 		border: none;
 		padding: 0;
-		***REMOVED***
+		}
 	
 	body
 		{
@@ -42,22 +42,22 @@
 		font-size: 62.5%;
 		text-align: center;
 		overflow:auto;
-		***REMOVED***
+		}
 	
 	a:link
 		{
 		color: #003399;
-		***REMOVED***
+		}
 	
 	a:visited
 		{
 		color: #B266B2;
-		***REMOVED***
+		}
 	
 	a:hover
 		{
 		text-decoration: none;
-		***REMOVED***
+		}
 	
 	
 	
@@ -74,12 +74,12 @@
 		background-image: url(images/page.gif);
 		background-repeat: repeat-y;
 		text-align: left;
-		***REMOVED***
+		}
 	
 	* html #page
 		{
 		height: 100%;
-		***REMOVED***
+		}
 	
 	
 	
@@ -92,7 +92,7 @@
 		background-color: #B2DD32;
 		background-image: url(images/header1.jpg);
 		background-repeat: repeat-x;
-		***REMOVED***
+		}
 	
 	h1
 		{
@@ -100,7 +100,7 @@
 		font-size: 2.2em;
 		font-weight: normal;
 		line-height: 82px;
-		***REMOVED***
+		}
 	
 	
 	
@@ -110,18 +110,18 @@
 	#content
 		{
 		padding: 0 25px;
-		***REMOVED***
+		}
 	
 	p
 		{
 		font-size:1.1em;
 		margin-top: 1.5em;
-		***REMOVED***
+		}
 	
 	form
 		{
 		margin-top: 1.5em;
-		***REMOVED***
+		}
 	
 	
 
@@ -136,35 +136,35 @@
 
 	form{
 		width:550px !important;
-		***REMOVED***
+		}
 
 	fieldset.submit
 		{
 		padding-left: 190px !important;
-		***REMOVED***
+		}
 
 	form label{
 		padding:0px 10px;
 		width: 160px;
-		***REMOVED***
+		}
 
 	form label.error,
 	form input.submit
 		{
 		margin-left:180px !important;
-		***REMOVED***		
+		}		
 
 	form fieldset fieldset label.error
 		{
 		margin-left:0px !important;
 		width:200px !important;
-		***REMOVED***		
+		}		
 
 
 	form .centered{
 		margin-left:180px !important;
 		width:200px !important;
-		***REMOVED***
+		}
 	
 	form .text, 
 	form .button,
@@ -175,7 +175,7 @@
 	form select
 		{
 		width: 200px !important;
-		***REMOVED***
+		}
 		
 
 
@@ -186,7 +186,7 @@
 		width:550px;
 		margin-bottom:25px;
 		clear:both;
-		***REMOVED***
+		}
 
 	form fieldset
 		{
@@ -207,7 +207,7 @@
 		clear: both;
 		width: 100%;
 		
-		***REMOVED***
+		}
 	
 	form fieldset.submit
 		{
@@ -220,7 +220,7 @@
 		float: none;
 		width: auto;
 		
-		***REMOVED***
+		}
 	
 	form legend
 		{
@@ -232,11 +232,11 @@
 		
 		margin-left: 1em;
 		padding:0px 5px;
-		***REMOVED***
+		}
 		
 	form fieldset p{
  		margin:10px 0px 0px 10px;
- 		***REMOVED***
+ 		}
 	
 /*** FORM BLOCKS ***/
 
@@ -244,7 +244,7 @@
 		{
 		padding:5px 10px;
 		list-style: none;
-		***REMOVED***
+		}
 	
 	form li
 		{
@@ -256,12 +256,12 @@
 		display:block;
 		float: left;
 		clear: left;
-	***REMOVED***
+	}
 	
 	form li:first-child
 		{
 		border:none;
-		***REMOVED***
+		}
 
 	
 /*** FORM BLOCK ELEMENTS ***/
@@ -271,11 +271,11 @@
 		padding:0px 10px;
 		width: 160px;
 		float: left;
-		***REMOVED***
+		}
 		
 	form .error{
 		color: #c00;
-		***REMOVED***
+		}
 		
 	form label.error
 		{
@@ -293,7 +293,7 @@
 		border-top:1px dotted #ccc;
 		
 		clear:both;
-		***REMOVED***
+		}
 		
 	form label.info{
 		font-size: 100%;
@@ -302,7 +302,7 @@
 		
 		margin:8px 0px 0px 180px;
 		padding:3px 0px 0px 5px;
-		***REMOVED***
+		}
 
 	form fieldset fieldset,
 	form .group
@@ -317,7 +317,7 @@
 		float:left;
 		clear: none;
 		
-		***REMOVED***
+		}
 		
 	form fieldset fieldset label
 		{
@@ -327,23 +327,23 @@
 		margin:0px;
 		display:block;
 		clear:both;
-		***REMOVED***
+		}
 		
 	form label label.error{
 		margin-left:0px;
-		***REMOVED***
+		}
 
 	form label.centered{
 		padding:0px 0px;
 		width:200px !important;
-		***REMOVED***
+		}
 		
 	/* see also the error class at the foot of the page */
 	
 	form fieldset fieldset label.spaced
 		{
 		margin-bottom:3px;
-		***REMOVED***
+		}
 
 /*** FORM ELEMENT COLUMNS ***/
 
@@ -351,25 +351,25 @@
 	fieldset fieldset.col-1 label
 		{
 		width:100%;
-		***REMOVED***
+		}
 
 	.col-2,
 	fieldset fieldset.col-2 label
 		{
 		width:50%;
-		***REMOVED***
+		}
 
 	.col-3,
 	fieldset fieldset.col-3 label
 		{
 		width:33%;
-		***REMOVED***
+		}
 
 	.col-4,
 	fieldset fieldset.col-4 label
 		{
 		width:25%;
-		***REMOVED***
+		}
 
 
 
@@ -379,25 +379,25 @@
 	form input.submit{
 		margin:10px 0px 10px 180px;
 		padding:0px 2px;
-		***REMOVED***
+		}
 
 	form input, textarea, select, 
 	form label
 		{
 		font-size:1.1em;
 		line-height:1.6em;
-		***REMOVED***
+		}
 
 	form input, textarea, select
 		{
 		font-family: Verdana, Arial, Helvetica, sans-serif;
-		***REMOVED***
+		}
 
 	form .input[type="text"],
 	form textarea
 		{
 		padding:1px;
-		***REMOVED***
+		}
 		
 	form .input[type="radio"],
 	form .input[type="checkbox"]
@@ -406,7 +406,7 @@
 		padding:0px;
 		position:relative;
 		top:3px;
-		***REMOVED***
+		}
 		
 /*** SUPPORTING CLASSES ***/
 
@@ -414,44 +414,44 @@
 		background-image:url(images/required_star.gif);
 		background-position:right;
 		background-repeat:no-repeat;
-		***REMOVED***
+		}
 	
 	form span.required{
 		padding-right:15px;
-		***REMOVED***
+		}
 		
 	form .clean
 		{
 		border:none;
-		***REMOVED***
+		}
 		
 	form .info{
 		padding-top:0.5em;
 		font-size:80%;
 		line-height:100%;
 		color:#aaa;
-		***REMOVED***
+		}
 		
 	form .indent{
  		padding:2px 20px; 
 		width:auto !important;
 		white-space:nowrap;
 		padding-left: 25px !important;
- 		***REMOVED***
+ 		}
 		
 	form label.disabled{
 		color:#aaa;
-		***REMOVED***
+		}
 	
 	form .highlight{
 		background-color:#e2e2e2;
-		***REMOVED***
+		}
 	
 	.off{
 		display:none !important;
-		***REMOVED***
+		}
 		
 	.clear{
 		clear:both;
-		***REMOVED***
+		}
 		

@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -22,12 +22,12 @@ $.extend($.validator.messages, {
 	creditcard: "Unesite ispravan broj kreditne kartice.",
 	equalTo: "Unesite ponovo istu vrijednost.",
 	extension: "Unesite vrijednost sa ispravnom ekstenzijom.",
-	maxlength: $.validator.format("Maksimalni broj znakova je {0***REMOVED*** ."),
-	minlength: $.validator.format("Minimalni broj znakova je {0***REMOVED*** ."),
-	rangelength: $.validator.format("Unesite vrijednost između {0***REMOVED*** i {1***REMOVED*** znakova."),
-	range: $.validator.format("Unesite vrijednost između {0***REMOVED*** i {1***REMOVED***."),
-	max: $.validator.format("Unesite vrijednost manju ili jednaku {0***REMOVED***."),
-	min: $.validator.format("Unesite vrijednost veću ili jednaku {0***REMOVED***.")
-***REMOVED***);
+	maxlength: $.validator.format("Maksimalni broj znakova je {0} ."),
+	minlength: $.validator.format("Minimalni broj znakova je {0} ."),
+	rangelength: $.validator.format("Unesite vrijednost između {0} i {1} znakova."),
+	range: $.validator.format("Unesite vrijednost između {0} i {1}."),
+	max: $.validator.format("Unesite vrijednost manju ili jednaku {0}."),
+	min: $.validator.format("Unesite vrijednost veću ili jednaku {0}.")
+});
 
-***REMOVED***));
+}));

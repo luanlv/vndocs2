@@ -14,14 +14,14 @@ for ( ; i < length; i++ ) {
 	if ( current[ 0 ] === "jquery" ) {
 		version = current[ 1 ];
 		break;
-	***REMOVED***
-***REMOVED***
+	}
+}
 
 if (version != "git") {
 	file = src.replace(/jquery\.js$/, "jquery-" + version + ".js");
-***REMOVED***
+}
 
 
 document.write( "<script src='" + file + "'></script>" );
 
-***REMOVED***)();
+})();

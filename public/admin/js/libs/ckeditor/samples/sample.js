@@ -19,7 +19,7 @@
 			for ( i = 0; i < requires.length; i++ ) {
 				if ( !editor.plugins[ requires[ i ] ] )
 					missing.push( '<code>' + requires[ i ] + '</code>' );
-			***REMOVED***
+			}
 
 			if ( missing.length ) {
 				var warn = CKEDITOR.dom.element.createFromHtml(
@@ -28,8 +28,8 @@
 					'</div>'
 				);
 				warn.insertBefore( editor.container );
-			***REMOVED***
-		***REMOVED***
+			}
+		}
 
 		// Set icons.
 		var doc = new CKEDITOR.dom.document( document ),
@@ -45,6 +45,6 @@
 			icon.setAttribute( 'style', style );
 			icon.setStyle( 'float', 'none' );
 
-		***REMOVED***
-	***REMOVED*** );
-***REMOVED***)();
+		}
+	} );
+})();

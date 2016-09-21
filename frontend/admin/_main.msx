@@ -1,5 +1,5 @@
 
-var Main = Main || {***REMOVED***;
+var Main = Main || {};
 
 Main.Home = require('./main/home.msx');
 Main.NewProduct = require('./main/newproduct.msx');
@@ -18,7 +18,7 @@ m.route(document.querySelector('#app'), "/", {
   "/newArticle": Main.NewArticle,
   "/category/create": Main.NewCategory,
   "/menu": Main.MenuController
-***REMOVED***);
+});
 
 // m.route('/menu');
 

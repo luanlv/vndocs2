@@ -7,9 +7,9 @@
 		// Initialize app when document is ready
 		$(document).ready(function() {
 			o.initialize();
-		***REMOVED***);
+		});
 
-	***REMOVED***;
+	};
 	var p = DemoFormWizard.prototype;
 
 	// =========================================================================
@@ -19,7 +19,7 @@
 	p.initialize = function() {
 		this._initWizard1();
 		this._initWizard2();
-	***REMOVED***;
+	};
 
 	// =========================================================================
 	// WIZARD 1
@@ -30,9 +30,9 @@
 		$('#rootwizard1').bootstrapWizard({
 			onTabShow: function(tab, navigation, index) {
 				o._handleTabShow(tab, navigation, index, $('#rootwizard1'));
-			***REMOVED***
-		***REMOVED***);
-	***REMOVED***;
+			}
+		});
+	};
 
 	p._handleTabShow = function(tab, navigation, index, wizard){
 		var total = navigation.find('li').length;
@@ -43,9 +43,9 @@
 		navigation.find('li').removeClass('done');
 		navigation.find('li.active').prevAll().addClass('done');
 		
-		wizard.find('.progress-bar').css({width: percent + '%'***REMOVED***);
-		$('.form-wizard-horizontal').find('.progress').css({'width': percentWidth***REMOVED***);
-	***REMOVED***;
+		wizard.find('.progress-bar').css({width: percent + '%'});
+		$('.form-wizard-horizontal').find('.progress').css({'width': percentWidth});
+	};
 	
 	// =========================================================================
 	// WIZARD 1
@@ -56,17 +56,17 @@
 		$('#rootwizard2').bootstrapWizard({
 			onTabShow: function(tab, navigation, index) {
 				o._handleTabShow(tab, navigation, index, $('#rootwizard2'));
-			***REMOVED***,
+			},
 	  		onNext: function(tab, navigation, index) {
 				var form = $('#rootwizard2').find('.form-validation');
 	  			var valid = form.valid();
 	  			if(!valid) {
 	  				form.data('validator').focusInvalid();
 	  				return false;
-	  			***REMOVED***
-	  		***REMOVED***
-		***REMOVED***);
-	***REMOVED***;
+	  			}
+	  		}
+		});
+	};
 
 	p._handleTabShow = function(tab, navigation, index, wizard){
 		var total = navigation.find('li').length;
@@ -77,10 +77,10 @@
 		navigation.find('li').removeClass('done');
 		navigation.find('li.active').prevAll().addClass('done');
 		
-		wizard.find('.progress-bar').css({width: percent + '%'***REMOVED***);
-		$('.form-wizard-horizontal').find('.progress').css({'width': percentWidth***REMOVED***);
-	***REMOVED***;
+		wizard.find('.progress-bar').css({width: percent + '%'});
+		$('.form-wizard-horizontal').find('.progress').css({'width': percentWidth});
+	};
 	
 	// =========================================================================
 	namespace.DemoFormWizard = new DemoFormWizard;
-***REMOVED***(this.materialadmin, jQuery)); // pass in (namespace, jQuery):
+}(this.materialadmin, jQuery)); // pass in (namespace, jQuery):

@@ -16,12 +16,12 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 			border: solid 2px transparent;
 			padding-left: 15px;
 			padding-right: 15px;
-		***REMOVED***
+		}
 
 		div.editable:hover
 		{
 			border-color: black;
-		***REMOVED***
+		}
 
 	</style>
 	<script>
@@ -36,7 +36,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 			else if ( window.attachEvent )
 				document.body.attachEvent( 'ondblclick', onDoubleClick );
 
-		***REMOVED***;
+		};
 
 		function onDoubleClick( ev ) {
 			// Get the element which fired the event. This is not necessarily the
@@ -48,13 +48,13 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 
 			do {
 				element = element.parentNode;
-			***REMOVED***
+			}
 			while ( element && ( name = element.nodeName.toLowerCase() ) &&
 				( name != 'div' || element.className.indexOf( 'editable' ) == -1 ) && name != 'body' );
 
 			if ( name == 'div' && element.className.indexOf( 'editable' ) != -1 )
 				replaceDiv( element );
-		***REMOVED***
+		}
 
 		var editor;
 
@@ -63,7 +63,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 				editor.destroy();
 
 			editor = CKEDITOR.replace( div );
-		***REMOVED***
+		}
 
 	</script>
 </head>

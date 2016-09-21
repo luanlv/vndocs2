@@ -31,26 +31,26 @@ var factory = function( $, DataTable ) {
  *
  * @class AutoFill
  * @constructor
- * @param {object***REMOVED*** oTD DataTables settings object
- * @param {object***REMOVED*** oConfig Configuration object for AutoFill
+ * @param {object} oTD DataTables settings object
+ * @param {object} oConfig Configuration object for AutoFill
  */
 var AutoFill = function( oDT, oConfig )
 {
 	/* Sanity check that we are a new instance */
 	if ( ! (this instanceof AutoFill) ) {
 		throw( "Warning: AutoFill must be initialised with the keyword 'new'" );
-	***REMOVED***
+	}
 
 	if ( ! $.fn.dataTableExt.fnVersionCheck('1.7.0') ) {
 		throw( "Warning: AutoFill requires DataTables 1.7 or greater");
-	***REMOVED***
+	}
 
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Public class variables
 	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-	this.c = {***REMOVED***;
+	this.c = {};
 
 	/**
 	 * @namespace Settings object which contains customisable information for AutoFill instance
@@ -62,14 +62,14 @@ var AutoFill = function( oDT, oConfig )
 		"filler": {
 			"height": 0,
 			"width": 0
-		***REMOVED***,
+		},
 
 		/**
 		 * @namespace Cached information about the border display
 		 */
 		"border": {
 			"width": 2
-		***REMOVED***,
+		},
 
 		/**
 		 * @namespace Store for live information for the current drag
@@ -80,7 +80,7 @@ var AutoFill = function( oDT, oConfig )
 			"startTd": null,
 			"endTd": null,
 			"dragging": false
-		***REMOVED***,
+		},
 
 		/**
 		 * @namespace Data cache for information that we need for scrolling the screen when we near
@@ -91,7 +91,7 @@ var AutoFill = function( oDT, oConfig )
 			"y": 0,
 			"height": 0,
 			"scrollTop": 0
-		***REMOVED***,
+		},
 
 		/**
 		 * @namespace Data cache for the position of the DataTables scrolling element (when scrolling
@@ -100,13 +100,13 @@ var AutoFill = function( oDT, oConfig )
 		"scroller": {
 			"top": 0,
 			"bottom": 0
-		***REMOVED***,
+		},
 
 		/**
 		 * @namespace Information stored for each column. An array of objects
 		 */
 		"columns": []
-	***REMOVED***;
+	};
 
 
 	/**
@@ -120,7 +120,7 @@ var AutoFill = function( oDT, oConfig )
 		"borderBottom": null,
 		"borderLeft": null,
 		"currentTarget": null
-	***REMOVED***;
+	};
 
 
 
@@ -131,17 +131,17 @@ var AutoFill = function( oDT, oConfig )
 	/**
 	 * Retreieve the settings object from an instance
 	 *  @method fnSettings
-	 *  @returns {object***REMOVED*** AutoFill settings object
+	 *  @returns {object} AutoFill settings object
 	 */
 	this.fnSettings = function () {
 		return this.s;
-	***REMOVED***;
+	};
 
 
 	/* Constructor logic */
 	this._fnInit( oDT, oConfig );
 	return this;
-***REMOVED***;
+};
 
 
 
@@ -153,8 +153,8 @@ AutoFill.prototype = {
 	/**
 	 * Initialisation
 	 *  @method _fnInit
-	 *  @param {object***REMOVED*** dt DataTables settings object
-	 *  @param {object***REMOVED*** config Configuration object for AutoFill
+	 *  @param {object} dt DataTables settings object
+	 *  @param {object} config Configuration object for AutoFill
 	 *  @returns void
 	 */
 	"_fnInit": function ( dt, config )
@@ -169,7 +169,7 @@ AutoFill.prototype = {
 		this.s.dt = DataTable.Api ?
 			new DataTable.Api( dt ).settings()[0] :
 			dt.fnSettings();
-		this.s.init = config || {***REMOVED***;
+		this.s.init = config || {};
 		this.dom.table = this.s.dt.nTable;
 
 		$.extend( true, this.c, AutoFill.defaults, config );
@@ -180,7 +180,7 @@ AutoFill.prototype = {
 		/* Auto Fill click and drag icon */
 		var filler = $('<div/>', {
 				'class': 'AutoFill_filler'
-			***REMOVED*** )
+			} )
 			.appendTo( 'body' );
 		this.dom.filler = filler[0];
 
@@ -198,11 +198,11 @@ AutoFill.prototype = {
 		if ( that.s.dt.oScroll.sY !== "" ) {
 			that.s.dt.nTable.parentNode.style.position = "relative";
 			appender = that.s.dt.nTable.parentNode;
-		***REMOVED***
+		}
 
 		border = $('<div/>', {
 			"class": "AutoFill_border"
-		***REMOVED*** );
+		} );
 		this.dom.borderTop    = border.clone().appendTo( appender )[0];
 		this.dom.borderRight  = border.clone().appendTo( appender )[0];
 		this.dom.borderBottom = border.clone().appendTo( appender )[0];
@@ -210,24 +210,24 @@ AutoFill.prototype = {
 
 		/* Events */
 		filler.on( 'mousedown.DTAF', function (e) {
-			this.onselectstart = function() { return false; ***REMOVED***;
+			this.onselectstart = function() { return false; };
 			that._fnFillerDragStart.call( that, e );
 			return false;
-		***REMOVED*** );
+		} );
 
 		$('tbody', this.dom.table).on(
 			'mouseover.DTAF mouseout.DTAF',
 			'>tr>td, >tr>th',
 			function (e) {
 				that._fnFillerDisplay.call( that, e );
-			***REMOVED***
+			}
 		);
 
 		$(this.dom.table).on( 'destroy.dt.DTAF', function () {
 			filler.off( 'mousedown.DTAF' ).remove();
 			$('tbody', this.dom.table).off( 'mouseover.DTAF mouseout.DTAF' );
-		***REMOVED*** );
-	***REMOVED***,
+		} );
+	},
 
 
 	_initColumns: function ( )
@@ -238,8 +238,8 @@ AutoFill.prototype = {
 		var config = this.s.init;
 
 		for ( i=0, ien=dt.aoColumns.length ; i<ien ; i++ ) {
-			this.s.columns[i] = $.extend( true, {***REMOVED***, AutoFill.defaults.column );
-		***REMOVED***
+			this.s.columns[i] = $.extend( true, {}, AutoFill.defaults.column );
+		}
 
 		dt.oApi._fnApplyColumnDefs(
 			dt,
@@ -247,7 +247,7 @@ AutoFill.prototype = {
 			config.aoColumns || config.columns,
 			function (colIdx, def) {
 				that._fnColumnOptions( colIdx, def );
-			***REMOVED***
+			}
 		);
 
 		// For columns which don't have read, write, step functions defined,
@@ -257,15 +257,15 @@ AutoFill.prototype = {
 
 			if ( ! column.read ) {
 				column.read = this._fnReadCell;
-			***REMOVED***
+			}
 			if ( ! column.write ) {
 				column.read = this._fnWriteCell;
-			***REMOVED***
+			}
 			if ( ! column.step ) {
 				column.read = this._fnStep;
-			***REMOVED***
-		***REMOVED***
-	***REMOVED***,
+			}
+		}
+	},
 
 
 	"_fnColumnOptions": function ( i, opts )
@@ -274,11 +274,11 @@ AutoFill.prototype = {
 		var set = function ( outProp, inProp ) {
 			if ( opts[ inProp[0] ] !== undefined ) {
 				column[ outProp ] = opts[ inProp[0] ];
-			***REMOVED***
+			}
 			if ( opts[ inProp[1] ] !== undefined ) {
 				column[ outProp ] = opts[ inProp[1] ];
-			***REMOVED***
-		***REMOVED***;
+			}
+		};
 
 		// Compatibility with the old Hungarian style of notation
 		set( 'enable',    ['bEnable',     'enable'] );
@@ -286,14 +286,14 @@ AutoFill.prototype = {
 		set( 'write',     ['fnWrite',     'write'] );
 		set( 'step',      ['fnStep',      'step'] );
 		set( 'increment', ['bIncrement',  'increment'] );
-	***REMOVED***,
+	},
 
 
 	/**
 	 * Find out the coordinates of a given TD cell in a table
 	 *  @method  _fnTargetCoords
-	 *  @param   {Node***REMOVED*** nTd
-	 *  @returns {Object***REMOVED*** x and y properties, for the position of the cell in the tables DOM
+	 *  @param   {Node} nTd
+	 *  @returns {Object} x and y properties, for the position of the cell in the tables DOM
 	 */
 	"_fnTargetCoords": function ( nTd )
 	{
@@ -305,15 +305,15 @@ AutoFill.prototype = {
 			"y":      $('tr', nTr.parentNode).index(nTr),
 			"row":    position[0],
 			"column": position[2]
-		***REMOVED***;
-	***REMOVED***,
+		};
+	},
 
 
 	/**
 	 * Display the border around one or more cells (from start to end)
 	 *  @method  _fnUpdateBorder
-	 *  @param   {Node***REMOVED*** nStart Starting cell
-	 *  @param   {Node***REMOVED*** nEnd Ending cell
+	 *  @param   {Node} nStart Starting cell
+	 *  @param   {Node} nEnd Ending cell
 	 *  @returns void
 	 */
 	"_fnUpdateBorder": function ( nStart, nEnd )
@@ -335,7 +335,7 @@ AutoFill.prototype = {
 			x1 = offsetEnd.left - border;
 			x2 = offsetStart.left + $(nStart).outerWidth();
 			width = offsetStart.left + $(nStart).outerWidth() - offsetEnd.left + (2*border);
-		***REMOVED***
+		}
 
 		if ( this.s.dt.oScroll.sY !== "" )
 		{
@@ -349,7 +349,7 @@ AutoFill.prototype = {
 			x2 -= offsetScroll.left - scrollLeft;
 			y1 -= offsetScroll.top - scrollTop;
 			y2 -= offsetScroll.top - scrollTop;
-		***REMOVED***
+		}
 
 		/* Top */
 		oStyle = this.dom.borderTop.style;
@@ -378,13 +378,13 @@ AutoFill.prototype = {
 		oStyle.left = x2+"px";
 		oStyle.height = height+"px";
 		oStyle.width = this.s.border.width+"px";
-	***REMOVED***,
+	},
 
 
 	/**
 	 * Mouse down event handler for starting a drag
 	 *  @method  _fnFillerDragStart
-	 *  @param   {Object***REMOVED*** e Event object
+	 *  @param   {Object} e Event object
 	 *  @returns void
 	 */
 	"_fnFillerDragStart": function (e)
@@ -410,11 +410,11 @@ AutoFill.prototype = {
 
 		$(document).bind('mousemove.AutoFill', function (e) {
 			that._fnFillerDragMove.call( that, e );
-		***REMOVED*** );
+		} );
 
 		$(document).bind('mouseup.AutoFill', function (e) {
 			that._fnFillerFinish.call( that, e );
-		***REMOVED*** );
+		} );
 
 		/* Scrolling information cache */
 		this.s.screen.y = e.pageY;
@@ -425,7 +425,7 @@ AutoFill.prototype = {
 		{
 			this.s.scroller.top = $(this.s.dt.nTable.parentNode).offset().top;
 			this.s.scroller.bottom = this.s.scroller.top + $(this.s.dt.nTable.parentNode).height();
-		***REMOVED***
+		}
 
 		/* Scrolling handler - we set an interval (which is cancelled on mouse up) which will fire
 		 * regularly and see if we need to do any scrolling
@@ -439,14 +439,14 @@ AutoFill.prototype = {
 			{
 				$('html, body').animate( {
 					"scrollTop": iScrollTop + 50
-				***REMOVED***, 240, 'linear' );
-			***REMOVED***
+				}, 240, 'linear' );
+			}
 			else if ( that.s.screen.y - iScrollTop < 50 )
 			{
 				$('html, body').animate( {
 					"scrollTop": iScrollTop - 50
-				***REMOVED***, 240, 'linear' );
-			***REMOVED***
+				}, 240, 'linear' );
+			}
 
 			if ( that.s.dt.oScroll.sY !== "" )
 			{
@@ -454,24 +454,24 @@ AutoFill.prototype = {
 				{
 					$(that.s.dt.nTable.parentNode).animate( {
 						"scrollTop": $(that.s.dt.nTable.parentNode).scrollTop() + 50
-					***REMOVED***, 240, 'linear' );
-				***REMOVED***
+					}, 240, 'linear' );
+				}
 				else if ( that.s.screen.y < that.s.scroller.top + 50 )
 				{
 					$(that.s.dt.nTable.parentNode).animate( {
 						"scrollTop": $(that.s.dt.nTable.parentNode).scrollTop() - 50
-					***REMOVED***, 240, 'linear' );
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***, 250 );
-	***REMOVED***,
+					}, 240, 'linear' );
+				}
+			}
+		}, 250 );
+	},
 
 
 	/**
 	 * Mouse move event handler for during a move. See if we want to update the display based on the
 	 * new cursor position
 	 *  @method  _fnFillerDragMove
-	 *  @param   {Object***REMOVED*** e Event object
+	 *  @param   {Object} e Event object
 	 *  @returns void
 	 */
 	"_fnFillerDragMove": function (e)
@@ -484,39 +484,39 @@ AutoFill.prototype = {
 			if ( this.c.mode == "y" && coords.x != this.s.drag.startX )
 			{
 				e.target = $('tbody>tr:eq('+coords.y+')>td:eq('+this.s.drag.startX+')', this.dom.table)[0];
-			***REMOVED***
+			}
 			if ( this.c.mode == "x" && coords.y != this.s.drag.startY )
 			{
 				e.target = $('tbody>tr:eq('+this.s.drag.startY+')>td:eq('+coords.x+')', this.dom.table)[0];
-			***REMOVED***
+			}
 
 			if ( this.c.mode == "either")
 			{
 				if(coords.x != this.s.drag.startX )
 				{
 					e.target = $('tbody>tr:eq('+this.s.drag.startY+')>td:eq('+coords.x+')', this.dom.table)[0];
-				***REMOVED***
+				}
 				else if ( coords.y != this.s.drag.startY ) {
 					e.target = $('tbody>tr:eq('+coords.y+')>td:eq('+this.s.drag.startX+')', this.dom.table)[0];
-				***REMOVED***
-			***REMOVED***
+				}
+			}
 
 			// update coords
 			if ( this.c.mode !== "both" ) {
 				coords = this._fnTargetCoords( e.target );
-			***REMOVED***
+			}
 
 			var drag = this.s.drag;
 			drag.endTd = e.target;
 
 			if ( coords.y >= this.s.drag.startY ) {
 				this._fnUpdateBorder( drag.startTd, drag.endTd );
-			***REMOVED***
+			}
 			else {
 				this._fnUpdateBorder( drag.endTd, drag.startTd );
-			***REMOVED***
+			}
 			this._fnFillerPosition( e.target );
-		***REMOVED***
+		}
 
 		/* Update the screen information so we can perform scrolling */
 		this.s.screen.y = e.pageY;
@@ -527,14 +527,14 @@ AutoFill.prototype = {
 			this.s.scroller.scrollTop = $(this.s.dt.nTable.parentNode).scrollTop();
 			this.s.scroller.top = $(this.s.dt.nTable.parentNode).offset().top;
 			this.s.scroller.bottom = this.s.scroller.top + $(this.s.dt.nTable.parentNode).height();
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
 
 	/**
 	 * Mouse release handler - end the drag and take action to update the cells with the needed values
 	 *  @method  _fnFillerFinish
-	 *  @param   {Object***REMOVED*** e Event object
+	 *  @param   {Object} e Event object
 	 *  @returns void
 	 */
 	"_fnFillerFinish": function (e)
@@ -558,7 +558,7 @@ AutoFill.prototype = {
 		var coordsEnd = this._fnTargetCoords( this.s.drag.endTd );
 		var columnIndex = function ( visIdx ) {
 			return that.s.dt.oApi._fnVisibleToColumnIndex( that.s.dt, visIdx );
-		***REMOVED***;
+		};
 
 		// xxx - urgh - there must be a way of reducing this...
 		if ( coordsStart.y <= coordsEnd.y ) {
@@ -570,9 +570,9 @@ AutoFill.prototype = {
 							x:      j - coordsStart.x,
 							y:      i - coordsStart.y,
 							colIdx: columnIndex( j )
-						***REMOVED*** );
-					***REMOVED***
-				***REMOVED***
+						} );
+					}
+				}
 				else {
 					for ( j=coordsStart.x ; j>=coordsEnd.x ; j-- ) {
 						cells.push( {
@@ -580,11 +580,11 @@ AutoFill.prototype = {
 							x:      j - coordsStart.x,
 							y:      i - coordsStart.y,
 							colIdx: columnIndex( j )
-						***REMOVED*** );
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+						} );
+					}
+				}
+			}
+		}
 		else {
 			for ( i=coordsStart.y ; i>=coordsEnd.y ; i-- ) {
 				if ( coordsStart.x <= coordsEnd.x ) {
@@ -594,9 +594,9 @@ AutoFill.prototype = {
 							x:      j - coordsStart.x,
 							y:      i - coordsStart.y,
 							colIdx: columnIndex( j )
-						***REMOVED*** );
-					***REMOVED***
-				***REMOVED***
+						} );
+					}
+				}
 				else {
 					for ( j=coordsStart.x ; j>=coordsEnd.x ; j-- ) {
 						cells.push( {
@@ -604,16 +604,16 @@ AutoFill.prototype = {
 							x:      coordsStart.x - j,
 							y:      coordsStart.y - i,
 							colIdx: columnIndex( j )
-						***REMOVED*** );
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
-		***REMOVED***
+						} );
+					}
+				}
+			}
+		}
 
 		// An auto-fill requires 2 or more cells
 		if ( cells.length <= 1 ) {
 			return;
-		***REMOVED***
+		}
 
 		var edited = [];
 		var previous;
@@ -632,27 +632,27 @@ AutoFill.prototype = {
 				colIdx:   cell.colIdx,
 				newValue: stepValue,
 				oldValue: read
-			***REMOVED*** );
-		***REMOVED***
+			} );
+		}
 
 		if ( this.c.complete !== null ) {
 			this.c.complete.call( this, edited );
-		***REMOVED***
+		}
 
 		// In 1.10 we can do a static draw
 		if ( DataTable.Api ) {
 			new DataTable.Api( this.s.dt ).draw( false );
-		***REMOVED***
+		}
 		else {
 			this.s.dt.oInstance.fnDraw();
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
 
 	/**
 	 * Display the drag handle on mouse over cell
 	 *  @method  _fnFillerDisplay
-	 *  @param   {Object***REMOVED*** e Event object
+	 *  @param   {Object} e Event object
 	 *  @returns void
 	 */
 	"_fnFillerDisplay": function (e)
@@ -663,7 +663,7 @@ AutoFill.prototype = {
 		if ( this.s.drag.dragging)
 		{
 			return;
-		***REMOVED***
+		}
 
 		/* Check that we are allowed to AutoFill this column or not */
 		var nTd = (e.target.nodeName.toLowerCase() == 'td') ? e.target : $(e.target).parents('td')[0];
@@ -672,7 +672,7 @@ AutoFill.prototype = {
 		{
 			filler.style.display = "none";
 			return;
-		***REMOVED***
+		}
 
 		if (e.type == 'mouseover')
 		{
@@ -680,18 +680,18 @@ AutoFill.prototype = {
 			this._fnFillerPosition( nTd );
 
 			filler.style.display = "block";
-		***REMOVED***
+		}
 		else if ( !e.relatedTarget || !e.relatedTarget.className.match(/AutoFill/) )
 		{
 			filler.style.display = "none";
-		***REMOVED***
-	***REMOVED***,
+		}
+	},
 
 
 	/**
 	 * Position the filler icon over a cell
 	 *  @method  _fnFillerPosition
-	 *  @param   {Node***REMOVED*** nTd Cell to position filler icon over
+	 *  @param   {Node} nTd Cell to position filler icon over
 	 *  @returns void
 	 */
 	"_fnFillerPosition": function ( nTd )
@@ -700,8 +700,8 @@ AutoFill.prototype = {
 		var filler = this.dom.filler;
 		filler.style.top = (offset.top - (this.s.filler.height / 2)-1 + $(nTd).outerHeight())+"px";
 		filler.style.left = (offset.left - (this.s.filler.width / 2)-1 + $(nTd).outerWidth())+"px";
-	***REMOVED***
-***REMOVED***;
+	}
+};
 
 
 // Alias for access
@@ -736,7 +736,7 @@ AutoFill.defaults = {
 	 *  * `either` - either one, but not both axis at the same time
 	 *  * `both`   - multiple cells allowed
 	 *
-	 * @type {string***REMOVED***
+	 * @type {string}
 	 * @default `y`
 	 */
 	mode: 'y',
@@ -751,7 +751,7 @@ AutoFill.defaults = {
 		/**
 		 * If AutoFill should be enabled on this column
 		 *
-		 * @type {boolean***REMOVED***
+		 * @type {boolean}
 		 * @default true
 		 */
 		enable: true,
@@ -760,7 +760,7 @@ AutoFill.defaults = {
 		 * Allow automatic increment / decrement on this column if a number
 		 * is found.
 		 *
-		 * @type {boolean***REMOVED***
+		 * @type {boolean}
 		 * @default true
 		 */
 		increment: true,
@@ -771,13 +771,13 @@ AutoFill.defaults = {
 		 * Default function will simply read the value from the HTML of the
 		 * cell.
 		 *
-		 * @type   {function***REMOVED***
-		 * @param  {node***REMOVED*** cell `th` / `td` element to read the value from
-		 * @return {string***REMOVED***    Data that has been read
+		 * @type   {function}
+		 * @param  {node} cell `th` / `td` element to read the value from
+		 * @return {string}    Data that has been read
 		 */
 		read: function ( cell ) {
 			return $(cell).html();
-		***REMOVED***,
+		},
 
 		/**
 		 * Cell write function
@@ -785,39 +785,39 @@ AutoFill.defaults = {
 		 * Default function will simply write to the HTML and tell the DataTable
 		 * to update.
 		 *
-		 * @type   {function***REMOVED***
-		 * @param  {node***REMOVED*** cell `th` / `td` element to write the value to
-		 * @return {string***REMOVED***    Data two write
+		 * @type   {function}
+		 * @param  {node} cell `th` / `td` element to write the value to
+		 * @return {string}    Data two write
 		 */
 		write: function ( cell, val ) {
 			var table = $(cell).parents('table');
 			if ( DataTable.Api ) {
 				// 1.10
 				table.DataTable().cell( cell ).data( val );
-			***REMOVED***
+			}
 			else {
 				// 1.9
 				var dt = table.dataTable();
 				var pos = dt.fnGetPosition( cell );
 				dt.fnUpdate( val, pos[0], pos[2], false );
-			***REMOVED***
-		***REMOVED***,
+			}
+		},
 
 		/**
 		 * Step function. This provides the ability to customise how the values
 		 * are incremented.
 		 *
-		 * @param  {node***REMOVED*** cell `th` / `td` element that is being operated upon
-		 * @param  {string***REMOVED*** read Cell value from `read` function
-		 * @param  {string***REMOVED*** last Value of the previous cell
-		 * @param  {integer***REMOVED*** i Loop counter
-		 * @param  {integer***REMOVED*** x Cell x-position in the current auto-fill. The
+		 * @param  {node} cell `th` / `td` element that is being operated upon
+		 * @param  {string} read Cell value from `read` function
+		 * @param  {string} last Value of the previous cell
+		 * @param  {integer} i Loop counter
+		 * @param  {integer} x Cell x-position in the current auto-fill. The
 		 *   starting cell is coordinate 0 regardless of its physical position
 		 *   in the DataTable.
-		 * @param  {integer***REMOVED*** y Cell y-position in the current auto-fill. The
+		 * @param  {integer} y Cell y-position in the current auto-fill. The
 		 *   starting cell is coordinate 0 regardless of its physical position
 		 *   in the DataTable.
-		 * @return {string***REMOVED*** Value to write
+		 * @return {string} Value to write
 		 */
 		step: function ( cell, read, last, i, x, y ) {
 			// Increment a number if it is found
@@ -825,31 +825,31 @@ AutoFill.defaults = {
 			var match = this.increment && last ? last.match(re) : null;
 			if ( match ) {
 				return last.replace( re, parseInt(match[1],10) + (x<0 || y<0 ? -1 : 1) );
-			***REMOVED***
+			}
 			return last === undefined ?
 				read :
 				last;
-		***REMOVED***
-	***REMOVED***
-***REMOVED***;
+		}
+	}
+};
 
 return AutoFill;
-***REMOVED***;
+};
 
 
 // Define as an AMD module if possible
 if ( typeof define === 'function' && define.amd ) {
 	define( ['jquery', 'datatables'], factory );
-***REMOVED***
+}
 else if ( typeof exports === 'object' ) {
     // Node/CommonJS
     factory( require('jquery'), require('datatables') );
-***REMOVED***
+}
 else if ( jQuery && !jQuery.fn.dataTable.AutoFill ) {
 	// Otherwise simply initialise as normal, stopping multiple evaluation
 	factory( jQuery, jQuery.fn.dataTable );
-***REMOVED***
+}
 
 
-***REMOVED***(window, document));
+}(window, document));
 

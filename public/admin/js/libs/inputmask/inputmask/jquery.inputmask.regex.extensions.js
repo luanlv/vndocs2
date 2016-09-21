@@ -7,7 +7,7 @@
 */
 !function(factory) {
     "function" == typeof define && define.amd ? define([ "jquery", "./jquery.inputmask" ], factory) : factory(jQuery);
-***REMOVED***(function($) {
+}(function($) {
     return $.extend($.inputmask.defaults.aliases, {
         Regex: {
             mask: "r",
@@ -15,11 +15,11 @@
             repeat: "*",
             regex: null,
             regexTokens: null,
-            tokenizer: /\[\^?]?(?:[^\\\]]+|\\[\S\s]?)*]?|\\(?:0(?:[0-3][0-7]{0,2***REMOVED***|[4-7][0-7]?)?|[1-9][0-9]*|x[0-9A-Fa-f]{2***REMOVED***|u[0-9A-Fa-f]{4***REMOVED***|c[A-Za-z]|[\S\s]?)|\((?:\?[:=!]?)?|(?:[?*+]|\{[0-9]+(?:,[0-9]*)?\***REMOVED***)\??|[^.?*+^${[()|\\]+|./g,
+            tokenizer: /\[\^?]?(?:[^\\\]]+|\\[\S\s]?)*]?|\\(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9][0-9]*|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|c[A-Za-z]|[\S\s]?)|\((?:\?[:=!]?)?|(?:[?*+]|\{[0-9]+(?:,[0-9]*)?\})\??|[^.?*+^${[()|\\]+|./g,
             quantifierFilter: /[0-9]+[^,]/,
             isComplete: function(buffer, opts) {
                 return new RegExp(opts.regex).test(buffer.join(""));
-          ***REMOVED***,
+            },
             definitions: {
                 r: {
                     validator: function(chrs, maskset, pos, strict, opts) {
@@ -28,8 +28,8 @@
                             this.quantifier = {
                                 min: 1,
                                 max: 1
-                          ***REMOVED***, this.repeaterPart = void 0;
-                      ***REMOVED***
+                            }, this.repeaterPart = void 0;
+                        }
                         function analyseRegex() {
                             var match, m, currentToken = new regexToken(), opengroups = [];
                             for (opts.regexTokens = []; match = opts.tokenizer.exec(opts.regex); ) switch (m = match[0], 
@@ -47,32 +47,32 @@
                               case "+":
                               case "*":
                                 var quantifierToken = new regexToken(!1, !0);
-                                m = m.replace(/[{***REMOVED***]/g, "");
+                                m = m.replace(/[{}]/g, "");
                                 var mq = m.split(","), mq0 = isNaN(mq[0]) ? mq[0] : parseInt(mq[0]), mq1 = 1 == mq.length ? mq0 : isNaN(mq[1]) ? mq[1] : parseInt(mq[1]);
                                 if (quantifierToken.quantifier = {
                                     min: mq0,
                                     max: mq1
-                              ***REMOVED***, opengroups.length > 0) {
+                                }, opengroups.length > 0) {
                                     var matches = opengroups[opengroups.length - 1].matches;
                                     if (match = matches.pop(), !match.isGroup) {
                                         var groupToken = new regexToken(!0);
                                         groupToken.matches.push(match), match = groupToken;
-                                  ***REMOVED***
+                                    }
                                     matches.push(match), matches.push(quantifierToken);
-                              ***REMOVED*** else {
+                                } else {
                                     if (match = currentToken.matches.pop(), !match.isGroup) {
                                         var groupToken = new regexToken(!0);
                                         groupToken.matches.push(match), match = groupToken;
-                                  ***REMOVED***
+                                    }
                                     currentToken.matches.push(match), currentToken.matches.push(quantifierToken);
-                              ***REMOVED***
+                                }
                                 break;
 
                               default:
                                 opengroups.length > 0 ? opengroups[opengroups.length - 1].matches.push(m) : currentToken.matches.push(m);
-                          ***REMOVED***
+                            }
                             currentToken.matches.length > 0 && opts.regexTokens.push(currentToken);
-                      ***REMOVED***
+                        }
                         function validateRegexToken(token, fromGroup) {
                             var isvalid = !1;
                             fromGroup && (regexPart += "(", openGroupCount++);
@@ -84,41 +84,41 @@
                                         for (;matchToken.repeaterPart && matchToken.repeaterPart != regexPart && matchToken.repeaterPart.length > regexPart.length && !(isvalid = validateRegexToken(matchGroup, !0)); ) ;
                                         isvalid = isvalid || validateRegexToken(matchGroup, !0), isvalid && (matchToken.repeaterPart = regexPart), 
                                         regexPart = regexPartBak + matchToken.quantifier.max;
-                                  ***REMOVED*** else {
+                                    } else {
                                         for (var i = 0, qm = matchToken.quantifier.max - 1; qm > i && !(isvalid = validateRegexToken(matchGroup, !0)); i++) ;
-                                        regexPart = regexPartBak + "{" + matchToken.quantifier.min + "," + matchToken.quantifier.max + "***REMOVED***";
-                                  ***REMOVED***
-                              ***REMOVED*** else if (void 0 != matchToken.matches) for (var k = 0; k < matchToken.length && !(isvalid = validateRegexToken(matchToken[k], fromGroup)); k++) ; else {
+                                        regexPart = regexPartBak + "{" + matchToken.quantifier.min + "," + matchToken.quantifier.max + "}";
+                                    }
+                                } else if (void 0 != matchToken.matches) for (var k = 0; k < matchToken.length && !(isvalid = validateRegexToken(matchToken[k], fromGroup)); k++) ; else {
                                     var testExp;
                                     if ("[" == matchToken.charAt(0)) {
                                         testExp = regexPart, testExp += matchToken;
                                         for (var j = 0; openGroupCount > j; j++) testExp += ")";
                                         var exp = new RegExp("^(" + testExp + ")$");
                                         isvalid = exp.test(bufferStr);
-                                  ***REMOVED*** else for (var l = 0, tl = matchToken.length; tl > l; l++) if ("\\" != matchToken.charAt(l)) {
+                                    } else for (var l = 0, tl = matchToken.length; tl > l; l++) if ("\\" != matchToken.charAt(l)) {
                                         testExp = regexPart, testExp += matchToken.substr(0, l + 1), testExp = testExp.replace(/\|$/, "");
                                         for (var j = 0; openGroupCount > j; j++) testExp += ")";
                                         var exp = new RegExp("^(" + testExp + ")$");
                                         if (isvalid = exp.test(bufferStr)) break;
-                                  ***REMOVED***
+                                    }
                                     regexPart += matchToken;
-                              ***REMOVED***
+                                }
                                 if (isvalid) break;
-                          ***REMOVED***
+                            }
                             return fromGroup && (regexPart += ")", openGroupCount--), isvalid;
-                      ***REMOVED***
+                        }
                         null == opts.regexTokens && analyseRegex();
                         var cbuffer = maskset.buffer.slice(), regexPart = "", isValid = !1, openGroupCount = 0;
                         cbuffer.splice(pos, 0, chrs);
                         for (var bufferStr = cbuffer.join(""), i = 0; i < opts.regexTokens.length; i++) {
                             var regexToken = opts.regexTokens[i];
                             if (isValid = validateRegexToken(regexToken, regexToken.isGroup)) break;
-                      ***REMOVED***
+                        }
                         return isValid;
-                  ***REMOVED***,
+                    },
                     cardinality: 1
-              ***REMOVED***
-          ***REMOVED***
-      ***REMOVED***
-  ***REMOVED***), $.fn.inputmask;
-***REMOVED***);
+                }
+            }
+        }
+    }), $.fn.inputmask;
+});

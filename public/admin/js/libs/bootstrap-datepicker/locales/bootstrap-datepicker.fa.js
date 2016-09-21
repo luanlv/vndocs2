@@ -13,5 +13,5 @@
 		clear: "پاک کن",
 		weekStart: 1,
 		format: "yyyy/mm/dd"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

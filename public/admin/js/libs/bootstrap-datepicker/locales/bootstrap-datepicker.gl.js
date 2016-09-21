@@ -7,5 +7,5 @@
 		monthsShort: ["Xan", "Feb", "Mar", "Abr", "Mai", "Xun", "Xul", "Ago", "Sep", "Out", "Nov", "Dec"],
 		today: "Hoxe",
 		clear: "Limpar"
-	***REMOVED***;
-***REMOVED***(jQuery));
+	};
+}(jQuery));

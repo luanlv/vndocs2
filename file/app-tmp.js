@@ -1,5 +1,5 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")***REMOVED***var f=n[o]={exports:{***REMOVED******REMOVED***;t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)***REMOVED***,f,f.exports,e,t,n,r)***REMOVED***return n[o].exports***REMOVED***var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s***REMOVED***)({1:[function(require,module,exports){
-var Main = Main || {***REMOVED***;
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var Main = Main || {};
 var fn = require('./core/_fn.msx');
 var data = require('./core/_data.msx');
 Main.Home = require('./main/home.msx');
@@ -12,146 +12,146 @@ data.token = $(document.getElementsByName("csrfToken")).val();
 $(document).ajaxSend(function(elm, xhr, s){
   if (s.type == "POST") {
     xhr.setRequestHeader('Csrf-Token', data.token);
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 Array.prototype.getItemByParam = function(paramPair) {
   var key = Object.keys(paramPair)[0];
-  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)***REMOVED***);
-***REMOVED***
+  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)});
+}
 
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,
   "/blog/:slug": Main.Article,
   "/category/:categorySlug": Main.Category
-***REMOVED***);
+});
 
 
 module.exports = Main;
 
-***REMOVED***,{"./core/_data.msx":11,"./core/_fn.msx":12,"./main/article.msx":14,"./main/category.msx":15,"./main/home.msx":16,"./main/post.msx":17***REMOVED***],2:[function(require,module,exports){
+},{"./core/_data.msx":11,"./core/_fn.msx":12,"./main/article.msx":14,"./main/category.msx":15,"./main/home.msx":16,"./main/post.msx":17}],2:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-  return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
+  return {tag: "div", attrs: {className:"main mh800"}, children: [
     ctrl.request.ready()?[
-      {tag: "div", attrs: {***REMOVED***, children: [
+      {tag: "div", attrs: {}, children: [
 
-        {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
-          {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
-            {tag: "h1", attrs: {***REMOVED***, children: [ctrl.article().article.title]***REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
-            {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+        {tag: "hr", attrs: {className:"style3"}}, 
+        {tag: "div", attrs: {className:"postWr"}, children: [
+          {tag: "div", attrs: {className:"postTitle"}, children: [
+            {tag: "h1", attrs: {}, children: [ctrl.article().article.title]}
+          ]}, 
+          {tag: "hr", attrs: {className:"style3"}}, 
+          {tag: "div", attrs: {className:"postInfo cf"}, children: [
+            {tag: "div", attrs: {className:"meta-data"}, children: [
               
-              {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.article().article.author]***REMOVED***, 
-              {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+              {tag: "span", attrs: {className:"upload"}, children: [ctrl.article().article.author]}, 
+              {tag: "span", attrs: {className:"category"}, children: [
                           ctrl.article().article.tags.map(function(el){
-                              return {tag: "a", attrs: {href:"javascript:void(0)"***REMOVED***, children: ["el"]***REMOVED***
-                          ***REMOVED***)
+                              return {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["el"]}
+                            })
                           
-                    ***REMOVED******REMOVED***, 
-              {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.article().article.time).format('L')]***REMOVED***
-          ***REMOVED******REMOVED***, 
+                      ]}, 
+              {tag: "span", attrs: {className:"time"}, children: [moment(ctrl.article().article.time).format('L')]}
+            ]}, 
             
-            {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-              {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.article().article.cover.id, alt:ctrl.article().article.cover.alt***REMOVED******REMOVED***]***REMOVED***
-          ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
-              {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [ctrl.article().article.nLike]***REMOVED***, 
+            {tag: "div", attrs: {className:"t-left"}, children: [
+              {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.article().article.cover.id, alt:ctrl.article().article.cover.alt}}]}
+            ]}, 
+            {tag: "div", attrs: {className:"t-right"}, children: [
+              {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
+              {tag: "div", attrs: {className:"rate-num"}, children: [ctrl.article().article.nLike]}, 
               {tag: "button", attrs: {className:"rate-button", 
                       onclick:function(el){
                         if(Window.user == undefined){
                           data.showSignin = true;
-                      ***REMOVED*** else {
+                        } else {
                           if (!ctrl.voted) {
                             $.ajax({
                               type: "POST",
                               url: "/blog/vote",
                               data: JSON.stringify({
                                 "id": ctrl.slug,
-                            ***REMOVED***),
+                              }),
                               contentType: "application/json",
                               dataType: "text",
                               success: function (res) {
                                 ctrl.article().article.nLike += 1;
                                 m.redraw();
-                            ***REMOVED***
-                          ***REMOVED***);
-                        ***REMOVED***
+                              }
+                            });
+                          }
                           ctrl.voted = true;
-                      ***REMOVED***
-                    ***REMOVED***
-            ***REMOVED***, children: ["+1"]***REMOVED***
-          ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
+                        }
+                      }
+              }, children: ["+1"]}
+            ]}
+          ]}, 
+          {tag: "hr", attrs: {className:"style3"}}, 
+          {tag: "div", attrs: {className:"postContent"}, children: [
             m.trust(marked(ctrl.article().article.body))
-        ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***,
-      {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
+          ]}
+        ]}
+      ]},
+      {tag: "hr", attrs: {className:"style3"}},
       Comments(ctrl, ctrl.article(), ctrl.slug, "article")
     
-  ***REMOVED***:[
-      {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
-        {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
-          {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
-  ***REMOVED***
+    ]:[
+      {tag: "div", attrs: {className:"loading"}, children: [
+        {tag: "div", attrs: {class:"loader"}, children: [
+          {tag: "div", attrs: {class:"inner one"}}, 
+          {tag: "div", attrs: {class:"inner two"}}, 
+          {tag: "div", attrs: {class:"inner three"}}
+        ]}
+      ]}
+    ]
     
-***REMOVED******REMOVED***
+  ]}
   
-***REMOVED***;
+};
 
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3***REMOVED***],3:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3}],3:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
 var Comments = function(ctrl, content, id, type){
   return [
-    {tag: "div", attrs: {id:"comment"***REMOVED***, children: [
+    {tag: "div", attrs: {id:"comment"}, children: [
     
-      {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
-              {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
-                {tag: "img", attrs: {src:(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL), class:"icon"***REMOVED******REMOVED***, 
-                {tag: "br", attrs: {***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {class:"comment commentBox"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"commentWr"}, children: [
+              {tag: "span", attrs: {class:"poster"}, children: [
+                {tag: "img", attrs: {src:(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL), class:"icon"}}, 
+                {tag: "br", attrs: {}}
+              ]}, 
+        {tag: "div", attrs: {class:"comment commentBox"}, children: [
                 {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
                           onclick:function(){
                             if(Window.user == undefined){
                               data.showSignin = true;
-                          ***REMOVED***
-                        ***REMOVED***, 
+                            }
+                          }, 
                           onchange:function(el){
                             ctrl.comment($(el.target).val());
                             console.log(ctrl.comment());
-                        ***REMOVED***
-              ***REMOVED***, children: [
+                          }
+                }, children: [
                   ctrl.comment()
-              ***REMOVED******REMOVED***, 
+                ]}, 
           (Window.user == undefined)?(
-            {tag: "span", attrs: {className:"notUser"***REMOVED***, children: [
+            {tag: "span", attrs: {className:"notUser"}, children: [
             "Chưa đăng nhập"
-          ***REMOVED******REMOVED***
-          ):({tag: "span", attrs: {className:"isUser"***REMOVED***, children: [
+            ]}
+          ):({tag: "span", attrs: {className:"isUser"}, children: [
             Window.user.fullName
-        ***REMOVED******REMOVED***), 
-          {tag: "span", attrs: {className:"submit"***REMOVED***, children: [
+          ]}), 
+          {tag: "span", attrs: {className:"submit"}, children: [
                   {tag: "a", attrs: {href:"javascript:void(0)", 
                      onclick:function(){
                        $.ajax({
@@ -160,158 +160,180 @@ var Comments = function(ctrl, content, id, type){
                          data: JSON.stringify({
                            "data" : ctrl.comment(),
                            "type" : type
-                       ***REMOVED***),
+                         }),
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
                            content.comments.unshift(res);
                            ctrl.comment('');
                            m.redraw();
-                       ***REMOVED***
-                     ***REMOVED***);
-                   ***REMOVED***
-                ***REMOVED***, children: [" Gửi "]***REMOVED***
-              ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***, 
+                         }
+                       });
+                     }
+                  }, children: [" Gửi "]}
+                ]}
+        ]}
+      ]}, 
     
     
     
       content.comments.map(function(el){
-        return {tag: "div", attrs: {className:"commentWr"***REMOVED***, children: [
-                {tag: "span", attrs: {class:"poster"***REMOVED***, children: [
-                  {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"***REMOVED******REMOVED***, 
-                  {tag: "br", attrs: {***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"comment"***REMOVED***, children: [
-                  {tag: "span", attrs: {class:"info"***REMOVED***, children: [
-                    {tag: "span", attrs: {className:"userName"***REMOVED***, children: [el.user.fullName]***REMOVED***, " Posted July 9th 2016, 01:04 AM", 
-                    {tag: "span", attrs: {class:"buttons"***REMOVED***
+        return {tag: "div", attrs: {className:"commentWr"}, children: [
+                {tag: "span", attrs: {class:"poster"}, children: [
+                  {tag: "img", attrs: {src:el.user.avatarURL, class:"icon"}}, 
+                  {tag: "br", attrs: {}}
+                ]}, 
+          {tag: "div", attrs: {class:"comment"}, children: [
+                  {tag: "span", attrs: {class:"info"}, children: [
+                    {tag: "span", attrs: {className:"userName"}, children: [el.user.fullName]}, " Posted July 9th 2016, 01:04 AM", 
+                    {tag: "span", attrs: {class:"buttons"}
                       
-                  ***REMOVED***
-                ***REMOVED******REMOVED***, 
+                    }
+                  ]}, 
             el.comment
-        ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED***)
+          ]}
+        ]}
+      })
   
   
-  ***REMOVED******REMOVED***
-***REMOVED***
-***REMOVED***;
+    ]}
+  ]
+};
 
 module.exports = Comments;
-***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],4:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12}],4:[function(require,module,exports){
 var Content = function(ctrl){
-  return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
+  return {tag: "div", attrs: {className:"main cf mh800"}, children: [
     ctrl.request.ready()?[
-      {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
-        {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: [
-          {tag: "span", attrs: {***REMOVED***, children: ["Lọc theo: "]***REMOVED***, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["Ngày đăng"]***REMOVED***, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["Rating"]***REMOVED***, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["Lượt xem"]***REMOVED***, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["Bình luận"]***REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***,
-      ctrl.posts().posts.map(function(el) {
-        return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
-          {tag: "div", attrs: {className:"title"***REMOVED***, children: [
-            {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-              {tag: "a", attrs: {href:"/post/" + el._id, 
-                 className:"title", 
-                 config:m.route
-            ***REMOVED***, children: [el.title]***REMOVED***
-          ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
-              {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [el.nLike]***REMOVED***
-          ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
-            {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
-            {tag: "span", attrs: {className:"category"***REMOVED***, children: [
-                      el.categories.map(function (item) {
-                        return {tag: "a", attrs: {href:"/category/" + item, 
-                                  config:m.route
-                      ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [(Window.categories.getItemByParam({slug: item***REMOVED***) == undefined)?(""):(Window.categories.getItemByParam({slug: item***REMOVED***).name)]***REMOVED***]***REMOVED***
-                    ***REMOVED***)
-                    ***REMOVED******REMOVED***, 
-            {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***, 
-            {tag: "span", attrs: {className:"nComment"***REMOVED***, children: [
-                    {tag: "a", attrs: {href:"/post/" + el._id + "#comment", 
-                       config:m.route
-                  ***REMOVED***, children: [el.nComment, " bình luận"]***REMOVED***
-                    
-              ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"info"***REMOVED***, children: [
-            {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
-            {tag: "p", attrs: {className:"description"***REMOVED***, children: [
-              (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
-          ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED***),
-      {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-      {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"sort roundbox", id:"top"}, children: [
+        {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"}, children: [
+          {tag: "span", attrs: {}, children: ["Lọc theo: "]}, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"}, children: ["Ngày đăng"]}, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"}, children: ["Rating"]}, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"}, children: ["Lượt xem"]}, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"}, children: ["Bình luận"]}
+        ]}
+      ]},
+      {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
         {tag: "button", attrs: {
-          onclick:function(){
-            ctrl.goPrev(ctrl.page)
-        ***REMOVED***
-      ***REMOVED***, children: ["PREV"]***REMOVED***, 
-        {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"***REMOVED******REMOVED***, 
+            onclick:function(){
+              ctrl.goPrev(ctrl.page)
+            }
+        }, children: ["PREV"]}, 
+        {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"}}, 
+        "/ ", Math.ceil(ctrl.posts().total/5), "  ", 
         {tag: "button", attrs: {
             onclick:function(){
               ctrl.goToPage($('#page').val())
-          ***REMOVED***
-      ***REMOVED***, children: [" Go"]***REMOVED***, 
+            }
+        }, children: [" Go"]}, 
         {tag: "button", attrs: {
             onclick:function(){
               ctrl.goNext(ctrl.page)
-          ***REMOVED***
-      ***REMOVED***, children: ["NEXT"]***REMOVED***
-    ***REMOVED******REMOVED***
+            }
+        }, children: ["NEXT"]}
+      ]},
+      {tag: "hr", attrs: {className:"style3", style:"margin-top: 45px;"}},
+      ctrl.posts().posts.map(function(el) {
+        return {tag: "div", attrs: {className:"block main-item"}, children: [
+          {tag: "div", attrs: {className:"title"}, children: [
+            {tag: "div", attrs: {className:"t-left"}, children: [
+              {tag: "a", attrs: {href:"/post/" + el._id, 
+                 className:"title", 
+                 config:m.route
+              }, children: [el.title]}
+            ]}, 
+            {tag: "div", attrs: {className:"t-right"}, children: [
+              {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
+              {tag: "div", attrs: {className:"rate-num"}, children: [el.nLike]}
+            ]}
+          ]}, 
+          {tag: "div", attrs: {className:"meta-data"}, children: [
+            {tag: "span", attrs: {className:"upload"}, children: [el.upload]}, 
+            {tag: "span", attrs: {className:"category"}, children: [
+                      el.categories.map(function (item) {
+                        return {tag: "a", attrs: {href:"/category/" + item, 
+                                  config:m.route
+                        }, children: [{tag: "span", attrs: {}, children: [(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)]}]}
+                      })
+                      ]}, 
+            {tag: "span", attrs: {className:"time"}, children: [moment(el.time).format('L')]}, 
+            {tag: "span", attrs: {className:"nComment"}, children: [
+                    {tag: "a", attrs: {href:"/post/" + el._id + "#comment", 
+                       config:m.route
+                    }, children: [el.nComment, " bình luận"]}
+                    
+                ]}
+          ]}, 
+          {tag: "div", attrs: {className:"info"}, children: [
+            {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt}}]}, 
+            {tag: "p", attrs: {className:"description"}, children: [
+              (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
+            ]}
+          ]}
+        ]}
+      }),
+     
+      {tag: "hr", attrs: {className:"style3"}},
+      {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
+        {tag: "button", attrs: {
+          onclick:function(){
+            ctrl.goPrev(ctrl.page)
+          }
+        }, children: ["PREV"]}, 
+        {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"}}, 
+        "/ ", Math.ceil(ctrl.posts().total/5), "  ", 
+        {tag: "button", attrs: {
+            onclick:function(){
+              ctrl.goToPage($('#page').val())
+            }
+        }, children: [" Go"]}, 
+        {tag: "button", attrs: {
+            onclick:function(){
+              ctrl.goNext(ctrl.page)
+            }
+        }, children: ["NEXT"]}
+      ]}
     
-  ***REMOVED***:[
-      {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
-        {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
-          {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
-  ***REMOVED***
+    ]:[
+      {tag: "div", attrs: {className:"loading"}, children: [
+        {tag: "div", attrs: {class:"loader"}, children: [
+          {tag: "div", attrs: {class:"inner one"}}, 
+          {tag: "div", attrs: {class:"inner two"}}, 
+          {tag: "div", attrs: {class:"inner three"}}
+        ]}
+      ]}
+    ]
   
   
-***REMOVED******REMOVED***
-***REMOVED***;
+  ]}
+};
 
 
 
 module.exports = Content;
-***REMOVED***,{***REMOVED***],5:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
 var Footer = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"footer"***REMOVED***, children: [
-      {tag: "div", attrs: {className:"container"***REMOVED***, children: [
+    {tag: "div", attrs: {className:"footer"}, children: [
+      {tag: "div", attrs: {className:"container"}, children: [
         "©2016 VnDocs.com"
-    ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***
-***REMOVED***
-***REMOVED***;
+      ]}
+    ]}
+  ]
+};
 
 module.exports = Footer;
-***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],6:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12}],6:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
 var Head = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"container"***REMOVED***, children: [
+    {tag: "div", attrs: {className:"container"}, children: [
        {tag: "span", attrs: {className:"menu-icon", 
              onclick:function(elem){
                var el = document.querySelectorAll('.menu')[0];
@@ -319,34 +341,34 @@ var Head = function(ctrl){
                fn.toggleClass(el, "menu-active");
                fn.toggleClass(el2, "menu-active");
                fn.toggleClass(elem.target, "menu-active");
-           ***REMOVED***
-     ***REMOVED******REMOVED***, 
-      {tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: [
-        {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***, 
+             }
+       }}, 
+      {tag: "a", attrs: {href:"/", config:m.route}, children: [
+        {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"}}
+      ]}, 
       {tag: "span", attrs: {className:"slogan orange", 
         config:function(el, isInited, context){
           if(!isInited){
             setInterval(function(){
               fn.toggleClass(el, 'orange');
-          ***REMOVED***, 300)
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]***REMOVED***, 
-      {tag: "div", attrs: {className:"free-logoWr"***REMOVED***, children: [
-        {tag: "img", attrs: {className:"free-logo", src:"/assets/images/100_free.png", alt:""***REMOVED******REMOVED***, 
-        {tag: "img", attrs: {className:"lookingfor", src:"/assets/images/lookingfor.png", alt:""***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***, 
+            }, 300)
+          }
+        }
+      }, children: ["Nơi chia sẻ tài liệu hoàn toàn miễn phí !"]}, 
+      {tag: "div", attrs: {className:"free-logoWr"}, children: [
+        {tag: "img", attrs: {className:"free-logo", src:"/assets/images/100_free.png", alt:""}}, 
+        {tag: "img", attrs: {className:"lookingfor", src:"/assets/images/lookingfor.png", alt:""}}
+      ]}, 
       
-      {tag: "div", attrs: {className:"shareWr"***REMOVED***, children: [
-        {tag: "img", attrs: {className:"share", src:"/assets/images/sharing-is-caring.png", alt:""***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***
-***REMOVED***
-***REMOVED***;
+      {tag: "div", attrs: {className:"shareWr"}, children: [
+        {tag: "img", attrs: {className:"share", src:"/assets/images/sharing-is-caring.png", alt:""}}
+      ]}
+    ]}
+  ]
+};
 
 module.exports = Head;
-***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],7:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12}],7:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 
@@ -357,339 +379,339 @@ var Login = function(ctrl){
            if ($('.wrapper-content:hover').length == 0) {
              data.showSignin = false;
              data.showSignup = false;
-         ***REMOVED***
-       ***REMOVED***, 
-         style:(!data.showSignin)?"display: none":""***REMOVED***, children: [
-      {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
-        {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
-          {tag: "h3", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***, 
-          {tag: "form", attrs: {action:"/signIn", method:"POST"***REMOVED***, children: [
-            {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                {tag: "label", attrs: {htmlFor:"email"***REMOVED***, children: ["Email : "]***REMOVED***
-            ***REMOVED******REMOVED***, 
-              {tag: "input", attrs: {type:"email", class:"user-email", id:"email", name:"email"***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                {tag: "label", attrs: {htmlFor:"password"***REMOVED***, children: ["Password : "]***REMOVED***
-            ***REMOVED******REMOVED***, 
-              {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {***REMOVED***, children: [
-              {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                {tag: "label", attrs: {htmlFor:"rememberMe"***REMOVED***, children: ["Remember me"]***REMOVED***
-            ***REMOVED******REMOVED***, 
-              {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***, 
-            {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {class:"logout"***REMOVED***, children: [
-              {tag: "div", attrs: {className:"label"***REMOVED***
-            ***REMOVED***, 
-              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"***REMOVED******REMOVED***, 
+           }
+         }, 
+         style:(!data.showSignin)?"display: none":""}, children: [
+      {tag: "div", attrs: {class:"wrapper"}, children: [
+        {tag: "div", attrs: {class:"wrapper-content"}, children: [
+          {tag: "h3", attrs: {}, children: ["Đăng nhập"]}, 
+          {tag: "form", attrs: {action:"/signIn", method:"POST"}, children: [
+            {tag: "div", attrs: {}, children: [
+              {tag: "div", attrs: {className:"label"}, children: [
+                {tag: "label", attrs: {htmlFor:"email"}, children: ["Email : "]}
+              ]}, 
+              {tag: "input", attrs: {type:"email", class:"user-email", id:"email", name:"email"}}
+            ]}, 
+            {tag: "div", attrs: {}, children: [
+              {tag: "div", attrs: {className:"label"}, children: [
+                {tag: "label", attrs: {htmlFor:"password"}, children: ["Password : "]}
+              ]}, 
+              {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"}}
+            ]}, 
+            {tag: "div", attrs: {}, children: [
+              {tag: "div", attrs: {className:"label"}, children: [
+                {tag: "label", attrs: {htmlFor:"rememberMe"}, children: ["Remember me"]}
+              ]}, 
+              {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"}}
+            ]}, 
+            {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token}}, 
+            {tag: "div", attrs: {class:"logout"}, children: [
+              {tag: "div", attrs: {className:"label"}
+              }, 
+              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"}}, 
   
-              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
-                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" "]***REMOVED***
-            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" "]}
+              ]}, 
               
-              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
-                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" "]***REMOVED***
-            ***REMOVED******REMOVED***
+              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" "]}
+              ]}
               
-          ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
-          {tag: "span", attrs: {className:"other"***REMOVED***, children: [
+            ]}
+          ]}, 
+          {tag: "div", attrs: {className:"label"}}, 
+          {tag: "span", attrs: {className:"other"}, children: [
             {tag: "a", attrs: {href:"#", class:"forgot-pass", 
               onclick:function(){
                 data.showSignin = false;
                 data.showSignup = true;
-            ***REMOVED***
-          ***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
-            {tag: "a", attrs: {href:"#", class:"forgot-pass"***REMOVED***, children: ["Quên mật khẩu?"]***REMOVED***
-        ***REMOVED******REMOVED***
+              }
+            }, children: ["Đăng ký"]}, 
+            {tag: "a", attrs: {href:"#", class:"forgot-pass"}, children: ["Quên mật khẩu?"]}
+          ]}
           
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***,
+        ]}
+      ]}
+    ]},
     {tag: "div", attrs: {className:"login-popup", 
          onclick:function(){
            if ($('.wrapper-content:hover').length == 0) {
              data.showSignin = false;
              data.showSignup = false;
-         ***REMOVED***
-       ***REMOVED***, 
-         style:(!data.showSignup)?"display: none":""***REMOVED***, children: [
-      {tag: "div", attrs: {class:"wrapper"***REMOVED***, children: [
-        {tag: "div", attrs: {class:"wrapper-content"***REMOVED***, children: [
-          {tag: "h3", attrs: {***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
-          {tag: "form", attrs: {action:"/signUp", method:"POST"***REMOVED***, children: [
-            {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token***REMOVED******REMOVED***, 
+           }
+         }, 
+         style:(!data.showSignup)?"display: none":""}, children: [
+      {tag: "div", attrs: {class:"wrapper"}, children: [
+        {tag: "div", attrs: {class:"wrapper-content"}, children: [
+          {tag: "h3", attrs: {}, children: ["Đăng ký"]}, 
+          {tag: "form", attrs: {action:"/signUp", method:"POST"}, children: [
+            {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token}}, 
               
-              {tag: "div", attrs: {class:"form-group  ", id:"firstName_field"***REMOVED***, children: [
-                {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                  {tag: "label", attrs: {htmlFor:"firstName"***REMOVED***, children: ["Họ : "]***REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "input", attrs: {type:"text", id:"firstName", name:"firstName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"First name"***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {class:"form-group  ", id:"firstName_field"}, children: [
+                {tag: "div", attrs: {className:"label"}, children: [
+                  {tag: "label", attrs: {htmlFor:"firstName"}, children: ["Họ : "]}
+                ]}, 
+                {tag: "input", attrs: {type:"text", id:"firstName", name:"firstName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"First name"}}
+              ]}, 
               
-              {tag: "div", attrs: {class:"form-group  ", id:"lastName_field"***REMOVED***, children: [
-                {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                  {tag: "label", attrs: {htmlFor:"lastName"***REMOVED***, children: ["Tên : "]***REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "input", attrs: {type:"text", id:"lastName", name:"lastName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Last name"***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {class:"form-group  ", id:"lastName_field"}, children: [
+                {tag: "div", attrs: {className:"label"}, children: [
+                  {tag: "label", attrs: {htmlFor:"lastName"}, children: ["Tên : "]}
+                ]}, 
+                {tag: "input", attrs: {type:"text", id:"lastName", name:"lastName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Last name"}}
+              ]}, 
               
-              {tag: "div", attrs: {class:"form-group  ", id:"email_field"***REMOVED***, children: [
-                {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                  {tag: "label", attrs: {htmlFor:"email"***REMOVED***, children: ["Email : "]***REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "input", attrs: {type:"text", id:"email", name:"email", value:"", class:"form-control form-control input-lg", placeholder:"Email"***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {class:"form-group  ", id:"email_field"}, children: [
+                {tag: "div", attrs: {className:"label"}, children: [
+                  {tag: "label", attrs: {htmlFor:"email"}, children: ["Email : "]}
+                ]}, 
+                {tag: "input", attrs: {type:"text", id:"email", name:"email", value:"", class:"form-control form-control input-lg", placeholder:"Email"}}
+              ]}, 
               
-              {tag: "section", attrs: {***REMOVED***, children: [
-                {tag: "div", attrs: {class:"form-group  ", id:"password_field"***REMOVED***, children: [
-                  {tag: "div", attrs: {className:"label"***REMOVED***, children: [
-                    {tag: "label", attrs: {htmlFor:"password"***REMOVED***, children: ["Mật khẩu : "]***REMOVED***
-                ***REMOVED******REMOVED***, 
-                  {tag: "input", attrs: {type:"password", id:"password", name:"password", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Password"***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
+              {tag: "section", attrs: {}, children: [
+                {tag: "div", attrs: {class:"form-group  ", id:"password_field"}, children: [
+                  {tag: "div", attrs: {className:"label"}, children: [
+                    {tag: "label", attrs: {htmlFor:"password"}, children: ["Mật khẩu : "]}
+                  ]}, 
+                  {tag: "input", attrs: {type:"password", id:"password", name:"password", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Password"}}
+                ]}
+              ]}, 
       
-              {tag: "div", attrs: {class:"form-group"***REMOVED***, children: [
-                {tag: "div", attrs: {***REMOVED***, children: [
-                  {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
-                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"***REMOVED***, children: ["Đăng ký"]***REMOVED***, 
-                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
-                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" "]***REMOVED***
-                ***REMOVED******REMOVED***, 
+              {tag: "div", attrs: {class:"form-group"}, children: [
+                {tag: "div", attrs: {}, children: [
+                  {tag: "div", attrs: {className:"label"}}, 
+                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"}, children: ["Đăng ký"]}, 
+                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" "]}
+                  ]}, 
   
-                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"***REMOVED***, children: [
-                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" "]***REMOVED***
-                ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
+                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" "]}
+                  ]}
+                ]}
                 
-            ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***, 
-          {tag: "div", attrs: {className:"label"***REMOVED******REMOVED***, 
-          {tag: "span", attrs: {className:"other"***REMOVED***, children: [
-            {tag: "span", attrs: {***REMOVED***, children: ["Đã có tài khoản? "]***REMOVED***, 
+              ]}
+          ]}, 
+          {tag: "div", attrs: {className:"label"}}, 
+          {tag: "span", attrs: {className:"other"}, children: [
+            {tag: "span", attrs: {}, children: ["Đã có tài khoản? "]}, 
             {tag: "a", attrs: {href:"#", class:"forgot-pass", 
               onclick:function(){
                 data.showSignin = true;
                 data.showSignup = false;
-            ***REMOVED***
-          ***REMOVED***, children: ["Đăng nhập"]***REMOVED***
-        ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***
-***REMOVED***
-***REMOVED***;
+              }
+            }, children: ["Đăng nhập"]}
+          ]}
+        ]}
+      ]}
+    ]}
+  ]
+};
 
 module.exports = Login;
-***REMOVED***,{"../core/_data.msx":11***REMOVED***],8:[function(require,module,exports){
+},{"../core/_data.msx":11}],8:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
 
 var Menu = function(ctrl){
     return [
-        {tag: "div", attrs: {className:"menu"***REMOVED***, children: [
-            {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+        {tag: "div", attrs: {className:"menu"}, children: [
+            {tag: "div", attrs: {className:"menubar"}, children: [
                 "Tài khoản"
-          ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {className:"login"***REMOVED***, children: [
+            ]}, 
+            {tag: "div", attrs: {className:"login"}, children: [
                 (data.user !== undefined)?(
-                    {tag: "div", attrs: {className:"userInfo"***REMOVED***, children: [
-                        {tag: "div", attrs: {className:"top"***REMOVED***, children: [
-                            {tag: "div", attrs: {className:"left"***REMOVED***, children: [
-                                {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"***REMOVED******REMOVED***
-                          ***REMOVED******REMOVED***, 
-                                {tag: "div", attrs: {className:"right"***REMOVED***, children: [
-                                {tag: "div", attrs: {***REMOVED***, children: ["Xin chào"]***REMOVED***, 
-                                {tag: "span", attrs: {***REMOVED***, children: [data.user.fullName]***REMOVED***
-                          ***REMOVED******REMOVED***
-                      ***REMOVED******REMOVED***, 
-                        {tag: "div", attrs: {className:"bot"***REMOVED***, children: [
-                            {tag: "a", attrs: {href:"/signOut?forward=" + m.route()***REMOVED***, children: ["Đăng xuất"]***REMOVED***
-                      ***REMOVED******REMOVED***
-                  ***REMOVED******REMOVED***
+                    {tag: "div", attrs: {className:"userInfo"}, children: [
+                        {tag: "div", attrs: {className:"top"}, children: [
+                            {tag: "div", attrs: {className:"left"}, children: [
+                                {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"}}
+                            ]}, 
+                                {tag: "div", attrs: {className:"right"}, children: [
+                                {tag: "div", attrs: {}, children: ["Xin chào"]}, 
+                                {tag: "span", attrs: {}, children: [data.user.fullName]}
+                            ]}
+                        ]}, 
+                        {tag: "div", attrs: {className:"bot"}, children: [
+                            {tag: "a", attrs: {href:"/signOut?forward=" + m.route()}, children: ["Đăng xuất"]}
+                        ]}
+                    ]}
                 ):(
-                    {tag: "div", attrs: {class:"login-box"***REMOVED***, children: [
-                        {tag: "div", attrs: {***REMOVED***, children: [{tag: "a", attrs: {href:"#", 
+                    {tag: "div", attrs: {class:"login-box"}, children: [
+                        {tag: "div", attrs: {}, children: [{tag: "a", attrs: {href:"#", 
                                 onclick:function(){
                                     data.showSignin = true;
                                     data.showSignup = false;
-                              ***REMOVED***
-                      ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: ["Đăng nhập"]***REMOVED***]***REMOVED***, " /", 
+                                }
+                        }, children: [{tag: "span", attrs: {}, children: ["Đăng nhập"]}]}, " /", 
                             {tag: "a", attrs: {href:"#", 
                                onclick:function(){
                                    data.showSignin = false;
                                    data.showSignup = true;
-                             ***REMOVED***
-                          ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [" Đăng ký"]***REMOVED***]***REMOVED***]***REMOVED***, 
-                        {tag: "span", attrs: {style:"width: 20px;"***REMOVED******REMOVED***, 
-                        {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Facebook"]***REMOVED***]***REMOVED***, 
-                        {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"***REMOVED***, children: [" ", {tag: "span", attrs: {***REMOVED***, children: [" Google"]***REMOVED***]***REMOVED***
-                  ***REMOVED******REMOVED***
+                               }
+                            }, children: [{tag: "span", attrs: {}, children: [" Đăng ký"]}]}]}, 
+                        {tag: "span", attrs: {style:"width: 20px;"}}, 
+                        {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Facebook"]}]}, 
+                        {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Google"]}]}
+                    ]}
                 )
     
-          ***REMOVED******REMOVED***, 
-            {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+            ]}, 
+            {tag: "hr", attrs: {className:"style1"}}, 
+            {tag: "div", attrs: {className:"menubar"}, children: [
                 "Menu"
-          ***REMOVED******REMOVED***, 
-            {tag: "div", attrs: {className:"list-menu"***REMOVED***, children: [
+            ]}, 
+            {tag: "div", attrs: {className:"list-menu"}, children: [
                 fn.runCreateMenu(JSON.parse(Window.menu), 1)
-          ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***
-  ***REMOVED***;
-***REMOVED***;
+            ]}
+        ]}
+    ];
+};
 
 
 
 
 module.exports = Menu;
-***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],9:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12}],9:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
 var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-    return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
+    return {tag: "div", attrs: {className:"main mh800"}, children: [
       ctrl.request.ready()?[
-         {tag: "div", attrs: {***REMOVED***, children: [
-           {tag: "span", attrs: {className:"breadcrumb"***REMOVED***, children: [
+         {tag: "div", attrs: {}, children: [
+           {tag: "span", attrs: {className:"breadcrumb"}, children: [
              fn.buildBreadcrumb(Window.urls, Window.categories,ctrl.post().post.categories[0], []), 
              ctrl.post().post.title
-         ***REMOVED******REMOVED***, 
+           ]}, 
            
-           {tag: "br", attrs: {***REMOVED******REMOVED***, 
-           {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-           {tag: "div", attrs: {className:"postWr"***REMOVED***, children: [
-             {tag: "div", attrs: {className:"postTitle"***REMOVED***, children: [
-               {tag: "h1", attrs: {***REMOVED***, children: [ctrl.post().post.title]***REMOVED***
-           ***REMOVED******REMOVED***, 
-             {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-             {tag: "div", attrs: {className:"postInfo cf"***REMOVED***, children: [
-               {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+           {tag: "br", attrs: {}}, 
+           {tag: "hr", attrs: {className:"style3"}}, 
+           {tag: "div", attrs: {className:"postWr"}, children: [
+             {tag: "div", attrs: {className:"postTitle"}, children: [
+               {tag: "h1", attrs: {}, children: [ctrl.post().post.title]}
+             ]}, 
+             {tag: "hr", attrs: {className:"style3"}}, 
+             {tag: "div", attrs: {className:"postInfo cf"}, children: [
+               {tag: "div", attrs: {className:"meta-data"}, children: [
         
-                 {tag: "span", attrs: {className:"upload"***REMOVED***, children: [ctrl.post().post.upload]***REMOVED***, 
-                 {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+                 {tag: "span", attrs: {className:"upload"}, children: [ctrl.post().post.upload]}, 
+                 {tag: "span", attrs: {className:"category"}, children: [
                      ctrl.post().post.categories.map(function (item) {
                          return {tag: "a", attrs: {href:"/category/" + item, 
                                    config:m.route
-                       ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [Window.categories.getItemByParam({slug: item***REMOVED***).name]***REMOVED***]***REMOVED***
-                   ***REMOVED***)
-                    ***REMOVED******REMOVED***, 
-                 {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(ctrl.post().post.time).format('L')]***REMOVED***
-             ***REMOVED******REMOVED***, 
+                         }, children: [{tag: "span", attrs: {}, children: [Window.categories.getItemByParam({slug: item}).name]}]}
+                     })
+                      ]}, 
+                 {tag: "span", attrs: {className:"time"}, children: [moment(ctrl.post().post.time).format('L')]}
+               ]}, 
       
-               {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-                 {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post().post.cover.id, alt:ctrl.post().post.cover.alt***REMOVED******REMOVED***]***REMOVED***
-             ***REMOVED******REMOVED***, 
-               {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
-                 {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                 {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [ctrl.post().post.nLike]***REMOVED***, 
+               {tag: "div", attrs: {className:"t-left"}, children: [
+                 {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post().post.cover.id, alt:ctrl.post().post.cover.alt}}]}
+               ]}, 
+               {tag: "div", attrs: {className:"t-right"}, children: [
+                 {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
+                 {tag: "div", attrs: {className:"rate-num"}, children: [ctrl.post().post.nLike]}, 
                  {tag: "button", attrs: {className:"rate-button", 
                     onclick:function(el){
                         if(Window.user == undefined){
                             data.showSignin = true;
-                      ***REMOVED*** else {
+                        } else {
                             if(!ctrl.voted) {
                                 $.ajax({
                                     type: "POST",
                                     url: "/post/vote",
                                     data: JSON.stringify({
                                         "id": ctrl.postID,
-                                  ***REMOVED***),
+                                    }),
                                     contentType: "application/json",
                                     dataType: "text",
                                     success: function (res) {
                                         ctrl.post().post.nLike += 1;
                                         m.redraw();
-                                  ***REMOVED***
-                              ***REMOVED***);
+                                    }
+                                });
                                 ctrl.voted = true;
-                          ***REMOVED***
-                      ***REMOVED***
-                  ***REMOVED***
-               ***REMOVED***, children: ["+1"]***REMOVED***
-             ***REMOVED******REMOVED***
-           ***REMOVED******REMOVED***, 
-             {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***, 
-             {tag: "div", attrs: {className:"postContent"***REMOVED***, children: [
+                            }
+                        }
+                    }
+                 }, children: ["+1"]}
+               ]}
+             ]}, 
+             {tag: "hr", attrs: {className:"style3"}}, 
+             {tag: "div", attrs: {className:"postContent"}, children: [
                m.trust(marked(ctrl.post().post.content))
-           ***REMOVED******REMOVED***
-         ***REMOVED******REMOVED***
-       ***REMOVED******REMOVED***,
-          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
+             ]}
+           ]}
+         ]},
+          {tag: "hr", attrs: {className:"style3"}},
           Comments(ctrl, ctrl.post(), ctrl.postID, "post")
           
-    ***REMOVED***:[
-          {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***
-        ***REMOVED******REMOVED***
-    ***REMOVED***
+      ]:[
+          {tag: "div", attrs: {className:"loading"}, children: [
+              {tag: "div", attrs: {class:"loader"}, children: [
+                  {tag: "div", attrs: {class:"inner one"}}, 
+                  {tag: "div", attrs: {class:"inner two"}}, 
+                  {tag: "div", attrs: {class:"inner three"}}
+              ]}
+          ]}
+      ]
       
-  ***REMOVED******REMOVED***
+    ]}
       
-***REMOVED***;
+};
 
 
 
 module.exports = PostView;
-***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3***REMOVED***],10:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3}],10:[function(require,module,exports){
 var data = require('../core/_data.msx');
 
 var Side = function(ctrl){
-    return [{tag: "div", attrs: {className:"side mh1000"***REMOVED***, children: [
-        {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+    return [{tag: "div", attrs: {className:"side mh1000"}, children: [
+        {tag: "div", attrs: {className:"menubar"}, children: [
             "Tìm kiếm"
-      ***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"search cf"***REMOVED***, children: [
-            {tag: "form", attrs: {class:"search-form"***REMOVED***, children: [
-                {tag: "div", attrs: {class:"search-field-container"***REMOVED***, children: [
-                    {tag: "input", attrs: {type:"text", class:"search-field", placeholder:"Tìm kiếm..."***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
-          ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+        ]}, 
+        {tag: "div", attrs: {className:"search cf"}, children: [
+            {tag: "form", attrs: {class:"search-form"}, children: [
+                {tag: "div", attrs: {class:"search-field-container"}, children: [
+                    {tag: "input", attrs: {type:"text", class:"search-field", placeholder:"Tìm kiếm..."}}
+                ]}
+            ]}
+        ]}, 
+        {tag: "hr", attrs: {className:"style1"}}, 
+        {tag: "div", attrs: {className:"menubar"}, children: [
             "Fanpage website"
-      ***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {style:"height: 135px; margin-top: 10px;"***REMOVED***, children: [
-            {tag: "iframe", attrs: {src:"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvndocs&tabs&width=190&height=136&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=695740397243976", width:"190", height:"136", style:"border:none;overflow:hidden", scrolling:"no", frameborder:"0", allowTransparency:"true"***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***, 
-        {tag: "hr", attrs: {className:"style1"***REMOVED******REMOVED***, 
-        {tag: "div", attrs: {className:"menubar"***REMOVED***, children: [
+        ]}, 
+        {tag: "div", attrs: {style:"height: 135px; margin-top: 10px;"}, children: [
+            {tag: "iframe", attrs: {src:"https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvndocs&tabs&width=190&height=136&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=695740397243976", width:"190", height:"136", style:"border:none;overflow:hidden", scrolling:"no", frameborder:"0", allowTransparency:"true"}}
+        ]}, 
+        {tag: "hr", attrs: {className:"style1"}}, 
+        {tag: "div", attrs: {className:"menubar"}, children: [
             "Hướng dẫn/Chia sẻ"
-      ***REMOVED******REMOVED***, 
-        {tag: "ul", attrs: {className:"side-article"***REMOVED***, children: [
+        ]}, 
+        {tag: "ul", attrs: {className:"side-article"}, children: [
             Window.articles.map(function(el){
-                return {tag: "li", attrs: {***REMOVED***, children: [
-                    {tag: "span", attrs: {***REMOVED***, children: [
+                return {tag: "li", attrs: {}, children: [
+                    {tag: "span", attrs: {}, children: [
                         {tag: "a", attrs: {href:"/blog/" + el._id, 
                             config:m.route
-                      ***REMOVED***, children: [
+                        }, children: [
                             el.title
-                      ***REMOVED******REMOVED***
-                  ***REMOVED******REMOVED***
-              ***REMOVED******REMOVED***
-          ***REMOVED***)
-      ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***,
+                        ]}
+                    ]}
+                ]}
+            })
+        ]}
+    ]},
     
-  ***REMOVED***
-***REMOVED***;
+    ]
+};
 
 module.exports = Side;
-***REMOVED***,{"../core/_data.msx":11***REMOVED***],11:[function(require,module,exports){
-var Data = {***REMOVED***;
+},{"../core/_data.msx":11}],11:[function(require,module,exports){
+var Data = {};
 
 Data.showSignin = false;
 Data.showSignup = false;
@@ -698,11 +720,11 @@ Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
 if(Window.user !== undefined) {
   Data.user = Window.user;
   console.log(Data.user)
-***REMOVED***
+}
 
 module.exports = Data;
-***REMOVED***,{***REMOVED***],12:[function(require,module,exports){
-var fn ={***REMOVED***;
+},{}],12:[function(require,module,exports){
+var fn ={};
 
 
 fn.cache = undefined;
@@ -715,107 +737,129 @@ fn.checkMenu = function(link){
     var partLink = link.replace('https://', '').replace('http://', '').split('/');
     if(!(partLink[1] === "c" || partLink[1] === "p")){
         return false;
-  ***REMOVED***
+    }
     for(var i = 2; i < partLink.length; i++){
         if(partLink[i] != partRoute[i]){
             result = false;
-      ***REMOVED***
-  ***REMOVED***
+        }
+    }
     return result;
-***REMOVED***;
+};
 
 fn.createMenu = function(menuJson, level){
     return m('ul.level' + level, [
         menuJson.map(function(child){
             return m('li',  [
-                m('a', {title: child.title, href: child.http, config: m.route***REMOVED*** ,m('span', child.title)),
-                (level > 1 )?{tag: "sup", attrs: {className:"norm"***REMOVED***, children: ["6431"]***REMOVED***:"",
+                m('a', {title: child.title, href: child.http, config: m.route} ,m('span', child.title)),
+                (level > 1 )?{tag: "sup", attrs: {className:"norm"}, children: ["6431"]}:"",
                 (child.children !== undefined)?fn.createMenu(child.children, level + 1):''
-          ***REMOVED***)
-      ***REMOVED***)
-  ***REMOVED***)
-***REMOVED***;
+            ])
+        })
+    ])
+};
 
 fn.runCreateMenu = function(menuJson, level){
 
     if(fn.cache !== undefined){
         return fn.cache;
-  ***REMOVED*** else {
+    } else {
         if(menuJson !== undefined) {
             fn.cache = fn.createMenu(menuJson, level);
             return fn.cache;
-      ***REMOVED***
-  ***REMOVED***
-***REMOVED***;
+        }
+    }
+};
 
 
 fn.toggleClass =  function(el, className){
     if(el.classList){
         if(el.classList.contains(className)) {
             el.classList.remove(className);
-      ***REMOVED*** else {
+        } else {
             el.classList.add(className);
-      ***REMOVED***
+        }
 
-  ***REMOVED*** else {
+    } else {
         el.className += ' ' + className;
-  ***REMOVED***
-***REMOVED***;
+    }
+};
 
 fn.requestWithFeedback = function(args, bind, fn) {
     var data = m.prop();
     var completed = m.prop(false);
     var complete = function() {
         completed(true)
-  ***REMOVED***;
+    };
     args.background = true;
     args.config = function(xhr) {
         xhr.timeout = 4000;
         xhr.ontimeout = function() {
             complete();
             m.redraw();
-      ***REMOVED***
-  ***REMOVED***;
+        }
+    };
     return {
         request: m.request(args).then(data).then(function(data){
             if(bind !== undefined) bind(data);
             if(fn !== undefined) fn();
             complete();
             m.redraw();
-      ***REMOVED***),
+        }),
         data: data,
         ready: completed
-  ***REMOVED***
-***REMOVED***;
+    }
+};
 
 fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     if(currentCategory === "NONE") {
-        result.push(" » " ,{tag: "a", attrs: {href:"/", config:m.route***REMOVED***, children: ["Trang chủ"]***REMOVED*** );
+        result.push(" » " ,{tag: "a", attrs: {href:"/", config:m.route}, children: ["Trang chủ"]} );
         return result.reverse();
-  ***REMOVED***
-    var jsonCategory = category.getItemByParam({slug: currentCategory***REMOVED***);
-    result.push(" » " ,{tag: "a", attrs: {href:"/category/" + currentCategory, config:m.route***REMOVED***, children: [" ", jsonCategory.name, " "]***REMOVED***);
+    }
+    var jsonCategory = category.getItemByParam({slug: currentCategory});
+    result.push(" » " ,{tag: "a", attrs: {href:"/category/" + currentCategory, config:m.route}, children: [" ", jsonCategory.name, " "]});
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
-***REMOVED***;
+};
 
-fn.changeUrl = function(title, url) {
-    if (typeof (history.pushState) != "undefined") {
-        var obj = { Title: title, Url: url ***REMOVED***;
-        history.pushState(obj, obj.Title, obj.Url);
-  ***REMOVED*** else {
-        alert("Browser does not support HTML5.");
-  ***REMOVED***
-***REMOVED***
+fn.changePageUrl = function(title, pageOld, pageNew, id) {
+    if(m.route().indexOf("?p=") >=0){
+        var Old = "?p=" + pageOld;
+        var New = "?p=" + pageNew;
+        var newUrl = m.route().replace(Old, New);
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Title: title, Url: newUrl };
+            history.pushState(obj, obj.Title, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    } else {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Title: title, Url:  m.route()+"?p=" + pageNew };
+            history.pushState(obj, obj.Title, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
+    
+    if(id != undefined){
+        console.log('scroll to ID:' + id);
+        scroll(id);
+    }
+};
+
+function scroll(element){
+    var ele = document.getElementById(element);
+    window.scrollTo(ele.offsetLeft,ele.offsetTop);
+}
 
 module.exports = fn;
-***REMOVED***,{***REMOVED***],13:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 window.mobilecheck = function() {
   var check = false;
-  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;***REMOVED***)(navigator.userAgent||navigator.vendor||window.opera);
+  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
   return check;
-***REMOVED***;
+};
 
 window.isMobile = window.mobilecheck();
 
@@ -837,8 +881,8 @@ window.Main = require('./_main.msx');
 
 
 
-***REMOVED***,{"./_main.msx":1***REMOVED***],14:[function(require,module,exports){
-var Post = {***REMOVED***;
+},{"./_main.msx":1}],14:[function(require,module,exports){
+var Post = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -853,25 +897,25 @@ Post.controller = function(){
   
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     Data.sessionstorage.set( 'url' , "/" );
-***REMOVED***
+  }
   
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
-***REMOVED***;
+  };
   ctrl.slug =  m.route.param("slug");
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.article = m.prop({***REMOVED***);
+  ctrl.article = m.prop({});
   ctrl.comment = m.prop("");
   ctrl.voted = false;
   
   if(Window.article === undefined) {
     console.log("run request !!!!!!!!!!")
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/blog/get/" + ctrl.slug***REMOVED***, ctrl.article, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/blog/get/" + ctrl.slug}, ctrl.article, ctrl.setup);
+  } else {
     // ctrl.request.data = m.prop(Window.post);
     ctrl.article().article = Window.article;
     ctrl.article().comments = Window.comments;
@@ -879,39 +923,39 @@ Post.controller = function(){
     Window.comments = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     // ctrl.post(ctrl.request.data());
     console.log(ctrl.article());
     m.redraw();
-***REMOVED***;
+  };
   
-***REMOVED***;
+};
 
 Post.view = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+    {tag: "div", attrs: {className:"headWr "}, children: [
       Head(ctrl)
-  ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
+    ]},
+    {tag: "div", attrs: {className:"container containerBor"}, children: [
           
-      {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"bodyWr"}, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "}, children: [
           ArticleView(ctrl), 
           Side(ctrl)
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
+        ]}
+      ]}
     
-  ***REMOVED******REMOVED***,
+    ]},
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Post;
-***REMOVED***,{"../component/_article.msx":2,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],15:[function(require,module,exports){
-var Category = {***REMOVED***;
+},{"../component/_article.msx":2,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12}],15:[function(require,module,exports){
+var Category = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -925,57 +969,57 @@ var Footer = require('../component/_footer.msx');
 Category.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     Data.sessionstorage.set( 'url' , "/" );
-***REMOVED***
+  }
   
   var ctrl = this;
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop();
   ctrl.categorySlug =  m.route.param("categorySlug");
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"***REMOVED***, ctrl.posts, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"}, ctrl.posts, ctrl.setup);
+  } else {
     ctrl.request.data = m.prop(Window.posts);
     ctrl.posts(ctrl.request.data());
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     ctrl.posts(ctrl.request.data());
     m.redraw();
-***REMOVED***;
+  };
   
 
-***REMOVED***;
+};
 
 Category.view = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+    {tag: "div", attrs: {className:"headWr "}, children: [
       Head(ctrl)
-  ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
+    ]},
+    {tag: "div", attrs: {className:"container containerBor"}, children: [
            
-      {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"bodyWr"}, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "}, children: [
           Content(ctrl), 
           Side(ctrl)
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
+        ]}
+      ]}
     
-  ***REMOVED******REMOVED***,
+    ]},
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Category;
-***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],16:[function(require,module,exports){
-var Home = {***REMOVED***;
+},{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12}],16:[function(require,module,exports){
+var Home = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -989,83 +1033,84 @@ var Footer = require('../component/_footer.msx');
 Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     if(Data.sessionstorage.get( 'url' ) != "/" ){
-      console.log("=================================");
       console.log(Data.sessionstorage.get( 'url' ));
       m.route(Data.sessionstorage.get( 'url' ))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   
   
   var ctrl = this;
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop({***REMOVED***);
+  ctrl.posts = m.prop({});
   ctrl.posts().total = 1;
   ctrl.articles = Window.articles;
-  ctrl.page = 1;
+  ctrl.page = (m.route.param("p") == undefined)?(1):(parseInt(m.route.param("p")));
   
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page***REMOVED***, ctrl.posts, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page}, ctrl.posts, ctrl.setup);
+  } else {
     ctrl.request.data = m.prop(Window.posts);
     ctrl.posts().posts=ctrl.request.data();
-    ctrl.posts().total = Math.ceil(Window.totalPosts/5);
+    ctrl.posts().total = Window.totalPosts;
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     // ctrl.posts(ctrl.request.data());
     m.redraw();
-***REMOVED***;
+  };
   
   ctrl.goToPage = function(page){
-    if(page >= 1 && page <= ctrl.posts().total) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page***REMOVED***, ctrl.posts, ctrl.setup);
+    if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
       ctrl.page = page;
-      fn.changeUrl("Page 1", m.route() + "?page=" + ctrl.page)
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
   ctrl.goPrev = function(page){
     if(page > 1) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
       ctrl.page = page-1;
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   ctrl.goNext = function(page){
-    if(page < ctrl.posts().total) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)***REMOVED***, ctrl.posts, ctrl.setup);
+    if(page < Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
       ctrl.page = page+1;
-  ***REMOVED***
-***REMOVED***
-***REMOVED***;
+    }
+  }
+};
 
 Home.view = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+    {tag: "div", attrs: {className:"headWr "}, children: [
       Head(ctrl)
-  ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
+    ]},
+    {tag: "div", attrs: {className:"container containerBor"}, children: [
       
-      {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"bodyWr"}, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "}, children: [
           Content(ctrl), 
           Side(ctrl)
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
-  ***REMOVED******REMOVED***,
+        ]}
+      ]}
+    ]},
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Home;
-***REMOVED***,{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],17:[function(require,module,exports){
-var Post = {***REMOVED***;
+},{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12}],17:[function(require,module,exports){
+var Post = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
 var Data = require('../core/_data.msx');
@@ -1079,25 +1124,25 @@ Post.controller = function(){
   
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-***REMOVED*** else {
+  } else {
     Data.sessionstorage.set( 'url' , "/" );
-***REMOVED***
+  }
   
   var ctrl = this;
   ctrl.setup = function(){
     m.redraw();
-***REMOVED***;
+  };
   ctrl.postID =  m.route.param("postID");
-  ctrl.request = {***REMOVED***;
+  ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.post = m.prop({***REMOVED***);
+  ctrl.post = m.prop({});
   ctrl.comment = m.prop("");
   ctrl.voted = false;
   
   if(Window.post === undefined) {
     console.log("run request !!!!!!!!!!")
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID***REMOVED***, ctrl.post, ctrl.setup);
-***REMOVED*** else {
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID}, ctrl.post, ctrl.setup);
+  } else {
     // ctrl.request.data = m.prop(Window.post);
     ctrl.post().post = Window.post;
     ctrl.post().comments = Window.comments;
@@ -1105,34 +1150,34 @@ Post.controller = function(){
     Window.comments = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
-***REMOVED***;
+  };
   ctrl.setup = function(){
     // ctrl.post(ctrl.request.data());
     console.log(ctrl.post());
     m.redraw();
-***REMOVED***;
-***REMOVED***;
+  };
+};
 
 Post.view = function(ctrl){
   return [
-    {tag: "div", attrs: {className:"headWr "***REMOVED***, children: [
+    {tag: "div", attrs: {className:"headWr "}, children: [
       Head(ctrl)
-  ***REMOVED******REMOVED***,
-    {tag: "div", attrs: {className:"container containerBor"***REMOVED***, children: [
+    ]},
+    {tag: "div", attrs: {className:"container containerBor"}, children: [
    
-      {tag: "div", attrs: {className:"bodyWr"***REMOVED***, children: [
+      {tag: "div", attrs: {className:"bodyWr"}, children: [
         Menu(ctrl), 
-        {tag: "div", attrs: {className:"content "***REMOVED***, children: [
+        {tag: "div", attrs: {className:"content "}, children: [
           PostView(ctrl), 
           Side(ctrl)
-      ***REMOVED******REMOVED***
-    ***REMOVED******REMOVED***
+        ]}
+      ]}
     
-  ***REMOVED******REMOVED***,
+    ]},
     Login(ctrl),
     Footer(ctrl)
-***REMOVED***
-***REMOVED***;
+  ]
+};
 
 module.exports =  Post;
-***REMOVED***,{"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_post.msx":9,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***]***REMOVED***,{***REMOVED***,[13])
+},{"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_post.msx":9,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12}]},{},[13])

@@ -1,6 +1,6 @@
 html {
   //font-size:62.5%;
-***REMOVED***
+}
 
 body {
   margin:0;
@@ -9,44 +9,44 @@ body {
   @include rem("font-size", $regularSize);
   font-family:$helvetica;
   line-height:1.3;
-***REMOVED***
+}
 
 ul {
   list-style:none;
   margin:0;
   padding:0;
-***REMOVED***
+}
 
 ul li {
   margin:0;
   padding:0;
-***REMOVED***
+}
 
 ol {
   margin:0;
   padding:0;
-***REMOVED***
+}
 p {
   padding:0;
   @include rem("margin", 0, 0, 5, 0);
-***REMOVED***
+}
 
 h1, h2, h3, h4, h5, h6 {
   padding:0;
   @include rem("margin", 0, 0, 10, 0);
   font-weight: normal;
-***REMOVED***
+}
 
 fieldset {
   border:none;
   margin:0;
   padding:0;
-***REMOVED***
+}
 
 button {
   cursor:pointer;
-***REMOVED***
+}
 
 %clearfix {
   @include clearfix();
-***REMOVED***
+}

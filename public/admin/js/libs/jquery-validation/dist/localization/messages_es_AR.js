@@ -1,10 +1,10 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery", "../jquery.validate"], factory );
-	***REMOVED*** else {
+	} else {
 		factory( jQuery );
-	***REMOVED***
-***REMOVED***(function( $ ) {
+	}
+}(function( $ ) {
 
 /*
  * Translated default messages for the jQuery validation plugin.
@@ -23,15 +23,15 @@ $.extend($.validator.messages, {
 	creditcard: "Por favor, escribí un número de tarjeta válido.",
 	equalTo: "Por favor, escribí el mismo valor de nuevo.",
 	extension: "Por favor, escribí un valor con una extensión aceptada.",
-	maxlength: $.validator.format("Por favor, no escribas más de {0***REMOVED*** caracteres."),
-	minlength: $.validator.format("Por favor, no escribas menos de {0***REMOVED*** caracteres."),
-	rangelength: $.validator.format("Por favor, escribí un valor entre {0***REMOVED*** y {1***REMOVED*** caracteres."),
-	range: $.validator.format("Por favor, escribí un valor entre {0***REMOVED*** y {1***REMOVED***."),
-	max: $.validator.format("Por favor, escribí un valor menor o igual a {0***REMOVED***."),
-	min: $.validator.format("Por favor, escribí un valor mayor o igual a {0***REMOVED***."),
+	maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
+	minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+	rangelength: $.validator.format("Por favor, escribí un valor entre {0} y {1} caracteres."),
+	range: $.validator.format("Por favor, escribí un valor entre {0} y {1}."),
+	max: $.validator.format("Por favor, escribí un valor menor o igual a {0}."),
+	min: $.validator.format("Por favor, escribí un valor mayor o igual a {0}."),
 	nifES: "Por favor, escribí un NIF válido.",
 	nieES: "Por favor, escribí un NIE válido.",
 	cifES: "Por favor, escribí un CIF válido."
-***REMOVED***);
+});
 
-***REMOVED***));
+}));

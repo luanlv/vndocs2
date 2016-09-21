@@ -2,9 +2,9 @@ package controllers
 
 import java.io.File
 import java.util.UUID
-import javax.inject.{ Inject, Singleton ***REMOVED***
+import javax.inject.{ Inject, Singleton }
 
-import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette ***REMOVED***
+import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette }
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
@@ -14,15 +14,15 @@ import models._
 import models.services._
 import org.apache.commons.io.FilenameUtils
 import org.joda.time.DateTime
-import play.api.libs.json.{ JsObject, JsValue, Json ***REMOVED***
-import utils.silhouette.{ AuthController, MyEnv, WithService ***REMOVED***
+import play.api.libs.json.{ JsObject, JsValue, Json }
+import utils.silhouette.{ AuthController, MyEnv, WithService }
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
 //import com.sksamuel.scrimage.nio.JpegWriter
-import play.api.i18n.{ I18nSupport, MessagesApi ***REMOVED***
+import play.api.i18n.{ I18nSupport, MessagesApi }
 import play.api.libs.iteratee.Enumerator
-import play.api.libs.ws.{ WS, WSClient ***REMOVED***
-import play.api.mvc.{ Action, Controller ***REMOVED***
+import play.api.libs.ws.{ WS, WSClient }
+import play.api.mvc.{ Action, Controller }
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
@@ -57,10 +57,10 @@ class Admin @Inject() (
     //    println("==========================" + request.identity.email)
     if (request.identity.email.getOrElse("") == "admin@vndocs.com") {
       Future.successful(Redirect(routes.ApplicationController.index()))
-  ***REMOVED*** else {
+    } else {
       Future.successful(Ok(views.html.admin.index("Trang chu")))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def doPost = Action(parse.json) { implicit request =>
 
@@ -77,8 +77,8 @@ class Admin @Inject() (
             )
             linkService.save(securityLink)
             el.copy(url = uuid)
-        ***REMOVED***
-    ***REMOVED***
+          }
+      }
       val newPost = Post(
         _id = postID,
         title = (post \ "title").get.as[String],
@@ -90,10 +90,10 @@ class Admin @Inject() (
       )
       postService.save(newPost)
       Ok("ok")
-  ***REMOVED***.getOrElse {
+    }.getOrElse {
       BadRequest("not json")
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def doCategory = Action(parse.json) { implicit request =>
     request.body.asOpt[JsObject].map { category =>
@@ -106,10 +106,10 @@ class Admin @Inject() (
       )
       categoryService.save(newCategory)
       Ok("ok")
-  ***REMOVED***.getOrElse {
+    }.getOrElse {
       BadRequest("not json")
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def doMenu = Action(parse.json) { implicit request =>
     request.body.asOpt[JsValue].map { menu =>
@@ -119,10 +119,10 @@ class Admin @Inject() (
       )
       setupService.save(newMenu)
       Ok("ok")
-  ***REMOVED***.getOrElse {
+    }.getOrElse {
       BadRequest("not json")
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def uploadImage = Action.async(parse.multipartFormData) { implicit request =>
     val uuid = UUID.randomUUID().toString
@@ -140,22 +140,22 @@ class Admin @Inject() (
       )
       imageService.save(image)
       Future.successful(Ok("File uploaded"))
-  ***REMOVED***.getOrElse {
+    }.getOrElse {
       Future.successful(BadRequest("error"))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   def listImage(page: Int) = Action.async { implicit request =>
     imageService.getList(page).map { images =>
       Ok(Json.toJson(images))
-  ***REMOVED***
-***REMOVED***
+    }
+  }
 
   private def resize(file: File) = {
 
     import com.sksamuel.scrimage._
     implicit val writer = JpegWriter().withCompression(80).withProgressive(true)
     scrimage.Image.fromFile(file).scaleTo(94, 128, Bicubic).output(file)
-***REMOVED***
+  }
 
-***REMOVED***
+}

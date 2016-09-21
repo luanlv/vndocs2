@@ -7,10 +7,10 @@
 
 .textshadowguard(@color, @size:0 1px 2px, @shadow-color:#000000) when (lightness(@color) >= @color-threshold) {
 	text-shadow: @size @shadow-color;
-***REMOVED***
+}
 .textshadowguard(@color) when (lightness(@color) < @color-threshold) {
 	text-shadow: none;
-***REMOVED***
+}
 
 
 // Contrast
@@ -18,7 +18,7 @@
 
 .color-contrast-soft(@color) {
 	color: contrast(@color, hardlight(@color, #5e5e5e), screen(@color, #a6a6a6), @color-threshold);
-***REMOVED***
+}
 
 
 // Saturate
@@ -31,17 +31,17 @@
 	-moz-filter: saturate(@percentage);
 	-o-filter: saturate(@percentage);
 	-ms-filter: saturate(@percentage);
-***REMOVED***
+}
 
 
 // Text variants
 // -------------------------
 
 .text-variants(@name; @color) {
-	.@{name***REMOVED*** {
+	.@{name} {
 		color: @color;
-	***REMOVED***
-	.@{name***REMOVED***-track {
+	}
+	.@{name}-track {
 		border-color: @color;
-	***REMOVED***
-***REMOVED***
+	}
+}

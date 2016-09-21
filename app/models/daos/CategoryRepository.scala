@@ -3,8 +3,8 @@ package models.daos
 import javax.inject.Inject
 
 import com.google.inject.Singleton
-import models.{ Category, Post ***REMOVED***
-//import models.daos.{ DocumentDao, Repository ***REMOVED***
+import models.{ Category, Post }
+//import models.daos.{ DocumentDao, Repository }
 import play.modules.reactivemongo.ReactiveMongoApi
 import reactivemongo.api.indexes.IndexType
 
@@ -18,4 +18,4 @@ class CategoryRepository @Inject() (reactiveMongoApi: ReactiveMongoApi) extends 
   override def ensureIndexes: Future[Boolean] = ensureIndex(List("slug" -> IndexType.Ascending), unique = true)
 
   ensureIndexes
-***REMOVED***
+}

@@ -1,6 +1,6 @@
 package models.services
 
-import models.{ Image, Post ***REMOVED***
+import models.{ Image, Post }
 
 import scala.concurrent.Future
 import scala.util.Try
@@ -25,4 +25,4 @@ trait PostService {
   def getListByCategory(category: String, page: Int): Future[List[Post]]
   //  def getList(page: Int): Future[List[Image]]
 
-***REMOVED***
+}

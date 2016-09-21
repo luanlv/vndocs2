@@ -14,10 +14,10 @@ $.extend($.validator.messages, {
 	creditcard: "Te rugăm să introduci un numar de carte de credit valid.",
 	equalTo: "Te rugăm să reintroduci valoarea.",
 	extension: "Te rugăm să introduci o valoare cu o extensie validă.",
-	maxlength: $.validator.format("Te rugăm să nu introduci mai mult de {0***REMOVED*** caractere."),
-	minlength: $.validator.format("Te rugăm să introduci cel puțin {0***REMOVED*** caractere."),
-	rangelength: $.validator.format("Te rugăm să introduci o valoare între {0***REMOVED*** și {1***REMOVED*** caractere."),
-	range: $.validator.format("Te rugăm să introduci o valoare între {0***REMOVED*** și {1***REMOVED***."),
-	max: $.validator.format("Te rugăm să introduci o valoare egal sau mai mică decât {0***REMOVED***."),
-	min: $.validator.format("Te rugăm să introduci o valoare egal sau mai mare decât {0***REMOVED***.")
-***REMOVED***);
+	maxlength: $.validator.format("Te rugăm să nu introduci mai mult de {0} caractere."),
+	minlength: $.validator.format("Te rugăm să introduci cel puțin {0} caractere."),
+	rangelength: $.validator.format("Te rugăm să introduci o valoare între {0} și {1} caractere."),
+	range: $.validator.format("Te rugăm să introduci o valoare între {0} și {1}."),
+	max: $.validator.format("Te rugăm să introduci o valoare egal sau mai mică decât {0}."),
+	min: $.validator.format("Te rugăm să introduci o valoare egal sau mai mare decât {0}.")
+});
