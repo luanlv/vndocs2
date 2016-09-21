@@ -39,7 +39,11 @@ class PostDAOImpl @Inject() (repository: PostRepository) extends PostDAO {
   }
 
   def count: Future[Int] = {
-    repository.count
+    repository.count()
+  }
+
+  def countByCategory(category: String): Future[Int] = {
+    repository.count(Option(Json.obj("categories" -> category)))
   }
 
   def getList(page: Int) = {

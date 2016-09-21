@@ -115,7 +115,6 @@ fn.changePageUrl = function(title, pageOld, pageNew, id) {
     }
     
     if(id != undefined){
-        console.log('scroll to ID:' + id);
         scroll(id);
     }
 };

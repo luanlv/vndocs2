@@ -18,7 +18,9 @@ trait PostDAO {
 
   def vote(id: String, userID: String): Future[Try[String]]
 
-  def count: Future[Int]
+  def count(): Future[Int]
+
+  def countByCategory(category: String): Future[Int]
 
   def getList(page: Int): Future[List[Post]]
 

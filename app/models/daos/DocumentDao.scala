@@ -62,8 +62,8 @@ abstract class DocumentDao[T <: TemporalModel](reactiveMongoApi: ReactiveMongoAp
     findOne(Json.obj("_id" -> kind))
   }
 
-  def count: Future[Int] = {
-    collection.flatMap(_.count())
+  def count(query: Option[JsObject] = None): Future[Int] = {
+    collection.flatMap(_.count(query))
   }
 
   def update(id: String, document: T)(implicit writer: OWrites[T]): Future[Try[T]] = {

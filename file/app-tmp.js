@@ -215,19 +215,19 @@ var Content = function(ctrl){
         ]}
       ]},
       {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
-        {tag: "button", attrs: {
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
             onclick:function(){
               ctrl.goPrev(ctrl.page)
             }
         }, children: ["PREV"]}, 
         {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"}}, 
         "/ ", Math.ceil(ctrl.posts().total/5), "  ", 
-        {tag: "button", attrs: {
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
             onclick:function(){
               ctrl.goToPage($('#page').val())
             }
         }, children: [" Go"]}, 
-        {tag: "button", attrs: {
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
             onclick:function(){
               ctrl.goNext(ctrl.page)
             }
@@ -276,19 +276,19 @@ var Content = function(ctrl){
      
       {tag: "hr", attrs: {className:"style3"}},
       {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
-        {tag: "button", attrs: {
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
           onclick:function(){
             ctrl.goPrev(ctrl.page)
           }
         }, children: ["PREV"]}, 
         {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"}}, 
         "/ ", Math.ceil(ctrl.posts().total/5), "  ", 
-        {tag: "button", attrs: {
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
             onclick:function(){
               ctrl.goToPage($('#page').val())
             }
         }, children: [" Go"]}, 
-        {tag: "button", attrs: {
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
             onclick:function(){
               ctrl.goNext(ctrl.page)
             }
@@ -841,7 +841,6 @@ fn.changePageUrl = function(title, pageOld, pageNew, id) {
     }
     
     if(id != undefined){
-        console.log('scroll to ID:' + id);
         scroll(id);
     }
 };
@@ -976,14 +975,18 @@ Category.controller = function(){
   var ctrl = this;
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
+  ctrl.posts = m.prop({});
   ctrl.categorySlug =  m.route.param("categorySlug");
+  ctrl.posts().total = 1;
+  ctrl.articles = Window.articles;
+  ctrl.page = (m.route.param("p") == undefined)?(1):(parseInt(m.route.param("p")));
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"}, ctrl.posts, ctrl.setup);
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + ctrl.page}, ctrl.posts, ctrl.setup);
   } else {
     ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
+    ctrl.posts().posts=ctrl.request.data();
+    ctrl.posts().total = Window.totalPosts;
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
@@ -993,7 +996,27 @@ Category.controller = function(){
     m.redraw();
   };
   
-
+  ctrl.goToPage = function(page){
+    if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
+      ctrl.page = page;
+    }
+  };
+  ctrl.goPrev = function(page){
+    if(page > 1) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
+      ctrl.page = page-1;
+    }
+  }
+  ctrl.goNext = function(page){
+    if(page < Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
+      ctrl.page = page+1;
+    }
+  }
 };
 
 Category.view = function(ctrl){
@@ -1034,7 +1057,7 @@ Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
   } else {
-    if(Data.sessionstorage.get( 'url' ) != "/" ){
+    if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
       console.log(Data.sessionstorage.get( 'url' ));
       m.route(Data.sessionstorage.get( 'url' ))
     }

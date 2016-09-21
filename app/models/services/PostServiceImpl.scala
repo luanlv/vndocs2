@@ -22,8 +22,12 @@ class PostServiceImpl @Inject() (postDAO: PostDAO) extends PostService {
 
   def vote(id: String, userID: String): Future[Try[String]] = postDAO.vote(id, userID)
 
-  def count: Future[Int] = {
+  def count(): Future[Int] = {
     postDAO.count
+  }
+
+  def countByCategory(category: String): Future[Int] = {
+    postDAO.countByCategory(category)
   }
 
   def getList(page: Int) = postDAO.getList(page)

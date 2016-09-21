@@ -19,14 +19,18 @@ Category.controller = function(){
   var ctrl = this;
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
+  ctrl.posts = m.prop({});
   ctrl.categorySlug =  m.route.param("categorySlug");
+  ctrl.posts().total = 1;
+  ctrl.articles = Window.articles;
+  ctrl.page = (m.route.param("p") == undefined)?(1):(parseInt(m.route.param("p")));
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"}, ctrl.posts, ctrl.setup);
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + ctrl.page}, ctrl.posts, ctrl.setup);
   } else {
     ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
+    ctrl.posts().posts=ctrl.request.data();
+    ctrl.posts().total = Window.totalPosts;
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
@@ -36,7 +40,27 @@ Category.controller = function(){
     m.redraw();
   };
   
-
+  ctrl.goToPage = function(page){
+    if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
+      ctrl.page = page;
+    }
+  };
+  ctrl.goPrev = function(page){
+    if(page > 1) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
+      ctrl.page = page-1;
+    }
+  }
+  ctrl.goNext = function(page){
+    if(page < Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
+      ctrl.page = page+1;
+    }
+  }
 };
 
 Category.view = function(ctrl){

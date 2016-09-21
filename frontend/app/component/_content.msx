@@ -11,19 +11,19 @@ var Content = function(ctrl){
         </form>
       </div>,
       <div class="navigation" align="center" style="margin-bottom:10px; margin-top:10px;">
-        <button
+        <button className="btn btn-1 btn-1a"
             onclick={function(){
               ctrl.goPrev(ctrl.page)
             }}
         >PREV</button>
         <input type="number" id="page" value={ctrl.page} style="width: 50px; text-alige: center"/>
         / {Math.ceil(ctrl.posts().total/5) } &nbsp;
-        <button
+        <button className="btn btn-1 btn-1a"
             onclick={function(){
               ctrl.goToPage($('#page').val())
             }}
         > Go</button>
-        <button
+        <button className="btn btn-1 btn-1a"
             onclick={function(){
               ctrl.goNext(ctrl.page)
             }}
@@ -72,19 +72,19 @@ var Content = function(ctrl){
      
       <hr className="style3"/>,
       <div class="navigation" align="center" style="margin-bottom:10px; margin-top:10px;">
-        <button
+        <button className="btn btn-1 btn-1a"
           onclick={function(){
             ctrl.goPrev(ctrl.page)
           }}
         >PREV</button>
         <input type="number" id="page" value={ctrl.page} style="width: 50px; text-alige: center"/>
         / {Math.ceil(ctrl.posts().total/5) } &nbsp;
-        <button
+        <button className="btn btn-1 btn-1a"
             onclick={function(){
               ctrl.goToPage($('#page').val())
             }}
         > Go</button>
-        <button
+        <button className="btn btn-1 btn-1a"
             onclick={function(){
               ctrl.goNext(ctrl.page)
             }}
