@@ -26,14 +26,6 @@ import scala.language.postfixOps
 import scala.concurrent.Future
 import play.Environment
 
-/**
- * The basic application controller.
- *
- * @param messagesApi The Play messages API.
- * @param silhouette The Silhouette stack.
- * @param socialProviderRegistry The social provider registry.
- * @param webJarAssets The webjar assets implementation.
- */
 class FileController @Inject() (
   ws: WSClient,
   val messagesApi: MessagesApi,

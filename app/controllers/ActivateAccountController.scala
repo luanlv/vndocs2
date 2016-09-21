@@ -16,16 +16,6 @@ import utils.silhouette.MyEnv
 import scala.concurrent.Future
 import scala.language.postfixOps
 
-/**
- * The `Activate Account` controller.
- *
- * @param messagesApi      The Play messages API.
- * @param silhouette       The Silhouette stack.
- * @param userService      The user service implementation.
- * @param authTokenService The auth token service implementation.
- * @param mailerClient     The mailer client.
- * @param webJarAssets     The WebJar assets locator.
- */
 class ActivateAccountController @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[MyEnv],

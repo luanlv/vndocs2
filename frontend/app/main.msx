@@ -20,6 +20,7 @@ var articleString = jQuery.trim($('#initdata .article').text());
 var articlesString = jQuery.trim($('#initdata .articles').text());
 var totalPostsString = jQuery.trim($('#initdata .totalPosts').text());
 var userString = $('#initdata .user').text();
+var totalPostsString = $('#initdata .totalPosts').text();
 
 
 if(jQuery.trim(urlsString).length > 0) {
@@ -34,8 +35,6 @@ if(jQuery.trim(categoriesString).length > 0) {
 }
 if(jQuery.trim(postsString).length > 0) {
   Window.posts = jQuery.parseJSON(postsString);
-  console.log("init posts")
-  console.log(Window.posts)
 }
 if(jQuery.trim(postString).length > 0) {
   Window.post = jQuery.parseJSON(postString);
@@ -55,10 +54,10 @@ if(jQuery.trim(totalPostsString).length > 0) {
 
 if(jQuery.trim(userString).length > 0) {
   Window.user = jQuery.parseJSON($('#initdata .user').text());
-  console.log(Window.user);
 }
-
-console.log(Window.posts);
+if(jQuery.trim(totalPostsString).length > 0) {
+  Window.totalPosts = parseInt(totalPostsString);
+}
 
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');

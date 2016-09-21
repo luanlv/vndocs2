@@ -20,6 +20,7 @@ Array.prototype.getItemByParam = function(paramPair) {
   return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)});
 }
 
+
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,
@@ -28,17 +29,15 @@ m.route(document.querySelector('#app'), "/", {
 });
 
 
-
-
-
 module.exports = Main;
 
 },{"./core/_data.msx":11,"./core/_fn.msx":12,"./main/article.msx":14,"./main/category.msx":15,"./main/home.msx":16,"./main/post.msx":17}],2:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-  return {tag: "div", attrs: {className:"main mh500"}, children: [
+  return {tag: "div", attrs: {className:"main mh800"}, children: [
     ctrl.request.ready()?[
       {tag: "div", attrs: {}, children: [
 
@@ -54,7 +53,7 @@ var PostView = function(ctrl){
               {tag: "span", attrs: {className:"upload"}, children: [ctrl.article().article.author]}, 
               {tag: "span", attrs: {className:"category"}, children: [
                           ctrl.article().article.tags.map(function(el){
-                              {el}
+                              return {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["el"]}
                             })
                           
                       ]}, 
@@ -66,13 +65,28 @@ var PostView = function(ctrl){
             ]}, 
             {tag: "div", attrs: {className:"t-right"}, children: [
               {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
-              {tag: "div", attrs: {className:"rate-num"}, children: ["0"]}, 
+              {tag: "div", attrs: {className:"rate-num"}, children: [ctrl.article().article.nLike]}, 
               {tag: "button", attrs: {className:"rate-button", 
                       onclick:function(el){
                         if(Window.user == undefined){
                           data.showSignin = true;
                         } else {
-                          alert("voted");
+                          if (!ctrl.voted) {
+                            $.ajax({
+                              type: "POST",
+                              url: "/blog/vote",
+                              data: JSON.stringify({
+                                "id": ctrl.slug,
+                              }),
+                              contentType: "application/json",
+                              dataType: "text",
+                              success: function (res) {
+                                ctrl.article().article.nLike += 1;
+                                m.redraw();
+                              }
+                            });
+                          }
+                          ctrl.voted = true;
                         }
                       }
               }, children: ["+1"]}
@@ -85,11 +99,15 @@ var PostView = function(ctrl){
         ]}
       ]},
       {tag: "hr", attrs: {className:"style3"}},
-      Comments(ctrl, ctrl.article(), ctrl.slug)
+      Comments(ctrl, ctrl.article(), ctrl.slug, "article")
     
     ]:[
-      {tag: "div", attrs: {}, children: [
-        "loading !!"
+      {tag: "div", attrs: {className:"loading"}, children: [
+        {tag: "div", attrs: {class:"loader"}, children: [
+          {tag: "div", attrs: {class:"inner one"}}, 
+          {tag: "div", attrs: {class:"inner two"}}, 
+          {tag: "div", attrs: {class:"inner three"}}
+        ]}
       ]}
     ]
     
@@ -100,19 +118,18 @@ var PostView = function(ctrl){
 
 
 module.exports = PostView;
-},{"../core/_fn.msx":12,"./_comment.msx":3}],3:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12,"./_comment.msx":3}],3:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
-var Comments = function(ctrl, content, id){
+var Comments = function(ctrl, content, id, type){
   return [
     {tag: "div", attrs: {id:"comment"}, children: [
     
       {tag: "div", attrs: {className:"commentWr"}, children: [
               {tag: "span", attrs: {class:"poster"}, children: [
                 {tag: "img", attrs: {src:(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL), class:"icon"}}, 
-                {tag: "br", attrs: {}}, 
-                  "Kigurumix"
+                {tag: "br", attrs: {}}
               ]}, 
         {tag: "div", attrs: {class:"comment commentBox"}, children: [
                 {tag: "textarea", attrs: {name:"cmt", id:"cmt", 
@@ -128,17 +145,28 @@ var Comments = function(ctrl, content, id){
                 }, children: [
                   ctrl.comment()
                 ]}, 
+          (Window.user == undefined)?(
+            {tag: "span", attrs: {className:"notUser"}, children: [
+            "Chưa đăng nhập"
+            ]}
+          ):({tag: "span", attrs: {className:"isUser"}, children: [
+            Window.user.fullName
+          ]}), 
           {tag: "span", attrs: {className:"submit"}, children: [
                   {tag: "a", attrs: {href:"javascript:void(0)", 
                      onclick:function(){
                        $.ajax({
                          type: "POST",
                          url: "/comment/" + id,
-                         data: JSON.stringify({"data" : ctrl.comment()}),
+                         data: JSON.stringify({
+                           "data" : ctrl.comment(),
+                           "type" : type
+                         }),
                          contentType: "application/json",
                          dataType: "json",
                          success: function(res){
-                           content.comments.unshift(res)
+                           content.comments.unshift(res);
+                           ctrl.comment('');
                            m.redraw();
                          }
                        });
@@ -176,58 +204,110 @@ var Comments = function(ctrl, content, id){
 module.exports = Comments;
 },{"../core/_data.msx":11,"../core/_fn.msx":12}],4:[function(require,module,exports){
 var Content = function(ctrl){
-    return {tag: "div", attrs: {className:"main mh500"}, children: [
-      ctrl.request.ready()?[
-        {tag: "div", attrs: {className:"sort roundbox"}, children: [
-          {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"}, children: [
-              {tag: "span", attrs: {}, children: ["Lọc theo: "]}, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"}, children: ["Ngày đăng"]}, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"}, children: ["Rating"]}, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"}, children: ["Lượt xem"]}, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"}, children: ["Bình luận"]}
-          ]}
-        ]},
-          ctrl.posts().map(function(el) {
-            return {tag: "div", attrs: {className:"block main-item"}, children: [
-              {tag: "div", attrs: {className:"title"}, children: [
-                {tag: "div", attrs: {className:"t-left"}, children: [
-                  {tag: "a", attrs: {href:"/post/" + el._id, 
-                     className:"title", 
-                     config:m.route
-                  }, children: [el.title]}
-                ]}, 
-                {tag: "div", attrs: {className:"t-right"}, children: [
-                  {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
-                  {tag: "div", attrs: {className:"rate-num"}, children: ["0"]}
-                ]}
-              ]}, 
-              {tag: "div", attrs: {className:"meta-data"}, children: [
-                {tag: "span", attrs: {className:"upload"}, children: [el.upload]}, 
-                {tag: "span", attrs: {className:"category"}, children: [
+  return {tag: "div", attrs: {className:"main cf mh800"}, children: [
+    ctrl.request.ready()?[
+      {tag: "div", attrs: {className:"sort roundbox", id:"top"}, children: [
+        {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"}, children: [
+          {tag: "span", attrs: {}, children: ["Lọc theo: "]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Ngày đăng"]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Rating"]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Lượt xem"]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Bình luận"]}
+        ]}
+      ]},
+      {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
+            onclick:function(){
+              ctrl.goPrev(ctrl.page)
+            }
+        }, children: ["PREV"]}, 
+        {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"}}, 
+        "/ ", Math.ceil(ctrl.posts().total/5), "  ", 
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
+            onclick:function(){
+              ctrl.goToPage($('#page').val())
+            }
+        }, children: [" Go"]}, 
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
+            onclick:function(){
+              ctrl.goNext(ctrl.page)
+            }
+        }, children: ["NEXT"]}
+      ]},
+      {tag: "hr", attrs: {className:"style3", style:"margin-top: 45px;"}},
+      ctrl.posts().posts.map(function(el) {
+        return {tag: "div", attrs: {className:"block main-item"}, children: [
+          {tag: "div", attrs: {className:"title"}, children: [
+            {tag: "div", attrs: {className:"t-left"}, children: [
+              {tag: "a", attrs: {href:"/post/" + el._id, 
+                 className:"title", 
+                 config:m.route
+              }, children: [el.title]}
+            ]}, 
+            {tag: "div", attrs: {className:"t-right"}, children: [
+              {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
+              {tag: "div", attrs: {className:"rate-num"}, children: [el.nLike]}
+            ]}
+          ]}, 
+          {tag: "div", attrs: {className:"meta-data"}, children: [
+            {tag: "span", attrs: {className:"upload"}, children: [el.upload]}, 
+            {tag: "span", attrs: {className:"category"}, children: [
                       el.categories.map(function (item) {
                         return {tag: "a", attrs: {href:"/category/" + item, 
-                            config:m.route
-                        }, children: [{tag: "span", attrs: {}, children: [Window.categories.getItemByParam({slug: item}).name]}]}
+                                  config:m.route
+                        }, children: [{tag: "span", attrs: {}, children: [(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)]}]}
                       })
                       ]}, 
-                {tag: "span", attrs: {className:"time"}, children: [moment(el.time).format('L')]}
-              ]}, 
-              {tag: "div", attrs: {className:"info"}, children: [
-                {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt}}]}, 
-                {tag: "p", attrs: {className:"description"}, children: [
-                  (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
+            {tag: "span", attrs: {className:"time"}, children: [moment(el.time).format('L')]}, 
+            {tag: "span", attrs: {className:"nComment"}, children: [
+                    {tag: "a", attrs: {href:"/post/" + el._id + "#comment", 
+                       config:m.route
+                    }, children: [el.nComment, " bình luận"]}
+                    
                 ]}
-              ]}
+          ]}, 
+          {tag: "div", attrs: {className:"info"}, children: [
+            {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt}}]}, 
+            {tag: "p", attrs: {className:"description"}, children: [
+              (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
             ]}
-          })
-      ]:[
-          {tag: "div", attrs: {}, children: [
-            "Loading !!"
           ]}
-      ]
-        
-        
-    ]}
+        ]}
+      }),
+     
+      {tag: "hr", attrs: {className:"style3"}},
+      {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
+          onclick:function(){
+            ctrl.goPrev(ctrl.page)
+          }
+        }, children: ["PREV"]}, 
+        {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"}}, 
+        "/ ", Math.ceil(ctrl.posts().total/5), "  ", 
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
+            onclick:function(){
+              ctrl.goToPage($('#page').val())
+            }
+        }, children: [" Go"]}, 
+        {tag: "button", attrs: {className:"btn btn-1 btn-1a", 
+            onclick:function(){
+              ctrl.goNext(ctrl.page)
+            }
+        }, children: ["NEXT"]}
+      ]}
+    
+    ]:[
+      {tag: "div", attrs: {className:"loading"}, children: [
+        {tag: "div", attrs: {class:"loader"}, children: [
+          {tag: "div", attrs: {class:"inner one"}}, 
+          {tag: "div", attrs: {class:"inner two"}}, 
+          {tag: "div", attrs: {class:"inner three"}}
+        ]}
+      ]}
+    ]
+  
+  
+  ]}
 };
 
 
@@ -329,7 +409,16 @@ var Login = function(ctrl){
             {tag: "div", attrs: {class:"logout"}, children: [
               {tag: "div", attrs: {className:"label"}
               }, 
-              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"}}
+              {tag: "input", attrs: {type:"submit", value:"Đăng nhập"}}, 
+  
+              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" "]}
+              ]}, 
+              
+              {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" "]}
+              ]}
+              
             ]}
           ]}, 
           {tag: "div", attrs: {className:"label"}}, 
@@ -393,8 +482,16 @@ var Login = function(ctrl){
               {tag: "div", attrs: {class:"form-group"}, children: [
                 {tag: "div", attrs: {}, children: [
                   {tag: "div", attrs: {className:"label"}}, 
-                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"}, children: ["Đăng ký"]}
+                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"}, children: ["Đăng ký"]}, 
+                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" "]}
+                  ]}, 
+  
+                  {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
+                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" "]}
+                  ]}
                 ]}
+                
               ]}
           ]}, 
           {tag: "div", attrs: {className:"label"}}, 
@@ -437,7 +534,7 @@ var Menu = function(ctrl){
                             ]}
                         ]}, 
                         {tag: "div", attrs: {className:"bot"}, children: [
-                            {tag: "a", attrs: {href:"/signOut"}, children: ["Đăng xuất"]}
+                            {tag: "a", attrs: {href:"/signOut?forward=" + m.route()}, children: ["Đăng xuất"]}
                         ]}
                     ]}
                 ):(
@@ -454,6 +551,7 @@ var Menu = function(ctrl){
                                    data.showSignup = true;
                                }
                             }, children: [{tag: "span", attrs: {}, children: [" Đăng ký"]}]}]}, 
+                        {tag: "span", attrs: {style:"width: 20px;"}}, 
                         {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Facebook"]}]}, 
                         {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Google"]}]}
                     ]}
@@ -481,7 +579,7 @@ var data = require('../core/_data.msx');
 var Comments = require('./_comment.msx');
 
 var PostView = function(ctrl){
-    return {tag: "div", attrs: {className:"main mh500"}, children: [
+    return {tag: "div", attrs: {className:"main mh800"}, children: [
       ctrl.request.ready()?[
          {tag: "div", attrs: {}, children: [
            {tag: "span", attrs: {className:"breadcrumb"}, children: [
@@ -515,13 +613,28 @@ var PostView = function(ctrl){
                ]}, 
                {tag: "div", attrs: {className:"t-right"}, children: [
                  {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
-                 {tag: "div", attrs: {className:"rate-num"}, children: ["0"]}, 
+                 {tag: "div", attrs: {className:"rate-num"}, children: [ctrl.post().post.nLike]}, 
                  {tag: "button", attrs: {className:"rate-button", 
                     onclick:function(el){
                         if(Window.user == undefined){
                             data.showSignin = true;
                         } else {
-                            alert("voted");
+                            if(!ctrl.voted) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/post/vote",
+                                    data: JSON.stringify({
+                                        "id": ctrl.postID,
+                                    }),
+                                    contentType: "application/json",
+                                    dataType: "text",
+                                    success: function (res) {
+                                        ctrl.post().post.nLike += 1;
+                                        m.redraw();
+                                    }
+                                });
+                                ctrl.voted = true;
+                            }
                         }
                     }
                  }, children: ["+1"]}
@@ -529,16 +642,35 @@ var PostView = function(ctrl){
              ]}, 
              {tag: "hr", attrs: {className:"style3"}}, 
              {tag: "div", attrs: {className:"postContent"}, children: [
-               m.trust(marked(ctrl.post().post.content))
+               m.trust(marked(ctrl.post().post.content)), 
+               
+               {tag: "div", attrs: {className:"down-box"}, children: [
+                   ctrl.post().post.link.map(function(link){
+                      {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
+                      return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
+                          onclick:function(e){
+                              if(Window.user == undefined) {
+                                  e.preventDefault();
+                                  data.showSignin = true;
+                              }
+                            }, 
+                          
+                          href:"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}, children: ["Download ", link.filename]}]}
+                   })
+               ]}
              ]}
            ]}
          ]},
           {tag: "hr", attrs: {className:"style3"}},
-          Comments(ctrl, ctrl.post(), ctrl.postID)
+          Comments(ctrl, ctrl.post(), ctrl.postID, "post")
           
       ]:[
-          {tag: "div", attrs: {}, children: [
-            "loading !!"
+          {tag: "div", attrs: {className:"loading"}, children: [
+              {tag: "div", attrs: {class:"loader"}, children: [
+                  {tag: "div", attrs: {class:"inner one"}}, 
+                  {tag: "div", attrs: {class:"inner two"}}, 
+                  {tag: "div", attrs: {class:"inner three"}}
+              ]}
           ]}
       ]
       
@@ -601,7 +733,10 @@ Data.showSignin = false;
 Data.showSignup = false;
 Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
 
+
+
 if(Window.user !== undefined) {
+  
   Data.user = Window.user;
   console.log(Data.user)
 }
@@ -704,9 +839,35 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 };
 
-fn.cookieUrl = function(){
+fn.changePageUrl = function(title, pageOld, pageNew, id) {
+    if(m.route().indexOf("?p=") >=0){
+        var Old = "?p=" + pageOld;
+        var New = "?p=" + pageNew;
+        var newUrl = m.route().replace(Old, New);
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Title: title, Url: newUrl };
+            history.pushState(obj, obj.Title, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    } else {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Title: title, Url:  m.route()+"?p=" + pageNew };
+            history.pushState(obj, obj.Title, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
     
+    if(id != undefined){
+        scroll(id);
+    }
 };
+
+function scroll(element){
+    var ele = document.getElementById(element);
+    window.scrollTo(ele.offsetLeft,ele.offsetTop);
+}
 
 module.exports = fn;
 },{}],13:[function(require,module,exports){
@@ -721,6 +882,61 @@ window.mobilecheck = function() {
 window.isMobile = window.mobilecheck();
 
 m.route.mode = "pathname";
+
+var urlsString = jQuery.trim($('#initdata .urls').text());
+var menuString = jQuery.trim($('#initdata .menu').text());
+var categoriesString = jQuery.trim($('#initdata .categories').text());
+var postsString = jQuery.trim($('#initdata .posts').text());
+var postString = jQuery.trim($('#initdata .post').text());
+var commentsString = jQuery.trim($('#initdata .comments').text());
+var articleString = jQuery.trim($('#initdata .article').text());
+var articlesString = jQuery.trim($('#initdata .articles').text());
+var totalPostsString = jQuery.trim($('#initdata .totalPosts').text());
+var userString = $('#initdata .user').text();
+var totalPostsString = $('#initdata .totalPosts').text();
+
+
+if(jQuery.trim(urlsString).length > 0) {
+  Window.urls = jQuery.parseJSON(urlsString);
+}
+
+if(jQuery.trim(menuString).length > 0) {
+  Window.menu = jQuery.parseJSON(menuString);
+}
+if(jQuery.trim(categoriesString).length > 0) {
+  Window.categories = jQuery.parseJSON(categoriesString);
+}
+if(jQuery.trim(postsString).length > 0) {
+  Window.posts = jQuery.parseJSON(postsString);
+  console.log("init posts")
+  console.log(Window.posts)
+}
+if(jQuery.trim(postString).length > 0) {
+  Window.post = jQuery.parseJSON(postString);
+}
+if(jQuery.trim(commentsString).length > 0) {
+  Window.comments = jQuery.parseJSON(commentsString);
+}
+if(jQuery.trim(articleString).length > 0) {
+  Window.article = jQuery.parseJSON(articleString);
+}
+if(jQuery.trim(articlesString).length > 0) {
+  Window.articles = jQuery.parseJSON(articlesString);
+}
+if(jQuery.trim(totalPostsString).length > 0) {
+  Window.totalPosts = jQuery.parseJSON(totalPostsString);
+}
+
+if(jQuery.trim(userString).length > 0) {
+  Window.user = jQuery.parseJSON($('#initdata .user').text());
+}
+if(jQuery.trim(totalPostsString).length > 0) {
+  console.log(totalPostsString)
+  Window.totalPosts = parseInt(totalPostsString);
+  console.log(Window.totalPosts)
+}
+
+console.log(Window.posts);
 
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
@@ -767,6 +983,7 @@ Post.controller = function(){
   ctrl.request.ready = m.prop(false);
   ctrl.article = m.prop({});
   ctrl.comment = m.prop("");
+  ctrl.voted = false;
   
   if(Window.article === undefined) {
     console.log("run request !!!!!!!!!!")
@@ -814,6 +1031,7 @@ module.exports =  Post;
 var Category = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
+var Data = require('../core/_data.msx');
 var Content = require('../component/_content.msx');
 var Side = require('../component/_side.msx');
 var Login = require('../component/_login.msx');
@@ -831,14 +1049,18 @@ Category.controller = function(){
   var ctrl = this;
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
+  ctrl.posts = m.prop({});
   ctrl.categorySlug =  m.route.param("categorySlug");
+  ctrl.posts().total = 1;
+  ctrl.articles = Window.articles;
+  ctrl.page = (m.route.param("p") == undefined)?(1):(parseInt(m.route.param("p")));
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/1"}, ctrl.posts, ctrl.setup);
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + ctrl.page}, ctrl.posts, ctrl.setup);
   } else {
     ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
+    ctrl.posts().posts=ctrl.request.data();
+    ctrl.posts().total = Window.totalPosts;
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
@@ -848,7 +1070,27 @@ Category.controller = function(){
     m.redraw();
   };
   
-
+  ctrl.goToPage = function(page){
+    if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
+      ctrl.page = page;
+    }
+  };
+  ctrl.goPrev = function(page){
+    if(page > 1) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
+      ctrl.page = page-1;
+    }
+  }
+  ctrl.goNext = function(page){
+    if(page < Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
+      ctrl.page = page+1;
+    }
+  }
 };
 
 Category.view = function(ctrl){
@@ -873,7 +1115,7 @@ Category.view = function(ctrl){
 };
 
 module.exports =  Category;
-},{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_fn.msx":12}],16:[function(require,module,exports){
+},{"../component/_content.msx":4,"../component/_footer.msx":5,"../component/_head.msx":6,"../component/_login.msx":7,"../component/_menu.msx":8,"../component/_side.msx":10,"../core/_data.msx":11,"../core/_fn.msx":12}],16:[function(require,module,exports){
 var Home = {};
 var Menu = require('../component/_menu.msx');
 var fn = require('../core/_fn.msx');
@@ -888,37 +1130,62 @@ var Footer = require('../component/_footer.msx');
 Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
+    console.log("setted: " + m.route())
   } else {
-    if(Data.sessionstorage.get( 'url' ) != "/" ){
-      console.log("=================================");
-      console.log(Data.sessionstorage.get( 'url' ));
+    // if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
+    if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
       m.route(Data.sessionstorage.get( 'url' ))
     }
+    console.log(m.route())
   }
+  
   
   
   var ctrl = this;
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
-  ctrl.posts = m.prop();
+  ctrl.posts = m.prop({});
+  ctrl.posts().total = 1;
   ctrl.articles = Window.articles;
-  
+  ctrl.page = (m.route.param("p") == undefined)?(1):(parseInt(m.route.param("p")));
   
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"}, ctrl.posts, ctrl.setup);
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page}, ctrl.posts, ctrl.setup);
   } else {
     ctrl.request.data = m.prop(Window.posts);
-    ctrl.posts(ctrl.request.data());
+    ctrl.posts().posts=ctrl.request.data();
+    ctrl.posts().total = Window.totalPosts;
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
   };
   ctrl.setup = function(){
-    ctrl.posts(ctrl.request.data());
+    // ctrl.posts(ctrl.request.data());
     m.redraw();
   };
   
+  ctrl.goToPage = function(page){
+    if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
+      ctrl.page = page;
+    }
+  };
+  ctrl.goPrev = function(page){
+    if(page > 1) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
+      ctrl.page = page-1;
+    }
+  }
+  ctrl.goNext = function(page){
+    if(page < Math.ceil(ctrl.posts().total/5)) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)}, ctrl.posts, ctrl.setup);
+      fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
+      ctrl.page = page+1;
+    }
+  }
 };
 
 Home.view = function(ctrl){
@@ -970,6 +1237,7 @@ Post.controller = function(){
   ctrl.request.ready = m.prop(false);
   ctrl.post = m.prop({});
   ctrl.comment = m.prop("");
+  ctrl.voted = false;
   
   if(Window.post === undefined) {
     console.log("run request !!!!!!!!!!")

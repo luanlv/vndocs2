@@ -16,17 +16,6 @@ import utils.silhouette.{ MyEnv, WithProvider }
 
 import scala.concurrent.Future
 
-/**
- * The `Change Password` controller.
- *
- * @param messagesApi            The Play messages API.
- * @param silhouette             The Silhouette stack.
- * @param userService            The user service implementation.
- * @param credentialsProvider    The credentials provider.
- * @param authInfoRepository     The auth info repository.
- * @param passwordHasherRegistry The password hasher registry.
- * @param webJarAssets           The WebJar assets locator.
- */
 class ChangePasswordController @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[MyEnv],

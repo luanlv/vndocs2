@@ -16,17 +16,6 @@ import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 
-/**
- * The `Reset Password` controller.
- *
- * @param messagesApi            The Play messages API.
- * @param silhouette             The Silhouette stack.
- * @param userService            The user service implementation.
- * @param authInfoRepository     The auth info repository.
- * @param passwordHasherRegistry The password hasher registry.
- * @param authTokenService       The auth token service implementation.
- * @param webJarAssets           The WebJar assets locator.
- */
 class ResetPasswordController @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[MyEnv],

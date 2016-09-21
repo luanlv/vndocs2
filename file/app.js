@@ -383,21 +383,21 @@ var Login = function(ctrl){
            }
          }, 
          style:(!data.showSignin)?"display: none":""}, children: [
-      {tag: "div", attrs: {class:"wrapper"}, children: [
-        {tag: "div", attrs: {class:"wrapper-content"}, children: [
+      {tag: "div", attrs: {className:"wrapper"}, children: [
+        {tag: "div", attrs: {className:"wrapper-content"}, children: [
           {tag: "h3", attrs: {}, children: ["Đăng nhập"]}, 
           {tag: "form", attrs: {action:"/signIn", method:"POST"}, children: [
             {tag: "div", attrs: {}, children: [
               {tag: "div", attrs: {className:"label"}, children: [
                 {tag: "label", attrs: {htmlFor:"email"}, children: ["Email : "]}
               ]}, 
-              {tag: "input", attrs: {type:"email", class:"user-email", id:"email", name:"email"}}
+              {tag: "input", attrs: {type:"email", className:"user-email", id:"email", name:"email"}}
             ]}, 
             {tag: "div", attrs: {}, children: [
               {tag: "div", attrs: {className:"label"}, children: [
                 {tag: "label", attrs: {htmlFor:"password"}, children: ["Password : "]}
               ]}, 
-              {tag: "input", attrs: {type:"password", class:"user-password", id:"password", name:"password"}}
+              {tag: "input", attrs: {type:"password", className:"user-password", id:"password", name:"password"}}
             ]}, 
             {tag: "div", attrs: {}, children: [
               {tag: "div", attrs: {className:"label"}, children: [
@@ -406,30 +406,30 @@ var Login = function(ctrl){
               {tag: "input", attrs: {type:"checkbox", id:"rememberMe", name:"rememberMe", value:"true", checked:"true"}}
             ]}, 
             {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token}}, 
-            {tag: "div", attrs: {class:"logout"}, children: [
+            {tag: "div", attrs: {className:"logout"}, children: [
               {tag: "div", attrs: {className:"label"}
               }, 
               {tag: "input", attrs: {type:"submit", value:"Đăng nhập"}}, 
   
               {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" "]}
+                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), className:"social-button", id:"google-connect"}, children: [" "]}
               ]}, 
               
               {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" "]}
+                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), className:"social-button", id:"facebook-connect"}, children: [" "]}
               ]}
               
             ]}
           ]}, 
           {tag: "div", attrs: {className:"label"}}, 
           {tag: "span", attrs: {className:"other"}, children: [
-            {tag: "a", attrs: {href:"#", class:"forgot-pass", 
+            {tag: "a", attrs: {href:"#", className:"forgot-pass", 
               onclick:function(){
                 data.showSignin = false;
                 data.showSignup = true;
               }
             }, children: ["Đăng ký"]}, 
-            {tag: "a", attrs: {href:"#", class:"forgot-pass"}, children: ["Quên mật khẩu?"]}
+            {tag: "a", attrs: {href:"#", className:"forgot-pass"}, children: ["Quên mật khẩu?"]}
           ]}
           
         ]}
@@ -443,52 +443,53 @@ var Login = function(ctrl){
            }
          }, 
          style:(!data.showSignup)?"display: none":""}, children: [
-      {tag: "div", attrs: {class:"wrapper"}, children: [
-        {tag: "div", attrs: {class:"wrapper-content"}, children: [
+      {tag: "div", attrs: {className:"wrapper"}, children: [
+        {tag: "div", attrs: {className:"wrapper-content"}, children: [
           {tag: "h3", attrs: {}, children: ["Đăng ký"]}, 
           {tag: "form", attrs: {action:"/signUp", method:"POST"}, children: [
+            
             {tag: "input", attrs: {type:"hidden", name:"csrfToken", value:data.token}}, 
               
-              {tag: "div", attrs: {class:"form-group  ", id:"firstName_field"}, children: [
+              {tag: "div", attrs: {className:"form-group  ", id:"firstName_field"}, children: [
                 {tag: "div", attrs: {className:"label"}, children: [
                   {tag: "label", attrs: {htmlFor:"firstName"}, children: ["Họ : "]}
                 ]}, 
-                {tag: "input", attrs: {type:"text", id:"firstName", name:"firstName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"First name"}}
+                {tag: "input", attrs: {type:"text", id:"firstName", name:"firstName", required:"true", className:"form-control form-control input-lg", placeholder:"First name"}}
               ]}, 
               
-              {tag: "div", attrs: {class:"form-group  ", id:"lastName_field"}, children: [
+              {tag: "div", attrs: {className:"form-group  ", id:"lastName_field"}, children: [
                 {tag: "div", attrs: {className:"label"}, children: [
                   {tag: "label", attrs: {htmlFor:"lastName"}, children: ["Tên : "]}
                 ]}, 
-                {tag: "input", attrs: {type:"text", id:"lastName", name:"lastName", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Last name"}}
+                {tag: "input", attrs: {type:"text", id:"lastName", name:"lastName", required:"true", className:"form-control form-control input-lg", placeholder:"Last name"}}
               ]}, 
               
-              {tag: "div", attrs: {class:"form-group  ", id:"email_field"}, children: [
+              {tag: "div", attrs: {className:"form-group  ", id:"email_field"}, children: [
                 {tag: "div", attrs: {className:"label"}, children: [
                   {tag: "label", attrs: {htmlFor:"email"}, children: ["Email : "]}
                 ]}, 
-                {tag: "input", attrs: {type:"text", id:"email", name:"email", value:"", class:"form-control form-control input-lg", placeholder:"Email"}}
+                {tag: "input", attrs: {type:"text", id:"email", name:"email", className:"form-control form-control input-lg", placeholder:"Email"}}
               ]}, 
               
               {tag: "section", attrs: {}, children: [
-                {tag: "div", attrs: {class:"form-group  ", id:"password_field"}, children: [
+                {tag: "div", attrs: {className:"form-group  ", id:"password_field"}, children: [
                   {tag: "div", attrs: {className:"label"}, children: [
                     {tag: "label", attrs: {htmlFor:"password"}, children: ["Mật khẩu : "]}
                   ]}, 
-                  {tag: "input", attrs: {type:"password", id:"password", name:"password", value:"", required:"true", class:"form-control form-control input-lg", placeholder:"Password"}}
+                  {tag: "input", attrs: {type:"password", id:"password", name:"password", required:"true", className:"form-control form-control input-lg", placeholder:"Password"}}
                 ]}
               ]}, 
       
-              {tag: "div", attrs: {class:"form-group"}, children: [
+              {tag: "div", attrs: {className:"form-group"}, children: [
                 {tag: "div", attrs: {}, children: [
                   {tag: "div", attrs: {className:"label"}}, 
-                  {tag: "button", attrs: {id:"submit", type:"submit", value:"submit", class:"btn btn-lg btn-primary btn-block"}, children: ["Đăng ký"]}, 
+                  {tag: "button", attrs: {id:"submit", type:"submit", className:"btn btn-lg btn-primary btn-block"}, children: ["Đăng ký"]}, 
                   {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" "]}
+                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), className:"social-button", id:"google-connect"}, children: [" "]}
                   ]}, 
   
                   {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" "]}
+                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), className:"social-button", id:"facebook-connect"}, children: [" "]}
                   ]}
                 ]}
                 
@@ -497,7 +498,7 @@ var Login = function(ctrl){
           {tag: "div", attrs: {className:"label"}}, 
           {tag: "span", attrs: {className:"other"}, children: [
             {tag: "span", attrs: {}, children: ["Đã có tài khoản? "]}, 
-            {tag: "a", attrs: {href:"#", class:"forgot-pass", 
+            {tag: "a", attrs: {href:"#", className:"forgot-pass", 
               onclick:function(){
                 data.showSignin = true;
                 data.showSignup = false;
@@ -893,6 +894,7 @@ var articleString = jQuery.trim($('#initdata .article').text());
 var articlesString = jQuery.trim($('#initdata .articles').text());
 var totalPostsString = jQuery.trim($('#initdata .totalPosts').text());
 var userString = $('#initdata .user').text();
+var totalPostsString = $('#initdata .totalPosts').text();
 
 
 if(jQuery.trim(urlsString).length > 0) {
@@ -907,8 +909,6 @@ if(jQuery.trim(categoriesString).length > 0) {
 }
 if(jQuery.trim(postsString).length > 0) {
   Window.posts = jQuery.parseJSON(postsString);
-  console.log("init posts")
-  console.log(Window.posts)
 }
 if(jQuery.trim(postString).length > 0) {
   Window.post = jQuery.parseJSON(postString);
@@ -928,10 +928,10 @@ if(jQuery.trim(totalPostsString).length > 0) {
 
 if(jQuery.trim(userString).length > 0) {
   Window.user = jQuery.parseJSON($('#initdata .user').text());
-  console.log(Window.user);
 }
-
-console.log(Window.posts);
+if(jQuery.trim(totalPostsString).length > 0) {
+  Window.totalPosts = parseInt(totalPostsString);
+}
 
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
@@ -1125,13 +1125,11 @@ var Footer = require('../component/_footer.msx');
 Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-    console.log("setted: " + m.route())
   } else {
     // if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
     if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
       m.route(Data.sessionstorage.get( 'url' ))
     }
-    console.log(m.route())
   }
   
   

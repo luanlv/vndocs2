@@ -11,21 +11,21 @@ var Login = function(ctrl){
            }
          }}
          style={(!data.showSignin)?"display: none":""}>
-      <div class="wrapper">
-        <div class="wrapper-content">
+      <div className="wrapper">
+        <div className="wrapper-content">
           <h3>Đăng nhập</h3>
           <form action="/signIn" method="POST">
             <div>
               <div className="label">
                 <label htmlFor="email">Email : </label>
               </div>
-              <input type="email" class="user-email" id="email" name="email" />
+              <input type="email" className="user-email" id="email" name="email" />
             </div>
             <div>
               <div className="label">
                 <label htmlFor="password">Password : </label>
               </div>
-              <input type="password" class="user-password" id="password" name="password" />
+              <input type="password" className="user-password" id="password" name="password" />
             </div>
             <div>
               <div className="label">
@@ -34,30 +34,30 @@ var Login = function(ctrl){
               <input type="checkbox" id="rememberMe" name="rememberMe" value="true" checked="true"/>
             </div>
             <input type="hidden" name="csrfToken" value={data.token}/>
-            <div class="logout">
+            <div className="logout">
               <div className="label">
               </div>
               <input type="submit" value="Đăng nhập"/>
   
               <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                <a href={"/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> </a>
+                <a href={"/authenticate/google" + "?forward=" + m.route()} className="social-button" id="google-connect"> </a>
               </div>
               
               <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                <a href={"/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> </a>
+                <a href={"/authenticate/facebook" + "?forward=" + m.route()} className="social-button" id="facebook-connect"> </a>
               </div>
               
             </div>
           </form>
           <div className="label"></div>
           <span className="other">
-            <a href="#" class="forgot-pass"
+            <a href="#" className="forgot-pass"
               onclick={function(){
                 data.showSignin = false;
                 data.showSignup = true;
               }}
             >Đăng ký</a>
-            <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+            <a href="#" className="forgot-pass">Quên mật khẩu?</a>
           </span>
           
         </div>
@@ -71,52 +71,53 @@ var Login = function(ctrl){
            }
          }}
          style={(!data.showSignup)?"display: none":""}>
-      <div class="wrapper">
-        <div class="wrapper-content">
+      <div className="wrapper">
+        <div className="wrapper-content">
           <h3>Đăng ký</h3>
           <form action="/signUp" method="POST">
+            
             <input type="hidden" name="csrfToken" value={data.token} />
               
-              <div class="form-group  " id="firstName_field">
+              <div className="form-group  " id="firstName_field">
                 <div className="label">
                   <label htmlFor="firstName">Họ : </label>
                 </div>
-                <input type="text" id="firstName" name="firstName" value="" required="true" class="form-control form-control input-lg" placeholder="First name"/>
+                <input type="text" id="firstName" name="firstName" required="true" className="form-control form-control input-lg" placeholder="First name"/>
               </div>
               
-              <div class="form-group  " id="lastName_field">
+              <div className="form-group  " id="lastName_field">
                 <div className="label">
                   <label htmlFor="lastName">Tên : </label>
                 </div>
-                <input type="text" id="lastName" name="lastName" value="" required="true" class="form-control form-control input-lg" placeholder="Last name"/>
+                <input type="text" id="lastName" name="lastName"  required="true" className="form-control form-control input-lg" placeholder="Last name"/>
               </div>
               
-              <div class="form-group  " id="email_field">
+              <div className="form-group  " id="email_field">
                 <div className="label">
                   <label htmlFor="email">Email : </label>
                 </div>
-                <input type="text" id="email" name="email" value="" class="form-control form-control input-lg" placeholder="Email"/>
+                <input type="text" id="email" name="email"  className="form-control form-control input-lg" placeholder="Email"/>
               </div>
               
               <section>
-                <div class="form-group  " id="password_field">
+                <div className="form-group  " id="password_field">
                   <div className="label">
                     <label htmlFor="password">Mật khẩu : </label>
                   </div>
-                  <input type="password" id="password" name="password" value="" required="true" class="form-control form-control input-lg"  placeholder="Password"/>
+                  <input type="password" id="password" name="password"  required="true" className="form-control form-control input-lg"  placeholder="Password"/>
                 </div>
               </section>
       
-              <div class="form-group">
+              <div className="form-group">
                 <div>
                   <div className="label"></div>
-                  <button id="submit" type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Đăng ký</button>
+                  <button id="submit" type="submit" className="btn btn-lg btn-primary btn-block">Đăng ký</button>
                   <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                    <a href={"/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> </a>
+                    <a href={"/authenticate/google" + "?forward=" + m.route()} className="social-button" id="google-connect"> </a>
                   </div>
   
                   <div style="width: 40px; float: right; margin: 3px 10px 0 0;">
-                    <a href={"/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> </a>
+                    <a href={"/authenticate/facebook" + "?forward=" + m.route()} className="social-button" id="facebook-connect"> </a>
                   </div>
                 </div>
                 
@@ -125,7 +126,7 @@ var Login = function(ctrl){
           <div className="label"></div>
           <span className="other">
             <span>Đã có tài khoản? </span>
-            <a href="#" class="forgot-pass"
+            <a href="#" className="forgot-pass"
               onclick={function(){
                 data.showSignin = true;
                 data.showSignup = false;

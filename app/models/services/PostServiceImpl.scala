@@ -33,13 +33,5 @@ class PostServiceImpl @Inject() (postDAO: PostDAO) extends PostService {
   def getList(page: Int) = postDAO.getList(page)
 
   def getListByCategory(category: String, page: Int) = postDAO.getListByCategory(category, page)
-  /**
-   * Saves the social profile for a user.
-   *
-   * If a user exists for this profile then update the user, otherwise create a new user with the given profile.
-   *
-   * @param profile The social profile to save.
-   * @return The user for whom the profile was saved.
-   */
 
 }

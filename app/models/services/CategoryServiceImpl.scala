@@ -18,13 +18,5 @@ class CategoryServiceImpl @Inject() (categoryDAO: CategoryDAO) extends CategoryS
   def save(category: Category) = categoryDAO.save(category)
 
   def listParent = categoryDAO.listParent
-  /**
-   * Saves the social profile for a user.
-   *
-   * If a user exists for this profile then update the user, otherwise create a new user with the given profile.
-   *
-   * @param profile The social profile to save.
-   * @return The user for whom the profile was saved.
-   */
 
 }

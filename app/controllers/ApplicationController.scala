@@ -17,15 +17,6 @@ import scala.sys.process._
 import scala.language.postfixOps
 import scala.concurrent.Future
 
-/**
- * The basic application controller.
- *
- * @param messagesApi The Play messages API.
- * @param silhouette The Silhouette stack.
- * @param socialProviderRegistry The social provider registry.
- * @param webJarAssets The webjar assets implementation.
- */
-
 @Singleton
 class ApplicationController @Inject() (
   val silhouette: Silhouette[MyEnv],
@@ -48,7 +39,7 @@ class ApplicationController @Inject() (
       categories <- categoryService.listParent
       posts <- postService.getList(page.toInt)
       articles <- articleService.getList(1)
-      totalPosts <- postService.count
+      totalPosts <- postService.count()
     } yield (menu, categories, posts, articles, totalPosts)
     data.map { data =>
       Ok(views.html.home(

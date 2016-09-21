@@ -1,4 +1,5 @@
 @import scala.util.Random
+@import play._
 @(menu: String, categories: String, posts: String, articles: String, totalPosts: Int = 1)(implicit user: Option[User], request: RequestHeader, messages: Messages)
 
 <!doctype html>
@@ -10,8 +11,11 @@
         <title>Document</title>
         @*<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>*@
         <link rel="stylesheet" href="/assets/styles/animate.css">
-        @*<link rel="stylesheet" href="/assets/stylesheets/style.min.css">*@
-        <link rel="stylesheet" href=@{"/file/style.css?" + scala.util.Random.nextInt(10000)} >
+        @if(play.Play.isDev()){
+            <link rel="stylesheet" href=@{"/file/style.css?" + scala.util.Random.nextInt(10000)} >
+        } else {
+            <link rel="stylesheet" href="/assets/css/style.css">
+        }
     </head>
     <body>
         <span id="initdata" style="display: none;">
@@ -23,7 +27,7 @@
             <span class="comments"></span>
             <span class="article"></span>
             <span class="articles">@Html(articles)</span>
-            <span class="totalPosts"></span>
+            <span class="totalPosts">@totalPosts</span>
             <span class="user">
             @user match {
                 case Some(user) => {
@@ -46,7 +50,10 @@
         <script src="/assets/lib/moment.min.op.js"></script>
         <script src="/assets/lib/mithril.min.op.js"></script>
         <script src="/assets/lib/mithril-storage.min.op.js"></script>
-        @*<script src="/assets/js/app.js"></script>*@
-        <script src=@{"/file/app.js?" + scala.util.Random.nextInt(10000)}></script>
+        @if(play.Play.isDev()){
+            <script src=@{"/file/app.js?" + scala.util.Random.nextInt(10000)}></script>
+        } else {
+            <script src="/assets/js/app.js"></script>
+        }
     </body>
 </html>

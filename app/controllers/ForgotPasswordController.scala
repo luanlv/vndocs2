@@ -14,16 +14,6 @@ import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 
-/**
- * The `Forgot Password` controller.
- *
- * @param messagesApi      The Play messages API.
- * @param silhouette       The Silhouette stack.
- * @param userService      The user service implementation.
- * @param authTokenService The auth token service implementation.
- * @param mailerClient     The mailer client.
- * @param webJarAssets     The WebJar assets locator.
- */
 class ForgotPasswordController @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[MyEnv],

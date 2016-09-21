@@ -22,19 +22,6 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-/**
- * The `Sign In` controller.
- *
- * @param messagesApi The Play messages API.
- * @param silhouette The Silhouette stack.
- * @param userService The user service implementation.
- * @param authInfoRepository The auth info repository implementation.
- * @param credentialsProvider The credentials provider.
- * @param socialProviderRegistry The social provider registry.
- * @param configuration The Play configuration.
- * @param clock The clock instance.
- * @param webJarAssets The webjar assets implementation.
- */
 class SignInController @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[MyEnv],

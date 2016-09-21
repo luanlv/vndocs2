@@ -14,11 +14,6 @@ case class Setup(
   _id: String,
   value: String
 ) extends Identity with TemporalModel {
-  /**
-   * Tries to construct a name.
-   *
-   * @return Maybe a name.
-   */
 
 }
 

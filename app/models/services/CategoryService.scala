@@ -4,9 +4,6 @@ import models.{ Category, Post }
 
 import scala.concurrent.Future
 
-/**
- * Handles actions to users.
- */
 trait CategoryService {
 
   def retrieve(id: String): Future[Option[Category]]

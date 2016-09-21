@@ -5,9 +5,6 @@ import models.{ Image, Post }
 import scala.concurrent.Future
 import scala.util.Try
 
-/**
- * Handles actions to users.
- */
 trait PostService {
 
   def retrieve(id: String): Future[Option[Post]]

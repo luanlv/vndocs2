@@ -20,19 +20,6 @@ import utils.silhouette.MyEnv
 
 import scala.concurrent.Future
 
-/**
- * The `Sign Up` controller.
- *
- * @param messagesApi            The Play messages API.
- * @param silhouette             The Silhouette stack.
- * @param userService            The user service implementation.
- * @param authInfoRepository     The auth info repository implementation.
- * @param authTokenService       The auth token service implementation.
- * @param avatarService          The avatar service implementation.
- * @param passwordHasherRegistry The password hasher registry.
- * @param mailerClient           The mailer client.
- * @param webJarAssets           The webjar assets implementation.
- */
 class SignUpController @Inject() (
   val messagesApi: MessagesApi,
   silhouette: Silhouette[MyEnv],
@@ -68,13 +55,13 @@ class SignUpController @Inject() (
         userService.retrieve(loginInfo).flatMap {
           case Some(user) =>
             val url = routes.SignInController.view().absoluteURL()
-            //            mailerClient.send(Email(
-            //              subject = Messages("email.already.signed.up.subject"),
-            //              from = Messages("email.from"),
-            //              to = Seq(data.email),
-            //              bodyText = Some(views.txt.emails.alreadySignedUp(user, url).body),
-            //              bodyHtml = Some(views.html.emails.alreadySignedUp(user, url).body)
-            //            ))
+            mailerClient.send(Email(
+              subject = Messages("email.already.signed.up.subject"),
+              from = Messages("email.from"),
+              to = Seq(data.email),
+              bodyText = Some(views.txt.emails.alreadySignedUp(user, url).body),
+              bodyHtml = Some(views.html.emails.alreadySignedUp(user, url).body)
+            ))
 
             Future.successful(result)
           case None =>
@@ -98,13 +85,13 @@ class SignUpController @Inject() (
               authToken <- authTokenService.create(user.userID)
             } yield {
               val url = routes.ActivateAccountController.activate(authToken.id).absoluteURL()
-              //              mailerClient.send(Email(
-              //                subject = Messages("email.sign.up.subject"),
-              //                from = Messages("email.from"),
-              //                to = Seq(data.email),
-              //                bodyText = Some(views.txt.emails.signUp(user, url).body),
-              //                bodyHtml = Some(views.html.emails.signUp(user, url).body)
-              //              ))
+              mailerClient.send(Email(
+                subject = Messages("email.sign.up.subject"),
+                from = Messages("email.from"),
+                to = Seq(data.email),
+                bodyText = Some(views.txt.emails.signUp(user, url).body),
+                bodyHtml = Some(views.html.emails.signUp(user, url).body)
+              ))
 
               silhouette.env.eventBus.publish(SignUpEvent(user, request))
               result

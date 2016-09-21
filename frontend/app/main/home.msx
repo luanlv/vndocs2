@@ -12,13 +12,11 @@ var Footer = require('../component/_footer.msx');
 Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
-    console.log("setted: " + m.route())
   } else {
     // if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
     if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
       m.route(Data.sessionstorage.get( 'url' ))
     }
-    console.log(m.route())
   }
   
   

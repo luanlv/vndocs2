@@ -15,11 +15,6 @@ case class Link(
   url: String,
   postID: String
 ) extends Identity with TemporalModel {
-  /**
-   * Tries to construct a name.
-   *
-   * @return Maybe a name.
-   */
 
 }
 
