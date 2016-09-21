@@ -66,19 +66,31 @@ fn.requestWithFeedback = function(args, bind, fn) {
     };
     args.background = true;
     args.config = function(xhr) {
-        xhr.timeout = 4000;
-        xhr.ontimeout = function() {
+        // xhr.timeout = 4000;
+        xhr.timeout = 6000;
+        xhr.onTimeout = function() {
             complete();
             m.redraw();
+            window.location.reload();
         }
     };
     return {
-        request: m.request(args).then(data).then(function(data){
-            if(bind !== undefined) bind(data);
-            if(fn !== undefined) fn();
-            complete();
-            m.redraw();
-        }),
+        request: m.request(args).then(
+            function(data) {
+                console.log("complete");
+                completed(true); return data
+            },
+            function(err) {
+                window.location.reload();
+                completed(true); throw err
+            })
+            .then(function (data) {
+                if(bind !== undefined) bind(data);
+                if(fn !== undefined) fn();
+                m.redraw();
+                return data
+            }
+        ),
         data: data,
         ready: completed
     }

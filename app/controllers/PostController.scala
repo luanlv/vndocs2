@@ -11,6 +11,7 @@ import com.sksamuel.scrimage
 import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import models.Image
 import models.services._
+import play.api.libs.concurrent.Promise
 import play.api.libs.json.{ JsObject, JsValue, Json }
 import utils.silhouette.{ AuthController, MyEnv }
 //import com.sksamuel.scrimage.Image
@@ -25,6 +26,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.sys.process._
 import scala.language.postfixOps
 import scala.concurrent.Future
+import scala.concurrent.duration._
 
 @Singleton
 class PostController @Inject() (
@@ -62,6 +64,9 @@ class PostController @Inject() (
       posts <- postService.getList(page)
       total <- postService.count
     } yield (posts, total)
+
+    //    val futureData = Promise.timeout(data, 5.second).flatMap(x => x)
+
     data.map { data =>
       Ok(
         Json.obj(

@@ -52,7 +52,7 @@ gulp.task('app', function() {
         transform: ['mithrilify']
       }))
       .pipe(rename('app-tmp.js'))
-      .pipe(jsmin())
+      .pipe(minify({}))
       .pipe(gulp.dest('public/js/'))
       .on('end', function(){
         cmd.exec('');

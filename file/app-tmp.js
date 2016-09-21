@@ -812,19 +812,31 @@ fn.requestWithFeedback = function(args, bind, fn) {
     };
     args.background = true;
     args.config = function(xhr) {
-        xhr.timeout = 4000;
-        xhr.ontimeout = function() {
+        // xhr.timeout = 4000;
+        xhr.timeout = 6000;
+        xhr.onTimeout = function() {
             complete();
             m.redraw();
+            window.location.reload();
         }
     };
     return {
-        request: m.request(args).then(data).then(function(data){
-            if(bind !== undefined) bind(data);
-            if(fn !== undefined) fn();
-            complete();
-            m.redraw();
-        }),
+        request: m.request(args).then(
+            function(data) {
+                console.log("complete");
+                completed(true); return data
+            },
+            function(err) {
+                window.location.reload();
+                completed(true); throw err
+            })
+            .then(function (data) {
+                if(bind !== undefined) bind(data);
+                if(fn !== undefined) fn();
+                m.redraw();
+                return data
+            }
+        ),
         data: data,
         ready: completed
     }
@@ -884,17 +896,16 @@ window.isMobile = window.mobilecheck();
 
 m.route.mode = "pathname";
 
-var urlsString = jQuery.trim($('#initdata .urls').text());
-var menuString = jQuery.trim($('#initdata .menu').text());
-var categoriesString = jQuery.trim($('#initdata .categories').text());
-var postsString = jQuery.trim($('#initdata .posts').text());
-var postString = jQuery.trim($('#initdata .post').text());
-var commentsString = jQuery.trim($('#initdata .comments').text());
-var articleString = jQuery.trim($('#initdata .article').text());
-var articlesString = jQuery.trim($('#initdata .articles').text());
-var totalPostsString = jQuery.trim($('#initdata .totalPosts').text());
-var userString = $('#initdata .user').text();
-var totalPostsString = $('#initdata .totalPosts').text();
+var urlsString = jQuery.trim($('#initdata .durls').text());
+var menuString = jQuery.trim($('#initdata .dmenu').text());
+var categoriesString = jQuery.trim($('#initdata .dcategories').text());
+var postsString = jQuery.trim($('#initdata .dposts').text());
+var postString = jQuery.trim($('#initdata .dpost').text());
+var commentsString = jQuery.trim($('#initdata .dcomments').text());
+var articleString = jQuery.trim($('#initdata .darticle').text());
+var articlesString = jQuery.trim($('#initdata .darticles').text());
+var totalPostsString = jQuery.trim($('#initdata .dtotalPosts').text());
+var userString = jQuery.trim($('#initdata .duser').text());
 
 
 if(jQuery.trim(urlsString).length > 0) {
@@ -927,7 +938,7 @@ if(jQuery.trim(totalPostsString).length > 0) {
 }
 
 if(jQuery.trim(userString).length > 0) {
-  Window.user = jQuery.parseJSON($('#initdata .user').text());
+  Window.user = jQuery.parseJSON(userString);
 }
 if(jQuery.trim(totalPostsString).length > 0) {
   Window.totalPosts = parseInt(totalPostsString);
