@@ -33,7 +33,7 @@ case class User(
   password: PasswordInfo = PasswordInfo("", ""),
   avatarURL: Option[String],
   activated: Boolean,
-  services: List[String] = List("master")
+  services: List[String] = List("user", "comment")
 ) extends Identity with TemporalModel {
   /**
    * Tries to construct a name.

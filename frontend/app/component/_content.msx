@@ -4,10 +4,10 @@ var Content = function(ctrl){
       <div className="sort roundbox" id="top">
         <form name="news_set_sort" id="news_set_sort" method="post" action="http://englishtips.org/">
           <span>Lọc theo:&nbsp;</span>
-          <a href="http://englishtips.org/#" onclick="dle_change_sort('date','asc'); return false;">Ngày đăng</a>
-          <a href="http://englishtips.org/#" onclick="dle_change_sort('rating','desc'); return false;">Rating</a>
-          <a href="http://englishtips.org/#" onclick="dle_change_sort('news_read','desc'); return false;">Lượt xem</a>
-          <a href="http://englishtips.org/#" onclick="dle_change_sort('comm_num','desc'); return false;">Bình luận</a>
+          <a href="javascript:void(0)" >Ngày đăng</a>
+          <a href="javascript:void(0)" >Rating</a>
+          <a href="javascript:void(0)" >Lượt xem</a>
+          <a href="javascript:void(0)" >Bình luận</a>
         </form>
       </div>,
       <div class="navigation" align="center" style="margin-bottom:10px; margin-top:10px;">

@@ -10,6 +10,18 @@ window.isMobile = window.mobilecheck();
 
 m.route.mode = "pathname";
 
+Window.urls = jQuery.parseJSON($('#initdata .urls').text());
+Window.menu = jQuery.parseJSON($('#initdata .menu').text());
+Window.categories = jQuery.parseJSON($('#initdata .categories').text());
+Window.posts = jQuery.parseJSON($('#initdata .posts').text());
+Window.articles = jQuery.parseJSON($('#initdata .articles').text());
+Window.totalPosts = jQuery.parseJSON($('#initdata .totalPosts').text());
+var userString = $('#initdata .user').text();
+if(jQuery.trim(userString).length > 0) {
+  Window.user = jQuery.parseJSON($('#initdata .user').text());
+  console.log(Window.user);
+}
+
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
 //window.Footer = require('./_footer.msx');

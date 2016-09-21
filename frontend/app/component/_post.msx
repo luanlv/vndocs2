@@ -67,6 +67,21 @@ var PostView = function(ctrl){
              <hr className="style3"/>
              <div className="postContent">
                {m.trust(marked(ctrl.post().post.content))}
+               
+               <div className="down-box">
+                   {ctrl.post().post.link.map(function(link){
+                      {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
+                      return <span><a
+                          onclick={function(e){
+                              if(Window.user == undefined) {
+                                  e.preventDefault();
+                                  data.showSignin = true;
+                              }
+                            }
+                          }
+                          href={"http://ouo.io/s/jkaTd8hX?s=" + "local.foo.com:9000/download/" + link.url}>Download {link.filename}</a></span>
+                   })}
+               </div>
              </div>
            </div>
          </div>,

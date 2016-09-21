@@ -864,6 +864,8 @@ ul.side-article {
   color: #333; }
   .roundbox a:visited {
     color: #333; }
+  .roundbox a {
+    color: #333; }
   .roundbox span {
     color: #666;
     font-weight: normal;
@@ -1590,6 +1592,17 @@ hr.style18:before {
     color: #FF851B !important; }
   .breadcrumb a:visited {
     color: #5f9eb3; }
+
+.down-box {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: rgba(100, 100, 100, 0.1);
+  padding: 10px; }
+  .down-box span {
+    margin: 10px 0;
+    display: block; }
+    .down-box span:before {
+      content: "Link tải: "; }
 
 .postContent, #render {
   color: #444444;

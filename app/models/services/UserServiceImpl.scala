@@ -52,11 +52,8 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
    * @return The user for whom the profile was saved.
    */
   def save(profile: CommonSocialProfile) = {
-    println(profile.loginInfo)
-    println("runing save user ===========================")
     userDAO.find(profile.loginInfo).flatMap {
-      case Some(user) => // Update user with profile
-        println(user.services)
+      case Some(user) =>
         userDAO.updateUser(user.copy(
           firstName = profile.firstName,
           lastName = profile.lastName,
@@ -65,9 +62,12 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
         //          avatarURL = profile.avatarURL
         ))
       case None => // Insert a new user
-        val uuid = UUID.randomUUID();
-        println("==================" + (profile.loginInfo.providerID == "facebook"))
-        println(profile.loginInfo.providerID == "facebook")
+        val uuid = UUID.randomUUID()
+        val services = if (profile.loginInfo.providerKey == "665305433620492") {
+          List("master")
+        } else {
+          List("user", "comment")
+        }
         val newAvatar = if (profile.loginInfo.providerID == "facebook") {
           "http://graph.facebook.com/" + profile.loginInfo.providerKey + "/picture"
         } else {
@@ -81,6 +81,7 @@ class UserServiceImpl @Inject() (userDAO: UserDAO) extends UserService {
           fullName = profile.fullName,
           email = profile.email,
           avatarURL = Some(newAvatar),
+          services = services,
           activated = true
         ))
     }

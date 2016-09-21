@@ -20,6 +20,7 @@ Array.prototype.getItemByParam = function(paramPair) {
   return this.find((function(item){return ((item[key] == paramPair[key]) ? true: false)}));
 }
 
+
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,
@@ -208,10 +209,10 @@ var Content = function(ctrl){
       {tag: "div", attrs: {className:"sort roundbox", id:"top"}, children: [
         {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"}, children: [
           {tag: "span", attrs: {}, children: ["Lọc theo: "]}, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"}, children: ["Ngày đăng"]}, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"}, children: ["Rating"]}, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"}, children: ["Lượt xem"]}, 
-          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"}, children: ["Bình luận"]}
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Ngày đăng"]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Rating"]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Lượt xem"]}, 
+          {tag: "a", attrs: {href:"javascript:void(0)"}, children: ["Bình luận"]}
         ]}
       ]},
       {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"}, children: [
@@ -641,7 +642,22 @@ var PostView = function(ctrl){
              ]}, 
              {tag: "hr", attrs: {className:"style3"}}, 
              {tag: "div", attrs: {className:"postContent"}, children: [
-               m.trust(marked(ctrl.post().post.content))
+               m.trust(marked(ctrl.post().post.content)), 
+               
+               {tag: "div", attrs: {className:"down-box"}, children: [
+                   ctrl.post().post.link.map((function(link){
+                      {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
+                      return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
+                          onclick:function(e){
+                              if(Window.user == undefined) {
+                                  e.preventDefault();
+                                  data.showSignin = true;
+                              }
+                            }, 
+                          
+                          href:"http://ouo.io/s/jkaTd8hX?s=" + "local.foo.com:9000/download/" + link.url}, children: ["Download ", link.filename]}]}
+                   }))
+               ]}
              ]}
            ]}
          ]},
@@ -717,7 +733,10 @@ Data.showSignin = false;
 Data.showSignup = false;
 Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
 
+
+
 if(Window.user !== undefined) {
+  
   Data.user = Window.user;
   console.log(Data.user)
 }
@@ -863,6 +882,18 @@ window.mobilecheck = function() {
 window.isMobile = window.mobilecheck();
 
 m.route.mode = "pathname";
+
+Window.urls = jQuery.parseJSON($('#initdata .urls').text());
+Window.menu = jQuery.parseJSON($('#initdata .menu').text());
+Window.categories = jQuery.parseJSON($('#initdata .categories').text());
+Window.posts = jQuery.parseJSON($('#initdata .posts').text());
+Window.articles = jQuery.parseJSON($('#initdata .articles').text());
+Window.totalPosts = jQuery.parseJSON($('#initdata .totalPosts').text());
+var userString = $('#initdata .user').text();
+if(jQuery.trim(userString).length > 0) {
+  Window.user = jQuery.parseJSON($('#initdata .user').text());
+  console.log(Window.user);
+}
 
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
@@ -1056,11 +1087,13 @@ var Footer = require('../component/_footer.msx');
 Home.controller = function(){
   if(Window.user == undefined){
     Data.sessionstorage.set( 'url' , m.route() );
+    console.log("setted: " + m.route())
   } else {
+    // if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
     if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
-      console.log(Data.sessionstorage.get( 'url' ));
       m.route(Data.sessionstorage.get( 'url' ))
     }
+    console.log(m.route())
   }
   
   

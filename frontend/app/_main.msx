@@ -19,6 +19,7 @@ Array.prototype.getItemByParam = function(paramPair) {
   return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)});
 }
 
+
 m.route(document.querySelector('#app'), "/", {
   "/": Main.Home,
   "/post/:postID": Main.Post,

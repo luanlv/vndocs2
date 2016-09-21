@@ -45,3 +45,17 @@
     }
   }
 }
+
+.down-box {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: rgba(100, 100, 100, 0.1);
+  padding: 10px;
+  span {
+    margin: 10px 0;
+    display: block;
+    &:before {
+      content: "Link tải: "
+    }
+  }
+}
