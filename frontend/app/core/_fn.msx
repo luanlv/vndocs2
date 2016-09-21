@@ -94,8 +94,13 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 ***REMOVED***;
 
-fn.cookieUrl = function(){
-    
-***REMOVED***;
+fn.changeUrl = function(title, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Title: title, Url: url ***REMOVED***;
+        history.pushState(obj, obj.Title, obj.Url);
+  ***REMOVED*** else {
+        alert("Browser does not support HTML5.");
+  ***REMOVED***
+***REMOVED***
 
 module.exports = fn;

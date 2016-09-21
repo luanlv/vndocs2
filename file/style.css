@@ -907,6 +907,9 @@ ul.side-article {
     padding: 2px;
     width: 100%; ***REMOVED***
 
+.navigation * {
+  margin-right: 5px; ***REMOVED***
+
 hr.style1 {
   border-top: 1px solid #ddd; ***REMOVED***
 

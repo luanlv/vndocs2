@@ -1,5 +1,5 @@
 @import scala.util.Random
-@(menu: String, categories: String, posts: String, articles: String)(implicit user: Option[User], request: RequestHeader, messages: Messages)
+@(menu: String, categories: String, posts: String, articles: String, totalPosts: Int = 1)(implicit user: Option[User], request: RequestHeader, messages: Messages)
 
 <!doctype html>
 <html lang="en">
@@ -20,6 +20,7 @@
             Window.categories = @Html(categories);
             Window.posts = @Html(posts);
             Window.articles = @Html(articles);
+            Window.totalPosts = @totalPosts;
             @user match {
                 case Some(user) => {
                     Window.user = {

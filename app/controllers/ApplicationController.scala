@@ -47,13 +47,15 @@ class ApplicationController @Inject() (
       categories <- categoryService.listParent
       posts <- postService.getList(1)
       articles <- articleService.getList(1)
-  ***REMOVED*** yield (menu, categories, posts, articles)
+      totalPosts <- postService.count
+  ***REMOVED*** yield (menu, categories, posts, articles, totalPosts)
     data.map { data =>
       Ok(views.html.home(
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
-        Json.toJson(data._4).toString
+        Json.toJson(data._4).toString,
+        data._5
       ))
   ***REMOVED***
 ***REMOVED***

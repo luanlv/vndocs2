@@ -203,76 +203,88 @@ var Comments = function(ctrl, content, id, type){
 module.exports = Comments;
 ***REMOVED***,{"../core/_data.msx":11,"../core/_fn.msx":12***REMOVED***],4:[function(require,module,exports){
 var Content = function(ctrl){
-    return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
-      ctrl.request.ready()?[
-        {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
-          {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: [
-              {tag: "span", attrs: {***REMOVED***, children: ["Lọc theo: "]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["Ngày đăng"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["Rating"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["Lượt xem"]***REMOVED***, 
-            {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["Bình luận"]***REMOVED***
-        ***REMOVED******REMOVED***
-      ***REMOVED******REMOVED***,
-          ctrl.posts().posts.map(function(el) {
-            return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
-              {tag: "div", attrs: {className:"title"***REMOVED***, children: [
-                {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
-                  {tag: "a", attrs: {href:"/post/" + el._id, 
-                     className:"title", 
-                     config:m.route
-                ***REMOVED***, children: [el.title]***REMOVED***
-              ***REMOVED******REMOVED***, 
-                {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
-                  {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
-                  {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [el.nLike]***REMOVED***
-              ***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
-                {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
-                {tag: "span", attrs: {className:"category"***REMOVED***, children: [
+  return {tag: "div", attrs: {className:"main mh800"***REMOVED***, children: [
+    ctrl.request.ready()?[
+      {tag: "div", attrs: {className:"sort roundbox"***REMOVED***, children: [
+        {tag: "form", attrs: {name:"news_set_sort", id:"news_set_sort", method:"post", action:"http://englishtips.org/"***REMOVED***, children: [
+          {tag: "span", attrs: {***REMOVED***, children: ["Lọc theo: "]***REMOVED***, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('date','asc'); return false;"***REMOVED***, children: ["Ngày đăng"]***REMOVED***, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('rating','desc'); return false;"***REMOVED***, children: ["Rating"]***REMOVED***, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('news_read','desc'); return false;"***REMOVED***, children: ["Lượt xem"]***REMOVED***, 
+          {tag: "a", attrs: {href:"http://englishtips.org/#", onclick:"dle_change_sort('comm_num','desc'); return false;"***REMOVED***, children: ["Bình luận"]***REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***,
+      ctrl.posts().posts.map(function(el) {
+        return {tag: "div", attrs: {className:"block main-item"***REMOVED***, children: [
+          {tag: "div", attrs: {className:"title"***REMOVED***, children: [
+            {tag: "div", attrs: {className:"t-left"***REMOVED***, children: [
+              {tag: "a", attrs: {href:"/post/" + el._id, 
+                 className:"title", 
+                 config:m.route
+            ***REMOVED***, children: [el.title]***REMOVED***
+          ***REMOVED******REMOVED***, 
+            {tag: "div", attrs: {className:"t-right"***REMOVED***, children: [
+              {tag: "div", attrs: {className:"rate-nav"***REMOVED***, children: ["RATING"]***REMOVED***, 
+              {tag: "div", attrs: {className:"rate-num"***REMOVED***, children: [el.nLike]***REMOVED***
+          ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {className:"meta-data"***REMOVED***, children: [
+            {tag: "span", attrs: {className:"upload"***REMOVED***, children: [el.upload]***REMOVED***, 
+            {tag: "span", attrs: {className:"category"***REMOVED***, children: [
                       el.categories.map(function (item) {
                         return {tag: "a", attrs: {href:"/category/" + item, 
-                            config:m.route
+                                  config:m.route
                       ***REMOVED***, children: [{tag: "span", attrs: {***REMOVED***, children: [(Window.categories.getItemByParam({slug: item***REMOVED***) == undefined)?(""):(Window.categories.getItemByParam({slug: item***REMOVED***).name)]***REMOVED***]***REMOVED***
                     ***REMOVED***)
                     ***REMOVED******REMOVED***, 
-                {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***, 
-                {tag: "span", attrs: {className:"nComment"***REMOVED***, children: [
+            {tag: "span", attrs: {className:"time"***REMOVED***, children: [moment(el.time).format('L')]***REMOVED***, 
+            {tag: "span", attrs: {className:"nComment"***REMOVED***, children: [
                     {tag: "a", attrs: {href:"/post/" + el._id + "#comment", 
                        config:m.route
                   ***REMOVED***, children: [el.nComment, " bình luận"]***REMOVED***
                     
               ***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***, 
-              {tag: "div", attrs: {className:"info"***REMOVED***, children: [
-                {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
-                {tag: "p", attrs: {className:"description"***REMOVED***, children: [
-                  (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
-              ***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***
+        ***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {className:"info"***REMOVED***, children: [
+            {tag: "a", attrs: {href:"#"***REMOVED***, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt***REMOVED******REMOVED***]***REMOVED***, 
+            {tag: "p", attrs: {className:"description"***REMOVED***, children: [
+              (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
           ***REMOVED******REMOVED***
-        ***REMOVED***),
-          {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
-        {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"***REMOVED***, children: [
-          {tag: "a", attrs: {href:"http://englishtips.org/page/13/", rel:"nofollow"***REMOVED***, children: ["PREV"]***REMOVED***, 
-          {tag: "a", attrs: {href:"http://englishtips.org/", rel:"nofollow"***REMOVED***, children: ["1"]***REMOVED***, 
-          {tag: "a", attrs: {href:"http://englishtips.org/page/15/", rel:"nofollow"***REMOVED***, children: ["NEXT"]***REMOVED***, 
-          {tag: "a", attrs: {href:"#page", onclick:"javascript:ShowOrHide('go_on_page')"***REMOVED***, children: [" Go to page "]***REMOVED***
-      ***REMOVED******REMOVED***
-          
-    ***REMOVED***:[
-          {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
-              {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
-                  {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
-                  {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
-            ***REMOVED******REMOVED***
         ***REMOVED******REMOVED***
-    ***REMOVED***
-        
-        
-  ***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED***),
+      {tag: "hr", attrs: {className:"style3"***REMOVED******REMOVED***,
+      {tag: "div", attrs: {class:"navigation", align:"center", style:"margin-bottom:10px; margin-top:10px;"***REMOVED***, children: [
+        {tag: "button", attrs: {
+          onclick:function(){
+            ctrl.goPrev(ctrl.page)
+        ***REMOVED***
+      ***REMOVED***, children: ["PREV"]***REMOVED***, 
+        {tag: "input", attrs: {type:"number", id:"page", value:ctrl.page, style:"width: 50px; text-alige: center"***REMOVED******REMOVED***, 
+        {tag: "button", attrs: {
+            onclick:function(){
+              ctrl.goToPage($('#page').val())
+          ***REMOVED***
+      ***REMOVED***, children: [" Go"]***REMOVED***, 
+        {tag: "button", attrs: {
+            onclick:function(){
+              ctrl.goNext(ctrl.page)
+          ***REMOVED***
+      ***REMOVED***, children: ["NEXT"]***REMOVED***
+    ***REMOVED******REMOVED***
+    
+  ***REMOVED***:[
+      {tag: "div", attrs: {className:"loading"***REMOVED***, children: [
+        {tag: "div", attrs: {class:"loader"***REMOVED***, children: [
+          {tag: "div", attrs: {class:"inner one"***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"inner two"***REMOVED******REMOVED***, 
+          {tag: "div", attrs: {class:"inner three"***REMOVED******REMOVED***
+      ***REMOVED******REMOVED***
+    ***REMOVED******REMOVED***
+  ***REMOVED***
+  
+  
+***REMOVED******REMOVED***
 ***REMOVED***;
 
 
@@ -786,9 +798,14 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 ***REMOVED***;
 
-fn.cookieUrl = function(){
-    
-***REMOVED***;
+fn.changeUrl = function(title, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Title: title, Url: url ***REMOVED***;
+        history.pushState(obj, obj.Title, obj.Url);
+  ***REMOVED*** else {
+        alert("Browser does not support HTML5.");
+  ***REMOVED***
+***REMOVED***
 
 module.exports = fn;
 ***REMOVED***,{***REMOVED***],13:[function(require,module,exports){
@@ -985,15 +1002,17 @@ Home.controller = function(){
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop({***REMOVED***);
+  ctrl.posts().total = 1;
   ctrl.articles = Window.articles;
-  
+  ctrl.page = 1;
   
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page***REMOVED***, ctrl.posts, ctrl.setup);
 ***REMOVED*** else {
     ctrl.request.data = m.prop(Window.posts);
     ctrl.posts().posts=ctrl.request.data();
+    ctrl.posts().total = Math.ceil(Window.totalPosts/5);
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
@@ -1003,6 +1022,25 @@ Home.controller = function(){
     m.redraw();
 ***REMOVED***;
   
+  ctrl.goToPage = function(page){
+    if(page >= 1 && page <= ctrl.posts().total) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.page = page;
+      fn.changeUrl("Page 1", m.route() + "?page=" + ctrl.page)
+  ***REMOVED***
+***REMOVED***;
+  ctrl.goPrev = function(page){
+    if(page > 1) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.page = page-1;
+  ***REMOVED***
+***REMOVED***
+  ctrl.goNext = function(page){
+    if(page < ctrl.posts().total) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.page = page+1;
+  ***REMOVED***
+***REMOVED***
 ***REMOVED***;
 
 Home.view = function(ctrl){

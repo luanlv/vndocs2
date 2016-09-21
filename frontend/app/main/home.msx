@@ -25,15 +25,17 @@ Home.controller = function(){
   ctrl.request = {***REMOVED***;
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop({***REMOVED***);
+  ctrl.posts().total = 1;
   ctrl.articles = Window.articles;
-  
+  ctrl.page = 1;
   
   
   if(Window.posts === undefined) {
-    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/1"***REMOVED***, ctrl.posts, ctrl.setup);
+    ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + ctrl.page***REMOVED***, ctrl.posts, ctrl.setup);
 ***REMOVED*** else {
     ctrl.request.data = m.prop(Window.posts);
     ctrl.posts().posts=ctrl.request.data();
+    ctrl.posts().total = Math.ceil(Window.totalPosts/5);
     Window.posts = undefined;
     ctrl.request.ready = m.prop(true);
     m.redraw();
@@ -43,6 +45,25 @@ Home.controller = function(){
     m.redraw();
 ***REMOVED***;
   
+  ctrl.goToPage = function(page){
+    if(page >= 1 && page <= ctrl.posts().total) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + page***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.page = page;
+      fn.changeUrl("Page 1", m.route() + "?page=" + ctrl.page)
+  ***REMOVED***
+***REMOVED***;
+  ctrl.goPrev = function(page){
+    if(page > 1) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page-1)***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.page = page-1;
+  ***REMOVED***
+***REMOVED***
+  ctrl.goNext = function(page){
+    if(page < ctrl.posts().total) {
+      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/posts/" + (page+1)***REMOVED***, ctrl.posts, ctrl.setup);
+      ctrl.page = page+1;
+  ***REMOVED***
+***REMOVED***
 ***REMOVED***;
 
 Home.view = function(ctrl){
