@@ -79,7 +79,7 @@ var PostView = function(ctrl){
                               }
                             }
                           }
-                          href={"http://ouo.io/s/jkaTd8hX?s=" + "local.foo.com:9000/download/" + link.url}>Download {link.filename}</a></span>
+                          href={"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}>Download {link.filename}</a></span>
                    })}
                </div>
              </div>

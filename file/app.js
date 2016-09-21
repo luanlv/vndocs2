@@ -655,7 +655,7 @@ var PostView = function(ctrl){
                               }
                             }, 
                           
-                          href:"http://ouo.io/s/jkaTd8hX?s=" + "local.foo.com:9000/download/" + link.url}, children: ["Download ", link.filename]}]}
+                          href:"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}, children: ["Download ", link.filename]}]}
                    }))
                ]}
              ]}
