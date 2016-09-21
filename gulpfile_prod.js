@@ -5,7 +5,7 @@ var browserify = require('gulp-browserify');
 var rename = require('gulp-rename');
 var optimizeJs = require('optimize-js');
 var gulpif = require('gulp-if');
-
+var jsmin = require('gulp-jsmin');
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
@@ -52,7 +52,7 @@ gulp.task('app', function() {
         transform: ['mithrilify']
       }))
       .pipe(rename('app-tmp.js'))
-      .pipe(minify({}))
+      .pipe(jsmin())
       .pipe(gulp.dest('public/js/'))
       .on('end', function(){
         cmd.exec('');

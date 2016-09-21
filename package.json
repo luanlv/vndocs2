@@ -23,7 +23,8 @@
     "mithril": "^0.2.0",
     "mithrilify": "0.0.5",
     "optimize-js": "*",
-    "gulp-run": "*"
+    "gulp-run": "*",
+    "gulp-jsmin": "*"
   },
   "repository": {
     "type": "git",

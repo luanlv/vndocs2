@@ -12,7 +12,7 @@ var Menu = function(ctrl){
                     <div className="userInfo">
                         <div className="top">
                             <div className="left">
-                                <img src={data.user.avatarURL} alt="avatar"/>
+                                <img src={(data.user.avatarURL.length>0)?(data.user.avatarURL):("/assets/images/silhouette.png")} width="50" height="50" alt="avatar"/>
                             </div>
                                 <div className="right">
                                 <div>Xin chào</div>

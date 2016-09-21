@@ -23,13 +23,13 @@ class ErrorHandler @Inject() (
   // 401 - Unauthorized
   override def onNotAuthenticated(implicit request: RequestHeader): Future[Result] = Future.successful {
     //    Redirect(routes.Auth.signIn)
-    Ok("onNotAuthenticated")
+    Redirect("/")
   }
 
   // 403 - Forbidden
   override def onNotAuthorized(implicit request: RequestHeader): Future[Result] = Future.successful {
     //    Forbidden(views.html.errors.accessDenied())
-    Ok("onNotAuthorized")
+    Redirect("/")
   }
 
   // 404 - page not found error

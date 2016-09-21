@@ -527,7 +527,7 @@ var Menu = function(ctrl){
                     {tag: "div", attrs: {className:"userInfo"}, children: [
                         {tag: "div", attrs: {className:"top"}, children: [
                             {tag: "div", attrs: {className:"left"}, children: [
-                                {tag: "img", attrs: {src:data.user.avatarURL, alt:"avatar"}}
+                                {tag: "img", attrs: {src:(data.user.avatarURL.length>0)?(data.user.avatarURL):("/assets/images/silhouette.png"), width:"50", height:"50", alt:"avatar"}}
                             ]}, 
                                 {tag: "div", attrs: {className:"right"}, children: [
                                 {tag: "div", attrs: {}, children: ["Xin chào"]}, 

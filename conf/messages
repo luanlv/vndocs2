@@ -79,16 +79,16 @@ yahoo = Yahoo
 email.from = Administrator <noreply@vndocs.com>
 
 # Sign Up
-email.sign.up.subject = Welcome
-email.sign.up.hello = Hello {0},
-email.sign.up.html.text = Please follow <a href="{0}">this link</a> to confirm and activate your new account.
+email.sign.up.subject = Kích hoạt tài khoản trên vndocs.com
+email.sign.up.hello = Xin chào {0},
+email.sign.up.html.text = Bạn đã đăng kýtài khoản trên vndocs.com. Click vào   <a href="{0}">đây</a> để xác nhận kích hoạt tài khoản.
 email.sign.up.txt.text = Please follow the link to confirm and activate your new account: {0}
 
 # Already Signed Up
 email.already.signed.up.subject = Welcome
 email.already.signed.up.hello = Hello {0},
-email.already.signed.up.html.text = You already have an account registered. Please follow <a href="{0}">this link</a> to sign in into your account.
-email.already.signed.up.txt.text = You already have an account registered. Please follow the link to sign in into your account: {0}
+email.already.signed.up.html.text = Bạn đã đăng ký tài khoản trên vndocs.com. Click vào  <a href="{0}">đây</a> để đăng nhập.
+email.already.signed.up.txt.text = Bạn đã đăng ký tài khoản trên vndocs.com. Để đăng nhập tài khoản, click vào: {0}
 
 # Reset Password
 email.reset.password.subject = Reset password

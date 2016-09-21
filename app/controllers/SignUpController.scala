@@ -38,7 +38,8 @@ class SignUpController @Inject() (
    * @return The result to display.
    */
   def view = silhouette.UnsecuredAction.async { implicit request =>
-    Future.successful(Ok(views.html.signUp(SignUpForm.form)))
+    //    Future.successful(Ok(views.html.signUp(SignUpForm.form)))
+    Future.successful(Ok("một email đã được gửi tới địa chỉ email của bạn. vui lòng bấm vào đường link trong email để xác nhận"))
   }
 
   /**
