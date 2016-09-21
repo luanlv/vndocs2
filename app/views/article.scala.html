@@ -13,27 +13,17 @@
 
     </head>
     <body>
+        <span class="urls">{}</span>
+        <span class="menu">@Html(menu)</span>
+        <span class="categories">@Html(categories)</span>
+        <span class="posts"></span>
+        <span class="post"></span>
+        <span class="comments">@Html(comments)</span>
+        <span class="article">@Html(article)</span>
+        <span class="articles">@Html(articles)</span>
+        <span class="totalPosts"></span>
+        <span class="user">
 
-        <script >
-            Window.urls = {};
-            Window.menu = @Html(menu);
-            Window.categories = @Html(categories);
-            Window.comments = @Html(comments);
-            Window.article = @Html(article);
-            Window.articles = @Html(articles);
-            @user match {
-                case Some(user) => {
-                    Window.user = {
-                        "userID" : "@user.userID",
-                        "avatarURL" : "@user.avatarURL",
-                        "fullName" : "@user.fullName"
-                    };
-                }
-                case None => {
-
-                }
-            }
-        </script>
         <div id="app"></div>
         @helper.CSRF.formField
         <script src="/assets/lib/jquery.min.op.js"></script>

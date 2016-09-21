@@ -640,11 +640,11 @@ body {
     transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
     transition: all .3s ease; }
   .login #facebook-connect, .login-popup #facebook-connect {
-    background: white url("http://eswarasai.com/projects/social-buttons/img/facebook.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
+    background: white url("/assets/images/facebook.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
     border: 1px solid #3c5a9a; }
   .login #facebook-connect:hover, .login-popup #facebook-connect:hover {
     border-color: #3c5a9a;
-    background: #3c5a9a url("http://eswarasai.com/projects/social-buttons/img/facebook-white.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
+    background: #3c5a9a url("/assets/images/facebook-white.svg") no-repeat scroll 5px 0px/25px 25px padding-box border-box;
     transition: all .3s ease-out; }
   .login #facebook-connect span, .login-popup #facebook-connect span {
     box-sizing: border-box;
@@ -659,11 +659,11 @@ body {
     color: #FFF;
     transition: all .3s ease; }
   .login #google-connect, .login-popup #google-connect {
-    background: white url("http://eswarasai.com/projects/social-buttons/img/google-plus.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
+    background: white url("/assets/images/google-plus.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
     border: 1px solid #dc4a3d; }
   .login #google-connect:hover, .login-popup #google-connect:hover {
     border-color: #dc4a3d;
-    background: #dc4a3d url("http://eswarasai.com/projects/social-buttons/img/google-plus-white.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
+    background: #dc4a3d url("/assets/images/google-plus-white.png") no-repeat scroll 8px 0px/30px 25px padding-box border-box;
     transition: all .3s ease-out; }
   .login #google-connect span, .login-popup #google-connect span {
     box-sizing: border-box;
