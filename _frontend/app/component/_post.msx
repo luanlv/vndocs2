@@ -74,7 +74,7 @@ var PostView = function(ctrl){
                {m.trust(marked(ctrl.post().post.content))}
                
                <div id="download" className="down-box ">
-                   <h4 style="color: #666; font-style: italic; margin-bottom: 5px;">Chọn link phía dưới để tải về!</h4>
+                   <h4 style="color: red; font-style: italic; margin-bottom: 5px;">Chọn link phía dưới để tải về!</h4>
                    <hr className="style1"/>
                    {ctrl.post().post.link.map(function(link){
                       {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}

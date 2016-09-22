@@ -8,7 +8,7 @@ var Comments = function(ctrl, content, id, type){
       <hr className="style1"/>
       <div className="commentWr">
               <span class="poster">
-                <img src={(data.user != undefined && data.use.avatarUrl.length >0)?(data.user.avatarURL):("/assets/images/silhouette.png")} class="icon"/>
+                <img src={(data.user != undefined)?(data.user.avatarURL):("/assets/images/silhouette.png")} class="icon"/>
                 <br/>
               </span>
         <div class="comment commentBox">

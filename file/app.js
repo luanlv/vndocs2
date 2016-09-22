@@ -129,7 +129,7 @@ var Comments = function(ctrl, content, id, type){
       {tag: "hr", attrs: {className:"style1"}}, 
       {tag: "div", attrs: {className:"commentWr"}, children: [
               {tag: "span", attrs: {class:"poster"}, children: [
-                {tag: "img", attrs: {src:(data.user != undefined && data.use.avatarUrl.length >0)?(data.user.avatarURL):("/assets/images/silhouette.png"), class:"icon"}}, 
+                {tag: "img", attrs: {src:(data.user != undefined)?(data.user.avatarURL):("/assets/images/silhouette.png"), class:"icon"}}, 
                 {tag: "br", attrs: {}}
               ]}, 
         {tag: "div", attrs: {class:"comment commentBox"}, children: [
@@ -652,7 +652,7 @@ var PostView = function(ctrl){
                m.trust(marked(ctrl.post().post.content)), 
                
                {tag: "div", attrs: {id:"download", className:"down-box "}, children: [
-                   {tag: "h4", attrs: {style:"color: #666; font-style: italic; margin-bottom: 5px;"}, children: ["Chọn link phía dưới để tải về!"]}, 
+                   {tag: "h4", attrs: {style:"color: red; font-style: italic; margin-bottom: 5px;"}, children: ["Chọn link phía dưới để tải về!"]}, 
                    {tag: "hr", attrs: {className:"style1"}}, 
                    ctrl.post().post.link.map((function(link){
                       {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
