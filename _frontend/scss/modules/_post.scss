@@ -53,20 +53,25 @@
   border: 1px solid rgba(100, 100, 100, 0.05);
   background: rgba(100, 100, 100, 0.1);
   padding: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   span {
     margin: 10px 0;
     display: block;
     &:before {
-      content: "Link tải: "
+      content: "Link tải: ";
+      font-style: italic;
     }
   }
   h4 {
-    padding-left: 10px;
+    margin-left: 10px;
     border-bottom: 2px solid #ddd;
+    font-size: 16px;
   }
   .inside {
     border-radius: 3px;
-    padding: 5px;
+    padding: 10px;
     -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);

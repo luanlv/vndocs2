@@ -346,7 +346,7 @@ var Head = function(ctrl){
              }
        }}, 
       {tag: "a", attrs: {href:"/", config:m.route}, children: [
-        {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"}}
+        {tag: "img", attrs: {className:"logo", src:data.logo, alt:"logo Vndocs.com"}}
       ]}, 
       {tag: "span", attrs: {className:"slogan orange", 
         config:function(el, isInited, context){
@@ -732,6 +732,7 @@ module.exports = Side;
 },{"../core/_data.msx":11}],11:[function(require,module,exports){
 var Data = {};
 
+Data.logo = "/assets/images/logo" + Math.floor(Math.random()*5+1) +".png";
 Data.showSignin = false;
 Data.showSignup = false;
 Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );

@@ -14,7 +14,7 @@ var Head = function(ctrl){
              }}
        ></span>
       <a href="/" config={m.route}>
-        <img className="logo" src="/assets/images/logo.png" alt="logo Vndocs.com"/>
+        <img className="logo" src={data.logo} alt="logo Vndocs.com"/>
       </a>
       <span className="slogan orange"
         config={function(el, isInited, context){

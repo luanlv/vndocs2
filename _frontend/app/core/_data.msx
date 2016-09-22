@@ -1,5 +1,6 @@
 var Data = {};
 
+Data.logo = "/assets/images/logo" + Math.floor(Math.random()*5+1) +".png";
 Data.showSignin = false;
 Data.showSignup = false;
 Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );

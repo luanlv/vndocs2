@@ -1567,7 +1567,7 @@ hr.style18:before {
   .login-popup input[type="password"].focus {
     box-shadow: inset 1px 1px 2px 0 #c9c9c9; }
   .login-popup .wrapper-content {
-    z-index: 999; }
+    z-index: 1000; }
 
 .breadcrumb {
   font-size: 0.9em; }
@@ -1606,18 +1606,21 @@ hr.style18:before {
   border-radius: 3px;
   border: 1px solid rgba(100, 100, 100, 0.05);
   background: rgba(100, 100, 100, 0.1);
-  padding: 5px; }
+  padding: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); }
   .down-box span {
     margin: 10px 0;
     display: block; }
     .down-box span:before {
-      content: "Link tải: "; }
+      content: "Link tải: ";
+      font-style: italic; }
   .down-box h4 {
-    padding-left: 10px;
-    border-bottom: 2px solid #ddd; }
+    margin-left: 10px;
+    border-bottom: 2px solid #ddd;
+    font-size: 16px; }
   .down-box .inside {
     border-radius: 3px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     background: #fff; }
     .down-box .inside a:hover {
