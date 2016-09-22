@@ -125,10 +125,11 @@ var fn = require('../core/_fn.msx');
 var Comments = function(ctrl, content, id, type){
   return [
     {tag: "div", attrs: {id:"comment"}, children: [
-    
+      {tag: "h2", attrs: {}, children: ["Bình luận ", (Window.user == undefined)?("(Bạn phải đăng nhập!)"):("")]}, 
+      {tag: "hr", attrs: {className:"style1"}}, 
       {tag: "div", attrs: {className:"commentWr"}, children: [
               {tag: "span", attrs: {class:"poster"}, children: [
-                {tag: "img", attrs: {src:(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL), class:"icon"}}, 
+                {tag: "img", attrs: {src:(data.user != undefined && data.use.avatarUrl.length >0)?(data.user.avatarURL):("/assets/images/silhouette.png"), class:"icon"}}, 
                 {tag: "br", attrs: {}}
               ]}, 
         {tag: "div", attrs: {class:"comment commentBox"}, children: [
@@ -639,13 +640,20 @@ var PostView = function(ctrl){
                         }
                     }
                  }, children: ["+1"]}
-               ]}
+               ]}, 
+             {tag: "div", attrs: {className:"t-mid"}, children: [
+                 {tag: "div", attrs: {className:"go-download"}, children: [
+                     {tag: "a", attrs: {href:"#download"}, children: [{tag: "span", attrs: {}, children: ["Tải ngay"]}]}
+                 ]}
+             ]}
              ]}, 
              {tag: "hr", attrs: {className:"style3"}}, 
              {tag: "div", attrs: {className:"postContent"}, children: [
                m.trust(marked(ctrl.post().post.content)), 
                
-               {tag: "div", attrs: {className:"down-box"}, children: [
+               {tag: "div", attrs: {id:"download", className:"down-box "}, children: [
+                   {tag: "h4", attrs: {style:"color: #666; font-style: italic; margin-bottom: 5px;"}, children: ["Chọn link phía dưới để tải về!"]}, 
+                   {tag: "hr", attrs: {className:"style1"}}, 
                    ctrl.post().post.link.map(function(link){
                       {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
                       return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {

@@ -2,9 +2,9 @@ import com.typesafe.sbt.SbtScalariform._
 
 import scalariform.formatter.preferences._
 
-name := "play-silhouette-seed"
+name := "vndocs"
 
-version := "4.0.0"
+version := "1"
 
 scalaVersion := "2.11.8"
 
