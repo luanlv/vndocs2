@@ -75,19 +75,13 @@ var PostView = function(ctrl){
                
                <div id="download" className="down-box ">
                    <h4 style="color: red; font-style: italic; margin-bottom: 5px;">Chọn link phía dưới để tải về!</h4>
-                   <hr className="style1"/>
-                   {ctrl.post().post.link.map(function(link){
-                      {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
-                      return <span><a
-                          onclick={function(e){
-                              if(Window.user == undefined) {
-                                  e.preventDefault();
-                                  data.showSignin = true;
-                              }
-                            }
-                          }
-                          href={"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}>Download {link.filename}</a></span>
-                   })}
+                   <div className="inside">
+                       {ctrl.post().post.link.map(function(link){
+                          {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
+                          return <span><a
+                              href={"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}>Download {link.filename}</a></span>
+                       })}
+                   </div>
                </div>
              </div>
            </div>

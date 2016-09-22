@@ -765,6 +765,8 @@ body {
     color: #666;
     font-weight: bolder;
     font-size: 12px; }
+    .side-article a:hover {
+      color: #FF851B; }
 
 ul.side-article {
   list-style: circle;
@@ -803,6 +805,10 @@ ul.side-article {
 
 .meta-data {
   margin-bottom: 7px; }
+  .meta-data .nComment a {
+    text-decoration: none !important; }
+    .meta-data .nComment a:hover {
+      color: #FF851B; }
   .meta-data > span::after {
     content: ' |';
     margin-right: 3px; }
@@ -1526,7 +1532,7 @@ hr.style18:before {
       @media (max-width: 600px) {
         .login-popup .wrapper-content {
           width: 95%;
-          margin: 20px 15px 0 5px; } }
+          margin: 20px 5px 0 5px; } }
   .login-popup .label {
     margin-top: 10px;
     width: 120px;
@@ -1571,7 +1577,8 @@ hr.style18:before {
 .postWr h1 {
   color: #0E6AAF;
   font-size: 24px;
-  font-weight: bold; }
+  font-weight: bold;
+  word-wrap: break-word; }
 .postWr .postInfo {
   min-height: 155px; }
   .postWr .postInfo img {
@@ -1582,7 +1589,8 @@ hr.style18:before {
     width: 90px;
     float: right; }
 .postWr .postContent {
-  margin-top: 20px; }
+  margin-top: 20px;
+  word-wrap: break-word; }
 
 .breadcrumb a {
   font-style: italic;
@@ -1595,22 +1603,35 @@ hr.style18:before {
     color: #5f9eb3; }
 
 .down-box {
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  border-radius: 3px;
+  border: 1px solid rgba(100, 100, 100, 0.05);
   background: rgba(100, 100, 100, 0.1);
-  padding: 10px; }
+  padding: 5px; }
   .down-box span {
     margin: 10px 0;
     display: block; }
     .down-box span:before {
       content: "Link tải: "; }
+  .down-box h4 {
+    padding-left: 10px;
+    border-bottom: 2px solid #ddd; }
+  .down-box .inside {
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    background: #fff; }
+    .down-box .inside a:hover {
+      color: #FF851B; }
+      .down-box .inside a:hover::after {
+        content: "↩"; }
 
 .go-download {
   -ms-flex-line-pack: right;
   align-content: right;
-  text-align: right; }
+  text-align: right;
+  padding-top: 10px; }
   .go-download span {
-    margin: 20px;
+    margin: 40px 20px 20px 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px;
@@ -1699,7 +1720,7 @@ hr.style18:before {
     color: #666;
     max-width: 460px; }
   .postContent hr, #render hr {
-    width: 540px;
+    width: 100%;
     text-align: left;
     margin: 0 auto 0 0;
     color: #999; }
@@ -1820,6 +1841,8 @@ hr.style18:before {
   .postContent button::-moz-focus-inner, #render button::-moz-focus-inner {
     padding: 0;
     border: 0; }
+  .postContent a:hover, #render a:hover {
+    color: #FF851B; }
 
 #comment h2 {
   text-align: center;

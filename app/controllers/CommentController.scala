@@ -22,7 +22,7 @@ class CommentController @Inject() (
   socialAuthController: SocialAuthController)
   extends AuthController {
 
-  def doComment(parrentID: String) = silhouette.SecuredAction(WithService("master")).async(parse.json) { implicit request =>
+  def doComment(parrentID: String) = silhouette.SecuredAction(WithService("comment")).async(parse.json) { implicit request =>
     (request.body \ "data").asOpt[String].map {
       comment =>
         {

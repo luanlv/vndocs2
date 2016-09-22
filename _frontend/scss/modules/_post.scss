@@ -10,6 +10,7 @@
     color: $title-color;
     font-size: 24px;
     font-weight: bold;
+    word-wrap: break-word;
   }
 
   .postInfo {
@@ -28,6 +29,7 @@
 
   .postContent {
     margin-top: 20px;
+    word-wrap: break-word;
   }
 }
 
@@ -47,10 +49,10 @@
 }
 
 .down-box {
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  border-radius: 3px;
+  border: 1px solid rgba(100, 100, 100, 0.05);
   background: rgba(100, 100, 100, 0.1);
-  padding: 10px;
+  padding: 5px;
   span {
     margin: 10px 0;
     display: block;
@@ -58,13 +60,32 @@
       content: "Link tải: "
     }
   }
+  h4 {
+    padding-left: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  .inside {
+    border-radius: 3px;
+    padding: 5px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    background: #fff;
+    a:hover {
+      color: $orange;
+      &::after {
+        content:"↩";
+      }
+    }
+  }
 }
 
 .go-download {
   align-content: right;
   text-align: right;
+  padding-top: 10px;
   span {
-    margin: 20px;
+    margin: 40px 20px 20px 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px;

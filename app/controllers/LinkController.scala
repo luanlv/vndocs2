@@ -11,6 +11,7 @@ import com.sksamuel.scrimage.ScaleMethod.Bicubic
 import models.Image
 import models.services.{ ImageService, LinkService, PostService, SetupService }
 import play.api.libs.json.{ JsObject, JsValue, Json }
+import play.api.mvc.Call
 import utils.silhouette.MyEnv
 //import com.sksamuel.scrimage.Image
 //import com.sksamuel.scrimage.ScaleMethod.Bicubic
@@ -34,12 +35,21 @@ class LinkController @Inject() (
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
 
-  def getRealUrl(url: String) = silhouette.SecuredAction.async { implicit request =>
+  def getRealUrl(url: String) = silhouette.UserAwareAction.async { implicit request =>
     linkService.retrieve(url).map { linkOp =>
       linkOp match {
         case None => BadRequest
         case Some(link) => {
-          Redirect(link.url)
+          request.identity match {
+            case None => {
+              println("redirect =======================" + "/post/" + link.postID + "?needUser=true")
+              Redirect("/post/" + link.postID + "?needUser=true")
+            }
+            case Some(_) => {
+              println("redirect ======================== " + link.url)
+              Redirect(link.url)
+            }
+          }
         }
       }
     }

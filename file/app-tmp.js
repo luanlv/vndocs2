@@ -653,19 +653,13 @@ var PostView = function(ctrl){
                
                {tag: "div", attrs: {id:"download", className:"down-box "}, children: [
                    {tag: "h4", attrs: {style:"color: red; font-style: italic; margin-bottom: 5px;"}, children: ["Chọn link phía dưới để tải về!"]}, 
-                   {tag: "hr", attrs: {className:"style1"}}, 
-                   ctrl.post().post.link.map(function(link){
-                      {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
-                      return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
-                          onclick:function(e){
-                              if(Window.user == undefined) {
-                                  e.preventDefault();
-                                  data.showSignin = true;
-                              }
-                            }, 
-                          
-                          href:"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}, children: ["Download ", link.filename]}]}
-                   })
+                   {tag: "div", attrs: {className:"inside"}, children: [
+                       ctrl.post().post.link.map(function(link){
+                          {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
+                          return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
+                              href:"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}, children: ["Download ", link.filename]}]}
+                       })
+                   ]}
                ]}
              ]}
            ]}
@@ -989,6 +983,10 @@ Post.controller = function(){
   }
   
   var ctrl = this;
+  ctrl.needUser = m.route.param("needUser");
+  if(ctrl.needUser != undefined){
+    Data.showSignin = true;
+  }
   ctrl.setup = function(){
     m.redraw();
   };
@@ -1061,6 +1059,10 @@ Category.controller = function(){
   }
   
   var ctrl = this;
+  ctrl.needUser = m.route.param("needUser");
+  if(ctrl.needUser != undefined){
+    Data.showSignin = true;
+  }
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop({});
@@ -1154,6 +1156,10 @@ Home.controller = function(){
   
   
   var ctrl = this;
+  ctrl.needUser = m.route.param("needUser");
+  if(ctrl.needUser != undefined){
+    Data.showSignin = true;
+  }
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop({});
@@ -1241,6 +1247,10 @@ Post.controller = function(){
   }
   
   var ctrl = this;
+  ctrl.needUser = m.route.param("needUser");
+  if(ctrl.needUser != undefined){
+    Data.showSignin = true;
+  }
   ctrl.setup = function(){
     m.redraw();
   };
@@ -1250,6 +1260,7 @@ Post.controller = function(){
   ctrl.post = m.prop({});
   ctrl.comment = m.prop("");
   ctrl.voted = false;
+  
   
   if(Window.post === undefined) {
     console.log("run request !!!!!!!!!!")

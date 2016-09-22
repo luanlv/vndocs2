@@ -22,6 +22,10 @@ Home.controller = function(){
   
   
   var ctrl = this;
+  ctrl.needUser = m.route.param("needUser");
+  if(ctrl.needUser != undefined){
+    Data.showSignin = true;
+  }
   ctrl.request = {};
   ctrl.request.ready = m.prop(false);
   ctrl.posts = m.prop({});

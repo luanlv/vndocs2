@@ -18,6 +18,10 @@ Post.controller = function(){
   }
   
   var ctrl = this;
+  ctrl.needUser = m.route.param("needUser");
+  if(ctrl.needUser != undefined){
+    Data.showSignin = true;
+  }
   ctrl.setup = function(){
     m.redraw();
   };
