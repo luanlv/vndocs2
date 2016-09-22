@@ -18,7 +18,7 @@ var run = require('gulp-run');
 var localhost = new run.Command('curl http://localhost:9000');
 
 gulp.task('sass', function () {
-  return sass('frontend/scss/*.scss')
+  return sass('_frontend/scss/*.scss')
       .on('error', sass.logError)
       .pipe(autoprefixer({
         browsers: ['last 2 versions'],
@@ -33,7 +33,7 @@ gulp.task('sass', function () {
 
 gulp.task('app', function() {
   var cmd = new run.Command('optimize-js ./file/app-tmp.js > ./file/app.js');
-  gulp.src('frontend/app/main.msx')
+  gulp.src('_frontend/app/main.msx')
       .pipe(browserify({
         transform: ['mithrilify']
       }))
@@ -47,7 +47,7 @@ gulp.task('app', function() {
 
 gulp.task('admin', function() {
   var cmd = new run.Command('optimize-js ./file/admin-tmp.js > ./file/admin.js');
-  gulp.src('frontend/admin/main.msx')
+  gulp.src('_frontend/admin/main.msx')
       .pipe(browserify({
         transform: ['mithrilify']
       }))
@@ -84,11 +84,11 @@ gulp.task('serve', function () {
 });
 
 gulp.task('watcher', ['app'], function () {
-  gulp.watch('frontend/app/{,*/}{,*/}{,*/}{,*/}*.msx', ['app']);
-  gulp.watch('frontend/app/{,*/}{,*/}{,*/}{,*/}*.js', ['app']);
-  gulp.watch('frontend/scss/{,*/}*.scss', ['sass']);
-  gulp.watch('frontend/admin/{,*/}{,*/}{,*/}{,*/}*.msx', ['admin']);
-  gulp.watch('frontend/admin/{,*/}{,*/}{,*/}{,*/}*.js', ['admin']);
+  gulp.watch('_frontend/app/{,*/}{,*/}{,*/}{,*/}*.msx', ['app']);
+  gulp.watch('_frontend/app/{,*/}{,*/}{,*/}{,*/}*.js', ['app']);
+  gulp.watch('_frontend/scss/{,*/}*.scss', ['sass']);
+  gulp.watch('_frontend/admin/{,*/}{,*/}{,*/}{,*/}*.msx', ['admin']);
+  gulp.watch('_frontend/admin/{,*/}{,*/}{,*/}{,*/}*.js', ['admin']);
 });
 
 

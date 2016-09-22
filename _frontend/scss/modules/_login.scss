@@ -15,10 +15,9 @@
       border: 1px solid #ddd;
       border-radius: 5px;
       padding: 20px;
-      @media (max-width: 400px) {
-        .wrapper-content {
-          width: 95%;
-        }
+      @media (max-width: 600px) {
+        width: 95%;
+        margin: 20px 15px 0 5px;
       }
 
 

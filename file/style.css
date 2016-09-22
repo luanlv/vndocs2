@@ -1523,9 +1523,10 @@ hr.style18:before {
       border: 1px solid #ddd;
       border-radius: 5px;
       padding: 20px; }
-      @media (max-width: 400px) {
-        .login-popup .wrapper-content .wrapper-content {
-          width: 95%; } }
+      @media (max-width: 600px) {
+        .login-popup .wrapper-content {
+          width: 95%;
+          margin: 20px 15px 0 5px; } }
   .login-popup .label {
     margin-top: 10px;
     width: 120px;
@@ -1603,6 +1604,25 @@ hr.style18:before {
     display: block; }
     .down-box span:before {
       content: "Link tải: "; }
+
+.go-download {
+  -ms-flex-line-pack: right;
+  align-content: right;
+  text-align: right; }
+  .go-download span {
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer; }
+    .go-download span:hover {
+      background: #ddd; }
+  .go-download a {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none; }
+    .go-download a:visited, .go-download a:hover {
+      color: #333; }
 
 .postContent, #render {
   color: #444444;
@@ -1801,6 +1821,12 @@ hr.style18:before {
     padding: 0;
     border: 0; }
 
+#comment h2 {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-weight: bold;
+  font-style: italic; }
 #comment .notUser {
   color: red; }
 #comment .isUser {

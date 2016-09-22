@@ -63,12 +63,19 @@ var PostView = function(ctrl){
                     }}
                  >+1</button>
                </div>
+             <div className="t-mid">
+                 <div className="go-download">
+                     <a href="#download"><span>Tải ngay</span></a>
+                 </div>
+             </div>
              </div>
              <hr className="style3"/>
              <div className="postContent">
                {m.trust(marked(ctrl.post().post.content))}
                
-               <div className="down-box">
+               <div id="download" className="down-box ">
+                   <h4 style="color: #666; font-style: italic; margin-bottom: 5px;">Chọn link phía dưới để tải về!</h4>
+                   <hr className="style1"/>
                    {ctrl.post().post.link.map(function(link){
                       {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
                       return <span><a

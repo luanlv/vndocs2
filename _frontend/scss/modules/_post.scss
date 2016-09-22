@@ -59,3 +59,26 @@
     }
   }
 }
+
+.go-download {
+  align-content: right;
+  text-align: right;
+  span {
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #ddd;
+    }
+  }
+  a {
+    font-weight: bold;
+    color: #333;
+    &:visited, &:hover{
+      color: #333;
+    }
+    text-decoration: none;
+  }
+}

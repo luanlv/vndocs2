@@ -4,10 +4,11 @@ var fn = require('../core/_fn.msx');
 var Comments = function(ctrl, content, id, type){
   return [
     <div id="comment">
-    
+      <h2 >Bình luận {(Window.user == undefined)?("(Bạn phải đăng nhập!)"):("")}</h2>
+      <hr className="style1"/>
       <div className="commentWr">
               <span class="poster">
-                <img src={(Window.user == undefined)?"/assets/images/silhouette.png":(Window.user.avatarURL)} class="icon"/>
+                <img src={(data.user != undefined && data.use.avatarUrl.length >0)?(data.user.avatarURL):("/assets/images/silhouette.png")} class="icon"/>
                 <br/>
               </span>
         <div class="comment commentBox">
