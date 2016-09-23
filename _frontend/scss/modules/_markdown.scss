@@ -62,13 +62,16 @@
   }
   pre {
     padding: 0px 10px;
-    max-width: 80%;
+    //max-width: 80%;
+    border-radius: 5px;
     white-space: pre-wrap;
+    background: rgba(100, 100, 100, 0.08);
   }
   code {
     font-family: Consolas, Monaco, Andale Mono, monospace;
     line-height: 1.5;
     font-size: 13px;
+    width: 100%;
   }
   aside {
     display: block;
