@@ -657,7 +657,7 @@ var PostView = function(ctrl){
                        ctrl.post().post.link.map(function(link){
                           {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
                           return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
-                              href:fn.getShortUrl()  + "vndocs.com/download/" + link.url}, children: ["Download ", link.filename]}]}
+                              href:fn.getShortUrl()  + "vndocs.com/download/" + link.url, target:"_blank"}, children: ["Download ", link.filename]}]}
                        })
                    ]}
                ]}

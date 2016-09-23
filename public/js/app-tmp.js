@@ -346,7 +346,7 @@ var Head = function(ctrl){
              }
        }}, 
       {tag: "a", attrs: {href:"/", config:m.route}, children: [
-        {tag: "img", attrs: {className:"logo", src:"/assets/images/logo.png", alt:"logo Vndocs.com"}}
+        {tag: "img", attrs: {className:"logo", src:data.logo, alt:"logo Vndocs.com"}}
       ]}, 
       {tag: "span", attrs: {className:"slogan orange", 
         config:function(el, isInited, context){
@@ -657,7 +657,7 @@ var PostView = function(ctrl){
                        ctrl.post().post.link.map(function(link){
                           {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
                           return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
-                              href:"http://ouo.io/s/jkaTd8hX?s=" + "vndocs.com/download/" + link.url}, children: ["Download ", link.filename]}]}
+                              href:fn.getShortUrl()  + "vndocs.com/download/" + link.url, target:"_blank"}, children: ["Download ", link.filename]}]}
                        })
                    ]}
                ]}
@@ -732,6 +732,7 @@ module.exports = Side;
 },{"../core/_data.msx":11}],11:[function(require,module,exports){
 var Data = {};
 
+Data.logo = "/assets/images/logo" + Math.floor(Math.random()*5+1) +".png";
 Data.showSignin = false;
 Data.showSignup = false;
 Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
@@ -751,6 +752,8 @@ var fn ={};
 
 fn.cache = undefined;
 fn.url = m.route();
+
+
 
 fn.checkMenu = function(link){
     console.log(m.route());
@@ -825,7 +828,6 @@ fn.requestWithFeedback = function(args, bind, fn) {
     return {
         request: m.request(args).then(
             function(data) {
-                console.log("complete");
                 completed(true); return data
             },
             function(err) {
@@ -877,6 +879,16 @@ fn.changePageUrl = function(title, pageOld, pageNew, id) {
     if(id != undefined){
         scroll(id);
     }
+};
+
+var shortUrl = [
+    "http://ouo.io/s/jkaTd8hX?s=",
+    "http://sh.st/st/e789c1b5ebbd52558715462cbeccf4ca/",
+    "http://adf.ly/14693643/"
+];
+
+fn.getShortUrl = function(){
+    return shortUrl[Math.floor(Math.random()*3)]
 };
 
 function scroll(element){
@@ -1082,27 +1094,26 @@ Category.controller = function(){
     m.redraw();
   };
   ctrl.setup = function(){
-    ctrl.posts(ctrl.request.data());
     m.redraw();
   };
   
   ctrl.goToPage = function(page){
     if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
+      ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
       fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
       ctrl.page = page;
     }
   };
   ctrl.goPrev = function(page){
     if(page > 1) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
+      ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
       fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
       ctrl.page = page-1;
     }
   }
   ctrl.goNext = function(page){
     if(page < Math.ceil(ctrl.posts().total/5)) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
+      ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
       fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
       ctrl.page = page+1;
     }
