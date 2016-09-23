@@ -1,3 +1,5 @@
+var fn = require('../core/_fn.msx');
+
 var Content = function(ctrl){
   return <div className="main cf mh800">
     {ctrl.request.ready()?[
@@ -48,9 +50,13 @@ var Content = function(ctrl){
             <span className="upload">{el.upload}</span>
             <span className="category">
                       {el.categories.map(function (item) {
+                        var tmp = fn.getItemByParam(Window.categories, "slug", item);
                         return <a href={"/category/" + item}
                                   config={m.route}
-                        ><span>{(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)}</span></a>
+                        >
+                          {/*<span>{(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)}</span>*/}
+                          <span>{(tmp == undefined)?(""):(tmp.name)}</span>
+                        </a>
                       })}
                       </span>
             <span className="time">{moment(el.time).format('L')}</span>

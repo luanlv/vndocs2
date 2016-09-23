@@ -24,9 +24,13 @@ var PostView = function(ctrl){
                  <span className="upload">{ctrl.post().post.upload}</span>
                  <span className="category">
                      {ctrl.post().post.categories.map(function (item) {
+                         var tmp = fn.getItemByParam(Window.categories, "slug", item);
                          return <a href={"/category/" + item}
                                    config={m.route}
-                         ><span>{(Window.categories.getItemByParam({slug: item}) != undefined)?(Window.categories.getItemByParam({slug: item}).name):("")}</span></a>
+                         >
+                             {/*<span>{(Window.categories.getItemByParam({slug: item}) != undefined)?(Window.categories.getItemByParam({slug: item}).name):("")}</span>*/}
+                             <span>{(tmp == undefined)?(""):(tmp.name)}</span>
+                         </a>
                      })}
                       </span>
                  <span className="time">{moment(ctrl.post().post.time).format('L')}</span>

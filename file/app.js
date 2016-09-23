@@ -204,6 +204,8 @@ var Comments = function(ctrl, content, id, type){
 
 module.exports = Comments;
 },{"../core/_data.msx":11,"../core/_fn.msx":12}],4:[function(require,module,exports){
+var fn = require('../core/_fn.msx');
+
 var Content = function(ctrl){
   return {tag: "div", attrs: {className:"main cf mh800"}, children: [
     ctrl.request.ready()?[
@@ -254,9 +256,13 @@ var Content = function(ctrl){
             {tag: "span", attrs: {className:"upload"}, children: [el.upload]}, 
             {tag: "span", attrs: {className:"category"}, children: [
                       el.categories.map((function (item) {
+                        var tmp = fn.getItemByParam(Window.categories, "slug", item);
                         return {tag: "a", attrs: {href:"/category/" + item, 
                                   config:m.route
-                        }, children: [{tag: "span", attrs: {}, children: [(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)]}]}
+                        }, children: [
+                          /*<span>{(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)}</span>*/
+                          {tag: "span", attrs: {}, children: [(tmp == undefined)?(""):(tmp.name)]}
+                        ]}
                       }))
                       ]}, 
             {tag: "span", attrs: {className:"time"}, children: [moment(el.time).format('L')]}, 
@@ -314,7 +320,7 @@ var Content = function(ctrl){
 
 
 module.exports = Content;
-},{}],5:[function(require,module,exports){
+},{"../core/_fn.msx":12}],5:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
@@ -602,9 +608,13 @@ var PostView = function(ctrl){
                  {tag: "span", attrs: {className:"upload"}, children: [ctrl.post().post.upload]}, 
                  {tag: "span", attrs: {className:"category"}, children: [
                      ctrl.post().post.categories.map((function (item) {
+                         var tmp = fn.getItemByParam(Window.categories, "slug", item);
                          return {tag: "a", attrs: {href:"/category/" + item, 
                                    config:m.route
-                         }, children: [{tag: "span", attrs: {}, children: [(Window.categories.getItemByParam({slug: item}) != undefined)?(Window.categories.getItemByParam({slug: item}).name):("")]}]}
+                         }, children: [
+                             /*<span>{(Window.categories.getItemByParam({slug: item}) != undefined)?(Window.categories.getItemByParam({slug: item}).name):("")}</span>*/
+                             {tag: "span", attrs: {}, children: [(tmp == undefined)?(""):(tmp.name)]}
+                         ]}
                      }))
                       ]}, 
                  {tag: "span", attrs: {className:"time"}, children: [moment(ctrl.post().post.time).format('L')]}
@@ -880,6 +890,19 @@ fn.changePageUrl = function(title, pageOld, pageNew, id) {
         scroll(id);
     }
 };
+
+fn.getItemByParam = function(list, key, value){
+    var result = undefined;
+    var length = list.length;
+    for(var i=0; i<length; i++){
+        if(list[i][key] == value){
+            result = list[i]
+            break;
+        }
+    }
+    return result;
+};
+
 
 var shortUrl = [
     "http://ouo.io/s/jkaTd8hX?s=",

@@ -99,7 +99,7 @@ class PostController @Inject() (
 
   def getPostsByCategory(categorySlug: String, page: Int) = Action.async { implicit request =>
     val data = for {
-      posts <- postService.getList(page)
+      posts <- postService.getListByCategory(categorySlug, page)
       totalPosts <- postService.countByCategory(categorySlug)
     } yield (posts, totalPosts)
     data.map { data =>
