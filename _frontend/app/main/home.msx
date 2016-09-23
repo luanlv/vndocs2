@@ -15,7 +15,7 @@ Home.controller = function(){
   } else {
     // if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
     if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
-      m.route(Data.sessionstorage.get( 'url' ).replace("needUser=true", ""))
+      m.route(Data.sessionstorage.get( 'url' ))
     }
   }
   
@@ -23,7 +23,7 @@ Home.controller = function(){
   
   var ctrl = this;
   ctrl.needUser = m.route.param("needUser");
-  if(ctrl.needUser != undefined){
+  if(ctrl.needUser != undefined && Window.user == undefined){
     Data.showSignin = true;
   }
   ctrl.request = {};

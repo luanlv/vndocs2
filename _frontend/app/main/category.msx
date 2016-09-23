@@ -18,7 +18,7 @@ Category.controller = function(){
   
   var ctrl = this;
   ctrl.needUser = m.route.param("needUser");
-  if(ctrl.needUser != undefined){
+  if(ctrl.needUser != undefined  && Window.user == undefined){
     Data.showSignin = true;
   }
   ctrl.request = {};

@@ -996,7 +996,7 @@ Post.controller = function(){
   
   var ctrl = this;
   ctrl.needUser = m.route.param("needUser");
-  if(ctrl.needUser != undefined){
+  if(ctrl.needUser != undefined  && Window.user == undefined){
     Data.showSignin = true;
   }
   ctrl.setup = function(){
@@ -1072,7 +1072,7 @@ Category.controller = function(){
   
   var ctrl = this;
   ctrl.needUser = m.route.param("needUser");
-  if(ctrl.needUser != undefined){
+  if(ctrl.needUser != undefined  && Window.user == undefined){
     Data.showSignin = true;
   }
   ctrl.request = {};
@@ -1168,7 +1168,7 @@ Home.controller = function(){
   
   var ctrl = this;
   ctrl.needUser = m.route.param("needUser");
-  if(ctrl.needUser != undefined){
+  if(ctrl.needUser != undefined && Window.user == undefined){
     Data.showSignin = true;
   }
   ctrl.request = {};
@@ -1259,7 +1259,7 @@ Post.controller = function(){
   
   var ctrl = this;
   ctrl.needUser = m.route.param("needUser");
-  if(ctrl.needUser != undefined){
+  if(ctrl.needUser != undefined  && Window.user == undefined){
     Data.showSignin = true;
   }
   ctrl.setup = function(){
