@@ -40,27 +40,26 @@ Category.controller = function(){
     m.redraw();
   };
   ctrl.setup = function(){
-    ctrl.posts(ctrl.request.data());
     m.redraw();
   };
   
   ctrl.goToPage = function(page){
     if(page >= 1 && page <= Math.ceil(ctrl.posts().total/5)) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
+      ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + page}, ctrl.posts, ctrl.setup);
       fn.changePageUrl("Page " + page, ctrl.page, page, 'top');
       ctrl.page = page;
     }
   };
   ctrl.goPrev = function(page){
     if(page > 1) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
+      ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page-1)}, ctrl.posts, ctrl.setup);
       fn.changePageUrl("Page " + (page-1), page, page-1, 'top');
       ctrl.page = page-1;
     }
   }
   ctrl.goNext = function(page){
     if(page < Math.ceil(ctrl.posts().total/5)) {
-      ctrl.request = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
+      ctrl.request2 = fn.requestWithFeedback({method: "GET", url: "/category/" + ctrl.categorySlug + "/" + (page+1)}, ctrl.posts, ctrl.setup);
       fn.changePageUrl("Page " + (page+1), page, page+1, 'top');
       ctrl.page = page+1;
     }

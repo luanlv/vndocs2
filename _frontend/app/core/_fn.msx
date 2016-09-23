@@ -4,6 +4,8 @@ var fn ={};
 fn.cache = undefined;
 fn.url = m.route();
 
+
+
 fn.checkMenu = function(link){
     console.log(m.route());
     var partRoute = m.route().split('/');
@@ -77,7 +79,6 @@ fn.requestWithFeedback = function(args, bind, fn) {
     return {
         request: m.request(args).then(
             function(data) {
-                console.log("complete");
                 completed(true); return data
             },
             function(err) {
@@ -129,6 +130,16 @@ fn.changePageUrl = function(title, pageOld, pageNew, id) {
     if(id != undefined){
         scroll(id);
     }
+};
+
+var shortUrl = [
+    "http://ouo.io/s/jkaTd8hX?s=",
+    "http://sh.st/st/e789c1b5ebbd52558715462cbeccf4ca/",
+    "http://adf.ly/14693643/"
+];
+
+fn.getShortUrl = function(){
+    return shortUrl[Math.floor(Math.random()*3)]
 };
 
 function scroll(element){
