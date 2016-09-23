@@ -15,7 +15,7 @@ Home.controller = function(){
   } else {
     // if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
     if(Data.sessionstorage.get( 'url' ) != undefined && Data.sessionstorage.get( 'url' ) != "/" ){
-      m.route(Data.sessionstorage.get( 'url' ))
+      m.route(Data.sessionstorage.get( 'url' ).replace("needUser=true", ""))
     }
   }
   
