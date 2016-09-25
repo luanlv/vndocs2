@@ -102,7 +102,7 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
         result.push(" » " ,<a href="/" config={m.route}>Trang chủ</a> );
         return result.reverse();
     }
-    var jsonCategory = category.getItemByParam({slug: currentCategory});
+    var jsonCategory = fn.getItemByParam(category, "slug", currentCategory);
     result.push(" » " ,<a href={"/category/" + currentCategory} config={m.route}> {jsonCategory.name} </a>);
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 };

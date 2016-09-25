@@ -15,18 +15,39 @@ $(document).ajaxSend(function(elm, xhr, s){
   }
 });
 
-Array.prototype.getItemByParam = function(paramPair) {
-  var key = Object.keys(paramPair)[0];
-  return this.find(function(item){return ((item[key] == paramPair[key]) ? true: false)});
-}
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+ga('create', 'UA-84710092-1', 'auto');
 
 
-m.route(document.querySelector('#app'), "/", {
+var GATrackedController = function(controller) {
+  return function() {
+    ga("send", "pageview", {page: m.route()});
+    return controller.apply(this, arguments);
+  };
+};
+
+function GATrackedRoutes(routes) {
+  var map = {};
+  for (var key in routes) {
+    map[key] = {
+      controller: GATrackedController(routes[key].controller),
+      view: routes[key].view
+    };
+  };
+  return map;
+};
+
+
+m.route(document.querySelector('#app'), "/", GATrackedRoutes({
   "/": Main.Home,
   "/post/:postID": Main.Post,
   "/blog/:slug": Main.Article,
   "/category/:categorySlug": Main.Category
-});
+}));
 
 
 module.exports = Main;
@@ -861,7 +882,7 @@ fn.buildBreadcrumb = function(urls, category, currentCategory, result){
         result.push(" » " ,{tag: "a", attrs: {href:"/", config:m.route}, children: ["Trang chủ"]} );
         return result.reverse();
     }
-    var jsonCategory = category.getItemByParam({slug: currentCategory});
+    var jsonCategory = fn.getItemByParam(category, "slug", currentCategory);
     result.push(" » " ,{tag: "a", attrs: {href:"/category/" + currentCategory, config:m.route}, children: [" ", jsonCategory.name, " "]});
     return fn.buildBreadcrumb(urls, category, jsonCategory.sku.slug, result);
 };

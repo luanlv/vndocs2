@@ -1697,7 +1697,7 @@ hr.style18:before {
     line-height: 24px;
     max-width: 540px; }
   .postContent pre, #render pre {
-    padding: 0px 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     white-space: pre-wrap;
     background: rgba(100, 100, 100, 0.08); }

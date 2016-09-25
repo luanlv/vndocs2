@@ -50,6 +50,7 @@ class PostController @Inject() (
     } yield (menu, categories, post, comments, articles)
     data.map { data =>
       Ok(views.html.post(
+        data._3.get.title,
         Json.toJson(data._1.get.value).toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
