@@ -23,6 +23,7 @@ Post.controller = function(){
     Data.showSignin = true;
   }
   ctrl.setup = function(){
+    document.title = "VnDocs | " + ctrl.article().article.title;
     m.redraw();
   };
   ctrl.slug =  m.route.param("slug");
@@ -44,11 +45,7 @@ Post.controller = function(){
     ctrl.request.ready = m.prop(true);
     m.redraw();
   };
-  ctrl.setup = function(){
-    // ctrl.post(ctrl.request.data());
-    console.log(ctrl.article());
-    m.redraw();
-  };
+  
   
 };
 

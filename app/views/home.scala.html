@@ -6,9 +6,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="fragment" content="!">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
         <title>VnDocs | Chia sẻ tài liệu miễn phí</title>
         @*<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>*@
         <link rel="stylesheet" href="/assets/styles/animate.css">
@@ -19,33 +19,36 @@
         }
     </head>
     <body>
-        <span id="initdata" style="display: none;">
-            <span class="durls">{}</span>
-            <span class="dmenu">@Html(menu)</span>
-            <span class="dcategories">@Html(categories)</span>
-            <span class="dposts">@Html(posts)</span>
-            <span class="dpost"></span>
-            <span class="dcomments"></span>
-            <span class="darticle"></span>
-            <span class="darticles">@Html(articles)</span>
-            <span class="dtotalPosts">@totalPosts</span>
-            <span class="duser">
+        <div id="app">
+            <div className="loading">
+                <div class="loader">
+                    <div class="inner one"></div>
+                    <div class="inner two"></div>
+                    <div class="inner three"></div>
+                </div>
+            </div>
+        </div>
+        @helper.CSRF.formField
+
+        <script >
+            Window.urls = {};
+            Window.menu = @Html(menu);
+            Window.categories = @Html(categories);
+            Window.posts = @Html(posts);
+            Window.post = undefined;
+            Window.comments = undefined;
+            Window.article = undefined;
+            Window.articles =@Html(articles);
+            Window.totalPosts = @totalPosts;
             @user match {
                 case Some(user) => {
-                    {
-                    "userID" : "@user.userID",
-                    "avatarURL" : "@user.avatarURL",
-                    "fullName" : "@user.fullName"
-                    }
+                    Window.user = { userID : "@user.userID", avatarURL : "@user.avatarURL", fullName : "@user.fullName" };
                 }
                 case None => {
-
+                    Window.user = undefined;
                 }
             }
-            </span>
-        </span>
-        <div id="app"></div>
-        @helper.CSRF.formField
+        </script>
         <script src="/assets/lib/jquery.min.op.js"></script>
         <script src="/assets/lib/marked.min.op.js" type="text/javascript" charset="utf-8"></script>
         <script src="/assets/lib/moment.min.op.js"></script>

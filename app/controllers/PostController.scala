@@ -51,7 +51,7 @@ class PostController @Inject() (
     data.map { data =>
       Ok(views.html.post(
         data._3.get.title,
-        Json.toJson(data._1.get.value).toString,
+        data._1.get.value.toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
         Json.toJson(data._4).toString,
@@ -89,7 +89,7 @@ class PostController @Inject() (
     } yield (menu, categories, post, articles, totalPosts)
     data.map { data =>
       Ok(views.html.home(
-        Json.toJson(data._1.get.value).toString,
+        data._1.get.value.toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
         Json.toJson(data._4).toString,

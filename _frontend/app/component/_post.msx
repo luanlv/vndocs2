@@ -25,7 +25,7 @@ var PostView = function(ctrl){
                  <span className="category">
                      {ctrl.post().post.categories.map(function (item) {
                          var tmp = fn.getItemByParam(Window.categories, "slug", item);
-                         return <a href={"/category/" + item}
+                         return <a href={data.baseUrl + "/category/" + item}
                                    config={m.route}
                          >
                              {/*<span>{(Window.categories.getItemByParam({slug: item}) != undefined)?(Window.categories.getItemByParam({slug: item}).name):("")}</span>*/}
@@ -37,7 +37,7 @@ var PostView = function(ctrl){
                </div>
       
                <div className="t-left">
-                 <a href="#"><img src={"/cover/get/" + ctrl.post().post.cover.id} alt={ctrl.post().post.cover.alt}/></a>
+                 <a href="#"><img src={data.baseUrl + "/cover/get/" + ctrl.post().post.cover.id} alt={ctrl.post().post.cover.alt}/></a>
                </div>
                <div className="t-right">
                  <div className="rate-nav">RATING</div>
@@ -83,7 +83,7 @@ var PostView = function(ctrl){
                        {ctrl.post().post.link.map(function(link){
                           {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
                           return <span><a
-                              href={fn.getShortUrl()  + "vndocs.com/download/" + link.url} target="_blank">Download {link.filename}</a></span>
+                              href={data.baseUrl + "/download/" + link.url} target="_blank">Download {link.filename}</a></span>
                        })}
                    </div>
                </div>

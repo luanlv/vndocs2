@@ -13,7 +13,7 @@ var Head = function(ctrl){
                fn.toggleClass(elem.target, "menu-active");
              }}
        ></span>
-      <a href="/" config={m.route}>
+      <a href={data.baseUrl + "/"} config={m.route}>
         <img className="logo" src={data.logo} alt="logo Vndocs.com"/>
       </a>
       <span className="slogan orange"

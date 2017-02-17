@@ -43,7 +43,7 @@ class ApplicationController @Inject() (
     } yield (menu, categories, posts, articles, totalPosts)
     data.map { data =>
       Ok(views.html.home(
-        Json.toJson(data._1.get.value).toString,
+        data._1.get.value.toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
         Json.toJson(data._4).toString,

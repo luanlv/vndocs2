@@ -10,53 +10,61 @@ window.isMobile = window.mobilecheck();
 
 m.route.mode = "pathname";
 
-var urlsString = jQuery.trim($('#initdata .durls').text());
-var menuString = jQuery.trim($('#initdata .dmenu').text());
-var categoriesString = jQuery.trim($('#initdata .dcategories').text());
-var postsString = jQuery.trim($('#initdata .dposts').text());
-var postString = jQuery.trim($('#initdata .dpost').text());
-var commentsString = jQuery.trim($('#initdata .dcomments').text());
-var articleString = jQuery.trim($('#initdata .darticle').text());
-var articlesString = jQuery.trim($('#initdata .darticles').text());
-var totalPostsString = jQuery.trim($('#initdata .dtotalPosts').text());
-var userString = jQuery.trim($('#initdata .duser').text());
+// var urlsString = jQuery.trim($('#initdata').attr('urls'));
+// var menuString = jQuery.trim($('#initdata').attr('menu'));
+// var categoriesString = jQuery.trim($('#initdata').attr('categories'));
+// var postsString = jQuery.trim($('#initdata').attr('posts'));
+// var postString = jQuery.trim($('#initdata').attr('post'));
+// var commentsString = jQuery.trim($('#initdata').attr('comments'));
+// var articleString = jQuery.trim($('#initdata').attr('article'));
+// var articlesString = jQuery.trim($('#initdata').attr('articles'));
+// var totalPostsString = jQuery.trim($('#initdata').attr('totalPosts'));
+// var userString = jQuery.trim($('#initdata').attr('user'));
+// var urlsString = jQuery.trim($('#initdata .durls').text());
+// var menuString = jQuery.trim($('#initdata .dmenu').text());
+// var categoriesString = jQuery.trim($('#initdata .dcategories').text());
+// var postsString = jQuery.trim($('#initdata .dposts').text());
+// var postString = jQuery.trim($('#initdata .dpost').text());
+// var commentsString = jQuery.trim($('#initdata .dcomments').text());
+// var articleString = jQuery.trim($('#initdata .darticle').text());
+// var articlesString = jQuery.trim($('#initdata .darticles').text());
+// var totalPostsString = jQuery.trim($('#initdata .dtotalPosts').text());
+// var userString = jQuery.trim($('#initdata .duser').text());
 
 
-if(jQuery.trim(urlsString).length > 0) {
-  Window.urls = jQuery.parseJSON(urlsString);
-}
-
-if(jQuery.trim(menuString).length > 0) {
-  Window.menu = jQuery.parseJSON(menuString);
-}
-if(jQuery.trim(categoriesString).length > 0) {
-  Window.categories = jQuery.parseJSON(categoriesString);
-}
-if(jQuery.trim(postsString).length > 0) {
-  Window.posts = jQuery.parseJSON(postsString);
-}
-if(jQuery.trim(postString).length > 0) {
-  Window.post = jQuery.parseJSON(postString);
-}
-if(jQuery.trim(commentsString).length > 0) {
-  Window.comments = jQuery.parseJSON(commentsString);
-}
-if(jQuery.trim(articleString).length > 0) {
-  Window.article = jQuery.parseJSON(articleString);
-}
-if(jQuery.trim(articlesString).length > 0) {
-  Window.articles = jQuery.parseJSON(articlesString);
-}
-if(jQuery.trim(totalPostsString).length > 0) {
-  Window.totalPosts = jQuery.parseJSON(totalPostsString);
-}
-
-if(jQuery.trim(userString).length > 0) {
-  Window.user = jQuery.parseJSON(userString);
-}
-if(jQuery.trim(totalPostsString).length > 0) {
-  Window.totalPosts = parseInt(totalPostsString);
-}
+// if(jQuery.trim(urlsString).length > 0) {
+//   Window.urls = jQuery.parseJSON(urlsString);
+// }
+//
+// if(jQuery.trim(menuString).length > 0) {
+//   Window.menu = jQuery.parseJSON(menuString);
+//   console.log(Window.menu)
+// }
+// if(jQuery.trim(categoriesString).length > 0) {
+//     Window.categories = jQuery.parseJSON(categoriesString);
+// }
+// if(jQuery.trim(postsString).length > 0) {
+//   Window.posts = jQuery.parseJSON(postsString);
+// }
+// if(jQuery.trim(postString).length > 0) {
+//   Window.post = jQuery.parseJSON(postString);
+// }
+// if(jQuery.trim(commentsString).length > 0) {
+//   Window.comments = jQuery.parseJSON(commentsString);
+// }
+// if(jQuery.trim(articleString).length > 0) {
+//   Window.article = jQuery.parseJSON(articleString);
+// }
+// if(jQuery.trim(articlesString).length > 0) {
+//   Window.articles = jQuery.parseJSON(articlesString);
+// }
+// if(jQuery.trim(totalPostsString).length > 0) {
+//   Window.totalPosts = jQuery.parseJSON(totalPostsString);
+// }
+//
+// if(jQuery.trim(userString).length > 0) {
+//   Window.user = jQuery.parseJSON(userString);
+// }
 
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');

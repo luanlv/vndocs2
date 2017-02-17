@@ -27,7 +27,6 @@ fn.createMenu = function(menuJson, level){
         menuJson.map(function(child){
             return m('li',  [
                 m('a', {title: child.title, href: child.http, config: m.route} ,m('span', child.title)),
-                (level > 1 )?<sup className="norm">6431</sup>:"",
                 (child.children !== undefined)?fn.createMenu(child.children, level + 1):''
             ])
         })

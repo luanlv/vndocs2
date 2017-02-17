@@ -35,7 +35,7 @@ class ArticleController @Inject() (
     data.map { data =>
       Ok(views.html.article(
         data._3.get.title,
-        Json.toJson(data._1.get.value).toString,
+        data._1.get.value.toString,
         Json.toJson(data._2).toString,
         Json.toJson(data._3).toString,
         Json.toJson(data._4).toString,

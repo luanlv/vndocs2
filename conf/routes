@@ -64,5 +64,6 @@ GET         /account/activate/:token         controllers.ActivateAccountControll
 
 # Map static resources from the /public folder to the /assets URL path
 GET          /file/:filename                 controllers.FileController.getFile(filename: String)
+GET          /robots.txt                     controllers.FileController.getFile(filename: String = "robots.txt")
 GET         /assets/*file                    controllers.Assets.at(path="/public", file)
 GET         /webjars/*file                   controllers.WebJarAssets.at(file)

@@ -82,7 +82,7 @@ var PostView = function(ctrl){
             ]}, 
             
             {tag: "div", attrs: {className:"t-left"}, children: [
-              {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.article().article.cover.id, alt:ctrl.article().article.cover.alt}}]}
+              {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:data.baseUrl + "/cover/get/" + ctrl.article().article.cover.id, alt:ctrl.article().article.cover.alt}}]}
             ]}, 
             {tag: "div", attrs: {className:"t-right"}, children: [
               {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
@@ -226,6 +226,7 @@ var Comments = function(ctrl, content, id, type){
 module.exports = Comments;
 },{"../core/_data.msx":11,"../core/_fn.msx":12}],4:[function(require,module,exports){
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 
 var Content = function(ctrl){
   return {tag: "div", attrs: {className:"main cf mh800"}, children: [
@@ -263,7 +264,7 @@ var Content = function(ctrl){
         return {tag: "div", attrs: {className:"block main-item"}, children: [
           {tag: "div", attrs: {className:"title"}, children: [
             {tag: "div", attrs: {className:"t-left"}, children: [
-              {tag: "a", attrs: {href:"/post/" + el._id, 
+              {tag: "a", attrs: {href:data.baseUrl + "/post/" + el._id, 
                  className:"title", 
                  config:m.route
               }, children: [el.title]}
@@ -278,7 +279,7 @@ var Content = function(ctrl){
             {tag: "span", attrs: {className:"category"}, children: [
                       el.categories.map(function (item) {
                         var tmp = fn.getItemByParam(Window.categories, "slug", item);
-                        return {tag: "a", attrs: {href:"/category/" + item, 
+                        return {tag: "a", attrs: {href:data.baseUrl + "/category/" + item, 
                                   config:m.route
                         }, children: [
                           /*<span>{(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)}</span>*/
@@ -288,14 +289,14 @@ var Content = function(ctrl){
                       ]}, 
             {tag: "span", attrs: {className:"time"}, children: [moment(el.time).format('L')]}, 
             {tag: "span", attrs: {className:"nComment"}, children: [
-                    {tag: "a", attrs: {href:"/post/" + el._id + "#comment", 
+                    {tag: "a", attrs: {href:data.baseUrl + "/post/" + el._id + "#comment", 
                        config:m.route
                     }, children: [el.nComment, " bình luận"]}
                     
                 ]}
           ]}, 
           {tag: "div", attrs: {className:"info"}, children: [
-            {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + el.cover.id, alt:el.cover.alt}}]}, 
+            {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:data.baseUrl + "/cover/get/" + el.cover.id, alt:el.cover.alt}}]}, 
             {tag: "p", attrs: {className:"description"}, children: [
               (window.isMobile) ? el.description.slice(0, 250) : el.description, " ..."
             ]}
@@ -341,7 +342,7 @@ var Content = function(ctrl){
 
 
 module.exports = Content;
-},{"../core/_fn.msx":12}],5:[function(require,module,exports){
+},{"../core/_data.msx":11,"../core/_fn.msx":12}],5:[function(require,module,exports){
 var data = require('../core/_data.msx');
 var fn = require('../core/_fn.msx');
 
@@ -372,7 +373,7 @@ var Head = function(ctrl){
                fn.toggleClass(elem.target, "menu-active");
              }
        }}, 
-      {tag: "a", attrs: {href:"/", config:m.route}, children: [
+      {tag: "a", attrs: {href:data.baseUrl + "/", config:m.route}, children: [
         {tag: "img", attrs: {className:"logo", src:data.logo, alt:"logo Vndocs.com"}}
       ]}, 
       {tag: "span", attrs: {className:"slogan orange", 
@@ -440,11 +441,11 @@ var Login = function(ctrl){
               {tag: "input", attrs: {type:"submit", value:"Đăng nhập"}}, 
   
               {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), className:"social-button", id:"google-connect"}, children: [" "]}
+                {tag: "a", attrs: {href:data.baseUrl + "/authenticate/google" + "?forward=" + m.route(), className:"social-button", id:"google-connect"}, children: [" "]}
               ]}, 
               
               {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), className:"social-button", id:"facebook-connect"}, children: [" "]}
+                {tag: "a", attrs: {href:data.baseUrl + "/authenticate/facebook" + "?forward=" + m.route(), className:"social-button", id:"facebook-connect"}, children: [" "]}
               ]}
               
             ]}
@@ -513,11 +514,11 @@ var Login = function(ctrl){
                   {tag: "div", attrs: {className:"label"}}, 
                   {tag: "button", attrs: {id:"submit", type:"submit", className:"btn btn-lg btn-primary btn-block"}, children: ["Đăng ký"]}, 
                   {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                    {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), className:"social-button", id:"google-connect"}, children: [" "]}
+                    {tag: "a", attrs: {href:data.baseUrl + "/authenticate/google" + "?forward=" + m.route(), className:"social-button", id:"google-connect"}, children: [" "]}
                   ]}, 
   
                   {tag: "div", attrs: {style:"width: 40px; float: right; margin: 3px 10px 0 0;"}, children: [
-                    {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), className:"social-button", id:"facebook-connect"}, children: [" "]}
+                    {tag: "a", attrs: {href:data.baseUrl + "/authenticate/facebook" + "?forward=" + m.route(), className:"social-button", id:"facebook-connect"}, children: [" "]}
                   ]}
                 ]}
                 
@@ -563,7 +564,7 @@ var Menu = function(ctrl){
                             ]}
                         ]}, 
                         {tag: "div", attrs: {className:"bot"}, children: [
-                            {tag: "a", attrs: {href:"/signOut?forward=" + m.route()}, children: ["Đăng xuất"]}
+                            {tag: "a", attrs: {href:data.baseUrl + "/signOut?forward=" + m.route()}, children: ["Đăng xuất"]}
                         ]}
                     ]}
                 ):(
@@ -581,8 +582,8 @@ var Menu = function(ctrl){
                                }
                             }, children: [{tag: "span", attrs: {}, children: [" Đăng ký"]}]}]}, 
                         {tag: "span", attrs: {style:"width: 20px;"}}, 
-                        {tag: "a", attrs: {href:"/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Facebook"]}]}, 
-                        {tag: "a", attrs: {href:"/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Google"]}]}
+                        {tag: "a", attrs: {href:data.baseUrl + "/authenticate/facebook" + "?forward=" + m.route(), class:"social-button", id:"facebook-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Facebook"]}]}, 
+                        {tag: "a", attrs: {href:data.baseUrl + "/authenticate/google" + "?forward=" + m.route(), class:"social-button", id:"google-connect"}, children: [" ", {tag: "span", attrs: {}, children: [" Google"]}]}
                     ]}
                 )
     
@@ -592,7 +593,7 @@ var Menu = function(ctrl){
                 "Menu"
             ]}, 
             {tag: "div", attrs: {className:"list-menu"}, children: [
-                fn.runCreateMenu(JSON.parse(Window.menu), 1)
+                fn.runCreateMenu(Window.menu, 1)
             ]}
         ]}
     ];
@@ -630,7 +631,7 @@ var PostView = function(ctrl){
                  {tag: "span", attrs: {className:"category"}, children: [
                      ctrl.post().post.categories.map(function (item) {
                          var tmp = fn.getItemByParam(Window.categories, "slug", item);
-                         return {tag: "a", attrs: {href:"/category/" + item, 
+                         return {tag: "a", attrs: {href:data.baseUrl + "/category/" + item, 
                                    config:m.route
                          }, children: [
                              /*<span>{(Window.categories.getItemByParam({slug: item}) != undefined)?(Window.categories.getItemByParam({slug: item}).name):("")}</span>*/
@@ -642,7 +643,7 @@ var PostView = function(ctrl){
                ]}, 
       
                {tag: "div", attrs: {className:"t-left"}, children: [
-                 {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:"/cover/get/" + ctrl.post().post.cover.id, alt:ctrl.post().post.cover.alt}}]}
+                 {tag: "a", attrs: {href:"#"}, children: [{tag: "img", attrs: {src:data.baseUrl + "/cover/get/" + ctrl.post().post.cover.id, alt:ctrl.post().post.cover.alt}}]}
                ]}, 
                {tag: "div", attrs: {className:"t-right"}, children: [
                  {tag: "div", attrs: {className:"rate-nav"}, children: ["RATING"]}, 
@@ -688,7 +689,7 @@ var PostView = function(ctrl){
                        ctrl.post().post.link.map(function(link){
                           {/*return <span><a href={link.shortUrl}>Download {link.filename}</a></span>*/}
                           return {tag: "span", attrs: {}, children: [{tag: "a", attrs: {
-                              href:fn.getShortUrl()  + "vndocs.com/download/" + link.url, target:"_blank"}, children: ["Download ", link.filename]}]}
+                              href:data.baseUrl + "/download/" + link.url, target:"_blank"}, children: ["Download ", link.filename]}]}
                        })
                    ]}
                ]}
@@ -745,7 +746,7 @@ var Side = function(ctrl){
             Window.articles.map(function(el){
                 return {tag: "li", attrs: {}, children: [
                     {tag: "span", attrs: {}, children: [
-                        {tag: "a", attrs: {href:"/blog/" + el._id, 
+                        {tag: "a", attrs: {href:data.baseUrl + "/blog/" + el._id, 
                             config:m.route
                         }, children: [
                             el.title
@@ -767,13 +768,13 @@ Data.logo = "/assets/images/logo" + Math.floor(Math.random()*5+1) +".png";
 Data.showSignin = false;
 Data.showSignup = false;
 Data.sessionstorage = mx.storage( 'sessionsstorage' , mx.SESSION_STORAGE );
-
+Data.baseUrl = "http://vndocs.com";
 
 
 if(Window.user !== undefined) {
   
   Data.user = Window.user;
-  console.log(Data.user)
+  // console.log(Data.user)
 }
 
 module.exports = Data;
@@ -807,7 +808,6 @@ fn.createMenu = function(menuJson, level){
         menuJson.map(function(child){
             return m('li',  [
                 m('a', {title: child.title, href: child.http, config: m.route} ,m('span', child.title)),
-                (level > 1 )?{tag: "sup", attrs: {className:"norm"}, children: ["6431"]}:"",
                 (child.children !== undefined)?fn.createMenu(child.children, level + 1):''
             ])
         })
@@ -954,53 +954,61 @@ window.isMobile = window.mobilecheck();
 
 m.route.mode = "pathname";
 
-var urlsString = jQuery.trim($('#initdata .durls').text());
-var menuString = jQuery.trim($('#initdata .dmenu').text());
-var categoriesString = jQuery.trim($('#initdata .dcategories').text());
-var postsString = jQuery.trim($('#initdata .dposts').text());
-var postString = jQuery.trim($('#initdata .dpost').text());
-var commentsString = jQuery.trim($('#initdata .dcomments').text());
-var articleString = jQuery.trim($('#initdata .darticle').text());
-var articlesString = jQuery.trim($('#initdata .darticles').text());
-var totalPostsString = jQuery.trim($('#initdata .dtotalPosts').text());
-var userString = jQuery.trim($('#initdata .duser').text());
+// var urlsString = jQuery.trim($('#initdata').attr('urls'));
+// var menuString = jQuery.trim($('#initdata').attr('menu'));
+// var categoriesString = jQuery.trim($('#initdata').attr('categories'));
+// var postsString = jQuery.trim($('#initdata').attr('posts'));
+// var postString = jQuery.trim($('#initdata').attr('post'));
+// var commentsString = jQuery.trim($('#initdata').attr('comments'));
+// var articleString = jQuery.trim($('#initdata').attr('article'));
+// var articlesString = jQuery.trim($('#initdata').attr('articles'));
+// var totalPostsString = jQuery.trim($('#initdata').attr('totalPosts'));
+// var userString = jQuery.trim($('#initdata').attr('user'));
+// var urlsString = jQuery.trim($('#initdata .durls').text());
+// var menuString = jQuery.trim($('#initdata .dmenu').text());
+// var categoriesString = jQuery.trim($('#initdata .dcategories').text());
+// var postsString = jQuery.trim($('#initdata .dposts').text());
+// var postString = jQuery.trim($('#initdata .dpost').text());
+// var commentsString = jQuery.trim($('#initdata .dcomments').text());
+// var articleString = jQuery.trim($('#initdata .darticle').text());
+// var articlesString = jQuery.trim($('#initdata .darticles').text());
+// var totalPostsString = jQuery.trim($('#initdata .dtotalPosts').text());
+// var userString = jQuery.trim($('#initdata .duser').text());
 
 
-if(jQuery.trim(urlsString).length > 0) {
-  Window.urls = jQuery.parseJSON(urlsString);
-}
-
-if(jQuery.trim(menuString).length > 0) {
-  Window.menu = jQuery.parseJSON(menuString);
-}
-if(jQuery.trim(categoriesString).length > 0) {
-  Window.categories = jQuery.parseJSON(categoriesString);
-}
-if(jQuery.trim(postsString).length > 0) {
-  Window.posts = jQuery.parseJSON(postsString);
-}
-if(jQuery.trim(postString).length > 0) {
-  Window.post = jQuery.parseJSON(postString);
-}
-if(jQuery.trim(commentsString).length > 0) {
-  Window.comments = jQuery.parseJSON(commentsString);
-}
-if(jQuery.trim(articleString).length > 0) {
-  Window.article = jQuery.parseJSON(articleString);
-}
-if(jQuery.trim(articlesString).length > 0) {
-  Window.articles = jQuery.parseJSON(articlesString);
-}
-if(jQuery.trim(totalPostsString).length > 0) {
-  Window.totalPosts = jQuery.parseJSON(totalPostsString);
-}
-
-if(jQuery.trim(userString).length > 0) {
-  Window.user = jQuery.parseJSON(userString);
-}
-if(jQuery.trim(totalPostsString).length > 0) {
-  Window.totalPosts = parseInt(totalPostsString);
-}
+// if(jQuery.trim(urlsString).length > 0) {
+//   Window.urls = jQuery.parseJSON(urlsString);
+// }
+//
+// if(jQuery.trim(menuString).length > 0) {
+//   Window.menu = jQuery.parseJSON(menuString);
+//   console.log(Window.menu)
+// }
+// if(jQuery.trim(categoriesString).length > 0) {
+//     Window.categories = jQuery.parseJSON(categoriesString);
+// }
+// if(jQuery.trim(postsString).length > 0) {
+//   Window.posts = jQuery.parseJSON(postsString);
+// }
+// if(jQuery.trim(postString).length > 0) {
+//   Window.post = jQuery.parseJSON(postString);
+// }
+// if(jQuery.trim(commentsString).length > 0) {
+//   Window.comments = jQuery.parseJSON(commentsString);
+// }
+// if(jQuery.trim(articleString).length > 0) {
+//   Window.article = jQuery.parseJSON(articleString);
+// }
+// if(jQuery.trim(articlesString).length > 0) {
+//   Window.articles = jQuery.parseJSON(articlesString);
+// }
+// if(jQuery.trim(totalPostsString).length > 0) {
+//   Window.totalPosts = jQuery.parseJSON(totalPostsString);
+// }
+//
+// if(jQuery.trim(userString).length > 0) {
+//   Window.user = jQuery.parseJSON(userString);
+// }
 
 //window.Nav = require('./_nav.msx');
 window.Main = require('./_main.msx');
@@ -1044,6 +1052,7 @@ Post.controller = function(){
     Data.showSignin = true;
   }
   ctrl.setup = function(){
+    document.title = "VnDocs | " + ctrl.article().article.title;
     m.redraw();
   };
   ctrl.slug =  m.route.param("slug");
@@ -1065,11 +1074,7 @@ Post.controller = function(){
     ctrl.request.ready = m.prop(true);
     m.redraw();
   };
-  ctrl.setup = function(){
-    // ctrl.post(ctrl.request.data());
-    console.log(ctrl.article());
-    m.redraw();
-  };
+  
   
 };
 
@@ -1307,6 +1312,7 @@ Post.controller = function(){
     Data.showSignin = true;
   }
   ctrl.setup = function(){
+    document.title = "VnDocs | " + ctrl.post().post.title;
     m.redraw();
   };
   ctrl.postID =  m.route.param("postID");
@@ -1318,7 +1324,6 @@ Post.controller = function(){
   
   
   if(Window.post === undefined) {
-    console.log("run request !!!!!!!!!!")
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID}, ctrl.post, ctrl.setup);
   } else {
     // ctrl.request.data = m.prop(Window.post);
@@ -1329,11 +1334,7 @@ Post.controller = function(){
     ctrl.request.ready = m.prop(true);
     m.redraw();
   };
-  ctrl.setup = function(){
-    // ctrl.post(ctrl.request.data());
-    console.log(ctrl.post());
-    m.redraw();
-  };
+
 };
 
 Post.view = function(ctrl){

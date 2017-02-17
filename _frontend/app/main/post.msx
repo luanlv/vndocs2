@@ -22,6 +22,7 @@ Post.controller = function(){
     Data.showSignin = true;
   }
   ctrl.setup = function(){
+    document.title = "VnDocs | " + ctrl.post().post.title;
     m.redraw();
   };
   ctrl.postID =  m.route.param("postID");
@@ -33,7 +34,6 @@ Post.controller = function(){
   
   
   if(Window.post === undefined) {
-    console.log("run request !!!!!!!!!!")
     ctrl.request = fn.requestWithFeedback({method: "GET", url: "/post/get/" + ctrl.postID}, ctrl.post, ctrl.setup);
   } else {
     // ctrl.request.data = m.prop(Window.post);
@@ -44,11 +44,7 @@ Post.controller = function(){
     ctrl.request.ready = m.prop(true);
     m.redraw();
   };
-  ctrl.setup = function(){
-    // ctrl.post(ctrl.request.data());
-    console.log(ctrl.post());
-    m.redraw();
-  };
+
 };
 
 Post.view = function(ctrl){

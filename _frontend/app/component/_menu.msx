@@ -20,7 +20,7 @@ var Menu = function(ctrl){
                             </div>
                         </div>
                         <div className="bot">
-                            <a href={"/signOut?forward=" + m.route()}>Đăng xuất</a>
+                            <a href={data.baseUrl + "/signOut?forward=" + m.route()}>Đăng xuất</a>
                         </div>
                     </div>
                 ):(
@@ -38,8 +38,8 @@ var Menu = function(ctrl){
                                }}
                             ><span> Đăng ký</span></a></div>
                         <span style="width: 20px;"></span>
-                        <a href={"/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> <span> Facebook</span></a>
-                        <a href={"/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> <span> Google</span></a>
+                        <a href={data.baseUrl + "/authenticate/facebook" + "?forward=" + m.route()} class="social-button" id="facebook-connect"> <span> Facebook</span></a>
+                        <a href={data.baseUrl + "/authenticate/google" + "?forward=" + m.route()} class="social-button" id="google-connect"> <span> Google</span></a>
                     </div>
                 )}
     
@@ -49,7 +49,7 @@ var Menu = function(ctrl){
                 Menu
             </div>
             <div className="list-menu">
-                {fn.runCreateMenu(JSON.parse(Window.menu), 1)}
+                {fn.runCreateMenu(Window.menu, 1)}
             </div>
         </div>
     ];

@@ -27,7 +27,7 @@ var Side = function(ctrl){
             {Window.articles.map(function(el){
                 return <li>
                     <span>
-                        <a href={"/blog/" + el._id}
+                        <a href={data.baseUrl + "/blog/" + el._id}
                             config={m.route}
                         >
                             {el.title}

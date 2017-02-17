@@ -1,4 +1,5 @@
 var fn = require('../core/_fn.msx');
+var data = require('../core/_data.msx');
 
 var Content = function(ctrl){
   return <div className="main cf mh800">
@@ -36,7 +37,7 @@ var Content = function(ctrl){
         return <div className="block main-item">
           <div className="title">
             <div className="t-left">
-              <a href={"/post/" + el._id}
+              <a href={data.baseUrl + "/post/" + el._id}
                  className="title"
                  config={m.route}
               >{el.title}</a>
@@ -51,7 +52,7 @@ var Content = function(ctrl){
             <span className="category">
                       {el.categories.map(function (item) {
                         var tmp = fn.getItemByParam(Window.categories, "slug", item);
-                        return <a href={"/category/" + item}
+                        return <a href={data.baseUrl + "/category/" + item}
                                   config={m.route}
                         >
                           {/*<span>{(Window.categories.getItemByParam({slug: item}) == undefined)?(""):(Window.categories.getItemByParam({slug: item}).name)}</span>*/}
@@ -61,14 +62,14 @@ var Content = function(ctrl){
                       </span>
             <span className="time">{moment(el.time).format('L')}</span>
             <span className="nComment">
-                    <a href={"/post/" + el._id + "#comment"}
+                    <a href={data.baseUrl + "/post/" + el._id + "#comment"}
                        config={m.route}
                     >{el.nComment} bình luận</a>
                     
                 </span>
           </div>
           <div className="info">
-            <a href="#"><img src={"/cover/get/" + el.cover.id} alt={el.cover.alt}/></a>
+            <a href="#"><img src={data.baseUrl + "/cover/get/" + el.cover.id} alt={el.cover.alt}/></a>
             <p className="description">
               {(window.isMobile) ? el.description.slice(0, 250) : el.description} ...
             </p>
